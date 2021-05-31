@@ -25,20 +25,22 @@ in
         type = with types; listOf str;
       };
     };
+  };
 
-    config = mkIf cfg.enable {
-      services.openssh = {
-        enable = true;
-        permitRootLogin = "prohibit-password";
-        passwordAuthentication = false;
-        forwardX11 = true;
-      };
-
-      networking.firewall.allowedTCPPorts = [ 22 ];
-
-      users.users = {
-        root.openssh.authorizedKeys.keys = cfg.keys;
-        indexyz.openssh.authorizedKeys.keys = cfg.keys;
-      };
+  config = mkIf cfg.enable {
+    services.openssh = {
+      enable = true;
+      permitRootLogin = "prohibit-password";
+      passwordAuthentication = false;
+      forwardX11 = true;
     };
-  }
+
+    networking.firewall.allowedTCPPorts = [ 22 ];
+
+    users.users = {
+      root.openssh.authorizedKeys.keys = cfg.keys;
+      indexyz.openssh.authorizedKeys.keys = cfg.keys;
+    };
+  };
+
+}
