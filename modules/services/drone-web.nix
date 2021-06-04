@@ -78,7 +78,7 @@ in
         DRONE_RPC_SECRET = cfg.rpcSecret;
         DRONE_SERVER_HOST = cfg.serverHost;
         DRONE_SERVER_PROTO = cfg.serverProto;
-      } // scmSettings;
+      } // cfg.scmSettings;
     };
   };
 }
