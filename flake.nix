@@ -6,12 +6,17 @@
   };
 
   outputs = { self, nixpkgs }:
-    let packages = {
-      linuxPackages_latest_chromeos = nixpkgs.callPackage ./packages/chromeos-kernel.nix;
-    };
+    let
+      system = "x86_64-linux";
+      packages = import ./packages
+        {
+          nixpkgs = import nixpkgs {
+            inherit system;
+          };
+        };
     in
     {
-      legacyPackages."x86_64-linux" = packages;
+      legacyPackages.${system} = packages;
       overlay = final: prev: packages;
       nixosModules.indexyz = { ... }: {
         imports = [ ./modules/all-modules.nix ];
