@@ -28,7 +28,6 @@ in
         '';
       };
 
-
       serverProto = mkOption {
         default = "https";
         type = types.enum [ "http" "https" ];
@@ -44,43 +43,42 @@ in
         description = "Data store location";
       };
 
-      scmSettings = mkOption
-        {
-          type = types.attrs;
-          default = { };
-          description = ''
-            SCM settings, see also: https://docs.drone.io/server/provider/
+      scmSettings = mkOption {
+        type = types.attrs;
+        default = { };
+        description = ''
+          SCM settings, see also: https://docs.drone.io/server/provider/
 
-            Example:
-            {
-              DRONE_GITHUB_CLIENT_ID = "GitHub Client";
-              DRONE_GITHUB_CLIENT_SECRET = "GitHub Secret";
-            }
-          '';
-        }
-        };
-    };
-
-    config = mkIf cfg.enable {
-      system.activationScripts.drone-web = ''
-        # Make sure drone data dir exist
-        mkdir -p ${cfg.workDir}
-      '';
-
-      virtualisation.oci-containers.containers.drone = {
-        image = "drone/drone:2.0.1";
-        ports = [
-          "${toString cfg.port}:80"
-        ];
-        volumes = [
-          "/var/lib/drone:/data"
-        ];
-
-        environment = {
-          DRONE_RPC_SECRET = cfg.rpcSecret;
-          DRONE_SERVER_HOST = cfg.serverHost;
-          DRONE_SERVER_PROTO = cfg.serverProto;
-        } // scmSettings;
+          Example:
+          {
+            DRONE_GITHUB_CLIENT_ID = "GitHub Client";
+            DRONE_GITHUB_CLIENT_SECRET = "GitHub Secret";
+          }
+        '';
       };
     };
-  }
+  };
+
+  config = mkIf cfg.enable {
+    system.activationScripts.drone-web = ''
+      # Make sure drone data dir exist
+      mkdir -p ${cfg.workDir}
+    '';
+
+    virtualisation.oci-containers.containers.drone = {
+      image = "drone/drone:2.0.1";
+      ports = [
+        "${toString cfg.port}:80"
+      ];
+      volumes = [
+        "/var/lib/drone:/data"
+      ];
+
+      environment = {
+        DRONE_RPC_SECRET = cfg.rpcSecret;
+        DRONE_SERVER_HOST = cfg.serverHost;
+        DRONE_SERVER_PROTO = cfg.serverProto;
+      } // scmSettings;
+    };
+  };
+}
