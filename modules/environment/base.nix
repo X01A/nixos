@@ -112,6 +112,9 @@ in
         iotop
         btrfs-progs
         iperf
+        iperf2
+        bc
+        ethtool
       ];
       programs.fish.enable = true;
 
