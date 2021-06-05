@@ -4,8 +4,8 @@ with lib;
 let
   cfg = config.indexyz.services.ssh;
   keys = [
-    # GitHub Deploy Keys
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN8P/qP9ntItJDYJsAZe/HkLxnmpd8qhG9UAs3OaIJHz"
+    # CI Deploy Keys
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBuNngR3JgkjC7I7g8/v4YQNH8Pu13bZcCl9q7Ho8hYJ"
     # Home NAS
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDHDfjdhKhsp76c/c3q9o8HHwFoZ5SjKi6jVEQp6B4Ty root@nixos"
     # Glowstone Laptop
