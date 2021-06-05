@@ -10,5 +10,6 @@
     ./services/drone-worker.nix
     ./services/frpc
     ./services/frps
+    ./services/k3s.nix
   ];
 }
