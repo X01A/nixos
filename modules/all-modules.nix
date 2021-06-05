@@ -8,5 +8,7 @@
     ./services/teleport-agent.nix
     ./services/drone-web.nix
     ./services/drone-worker.nix
+    ./services/frpc
+    ./services/frps
   ];
 }
