@@ -11,5 +11,6 @@
     ./services/frpc
     ./services/frps
     ./services/k3s.nix
+    ./services/transmission.nix
   ];
 }
