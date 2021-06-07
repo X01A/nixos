@@ -12,5 +12,8 @@
     ./services/frps
     ./services/k3s.nix
     ./services/transmission.nix
+    ./services/libvirt
+    ./services/atftpd.nix
+    ./services/novnc.nix
   ];
 }
