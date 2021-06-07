@@ -29,7 +29,7 @@ in
     nixos = extraConfig:
       let
         eval = (import (pkgs.path + "/nixos/lib/eval-config.nix")) {
-          system = builtins.currentSystem;
+          system = "x86_64-linux";
           modules = [
             extraConfig
 
