@@ -11,7 +11,8 @@ let
     dontDisableStatic = true;
     dontStrip = true;
   }));
-in stdenv.mkDerivation rec {
+in
+stdenv.mkDerivation rec {
   name = "chia-plotter";
 
   src = fetchgit {
@@ -44,7 +45,7 @@ in stdenv.mkDerivation rec {
   ];
 
   CMAKE_CXX_FLAGS = "-g -O3 -fmax-errors=1";
-  
+
   postInstall = ''
     mkdir -p $out/bin
     install -m 755 chia_plot $out/bin
