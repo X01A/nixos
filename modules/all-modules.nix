@@ -16,5 +16,6 @@
     ./services/atftpd.nix
     ./services/novnc.nix
     ./services/leaf.nix
+    ./services/dhcp
   ];
 }
