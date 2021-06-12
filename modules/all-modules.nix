@@ -15,5 +15,6 @@
     ./services/libvirt
     ./services/atftpd.nix
     ./services/novnc.nix
+    ./services/leaf.nix
   ];
 }

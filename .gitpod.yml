@@ -3,6 +3,4 @@ image:
 
 vscode:
   extensions:
-    - bbenoist.Nix@1.0.1:TbrU16w37jLfkqA6h20vuQ==
     - EditorConfig.EditorConfig@0.15.1:wTLttUDotgRJ2XHnXVuC0A==
-    - CoenraadS.bracket-pair-colorizer@1.0.61:fqPT1sJEqaEdrfXeYbdW+A==

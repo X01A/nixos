@@ -5,6 +5,8 @@ with nixpkgs; {
   transmission-web-control = callPackage ./transmission-web-control { };
   chia-plotter = callPackage ./chia-plotter { };
 
+  leaf = callPackage ./leaf { };
+
 
   # Libvirt module
 
