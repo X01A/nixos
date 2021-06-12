@@ -17,5 +17,6 @@
     ./services/novnc.nix
     ./services/leaf.nix
     ./services/dhcp
+    ./services/forwarding
   ];
 }
