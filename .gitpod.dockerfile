@@ -27,7 +27,7 @@ RUN mkdir -p /home/gitpod/.config/nixpkgs && echo '{ allowUnfree = true; }' >> /
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
 RUN echo 'eval "$(direnv hook bash)"' >> /home/gitpod/.bashrc
 
-RUN source /home/gitpod/.nix-profile/etc/profile.d/nix.sh && \
+RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh && \
   nix-env -i nixpkgs-fmt nvfetcher
 
 # n. Give back control
