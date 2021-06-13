@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, libsodium, gmp, cmake, python3Packages, fetchFromGitHub, substituteAll, python3, boost, pkg-config, ... }:
+{ stdenv, fetchgit, libsodium, cmake, python3Packages, fetchFromGitHub, substituteAll, pkg-config, ... }:
 
 let
   # fix libsodium no static lib
@@ -22,7 +22,7 @@ stdenv.mkDerivation rec {
     fetchSubmodules = true;
   };
 
-  buildInputs = [ python3 gmp.static boost python3Packages.pybind11 static-libsodium ];
+  buildInputs = [ static-libsodium ];
   nativeBuildInputs = [ cmake pkg-config ];
 
   patches = [
