@@ -66,7 +66,7 @@ in
         mkdir -p ${cfg.dataDir}
         cd ${cfg.dataDir}
         cp ${configData} config.yaml
-        ${pkgs.hpool-miner-chia}/bin/hpool-miner-chia
+        ${pkgs.hpool-chia-miner}/bin/hpool-miner-chia
       '';
     };
   };
