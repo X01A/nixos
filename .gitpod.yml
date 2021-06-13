@@ -3,4 +3,12 @@ image:
 
 vscode:
   extensions:
-    - EditorConfig.EditorConfig@0.15.1:wTLttUDotgRJ2XHnXVuC0A==
+    - EditorConfig.EditorConfig
+    - bbenoist.nix
+    - zhuangtongfa.material-theme
+    - coenraads.bracket-pair-colorizer
+    - donjayamanne.githistory
+    - felipecaputo.git-project-manager
+    - eamodio.gitlens
+    - oderwat.indent-rainbow
+    - wayou.vscode-todo-highlight
