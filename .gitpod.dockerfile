@@ -28,7 +28,10 @@ RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bas
 RUN echo 'eval "$(direnv hook bash)"' >> /home/gitpod/.bashrc
 
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh && \
-  nix-env -i nixpkgs-fmt nvfetcher
+  nix-env -i \
+    nixpkgs-fmt \
+    nvfetcher \
+    nix-prefetch-git
 
 # n. Give back control
 USER root
