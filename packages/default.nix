@@ -17,7 +17,9 @@ in
   hpool-chia-miner = callPackage ./hpool-chia-miner { };
 
   # Proxy things
-  microsocks = callPackage ./microsocks { };
+  microsocks = callPackage ./microsocks {
+    source = nvfetcherOut.microsocks;
+  };
   leaf = callPackage ./leaf { };
 
   # Libvirt module

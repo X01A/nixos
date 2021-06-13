@@ -2,3 +2,8 @@
 src.github = "ViRb3/wgcf"
 fetch.github = "ViRb3/wgcf"
 git.fetchSubmodules = true
+
+[microsocks]
+src.github = "rofl0r/microsocks"
+fetch.github = "rofl0r/microsocks"
+git.fetchSubmodules = true
