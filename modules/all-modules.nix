@@ -18,5 +18,6 @@
     ./services/leaf.nix
     ./services/dhcp
     ./services/forwarding
+    ./services/hpool-miner.nix
   ];
 }

@@ -1,12 +1,15 @@
 { nixpkgs }:
 
 with nixpkgs; {
-  microsocks = callPackage ./microsocks { };
   transmission-web-control = callPackage ./transmission-web-control { };
+
+  # Chia Miner
   chia-plotter = callPackage ./chia-plotter { };
+  hpool-chia-miner = callPackage ./hpool-chia-miner { };
 
+  # Proxy things
+  microsocks = callPackage ./microsocks { };
   leaf = callPackage ./leaf { };
-
 
   # Libvirt module
 
