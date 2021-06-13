@@ -3,6 +3,7 @@
 with nixpkgs; {
   transmission-web-control = callPackage ./transmission-web-control { };
   vlmcsd = callPackage ./vlmcsd { };
+  speedtest = callPackage ./speedtest { };
 
   # Chia Miner
   chia-plotter = callPackage ./chia-plotter { };
