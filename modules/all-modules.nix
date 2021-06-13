@@ -20,5 +20,6 @@
     ./services/forwarding
     ./services/hpool-miner.nix
     ./services/prometheus.nix
+    ./services/vlmcsd.nix
   ];
 }
