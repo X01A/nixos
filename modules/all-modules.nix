@@ -19,5 +19,6 @@
     ./services/dhcp
     ./services/forwarding
     ./services/hpool-miner.nix
+    ./services/prometheus.nix
   ];
 }
