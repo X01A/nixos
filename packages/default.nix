@@ -1,9 +1,16 @@
 { nixpkgs }:
 
-with nixpkgs; {
+with nixpkgs; let
+  nvfetcherOut = callPackage ../sources.nix { };
+in
+{
   transmission-web-control = callPackage ./transmission-web-control { };
   vlmcsd = callPackage ./vlmcsd { };
   speedtest = callPackage ./speedtest { };
+
+  wgcf = callPackage ./wgcf {
+    source = nvfetcherOut.wgcf;
+  };
 
   # Chia Miner
   chia-plotter = callPackage ./chia-plotter { };

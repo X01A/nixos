@@ -1,0 +1,4 @@
+[wgcf]
+src.github = "ViRb3/wgcf"
+fetch.github = "ViRb3/wgcf"
+git.fetchSubmodules = true
