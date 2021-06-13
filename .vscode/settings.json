@@ -1,4 +1,5 @@
 {
     "editor.fontFamily": "Iosevka, Cascadia Code PL, CamingoCode, Menlo, Monaco, 'Courier New', monospace",
-    "terminal.integrated.fontFamily": "Iosevka"
+    "terminal.integrated.fontFamily": "Iosevka",
+    "workbench.colorTheme": "One Dark Pro"
 }
