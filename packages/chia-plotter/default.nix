@@ -17,8 +17,8 @@ stdenv.mkDerivation rec {
 
   src = fetchgit {
     url = "https://github.com/madMAx43v3r/chia-plotter.git";
-    rev = "16f9793b78b60eb9a4e84ff8048998c3ac62a0e5";
-    sha256 = "06mb3hfx9p3ccdzhmv9hs7j6nwdzg1p5rj7pspp6awsfr6n2axdx";
+    rev = "af085c7db2165247bd28ff804cb940aabc61f1cc";
+    sha256 = "vfQIi/3mw9AnsCr3Qejn2SqEUiG3sNRBGFcBJv/y+PM=";
     fetchSubmodules = true;
   };
 
