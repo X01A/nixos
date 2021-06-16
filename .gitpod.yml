@@ -12,3 +12,4 @@ vscode:
     - eamodio.gitlens
     - oderwat.indent-rainbow
     - wayou.vscode-todo-highlight
+    - bungcip.better-toml
