@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, requireFile, ... }:
 let
   fetchurl = import <nix/fetchurl.nix>;
 in
@@ -23,6 +23,14 @@ in
     netbootxyz = fetchurl {
       url = "https://boot.netboot.xyz/ipxe/netboot.xyz.iso";
       sha1 = "0sd133jzns97ah8ifyhbqqd4623mh04v2zy3vx2zmsyl943p4jxs";
+    };
+
+    windows = rec {
+      x64_21h1_en_bussiness = requireFile {
+        url = "https://files.rg-adguard.net/file/3afa4c53-bac6-f55c-a8cf-aab357784d75";
+        name = "en_windows_10_business_editions_version_21h1_x64_dvd_ec5a76c1.iso";
+        sha256 = "0fc1b94fa41fd15a32488f1360e347e49934ad731b495656a0a95658a74ad67f";
+      };
     };
 
     # Yo dawg, I put NixOS in NixOS, so you can NixOS while you NixOS
