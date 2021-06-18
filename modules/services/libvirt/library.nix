@@ -1,15 +1,13 @@
-{ pkgs, lib, requireFile, ... }:
-let
-  fetchurl = import <nix/fetchurl.nix>;
-in
+{ lib, requireFile, fetchurl, runCommand, cdrkit, pkgs, ... }:
+
 {
-  cloud-config = { meta_data, user_data }: pkgs.runCommand "cloud-config.iso"
+  cloud-config = { meta_data, user_data }: runCommand "cloud-config.iso"
     {
       inherit meta_data user_data;
     } ''
     echo "$user_data" > user-data
     echo "$meta_data" > meta-data
-    ${pkgs.cdrkit}/bin/genisoimage  -output $out -volid cidata -joliet -rock user-data meta-data
+    ${cdrkit}/bin/genisoimage  -output $out -volid cidata -joliet -rock user-data meta-data
   '';
 
   isos = rec {
