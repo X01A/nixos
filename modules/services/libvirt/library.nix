@@ -24,11 +24,16 @@
     };
 
     windows = rec {
-      x64_21h1_en_bussiness = requireFile {
+      virtio_driver = fetchurl {
+        url = "https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.185-2/virtio-win-0.1.185.iso";
+        sha256 = "rys8yfp5Bd6l5Y0xUI11u6cXwrDVVTliZYpHrrycw4Y=";
+      };
+
+      x64_21h1_en_bussiness = toString (requireFile {
         url = "https://files.rg-adguard.net/file/3afa4c53-bac6-f55c-a8cf-aab357784d75";
         name = "en_windows_10_business_editions_version_21h1_x64_dvd_ec5a76c1.iso";
         sha256 = "0fc1b94fa41fd15a32488f1360e347e49934ad731b495656a0a95658a74ad67f";
-      };
+      });
     };
 
     # Yo dawg, I put NixOS in NixOS, so you can NixOS while you NixOS
