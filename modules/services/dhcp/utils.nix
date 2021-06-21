@@ -73,10 +73,10 @@ let
       ${optionalString opt.enableIpxe ipxeOptionsString}
       range ${opt.rangeBegin} ${opt.rangeEnd};
       option subnet-mask ${opt.netmask};
-      ${optionalString opt.router != null ''
+      ${optionalString (opt.router != null) ''
         option routers ${opt.router};
       ''}
-      ${optionalString opt.dns != null ''
+      ${optionalString (opt.dns != null) ''
         option domain-name-servers ${opt.dns};
       ''}
 
