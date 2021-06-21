@@ -104,6 +104,6 @@ rec {
   buildConfig = opt: ''
     ddns-update-style none;
 
-    ${builtins.concatStringsSep "\n" (map buildSubnet opt.hosts)}
+    ${builtins.concatStringsSep "\n" (map buildSubnet opt.subnets)}
   '';
 }
