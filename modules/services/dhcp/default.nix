@@ -13,7 +13,7 @@ let
     inherit lib;
   };
 
-  configText = utils.buildConfig cfg.subnets;
+  configText = utils.buildConfig cfg;
 in
 {
   options = {
@@ -26,6 +26,11 @@ in
       subnets = mkOption {
         default = [ ];
         type = with types; listOf subnetOptions;
+      };
+
+      enableIpxe = mkOption {
+        default = false;
+        type = types.bool;
       };
 
       interfaces = mkOption {

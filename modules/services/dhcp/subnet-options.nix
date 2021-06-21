@@ -35,17 +35,12 @@ in
       type = with types; nullOr str;
     };
 
-    enableIpxe = mkOption {
-      default = false;
-      type = types.bool;
-    };
-
     ipxeFile = mkOption {
-      type = types.str;
+      type = with types; nullOr str;
     };
 
     tftpServer = mkOption {
-      type = types.str;
+      type = with types; nullOr str;
     };
 
     hosts = mkOption {
