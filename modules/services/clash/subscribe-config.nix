@@ -13,7 +13,6 @@ in
       (item: {
         name = "clash-subscribe-${item.name}";
         value = {
-          path = with pkgs; [ curl yq-go ];
           serviceConfig = {
             Type = "oneshot";
             User = "clash";
@@ -24,21 +23,21 @@ in
           after = [ "network.target" ];
 
           script = ''
-            curl -SL '${item.url}' -o ${item.name}.yaml
+            ${pkgs.curl}/bin/curl -SL '${item.url}' -o ${item.name}.yaml
 
             # Replace ports
-            yq eval "del(.socks-port)" -i ${item.name}.yaml
-            yq eval "del(.port)" -i ${item.name}.yaml
-            yq eval ".mixed-port = ${toString cfg.port}" -i ${item.name}.yaml
+            ${pkgs.yq-go}/bin/yq eval "del(.socks-port)" -i ${item.name}.yaml
+            ${pkgs.yq-go}/bin/yq eval "del(.port)" -i ${item.name}.yaml
+            ${pkgs.yq-go}/bin/yq eval ".mixed-port = ${toString cfg.port}" -i ${item.name}.yaml
 
             ${optionalString cfg.allowLan ''
-            yq eval ".allow-lan = true" -i ${item.name}.yaml
+            ${pkgs.yq-go}/bin/yq eval ".allow-lan = true" -i ${item.name}.yaml
             ''}
 
-            yq eval ".dns.default-nameserver[0] = \"${cfg.dns}\"" -i ${item.name}.yaml
+            ${pkgs.yq-go}/bin/yq eval ".dns.default-nameserver[0] = \"${cfg.dns}\"" -i ${item.name}.yaml
 
             ${optionalString (item.name == cfg.config) ''
-            curl ${manageAddr}/configs -X PUT \
+            ${pkgs.curl}/bin/curl ${manageAddr}/configs -X PUT \
                 --data '{"path": "${cfg.dataDir}/${item.name}.yaml"}' ${optionalString (cfg.secret != null) "-H 'Authorization: Bearer ${cfg.secret}'"}
             ''}
           '';
