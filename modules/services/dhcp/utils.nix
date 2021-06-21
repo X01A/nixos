@@ -70,7 +70,6 @@ let
 
   buildSubnet = opt: ''
     subnet ${opt.ip} netmask ${opt.netmask} {
-      ${optionalString opt.enableIpxe ipxeOptionsString}
       range ${opt.rangeBegin} ${opt.rangeEnd};
       option subnet-mask ${opt.netmask};
       ${optionalString (opt.router != null) ''
@@ -80,15 +79,18 @@ let
         option domain-name-servers ${opt.dns};
       ''}
 
-      ${optionalString opt.enableIpxe ''
+      ${optionalString (opt.ipxeFile != null) ''
         if exists user-class and option user-class = "iPXE" {
           filename "${opt.ipxeFile}";
         }
+      ''}
 
+       ${optionalString (opt.tftpServer != null) ''
         else if option client-arch != 00:00 {
           next-server ${opt.tftpServer};
           filename "ipxe.efi";
         }
+
         else {
           next-server ${opt.tftpServer};
           filename "undionly.kpxe";
@@ -103,7 +105,8 @@ in
 rec {
   buildConfig = opt: ''
     ddns-update-style none;
+    ${optionalString opt.enableIpxe ipxeOptionsString}
 
-    ${builtins.concatStringsSep "\n" (map buildSubnet opt)}
+    ${builtins.concatStringsSep "\n" (map buildSubnet opt.subnets)}
   '';
 }
