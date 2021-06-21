@@ -1,5 +1,7 @@
 { lib }:
 
+with lib;
+
 let
   ipxeOptionsString = ''
     # iPXE config space
