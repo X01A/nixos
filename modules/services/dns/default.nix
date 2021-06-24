@@ -27,6 +27,12 @@ in
         description = "DNS port for dnsproxy which forwarding upstream dns";
         type = types.int;
       };
+
+      dnsPort = mkOption {
+        default = 53;
+        description = "Final dns expose port";
+        type = types.int;
+      };
     };
   };
 
@@ -54,6 +60,24 @@ in
         ExecStart = "${pkgs.dnsproxy}/bin/dnsproxy ${dnsProxy} -p ${toString cfg.proxyPort}";
         Restart = "on-failure";
       };
+    };
+
+    networking.firewall = {
+      allowedTCPPorts = [ cfg.dnsPort ];
+      allowedUDPPorts = [ cfg.dnsPort ];
+    };
+
+    # TODO: add coredns rules
+    services.coredns = {
+      enable = true;
+      config = ''
+        .:${toString cfg.dnsPort} {
+          forward . 127.0.0.1:${toString cfg.proxyPort}
+          log
+          health
+          cache
+        }
+      '';
     };
   };
 }
