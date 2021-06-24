@@ -17,6 +17,7 @@
     ./services/novnc.nix
     ./services/leaf.nix
     ./services/dhcp
+    ./services/dns
     ./services/forwarding
     ./services/hpool-miner.nix
     ./services/prometheus.nix
