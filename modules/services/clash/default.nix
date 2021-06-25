@@ -2,10 +2,25 @@
 
 with lib;
 let
+  utils = import ./utils.nix { inherit pkgs config; };
   cfg = config.indexyz.services.clash;
   subscribeOptions = types.submodule (import ./subscribe.nix {
     inherit lib;
   });
+
+  profileCommands = builtins.concatStringsSep "\n" (attrsets.mapAttrsToList
+    (name: val:
+      let
+        fileName = "${name}.yaml";
+        fileLocation = "${cfg.dataDir}/${fileName}";
+        fileData = pkgs.writeText fileName val;
+      in
+      ''
+        rm -f ${fileLocation}
+        cp ${fileData} ${fileLocation}
+        ${utils.updateConfigScript name false}
+      '')
+    cfg.profiles);
 in
 {
   options = {
@@ -59,6 +74,11 @@ in
         default = "1.1.1.1";
         type = types.str;
       };
+
+      profiles = mkOption {
+        default = [ ];
+        type = types.attrs;
+      };
     };
   };
 
@@ -88,7 +108,7 @@ in
         description = "Clash network proxy";
         wantedBy = [ "multi-user.target" ];
         after = [ "network.target" ];
-
+        preStart = profileCommands;
         serviceConfig = {
           User = "clash";
           Group = "clash";
