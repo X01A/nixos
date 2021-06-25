@@ -58,9 +58,14 @@ in
     systemd.services.hpool-miner = {
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
+      environment = {
+        HOME = "${cfg.dataDir}";
+      };
       serviceConfig = {
         Restart = "always";
         RestartSec = "10s";
+        PrivateTmp = true;
+        WorkingDirectory = "${cfg.dataDir}";
       };
       script = ''
         mkdir -p ${cfg.dataDir}
