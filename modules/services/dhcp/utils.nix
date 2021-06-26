@@ -62,6 +62,10 @@ let
         option routers ${opt.router};
       ''}
 
+      ${optionalString (opt.dns != null) ''
+        option domain-name-servers ${opt.dns};
+      ''}
+
       ${optionalString (opt.extraOptions != null) ''
         ${opt.extraOptions}
       ''}
