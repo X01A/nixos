@@ -21,6 +21,11 @@ with lib;
       type = with types; nullOr str;
     };
 
+    dns = mkOption {
+      default = null;
+      type = with types; nullOr str;
+    };
+
     extraOptions = mkOption {
       default = null;
       type = with types; nullOr str;
