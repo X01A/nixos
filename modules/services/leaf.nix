@@ -86,6 +86,10 @@ in
         Type = "simple";
         ExecStart = ''${pkgs.leaf}/bin/leaf -c ${tunCfg}'';
         CapabilityBoundingSet = "CAP_NET_ADMIN";
+        LimitNOFILE = "16777216";
+        LimitNPROC = "infinity";
+        LimitCORE = "infinity";
+        TasksMax = "infinity";
       };
 
       postStart = ''
