@@ -112,6 +112,10 @@ in
         serviceConfig = {
           User = "clash";
           Group = "clash";
+          LimitNOFILE = "16777216";
+          LimitNPROC = "infinity";
+          LimitCORE = "infinity";
+          TasksMax = "infinity";
           WorkingDirectory = cfg.dataDir;
           ExecStart = "${cfg.package}/bin/clash -d ${cfg.dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}";
         };

@@ -89,6 +89,17 @@ in
 
       i18n.defaultLocale = "en_US.UTF-8";
       nixpkgs.config.allowUnfree = true;
+      boot.kernel.sysctl = {
+        "net.ipv4.tcp_tw_recycle" = 1;
+        "net.ipv4.tcp_tw_reuse" = 1;
+        "net.ipv4.tcp_no_metrics_save" = 1;
+        "net.ipv4.tcp_sack" = 1;
+        "vm.overcommit_memory" = 1;
+        "vm.swappiness" = 1;
+        "net.core.default_qdisc" = "fq";
+        "net.ipv4.tcp_ecn" = 1;
+        "net.ipv4.tcp_congestion_control" = "bbr2";
+      };
       environment.systemPackages = with pkgs; [
         wget
         file
