@@ -3,6 +3,8 @@
 with lib;
 let
   utils = import ./utils.nix { inherit pkgs config; };
+  inherit (utils) managePort manageAddr;
+
   cfg = config.indexyz.services.clash;
   subscribeOptions = types.submodule (import ./subscribe.nix {
     inherit lib;
@@ -101,6 +103,7 @@ in
     networking.firewall.allowedTCPPorts = (if cfg.allowLan then [
       # Clash Ports
       cfg.port
+      (toInt managePort)
     ] else [ ]);
 
     systemd.services = {
