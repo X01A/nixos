@@ -28,6 +28,10 @@ in
   libvirt-tools = import ../modules/services/libvirt/tools;
   libvirt-iso-library = callPackage ../modules/services/libvirt/library.nix { };
 
+  ksmbd-tools = callPackage ./ksmbd/tools.nix { };
+  ksmbd-kernel = callPackage ./ksmbd/kernel.nix { };
+
+
   # Clash
   clash-dsl = callPackage ./clash-dsl { };
 }
