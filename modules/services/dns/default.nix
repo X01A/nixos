@@ -33,6 +33,12 @@ in
         description = "Final dns expose port";
         type = types.int;
       };
+
+      extraConf = mkOption {
+        default = "";
+        description = "Extra config for coredns zoon";
+        type = types.str;
+      };
     };
   };
 
@@ -76,6 +82,7 @@ in
           log
           health
           cache
+          ${cfg.extraConf}
         }
       '';
     };
