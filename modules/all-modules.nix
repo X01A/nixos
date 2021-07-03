@@ -3,6 +3,7 @@
 {
   imports = [
     ./environment/base.nix
+    ./environment/qemu.nix
     ./services/ssh.nix
     ./services/clash
     ./services/teleport-agent.nix
