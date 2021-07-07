@@ -45,9 +45,19 @@ in
       type = with types; nullOr str;
     };
 
+    interface = mkOption {
+      default = null;
+      type = with types; nullOr str;
+    };
+
     hosts = mkOption {
       default = [ ];
       type = types.listOf hostOptions;
+    };
+
+    extraConfig = mkOption {
+      default = "";
+      type = types.str;
     };
   };
 }

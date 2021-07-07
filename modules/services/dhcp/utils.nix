@@ -82,6 +82,11 @@ let
       ${optionalString (opt.dns != null) ''
         option domain-name-servers ${opt.dns};
       ''}
+      ${optionalString (opt.interface != null) ''
+        interface ${opt.interface};
+      ''}
+
+      ${opt.extraConfig}
 
       ${optionalString (opt.ipxeFile != null) ''
         if exists user-class and option user-class = "iPXE" {
