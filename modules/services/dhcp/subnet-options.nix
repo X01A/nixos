@@ -36,10 +36,12 @@ in
     };
 
     ipxeFile = mkOption {
+      default = null;
       type = with types; nullOr str;
     };
 
     tftpServer = mkOption {
+      default = null;
       type = with types; nullOr str;
     };
 
