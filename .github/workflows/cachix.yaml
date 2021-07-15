@@ -1,10 +1,10 @@
-name: Test
+name: Build
 on:
   push:
 
 jobs:
   test:
-    name: Build packages and upload to cachix
+    name: Build and upload
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
