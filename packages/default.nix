@@ -12,6 +12,10 @@ in
     source = nvfetcherOut.wgcf;
   };
 
+  yacd = callPackage ./yacd {
+    source = nvfetcherOut.yacd;
+  };
+
   # Chia Miner
   chia-plotter = callPackage ./chia-plotter { };
   hpool-chia-miner = callPackage ./hpool-chia-miner { };
