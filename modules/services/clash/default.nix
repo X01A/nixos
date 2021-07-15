@@ -20,6 +20,9 @@ let
       ''
         rm -f ${fileLocation}
         cp ${fileData} ${fileLocation}
+        ls -lah ${fileLocation}
+        chown clash:clash ${fileLocation}
+        ls -lah ${fileLocation}
         ${utils.updateConfigScript name false}
       '')
     cfg.profiles);
