@@ -84,29 +84,31 @@ in
     };
   };
 
+
   imports = [
     ./subscribe-config.nix
   ];
 
-  networking.firewall.allowedTCPPorts = (if cfg.allowLan then [
-    # Clash Ports
-    cfg.port
-    (toInt managePort)
-  ] else [ ]);
+  config = mkIf cfg.enable {
+    networking.firewall.allowedTCPPorts = (if cfg.allowLan then [
+      # Clash Ports
+      cfg.port
+      (toInt managePort)
+    ] else [ ]);
 
-  systemd.services = {
-    clash = {
-      description = "Clash network proxy";
-      wantedBy = [ "multi-user.target" ];
-      after = [ "network.target" ];
-      preStart = profileCommands;
-      serviceConfig = {
-        LimitNOFILE = "16777216";
-        LimitNPROC = "infinity";
-        LimitCORE = "infinity";
-        TasksMax = "infinity";
-        WorkingDirectory = cfg.dataDir;
-        ExecStart = "${cfg.package}/bin/clash -d ${cfg.dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}";
+    systemd.services = {
+      clash = {
+        description = "Clash network proxy";
+        wantedBy = [ "multi-user.target" ];
+        after = [ "network.target" ];
+        preStart = profileCommands;
+        serviceConfig = {
+          LimitNOFILE = "16777216";
+          LimitNPROC = "infinity";
+          LimitCORE = "infinity";
+          TasksMax = "infinity";
+          WorkingDirectory = cfg.dataDir;
+          ExecStart = "${cfg.package}/bin/clash -d ${cfg.dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}";
       };
     };
   };
