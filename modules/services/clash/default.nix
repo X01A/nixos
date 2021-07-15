@@ -20,9 +20,6 @@ let
       ''
         rm -f ${fileLocation}
         cp ${fileData} ${fileLocation}
-        ls -lah ${fileLocation}
-        chown clash:clash ${fileLocation}
-        ls -lah ${fileLocation}
         ${utils.updateConfigScript name false}
       '')
     cfg.profiles);
@@ -91,18 +88,6 @@ in
     ./subscribe-config.nix
   ];
 
-  config = mkIf cfg.enable {
-    users.users.clash = {
-      isSystemUser = true;
-      name = "clash";
-      home = cfg.dataDir;
-      description = "Clash proxy user";
-      group = "clash";
-      createHome = true;
-    };
-
-    users.groups.clash = { };
-
     networking.firewall.allowedTCPPorts = (if cfg.allowLan then [
       # Clash Ports
       cfg.port
@@ -116,8 +101,6 @@ in
         after = [ "network.target" ];
         preStart = profileCommands;
         serviceConfig = {
-          User = "clash";
-          Group = "clash";
           LimitNOFILE = "16777216";
           LimitNPROC = "infinity";
           LimitCORE = "infinity";
