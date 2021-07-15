@@ -15,14 +15,14 @@
   };
   wgcf = {
     pname = "wgcf";
-    version = "v2.2.4";
+    version = "v2.2.5";
     src = fetchgit {
       url = "https://github.com/ViRb3/wgcf";
-      rev = "v2.2.4";
+      rev = "v2.2.5";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "16kjs517dms9ksmlac26hbp493za2fi435995w1vj2igkanjyyw7";
+      sha256 = "0vvjywsigh9j669zd2blsnhlz5kjv4j39g33hclj2a7i44dwg13h";
     };
   };
 }
