@@ -7,3 +7,8 @@ git.fetchSubmodules = true
 src.github = "rofl0r/microsocks"
 fetch.github = "rofl0r/microsocks"
 git.fetchSubmodules = true
+
+[yacd]
+src.github = "haishanh/yacd"
+fetch.github = "haishanh/yacd"
+git.fetchSubmodules = true
