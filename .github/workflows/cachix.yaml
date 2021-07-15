@@ -1,0 +1,42 @@
+name: Test
+on:
+  push:
+
+jobs:
+  test:
+    name: Build packages and upload to cachix
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: cachix/install-nix-action@v13
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+        install_url: https://github.com/numtide/nix-flakes-installer/releases/download/nix-2.4pre20210207_fd6eaa1/install
+        extra_nix_config: |
+          experimental-features = nix-command flakes
+
+    - name: Install cachix
+      run: |
+        nix-env -iA cachix -f https://cachix.org/api/v1/install
+        cachix authtoken ${{ secrets.CACHIX_TOKEN }}
+
+    - name: Build all packages
+      run: |
+        nix-channel --update
+        PACKAGES_LIST=$(nix-build list-package.nix)
+        for PACKAGE in $(cat $PACKAGES_LIST | jq -r '.[]'); do
+          echo "Build package: $PACKAGE"
+          nix build --no-link ".#"$PACKAGE
+          if [ $? -eq 0 ]; then
+            echo "Build Package Successfully"s
+            PACKAGE_LOCATION=$(nix eval --raw ".#"$PACKAGE)
+            echo "Package location: $PACKAGE_LOCATION"
+            cachix push indexyz $PACKAGE_LOCATION
+            PACKAGE_DRV_LOCATION=$(nix eval --raw ".#"$PACKAGE".drvPath")
+            echo "Package drv location: $PACKAGE_DRV_LOCATION"
+            cachix push indexyz $PACKAGE_DRV_LOCATION
+          else
+            echo "::warning::Error occurred during building package "$PACKAGE
+          fi
+        done
+
