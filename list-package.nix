@@ -1,5 +1,5 @@
 let
-  nixpkgs = import <nixpkgs> {};
+  nixpkgs = import <nixpkgs> { };
   flake = import ./.;
   listsToName = list: nixpkgs.lib.attrsets.mapAttrsToList (name: value: name) list;
   isDerivation = package: nixpkgs.lib.attrsets.hasAttrByPath [ "drvPath" ] package;
