@@ -15,8 +15,6 @@ in
         value = {
           serviceConfig = {
             Type = "oneshot";
-            User = "clash";
-            Group = "clash";
             WorkingDirectory = cfg.dataDir;
           };
           wantedBy = [ "multi-user.target" ];
