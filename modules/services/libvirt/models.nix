@@ -112,6 +112,13 @@ rec {
         ]);
         default = [ "hd" "cdrom" ];
       };
+      balloon = lib.mkOption {
+        description = ''
+          Enable machine mem balloon
+        '';
+        default = true;
+        type = types.bool;
+      };
       devices = lib.mkOption {
         description = ''
           Devices

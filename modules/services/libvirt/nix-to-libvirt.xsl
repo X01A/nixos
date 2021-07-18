@@ -117,6 +117,9 @@
             </xsl:if>
           </disk>
         </xsl:for-each>
+        <xsl:if test="not(attrs/attr[@name='balloon']/bool/@value)">
+          <memballoon model="none"></memballoon>
+        </xsl:if>
       </devices>
     </domain>
   </xsl:template>
