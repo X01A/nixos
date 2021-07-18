@@ -127,7 +127,12 @@ in
         bc
         ethtool
       ];
-      programs.fish.enable = true;
+      programs.fish = {
+        enable = true;
+        loginShellInit = ''
+          ${pkgs.starship}/bin/starship init fish | source
+        '';
+      };
 
       users.users.indexyz = {
         isNormalUser = true;
