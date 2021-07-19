@@ -24,5 +24,6 @@
     ./services/prometheus.nix
     ./services/vlmcsd.nix
     ./services/ksmbd.nix
+    ./devices/mlx4-mode.nix
   ];
 }
