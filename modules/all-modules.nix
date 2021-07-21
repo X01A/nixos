@@ -4,6 +4,7 @@
   imports = [
     ./environment/base.nix
     ./environment/qemu.nix
+    ./environment/efi.nix
     ./services/ssh.nix
     ./services/clash
     ./services/teleport-agent.nix
