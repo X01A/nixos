@@ -1,6 +1,6 @@
 { path, lib }:
 
-extraConfig: diskSize:
+diskSize: extraConfig:
 let
   buildConfig = { lib, config, pkgs, ... }: {
     fileSystems."/" = {
@@ -18,8 +18,6 @@ let
       inherit diskSize;
       format = "qcow2";
     };
-
-    formatAttr = "qcow";
   };
 
   eval = (import (path + "/nixos/lib/eval-config.nix")) {
