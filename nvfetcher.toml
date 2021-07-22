@@ -22,3 +22,8 @@ git.fetchSubmodules = true
 src.git = "https://github.com/Indexyz/CloudreveCLI.git"
 fetch.github = "Indexyz/CloudreveCLI"
 git.fetchSubmodules = true
+
+[fcitx5-material-color]
+src.github = "hosxy/Fcitx5-Material-Color"
+fetch.github = "hosxy/Fcitx5-Material-Color"
+git.fetchSubmodules = true
