@@ -46,4 +46,7 @@ in
   };
   # Clash
   clash-dsl = callPackage ./clash-dsl { };
+  fcitx5-material-color = callPackage ./fcitx5-material-color {
+    source = nvfetcherOut.fcitx5-material-color;
+  };
 }
