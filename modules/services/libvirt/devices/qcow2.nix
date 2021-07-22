@@ -23,7 +23,7 @@ in
       #
       # Has no effect (for now) if there's an
       # existing image
-      capacity
+      capacity ? null
     , # Target device
       #
       # Example: vda
@@ -33,6 +33,7 @@ in
       # Example: virtio
       bus ? "virtio"
     ,
+      fromDisk ? null
     }:
     let
       compDev =
@@ -77,8 +78,15 @@ in
         if [ -f "${diskPath}" ]; then
           echo "Using existing qcow2 image at ${diskPath}"
         else
-          echo "Creating ${capacity} qcow2 image at ${diskPath}"
-          ${pkgs.qemu}/bin/qemu-img create -f qcow2 ${diskPath} ${capacity}
+          ${optionalString (fromDisk != null) ''
+            echo "Copy disk image from ${fromDisk}"
+            cp ${fromDisk} ${diskPath}
+          ''}
+
+          ${optionalString (fromDisk == null) ''
+            echo "Creating ${capacity} qcow2 image at ${diskPath}"
+            ${pkgs.qemu}/bin/qemu-img create -f qcow2 ${diskPath} ${capacity}
+          ''}
         fi
       '');
     };
