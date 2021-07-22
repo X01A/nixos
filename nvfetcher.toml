@@ -12,3 +12,13 @@ git.fetchSubmodules = true
 src.github = "haishanh/yacd"
 fetch.github = "haishanh/yacd"
 git.fetchSubmodules = true
+
+[chia-plotter]
+src.git = "https://github.com/madMAx43v3r/chia-plotter.git"
+fetch.github = "madMAx43v3r/chia-plotter"
+git.fetchSubmodules = true
+
+[cloudreve-cli]
+src.git = "https://github.com/Indexyz/CloudreveCLI.git"
+fetch.github = "Indexyz/CloudreveCLI"
+git.fetchSubmodules = true
