@@ -2,7 +2,7 @@
 
 with nixpkgs; let
   nvfetcherOut = callPackage ../sources.nix { };
-  cloudreve-cli = callPackage (fetchTarball "https://github.com/Indexyz/CloudreveCLI/archive/refs/heads/master.tar.gz");
+  cloudreve-cli = callPackage (nvfetcherOut.cloudreve-cli.src) { };
 in
 {
   inherit cloudreve-cli;
@@ -20,7 +20,9 @@ in
   };
 
   # Chia Miner
-  chia-plotter = callPackage ./chia-plotter { };
+  chia-plotter = callPackage ./chia-plotter {
+    source = nvfetcherOut.chia-plotter;
+  };
   hpool-chia-miner = callPackage ./hpool-chia-miner { };
 
   # Proxy things

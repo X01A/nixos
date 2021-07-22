@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, libsodium, cmake, python3Packages, fetchFromGitHub, substituteAll, pkg-config, ... }:
+{ stdenv, fetchgit, libsodium, cmake, python3Packages, fetchFromGitHub, substituteAll, pkg-config, source, ... }:
 
 let
   # fix libsodium no static lib
@@ -13,14 +13,7 @@ let
   }));
 in
 stdenv.mkDerivation rec {
-  name = "chia-plotter";
-
-  src = fetchgit {
-    url = "https://github.com/madMAx43v3r/chia-plotter.git";
-    rev = "7bba49d14dd207bb908bcd21aa782855616efa2b";
-    sha256 = "wo6TD0HXRu7vFHk4p2hwWbM/1e5nEQyh8FX7JjCAhgY=";
-    fetchSubmodules = true;
-  };
+  inherit (source) pname version src;
 
   buildInputs = [ static-libsodium ];
   nativeBuildInputs = [ cmake pkg-config ];
