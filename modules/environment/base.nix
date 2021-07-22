@@ -129,7 +129,7 @@ in
       ];
       programs.fish = {
         enable = true;
-        loginShellInit = ''
+        shellInit = ''
           ${pkgs.starship}/bin/starship init fish | source
         '';
       };
