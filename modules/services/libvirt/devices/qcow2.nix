@@ -32,8 +32,7 @@ in
       #
       # Example: virtio
       bus ? "virtio"
-    ,
-      fromDisk ? null
+    , fromDisk ? null
     }:
     let
       compDev =
