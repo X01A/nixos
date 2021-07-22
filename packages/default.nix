@@ -2,8 +2,11 @@
 
 with nixpkgs; let
   nvfetcherOut = callPackage ../sources.nix { };
+  cloudreve-cli = callPackage (fetchTarball "https://github.com/Indexyz/CloudreveCLI/archive/refs/heads/master.tar.gz");
 in
 {
+  inherit cloudreve-cli;
+
   transmission-web-control = callPackage ./transmission-web-control { };
   vlmcsd = callPackage ./vlmcsd { };
   speedtest = callPackage ./speedtest { };
@@ -35,7 +38,9 @@ in
   ksmbd-tools = callPackage ./ksmbd/tools.nix { };
   ksmbd-kernel = callPackage ./ksmbd/kernel.nix { };
 
-
+  fetch-cloudreve = callPackage ./fetch-cloudreve {
+    inherit cloudreve-cli;
+  };
   # Clash
   clash-dsl = callPackage ./clash-dsl { };
 }
