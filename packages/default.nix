@@ -60,7 +60,7 @@ in
     source = nvfetcherOut.tifig;
   };
 
-  desktop-icons-neo = callPackage ./desktop-icons-neo {
-    source = nvfetcherOut.desktop-icons-neo;
+  desktop-icons-ng = callPackage ./desktop-icons-ng {
+    source = nvfetcherOut.desktop-icons-ng;
   };
 }
