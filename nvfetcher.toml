@@ -33,3 +33,8 @@ git.fetchSubmodules = true
 src.github = "hosxy/Fcitx5-Material-Color"
 fetch.github = "hosxy/Fcitx5-Material-Color"
 git.fetchSubmodules = true
+
+[tifig]
+src.github = "monostream/tifig"
+fetch.github = "monostream/tifig"
+git.fetchSubmodules = true

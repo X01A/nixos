@@ -55,4 +55,8 @@ in
   yesplaymusic = callPackage ./yesplaymusic {
     source = nvfetcherOut.yesplaymusic;
   };
+
+  tifig = callPackage ./tifig {
+    source = nvfetcherOut.tifig;
+  };
 }
