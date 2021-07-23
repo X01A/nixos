@@ -55,14 +55,14 @@
   };
   tifig = {
     pname = "tifig";
-    version = "0.2.2";
+    version = "60b920c06fdf1240936ef73668b03457ebb8e813";
     src = fetchgit {
       url = "https://github.com/monostream/tifig";
-      rev = "0.2.2";
+      rev = "60b920c06fdf1240936ef73668b03457ebb8e813";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1jjrhxpihvvs9gyqf7w5yprl682h2cyrh9dshkf897hyj2cdjvvp";
+      sha256 = "05czqkcyq7yiwdg96q9qdm43l2a5d6asdfddvj7h5af73chmp4gi";
     };
 
   };
