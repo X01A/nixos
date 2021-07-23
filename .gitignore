@@ -1,4 +1,4 @@
 .shake/
 
 /result
-_build
+/_build/.shake.*

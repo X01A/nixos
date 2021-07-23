@@ -44,9 +44,15 @@ in
   fetch-cloudreve = callPackage ./fetch-cloudreve {
     inherit cloudreve-cli;
   };
+
   # Clash
   clash-dsl = callPackage ./clash-dsl { };
+
   fcitx5-material-color = callPackage ./fcitx5-material-color {
     source = nvfetcherOut.fcitx5-material-color;
+  };
+
+  yesplaymusic = callPackage ./yesplaymusic {
+    source = nvfetcherOut.yesplaymusic;
   };
 }
