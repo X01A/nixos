@@ -63,4 +63,6 @@ in
   desktop-icons-ng = callPackage ./desktop-icons-ng {
     source = nvfetcherOut.desktop-icons-ng;
   };
+
+  parsec = callPackage ./parsec { };
 }
