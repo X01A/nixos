@@ -8,6 +8,11 @@ stdenv.mkDerivation rec {
     mkdir -p $out/share/gnome-shell/extensions/
   '';
 
+  postFixup = ''
+    cd $out/share/gnome-shell/extensions/${uuid}
+    chmod +x *.js
+  '';
+
   buildInputs = [ gettext ];
   nativeBuildInputs = [
     meson
