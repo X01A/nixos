@@ -13,6 +13,12 @@ src.github = "haishanh/yacd"
 fetch.github = "haishanh/yacd"
 git.fetchSubmodules = true
 
+[yesplaymusic]
+src.github = "qier222/YesPlayMusic"
+src.prefix = "v"
+fetch.url = "https://github.com/qier222/YesPlayMusic/releases/download/v$ver/YesPlayMusic-$ver.AppImage"
+git.fetchSubmodules = true
+
 [chia-plotter]
 src.git = "https://github.com/madMAx43v3r/chia-plotter.git"
 fetch.github = "madMAx43v3r/chia-plotter"

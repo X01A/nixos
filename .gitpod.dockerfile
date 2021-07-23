@@ -28,6 +28,7 @@ RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bas
 RUN echo 'eval "$(direnv hook bash)"' >> /home/gitpod/.bashrc
 
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh && \
+  nix-channel --update && \
   nix-env -i \
     nixpkgs-fmt \
     nvfetcher \
