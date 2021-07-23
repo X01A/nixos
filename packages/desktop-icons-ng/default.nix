@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   inherit (source) pname version src;
-  uuid = "desktopicons-neo@darkdemon";
+  uuid = "ding@rastersoft.com";
 
   preBuildPhase = ''
     mkdir -p $out/share/gnome-shell/extensions/

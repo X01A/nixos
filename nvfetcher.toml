@@ -39,7 +39,7 @@ src.git = "https://github.com/monostream/tifig.git"
 fetch.github = "monostream/tifig"
 git.fetchSubmodules = true
 
-[desktop-icons-neo]
-src.github = "DEM0NAssissan7/desktop-icons-neo"
-fetch.github = "DEM0NAssissan7/desktop-icons-neo"
+[desktop-icons-ng]
+src.git = "https://gitlab.com/rastersoft/desktop-icons-ng.git"
+fetch.git = "https://gitlab.com/rastersoft/desktop-icons-ng.git"
 git.fetchSubmodules = true
