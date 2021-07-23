@@ -53,6 +53,19 @@
     };
 
   };
+  tifig = {
+    pname = "tifig";
+    version = "0.2.2";
+    src = fetchgit {
+      url = "https://github.com/monostream/tifig";
+      rev = "0.2.2";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "1jjrhxpihvvs9gyqf7w5yprl682h2cyrh9dshkf897hyj2cdjvvp";
+    };
+
+  };
   wgcf = {
     pname = "wgcf";
     version = "v2.2.5";
