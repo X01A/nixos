@@ -32,7 +32,8 @@ stdenv.mkDerivation rec {
     # Icon
     mkdir -p $out/share/icons/hicolor/128x128/apps/
     cp yesplaymusic.png $out/share/icons/hicolor/128x128/apps/
-
+    install -Dm644 "${desktopItem}/share/applications/"* \
+      -t $out/share/applications/
   '';
 
   postFixup = ''
