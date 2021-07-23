@@ -59,4 +59,8 @@ in
   tifig = callPackage ./tifig {
     source = nvfetcherOut.tifig;
   };
+
+  desktop-icons-neo = callPackage ./desktop-icons-neo {
+    source = nvfetcherOut.desktop-icons-neo;
+  };
 }
