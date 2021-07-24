@@ -1,5 +1,6 @@
 name: NVFetcher
 on:
+  push:
   schedule:
     # Every hour
     - cron:  '0 * * * *'
@@ -16,3 +17,38 @@ jobs:
         install_url: https://github.com/numtide/nix-flakes-installer/releases/download/nix-2.4pre20210207_fd6eaa1/install
         extra_nix_config: |
           experimental-features = nix-command flakes
+
+    - name: Install NVFetcher
+      run: |
+        nix-env -i nixpkgs-fmt nvfetcher -f '<nixpkgs>'
+
+    - name: Cache shake database
+      uses: actions/cache@v2
+      with:
+        path: |
+          _build/.shake.*
+        key: nvfecher-database
+
+    - name: Check Package
+      run: |
+        nvfetcher build | grep -v '^#' > changelog.tmp
+        nixpkgs-fmt .
+
+    - name: Output changelog
+      id: changelog
+      run: cat changelog.tmp
+
+    - name: Create Pull Request
+      if: ${{ steps.changelog.output != 'Up to date' }}
+      uses: peter-evans/create-pull-request@v3
+      with:
+        delete-branch: true
+        labels: |
+          automated/nvfetcher
+        body: |
+          # NVFetcher output
+          ```
+          ${{ steps.changelog.output }}
+          ```
+
+

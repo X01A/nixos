@@ -2,3 +2,4 @@
 
 /result
 /_build/.shake.*
+/changelog.tmp
