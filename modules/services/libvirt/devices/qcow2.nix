@@ -46,7 +46,7 @@ in
     {
       type = "qcow2";
       config = {
-        inherit name capacity bus;
+        inherit name capacity bus fromDisk;
         dev = compDev;
         path = compPath;
       };
@@ -58,6 +58,7 @@ in
       #diskPath = "/var/lib/hypervisor/${machineName}/${deviceName}.qcow2";
       diskPath = replaceStrings [ "%machineName%" ] [ machineName ] device.config.path;
       capacity = tools.qemu-img.renderSize device.config.capacity;
+      fromDisk = device.config.fromDisk;
     in
     {
       deviceStanza = ''
