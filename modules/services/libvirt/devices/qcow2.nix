@@ -77,12 +77,12 @@ in
         if [ -f "${diskPath}" ]; then
           echo "Using existing qcow2 image at ${diskPath}"
         else
-          ${optionalString (fromDisk != null) ''
+          ${lib.optionalString (fromDisk != null) ''
             echo "Copy disk image from ${fromDisk}"
             cp ${fromDisk} ${diskPath}
           ''}
 
-          ${optionalString (fromDisk == null) ''
+          ${lib.optionalString (fromDisk == null) ''
             echo "Creating ${capacity} qcow2 image at ${diskPath}"
             ${pkgs.qemu}/bin/qemu-img create -f qcow2 ${diskPath} ${capacity}
           ''}
