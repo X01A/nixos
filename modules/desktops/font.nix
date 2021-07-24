@@ -32,26 +32,30 @@ in
       fontconfig = {
         enable = true;
         localConf = ''
-          <alias>
-            <family>sans-serif</family>
-            <prefer>
-              <family>Noto Sans Display</family>
-              <family>Noto Sans CJK SC</family>
-              <family>Noto Sans CJK HK</family>
-              <family>Noto Sans CJK JP</family>
-              <family>Noto Sans CJK KR</family>
-              <family>Noto Sans CJK TC</family>
-            </prefer>
-          </alias>
+          <?xml version="1.0"?>
+          <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+          <fontconfig>
+            <alias>
+              <family>sans-serif</family>
+              <prefer>
+                <family>Noto Sans Display</family>
+                <family>Noto Sans CJK SC</family>
+                <family>Noto Sans CJK HK</family>
+                <family>Noto Sans CJK JP</family>
+                <family>Noto Sans CJK KR</family>
+                <family>Noto Sans CJK TC</family>
+              </prefer>
+            </alias>
 
-          <alias>
-            <family>monospace</family>
-            <prefer>
-              <family>Noto Sans Mono CJK SC</family>
-              <family>Noto Sans Mono CJK TC</family>
-              <family>Noto Sans Mono CJK JP</family>
-            </prefer>
-          </alias>
+            <alias>
+              <family>monospace</family>
+              <prefer>
+                <family>Noto Sans Mono CJK SC</family>
+                <family>Noto Sans Mono CJK TC</family>
+                <family>Noto Sans Mono CJK JP</family>
+              </prefer>
+            </alias>
+          </fontconfig>
         '';
       };
     };
