@@ -126,6 +126,10 @@ in
         iperf2
         bc
         ethtool
+        ffsend
+        tree
+        killall
+        nixpkgs-fmt
       ];
       programs.fish = {
         enable = true;
@@ -133,17 +137,20 @@ in
           ${pkgs.starship}/bin/starship init fish | source
         '';
       };
-
-      users.users.indexyz = {
-        isNormalUser = true;
-        home = "/home/indexyz";
-        description = "Indexyz";
-        extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" "qemu-libvirtd" "kvm" ];
-        shell = pkgs.fish;
+      users = {
+        mutableUsers = false;
+        users.indexyz = {
+          hashedPassword = "$6$PMi4RX.RMlh2M.l1$akzUwJf3qII5I/r/GQBKpAYZh5wewNkTCuasPSEiWiTZSdn7uunHXJJeY7742klZPm.zVsAg8fD91DY5DE5JS.";
+          isNormalUser = true;
+          home = "/home/indexyz";
+          description = "Indexyz";
+          extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" "qemu-libvirtd" "kvm" ];
+          shell = pkgs.fish;
+        };
       };
 
       security.sudo.extraRules = [
-        { users = [ "indexyz" ]; commands = [ "ALL" ]; }
+        { users = [ "indexyz" ]; commands = [{ command = "ALL"; options = [ "NOPASSWD" ]; }]; }
       ];
 
       powerManagement.cpuFreqGovernor = "ondemand";

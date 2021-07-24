@@ -26,5 +26,6 @@
     ./services/vlmcsd.nix
     ./services/ksmbd.nix
     ./devices/mlx4-mode.nix
+    ./desktops/font.nix
   ];
 }
