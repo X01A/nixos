@@ -34,12 +34,6 @@ in
         type = types.int;
       };
 
-      forwardConf = mkOption {
-        default = "";
-        description = "Extra config for coredns zoon";
-        type = types.str;
-      };
-
       extraConf = mkOption {
         default = "";
         description = "Extra config for coredns zoon";
@@ -84,12 +78,12 @@ in
       enable = true;
       config = ''
         .:${toString cfg.dnsPort} {
-          forward . 127.0.0.1:${toString cfg.proxyPort}
-          ${cfg.forwardConf}
+          errors
           log
           health
-          cache
           ${cfg.extraConf}
+          forward . 127.0.0.1:${toString cfg.proxyPort}
+          cache 3600
         }
       '';
     };
