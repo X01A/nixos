@@ -69,4 +69,8 @@ in
   sunshine = callPackage ./sunshine {
     source = nvfetcherOut.sunshine;
   };
+
+  cloudreve = callPackage ./cloudreve {
+    source = nvfetcherOut.cloudreve;
+  };
 }
