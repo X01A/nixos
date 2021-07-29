@@ -9,11 +9,6 @@ with lib;
         default = false;
         type = with types; bool;
       };
-
-      hosts = mkOption {
-        default = [ ];
-        type = with types; listOf hostOptions;
-      };
     };
   };
 
