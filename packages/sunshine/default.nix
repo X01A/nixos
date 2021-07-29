@@ -1,4 +1,4 @@
-{ source, stdenv, pkg-config, cmake, ffmpeg, boost, openssl, libX11, libopus, xorg, libpulseaudio, libevdev }:
+{ source, stdenv, pkg-config, cmake, ffmpeg, boost, openssl, libX11, libopus, xorg, libpulseaudio, libevdev, rsync }:
 
 let
   boostStatic = boost.override {
@@ -24,6 +24,7 @@ stdenv.mkDerivation rec {
   # Fix error: -Wformat-security ignored without -Wformat
   hardeningDisable = [ "format" ];
   buildInputs = [
+    rsync
     ffmpeg
     boostStatic
     openssl
@@ -44,7 +45,6 @@ stdenv.mkDerivation rec {
     mkdir -p $out/assets
     install -m 755 sunshine $out/bin
 
-    install -m 644 ../assets/sunshine.conf $out/assets
-    install -m 644 ../assets/apps_linux.json $out/assets
+    rsync -Er --chmod u+w ../assets/ $out/assets
   '';
 }
