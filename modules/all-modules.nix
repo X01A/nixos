@@ -5,6 +5,7 @@
     ./environment/base.nix
     ./environment/qemu.nix
     ./environment/efi.nix
+    ./environment/acme
     ./services/ssh.nix
     ./services/clash
     ./services/teleport-agent.nix
