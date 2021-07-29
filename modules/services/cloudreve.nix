@@ -17,8 +17,8 @@ let
     Mode = ${cfg.mode}
     Listen = :${toString cfg.port}
     ${optionalString (cfg.mode == "master") ''
-    SessionSecret = 3vZxQR1Fgv6zJ5zNDQwJ0f3VnHQPrcLHZlXsh1NBT0cLO2OZsnZtjVIAQpVUDH43
-    HashIDSalt = XhMmGuHMx5ls55O8ShkbYT65mRH5SjTBhqZ8BWZB6yBvR4WakR3Syqf6qJpDMjZK
+    SessionSecret = ${cfg.sessionSecret}
+    HashIDSalt = ${cfg.hashIdSalt}
     [Database]
     DBFile = ${cfg.dataDir}/cloudreve.db
     ''}
@@ -86,6 +86,14 @@ in
       proKey = mkOption {
         default = null;
         type = with types; nullOr str;
+      };
+
+      sessionSecret = mkOption {
+        type = types.str;
+      };
+
+      hashIdSalt = mkOption {
+        type = types.str;
       };
     };
   };
