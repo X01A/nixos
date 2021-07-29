@@ -2,7 +2,9 @@
 
 with lib;
 
-{
+let
+  cfg = config.indexyz.environment.acme;
+in {
   options = {
     indexyz.environment.acme = {
       enable = mkOption {
