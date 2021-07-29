@@ -14,6 +14,15 @@
     };
 
   };
+  cloudreve = {
+    pname = "cloudreve";
+    version = "3.3.2";
+    src = fetchurl {
+      sha256 = "1iq4dj5hr2zxji7nhrx7yn1wc72ssx3lyhclipfggap3f7zlk5l0";
+      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.3.2/cloudreve_3.3.2_linux_amd64.tar.gz";
+    };
+
+  };
   cloudreve-cli = {
     pname = "cloudreve-cli";
     version = "456d8c4403efea11e4584067419f8f20a8682e06";
