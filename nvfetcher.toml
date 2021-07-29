@@ -43,3 +43,8 @@ git.fetchSubmodules = true
 src.git = "https://gitlab.com/rastersoft/desktop-icons-ng.git"
 fetch.git = "https://gitlab.com/rastersoft/desktop-icons-ng.git"
 git.fetchSubmodules = true
+
+[sunshine]
+src.github = "loki-47-6F-64/sunshine"
+fetch.github = "loki-47-6F-64/sunshine"
+git.fetchSubmodules = true

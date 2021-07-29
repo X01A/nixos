@@ -65,4 +65,8 @@ in
   };
 
   parsec = callPackage ./parsec { };
+
+  sunshine = callPackage ./sunshine {
+    source = nvfetcherOut.sunshine;
+  };
 }
