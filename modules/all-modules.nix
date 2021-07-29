@@ -27,6 +27,7 @@
     ./services/ksmbd.nix
     ./services/cloudreve.nix
     ./services/vouch.nix
+    ./services/nginx.nix
     ./devices/mlx4-mode.nix
     ./desktops/font.nix
   ];
