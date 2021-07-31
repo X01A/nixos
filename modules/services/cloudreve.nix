@@ -3,6 +3,7 @@
 with lib;
 let
   cfg = config.services.cloudreve;
+  certs = config.security.acme.certs;
   cfgFile = pkgs.writeText "conf.ini" ''
     [CORS]
     AllowOrigins = *
@@ -25,6 +26,13 @@ let
     ${optionalString (cfg.mode == "slave") ''
     [Slave]
     Secret = ${cfg.slaveSecret}
+    ''}
+
+    ${optionalString (cfg.ssl.enable) ''
+    [SSL]
+    Listen = :${toString cfg.ssl.port}
+    CertPath = ${certs.${cfg.ssl.acmeDomain}.directory}/fullchain.pem
+    KeyPath = ${certs.${cfg.ssl.acmeDomain}.directory}/key.pem
     ''}
   '';
 in
@@ -94,6 +102,19 @@ in
 
       hashIdSalt = mkOption {
         type = types.str;
+      };
+
+      ssl = {
+        enable = mkEnableOption "Enable cloudreve ssl";
+
+        acmeDomain = mkOption {
+          type = types.str;
+        };
+
+        port = mkOption {
+          type = types.int;
+          default = 5213;
+        };
       };
     };
   };
