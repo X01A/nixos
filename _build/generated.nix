@@ -49,6 +49,19 @@
     };
 
   };
+  fassd = {
+    pname = "fassd";
+    version = "0.13.0";
+    src = fetchgit {
+      url = "https://github.com/openfaas/faasd";
+      rev = "0.13.0";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "02aa0ihaflzlvipph2ysz63bc1xvgk15cn7y6z5vrbbps5k4w6kk";
+    };
+
+  };
   fcitx5-material-color = {
     pname = "fcitx5-material-color";
     version = "0.2.1";

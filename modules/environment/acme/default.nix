@@ -4,7 +4,8 @@ with lib;
 
 let
   cfg = config.indexyz.environment.acme;
-in {
+in
+{
   options = {
     indexyz.environment.acme = {
       enable = mkOption {

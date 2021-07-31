@@ -52,3 +52,8 @@ git.fetchSubmodules = true
 [cloudreve]
 src.github = "cloudreve/Cloudreve"
 fetch.url = "https://github.com/cloudreve/Cloudreve/releases/download/$ver/cloudreve_$ver_linux_amd64.tar.gz"
+
+[fassd]
+src.github = "openfaas/faasd"
+fetch.github = "openfaas/faasd"
+git.fetchSubmodules = true
