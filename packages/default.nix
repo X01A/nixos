@@ -73,4 +73,8 @@ in
   cloudreve = callPackage ./cloudreve {
     source = nvfetcherOut.cloudreve;
   };
+
+  fassd = callPackage ./fassd {
+    source = nvfetcherOut.fassd;
+  };
 }
