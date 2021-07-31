@@ -12,7 +12,7 @@
       leaveDotGit = false;
       sha256 = "0dliswvqmi3wq9w8jp0sb0z74n5k37608sig6r60z206g2bwhjja";
     };
-    
+
   };
   cloudreve = {
     pname = "cloudreve";
@@ -21,7 +21,7 @@
       sha256 = "1iq4dj5hr2zxji7nhrx7yn1wc72ssx3lyhclipfggap3f7zlk5l0";
       url = "https://github.com/cloudreve/Cloudreve/releases/download/3.3.2/cloudreve_3.3.2_linux_amd64.tar.gz";
     };
-    
+
   };
   cloudreve-cli = {
     pname = "cloudreve-cli";
@@ -34,7 +34,7 @@
       leaveDotGit = false;
       sha256 = "0dxhwaxrzg5vqgyh0cy4g68r5xsdn0489k92b2ypclg5paq1zrci";
     };
-    
+
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
@@ -47,7 +47,7 @@
       leaveDotGit = false;
       sha256 = "1m4yr0sl4vda0wxwr2q7aq5znby8p1q8v2qnpsfvynnnkm68r8yq";
     };
-    
+
   };
   fcitx5-material-color = {
     pname = "fcitx5-material-color";
@@ -60,7 +60,7 @@
       leaveDotGit = false;
       sha256 = "0drdypjf1njl7flkb5d581vchwlp4gaqyws3cp0v874wkwh4gllb";
     };
-    
+
   };
   microsocks = {
     pname = "microsocks";
@@ -73,7 +73,7 @@
       leaveDotGit = false;
       sha256 = "1di11wx9ihwa0g9qzsqrb3ka2xxjb10fyc7hwjhn58mxdfwlavl0";
     };
-    
+
   };
   openwhisk-cli = {
     pname = "openwhisk-cli";
@@ -86,7 +86,7 @@
       leaveDotGit = false;
       sha256 = "12v5mr5wkbvj66f2pp9k73dfgsjlpi2aq4xi769wpdkqwd31zns9";
     };
-    
+
   };
   sunshine = {
     pname = "sunshine";
@@ -99,7 +99,7 @@
       leaveDotGit = false;
       sha256 = "1nqaxf246zihakljg3dd7kzpg0wbrcvsxyqy9z2dxjzx2fq917jj";
     };
-    
+
   };
   tifig = {
     pname = "tifig";
@@ -112,7 +112,7 @@
       leaveDotGit = false;
       sha256 = "05czqkcyq7yiwdg96q9qdm43l2a5d6asdfddvj7h5af73chmp4gi";
     };
-    
+
   };
   wgcf = {
     pname = "wgcf";
@@ -125,7 +125,7 @@
       leaveDotGit = false;
       sha256 = "0vvjywsigh9j669zd2blsnhlz5kjv4j39g33hclj2a7i44dwg13h";
     };
-    
+
   };
   yacd = {
     pname = "yacd";
@@ -138,7 +138,7 @@
       leaveDotGit = false;
       sha256 = "0b2rwnn8rffnhhdmhjmd8wanxkslivnpxxs9y4k7b7h1abmgc6j4";
     };
-    
+
   };
   yesplaymusic = {
     pname = "yesplaymusic";
@@ -147,6 +147,6 @@
       sha256 = "1dx0127xr0mlkskvspqmdbl0q1ysdxbdjf17d7mwkzxsrbky6xi1";
       url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.0/YesPlayMusic-0.4.0.AppImage";
     };
-    
+
   };
 }
