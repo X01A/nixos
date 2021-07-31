@@ -5,7 +5,9 @@ buildGoModule rec {
 
   patches = [
     ./0000-dot-install-systemd-and-files.patch
+    ./0001-remove-hard-code-bin-path.patch
   ];
+
   vendorSha256 = null;
   subPackages = [ "." ];
 

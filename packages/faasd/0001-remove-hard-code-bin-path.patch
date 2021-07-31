@@ -1,0 +1,26 @@
+diff --git a/pkg/provider/handlers/deploy.go b/pkg/provider/handlers/deploy.go
+index 25b92d2..6d3bd25 100644
+--- a/pkg/provider/handlers/deploy.go
++++ b/pkg/provider/handlers/deploy.go
+@@ -191,7 +191,7 @@ func createTask(ctx context.Context, client *containerd.Client, container contai
+
+ 	name := container.ID()
+
+-	task, taskErr := container.NewTask(ctx, cio.BinaryIO("/usr/local/bin/faasd", nil))
++	task, taskErr := container.NewTask(ctx, cio.BinaryIO(os.Args[0], nil))
+
+ 	if taskErr != nil {
+ 		return fmt.Errorf("unable to start task: %s, error: %s", name, taskErr)
+diff --git a/pkg/supervisor.go b/pkg/supervisor.go
+index 3d34ef9..1a7ba08 100644
+--- a/pkg/supervisor.go
++++ b/pkg/supervisor.go
+@@ -187,7 +187,7 @@ func (s *Supervisor) Start(svcs []Service) error {
+
+ 		log.Printf("Created container: %s\n", newContainer.ID())
+
+-		task, err := newContainer.NewTask(ctx, cio.BinaryIO("/usr/local/bin/faasd", nil))
++		task, err := newContainer.NewTask(ctx, cio.BinaryIO(os.Args[0], nil))
+ 		if err != nil {
+ 			log.Printf("Error creating task: %s\n", err)
+ 			return err
