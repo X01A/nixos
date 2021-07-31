@@ -74,7 +74,7 @@ in
     source = nvfetcherOut.cloudreve;
   };
 
-  faasd = callPackage ./faasd {
-    source = nvfetcherOut.faasd;
+  openwhisk-cli = callPackage ./openwhisk-cli {
+    source = nvfetcherOut.openwhisk-cli;
   };
 }

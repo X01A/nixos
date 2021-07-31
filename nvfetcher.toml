@@ -53,7 +53,7 @@ git.fetchSubmodules = true
 src.github = "cloudreve/Cloudreve"
 fetch.url = "https://github.com/cloudreve/Cloudreve/releases/download/$ver/cloudreve_$ver_linux_amd64.tar.gz"
 
-[faasd]
-src.github = "openfaas/faasd"
-fetch.github = "openfaas/faasd"
+[openwhisk-cli]
+src.github = "apache/openwhisk-cli"
+fetch.github = "apache/openwhisk-cli"
 git.fetchSubmodules = true
