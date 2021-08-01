@@ -29,7 +29,10 @@ jobs:
       with:
         path: |
           _build/.shake.*
-        key: nvfecher-database
+        key: nvfecher-database-${{ github.run_id }}
+        restore-keys: |
+          nvfecher-database-
+
 
     - name: Check Package
       run: |
