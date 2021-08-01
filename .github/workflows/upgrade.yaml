@@ -38,19 +38,25 @@ jobs:
 
     - name: Output changelog
       id: changelog
-      run: cat changelog.tmp
+      run: |
+        CHANGELOG=$(cat changelog.tmp)
+        CHANGELOG="${CHANGELOG//'%'/'%25'}"
+        CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
+        CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
+        echo "::set-output name=changelog::$CHANGELOG"
 
     - name: Create Pull Request
-      if: ${{ steps.changelog.output != 'Up to date' }}
+      if: ${{ steps.changelog.outputs.changelog != 'Up to date' }}
       uses: peter-evans/create-pull-request@v3
       with:
         delete-branch: true
+        title: NVFeacher upgrade
         labels: |
           automated/nvfetcher
         body: |
           # NVFetcher output
           ```
-          ${{ steps.changelog.output }}
+          ${{ steps.changelog.outputs.changelog }}
           ```
 
 
