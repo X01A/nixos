@@ -10,7 +10,7 @@ git.fetchSubmodules = true
 
 [yacd]
 src.github = "haishanh/yacd"
-fetch.github = "haishanh/yacd"
+fetch.url = "https://github.com/haishanh/yacd/releases/download/$ver/yacd.tar.xz"
 git.fetchSubmodules = true
 
 [yesplaymusic]
