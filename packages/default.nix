@@ -77,4 +77,8 @@ in
   openwhisk-cli = callPackage ./openwhisk-cli {
     source = nvfetcherOut.openwhisk-cli;
   };
+
+  vpncloud = callPackage ./vpncloud {
+    source = nvfetcherOut.vpncloud;
+  };
 }

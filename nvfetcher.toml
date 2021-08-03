@@ -57,3 +57,8 @@ fetch.url = "https://github.com/cloudreve/Cloudreve/releases/download/$ver/cloud
 src.github = "apache/openwhisk-cli"
 fetch.github = "apache/openwhisk-cli"
 git.fetchSubmodules = true
+
+[vpncloud]
+src.github = "dswd/vpncloud"
+fetch.github = "dswd/vpncloud"
+git.fetchSubmodules = true

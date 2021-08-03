@@ -114,6 +114,19 @@
     };
 
   };
+  vpncloud = {
+    pname = "vpncloud";
+    version = "v2.2.0";
+    src = fetchgit {
+      url = "https://github.com/dswd/vpncloud";
+      rev = "v2.2.0";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "0khq52ks0irfzr56yy73kydpba8na61skfx2c2wdjr2zscvh6l8r";
+    };
+
+  };
   wgcf = {
     pname = "wgcf";
     version = "v2.2.5";
