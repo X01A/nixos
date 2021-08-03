@@ -10,7 +10,9 @@ let
     inherit lib;
   });
 
-  profileCommands = builtins.concatStringsSep "\n" (attrsets.mapAttrsToList
+  profileCommands = ''
+    mkdir -p ${cfg.dataDir}
+  '' + builtins.concatStringsSep "\n" (attrsets.mapAttrsToList
     (name: val:
       let
         fileName = "${name}.yaml";
