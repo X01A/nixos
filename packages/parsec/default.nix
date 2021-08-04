@@ -7,7 +7,7 @@ let
   };
   desktopItem = makeDesktopItem {
     name = "Parsec";
-    exec = "parsec";
+    exec = "parsecd";
     icon = "parsec";
     desktopName = "Parsec";
     genericName = "Parsec";
