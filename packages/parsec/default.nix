@@ -1,6 +1,19 @@
-{ stdenv, fetchurl, lib, dbus, xorg, openssl, udev, libva, libpulseaudio, libGL, alsaLib }:
+{ stdenv, fetchurl, lib, dbus, xorg, openssl, udev, libva, libpulseaudio, libGL, alsaLib, makeDesktopItem }:
 
-stdenv.mkDerivation {
+let
+  parsecIcon = fetchurl {
+    url = "https://github.com/flathub/com.parsecgaming.parsec/raw/master/com.parsecgaming.parsec.png";
+    sha256 = "EUR9EJg9mgEr8kWXm7hTICdDF1xem8TEQumppaRL5Mk=";
+  };
+  desktopItem = makeDesktopItem {
+    name = "Parsec";
+    exec = "parsec";
+    icon = "parsec";
+    desktopName = "Parsec";
+    genericName = "Parsec";
+    categories = "Network;Game;Utility;";
+  };
+in stdenv.mkDerivation {
   pname = "parsec";
   version = "2021-01-12";
 
@@ -65,6 +78,12 @@ stdenv.mkDerivation {
     exec $out/libexec/parsecd
     EOF
     chmod +x $out/bin/parsecd
+
+    # Icon
+    mkdir -p $out/share/icons/hicolor/128x128/apps/
+    cp ${parsecIcon} $out/share/icons/hicolor/128x128/apps/parsec.png
+    install -Dm644 "${desktopItem}/share/applications/"* \
+      -t $out/share/applications/
   '';
 
   postFixup = ''
