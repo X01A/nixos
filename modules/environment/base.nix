@@ -81,6 +81,7 @@ in
         '';
       };
 
+      documentation.enable = false;
       boot.cleanTmpDir = true;
 
       networking.usePredictableInterfaceNames = false;
