@@ -29,9 +29,9 @@ jobs:
       with:
         path: |
           _build/.shake.*
-        key: nvfecher-database-${{ github.run_id }}
+        key: nvfecher-database-${{ hashFiles('**/nvfetcher.toml') }}-${{ github.run_id }}
         restore-keys: |
-          nvfecher-database-
+          nvfecher-database-${{ hashFiles('**/nvfetcher.toml') }}-
 
 
     - name: Check Package
