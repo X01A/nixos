@@ -71,3 +71,9 @@ fetch.url = "https://download.mikrotik.com/winbox/$ver/winbox64.exe"
 src.github = "agalwood/Motrix"
 src.prefix = "v"
 fetch.url = "https://github.com/agalwood/Motrix/releases/download/v$ver/Motrix-$ver.AppImage"
+
+[mmdb-ipip]
+src.git = "https://github.com/alecthw/mmdb_china_ip_list.git"
+fetch.git = "https://github.com/alecthw/mmdb_china_ip_list.git"
+git.fetchSubmodules = true
+src.branch = "release"
