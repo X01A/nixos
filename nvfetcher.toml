@@ -62,3 +62,8 @@ git.fetchSubmodules = true
 src.github = "dswd/vpncloud"
 fetch.github = "dswd/vpncloud"
 git.fetchSubmodules = true
+
+[winbox]
+src.httpheader = "https://mikrotik.com/mt_redirect.php?code=winbox64"
+src.regex = "\\/winbox\\/(.*)\\/"
+fetch.url = "https://download.mikrotik.com/winbox/$ver/winbox64.exe"

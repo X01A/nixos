@@ -1,9 +1,11 @@
-with import <nixpkgs> {};
+with import <nixpkgs> { };
 
 let
-  flake = import ./. {};
-in mkShell {
+  flake = import ./. { };
+in
+mkShell {
   nativeBuildInputs = [
-    fish nvfetcher
+    fish
+    nvfetcher
   ];
 }
