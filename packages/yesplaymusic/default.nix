@@ -16,14 +16,13 @@ stdenv.mkDerivation rec {
     name = "yesplaymusic";
     exec = "yesplaymusic";
     icon = "yesplaymusic";
-    desktopName = "Yes Play Music";
+    desktopName = "YesPlayMusic";
     genericName = "YesPlayMusic";
     categories = "Network;";
     extraEntries = ''
       StartupWMClass=yesplaymusic
     '';
   };
-
 
   installPhase = ''
     # Asar
