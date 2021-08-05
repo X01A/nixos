@@ -13,7 +13,8 @@ let
     genericName = "Parsec";
     categories = "Network;Game;Utility;";
   };
-in stdenv.mkDerivation {
+in
+stdenv.mkDerivation {
   pname = "parsec";
   version = "2021-01-12";
 
