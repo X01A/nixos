@@ -81,4 +81,8 @@ in
   vpncloud = callPackage ./vpncloud {
     source = nvfetcherOut.vpncloud;
   };
+
+  winbox = callPackage ./winbox {
+    source = nvfetcherOut.winbox;
+  };
 }
