@@ -3,9 +3,10 @@
 with nixpkgs; let
   nvfetcherOut = callPackage ../sources.nix { };
   cloudreve-cli = callPackage (nvfetcherOut.cloudreve-cli.src) { };
+  build-electron-appimage = callPackage ./build-electron-appimage { };
 in
 {
-  inherit cloudreve-cli;
+  inherit cloudreve-cli build-electron-appimage;
 
   transmission-web-control = callPackage ./transmission-web-control { };
   vlmcsd = callPackage ./vlmcsd { };
@@ -53,6 +54,7 @@ in
   };
 
   yesplaymusic = callPackage ./yesplaymusic {
+    inherit build-electron-appimage;
     source = nvfetcherOut.yesplaymusic;
   };
 
@@ -84,5 +86,10 @@ in
 
   winbox = callPackage ./winbox {
     source = nvfetcherOut.winbox;
+  };
+
+  motrix = callPackage ./motrix {
+    inherit build-electron-appimage;
+    source = nvfetcherOut.motrix;
   };
 }
