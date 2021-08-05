@@ -13,6 +13,7 @@ let
   profileCommands = ''
     mkdir -p ${cfg.dataDir}
     ${lib.optionalString (cfg.mmdb.enable) ''
+      rm -f ${cfg.dataDir}/Country.mmdb
       ln -s ${cfg.mmdb.pkg} ${cfg.dataDir}/Country.mmdb
     ''}
 
