@@ -75,6 +75,15 @@
     };
 
   };
+  motrix = {
+    pname = "motrix";
+    version = "1.6.11";
+    src = fetchurl {
+      sha256 = "0hsazragk4hf9hh1i1hnqhw48kl3f3sckapwzah06w9ysgn90kdl";
+      url = "https://github.com/agalwood/Motrix/releases/download/v1.6.11/Motrix-1.6.11.AppImage";
+    };
+
+  };
   openwhisk-cli = {
     pname = "openwhisk-cli";
     version = "1.2.0";

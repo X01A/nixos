@@ -17,7 +17,6 @@ git.fetchSubmodules = true
 src.github = "qier222/YesPlayMusic"
 src.prefix = "v"
 fetch.url = "https://github.com/qier222/YesPlayMusic/releases/download/v$ver/YesPlayMusic-$ver.AppImage"
-git.fetchSubmodules = true
 
 [chia-plotter]
 src.git = "https://github.com/madMAx43v3r/chia-plotter.git"
@@ -67,3 +66,8 @@ git.fetchSubmodules = true
 src.httpheader = "https://mikrotik.com/mt_redirect.php?code=winbox64"
 src.regex = "\\/winbox\\/(.*)\\/"
 fetch.url = "https://download.mikrotik.com/winbox/$ver/winbox64.exe"
+
+[motrix]
+src.github = "agalwood/Motrix"
+src.prefix = "v"
+fetch.url = "https://github.com/agalwood/Motrix/releases/download/v$ver/Motrix-$ver.AppImage"
