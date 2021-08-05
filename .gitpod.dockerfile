@@ -32,7 +32,8 @@ RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh && \
   nix-env -i \
     nixpkgs-fmt \
     nvfetcher \
-    nix-prefetch-git && \
+    nix-prefetch-git \
+    direnv nix-direnv && \
   nix-env -iA cachix -f https://cachix.org/api/v1/install && \
   cachix use indexyz
 

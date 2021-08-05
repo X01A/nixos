@@ -130,6 +130,10 @@ in
         tree
         killall
         nixpkgs-fmt
+        inxi
+        saldl
+        dig
+        unzip
       ];
       programs.fish = {
         enable = true;
