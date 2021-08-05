@@ -12,6 +12,10 @@ let
 
   profileCommands = ''
     mkdir -p ${cfg.dataDir}
+    ${lib.optionalString (cfg.mmdb.enable) ''
+      ln -s ${cfg.mmdb.pkg} ${cfg.dataDir}/Country.mmdb
+    ''}
+
   '' + builtins.concatStringsSep "\n" (attrsets.mapAttrsToList
     (name: val:
       let
@@ -72,6 +76,15 @@ in
       secret = mkOption {
         default = null;
         type = with types; nullOr str;
+      };
+
+      mmdb = {
+        enable = mkEnableOption "Enable MMDB Replacement";
+
+        pkg = mkOption {
+          type = types.package;
+          default = pkgs.mmdb-ipip;
+        };
       };
 
       dns = mkOption {

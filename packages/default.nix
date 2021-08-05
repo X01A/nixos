@@ -92,4 +92,8 @@ in
     inherit build-electron-appimage;
     source = nvfetcherOut.motrix;
   };
+
+  mmdb-ipip = callPackage ./mmdb-ipip {
+    source = nvfetcherOut.mmdb-ipip;
+  };
 }
