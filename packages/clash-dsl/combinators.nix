@@ -40,6 +40,24 @@ let
       ];
     }).config.rule
   );
+
+  evalProxy = proxyType: data: (
+    (evalModules {
+      modules = [
+        {
+          options = {
+            proxy = mkOption {
+              type = proxyType;
+              description = "Proxy data";
+            };
+          };
+        }
+        {
+          proxy = data;
+        }
+      ];
+    }).config.proxy
+  );
 in
 {
   inherit evalProfile;
