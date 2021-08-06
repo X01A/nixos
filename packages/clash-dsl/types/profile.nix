@@ -45,7 +45,7 @@ let
       };
 
       proxies = mkOption {
-        type = with types; listOf attrset;
+        type = with types; listOf attrs;
         default = [ ];
       };
 
