@@ -44,6 +44,11 @@ let
         default = "*";
       };
 
+      proxies = mkOption {
+        type = with types; listOf attrset;
+        default = [ ];
+      };
+
       proxyProviders = mkOption {
         type = with types; listOf proxy.proxyProvider;
         default = [ ];
@@ -70,6 +75,8 @@ let
         bind-address = data.bindAddress;
         proxy-providers = recursiveMergeAttrs (map proxy.buildProxyProvider data.proxyProviders);
         proxy-groups = map proxy.buildProxyGroup data.proxyGroups;
+
+        proxies = data.proxies;
 
         rules = data.rules;
       };
