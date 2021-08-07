@@ -90,6 +90,8 @@ in
         LimitNPROC = "infinity";
         LimitCORE = "infinity";
         TasksMax = "infinity";
+        Restart = "always";
+        RestartSec = 30;
       };
 
       postStart = ''
