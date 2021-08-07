@@ -56,6 +56,7 @@ in
       serviceConfig = {
         ExecStart = "${pkgs.frp}/bin/frps -c ${basicConfig}";
         Restart = "always";
+        RestartSec = 30;
       };
     };
 
