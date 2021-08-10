@@ -14,7 +14,9 @@ steps:
     - uname -a
     - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
     - nix-channel --update
-    - nix-env -i nixpkgs-fmt bash jq
+    - nix-env -i nixpkgs-fmt bash jq tmate
+    - mkdir -p /usr/drone/bin/
+    - ln -s $(which tmate) /usr/drone/bin/tmate
     - nixpkgs-fmt --check .
     - nix-env -iA cachix -f https://cachix.org/api/v1/install
     - cachix authtoken $CACHIX_TOKEN
