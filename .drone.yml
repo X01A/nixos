@@ -4,26 +4,10 @@ name: default
 
 steps:
   - name: Check format
-    image: archlinux:base-20210808.0.31089
+    image: archlinux
     environment:
       PATH: /root/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       CACHIX_TOKEN:
         from_secret: CACHEIX_TOKEN
     commands:
-    - whoami
-    - ls -lah /var/lib
-    - ls -lah /var/lib/pacman/
-    - pacman -Syu --noconfirm
-    - pacman -S nix --noconfirm
-    - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
-    - nix-channel --update
-    - nix-env -iA nixos.nixUnstable
-    - nix --version
-    - nix-env -i nixpkgs-fmt bash jq tmate which git
-    - mkdir -p /usr/drone/bin/
-    - ln -s $(which tmate) /usr/drone/bin/tmate
-    - nixpkgs-fmt --check .
-    - nix-env -iA cachix -f https://cachix.org/api/v1/install
-    - cachix authtoken $CACHIX_TOKEN
     - bash build-cache.bash
-    - nix build .#onedev
