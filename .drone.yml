@@ -20,5 +20,5 @@ steps:
     - nixpkgs-fmt --check .
     - nix-env -iA cachix -f https://cachix.org/api/v1/install
     - cachix authtoken $CACHIX_TOKEN
-    - nix build .#onedev
     - bash build-cache.bash
+    - nix build .#onedev

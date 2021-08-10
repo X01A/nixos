@@ -1,19 +1,17 @@
-{ source, stdenvNoCC, maven, zulu8, git, substituteAll, java-service-wrapper, unzip, makeWrapper }:
+{ source, stdenvNoCC, maven, jdk, git, substituteAll, java-service-wrapper, unzip, makeWrapper }:
 
-let
-  maven-jdk8 = maven.override {
-    jdk = zulu8;
-  };
-in
+
 stdenvNoCC.mkDerivation rec {
   inherit (source) pname version src;
 
-  buildInputs = [ maven-jdk8 git unzip ];
+  buildInputs = [ maven git unzip ];
   nativeBuildInputs = [ makeWrapper ];
 
+  JAVA_HOME = "${jdk.home}";
+
   buildPhase = ''
-    mkdir maven
-    mvn -Dmaven.test.skip=true -Dmaven.repo.local=maven package
+    mkdir cache
+    mvn -Dmaven.test.skip=true -Dmaven.repo.local=cache package
     unzip server-product/target/onedev-*.zip
   '';
 
@@ -23,7 +21,7 @@ stdenvNoCC.mkDerivation rec {
     cp ${./wrapper.conf} $out/config.conf
     substituteInPlace $out/config.conf --replace "@out-dir@" $out
     substituteInPlace $out/config.conf --replace "@java-service-wrapper@" ${java-service-wrapper}
-    substituteInPlace $out/config.conf --replace "@java-command@" ${zulu8}/bin/java
+    substituteInPlace $out/config.conf --replace "@java-command@" ${jdk}/bin/java
 
     makeWrapper ${java-service-wrapper}/bin/wrapper "$out/bin/onedev" \
       --add-flags "-c $out/config.conf"
