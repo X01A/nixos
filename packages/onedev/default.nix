@@ -12,7 +12,8 @@ stdenvNoCC.mkDerivation rec {
   nativeBuildInputs = [ makeWrapper ];
 
   buildPhase = ''
-    mvn package
+    mkdir maven
+    mvn -Dmaven.test.skip=true -Dmaven.repo.local=maven package
     unzip server-product/target/onedev-*.zip
   '';
 
