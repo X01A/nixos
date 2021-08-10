@@ -1,6 +1,7 @@
 # NixOS
 
 [![Test](https://github.com/X01A/nixos/actions/workflows/test.yaml/badge.svg)](https://github.com/X01A/nixos/actions/workflows/test.yaml)
+[![Cache Build Status](https://cloud.drone.io/api/badges/X01A/nixos/status.svg)](https://cloud.drone.io/X01A/nixos)
 
 Personal nixos configuation
 
