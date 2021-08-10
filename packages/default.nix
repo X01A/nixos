@@ -96,4 +96,8 @@ in
   mmdb-ipip = callPackage ./mmdb-ipip {
     source = nvfetcherOut.mmdb-ipip;
   };
+
+  onedev = callPackage ./onedev {
+    source = nvfetcherOut.onedev;
+  };
 }

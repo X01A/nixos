@@ -77,14 +77,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "ad083e5c13ff7c4fef8d2227b88554e8116a26c2";
+    version = "a3f891fd83e6f3cebe661e44a495324e732a92f2";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "ad083e5c13ff7c4fef8d2227b88554e8116a26c2";
+      rev = "a3f891fd83e6f3cebe661e44a495324e732a92f2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "03g2zan1jjf6apbywvb5c6s8aab6nhmk9hma3m17m14vawkdgjac";
+      sha256 = "0yj87p5j99kis4hzrjcclc1gh6n54jk9p5mdjvah8fr5h2kqmi9y";
     };
 
   };
@@ -94,6 +94,19 @@
     src = fetchurl {
       sha256 = "0hsazragk4hf9hh1i1hnqhw48kl3f3sckapwzah06w9ysgn90kdl";
       url = "https://github.com/agalwood/Motrix/releases/download/v1.6.11/Motrix-1.6.11.AppImage";
+    };
+
+  };
+  onedev = {
+    pname = "onedev";
+    version = "v4.9.4";
+    src = fetchgit {
+      url = "https://github.com/theonedev/onedev";
+      rev = "v4.9.4";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "1ivhs4nng3nh1jd2hvrgxxqinc56443v20xjqhpnz9ykh0bw3c0q";
     };
 
   };
