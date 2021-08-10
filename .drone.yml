@@ -1,0 +1,13 @@
+---
+kind: pipeline
+name: default
+
+steps:
+  - name: Check format
+    image: archlinux
+    environment:
+      PATH: /root/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      CACHIX_TOKEN:
+        from_secret: CACHEIX_TOKEN
+    commands:
+    - bash build-cache.bash
