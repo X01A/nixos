@@ -4,7 +4,7 @@ name: default
 
 steps:
   - name: Check format
-    image: archlinux
+    image: archlinux:base-20210808.0.31089
     environment:
       PATH: /root/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       CACHIX_TOKEN:
