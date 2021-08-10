@@ -6,7 +6,7 @@ steps:
   - name: Check format
     image: nixpkgs/nix-flakes
     environment:
-      NIXPKGS: channel:nixos-unstable
+      NIX_PATH: nixpkgs=channel:nixos-unstable
       PATH: /root/.nix-profile/bin:/usr/bin:/bin:/nix/var/nix/profiles/default/bin
       CACHIX_TOKEN:
         from_secret: CACHEIX_TOKEN

@@ -2,11 +2,15 @@
 set -ex
 
 # Nix flags
+chown -R nixbld1:nixbld /nix/store/
 mkdir -p /etc/nix
 cat > /etc/nix/nix.conf <<EOF
 experimental-features = nix-command flakes
 substituters = https://indexyz.cachix.org https://cache.nixos.org/
 trusted-public-keys = indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+sandbox = true
+trusted-users = root
+allowed-users = *
 EOF
 
 # Upload and build cache
