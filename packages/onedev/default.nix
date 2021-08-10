@@ -1,8 +1,8 @@
-{ source, stdenvNoCC, maven, jdk, git, substituteAll, java-service-wrapper, unzip, makeWrapper }:
+{ source, stdenvNoCC, maven, jdk8, git, substituteAll, java-service-wrapper, unzip, makeWrapper }:
 
 let
   mavenExec = maven.override {
-    jdk = jdk.home;
+    jdk = jdk8.home;
   };
 in
 stdenvNoCC.mkDerivation rec {
@@ -11,7 +11,7 @@ stdenvNoCC.mkDerivation rec {
   buildInputs = [ mavenExec git unzip ];
   nativeBuildInputs = [ makeWrapper ];
 
-  JAVA_HOME = "${jdk.home}";
+  JAVA_HOME = "${jdk8.home}";
 
   buildPhase = ''
     mkdir cache
@@ -25,7 +25,7 @@ stdenvNoCC.mkDerivation rec {
     cp ${./wrapper.conf} $out/config.conf
     substituteInPlace $out/config.conf --replace "@out-dir@" $out
     substituteInPlace $out/config.conf --replace "@java-service-wrapper@" ${java-service-wrapper}
-    substituteInPlace $out/config.conf --replace "@java-command@" ${jdk}/bin/java
+    substituteInPlace $out/config.conf --replace "@java-command@" ${jdk8}/bin/java
 
     makeWrapper ${java-service-wrapper}/bin/wrapper "$out/bin/onedev" \
       --add-flags "-c $out/config.conf"
