@@ -4,15 +4,18 @@ name: default
 
 steps:
   - name: Check format
-    image: nixpkgs/nix-flakes
+    image: archlinux
     environment:
-      NIX_PATH: nixpkgs=channel:nixos-unstable
-      PATH: /root/.nix-profile/bin:/usr/bin:/bin:/nix/var/nix/profiles/default/bin
+      PATH: /root/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       CACHIX_TOKEN:
         from_secret: CACHEIX_TOKEN
     commands:
+    - pacman -Syu --noconfirm
+    - pacman -S nix --noconfirm
     - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
     - nix-channel --update
+    - nix-env -iA nixos.nixUnstable
+    - nix --version
     - nix-env -i nixpkgs-fmt bash jq tmate which git
     - mkdir -p /usr/drone/bin/
     - ln -s $(which tmate) /usr/drone/bin/tmate
