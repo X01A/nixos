@@ -11,10 +11,12 @@ steps:
       CACHIX_TOKEN:
         from_secret: CACHEIX_TOKEN
     commands:
+    - uname -a
     - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
     - nix-channel --update
     - nix-env -i nixpkgs-fmt bash jq
     - nixpkgs-fmt --check .
     - nix-env -iA cachix -f https://cachix.org/api/v1/install
     - cachix authtoken $CACHIX_TOKEN
+    - nix build .#onedev
     - bash build-cache.bash
