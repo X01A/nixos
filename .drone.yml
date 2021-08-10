@@ -1,0 +1,19 @@
+---
+kind: pipeline
+name: default
+
+steps:
+  - name: Check format
+    image: nixpkgs/nix-flakes
+    environment:
+      PATH: /root/.nix-profile/bin:/usr/bin:/bin
+      CACHIX_TOKEN:
+        from_secret: CACHEIX_TOKEN
+    commands:
+    - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+    - nix-channel --update
+    - nix-env -i nixpkgs-fmt bash
+    - nixpkgs-fmt --check .
+    - nix-env -iA cachix -f https://cachix.org/api/v1/install
+    - cachix authtoken $CACHIX_TOKEN
+    - bash build-cache.bash
