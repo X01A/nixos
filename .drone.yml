@@ -10,6 +10,7 @@ steps:
       CACHIX_TOKEN:
         from_secret: CACHEIX_TOKEN
     commands:
+    - whoami
     - pacman -Syu --noconfirm
     - pacman -S nix --noconfirm
     - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
