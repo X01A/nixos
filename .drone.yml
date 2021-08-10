@@ -14,7 +14,7 @@ steps:
     - uname -a
     - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
     - nix-channel --update
-    - nix-env -i nixpkgs-fmt bash jq tmate
+    - nix-env -i nixpkgs-fmt bash jq tmate which
     - mkdir -p /usr/drone/bin/
     - ln -s $(which tmate) /usr/drone/bin/tmate
     - nixpkgs-fmt --check .

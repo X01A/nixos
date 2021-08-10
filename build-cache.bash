@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -ex
 
 # Nix flags
 cat > /etc/nix/nix.conf <<EOF
