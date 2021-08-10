@@ -18,7 +18,7 @@ steps:
     - USER=root . /root/.nix-profile/etc/profile.d/nix.sh
     - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
     - nix-channel --update
-    - nix-env -i nixpkgs-fmt bash jq tmate which
+    - nix-env -i nixpkgs-fmt bash jq tmate which git
     - mkdir -p /usr/drone/bin/
     - ln -s $(which tmate) /usr/drone/bin/tmate
     - nixpkgs-fmt --check .
