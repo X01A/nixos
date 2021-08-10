@@ -11,6 +11,8 @@ steps:
         from_secret: CACHEIX_TOKEN
     commands:
     - whoami
+    - ls -lah /var/lib
+    - ls -lah /var/lib/pacman/
     - pacman -Syu --noconfirm
     - pacman -S nix --noconfirm
     - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
