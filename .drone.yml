@@ -4,14 +4,18 @@ name: default
 
 steps:
   - name: Check format
-    image: nixpkgs/nix-flakes
+    image: ubuntu
     environment:
-      PATH: /root/.nix-profile/bin:/usr/bin:/bin
-      NIX_PATH: nixpkgs=channel:nixos-unstable
       CACHIX_TOKEN:
         from_secret: CACHEIX_TOKEN
     commands:
-    - uname -a
+    - apt-get update -y
+    - apt-get install curl xz-utils -y
+    - addgroup --system nixbld
+    - useradd -d /var/empty -g nixbld -G nixbld -M -N -r nixbld
+    - mkdir -m 0755 /nix && chown nixbld /nix
+    - curl -sSL https://github.com/numtide/nix-flakes-installer/releases/download/nix-2.4pre20210207_fd6eaa1/install | bash
+    - USER=root source /root/.nix-profile/etc/profile.d/nix.sh
     - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
     - nix-channel --update
     - nix-env -i nixpkgs-fmt bash jq tmate which

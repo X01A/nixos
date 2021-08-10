@@ -1,10 +1,14 @@
 { source, stdenvNoCC, maven, jdk, git, substituteAll, java-service-wrapper, unzip, makeWrapper }:
 
-
+let
+  mavenExec = maven.override {
+    jdk = jdk.home;
+  };
+in
 stdenvNoCC.mkDerivation rec {
   inherit (source) pname version src;
 
-  buildInputs = [ maven git unzip ];
+  buildInputs = [ mavenExec git unzip ];
   nativeBuildInputs = [ makeWrapper ];
 
   JAVA_HOME = "${jdk.home}";
