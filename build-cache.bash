@@ -2,6 +2,7 @@
 set -ex
 
 # Nix flags
+mkdir -p /etc/nix
 cat > /etc/nix/nix.conf <<EOF
 experimental-features = nix-command flakes
 substituters = https://indexyz.cachix.org https://cache.nixos.org/
