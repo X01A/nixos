@@ -4,7 +4,7 @@ with lib;
 let
   cfg = config.indexyz.services.drone-exec;
 
-  configEnvFile = ''
+  configEnvFile = pkgs.writeText "drone.env" ''
     DRONE_RPC_PROTO=${cfg.serverProto}
     DRONE_RPC_HOST=${cfg.serverHost}
   '' + (builtins.concatStringsSep "\n" (attrsets.mapAttrsToList
