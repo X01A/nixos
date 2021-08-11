@@ -3,6 +3,8 @@
 with lib;
 let
   cfg = config.indexyz.services.drone-web;
+  ociCfg = config.virtualisation.oci-containers;
+  runtimeEnvFile = "/run/drone-web-run-env";
 in
 {
   options = {
@@ -18,8 +20,9 @@ in
         description = "Drone ci web interface location";
       };
 
-      rpcSecret = mkOption {
+      rpcSecretFile = mkOption {
         type = types.str;
+        example = "/run/drone/rpc_secret";
         description = ''
           Secret to authenticate communication between runners and your central Drone server.
           You can use openssl to generate a shared secret:
@@ -56,29 +59,43 @@ in
           }
         '';
       };
+
+      secretEnvFile = mkOption {
+        type = with types; nullOr str;
+        default = null;
+        description = ''
+          Env file that load to drone every time boot
+        '';
+      };
     };
   };
 
   config = mkIf cfg.enable {
-    system.activationScripts.drone-web = ''
-      # Make sure drone data dir exist
-      mkdir -p ${cfg.workDir}
-    '';
-
-    virtualisation.oci-containers.containers.drone = {
+    virtualisation.oci-containers.containers.drone-web = {
       image = "drone/drone:2.0.3";
       ports = [
         "${toString cfg.port}:80"
       ];
       volumes = [
-        "/var/lib/drone:/data"
+        "${cfg.workDir}:/data"
       ];
 
       environment = {
-        DRONE_RPC_SECRET = cfg.rpcSecret;
         DRONE_SERVER_HOST = cfg.serverHost;
         DRONE_SERVER_PROTO = cfg.serverProto;
       } // cfg.scmSettings;
+
+      environmentFiles = [ runtimeEnvFile ];
     };
+
+    systemd.services."${ociCfg.backend}-drone-web".preStart = lib.mkBefore ''
+      mkdir -p ${cfg.workDir}
+      rm -f ${runtimeEnvFile}
+      ${optionalString (cfg.secretEnvFile != null) ''
+        cat ${cfg.secretEnvFile} > ${runtimeEnvFile}
+        echo "" >> ${runtimeEnvFile}
+      ''}
+      cat ${cfg.rpcSecretFile} | ${pkgs.gawk}/bin/gawk '{print "DRONE_RPC_SECRET="$0}' >> ${runtimeEnvFile}
+    '';
   };
 }
