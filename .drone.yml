@@ -10,7 +10,7 @@ trigger:
 steps:
 - name: greeting
   commands:
-  - echo hello world
+  - bash build-cache.bash
 
 node:
   os: nixos
