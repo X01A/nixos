@@ -58,7 +58,7 @@ in
     };
 
     virtualisation.oci-containers.containers.drone-runner = {
-      image = "drone/drone-runner-docker:1";
+      image = "drone/drone-runner-docker:latest";
       extraOptions = [ "--pod=${podName}" ];
 
       environment = {
