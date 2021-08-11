@@ -2,7 +2,8 @@
 
 with lib;
 let
-  cfg = config.indexyz.services.drone-exec;
+  cfg = config.indexyz.services.drone-docker;
+  ociCfg = config.virtualisation.oci-containers;
 
   configEnvFile = pkgs.writeText "drone.env" (''
     DRONE_RPC_PROTO=${cfg.serverProto}
@@ -13,7 +14,7 @@ let
 in
 {
   options = {
-    indexyz.services.drone-exec = {
+    indexyz.services.drone-docker = {
       enable = mkOption {
         default = false;
         type = with types; bool;
@@ -41,7 +42,7 @@ in
 
       workDir = mkOption {
         type = types.str;
-        default = "/var/lib/drone-runner-exec";
+        default = "/var/lib/drone-runner-docker";
         description = "Data store location";
       };
 
@@ -65,21 +66,15 @@ in
           Env file that load to drone every time boot
         '';
       };
-
-      workerPkgs = mkOption {
-        type = with types; listOf package;
-        default = [ ];
-        description = "Extra package exist in runner path";
-      };
     };
   };
 
   config = mkIf cfg.enable {
     systemd.services.drone-exec-runner = {
-      description = "Drone pipeline runner that executes builds directly on the host machine";
+      description = "Drone pipeline runner that executes builds inside Docker containers";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
-      path = with pkgs; [ git bash ] ++ cfg.workerPkgs;
+      path = with pkgs; [ git bash ];
 
       preStart = ''
         mkdir -p ${cfg.workDir}
@@ -91,11 +86,16 @@ in
           echo "" >> ${cfg.workDir}/conf.env
         ''}
 
+        ${optionalString ociCfg.backend == "podman" ''
+          echo "DOCKER_HOST=unix:///run/podman/podman.sock" >> ${cfg.workDir}/conf.env
+          echo "DOCKER_API_VERSION=1.40" >> ${cfg.workDir}/conf.env
+        ''}
+
         cat ${cfg.rpcSecretFile} | ${pkgs.gawk}/bin/gawk '{print "DRONE_RPC_SECRET="$0}' >> ${cfg.workDir}/conf.env
       '';
 
       script = ''
-        ${pkgs.drone-runner-exec}/bin/drone-runner-exec daemon ${cfg.workDir}/conf.env
+        ${pkgs.drone-runner-docker}/bin/drone-runner-docker daemon ${cfg.workDir}/conf.env
       '';
     };
   };

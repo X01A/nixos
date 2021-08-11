@@ -49,6 +49,19 @@
     };
 
   };
+  drone-runner-docker = {
+    pname = "drone-runner-docker";
+    version = "v1.6.3";
+    src = fetchgit {
+      url = "https://github.com/drone-runners/drone-runner-docker";
+      rev = "v1.6.3";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "1r3nmm7n7y9z1n5z0nzy1vqqx3897q10hc740k4fn4bs9fpyk3aq";
+    };
+
+  };
   drone-runner-exec = {
     pname = "drone-runner-exec";
     version = "v1.0.0-beta.9";

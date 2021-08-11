@@ -104,4 +104,8 @@ in
   drone-runner-exec = callPackage ./drone-runner-exec {
     source = nvfetcherOut.drone-runner-exec;
   };
+
+  drone-runner-docker = callPackage ./drone-runner-docker {
+    source = nvfetcherOut.drone-runner-docker;
+  };
 }
