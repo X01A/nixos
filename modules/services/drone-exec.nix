@@ -73,7 +73,7 @@ in
       description = "Drone pipeline runner that executes builds directly on the host machine";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
-      path = with pkgs; [ git ];
+      path = with pkgs; [ git bash ];
 
       preStart = ''
         mkdir -p ${cfg.workDir}
