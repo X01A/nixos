@@ -70,7 +70,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    systemd.services.drone-exec-runner = {
+    systemd.services.drone-docker-runner = {
       description = "Drone pipeline runner that executes builds inside Docker containers";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
@@ -86,7 +86,7 @@ in
           echo "" >> ${cfg.workDir}/conf.env
         ''}
 
-        ${optionalString ociCfg.backend == "podman" ''
+        ${optionalString (ociCfg.backend == "podman") ''
           echo "DOCKER_HOST=unix:///run/podman/podman.sock" >> ${cfg.workDir}/conf.env
           echo "DOCKER_API_VERSION=1.40" >> ${cfg.workDir}/conf.env
         ''}
