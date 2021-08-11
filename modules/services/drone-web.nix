@@ -66,7 +66,7 @@ in
     '';
 
     virtualisation.oci-containers.containers.drone = {
-      image = "drone/drone:2.0.1";
+      image = "drone/drone:2.0.3";
       ports = [
         "${toString cfg.port}:80"
       ];
