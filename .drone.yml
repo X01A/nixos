@@ -8,8 +8,12 @@ trigger:
   - master
 
 steps:
-- name: greeting
+- name: Building
+  environment:
+    CACHIX_TOKEN:
+      from_secret: CACHIX_TOKEN
   commands:
+  - cachix authtoken $CACHIX_TOKEN
   - bash build-cache.bash
 
 node:
