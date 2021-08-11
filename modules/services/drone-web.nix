@@ -46,11 +46,11 @@ in
         description = "Data store location";
       };
 
-      scmSettings = mkOption {
+      extraSettings = mkOption {
         type = types.attrs;
         default = { };
         description = ''
-          SCM settings, see also: https://docs.drone.io/server/provider/
+          Extra settings, see also: https://docs.drone.io/server/provider/
 
           Example:
           {
@@ -83,7 +83,7 @@ in
       environment = {
         DRONE_SERVER_HOST = cfg.serverHost;
         DRONE_SERVER_PROTO = cfg.serverProto;
-      } // cfg.scmSettings;
+      } // cfg.extraSettings;
 
       environmentFiles = [ runtimeEnvFile ];
     };
