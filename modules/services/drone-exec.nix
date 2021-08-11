@@ -4,12 +4,12 @@ with lib;
 let
   cfg = config.indexyz.services.drone-exec;
 
-  configEnvFile = pkgs.writeText "drone.env" ''
+  configEnvFile = pkgs.writeText "drone.env" (''
     DRONE_RPC_PROTO=${cfg.serverProto}
     DRONE_RPC_HOST=${cfg.serverHost}
   '' + (builtins.concatStringsSep "\n" (attrsets.mapAttrsToList
     (name: val: "${name}=${val}")
-    cfg.extraSettings));
+    cfg.extraSettings)));
 in
 {
   options = {
