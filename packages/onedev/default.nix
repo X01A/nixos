@@ -1,8 +1,33 @@
-{ source, stdenvNoCC, maven, zulu, git, substituteAll, java-service-wrapper, unzip, makeWrapper }:
+{ source, lib, stdenvNoCC, maven, zulu8, git, substituteAll, java-service-wrapper, unzip, makeWrapper }:
 
 let
   mavenExec = maven.override {
-    jdk = zulu;
+    jdk = zulu8;
+  };
+
+  repo = stdenvNoCC.mkDerivation {
+    name = "maven-repository-${source.pname}-${source.version}";
+    inherit (source) src;
+    buildInputs = [ mavenExec git ];
+
+    buildPhase = ''
+      mvn package -Dmaven.repo.local=$out
+    '';
+
+    # keep only *.{pom,jar,sha1,nbm} and delete all ephemeral files with lastModified timestamps inside
+    installPhase = ''
+      find $out -type f \
+        -name \*.lastUpdated -or \
+        -name resolver-status.properties -or \
+        -name _remote.repositories \
+        -delete
+    '';
+
+    dontFixup = true;
+    outputHashAlgo = "sha256";
+    outputHashMode = "recursive";
+
+    outputHash = "7VJOAA+HwZXTZ5AtIY9ynlYdTvRcrG2c+OGqixOVlI0=";
   };
 in
 stdenvNoCC.mkDerivation rec {
@@ -12,8 +37,7 @@ stdenvNoCC.mkDerivation rec {
   nativeBuildInputs = [ makeWrapper ];
 
   buildPhase = ''
-    mkdir cache
-    mvn -Dmaven.test.skip=true -Dmaven.repo.local=cache package
+    mvn -Dmaven.test.skip=true --offline -Dmaven.repo.local=${repo} package
     unzip server-product/target/onedev-*.zip
   '';
 
@@ -23,7 +47,7 @@ stdenvNoCC.mkDerivation rec {
     cp ${./wrapper.conf} $out/config.conf
     substituteInPlace $out/config.conf --replace "@out-dir@" $out
     substituteInPlace $out/config.conf --replace "@java-service-wrapper@" ${java-service-wrapper}
-    substituteInPlace $out/config.conf --replace "@java-command@" ${zulu}/bin/java
+    substituteInPlace $out/config.conf --replace "@java-command@" ${zulu8}/bin/java
 
     makeWrapper ${java-service-wrapper}/bin/wrapper "$out/bin/onedev" \
       --add-flags "-c $out/config.conf"
