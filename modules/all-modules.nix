@@ -30,6 +30,7 @@
     ./services/vouch.nix
     ./services/nginx.nix
     ./services/argo.nix
+    ./services/drone-exec.nix
     ./devices/mlx4-mode.nix
     ./desktops/font.nix
   ];

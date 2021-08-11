@@ -100,4 +100,8 @@ in
   onedev = callPackage ./onedev {
     source = nvfetcherOut.onedev;
   };
+
+  drone-runner-exec = callPackage ./drone-runner-exec {
+    source = nvfetcherOut.drone-runner-exec;
+  };
 }
