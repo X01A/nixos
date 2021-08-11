@@ -10,7 +10,7 @@
     ./services/clash
     ./services/teleport-agent.nix
     ./services/drone-web.nix
-    ./services/drone-worker.nix
+    ./services/drone-docker.nix
     ./services/frpc
     ./services/frps
     ./services/k3s.nix
