@@ -65,6 +65,12 @@ in
           Env file that load to drone every time boot
         '';
       };
+
+      workerPkgs = mkOption {
+        type = with types; listOf package;
+        default = [];
+        description = "Extra package exist in runner path";
+      };
     };
   };
 
@@ -73,7 +79,7 @@ in
       description = "Drone pipeline runner that executes builds directly on the host machine";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
-      path = with pkgs; [ git bash ];
+      path = with pkgs; [ git bash ] ++ cfg.workerPkgs;
 
       preStart = ''
         mkdir -p ${cfg.workDir}
