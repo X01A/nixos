@@ -16,18 +16,14 @@ let
 
     # keep only *.{pom,jar,sha1,nbm} and delete all ephemeral files with lastModified timestamps inside
     installPhase = ''
-      find $out -type f \
-        -name \*.lastUpdated -or \
-        -name resolver-status.properties -or \
-        -name _remote.repositories \
-        -delete
+      find $out -type f -regex '.+\(\.lastUpdated\|resolver-status\.properties\|_remote\.repositories\)' -delete
     '';
 
     dontFixup = true;
     outputHashAlgo = "sha256";
     outputHashMode = "recursive";
 
-    outputHash = "7VJOAA+HwZXTZ5AtIY9ynlYdTvRcrG2c+OGqixOVlI0=";
+    outputHash = "O52raX+L7sWmn+9dj/zmUlp5IKPss2Kovpj9sHj5Vt0=";
   };
 in
 stdenvNoCC.mkDerivation rec {
