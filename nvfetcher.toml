@@ -82,3 +82,8 @@ src.branch = "release"
 src.github = "theonedev/onedev"
 fetch.github = "theonedev/onedev"
 git.fetchSubmodules = true
+
+[drone-runner-exec]
+src.github = "drone-runners/drone-runner-exec"
+fetch.github = "drone-runners/drone-runner-exec"
+git.fetchSubmodules = true
