@@ -8,8 +8,9 @@ trigger:
   - master
 
 steps:
-- name: Building
+- name: build
   environment:
+    NIX_PATH: nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos
     CACHIX_TOKEN:
       from_secret: CACHIX_TOKEN
   commands:
