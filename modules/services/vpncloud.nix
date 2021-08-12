@@ -5,7 +5,10 @@ let
   cfg = config.indexyz.services.vpncloud;
 
   peerStr = peer: "-c ${peer}";
+  claimStr = claim: "--claim ${claim}";
+
   peers = concatStringsSep " " (map peerStr cfg.peers);
+  claims = concatStringsSep " " (map claimStr cfg.claims);
 in
 {
   options = {
@@ -53,6 +56,12 @@ in
         type = with types; listOf str;
         description = "Address of a peer to connect to";
       };
+
+      claims = mkOption {
+        default = [ ];
+        type = with types; listOf str;
+        description = "The local subnets to claim";
+      };
     };
   };
 
@@ -72,7 +81,7 @@ in
       script = ''
         ${pkgs.vpncloud}/bin/vpncloud \
           -p $(cat ${cfg.passwordFile}) --ip ${cfg.ip} \
-          -l ${toString cfg.port} -m ${cfg.mode} -t ${cfg.deviceType} -d ${cfg.device} ${peers}
+          -l ${toString cfg.port} -m ${cfg.mode} -t ${cfg.deviceType} -d ${cfg.device} ${peers} ${claims}
       '';
     };
   };
