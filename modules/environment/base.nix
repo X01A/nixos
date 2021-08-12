@@ -100,6 +100,7 @@ in
         "net.core.default_qdisc" = "fq";
         "net.ipv4.tcp_ecn" = 1;
         "net.ipv4.tcp_congestion_control" = "bbr2";
+        "net.ipv4.conf.default.rp_filter" = 1;
       };
       environment.systemPackages = with pkgs; [
         wget
