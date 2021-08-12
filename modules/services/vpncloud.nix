@@ -11,48 +11,48 @@ in
   options = {
     indexyz.services.vpncloud = {
       enable = mkEnableOption "Enable vpncloud service";
-    };
 
-    port = mkOption {
-      default = 20001;
-      type = types.int;
-      description = "VPNCloud listen port";
-    };
+      port = mkOption {
+        default = 20001;
+        type = types.int;
+        description = "VPNCloud listen port";
+      };
 
-    ip = mkOption {
-      type = types.str;
-      description = "VPNCloud interface ip";
-      example = "192.168.100.1/24";
-    };
+      ip = mkOption {
+        type = types.str;
+        description = "VPNCloud interface ip";
+        example = "192.168.100.1/24";
+      };
 
-    passwordFile = mkOption {
-      type = types.str;
-      description = "VPNCloud password file";
-      example = "/run/keys/VPN_CLOUD_PASS";
-    };
+      passwordFile = mkOption {
+        type = types.str;
+        description = "VPNCloud password file";
+        example = "/run/keys/VPN_CLOUD_PASS";
+      };
 
-    mode = mkOption {
-      default = "normal";
-      type = types.enum [ "normal" "router" "switch" "hub" ];
-      description = "The mode of the VPN";
-    };
+      mode = mkOption {
+        default = "normal";
+        type = types.enum [ "normal" "router" "switch" "hub" ];
+        description = "The mode of the VPN";
+      };
 
-    device = mkOption {
-      default = "vpncloud0";
-      type = types.str;
-      description = "Name of the virtual device";
-    };
+      device = mkOption {
+        default = "vpncloud0";
+        type = types.str;
+        description = "Name of the virtual device";
+      };
 
-    deviceType = mkOption {
-      default = "tun";
-      type = types.enum [ "tun" "tap" ];
-      description = "Set the type of network";
-    };
+      deviceType = mkOption {
+        default = "tun";
+        type = types.enum [ "tun" "tap" ];
+        description = "Set the type of network";
+      };
 
-    peers = mkOption {
-      default = [];
-      type = with types; listOf str;
-      description = "Address of a peer to connect to";
+      peers = mkOption {
+        default = [ ];
+        type = with types; listOf str;
+        description = "Address of a peer to connect to";
+      };
     };
   };
 
