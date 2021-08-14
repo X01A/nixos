@@ -136,6 +136,8 @@ in
         saldl
         dig
         unzip
+        buildah
+        openssl
       ];
       programs.fish = {
         enable = true;
