@@ -22,10 +22,7 @@ in
 {
   options = {
     indexyz.services.leaf = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      enable = mkEnableOption "Enable leaf proxy server";
 
       address = mkOption {
         type = types.str;

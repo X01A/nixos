@@ -7,10 +7,7 @@ in
 {
   options = {
     indexyz.environment.base = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      enable = mkEnableOption "Enable base environment";
 
       ntp = mkOption {
         default = true;

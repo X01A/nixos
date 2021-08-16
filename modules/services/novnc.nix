@@ -27,13 +27,7 @@ in
 {
   options = {
     indexyz.services.novnc = {
-      enable = mkOption {
-        type = types.bool;
-        default = false;
-        description = ''
-          Enable noVNC page
-        '';
-      };
+      enable = mkEnableOption "Enable novnc for libvirt";
 
       basicDomain = mkOption {
         type = types.str;

@@ -8,10 +8,7 @@ in
 {
   options = {
     indexyz.services.transmission = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      enable = mkEnableOption "Enable transmission server";
 
       downloadDir = mkOption {
         default = "/var/lib/transmission";

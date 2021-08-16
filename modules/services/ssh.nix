@@ -15,10 +15,7 @@ in
 {
   options = {
     indexyz.services.ssh = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      enable = mkEnableOption "Enable ssh config override";
 
       keys = mkOption {
         default = keys;

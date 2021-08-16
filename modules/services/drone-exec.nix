@@ -14,10 +14,7 @@ in
 {
   options = {
     indexyz.services.drone-exec = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      enable = mkEnableOption "Enable drone exec backend";
 
       rpcSecretFile = mkOption {
         type = types.str;

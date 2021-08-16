@@ -22,10 +22,7 @@ in
 {
   options = {
     indexyz.services.nginx = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      enable = mkEnableOption "Enable custom nginx conf";
 
       fakeHost = mkOption {
         default = true;
