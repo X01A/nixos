@@ -15,10 +15,7 @@ in
 {
   options = {
     indexyz.services.drone-docker = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      enable = mkEnableOption "Enable drone docker backend";
 
       rpcSecretFile = mkOption {
         type = types.str;

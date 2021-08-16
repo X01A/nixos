@@ -7,13 +7,7 @@ in
 {
   options = {
     indexyz.services.vlmcsd = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-        description = ''
-          Start vlmcsd server.
-        '';
-      };
+      enable = mkEnableOption "Start vlmcsd kms server";
     };
   };
 

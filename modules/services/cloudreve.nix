@@ -39,13 +39,7 @@ in
 {
   options = {
     services.cloudreve = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-        description = ''
-          Start cloudreve server.
-        '';
-      };
+      enable = mkEnableOption "Enable cloudreve";
 
       port = mkOption {
         default = 5212;

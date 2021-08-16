@@ -9,10 +9,7 @@ in
 {
   options = {
     indexyz.services.drone-web = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      enable = mkEnableOption "Enable drone web";
 
       port = mkOption {
         default = 5905;
