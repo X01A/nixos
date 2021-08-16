@@ -39,7 +39,8 @@ in
         mkdir -p ${cfg.dataDir}
 
         ${pkgs.influxdb2}/bin/influxd --reporting-disabled \
-          --bolt-path ${cfg.dataDir}/influxd.bolt --engine-path ${cfg.dataDir}/engine
+          --bolt-path ${cfg.dataDir}/influxd.bolt --engine-path ${cfg.dataDir}/engine \
+          --http-bind-address ${cfg.bindAddress} ${cfg.extraArgs}
       '';
     };
   };
