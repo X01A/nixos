@@ -35,11 +35,9 @@ in
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
 
-      preScript = ''
-        mkdir -p ${cfg.dataDir}
-      '';
-
       script = ''
+        mkdir -p ${cfg.dataDir}
+
         ${pkgs.influxdb2}/bin/influxd --reporting-disabled \
           --bolt-path ${cfg.dataDir}/influxd.bolt --engine-path ${cfg.dataDir}/engine
       '';
