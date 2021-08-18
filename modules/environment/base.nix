@@ -135,6 +135,9 @@ in
         unzip
         buildah
         openssl
+        ncdu
+        smartmontools
+        nali
       ];
       programs.fish = {
         enable = true;
