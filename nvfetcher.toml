@@ -92,3 +92,8 @@ git.fetchSubmodules = true
 src.github_tag = "drone-runners/drone-runner-docker"
 fetch.github = "drone-runners/drone-runner-docker"
 git.fetchSubmodules = true
+
+[nali]
+src.github = "zu1k/nali"
+fetch.github = "zu1k/nali"
+git.fetchSubmodules = true

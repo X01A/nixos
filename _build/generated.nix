@@ -123,6 +123,19 @@
     };
 
   };
+  nali = {
+    pname = "nali";
+    version = "v0.3.1";
+    src = fetchgit {
+      url = "https://github.com/zu1k/nali";
+      rev = "v0.3.1";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "0ra405s878cvd0p5wdi45sm3bkhhz3lhhhi7lgzsr5vijdr44dgn";
+    };
+
+  };
   onedev = {
     pname = "onedev";
     version = "v4.9.4";

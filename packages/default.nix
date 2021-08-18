@@ -108,4 +108,8 @@ in
   drone-runner-docker = callPackage ./drone-runner-docker {
     source = nvfetcherOut.drone-runner-docker;
   };
+
+  nali = callPackage ./nali {
+    source = nvfetcherOut.nali;
+  };
 }
