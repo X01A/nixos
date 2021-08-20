@@ -25,14 +25,14 @@
   };
   cloudreve-cli = {
     pname = "cloudreve-cli";
-    version = "456d8c4403efea11e4584067419f8f20a8682e06";
+    version = "306ddc5d939004d263641bbff37b3398843eab92";
     src = fetchgit {
       url = "https://github.com/Indexyz/CloudreveCLI";
-      rev = "456d8c4403efea11e4584067419f8f20a8682e06";
+      rev = "306ddc5d939004d263641bbff37b3398843eab92";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0dxhwaxrzg5vqgyh0cy4g68r5xsdn0489k92b2ypclg5paq1zrci";
+      sha256 = "07npxyn9zkk4am06wyqdblpdw126501fs6pa4ff37jv133s1yqvd";
     };
 
   };
