@@ -164,14 +164,14 @@
   };
   sunshine = {
     pname = "sunshine";
-    version = "v0.9.0";
+    version = "v0.10.0";
     src = fetchgit {
       url = "https://github.com/loki-47-6F-64/sunshine";
-      rev = "v0.9.0";
+      rev = "v0.10.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1nqaxf246zihakljg3dd7kzpg0wbrcvsxyqy9z2dxjzx2fq917jj";
+      sha256 = "01s7dnig49dvb1j945r2g7rmy31155fmxhflpzkdwfv1kn6cc1y3";
     };
 
   };
