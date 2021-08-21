@@ -117,7 +117,6 @@ in
         gcc
         binutils
         nload
-        vim
         pciutils
         iotop
         btrfs-progs
