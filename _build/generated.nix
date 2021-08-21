@@ -38,14 +38,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "1baf9749bee708ff34362579e902fa206b5beb00";
+    version = "ae8b29f147d49e9915caa888ae253cae9f1561ef";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "1baf9749bee708ff34362579e902fa206b5beb00";
+      rev = "ae8b29f147d49e9915caa888ae253cae9f1561ef";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1kvdavdrjgh0mdfq7cl785w1wd9sybxgaj1vlnrmpsh048cywcvs";
+      sha256 = "02a8xyfygnq6qpp4mg5q9svyi2mnf0pn8wy2whn1air1hcmnlad4";
     };
 
   };
@@ -164,14 +164,14 @@
   };
   sunshine = {
     pname = "sunshine";
-    version = "v0.10.0";
+    version = "v0.10.1";
     src = fetchgit {
       url = "https://github.com/loki-47-6F-64/sunshine";
-      rev = "v0.10.0";
+      rev = "v0.10.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "01s7dnig49dvb1j945r2g7rmy31155fmxhflpzkdwfv1kn6cc1y3";
+      sha256 = "0hwb0kadjw9kzlxb6izrbwcbn1xqs2djdm4p7gym9si1snix171v";
     };
 
   };
