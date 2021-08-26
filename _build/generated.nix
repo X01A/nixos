@@ -38,14 +38,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "81e6affc717ed8be75ed7c733d0b1dd42164eeb1";
+    version = "a12472fafeac14ae1c81a9c6acaa159186202e85";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "81e6affc717ed8be75ed7c733d0b1dd42164eeb1";
+      rev = "a12472fafeac14ae1c81a9c6acaa159186202e85";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0ymcymmj1w265as4m3ms7yspn7qkh869pi24rwrl0g2cbn7h0jax";
+      sha256 = "0ndyjgdcnkkl6is6fk4ii2nczcb7dvssgz1qhlqpph0q3am41xrr";
     };
 
   };
@@ -103,14 +103,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "5c7022875988f4df3c36b94d7da1adea1a60af88";
+    version = "d56d7ab4423a040e82fcc41f0372a0c71eff5302";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "5c7022875988f4df3c36b94d7da1adea1a60af88";
+      rev = "d56d7ab4423a040e82fcc41f0372a0c71eff5302";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1ngs2bslwqapv20mjfxy6k7f1rxdzipiaj5nc828y87xhqr5prz3";
+      sha256 = "09wsdsvd8m15lh13xmqfrrawz8pl8l4ksvp71xx787vsm7ybih36";
     };
 
   };
