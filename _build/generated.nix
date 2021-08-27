@@ -3,14 +3,14 @@
 {
   chia-plotter = {
     pname = "chia-plotter";
-    version = "974d6e5f1440f68c48492122ca33828a98864dfc";
+    version = "a9a49031ac03504b272b7199ef3e071c2d93e9cc";
     src = fetchgit {
       url = "https://github.com/madMAx43v3r/chia-plotter";
-      rev = "974d6e5f1440f68c48492122ca33828a98864dfc";
+      rev = "a9a49031ac03504b272b7199ef3e071c2d93e9cc";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0dliswvqmi3wq9w8jp0sb0z74n5k37608sig6r60z206g2bwhjja";
+      sha256 = "0wss77cd9c0hk775ws73dwmlhz6lkcyj4cnijgxzrdpwa430k4zq";
     };
 
   };
@@ -38,14 +38,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "ae8b29f147d49e9915caa888ae253cae9f1561ef";
+    version = "a12472fafeac14ae1c81a9c6acaa159186202e85";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "ae8b29f147d49e9915caa888ae253cae9f1561ef";
+      rev = "a12472fafeac14ae1c81a9c6acaa159186202e85";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "02a8xyfygnq6qpp4mg5q9svyi2mnf0pn8wy2whn1air1hcmnlad4";
+      sha256 = "0ndyjgdcnkkl6is6fk4ii2nczcb7dvssgz1qhlqpph0q3am41xrr";
     };
 
   };
@@ -103,14 +103,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "30455f35da5a19b94cfb5ee0b944dbb063ceaf5a";
+    version = "d56d7ab4423a040e82fcc41f0372a0c71eff5302";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "30455f35da5a19b94cfb5ee0b944dbb063ceaf5a";
+      rev = "d56d7ab4423a040e82fcc41f0372a0c71eff5302";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0vzfcck22m75hbw0vvvg03al0l6x298kafg30jvyi3m7j832b6jf";
+      sha256 = "09wsdsvd8m15lh13xmqfrrawz8pl8l4ksvp71xx787vsm7ybih36";
     };
 
   };
@@ -203,23 +203,23 @@
   };
   wgcf = {
     pname = "wgcf";
-    version = "v2.2.6";
+    version = "v2.2.8";
     src = fetchgit {
       url = "https://github.com/ViRb3/wgcf";
-      rev = "v2.2.6";
+      rev = "v2.2.8";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1wa4bkzggm80v6ddascrw88zfll0xwh3yfd5svbrxsf7a5cyp6x2";
+      sha256 = "0fhvdk43vyn1nj5sr96hi5l468qi9dilq1kp01lhzhf4dvyzhx2n";
     };
 
   };
   winbox = {
     pname = "winbox";
-    version = "3.28";
+    version = "3.29";
     src = fetchurl {
-      sha256 = "0ygrn9cq9sc4qw5rard10jwcv079md2vzs401w413j5pni0dwiar";
-      url = "https://download.mikrotik.com/winbox/3.28/winbox64.exe";
+      sha256 = "03ix1v18xfs52qhbr7k8a1k46xldijrq2cxsyr51aqvmhcf5czpr";
+      url = "https://download.mikrotik.com/winbox/3.29/winbox64.exe";
     };
 
   };
