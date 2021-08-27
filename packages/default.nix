@@ -66,8 +66,6 @@ in
     source = nvfetcherOut.desktop-icons-ng;
   };
 
-  parsec = callPackage ./parsec { };
-
   sunshine = callPackage ./sunshine {
     source = nvfetcherOut.sunshine;
   };
