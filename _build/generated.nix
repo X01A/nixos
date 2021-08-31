@@ -103,14 +103,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "70c91cd28be4176656e19c9881cc7175ffd113cd";
+    version = "094802369c6de196270b7b543e89aff7691a4bb1";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "70c91cd28be4176656e19c9881cc7175ffd113cd";
+      rev = "094802369c6de196270b7b543e89aff7691a4bb1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "00zzxzvbb6zzziq0ddkd4pwpislpbiv440rq0kkczpmrrz8v24zd";
+      sha256 = "1z2grb6w662cy352np4kpc46a5x5y5fszi5p2mwa7ymvakg4d779";
     };
 
   };
