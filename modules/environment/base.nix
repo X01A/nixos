@@ -43,7 +43,7 @@ in
         "ntp1.aliyun.com"
       ];
 
-      services.ntp.enable = true;
+      services.timesyncd.enable = true;
     })
     (lib.mkIf (cfg.ns) {
       networking.nameservers = [ "1.1.1.1" ];
