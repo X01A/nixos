@@ -35,5 +35,6 @@
     ./services/influxdb.nix
     ./devices/mlx4-mode.nix
     ./desktops/font.nix
+    ./system/uboot
   ];
 }
