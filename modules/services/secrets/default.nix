@@ -77,8 +77,9 @@ in
   };
 
   config = mkIf cfg.enable {
-    deployment.keys =  builtins.listToAttrs (
-      lib.lists.flatten (map deplotmenyKeyToRealKey deploymentKeys) ++ [placeHolder]);
+    deployment.keys = builtins.listToAttrs (
+      lib.lists.flatten (map deplotmenyKeyToRealKey deploymentKeys) ++ [ placeHolder ]
+    );
 
     systemd.services.key-activate = {
       description = "Waiting for deploy keys";
