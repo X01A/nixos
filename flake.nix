@@ -25,5 +25,9 @@
       nixosModules.indexyz = { ... }: {
         imports = [ ./modules/all-modules.nix ];
       };
+
+      homeModules.indexyz = { ... }: {
+        imports = [ ./home/all-modules.nix ];
+      };
     };
 }
