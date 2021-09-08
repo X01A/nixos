@@ -23,7 +23,7 @@ let
     outputHashAlgo = "sha256";
     outputHashMode = "recursive";
 
-    outputHash = "O52raX+L7sWmn+9dj/zmUlp5IKPss2Kovpj9sHj5Vt0=";
+    outputHash = "J2Os6SkUMXnJ2ZA3XyoruVEPx/Ki6CGB2Egl6MjQcN0=";
   };
 in
 stdenvNoCC.mkDerivation rec {
