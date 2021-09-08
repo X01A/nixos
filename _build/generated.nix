@@ -138,14 +138,14 @@
   };
   onedev = {
     pname = "onedev";
-    version = "v4.9.4";
+    version = "v4.10.3";
     src = fetchgit {
       url = "https://github.com/theonedev/onedev";
-      rev = "v4.9.4";
+      rev = "v4.10.3";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1cm8fl2fqxz0lzajran5nj2yba8h9wiyi985swbra6v6my4cfwzv";
+      sha256 = "1r5m8l3jbsyxk1ynr6r1xfzqsklb5v2p9qq2gqx0vs7h8nl9xmsg";
     };
 
   };
