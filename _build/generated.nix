@@ -216,10 +216,10 @@
   };
   winbox = {
     pname = "winbox";
-    version = "3.29";
+    version = "3.30";
     src = fetchurl {
-      sha256 = "03ix1v18xfs52qhbr7k8a1k46xldijrq2cxsyr51aqvmhcf5czpr";
-      url = "https://download.mikrotik.com/winbox/3.29/winbox64.exe";
+      sha256 = "1izh6bv4klfmql18i13vn1s1nszlsarp5rf597x04mhl38f8bspz";
+      url = "https://download.mikrotik.com/winbox/3.30/winbox64.exe";
     };
 
   };
