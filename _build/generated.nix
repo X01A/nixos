@@ -12,7 +12,7 @@
       leaveDotGit = false;
       sha256 = "0wss77cd9c0hk775ws73dwmlhz6lkcyj4cnijgxzrdpwa430k4zq";
     };
-    
+
   };
   cloudreve = {
     pname = "cloudreve";
@@ -21,7 +21,7 @@
       sha256 = "1iq4dj5hr2zxji7nhrx7yn1wc72ssx3lyhclipfggap3f7zlk5l0";
       url = "https://github.com/cloudreve/Cloudreve/releases/download/3.3.2/cloudreve_3.3.2_linux_amd64.tar.gz";
     };
-    
+
   };
   cloudreve-cli = {
     pname = "cloudreve-cli";
@@ -34,7 +34,7 @@
       leaveDotGit = false;
       sha256 = "07npxyn9zkk4am06wyqdblpdw126501fs6pa4ff37jv133s1yqvd";
     };
-    
+
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
@@ -47,7 +47,7 @@
       leaveDotGit = false;
       sha256 = "1maqnm56kmy5cfgkgvv79d9zpdn92afkxkvrjlf7dijphdr42pdx";
     };
-    
+
   };
   drone-runner-docker = {
     pname = "drone-runner-docker";
@@ -60,7 +60,7 @@
       leaveDotGit = false;
       sha256 = "1r3nmm7n7y9z1n5z0nzy1vqqx3897q10hc740k4fn4bs9fpyk3aq";
     };
-    
+
   };
   drone-runner-exec = {
     pname = "drone-runner-exec";
@@ -73,7 +73,7 @@
       leaveDotGit = false;
       sha256 = "1ay4vla54hrc3ranyc6whpqh0r1nynjg6x2ab1z1259ry9xzm4xs";
     };
-    
+
   };
   fcitx5-material-color = {
     pname = "fcitx5-material-color";
@@ -86,7 +86,7 @@
       leaveDotGit = false;
       sha256 = "0drdypjf1njl7flkb5d581vchwlp4gaqyws3cp0v874wkwh4gllb";
     };
-    
+
   };
   microsocks = {
     pname = "microsocks";
@@ -99,7 +99,7 @@
       leaveDotGit = false;
       sha256 = "1di11wx9ihwa0g9qzsqrb3ka2xxjb10fyc7hwjhn58mxdfwlavl0";
     };
-    
+
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
@@ -112,7 +112,7 @@
       leaveDotGit = false;
       sha256 = "08qb2ypwd1b03piswl0kdzg21sg4r2qgyrkws9igbndszhfvvhlx";
     };
-    
+
   };
   motrix = {
     pname = "motrix";
@@ -121,7 +121,7 @@
       sha256 = "0hsazragk4hf9hh1i1hnqhw48kl3f3sckapwzah06w9ysgn90kdl";
       url = "https://github.com/agalwood/Motrix/releases/download/v1.6.11/Motrix-1.6.11.AppImage";
     };
-    
+
   };
   nali = {
     pname = "nali";
@@ -134,7 +134,7 @@
       leaveDotGit = false;
       sha256 = "0ra405s878cvd0p5wdi45sm3bkhhz3lhhhi7lgzsr5vijdr44dgn";
     };
-    
+
   };
   onedev = {
     pname = "onedev";
@@ -147,7 +147,7 @@
       leaveDotGit = false;
       sha256 = "1r5m8l3jbsyxk1ynr6r1xfzqsklb5v2p9qq2gqx0vs7h8nl9xmsg";
     };
-    
+
   };
   openwhisk-cli = {
     pname = "openwhisk-cli";
@@ -160,7 +160,7 @@
       leaveDotGit = false;
       sha256 = "12v5mr5wkbvj66f2pp9k73dfgsjlpi2aq4xi769wpdkqwd31zns9";
     };
-    
+
   };
   sunshine = {
     pname = "sunshine";
@@ -173,7 +173,7 @@
       leaveDotGit = false;
       sha256 = "0hwb0kadjw9kzlxb6izrbwcbn1xqs2djdm4p7gym9si1snix171v";
     };
-    
+
   };
   tifig = {
     pname = "tifig";
@@ -186,7 +186,7 @@
       leaveDotGit = false;
       sha256 = "05czqkcyq7yiwdg96q9qdm43l2a5d6asdfddvj7h5af73chmp4gi";
     };
-    
+
   };
   vpncloud = {
     pname = "vpncloud";
@@ -199,7 +199,7 @@
       leaveDotGit = false;
       sha256 = "0khq52ks0irfzr56yy73kydpba8na61skfx2c2wdjr2zscvh6l8r";
     };
-    
+
   };
   wgcf = {
     pname = "wgcf";
@@ -212,7 +212,7 @@
       leaveDotGit = false;
       sha256 = "0fhvdk43vyn1nj5sr96hi5l468qi9dilq1kp01lhzhf4dvyzhx2n";
     };
-    
+
   };
   winbox = {
     pname = "winbox";
@@ -221,7 +221,7 @@
       sha256 = "1izh6bv4klfmql18i13vn1s1nszlsarp5rf597x04mhl38f8bspz";
       url = "https://download.mikrotik.com/winbox/3.30/winbox64.exe";
     };
-    
+
   };
   wiretrustee = {
     pname = "wiretrustee";
@@ -234,7 +234,7 @@
       leaveDotGit = false;
       sha256 = "1n038kaiv6fqyirn34x1rgwlidfi83zylikzb0yrxwnrpicnngf9";
     };
-    
+
   };
   yacd = {
     pname = "yacd";
@@ -243,7 +243,7 @@
       sha256 = "1f5qdj22wplj5xw2hp9r8acq740csv4n4viwb39cyk77baxq8bvl";
       url = "https://github.com/haishanh/yacd/releases/download/v0.3.3/yacd.tar.xz";
     };
-    
+
   };
   yesplaymusic = {
     pname = "yesplaymusic";
@@ -252,6 +252,6 @@
       sha256 = "1dx0127xr0mlkskvspqmdbl0q1ysdxbdjf17d7mwkzxsrbky6xi1";
       url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.0/YesPlayMusic-0.4.0.AppImage";
     };
-    
+
   };
 }
