@@ -81,9 +81,12 @@ in
         value = {
           wantedBy = [ "multi-user.target" ];
           after = [ "network.target" ] ++ (generateAfter item);
+
+          startLimitIntervalSec = 0;
           serviceConfig = {
             ExecStart = "${pkgs.frp}/bin/frpc -c ${cfgFile item}";
             Restart = "always";
+            RestartSec = "10s";
           };
         };
       })
