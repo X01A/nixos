@@ -97,3 +97,8 @@ git.fetchSubmodules = true
 src.github = "zu1k/nali"
 fetch.github = "zu1k/nali"
 git.fetchSubmodules = true
+
+[wiretrustee]
+src.github = "wiretrustee/wiretrustee"
+fetch.github = "wiretrustee/wiretrustee"
+git.fetchSubmodules = true
