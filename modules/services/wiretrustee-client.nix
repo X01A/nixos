@@ -12,7 +12,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    systemd.services.wiretrustee-signal = {
+    systemd.services.wiretrustee-client = {
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
       serviceConfig = {
