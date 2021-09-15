@@ -38,14 +38,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "40f0abafd62a5e917acc36775f5c5b672310a4bc";
+    version = "fdebc27940e6160a598d9a28d6089ef4b3b1c75c";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "40f0abafd62a5e917acc36775f5c5b672310a4bc";
+      rev = "fdebc27940e6160a598d9a28d6089ef4b3b1c75c";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1maqnm56kmy5cfgkgvv79d9zpdn92afkxkvrjlf7dijphdr42pdx";
+      sha256 = "0q8h1kvwfz32k9ny3avsqd9jwmfypjfs42ci7ha364yvzk2hyavy";
     };
 
   };
