@@ -138,14 +138,14 @@
   };
   onedev = {
     pname = "onedev";
-    version = "v4.10.3";
+    version = "v4.11.0";
     src = fetchgit {
       url = "https://github.com/theonedev/onedev";
-      rev = "v4.10.3";
+      rev = "v4.11.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1r5m8l3jbsyxk1ynr6r1xfzqsklb5v2p9qq2gqx0vs7h8nl9xmsg";
+      sha256 = "0166dakz302ry3bfz5ylky9qrl0gmx3h451y3wvpqz7rp7wrkqp6";
     };
 
   };
@@ -216,10 +216,10 @@
   };
   winbox = {
     pname = "winbox";
-    version = "3.30";
+    version = "3.31";
     src = fetchurl {
-      sha256 = "1izh6bv4klfmql18i13vn1s1nszlsarp5rf597x04mhl38f8bspz";
-      url = "https://download.mikrotik.com/winbox/3.30/winbox64.exe";
+      sha256 = "0pnrp6g6ff1lygqjdkjvsxds74q8z08w85ll3xqshqf2crkr2kk8";
+      url = "https://download.mikrotik.com/winbox/3.31/winbox64.exe";
     };
 
   };
