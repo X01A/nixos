@@ -38,14 +38,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "fdebc27940e6160a598d9a28d6089ef4b3b1c75c";
+    version = "944074a711dacf62745ef97d96e368764bc92ee7";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "fdebc27940e6160a598d9a28d6089ef4b3b1c75c";
+      rev = "944074a711dacf62745ef97d96e368764bc92ee7";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0q8h1kvwfz32k9ny3avsqd9jwmfypjfs42ci7ha364yvzk2hyavy";
+      sha256 = "0wpvy2kjk522lijz6j1m9x9b6vg18aqq93hnjisbql3aa3wd0q6j";
     };
 
   };
@@ -138,14 +138,14 @@
   };
   onedev = {
     pname = "onedev";
-    version = "v4.11.0";
+    version = "v4.11.1";
     src = fetchgit {
       url = "https://github.com/theonedev/onedev";
-      rev = "v4.11.0";
+      rev = "v4.11.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0166dakz302ry3bfz5ylky9qrl0gmx3h451y3wvpqz7rp7wrkqp6";
+      sha256 = "1bhrh67ia21xni9ghrl75yg1lnr2fn02j5rxfdggyl9p1fxh9zii";
     };
 
   };
