@@ -11,13 +11,18 @@ in
         default = false;
         type = with types; bool;
       };
+
+      pkg = mkOption {
+        default = pkgs.ipxe;
+        type = types.package;
+      };
     };
   };
 
   config = mkIf cfg.enable {
     services.atftpd = {
       enable = true;
-      root = pkgs.ipxe;
+      root = cfg.pkg;
     };
 
     networking.firewall.allowedUDPPorts = [ 69 ];
