@@ -24,3 +24,4 @@ node:
   os: nixos
   arch: amd64
   type: exec
+  hostname: horizon
