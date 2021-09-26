@@ -121,13 +121,19 @@ rec {
       class "Apple-Intel-Netboot" {
         match if substring (option vendor-class-identifier, 0, 14) = "AAPLBSDPC/i386";
         option dhcp-parameter-request-list 1,3,17,43,60;
-        if (option dhcp-message-type = 1) {
-            option vendor-class-identifier "AAPLBSDPC/i386";
-            option vendor-encapsulated-options 08:04:81:00:00:67;
+        if (option dhcp-message-type = 8) {
+          option vendor-class-identifier "AAPLBSDPC";
+          if (substring(option vendor-encapsulated-options, 0, 3) = 01:01:01) {
+            # BSDP List
+            option vendor-encapsulated-options 01:01:01:04:02:80:00:07:04:81:00:05:2a:09:0D:81:00:05:2a:08:69:50:58:45:2d:46:4f:47;
+          }
+          elsif (substring(option vendor-encapsulated-options, 0, 3) = 01:01:02) {
+            # BSDP Select
+            option vendor-encapsulated-options 01:01:02:08:04:81:00:05:2a:82:0a:4e:65:74:42:6f:6f:74:30:30:31;
+            filename "ipxe.efi";
+            next-server 10.0.0.1;
+          }
         }
-        next-server 10.0.0.1;
-        filename "ipxe.efi";
-      }
     ''}
 
     ${builtins.concatStringsSep "\n" (map buildSubnet opt.subnets)}
