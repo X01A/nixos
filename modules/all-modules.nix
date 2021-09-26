@@ -37,5 +37,6 @@
     ./desktops/font.nix
     ./system/uboot
     ./services/secrets
+    ./services/wiretrustee-client.nix
   ];
 }

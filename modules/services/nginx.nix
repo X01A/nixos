@@ -54,6 +54,10 @@ in
 
         default = true;
 
+        locations."/.well-known/acme-challenge" = {
+          root = "/var/lib/acme/acme-challenge";
+        };
+
         locations."/" = {
           return = "403";
         };

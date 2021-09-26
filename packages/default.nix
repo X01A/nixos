@@ -110,4 +110,8 @@ in
   nali = callPackage ./nali {
     source = nvfetcherOut.nali;
   };
+
+  wiretrustee = callPackage ./wiretrustee {
+    source = nvfetcherOut.wiretrustee;
+  };
 }

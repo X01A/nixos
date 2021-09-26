@@ -38,14 +38,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "d8b61b58a7e683f8c8047d6cbe1c30cf1aeb2b8b";
+    version = "33568cf90ad7098396d25bab884b4912107b45f8";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "d8b61b58a7e683f8c8047d6cbe1c30cf1aeb2b8b";
+      rev = "33568cf90ad7098396d25bab884b4912107b45f8";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0yjch3dfkrkpc3525xp8zkfm72s5i4vzi45csv31xlhnqks5bq2w";
+      sha256 = "0a5nl7nrrh4r142qd2iqmhr6nxdkq5iyw9lbry2bbgz80smpghjc";
     };
 
   };
@@ -103,14 +103,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "094802369c6de196270b7b543e89aff7691a4bb1";
+    version = "c8599dd4774f624e69f57cdf4f19400a5fbe4bd3";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "094802369c6de196270b7b543e89aff7691a4bb1";
+      rev = "c8599dd4774f624e69f57cdf4f19400a5fbe4bd3";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1z2grb6w662cy352np4kpc46a5x5y5fszi5p2mwa7ymvakg4d779";
+      sha256 = "0j6m4l7kiicrbz1xhxf1cn3jzl6m117qqz1iqc1g9j3gs98zfim6";
     };
 
   };
@@ -138,14 +138,14 @@
   };
   onedev = {
     pname = "onedev";
-    version = "v4.9.4";
+    version = "v4.11.1";
     src = fetchgit {
       url = "https://github.com/theonedev/onedev";
-      rev = "v4.9.4";
+      rev = "v4.11.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1cm8fl2fqxz0lzajran5nj2yba8h9wiyi985swbra6v6my4cfwzv";
+      sha256 = "1bhrh67ia21xni9ghrl75yg1lnr2fn02j5rxfdggyl9p1fxh9zii";
     };
 
   };
@@ -216,10 +216,23 @@
   };
   winbox = {
     pname = "winbox";
-    version = "3.29";
+    version = "3.31";
     src = fetchurl {
-      sha256 = "03ix1v18xfs52qhbr7k8a1k46xldijrq2cxsyr51aqvmhcf5czpr";
-      url = "https://download.mikrotik.com/winbox/3.29/winbox64.exe";
+      sha256 = "0pnrp6g6ff1lygqjdkjvsxds74q8z08w85ll3xqshqf2crkr2kk8";
+      url = "https://download.mikrotik.com/winbox/3.31/winbox64.exe";
+    };
+
+  };
+  wiretrustee = {
+    pname = "wiretrustee";
+    version = "v0.1.0-beta.2";
+    src = fetchgit {
+      url = "https://github.com/wiretrustee/wiretrustee";
+      rev = "v0.1.0-beta.2";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "1n038kaiv6fqyirn34x1rgwlidfi83zylikzb0yrxwnrpicnngf9";
     };
 
   };
