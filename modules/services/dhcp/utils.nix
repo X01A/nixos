@@ -104,6 +104,7 @@ let
           next-server ${opt.tftpServer};
           filename "undionly.kpxe";
         }
+
       ''}
 
       ${builtins.concatStringsSep "\n" (map buildHost opt.hosts)}
@@ -115,6 +116,19 @@ rec {
   buildConfig = opt: ''
     ddns-update-style none;
     ${optionalString opt.enableIpxe ipxeOptionsString}
+
+    ${optionalString opt.enableIpxe ''
+      class "Apple-Intel-Netboot" {
+        match if substring (option vendor-class-identifier, 0, 14) = "AAPLBSDPC/i386";
+        option dhcp-parameter-request-list 1,3,17,43,60;
+        if (option dhcp-message-type = 1) {
+            option vendor-class-identifier "AAPLBSDPC/i386";
+            option vendor-encapsulated-options 08:04:81:00:00:67;
+        }
+        next-server 10.0.0.1;
+        filename "ipxe.efi";
+      }
+    ''}
 
     ${builtins.concatStringsSep "\n" (map buildSubnet opt.subnets)}
   '';
