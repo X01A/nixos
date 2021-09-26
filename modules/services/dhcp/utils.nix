@@ -134,6 +134,7 @@ rec {
             next-server 10.0.0.1;
           }
         }
+      }
     ''}
 
     ${builtins.concatStringsSep "\n" (map buildSubnet opt.subnets)}
