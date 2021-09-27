@@ -38,14 +38,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "33568cf90ad7098396d25bab884b4912107b45f8";
+    version = "5836a7b8d4f8df2c3334590c5dbba04b214fed63";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "33568cf90ad7098396d25bab884b4912107b45f8";
+      rev = "5836a7b8d4f8df2c3334590c5dbba04b214fed63";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0a5nl7nrrh4r142qd2iqmhr6nxdkq5iyw9lbry2bbgz80smpghjc";
+      sha256 = "165gsb9c4xmzqvhv8k2r7rsmax2dq217a0fzp3w3yyw9v4vsn6f7";
     };
 
   };
@@ -103,14 +103,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "c8599dd4774f624e69f57cdf4f19400a5fbe4bd3";
+    version = "8bd5643d34743d90671c506b6f314c72b29c9d6d";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "c8599dd4774f624e69f57cdf4f19400a5fbe4bd3";
+      rev = "8bd5643d34743d90671c506b6f314c72b29c9d6d";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0j6m4l7kiicrbz1xhxf1cn3jzl6m117qqz1iqc1g9j3gs98zfim6";
+      sha256 = "06ax5h15vbyxkx55p61h5qbl7qsai7ym0ks4yni9hrgjnplr9ccm";
     };
 
   };
@@ -138,14 +138,14 @@
   };
   onedev = {
     pname = "onedev";
-    version = "v4.11.1";
+    version = "v5.0.0";
     src = fetchgit {
       url = "https://github.com/theonedev/onedev";
-      rev = "v4.11.1";
+      rev = "v5.0.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1bhrh67ia21xni9ghrl75yg1lnr2fn02j5rxfdggyl9p1fxh9zii";
+      sha256 = "1jwngrlms78cy7m3jglr7wipz131l1lvrxix9h0gmmj2dbdpsqwy";
     };
 
   };
@@ -225,14 +225,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.1.0-beta.2";
+    version = "v0.1.0-beta.3";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.1.0-beta.2";
+      rev = "v0.1.0-beta.3";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1n038kaiv6fqyirn34x1rgwlidfi83zylikzb0yrxwnrpicnngf9";
+      sha256 = "1i52zm660561mbhibwd3adgh8g4ql3m7hrgjndv23j2vn2vz12bp";
     };
 
   };
@@ -247,10 +247,10 @@
   };
   yesplaymusic = {
     pname = "yesplaymusic";
-    version = "0.4.0";
+    version = "0.4.1";
     src = fetchurl {
-      sha256 = "1dx0127xr0mlkskvspqmdbl0q1ysdxbdjf17d7mwkzxsrbky6xi1";
-      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.0/YesPlayMusic-0.4.0.AppImage";
+      sha256 = "0bqybqkikr82mbwkyfb1ld6n9mi4mgcfcsry5jxxas15lraszx8d";
+      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.1/YesPlayMusic-0.4.1.AppImage";
     };
 
   };
