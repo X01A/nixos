@@ -3,14 +3,14 @@
 {
   chia-plotter = {
     pname = "chia-plotter";
-    version = "b0efd8793637d06a11fa8b6f733738a6588650b7";
+    version = "a9f35cd605517a8c134e7bb4e2af88dd3d3ac236";
     src = fetchgit {
       url = "https://github.com/madMAx43v3r/chia-plotter";
-      rev = "b0efd8793637d06a11fa8b6f733738a6588650b7";
+      rev = "a9f35cd605517a8c134e7bb4e2af88dd3d3ac236";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "016s49bcwx8li7z2dfbwxn4rw44xrf0583f96rlb6aygr218scs2";
+      sha256 = "0c3qxd1r61kwxzmfjcqpyxdjyim5f6rhsm42gfd3p3qkxmr6mvpc";
     };
 
   };
@@ -103,14 +103,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "00231e10fd4e8c404d83916742ec3125fb6a70e3";
+    version = "6cfe37c64c988092f1f51f8ead74c6f93144dfd6";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "00231e10fd4e8c404d83916742ec3125fb6a70e3";
+      rev = "6cfe37c64c988092f1f51f8ead74c6f93144dfd6";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1byvckzr28ib3az9pvda834g1pmq5fpvq0vqdnfkbiqyh0bdm2lw";
+      sha256 = "1bpw3kdyv1v44c9zsgk6i3i10bhz0mihb73dpqxrs4zzckiazip4";
     };
 
   };
@@ -138,14 +138,14 @@
   };
   onedev = {
     pname = "onedev";
-    version = "v5.0.0";
+    version = "v5.0.1";
     src = fetchgit {
       url = "https://github.com/theonedev/onedev";
-      rev = "v5.0.0";
+      rev = "v5.0.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1jwngrlms78cy7m3jglr7wipz131l1lvrxix9h0gmmj2dbdpsqwy";
+      sha256 = "1rxmg0v8y53zjj21bkrlbkfpyfcpahzlbxsfci00n5g7xkrp1wnn";
     };
 
   };
