@@ -47,7 +47,6 @@
       leaveDotGit = false;
       sha256 = "05fl6lj8cjlsv0ix9gcpnv9g67wjz2myhvlqjgkim1piml7kqlzr";
     };
-
   };
   drone-runner-docker = {
     pname = "drone-runner-docker";
@@ -112,7 +111,6 @@
       leaveDotGit = false;
       sha256 = "0621v962kqhqngz49samyw619nqidqrlssk7pb3sx8q673ikhjhv";
     };
-
   };
   motrix = {
     pname = "motrix";
@@ -147,7 +145,6 @@
       leaveDotGit = false;
       sha256 = "03fh1ahmk35866iyx5jan0xi50r1za74wiav21468hagha2h95gc";
     };
-
   };
   openwhisk-cli = {
     pname = "openwhisk-cli";
@@ -173,7 +170,6 @@
       leaveDotGit = false;
       sha256 = "1lgczf3hjckr5r44mvka6jnha5ja2mpj72bwjqfyf61vkhg0gd32";
     };
-
   };
   tifig = {
     pname = "tifig";
