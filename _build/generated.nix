@@ -38,14 +38,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "209726cf96d96775fac0deb7931f83c14ad0aa27";
+    version = "2e999ad95cabbef7d6aa16d0e3afb2189bed7c59";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "209726cf96d96775fac0deb7931f83c14ad0aa27";
+      rev = "2e999ad95cabbef7d6aa16d0e3afb2189bed7c59";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0za32my01wsmwrkzlym2mig25fi8pcqmpjx7mjw3w8bwa41fgjl6";
+      sha256 = "05fl6lj8cjlsv0ix9gcpnv9g67wjz2myhvlqjgkim1piml7kqlzr";
     };
 
   };
@@ -103,14 +103,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "6cfe37c64c988092f1f51f8ead74c6f93144dfd6";
+    version = "7820949b109ae27db9a83657f4d48b5bdde58e91";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "6cfe37c64c988092f1f51f8ead74c6f93144dfd6";
+      rev = "7820949b109ae27db9a83657f4d48b5bdde58e91";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1bpw3kdyv1v44c9zsgk6i3i10bhz0mihb73dpqxrs4zzckiazip4";
+      sha256 = "0621v962kqhqngz49samyw619nqidqrlssk7pb3sx8q673ikhjhv";
     };
 
   };
@@ -138,14 +138,14 @@
   };
   onedev = {
     pname = "onedev";
-    version = "v5.0.1";
+    version = "v5.1.0";
     src = fetchgit {
       url = "https://github.com/theonedev/onedev";
-      rev = "v5.0.1";
+      rev = "v5.1.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1rxmg0v8y53zjj21bkrlbkfpyfcpahzlbxsfci00n5g7xkrp1wnn";
+      sha256 = "03fh1ahmk35866iyx5jan0xi50r1za74wiav21468hagha2h95gc";
     };
 
   };
@@ -164,14 +164,14 @@
   };
   sunshine = {
     pname = "sunshine";
-    version = "v0.10.1";
+    version = "v0.11.1";
     src = fetchgit {
       url = "https://github.com/loki-47-6F-64/sunshine";
-      rev = "v0.10.1";
+      rev = "v0.11.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0hwb0kadjw9kzlxb6izrbwcbn1xqs2djdm4p7gym9si1snix171v";
+      sha256 = "1lgczf3hjckr5r44mvka6jnha5ja2mpj72bwjqfyf61vkhg0gd32";
     };
 
   };
