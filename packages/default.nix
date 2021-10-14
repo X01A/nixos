@@ -95,10 +95,6 @@ in
     source = nvfetcherOut.mmdb-ipip;
   };
 
-  onedev = callPackage ./onedev {
-    source = nvfetcherOut.onedev;
-  };
-
   drone-runner-exec = callPackage ./drone-runner-exec {
     source = nvfetcherOut.drone-runner-exec;
   };
@@ -114,4 +110,7 @@ in
   wiretrustee = callPackage ./wiretrustee {
     source = nvfetcherOut.wiretrustee;
   };
+
+  swtpm-mod = callPackage ./swtpm { };
+  novnc = callPackage ./novnc { };
 }

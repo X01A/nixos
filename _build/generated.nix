@@ -47,6 +47,7 @@
       leaveDotGit = false;
       sha256 = "0jn8kvyzv5483xsczybhch0ph5g1y4k38q1xjj3gklqwr107zbw6";
     };
+
   };
   drone-runner-docker = {
     pname = "drone-runner-docker";
@@ -102,15 +103,16 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "211b0984d0ddebb5f316e10fbc3236c703fd6bb7";
+    version = "1db1db7f9bbd35c94a8f25d457241b335db51b55";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "211b0984d0ddebb5f316e10fbc3236c703fd6bb7";
+      rev = "1db1db7f9bbd35c94a8f25d457241b335db51b55";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0wbhqgphhqj0pkqi86xnlndws9r8a7mb47kgj59c4wsmg055d0jd";
+      sha256 = "1k6h1yd0m2ih13dvy9c80x95j2sj93y734hw5adsyq0c8x470n5f";
     };
+
   };
   motrix = {
     pname = "motrix";
@@ -133,18 +135,6 @@
       sha256 = "0ra405s878cvd0p5wdi45sm3bkhhz3lhhhi7lgzsr5vijdr44dgn";
     };
 
-  };
-  onedev = {
-    pname = "onedev";
-    version = "v5.1.0";
-    src = fetchgit {
-      url = "https://github.com/theonedev/onedev";
-      rev = "v5.1.0";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sha256 = "03fh1ahmk35866iyx5jan0xi50r1za74wiav21468hagha2h95gc";
-    };
   };
   openwhisk-cli = {
     pname = "openwhisk-cli";
@@ -170,6 +160,7 @@
       leaveDotGit = false;
       sha256 = "1lgczf3hjckr5r44mvka6jnha5ja2mpj72bwjqfyf61vkhg0gd32";
     };
+
   };
   tifig = {
     pname = "tifig";
