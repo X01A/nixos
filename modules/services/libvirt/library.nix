@@ -1,5 +1,15 @@
 { lib, requireFile, fetchurl, runCommand, cdrkit, pkgs, ... }:
 
+let
+  KEKCA = fetchurl {
+    url = "https://www.microsoft.com/pkiops/certs/MicCorKEKCA2011_2011-06-24.crt";
+    sha256 = "sha256-oRF/UWoyzvy6Py0azhCoeXL9a76P4NC5luCeZdgCpQM=";
+  };
+  PRODCA = fetchurl {
+    url = "https://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt";
+    sha256 = "sha256-6OlfBzOlXoute+ChQT7iPFH86mSzyPpqeGk1/dzHGWE=";
+  };
+in
 {
   cloud-config = { meta_data, user_data }: runCommand "cloud-config.iso"
     {
@@ -24,15 +34,30 @@
     };
 
     windows = rec {
-      virtio_driver = fetchurl {
+      secure_boot_key = toString (runCommand "secure-boot-key.iso" {
+        inherit KEKCA PRODCA;
+      } ''
+        ${pkgs.dosfstools}/bin/mkfs.msdos -C $out 2880
+        cp $KEKCA MicCorKEKCA2011_2011-06-24.crt
+        cp $PRODCA MicWinProPCA2011_2011-10-19.crt
+        ${pkgs.mtools}/bin/mcopy -psvm -i $out ./* ::
+      '');
+
+      virtio_driver = toString (fetchurl {
         url = "https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.185-2/virtio-win-0.1.185.iso";
         sha256 = "rys8yfp5Bd6l5Y0xUI11u6cXwrDVVTliZYpHrrycw4Y=";
-      };
+      });
 
       x64_21h1_en_bussiness = toString (requireFile {
         url = "https://files.rg-adguard.net/file/3afa4c53-bac6-f55c-a8cf-aab357784d75";
         name = "en_windows_10_business_editions_version_21h1_x64_dvd_ec5a76c1.iso";
         sha256 = "0fc1b94fa41fd15a32488f1360e347e49934ad731b495656a0a95658a74ad67f";
+      });
+
+      x64_11_22000_194_zh_cn_enterprise = toString (requireFile {
+        url = "https://files.rg-adguard.net/file/aaf7387a-97ce-0d3e-9332-079a403614fe";
+        name = "Windows11_InsiderPreview_EnterpriseVL_x64_zh-cn__22000.iso";
+        sha256 = "718cbc68bb218227c5bf6b7a4ed1765e8550cf106988afaf7e6b505c7584c6de";
       });
     };
 

@@ -78,11 +78,6 @@ fetch.git = "https://github.com/alecthw/mmdb_china_ip_list.git"
 git.fetchSubmodules = true
 src.branch = "release"
 
-[onedev]
-src.github = "theonedev/onedev"
-fetch.github = "theonedev/onedev"
-git.fetchSubmodules = true
-
 [drone-runner-exec]
 src.github = "drone-runners/drone-runner-exec"
 fetch.github = "drone-runners/drone-runner-exec"

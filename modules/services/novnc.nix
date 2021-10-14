@@ -55,11 +55,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      novnc
-      pkgs.pythonPackages.websockify
-    ];
-
     systemd.services = builtins.listToAttrs (map
       (item:
         let
@@ -74,7 +69,7 @@ in
             partOf = [ "vm-${item.name}-lifetime.service" ];
 
             serviceConfig = {
-              ExecStart = "${pkgs.pythonPackages.websockify}/bin/websockify --unix ${vncSocket} 127.0.0.1:${toString item.port}";
+              ExecStart = "${pkgs.python3Packages.websockify}/bin/websockify --unix ${vncSocket} 127.0.0.1:${toString item.port}";
               Restart = "always";
             };
           };

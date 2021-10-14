@@ -78,8 +78,8 @@ rec {
       title = nullOrStr "Human-readable name" null;
       description = nullOrStr "Description" null;
 
-      arch = nullOrStr "Architecture" null;
-      machine = nullOrStr "Machine type" null;
+      arch = nullOrStr "Architecture" "x86_64";
+      machine = nullOrStr "Machine type" "pc-q35-5.2";
       autoStart = lib.mkOption {
         description = "Auto-start domain";
         default = true;
