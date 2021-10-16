@@ -100,7 +100,7 @@ in
                 ExecStop = pkgs.writeScript "vm-undefine-${name}" ''
                   #!${pkgs.runtimeShell} -e
                   ${pkgs.libvirt}/bin/virsh destroy ${name}
-                  ${pkgs.libvirt}/bin/virsh undefine ${val.uuid}
+                  ${pkgs.libvirt}/bin/virsh undefine --keep-nvram ${val.uuid}
                 '';
               };
             };
