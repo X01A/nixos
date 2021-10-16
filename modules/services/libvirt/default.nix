@@ -8,7 +8,11 @@ let
   rawXml = pkgs.writeText "raw-machines.xml" (builtins.toXML tools.renderedMachines);
   renderedXml = pkgs.runCommand "vm-render-domains"
     {
-      xslt = ./nix-to-libvirt.xsl;
+      xslt = (pkgs.substituteAll {
+        src = ./nix-to-libvirt.xsl;
+        edk2 = pkgs.OVMF-secureBoot.fd;
+        storage = cfg.storagePath;
+      });
     } ''
     mkdir -p $out
     cd $out
@@ -58,6 +62,7 @@ in
 
   imports = [
     ./fixes/remove-default-network.nix
+    ./fixes/add-swtpm.nix
   ];
 
   config = mkIf cfg.enable {

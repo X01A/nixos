@@ -36,7 +36,7 @@ jobs:
 
     - name: Check Package
       run: |
-        nvfetcher build | grep -v '^#' > changelog.tmp
+        nvfetcher build -o _build | grep -v '^#' > changelog.tmp
         nixpkgs-fmt .
 
     - name: Output changelog
