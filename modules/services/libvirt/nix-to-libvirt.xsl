@@ -20,10 +20,9 @@
         <description><xsl:value-of select="$description"/></description>
       </xsl:if>
       <vcpu><xsl:value-of select="attrs/attr[@name='smp']/*/@value"/></vcpu>
-      <cpu mode="host-model">
+      <cpu mode="host-passthrough">
       </cpu>
       <os>
-        <!--  firmware="{attrs/attr[@name='firmware']/*/@value}" -->
         <type>
           <xsl:variable name="arch" select="attrs/attr[@name='arch']/*/@value" />
           <xsl:variable name="machine" select="attrs/attr[@name='machine']/*/@value" />
@@ -44,6 +43,14 @@
           <boot dev="{@value}"/>
         </xsl:for-each>
         <bootmenu enable='yes'/>
+        <xsl:if test="(attrs/attr[@name='firmware']/*/@value = 'efi')">
+          <loader readonly="yes" secure="yes" type="pflash">@edk2@/FV/OVMF.fd</loader>
+          <nvram template='@edk2@/FV/OVMF.fd'>@storage@/nvram/<xsl:value-of select='@name' />.fd</nvram>
+          <firmware>
+            <feature enabled="yes" name="secure-boot"/>
+            <feature enabled="yes" name="enrolled-keys"/>
+          </firmware>
+        </xsl:if>
       </os>
       <features>
         <acpi/>
@@ -52,6 +59,7 @@
           <hidden state='on'/>
         </kvm>
         <vmport state='off'/>
+        <smm state='on'/>
       </features>
 
       <xsl:for-each select="attrs/attr[@name='memory']/attrs">

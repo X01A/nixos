@@ -3,14 +3,14 @@
 {
   chia-plotter = {
     pname = "chia-plotter";
-    version = "a9a49031ac03504b272b7199ef3e071c2d93e9cc";
+    version = "a9f35cd605517a8c134e7bb4e2af88dd3d3ac236";
     src = fetchgit {
       url = "https://github.com/madMAx43v3r/chia-plotter";
-      rev = "a9a49031ac03504b272b7199ef3e071c2d93e9cc";
+      rev = "a9f35cd605517a8c134e7bb4e2af88dd3d3ac236";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0wss77cd9c0hk775ws73dwmlhz6lkcyj4cnijgxzrdpwa430k4zq";
+      sha256 = "0c3qxd1r61kwxzmfjcqpyxdjyim5f6rhsm42gfd3p3qkxmr6mvpc";
     };
 
   };
@@ -38,14 +38,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "33568cf90ad7098396d25bab884b4912107b45f8";
+    version = "9c944006f60e0c3a770c539056c94437f45765e2";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "33568cf90ad7098396d25bab884b4912107b45f8";
+      rev = "9c944006f60e0c3a770c539056c94437f45765e2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0a5nl7nrrh4r142qd2iqmhr6nxdkq5iyw9lbry2bbgz80smpghjc";
+      sha256 = "0jn8kvyzv5483xsczybhch0ph5g1y4k38q1xjj3gklqwr107zbw6";
     };
 
   };
@@ -103,14 +103,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "c8599dd4774f624e69f57cdf4f19400a5fbe4bd3";
+    version = "1db1db7f9bbd35c94a8f25d457241b335db51b55";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "c8599dd4774f624e69f57cdf4f19400a5fbe4bd3";
+      rev = "1db1db7f9bbd35c94a8f25d457241b335db51b55";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0j6m4l7kiicrbz1xhxf1cn3jzl6m117qqz1iqc1g9j3gs98zfim6";
+      sha256 = "1k6h1yd0m2ih13dvy9c80x95j2sj93y734hw5adsyq0c8x470n5f";
     };
 
   };
@@ -136,19 +136,6 @@
     };
 
   };
-  onedev = {
-    pname = "onedev";
-    version = "v4.11.1";
-    src = fetchgit {
-      url = "https://github.com/theonedev/onedev";
-      rev = "v4.11.1";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sha256 = "1bhrh67ia21xni9ghrl75yg1lnr2fn02j5rxfdggyl9p1fxh9zii";
-    };
-
-  };
   openwhisk-cli = {
     pname = "openwhisk-cli";
     version = "1.2.0";
@@ -164,14 +151,14 @@
   };
   sunshine = {
     pname = "sunshine";
-    version = "v0.10.1";
+    version = "v0.11.1";
     src = fetchgit {
       url = "https://github.com/loki-47-6F-64/sunshine";
-      rev = "v0.10.1";
+      rev = "v0.11.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0hwb0kadjw9kzlxb6izrbwcbn1xqs2djdm4p7gym9si1snix171v";
+      sha256 = "1lgczf3hjckr5r44mvka6jnha5ja2mpj72bwjqfyf61vkhg0gd32";
     };
 
   };
@@ -225,14 +212,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.1.0-beta.2";
+    version = "v0.1.0-beta.3";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.1.0-beta.2";
+      rev = "v0.1.0-beta.3";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1n038kaiv6fqyirn34x1rgwlidfi83zylikzb0yrxwnrpicnngf9";
+      sha256 = "1i52zm660561mbhibwd3adgh8g4ql3m7hrgjndv23j2vn2vz12bp";
     };
 
   };
@@ -247,10 +234,10 @@
   };
   yesplaymusic = {
     pname = "yesplaymusic";
-    version = "0.4.0";
+    version = "0.4.1";
     src = fetchurl {
-      sha256 = "1dx0127xr0mlkskvspqmdbl0q1ysdxbdjf17d7mwkzxsrbky6xi1";
-      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.0/YesPlayMusic-0.4.0.AppImage";
+      sha256 = "0bqybqkikr82mbwkyfb1ld6n9mi4mgcfcsry5jxxas15lraszx8d";
+      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.1/YesPlayMusic-0.4.1.AppImage";
     };
 
   };
