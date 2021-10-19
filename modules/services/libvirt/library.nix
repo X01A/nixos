@@ -26,6 +26,11 @@ in
       url = "https://mirrors.edge.kernel.org/archlinux/iso/${date}/archlinux-${date}-x86_64.iso";
     };
 
+    debian-11 = fetchurl {
+      url = "https://cdimage.debian.org/debian-cd/11.1.0/amd64/iso-cd/debian-11.1.0-amd64-netinst.iso";
+      sha256 = "1ciyjkx30yiw57glmfpq83db3pr9kc2yq04v7ixfx40m6v0sp244";
+    };
+
     archlinux_latest = archlinux "2021.06.01" "0i82mr2l99j7alljvwz3p91w5yrk1ilpzvdbrj4la8kszcfzh8xx";
 
     netbootxyz = fetchurl {
