@@ -12,16 +12,14 @@
       leaveDotGit = false;
       sha256 = "0c3qxd1r61kwxzmfjcqpyxdjyim5f6rhsm42gfd3p3qkxmr6mvpc";
     };
-
   };
   cloudreve = {
     pname = "cloudreve";
     version = "3.3.2";
     src = fetchurl {
-      sha256 = "1iq4dj5hr2zxji7nhrx7yn1wc72ssx3lyhclipfggap3f7zlk5l0";
       url = "https://github.com/cloudreve/Cloudreve/releases/download/3.3.2/cloudreve_3.3.2_linux_amd64.tar.gz";
+      sha256 = "1iq4dj5hr2zxji7nhrx7yn1wc72ssx3lyhclipfggap3f7zlk5l0";
     };
-
   };
   cloudreve-cli = {
     pname = "cloudreve-cli";
@@ -34,7 +32,6 @@
       leaveDotGit = false;
       sha256 = "07npxyn9zkk4am06wyqdblpdw126501fs6pa4ff37jv133s1yqvd";
     };
-
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
@@ -47,7 +44,6 @@
       leaveDotGit = false;
       sha256 = "124d1h5iazv4qaxjk4afy5mrr2risyk056ymg48aafgyixpzh6l6";
     };
-
   };
   drone-runner-docker = {
     pname = "drone-runner-docker";
@@ -60,7 +56,6 @@
       leaveDotGit = false;
       sha256 = "1r3nmm7n7y9z1n5z0nzy1vqqx3897q10hc740k4fn4bs9fpyk3aq";
     };
-
   };
   drone-runner-exec = {
     pname = "drone-runner-exec";
@@ -73,7 +68,6 @@
       leaveDotGit = false;
       sha256 = "1ay4vla54hrc3ranyc6whpqh0r1nynjg6x2ab1z1259ry9xzm4xs";
     };
-
   };
   fcitx5-material-color = {
     pname = "fcitx5-material-color";
@@ -86,16 +80,14 @@
       leaveDotGit = false;
       sha256 = "0drdypjf1njl7flkb5d581vchwlp4gaqyws3cp0v874wkwh4gllb";
     };
-
   };
   mattermost = {
     pname = "mattermost";
     version = "6.0.1";
     src = fetchurl {
-      sha256 = "0zi8v7cxxl4qg8cyrgxs64mrbi1hcc7wwsscj931hfynrz3x0np0";
       url = "https://releases.mattermost.com/6.0.1/mattermost-6.0.1-linux-amd64.tar.gz";
+      sha256 = "0zi8v7cxxl4qg8cyrgxs64mrbi1hcc7wwsscj931hfynrz3x0np0";
     };
-
   };
   microsocks = {
     pname = "microsocks";
@@ -108,29 +100,26 @@
       leaveDotGit = false;
       sha256 = "1di11wx9ihwa0g9qzsqrb3ka2xxjb10fyc7hwjhn58mxdfwlavl0";
     };
-
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "bf029a82bffe1e156a2a6ee2498d6a11c53ecd7c";
+    version = "95819ab1ea8a8334594b153a220a6060a5b3f54f";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "bf029a82bffe1e156a2a6ee2498d6a11c53ecd7c";
+      rev = "95819ab1ea8a8334594b153a220a6060a5b3f54f";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1zw909mzchylb25bhrc797jnmqxnh87hlxr3p8m2h9k701bh1sa9";
+      sha256 = "1rmznf689ygr719x3bmykcxyi7wh3pd2alrv5z6jwg6ccfwrdmjp";
     };
-
   };
   motrix = {
     pname = "motrix";
     version = "1.6.11";
     src = fetchurl {
-      sha256 = "0hsazragk4hf9hh1i1hnqhw48kl3f3sckapwzah06w9ysgn90kdl";
       url = "https://github.com/agalwood/Motrix/releases/download/v1.6.11/Motrix-1.6.11.AppImage";
+      sha256 = "0hsazragk4hf9hh1i1hnqhw48kl3f3sckapwzah06w9ysgn90kdl";
     };
-
   };
   nali = {
     pname = "nali";
@@ -143,7 +132,6 @@
       leaveDotGit = false;
       sha256 = "0ra405s878cvd0p5wdi45sm3bkhhz3lhhhi7lgzsr5vijdr44dgn";
     };
-
   };
   openwhisk-cli = {
     pname = "openwhisk-cli";
@@ -156,7 +144,6 @@
       leaveDotGit = false;
       sha256 = "12v5mr5wkbvj66f2pp9k73dfgsjlpi2aq4xi769wpdkqwd31zns9";
     };
-
   };
   sunshine = {
     pname = "sunshine";
@@ -169,7 +156,6 @@
       leaveDotGit = false;
       sha256 = "1lgczf3hjckr5r44mvka6jnha5ja2mpj72bwjqfyf61vkhg0gd32";
     };
-
   };
   tifig = {
     pname = "tifig";
@@ -182,7 +168,6 @@
       leaveDotGit = false;
       sha256 = "05czqkcyq7yiwdg96q9qdm43l2a5d6asdfddvj7h5af73chmp4gi";
     };
-
   };
   vpncloud = {
     pname = "vpncloud";
@@ -195,7 +180,6 @@
       leaveDotGit = false;
       sha256 = "0khq52ks0irfzr56yy73kydpba8na61skfx2c2wdjr2zscvh6l8r";
     };
-
   };
   wgcf = {
     pname = "wgcf";
@@ -208,16 +192,14 @@
       leaveDotGit = false;
       sha256 = "0982lj174q5y6h8k3dj939ki79r6ym34rma0f4sihqjgl3pwlqjj";
     };
-
   };
   winbox = {
     pname = "winbox";
     version = "3.31";
     src = fetchurl {
-      sha256 = "0pnrp6g6ff1lygqjdkjvsxds74q8z08w85ll3xqshqf2crkr2kk8";
       url = "https://download.mikrotik.com/winbox/3.31/winbox64.exe";
+      sha256 = "0pnrp6g6ff1lygqjdkjvsxds74q8z08w85ll3xqshqf2crkr2kk8";
     };
-
   };
   wiretrustee = {
     pname = "wiretrustee";
@@ -230,24 +212,21 @@
       leaveDotGit = false;
       sha256 = "1i52zm660561mbhibwd3adgh8g4ql3m7hrgjndv23j2vn2vz12bp";
     };
-
   };
   yacd = {
     pname = "yacd";
     version = "v0.3.3";
     src = fetchurl {
-      sha256 = "1f5qdj22wplj5xw2hp9r8acq740csv4n4viwb39cyk77baxq8bvl";
       url = "https://github.com/haishanh/yacd/releases/download/v0.3.3/yacd.tar.xz";
+      sha256 = "1f5qdj22wplj5xw2hp9r8acq740csv4n4viwb39cyk77baxq8bvl";
     };
-
   };
   yesplaymusic = {
     pname = "yesplaymusic";
     version = "0.4.1";
     src = fetchurl {
-      sha256 = "0bqybqkikr82mbwkyfb1ld6n9mi4mgcfcsry5jxxas15lraszx8d";
       url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.1/YesPlayMusic-0.4.1.AppImage";
+      sha256 = "0bqybqkikr82mbwkyfb1ld6n9mi4mgcfcsry5jxxas15lraszx8d";
     };
-
   };
 }
