@@ -23,7 +23,6 @@ in
       #
       # Example: virtio
       bus ? "virtio"
-    , fromDisk ? null
     }:
     let
       compDev =
@@ -34,7 +33,7 @@ in
     {
       type = "qcow2";
       config = {
-        inherit name capacity bus block;
+        inherit bus block;
         dev = compDev;
       };
     };
