@@ -113,4 +113,8 @@ in
 
   swtpm-mod = callPackage ./swtpm { };
   novnc = callPackage ./novnc { };
+
+  mattermost-ent = callPackage ./mattermost-ent {
+    source = nvfetcherOut.mattermost;
+  };
 }
