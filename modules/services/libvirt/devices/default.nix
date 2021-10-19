@@ -11,6 +11,7 @@ let
     qcow2 = ./qcow2.nix;
     veth-pair = ./veth-pair.nix;
     tpm = ./tpm.nix;
+    block = ./block.nix;
   };
 
   devices = lib.attrsets.mapAttrs (n: v: import v { inherit pkgs config; }) supportedDevices;
