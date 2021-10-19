@@ -2,13 +2,7 @@
 
 { pkgs, ... }:
 with builtins;
-let
-  lib = pkgs.lib;
 
-  tools = import ../tools {
-    inherit pkgs;
-  };
-in
 {
   # ISO
   construct =

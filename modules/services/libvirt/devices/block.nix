@@ -31,7 +31,7 @@ in
         else throw "You must specify a target device (e.g., vda, sda) according to the target bus";
     in
     {
-      type = "qcow2";
+      type = "block";
       config = {
         inherit bus block;
         dev = compDev;
