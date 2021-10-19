@@ -34,9 +34,10 @@ in
     };
 
     windows = rec {
-      secure_boot_key = toString (runCommand "secure-boot-key.iso" {
-        inherit KEKCA PRODCA;
-      } ''
+      secure_boot_key = toString (runCommand "secure-boot-key.iso"
+        {
+          inherit KEKCA PRODCA;
+        } ''
         ${pkgs.dosfstools}/bin/mkfs.msdos -C $out 2880
         cp $KEKCA MicCorKEKCA2011_2011-06-24.crt
         cp $PRODCA MicWinProPCA2011_2011-10-19.crt

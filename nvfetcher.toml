@@ -97,3 +97,9 @@ git.fetchSubmodules = true
 src.github = "wiretrustee/wiretrustee"
 fetch.github = "wiretrustee/wiretrustee"
 git.fetchSubmodules = true
+
+[mattermost]
+src.webpage = "https://mattermost.com/deploy/"
+src.regex = "<strong>Latest Release: </strong>(.*)</span>"
+fetch.url = "https://releases.mattermost.com/$ver/mattermost-$ver-linux-amd64.tar.gz"
+

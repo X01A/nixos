@@ -38,14 +38,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "9c944006f60e0c3a770c539056c94437f45765e2";
+    version = "0fabf65246a5c3021e97585f0504af50694ac5b1";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "9c944006f60e0c3a770c539056c94437f45765e2";
+      rev = "0fabf65246a5c3021e97585f0504af50694ac5b1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0jn8kvyzv5483xsczybhch0ph5g1y4k38q1xjj3gklqwr107zbw6";
+      sha256 = "124d1h5iazv4qaxjk4afy5mrr2risyk056ymg48aafgyixpzh6l6";
     };
 
   };
@@ -88,6 +88,15 @@
     };
 
   };
+  mattermost = {
+    pname = "mattermost";
+    version = "6.0.1";
+    src = fetchurl {
+      sha256 = "0zi8v7cxxl4qg8cyrgxs64mrbi1hcc7wwsscj931hfynrz3x0np0";
+      url = "https://releases.mattermost.com/6.0.1/mattermost-6.0.1-linux-amd64.tar.gz";
+    };
+
+  };
   microsocks = {
     pname = "microsocks";
     version = "v1.0.2";
@@ -103,14 +112,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "1db1db7f9bbd35c94a8f25d457241b335db51b55";
+    version = "bf029a82bffe1e156a2a6ee2498d6a11c53ecd7c";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "1db1db7f9bbd35c94a8f25d457241b335db51b55";
+      rev = "bf029a82bffe1e156a2a6ee2498d6a11c53ecd7c";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1k6h1yd0m2ih13dvy9c80x95j2sj93y734hw5adsyq0c8x470n5f";
+      sha256 = "1zw909mzchylb25bhrc797jnmqxnh87hlxr3p8m2h9k701bh1sa9";
     };
 
   };
@@ -190,14 +199,14 @@
   };
   wgcf = {
     pname = "wgcf";
-    version = "v2.2.8";
+    version = "v2.2.9";
     src = fetchgit {
       url = "https://github.com/ViRb3/wgcf";
-      rev = "v2.2.8";
+      rev = "v2.2.9";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0fhvdk43vyn1nj5sr96hi5l468qi9dilq1kp01lhzhf4dvyzhx2n";
+      sha256 = "0982lj174q5y6h8k3dj939ki79r6ym34rma0f4sihqjgl3pwlqjj";
     };
 
   };
