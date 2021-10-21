@@ -40,11 +40,11 @@ in
   build-vm-qcow = callPackage ./build-vm-qcow { };
 
   ksmbd-tools = callPackage ./ksmbd/tools.nix {
-    source = nvfetcherOut.ksmbd;
+    source = nvfetcherOut.ksmbd-tools;
   };
 
   ksmbd-kernel = callPackage ./ksmbd/kernel.nix {
-    source = nvfetcherOut.ksmbd-tools;
+    source = nvfetcherOut.ksmbd;
   };
 
   fetch-cloudreve = callPackage ./fetch-cloudreve {
