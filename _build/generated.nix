@@ -3,14 +3,14 @@
 {
   chia-plotter = {
     pname = "chia-plotter";
-    version = "a9f35cd605517a8c134e7bb4e2af88dd3d3ac236";
+    version = "0cf15867e062d32be85476bdab9e2ff67000c9cb";
     src = fetchgit {
       url = "https://github.com/madMAx43v3r/chia-plotter";
-      rev = "a9f35cd605517a8c134e7bb4e2af88dd3d3ac236";
+      rev = "0cf15867e062d32be85476bdab9e2ff67000c9cb";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0c3qxd1r61kwxzmfjcqpyxdjyim5f6rhsm42gfd3p3qkxmr6mvpc";
+      sha256 = "09xldcrzqlz3k2nq54xyil5dw507x5zz3c71yrwc5qr89ik2cmvd";
     };
   };
   cloudreve = {
