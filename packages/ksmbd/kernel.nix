@@ -1,18 +1,10 @@
-{ lib, stdenv, fetchFromGitHub, linuxPackages }:
+{ lib, stdenv, fetchFromGitHub, linuxPackages, source }:
 
 with linuxPackages;
 assert lib.versionAtLeast kernel.version "5.4";
 
 stdenv.mkDerivation {
-  pname = "ksmbd";
-  version = "20210416";
-
-  src = fetchFromGitHub {
-    owner = "namjaejeon";
-    repo = "ksmbd";
-    rev = "dbf652447bcdffe89708bea243e3d1709b7589a1";
-    sha256 = "0djnhkcqm5hyvwds2z7w3d8y133hrcqbcy0hd9ajw91csy3shbff";
-  };
+  inherit (source) pname version src;
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
 
