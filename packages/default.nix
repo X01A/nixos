@@ -39,8 +39,13 @@ in
   libvirt-iso-library = callPackage ../modules/services/libvirt/library.nix { };
   build-vm-qcow = callPackage ./build-vm-qcow { };
 
-  ksmbd-tools = callPackage ./ksmbd/tools.nix { };
-  ksmbd-kernel = callPackage ./ksmbd/kernel.nix { };
+  ksmbd-tools = callPackage ./ksmbd/tools.nix {
+    source = nvfetcherOut.ksmbd;
+  };
+
+  ksmbd-kernel = callPackage ./ksmbd/kernel.nix {
+    source = nvfetcherOut.ksmbd-tools;
+  };
 
   fetch-cloudreve = callPackage ./fetch-cloudreve {
     inherit cloudreve-cli;

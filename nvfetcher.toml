@@ -103,3 +103,12 @@ src.webpage = "https://mattermost.com/deploy/"
 src.regex = "<strong>Latest Release: </strong>(.*)</span>"
 fetch.url = "https://releases.mattermost.com/$ver/mattermost-$ver-linux-amd64.tar.gz"
 
+[ksmbd]
+src.git = "https://github.com/namjaejeon/ksmbd.git"
+fetch.github = "namjaejeon/ksmbd"
+git.fetchSubmodules = true
+
+[ksmbd-tools]
+src.git = "https://github.com/namjaejeon/ksmbd-tools.git"
+fetch.github = "namjaejeon/ksmbd-tools"
+git.fetchSubmodules = true
