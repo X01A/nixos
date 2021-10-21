@@ -78,6 +78,8 @@ in
         '';
       };
 
+      boot.kernelModules = [ "xfs" ];
+
       documentation.enable = false;
       boot.cleanTmpDir = true;
 
@@ -137,6 +139,8 @@ in
         ncdu
         smartmontools
         nali
+        i7z
+        xfsprogs
       ];
       programs.fish = {
         enable = true;
