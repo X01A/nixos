@@ -127,14 +127,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "95819ab1ea8a8334594b153a220a6060a5b3f54f";
+    version = "c4cfb01e860942fc9e39fa4c744e91d0203b29a2";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "95819ab1ea8a8334594b153a220a6060a5b3f54f";
+      rev = "c4cfb01e860942fc9e39fa4c744e91d0203b29a2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1rmznf689ygr719x3bmykcxyi7wh3pd2alrv5z6jwg6ccfwrdmjp";
+      sha256 = "1k9jjvlx748yrxspsbxb15smyl5vfmdjm3847kmm4vbhk83sigqd";
     };
   };
   motrix = {
@@ -247,10 +247,10 @@
   };
   yesplaymusic = {
     pname = "yesplaymusic";
-    version = "0.4.1";
+    version = "0.4.2";
     src = fetchurl {
-      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.1/YesPlayMusic-0.4.1.AppImage";
-      sha256 = "0bqybqkikr82mbwkyfb1ld6n9mi4mgcfcsry5jxxas15lraszx8d";
+      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.2/YesPlayMusic-0.4.2.AppImage";
+      sha256 = "015qk82spzar89p3kbkg3al1hssyda2a9ha50cp0bhxr5jqvf5rs";
     };
   };
 }
