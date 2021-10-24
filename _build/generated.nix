@@ -35,14 +35,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "0fabf65246a5c3021e97585f0504af50694ac5b1";
+    version = "0a015310cdc07660e276e340c46a9e881e2fe6eb";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "0fabf65246a5c3021e97585f0504af50694ac5b1";
+      rev = "0a015310cdc07660e276e340c46a9e881e2fe6eb";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "124d1h5iazv4qaxjk4afy5mrr2risyk056ymg48aafgyixpzh6l6";
+      sha256 = "1m79p5w4pqh0z9y9wc99rcc76g6d8xh3spj5jh0y0smgva0shwfv";
     };
   };
   drone-runner-docker = {
@@ -127,14 +127,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "c4cfb01e860942fc9e39fa4c744e91d0203b29a2";
+    version = "40c424fdb51f0bc5fb88c592b34cba0809993769";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "c4cfb01e860942fc9e39fa4c744e91d0203b29a2";
+      rev = "40c424fdb51f0bc5fb88c592b34cba0809993769";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1k9jjvlx748yrxspsbxb15smyl5vfmdjm3847kmm4vbhk83sigqd";
+      sha256 = "1a0icshszy4zj57sy3sqjxssk79xyymwvzr9kb36m69i23pick74";
     };
   };
   motrix = {
