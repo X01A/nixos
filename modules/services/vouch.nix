@@ -19,11 +19,6 @@ in
         type = types.int;
       };
 
-      configDir = mkOption {
-        default = "/var/lib/vouch";
-        type = types.str;
-      };
-
       config = mkOption {
         default = { };
         type = types.attrs;
@@ -32,19 +27,14 @@ in
   };
 
   config = mkIf cfg.enable {
-    system.activationScripts.vouch = ''
-      mkdir -p ${cfg.configDir}
-      cp ${resultJSON} ${cfg.configDir}/config.yml
-    '';
+    systemd.services.vouch = {
+      description = "an SSO and OAuth / OIDC login solution for Nginx using the auth_request module";
+      wantedBy = [ "multi-user.target" ];
+      after = [ "network.target" ];
 
-    virtualisation.oci-containers.containers.vouch = {
-      image = "voucher/vouch-proxy";
-      ports = [
-        "${toString cfg.port}:9090"
-      ];
-      volumes = [
-        "${cfg.configDir}:/config/"
-      ];
+      script = ''
+        ${pkgs.vouch}/bin/vouch-proxy -config ${resultJSON}
+      '';
     };
   };
 }
