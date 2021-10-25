@@ -193,6 +193,18 @@
       sha256 = "05czqkcyq7yiwdg96q9qdm43l2a5d6asdfddvj7h5af73chmp4gi";
     };
   };
+  vouch = {
+    pname = "vouch";
+    version = "v0.35.1";
+    src = fetchgit {
+      url = "https://github.com/vouch/vouch-proxy";
+      rev = "v0.35.1";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "1j425hfji5f2ki9s049b8z0si31jdkh9smhhvmxp1jn2d3qzm9vl";
+    };
+  };
   vpncloud = {
     pname = "vpncloud";
     version = "v2.2.0";

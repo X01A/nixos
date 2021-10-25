@@ -112,3 +112,8 @@ git.fetchSubmodules = true
 src.git = "https://github.com/namjaejeon/ksmbd-tools.git"
 fetch.github = "namjaejeon/ksmbd-tools"
 git.fetchSubmodules = true
+
+[vouch]
+src.github_tag = "vouch/vouch-proxy"
+fetch.github = "vouch/vouch-proxy"
+git.fetchSubmodules = true

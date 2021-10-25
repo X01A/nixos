@@ -122,4 +122,8 @@ in
   mattermost-ent = callPackage ./mattermost-ent {
     source = nvfetcherOut.mattermost;
   };
+
+  vouch = callPackage ./vouch {
+    source = nvfetcherOut.vouch;
+  };
 }
