@@ -35,14 +35,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "0a015310cdc07660e276e340c46a9e881e2fe6eb";
+    version = "3c5e732ecb78eace22af5ed0113499f38d559735";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "0a015310cdc07660e276e340c46a9e881e2fe6eb";
+      rev = "3c5e732ecb78eace22af5ed0113499f38d559735";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1m79p5w4pqh0z9y9wc99rcc76g6d8xh3spj5jh0y0smgva0shwfv";
+      sha256 = "1pxggnq9pri7q8v1whdfq5dj4g2dwnw67q5cv195aswavjpw6laj";
     };
   };
   drone-runner-docker = {
@@ -95,14 +95,14 @@
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "35e939b0dd4db6cfe0886320221729e55e1aa1b9";
+    version = "bb75f5c3240cba2ab3ac9ee101dbd6495dbdc1f4";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd-tools";
-      rev = "35e939b0dd4db6cfe0886320221729e55e1aa1b9";
+      rev = "bb75f5c3240cba2ab3ac9ee101dbd6495dbdc1f4";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0gk17m4bjrjrzd9dmm5jjwzp0qrjfh6rfkl9zyigsg95xi8p6syp";
+      sha256 = "1q8vsfxd27m2gfzx49dgxlxg88v5py52il1wgi0kdvr0lksyy16r";
     };
   };
   mattermost = {
@@ -147,14 +147,14 @@
   };
   nali = {
     pname = "nali";
-    version = "v0.3.1";
+    version = "v0.3.2";
     src = fetchgit {
       url = "https://github.com/zu1k/nali";
-      rev = "v0.3.1";
+      rev = "v0.3.2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0ra405s878cvd0p5wdi45sm3bkhhz3lhhhi7lgzsr5vijdr44dgn";
+      sha256 = "0s6bqmmklx0hb92bq4lqp3b4mgs7mxqg0l5nzksknary218fh4l9";
     };
   };
   openwhisk-cli = {
