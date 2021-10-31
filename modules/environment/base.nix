@@ -145,9 +145,16 @@ in
       programs.fish = {
         enable = true;
         shellInit = ''
+          set -gx STARSHIP_CONFIG /etc/starship.toml
+
           ${pkgs.starship}/bin/starship init fish | source
         '';
       };
+
+      environment.etc."starship.toml".text = ''
+        add_newline = false
+      '';
+
       users = {
         mutableUsers = false;
         users.indexyz = {
