@@ -81,6 +81,18 @@
       sha256 = "0drdypjf1njl7flkb5d581vchwlp4gaqyws3cp0v874wkwh4gllb";
     };
   };
+  gost = {
+    pname = "gost";
+    version = "8f08304b75376d48162ad4c1fb5aa38d0ea6db29";
+    src = fetchgit {
+      url = "https://github.com/ginuerzh/gost";
+      rev = "8f08304b75376d48162ad4c1fb5aa38d0ea6db29";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "05a222imd91qfr9d8szfwlm7a42acv8ms2ylrq0n96f3c2kwxyi1";
+    };
+  };
   ksmbd = {
     pname = "ksmbd";
     version = "b8ee38069107e3fee7e0da43f8cd3753c81b620b";
