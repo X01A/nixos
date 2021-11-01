@@ -116,7 +116,6 @@ in
     source = nvfetcherOut.wiretrustee;
   };
 
-  swtpm-mod = callPackage ./swtpm { };
   novnc = callPackage ./novnc { };
 
   mattermost-ent = callPackage ./mattermost-ent {
