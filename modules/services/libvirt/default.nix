@@ -10,7 +10,7 @@ let
     {
       xslt = (pkgs.substituteAll {
         src = ./nix-to-libvirt.xsl;
-        edk2 = pkgs.OVMF-secureBoot.fd;
+        edk2 = pkgs.OVMFFull.fd;
         storage = cfg.storagePath;
       });
     } ''
@@ -62,7 +62,6 @@ in
 
   imports = [
     ./fixes/remove-default-network.nix
-    ./fixes/add-swtpm.nix
   ];
 
   config = mkIf cfg.enable {
@@ -76,7 +75,10 @@ in
 
     virtualisation.libvirtd = {
       enable = true;
-      qemuOvmf = true;
+      qemu = {
+        ovmf.enable = true;
+        swtpm.emable = true;
+      };
     };
 
     systemd.tmpfiles.rules = [
