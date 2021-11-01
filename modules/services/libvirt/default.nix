@@ -77,7 +77,7 @@ in
       enable = true;
       qemu = {
         ovmf.enable = true;
-        swtpm.emable = true;
+        swtpm.enable = true;
       };
     };
 
