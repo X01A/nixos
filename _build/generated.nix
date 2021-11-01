@@ -127,14 +127,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "0e17267c85f376e03b66cdf97b12bfff7e1f13e0";
+    version = "1186f0d419212a64b6ba12a5a8a8ffd9e544794a";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "0e17267c85f376e03b66cdf97b12bfff7e1f13e0";
+      rev = "1186f0d419212a64b6ba12a5a8a8ffd9e544794a";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1vcr7ka0gyyafvy483yp4z9ld0yxm5brpa2fflnnzhvzqy1hm40h";
+      sha256 = "0pw031v28zv349kgzvgfg3i9g8yqc37isfkjsaalhfjl27fdxi9s";
     };
   };
   motrix = {
@@ -239,14 +239,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.2.0-beta.3";
+    version = "v0.2.0-beta.5";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.2.0-beta.3";
+      rev = "v0.2.0-beta.5";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "15hf7and6gvhsmhxcx22xd0bdyqk7p914cyljs18ipbma0iiihi9";
+      sha256 = "07nz1n4p3sd7428s4s1q3brxqf2dyj5rg6in4vlya5vcw6wvibi1";
     };
   };
   yacd = {
