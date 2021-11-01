@@ -125,4 +125,8 @@ in
   vouch = callPackage ./vouch {
     source = nvfetcherOut.vouch;
   };
+
+  gost = callPackage ./gost {
+    source = nvfetcherOut.gost;
+  };
 }

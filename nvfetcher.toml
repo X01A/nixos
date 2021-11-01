@@ -117,3 +117,8 @@ git.fetchSubmodules = true
 src.github_tag = "vouch/vouch-proxy"
 fetch.github = "vouch/vouch-proxy"
 git.fetchSubmodules = true
+
+[gost]
+src.git = "https://github.com/ginuerzh/gost.git"
+fetch.github = "ginuerzh/gost"
+git.fetchSubmodules = true

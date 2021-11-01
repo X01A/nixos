@@ -12,12 +12,10 @@
   outputs = { self, nixpkgs, ... }:
     let
       system = "x86_64-linux";
-      packages = import ./packages
-        {
-          nixpkgs = import nixpkgs {
-            inherit system;
-          };
-        };
+      pkgs = import nixpkgs {
+        inherit system;
+      };
+      packages = import ./packages { nixpkgs = pkgs; };
     in
     {
       legacyPackages.${system} = packages;
@@ -26,6 +24,11 @@
         imports = [ ./modules/all-modules.nix ];
       };
 
+      devShell.x86_64-linux = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          nvfetcher
+        ];
+      };
       homeModules.indexyz = { ... }: {
         imports = [ ./home/all-modules.nix ];
       };
