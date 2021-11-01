@@ -119,10 +119,10 @@
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.0.1";
+    version = "6.0.2";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.0.1/mattermost-6.0.1-linux-amd64.tar.gz";
-      sha256 = "0zi8v7cxxl4qg8cyrgxs64mrbi1hcc7wwsscj931hfynrz3x0np0";
+      url = "https://releases.mattermost.com/6.0.2/mattermost-6.0.2-linux-amd64.tar.gz";
+      sha256 = "1zf159m90sqwk5vbjlcsi2x1wmg28w574blpa0fl1jahlcss9025";
     };
   };
   microsocks = {
@@ -251,14 +251,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.2.0-beta.5";
+    version = "v0.2.1-beta.5";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.2.0-beta.5";
+      rev = "v0.2.1-beta.5";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "07nz1n4p3sd7428s4s1q3brxqf2dyj5rg6in4vlya5vcw6wvibi1";
+      sha256 = "09w83mzhbfwh89d9n0z72czy2azvdhav8pjkffah50w89g3gixir";
     };
   };
   yacd = {
