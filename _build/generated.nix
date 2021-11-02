@@ -47,14 +47,14 @@
   };
   drone-runner-docker = {
     pname = "drone-runner-docker";
-    version = "v1.6.3";
+    version = "v1.7.0";
     src = fetchgit {
       url = "https://github.com/drone-runners/drone-runner-docker";
-      rev = "v1.6.3";
+      rev = "v1.7.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1r3nmm7n7y9z1n5z0nzy1vqqx3897q10hc740k4fn4bs9fpyk3aq";
+      sha256 = "1r26gsn97vkz59x3hl0xkrcl6rvjy7734z2bp9ksr76fkxrdjbdb";
     };
   };
   drone-runner-exec = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "1186f0d419212a64b6ba12a5a8a8ffd9e544794a";
+    version = "352166dc26e0390f9a659410a64c3a4a725945ea";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "1186f0d419212a64b6ba12a5a8a8ffd9e544794a";
+      rev = "352166dc26e0390f9a659410a64c3a4a725945ea";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0pw031v28zv349kgzvgfg3i9g8yqc37isfkjsaalhfjl27fdxi9s";
+      sha256 = "1sz6q7v145i6bzaizgkhln4s9np2jk3gyw2hsirx32wcarg7fy5j";
     };
   };
   motrix = {
@@ -251,14 +251,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.2.1-beta.5";
+    version = "v0.2.2-beta.1";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.2.1-beta.5";
+      rev = "v0.2.2-beta.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "09w83mzhbfwh89d9n0z72czy2azvdhav8pjkffah50w89g3gixir";
+      sha256 = "1n2hy91f7y32nw7m32vbm9sxh3c0qg4f3pzfd2w7dzk7vl6zrvk7";
     };
   };
   yacd = {
