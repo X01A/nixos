@@ -3,14 +3,14 @@
 {
   chia-plotter = {
     pname = "chia-plotter";
-    version = "8332d625220b9a54c097d85d6eb4c6b0c9464214";
+    version = "18cad340858f0dbcc8dafd0bda1ce1af0fe58c65";
     src = fetchgit {
       url = "https://github.com/madMAx43v3r/chia-plotter";
-      rev = "8332d625220b9a54c097d85d6eb4c6b0c9464214";
+      rev = "18cad340858f0dbcc8dafd0bda1ce1af0fe58c65";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "037n54hff2zspn8ra7lqx0b9h7r2vr9qz62v9ppyfbm2cpc06qrm";
+      sha256 = "1hswi694cx0670l3wyzhbvnjfyjg6p9q29snkpny5pz7r2lxwy4m";
     };
   };
   cloudreve = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "352166dc26e0390f9a659410a64c3a4a725945ea";
+    version = "a6b07366a991e166f5270cdd3fb23ea9dbd6b6d6";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "352166dc26e0390f9a659410a64c3a4a725945ea";
+      rev = "a6b07366a991e166f5270cdd3fb23ea9dbd6b6d6";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1sz6q7v145i6bzaizgkhln4s9np2jk3gyw2hsirx32wcarg7fy5j";
+      sha256 = "060kxmlakffbdcyljfsl3bnk59sf0mz1hk0fr12cgkgck1sg6wnm";
     };
   };
   motrix = {
