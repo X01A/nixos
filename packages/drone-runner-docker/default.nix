@@ -3,7 +3,7 @@
 buildGoModule rec {
   inherit (source) pname version src;
 
-  vendorSha256 = "tQPM91jMH2/nJ2pq8ExS/dneeLNb/vcL9kmEjyNtl5Y=";
+  vendorSha256 = "hwYmgGun9iYqXLih9aDIltsgxGWc/Ww9WJFwkRJsDpM=";
 
   modSha256 = lib.fakeSha256;
   subPackages = [ "." ];
