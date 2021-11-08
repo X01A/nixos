@@ -65,6 +65,11 @@ in
           config.boot.kernelPackages.wireguard;
       boot.kernelModules = [ "wireguard" ];
     })
+    (lib.mkIf (pkgs.system == "x86_64-linux") {
+      environment.systemPackages = with pkgs; [
+        i7z
+      ];
+    })
     {
       nix = {
         gc = {
@@ -139,7 +144,6 @@ in
         ncdu
         smartmontools
         nali
-        i7z
         xfsprogs
       ];
       programs.fish = {
