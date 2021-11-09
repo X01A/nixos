@@ -5,7 +5,7 @@
 # - provisionScript: Optional provisionScript to be run before domain startup. Must be idempotent.
 { pkgs, ... }:
 {
-  construct = config: {
+  construct = { config ? "" }: {
     inherit config;
     type = "custom";
   };
