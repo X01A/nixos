@@ -5,12 +5,14 @@
 # - provisionScript: Optional provisionScript to be run before domain startup. Must be idempotent.
 { pkgs, ... }:
 {
-  construct = { config ? "" }: {
-    inherit config;
+  construct = { xml ? "" }: {
+    config = {
+      inherit xml;
+    };
     type = "custom";
   };
   render = device: machineName: machine: {
-    deviceStanza = device.config;
+    deviceStanza = device.config.xml;
     provisionScript = "";
   };
 }
