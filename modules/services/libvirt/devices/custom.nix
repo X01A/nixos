@@ -9,5 +9,8 @@
     inherit config;
     type = "custom";
   };
-  render = device: machineName: machine: device.config;
+  render = device: machineName: machine: {
+    deviceStanza = device.config;
+    provisionScript = "";
+  };
 }
