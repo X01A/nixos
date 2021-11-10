@@ -34,6 +34,12 @@ in
         type = types.int;
       };
 
+      proxyArgs = mkOption {
+        default = "";
+        description = "dnsproxy extra args";
+        type = types.str;
+      };
+      
       extraConf = mkOption {
         default = "";
         description = "Extra config for coredns zoon";
@@ -63,7 +69,7 @@ in
         AmbientCapabilities = "cap_net_bind_service";
         NoNewPrivileges = true;
         DynamicUser = true;
-        ExecStart = "${pkgs.dnsproxy}/bin/dnsproxy ${dnsProxy} -p ${toString cfg.proxyPort}";
+        ExecStart = "${pkgs.dnsproxy}/bin/dnsproxy ${dnsProxy} -p ${toString cfg.proxyPort} ${cfg.proxyArgs}";
         Restart = "on-failure";
       };
     };
