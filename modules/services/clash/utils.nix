@@ -22,9 +22,9 @@ rec {
       ${pkgs.yq-go}/bin/yq eval ".allow-lan = true" -i ${fullName}
       ''}
 
-      ${pkgs.yq-go}/bin/yq eval "del(.dns.default-nameserver)" -i ${fullName}
+      ${pkgs.yq-go}/bin/yq eval "del(.dns.nameserver)" -i ${fullName}
       ${pkgs.yq-go}/bin/yq eval ".dns.enable = true" -i ${fullName}
-      ${pkgs.yq-go}/bin/yq eval ".dns.default-nameserver[0] = \"${cfg.dns}\"" -i ${fullName}
+      ${pkgs.yq-go}/bin/yq eval ".dns.nameserver[0] = \"${cfg.dns}\"" -i ${fullName}
 
       # Format document
       ${pkgs.yq-go}/bin/yq eval ${fullName} -I 4 --prettyPrint -i
