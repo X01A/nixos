@@ -31,7 +31,7 @@ in
       sha256 = "1ciyjkx30yiw57glmfpq83db3pr9kc2yq04v7ixfx40m6v0sp244";
     };
 
-    archlinux_latest = archlinux "2021.06.01" "0i82mr2l99j7alljvwz3p91w5yrk1ilpzvdbrj4la8kszcfzh8xx";
+    archlinux_latest = archlinux "2021.11.01" "0z811zcsg8n3yzw285ywdxbdfi985h55yr2jhsz7d6x5qflad3dz";
 
     netbootxyz = fetchurl {
       url = "https://boot.netboot.xyz/ipxe/netboot.xyz.iso";
