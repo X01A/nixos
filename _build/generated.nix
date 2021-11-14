@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "9c99fa6155082afb9f9ab0bd60664b31ad745b1e";
+    version = "7095e60682dd5358dac5bd8bfbac47eac320916c";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "9c99fa6155082afb9f9ab0bd60664b31ad745b1e";
+      rev = "7095e60682dd5358dac5bd8bfbac47eac320916c";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0l3kh8anz26iizkjmvyp2lj5cd2g7lq1akisbx2w21r6ilpw2v8y";
+      sha256 = "0bljj7rxv6nvr64wkvfy0r53dv9770415hp7xcmfxz6w888s5axh";
     };
   };
   motrix = {
@@ -263,10 +263,10 @@
   };
   yacd = {
     pname = "yacd";
-    version = "v0.3.3";
+    version = "v0.3.4";
     src = fetchurl {
-      url = "https://github.com/haishanh/yacd/releases/download/v0.3.3/yacd.tar.xz";
-      sha256 = "1f5qdj22wplj5xw2hp9r8acq740csv4n4viwb39cyk77baxq8bvl";
+      url = "https://github.com/haishanh/yacd/releases/download/v0.3.4/yacd.tar.xz";
+      sha256 = "14q1wp3bdl474f6jwhykvr3409f18xmwhkzndvk6rlgidxvq6in2";
     };
   };
   yesplaymusic = {
