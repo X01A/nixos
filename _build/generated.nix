@@ -251,14 +251,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.2.3";
+    version = "v0.3.0";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.2.3";
+      rev = "v0.3.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "051c234rvjjkadjhwxs7x3lph40pidvkx7si1cvsrlcnyjrcddcy";
+      sha256 = "11crspy55kgsqnh64xa4dbmagyiy871q7klzassgpiqlcpbsfz88";
     };
   };
   yacd = {
