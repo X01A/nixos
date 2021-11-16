@@ -39,7 +39,7 @@ in
         description = "dnsproxy extra args";
         type = types.str;
       };
-      
+
       extraConf = mkOption {
         default = "";
         description = "Extra config for coredns zoon";

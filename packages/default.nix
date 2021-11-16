@@ -129,4 +129,8 @@ in
   gost = callPackage ./gost {
     source = nvfetcherOut.gost;
   };
+
+  clash-premium = callPackage ./clash-premium {
+    source = nvfetcherOut.clash-premium;
+  };
 }
