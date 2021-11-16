@@ -13,6 +13,14 @@
       sha256 = "1hswi694cx0670l3wyzhbvnjfyjg6p9q29snkpny5pz7r2lxwy4m";
     };
   };
+  clash-premium = {
+    pname = "clash-premium";
+    version = "2021.11.08";
+    src = fetchurl {
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2021.11.08.gz";
+      sha256 = "0ry27dh7idp5hhgwlpifvayf0bswnkdh1rb3r5brrhbqgl7wkp7d";
+    };
+  };
   cloudreve = {
     pname = "cloudreve";
     version = "3.3.2";
@@ -119,10 +127,10 @@
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.0.2";
+    version = "6.1.0";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.0.2/mattermost-6.0.2-linux-amd64.tar.gz";
-      sha256 = "1zf159m90sqwk5vbjlcsi2x1wmg28w574blpa0fl1jahlcss9025";
+      url = "https://releases.mattermost.com/6.1.0/mattermost-6.1.0-linux-amd64.tar.gz";
+      sha256 = "0kg1qxb2gl0sfbgmrnfwg20zck9jnj54pxysd9yvk17rmg0lcjih";
     };
   };
   microsocks = {
@@ -139,14 +147,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "9c99fa6155082afb9f9ab0bd60664b31ad745b1e";
+    version = "f3d6779ab005fc04f49f0c7d2e164f496f958506";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "9c99fa6155082afb9f9ab0bd60664b31ad745b1e";
+      rev = "f3d6779ab005fc04f49f0c7d2e164f496f958506";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0l3kh8anz26iizkjmvyp2lj5cd2g7lq1akisbx2w21r6ilpw2v8y";
+      sha256 = "1xvvw107c9svmv5wa3659lvi5i075gh68mbxxhy6qd01jxsiybc9";
     };
   };
   motrix = {
@@ -251,22 +259,22 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.2.3";
+    version = "v0.3.0";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.2.3";
+      rev = "v0.3.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "051c234rvjjkadjhwxs7x3lph40pidvkx7si1cvsrlcnyjrcddcy";
+      sha256 = "11crspy55kgsqnh64xa4dbmagyiy871q7klzassgpiqlcpbsfz88";
     };
   };
   yacd = {
     pname = "yacd";
-    version = "v0.3.3";
+    version = "v0.3.4";
     src = fetchurl {
-      url = "https://github.com/haishanh/yacd/releases/download/v0.3.3/yacd.tar.xz";
-      sha256 = "1f5qdj22wplj5xw2hp9r8acq740csv4n4viwb39cyk77baxq8bvl";
+      url = "https://github.com/haishanh/yacd/releases/download/v0.3.4/yacd.tar.xz";
+      sha256 = "14q1wp3bdl474f6jwhykvr3409f18xmwhkzndvk6rlgidxvq6in2";
     };
   };
   yesplaymusic = {
