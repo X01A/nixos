@@ -77,6 +77,18 @@
       sha256 = "1ay4vla54hrc3ranyc6whpqh0r1nynjg6x2ab1z1259ry9xzm4xs";
     };
   };
+  edl = {
+    pname = "edl";
+    version = "3.52.1";
+    src = fetchgit {
+      url = "https://github.com/bkerler/edl";
+      rev = "3.52.1";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "0rrn3d09pyr59wcqb73cga9m4hvq54fs62hf5j8y2fvhlcqy4y9h";
+    };
+  };
   fcitx5-material-color = {
     pname = "fcitx5-material-color";
     version = "0.2.1";
