@@ -79,14 +79,14 @@
   };
   edl = {
     pname = "edl";
-    version = "3.52.1";
+    version = "0cc421a16079a2f33a9b1e1c1fe9816ad10327ab";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "3.52.1";
+      rev = "0cc421a16079a2f33a9b1e1c1fe9816ad10327ab";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0rrn3d09pyr59wcqb73cga9m4hvq54fs62hf5j8y2fvhlcqy4y9h";
+      sha256 = "0zfzbwy3wj9qs4l0c2dbnbx5sy8a7m5p1rzibv0ncib7l7jy95g4";
     };
   };
   fcitx5-material-color = {
