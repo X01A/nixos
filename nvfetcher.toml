@@ -127,3 +127,8 @@ git.fetchSubmodules = true
 src.webpage = "https://github.com/Dreamacro/clash/releases/tag/premium"
 src.regex = "Premium ([0-9\\.]*)"
 fetch.url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-$ver.gz"
+
+[edl]
+src.github = "bkerler/edl"
+fetch.github = "bkerler/edl"
+git.fetchSubmodules = true

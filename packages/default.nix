@@ -133,4 +133,8 @@ in
   clash-premium = callPackage ./clash-premium {
     source = nvfetcherOut.clash-premium;
   };
+
+  edl = callPackage ./edl {
+    source = nvfetcherOut.edl;
+  };
 }
