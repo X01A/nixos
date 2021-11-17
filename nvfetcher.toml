@@ -129,6 +129,6 @@ src.regex = "Premium ([0-9\\.]*)"
 fetch.url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-$ver.gz"
 
 [edl]
-src.github = "bkerler/edl"
+src.git = "https://github.com/bkerler/edl.git"
 fetch.github = "bkerler/edl"
 git.fetchSubmodules = true
