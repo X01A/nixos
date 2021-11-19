@@ -69,7 +69,7 @@ in
 
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.drone-web = {
-      image = "drone/drone:2.0.3";
+      image = "drone/drone:2.5.0";
       ports = [
         "${toString cfg.port}:80"
       ];
