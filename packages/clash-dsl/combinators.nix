@@ -1,9 +1,9 @@
-{ lib }:
+{ formats, lib }:
 
 with lib;
 
 let
-  clashTypes = import ./types { inherit lib; };
+  clashTypes = import ./types { inherit lib formats; };
 
   evalProfile = data: (
     (evalModules {

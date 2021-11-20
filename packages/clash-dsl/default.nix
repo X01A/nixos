@@ -2,5 +2,5 @@
 
 {
   types = import ./types { inherit lib formats; };
-  combinators = import ./combinators.nix { inherit lib; };
+  combinators = import ./combinators.nix { inherit lib formats; };
 }
