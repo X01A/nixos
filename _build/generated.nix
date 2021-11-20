@@ -225,6 +225,18 @@
       sha256 = "05czqkcyq7yiwdg96q9qdm43l2a5d6asdfddvj7h5af73chmp4gi";
     };
   };
+  tun2socks = {
+    pname = "tun2socks";
+    version = "v2.3.2";
+    src = fetchgit {
+      url = "https://github.com/xjasonlyu/tun2socks";
+      rev = "v2.3.2";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "1p8hifl30zq80k16240c8ssaab3mi1c4j9i0rirlv6algj8zzd9s";
+    };
+  };
   vouch = {
     pname = "vouch";
     version = "v0.35.1";

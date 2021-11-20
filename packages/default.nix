@@ -137,4 +137,8 @@ in
   edl = callPackage ./edl {
     source = nvfetcherOut.edl;
   };
+
+  tun2socks = callPackage ./tun2socks {
+    source = nvfetcherOut.tun2socks;
+  };
 }
