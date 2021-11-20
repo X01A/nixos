@@ -1,4 +1,4 @@
-{ lib }:
+{ formats, lib }:
 
 with lib;
 
@@ -59,6 +59,11 @@ let
         default = [ ];
       };
 
+      extraConfig = mkOption {
+        type = (formats.json { }).type;
+        default = { };
+      };
+
       __toString = mkOption {
         readOnly = true;
         visible = false;
@@ -66,7 +71,7 @@ let
     };
 
     config = {
-      __toString = data: toJSON {
+      __toString = data: toJSON ({
         mixin-port = data.port;
         log-level = data.logLevel;
         mode = data.mode;
@@ -79,7 +84,7 @@ let
         proxies = data.proxies;
 
         rules = data.rules;
-      };
+      } // data.extraConfig);
     };
   };
 in
