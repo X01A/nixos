@@ -132,3 +132,8 @@ fetch.url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-
 src.git = "https://github.com/bkerler/edl.git"
 fetch.github = "bkerler/edl"
 git.fetchSubmodules = true
+
+[tun2socks]
+src.github = "xjasonlyu/tun2socks"
+fetch.github = "xjasonlyu/tun2socks"
+git.fetchSubmodules = true
