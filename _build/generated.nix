@@ -115,26 +115,26 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "6ddb3cffdc68762e85a39b669f9712ed6e14ecd5";
+    version = "4b1a35440024ee33c4a277350faf71f71fba7a1a";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "6ddb3cffdc68762e85a39b669f9712ed6e14ecd5";
+      rev = "4b1a35440024ee33c4a277350faf71f71fba7a1a";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "00lhyhqvysydhvvn1lwwdmi6mkm5ckadrgq3az60i1n8zarkd5yr";
+      sha256 = "07fkx4q0v2w905p3s5rrsp8sjx7x5rp7a543rvjvwfki8175ds3b";
     };
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "9b16a40931dee4bbad1f10124b6c72c529ddf83b";
+    version = "2a9138f22ffd5cc025f451a2ee01c0d4485779d3";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd-tools";
-      rev = "9b16a40931dee4bbad1f10124b6c72c529ddf83b";
+      rev = "2a9138f22ffd5cc025f451a2ee01c0d4485779d3";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1pvvwd41057b9q12zkgjk8zlfxv9z15r804x7ylsklj6v2n384m2";
+      sha256 = "03vb1wrrfhqbfjqa3wq23c4sm9r5659qli4fz760ynn5bj3rl2qm";
     };
   };
   mattermost = {
