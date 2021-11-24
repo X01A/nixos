@@ -103,34 +103,34 @@
   };
   gost = {
     pname = "gost";
-    version = "8f08304b75376d48162ad4c1fb5aa38d0ea6db29";
+    version = "27dec2d2ac0e308ae179a4d0e463d044f9988d73";
     src = fetchgit {
       url = "https://github.com/ginuerzh/gost";
-      rev = "8f08304b75376d48162ad4c1fb5aa38d0ea6db29";
+      rev = "27dec2d2ac0e308ae179a4d0e463d044f9988d73";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "05a222imd91qfr9d8szfwlm7a42acv8ms2ylrq0n96f3c2kwxyi1";
+      sha256 = "1kql8ikgw9xhi94bd2ilgv2wbq08i3lbasf11d2g0n15yh7agmpj";
     };
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "4b1a35440024ee33c4a277350faf71f71fba7a1a";
+    version = "ca076e58d4a0da26f700c6194dcd3862113c637f";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "4b1a35440024ee33c4a277350faf71f71fba7a1a";
+      rev = "ca076e58d4a0da26f700c6194dcd3862113c637f";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "07fkx4q0v2w905p3s5rrsp8sjx7x5rp7a543rvjvwfki8175ds3b";
+      sha256 = "0sdys9za56rlw7gix3skvcaj5jp511nkg5agglwji1m3mrjr0w38";
     };
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "2a9138f22ffd5cc025f451a2ee01c0d4485779d3";
+    version = "402195f4f608f31dc630a71b27d0e1c767df8d17";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd-tools";
-      rev = "2a9138f22ffd5cc025f451a2ee01c0d4485779d3";
+      rev = "402195f4f608f31dc630a71b27d0e1c767df8d17";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
@@ -159,14 +159,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "c17753583575d8a931472c1b7d594ef5618162d5";
+    version = "2423d76217c70dcbe7ea12fe9926f22f8b79ceef";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "c17753583575d8a931472c1b7d594ef5618162d5";
+      rev = "2423d76217c70dcbe7ea12fe9926f22f8b79ceef";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "00iziisgvhdy6w5bsg9r9ynh9aszarkvinzc533vxbis0i5s10jw";
+      sha256 = "0dx32y5s2qq47w5xjyxpimyf1a4zg620a6gv52w84yl3grs3169p";
     };
   };
   motrix = {
@@ -263,14 +263,14 @@
   };
   wgcf = {
     pname = "wgcf";
-    version = "v2.2.9";
+    version = "v2.2.10";
     src = fetchgit {
       url = "https://github.com/ViRb3/wgcf";
-      rev = "v2.2.9";
+      rev = "v2.2.10";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0982lj174q5y6h8k3dj939ki79r6ym34rma0f4sihqjgl3pwlqjj";
+      sha256 = "19lpzjnqdbd0mpaadrihz0frzb1rdx6ajqw508d8pcksfswidj4j";
     };
   };
   winbox = {
