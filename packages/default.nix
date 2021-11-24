@@ -141,4 +141,6 @@ in
   tun2socks = callPackage ./tun2socks {
     source = nvfetcherOut.tun2socks;
   };
+
+  hpool-xproxy = callPackage ./hpool-xproxy { };
 }
