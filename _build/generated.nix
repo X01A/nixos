@@ -23,10 +23,10 @@
   };
   cloudreve = {
     pname = "cloudreve";
-    version = "3.3.2";
+    version = "3.4.1";
     src = fetchurl {
-      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.3.2/cloudreve_3.3.2_linux_amd64.tar.gz";
-      sha256 = "1iq4dj5hr2zxji7nhrx7yn1wc72ssx3lyhclipfggap3f7zlk5l0";
+      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.4.1/cloudreve_3.4.1_linux_amd64.tar.gz";
+      sha256 = "0c7d3w27z7iwfbg1b3fpg39q30rjg9c6pvsz1ix9v88qd0wpdn2f";
     };
   };
   cloudreve-cli = {
@@ -43,14 +43,14 @@
   };
   desktop-icons-ng = {
     pname = "desktop-icons-ng";
-    version = "31b7997368f04e462059b1fc6afa6a4b07693418";
+    version = "ac2d40ecc3b8ae16e43dd9170566ca3e653b667a";
     src = fetchgit {
       url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "31b7997368f04e462059b1fc6afa6a4b07693418";
+      rev = "ac2d40ecc3b8ae16e43dd9170566ca3e653b667a";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1fzaxdi2kqlpv17p22q3wn74wd4ymkk4qv7i7nwigf5jzx7b0hvj";
+      sha256 = "1jdj0m01bj6chzm4ycw2r12xqcf3ps19c09fh4pz5hk8cishi1ir";
     };
   };
   drone-runner-docker = {
@@ -159,14 +159,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "2423d76217c70dcbe7ea12fe9926f22f8b79ceef";
+    version = "db59a7916b0fa462d36a09ecfbb89d04378eca77";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "2423d76217c70dcbe7ea12fe9926f22f8b79ceef";
+      rev = "db59a7916b0fa462d36a09ecfbb89d04378eca77";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0dx32y5s2qq47w5xjyxpimyf1a4zg620a6gv52w84yl3grs3169p";
+      sha256 = "0n54hsmdg3asqrqbjzq916pinyg5ylvb0582pssfcinxpal4i473";
     };
   };
   motrix = {
