@@ -143,4 +143,6 @@ in
   };
 
   hpool-xproxy = callPackage ./hpool-xproxy { };
+
+  teleport-ent = callPackage ./teleport-ent { };
 }
