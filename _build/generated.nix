@@ -41,18 +41,6 @@
       sha256 = "07npxyn9zkk4am06wyqdblpdw126501fs6pa4ff37jv133s1yqvd";
     };
   };
-  desktop-icons-ng = {
-    pname = "desktop-icons-ng";
-    version = "ac2d40ecc3b8ae16e43dd9170566ca3e653b667a";
-    src = fetchgit {
-      url = "https://gitlab.com/rastersoft/desktop-icons-ng.git";
-      rev = "ac2d40ecc3b8ae16e43dd9170566ca3e653b667a";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sha256 = "1jdj0m01bj6chzm4ycw2r12xqcf3ps19c09fh4pz5hk8cishi1ir";
-    };
-  };
   drone-runner-docker = {
     pname = "drone-runner-docker";
     version = "v1.8.0";
