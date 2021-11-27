@@ -67,10 +67,6 @@ in
     source = nvfetcherOut.tifig;
   };
 
-  desktop-icons-ng = callPackage ./desktop-icons-ng {
-    source = nvfetcherOut.desktop-icons-ng;
-  };
-
   sunshine = callPackage ./sunshine {
     source = nvfetcherOut.sunshine;
   };
