@@ -10,6 +10,7 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDHDfjdhKhsp76c/c3q9o8HHwFoZ5SjKi6jVEQp6B4Ty root@nixos"
     # Glowstone Laptop
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQChAHl9xXQPu0uF1kEoLLT/mpIdasbaTItnh3kQSk8X2G1Sf9MBnaDQhZ/VcCbehJNZ/tfai+ieUgm/fUtaefLiJwQXm0sx85YB2VroYBr2iSpxc8ia68PQ6+Ii784fAjLWADX4THOHexCYcIzDgVq1pTh/IR/8KVFfKiuhPqEYYUFbZ/oH2VuNKGtIso/leBgoUM/7Tgg+nKzMuv96PMlxzpTsQT9ogX3kTx8xAvKvJ/kyzemmZQoxw5dtcK7ojAOB8kPG0fybCz4EGJmFjyMzB4BtADeShCnUXcHoUcj3NXyp6DhAYfHg/L4s6yfKnZg4TPOdOuDnv5WNHGWzNQlEoCOu2cP9tjQmCtvFasLjQIBwuM1vjtYQY3FsMiMMHskIwGosSwF102ovylpASzIfsTldzWXoqOwUcMDC341SznY4WbejIX4WYKw/qt+CPXNZmQfpCVRuqHFihc2qPMiLqt/q4CrzplUupthWdXkzrP595Qzw/MYrQkCITTZ1Gts= indexyz@Glowstone"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJg/HHwlBxt2/Io+4M5j6Qwwi8IMTYe8XoDijkfTXHoE"
   ];
 in
 {
