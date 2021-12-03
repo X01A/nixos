@@ -3,14 +3,14 @@
 {
   chia-plotter = {
     pname = "chia-plotter";
-    version = "18cad340858f0dbcc8dafd0bda1ce1af0fe58c65";
+    version = "c99a449c0467923c576acffcb1b7152ff94bb289";
     src = fetchgit {
       url = "https://github.com/madMAx43v3r/chia-plotter";
-      rev = "18cad340858f0dbcc8dafd0bda1ce1af0fe58c65";
+      rev = "c99a449c0467923c576acffcb1b7152ff94bb289";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1hswi694cx0670l3wyzhbvnjfyjg6p9q29snkpny5pz7r2lxwy4m";
+      sha256 = "0k1i8inxnx9ww15rxfjm2l19dvsfzliip573hblx26d6cvxn2dah";
     };
   };
   clash-premium = {
@@ -23,10 +23,10 @@
   };
   cloudreve = {
     pname = "cloudreve";
-    version = "3.4.1";
+    version = "3.4.2";
     src = fetchurl {
-      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.4.1/cloudreve_3.4.1_linux_amd64.tar.gz";
-      sha256 = "0c7d3w27z7iwfbg1b3fpg39q30rjg9c6pvsz1ix9v88qd0wpdn2f";
+      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.4.2/cloudreve_3.4.2_linux_amd64.tar.gz";
+      sha256 = "0n9hadm60nsmvrwmhs5835fd4dachag3shjxydfrdadgi0f8z4if";
     };
   };
   cloudreve-cli = {
@@ -67,14 +67,14 @@
   };
   edl = {
     pname = "edl";
-    version = "0cc421a16079a2f33a9b1e1c1fe9816ad10327ab";
+    version = "529d2e935adc694984aefa848e335186a576933d";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "0cc421a16079a2f33a9b1e1c1fe9816ad10327ab";
+      rev = "529d2e935adc694984aefa848e335186a576933d";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0zfzbwy3wj9qs4l0c2dbnbx5sy8a7m5p1rzibv0ncib7l7jy95g4";
+      sha256 = "1yph228m1la1x2ykcnfq1v0xwfw3liqgjsrwlpjrcaglv4bzr3m2";
     };
   };
   fcitx5-material-color = {
@@ -103,14 +103,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "ca076e58d4a0da26f700c6194dcd3862113c637f";
+    version = "1f15721b015d8740dece74e5380a29fad486bfc6";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "ca076e58d4a0da26f700c6194dcd3862113c637f";
+      rev = "1f15721b015d8740dece74e5380a29fad486bfc6";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0sdys9za56rlw7gix3skvcaj5jp511nkg5agglwji1m3mrjr0w38";
+      sha256 = "11wwwf1wp9bcbxf88ccwk4wiqhh6s6k8wvzm8r92nbyb20kihhfp";
     };
   };
   ksmbd-tools = {
@@ -147,14 +147,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "db59a7916b0fa462d36a09ecfbb89d04378eca77";
+    version = "bd391bf1e6b7527627bd7be62c83683afc18c205";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "db59a7916b0fa462d36a09ecfbb89d04378eca77";
+      rev = "bd391bf1e6b7527627bd7be62c83683afc18c205";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0n54hsmdg3asqrqbjzq916pinyg5ylvb0582pssfcinxpal4i473";
+      sha256 = "0sb6wz4q79bjgfxg3ksjlvp58vvdgp4y9jznxyvgg1zflfm50xyj";
     };
   };
   motrix = {
@@ -271,14 +271,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.3.0";
+    version = "v0.3.1";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.3.0";
+      rev = "v0.3.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "11crspy55kgsqnh64xa4dbmagyiy871q7klzassgpiqlcpbsfz88";
+      sha256 = "0wyi8n29q8gsza6cwwp8qqri8wfp1rlfhizw4y65r0dq3xc7g1wm";
     };
   };
   yacd = {
