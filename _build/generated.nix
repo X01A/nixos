@@ -103,10 +103,10 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "f59c13ef900c2b232a0e699736a32d73036586ed";
+    version = "857a1786dd28bfa6789022b7ab7bd8171a77702d";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "f59c13ef900c2b232a0e699736a32d73036586ed";
+      rev = "857a1786dd28bfa6789022b7ab7bd8171a77702d";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
@@ -147,14 +147,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "b2b85268d1e2a8c2eb574f6dd08d84a771ea7672";
+    version = "81f3725a7e1178739a021fd71d1d30cc29c78570";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "b2b85268d1e2a8c2eb574f6dd08d84a771ea7672";
+      rev = "81f3725a7e1178739a021fd71d1d30cc29c78570";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0klz23r0pmvbmxdjzr1xw79lyysg8hv3jc39dj5xbcbkdxsb3048";
+      sha256 = "1r3mlpms321sf0rwhmhm2bzrh9b3l2ddh017a277rr7qrfgglk69";
     };
   };
   motrix = {
