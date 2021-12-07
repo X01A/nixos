@@ -15,10 +15,10 @@
   };
   clash-premium = {
     pname = "clash-premium";
-    version = "2021.11.08";
+    version = "2021.12.07";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2021.11.08.gz";
-      sha256 = "0ry27dh7idp5hhgwlpifvayf0bswnkdh1rb3r5brrhbqgl7wkp7d";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2021.12.07.gz";
+      sha256 = "14qrjk9r7cz324h3lf8yg41gxr7bvlz05p43nnahqndnkjz3drlf";
     };
   };
   cloudreve = {
@@ -67,14 +67,14 @@
   };
   edl = {
     pname = "edl";
-    version = "529d2e935adc694984aefa848e335186a576933d";
+    version = "9892de2eb185272eccaa40dc9a7e8fe907c67e01";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "529d2e935adc694984aefa848e335186a576933d";
+      rev = "9892de2eb185272eccaa40dc9a7e8fe907c67e01";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1yph228m1la1x2ykcnfq1v0xwfw3liqgjsrwlpjrcaglv4bzr3m2";
+      sha256 = "080rqi2fd4a8hxw8gkkpbprayiyv0ijmivq71zc9jpfl3gpzs4x2";
     };
   };
   fcitx5-material-color = {
@@ -103,14 +103,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "1f15721b015d8740dece74e5380a29fad486bfc6";
+    version = "f59c13ef900c2b232a0e699736a32d73036586ed";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "1f15721b015d8740dece74e5380a29fad486bfc6";
+      rev = "f59c13ef900c2b232a0e699736a32d73036586ed";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "11wwwf1wp9bcbxf88ccwk4wiqhh6s6k8wvzm8r92nbyb20kihhfp";
+      sha256 = "175kz0ra69iapg6ra2bsb819y78amdvv4qf998b389b1r9x00p55";
     };
   };
   ksmbd-tools = {
@@ -147,14 +147,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "bd391bf1e6b7527627bd7be62c83683afc18c205";
+    version = "b2b85268d1e2a8c2eb574f6dd08d84a771ea7672";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "bd391bf1e6b7527627bd7be62c83683afc18c205";
+      rev = "b2b85268d1e2a8c2eb574f6dd08d84a771ea7672";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0sb6wz4q79bjgfxg3ksjlvp58vvdgp4y9jznxyvgg1zflfm50xyj";
+      sha256 = "0klz23r0pmvbmxdjzr1xw79lyysg8hv3jc39dj5xbcbkdxsb3048";
     };
   };
   motrix = {
@@ -227,14 +227,14 @@
   };
   vouch = {
     pname = "vouch";
-    version = "v0.35.1";
+    version = "v0.36.0";
     src = fetchgit {
       url = "https://github.com/vouch/vouch-proxy";
-      rev = "v0.35.1";
+      rev = "v0.36.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1j425hfji5f2ki9s049b8z0si31jdkh9smhhvmxp1jn2d3qzm9vl";
+      sha256 = "02m10m943adv9y5kjngg6z26qshnc6dmlw3lqqmz5r0w6r3k22m6";
     };
   };
   vpncloud = {
