@@ -18,11 +18,6 @@ src.github = "qier222/YesPlayMusic"
 src.prefix = "v"
 fetch.url = "https://github.com/qier222/YesPlayMusic/releases/download/v$ver/YesPlayMusic-$ver.AppImage"
 
-[chia-plotter]
-src.git = "https://github.com/madMAx43v3r/chia-plotter.git"
-fetch.github = "madMAx43v3r/chia-plotter"
-git.fetchSubmodules = true
-
 [cloudreve-cli]
 src.git = "https://github.com/Indexyz/CloudreveCLI.git"
 fetch.github = "Indexyz/CloudreveCLI"

@@ -20,10 +20,6 @@ in
     source = nvfetcherOut.yacd;
   };
 
-  # Chia Miner
-  chia-plotter = callPackage ./chia-plotter {
-    source = nvfetcherOut.chia-plotter;
-  };
   hpool-chia-miner = callPackage ./hpool-chia-miner { };
 
   # Proxy things
