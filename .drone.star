@@ -6,6 +6,9 @@ def step(arch, node):
     "trigger": {
       "branch": [ "master" ]
     },
+    "platform": {
+      "arch": arch
+    },
     "steps": [
       {
         "name": "lint",
