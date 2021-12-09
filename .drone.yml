@@ -1,27 +1,18 @@
 ---
-kind: pipeline
-name: default
-type: exec
-
-trigger:
-  branch:
-  - master
-
-steps:
-- name: lint
-  commands:
-  - nixpkgs-fmt --check .
-- name: build
-  environment:
-    NIX_PATH: nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos
-    CACHIX_TOKEN:
-      from_secret: CACHIX_TOKEN
-  commands:
-  - cachix authtoken $CACHIX_TOKEN
-  - bash build-cache.bash
-
-node:
-  os: nixos
-  arch: amd64
-  type: exec
-  hostname: horizon
+kind: template
+load: .ci/build.yaml
+data:
+  node:
+    os: nixos
+    arch: amd64
+    type: exec
+    hostname: horizon
+---
+kind: template
+load: .ci/build.yaml
+data:
+  node:
+    os: nixos
+    arch: aarch64
+    type: exec
+    hostname: oracle
