@@ -1,6 +1,6 @@
 { dwm }:
 
-dwm.overrideAttrs(oldAttrs: rec {
+dwm.overrideAttrs (oldAttrs: rec {
   postPatch = ''
     cp ${./dwm.config.h} config.h
   '';
