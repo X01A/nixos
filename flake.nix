@@ -7,27 +7,30 @@
       url = "github:edolstra/flake-compat";
       flake = false;
     };
+
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, ... }:
-    let
-      system = "x86_64-linux";
+  outputs = { self, nixpkgs, flake-utils, ... }:
+    flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-linux" ] (system: let
       pkgs = import nixpkgs {
         inherit system;
       };
       packages = import ./packages { nixpkgs = pkgs; };
-    in
-    {
-      legacyPackages.${system} = packages;
+    in {
+      legacyPackages = packages;
       overlay = final: prev: packages;
-      nixosModules.indexyz = { ... }: {
-        imports = [ ./modules/all-modules.nix ];
-      };
-
-      devShell.x86_64-linux = pkgs.mkShell {
+      devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
           nvfetcher
         ];
+      };
+    }) // {
+      nixosModules.indexyz = { ... }: {
+        imports = [ ./modules/all-modules.nix ];
       };
       homeModules.indexyz = { ... }: {
         imports = [ ./home/all-modules.nix ];
