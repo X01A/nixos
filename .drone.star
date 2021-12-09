@@ -30,16 +30,16 @@ def step(arch, node):
 
 def main(ctx):
   return [
-    step("amd64", {
-      "os": "nixos",
-      "arch": "amd64",
-      "type": "exec",
-      "hostname": "horizon"
-    }),
     step("arm64", {
       "os": "nixos",
       "arch": "aarch64",
       "type": "exec",
       "hostname": "oracle"
+    }),
+    step("amd64", {
+      "os": "nixos",
+      "arch": "amd64",
+      "type": "exec",
+      "hostname": "horizon"
     })
   ]
