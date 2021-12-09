@@ -24,9 +24,13 @@
 
           packages = import ./packages { nixpkgs = pkgs; };
           packageList = (pkgs.lib.attrsets.mapAttrsToList (name: value: { inherit name value; }) packages);
-          buildPacakgesList = builtins.filter (item: let
-            meta = pkgs.lib.attrsets.attrByPath ["meta" "platforms"] [system] item.value;
-          in (pkgs.lib.lists.any (item: item == system) meta)) (builtins.filter (item: pkgs.lib.isDerivation item.value) packageList);
+          buildPacakgesList = builtins.filter
+            (item:
+              let
+                meta = pkgs.lib.attrsets.attrByPath [ "meta" "platforms" ] [ system ] item.value;
+              in
+              (pkgs.lib.lists.any (item: item == system) meta))
+            (builtins.filter (item: pkgs.lib.isDerivation item.value) packageList);
           buildPacakges = builtins.listToAttrs buildPacakgesList;
         in
         {
