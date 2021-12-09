@@ -34,4 +34,6 @@ stdenv.mkDerivation rec {
     install -Dm644 "${desktopItem}/share/applications/"* \
       -t $out/share/applications/
   '';
+
+  meta.platforms = [ "x86_64-linux" ];
 }
