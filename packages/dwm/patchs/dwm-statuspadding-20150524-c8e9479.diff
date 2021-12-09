@@ -1,0 +1,38 @@
+From 75d5edbe16ee2fc060ff8b05eea17791d6334a59 Mon Sep 17 00:00:00 2001
+From: Christopher Drelich <cd@cdrakka.com>
+Date: Thu, 24 May 2018 23:24:12 -0400
+Subject: [PATCH] Replaces magic numbers in statusbar with configurable
+ variables.
+
+horizpadbar for horizontal statusbar padding
+vertpadbar for vertical statusbar padding
+
+StatusText now has both left and right padding,
+as well as the vertical padding that all of the statusbar shares.
+
+Other than the addition of left padding to StatusText, appearance
+of the statusbar is identical to pre-patch when using the defaults
+in config.def.h
+---
+ config.def.h | 2 ++
+ dwm.c        | 8 ++++----
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/dwm.c b/dwm.c
+index bb95e26..7b9ed42 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -1544,8 +1544,8 @@ setup(void)
+ 	drw = drw_create(dpy, screen, root, sw, sh);
+ 	if (!drw_fontset_create(drw, fonts, LENGTH(fonts)))
+ 		die("no fonts could be loaded.");
+-	lrpad = drw->fonts->h;
+-	bh = drw->fonts->h + 2;
++	lrpad = drw->fonts->h + horizpadbar;
++	bh = drw->fonts->h + vertpadbar;
+ 	updategeom();
+ 	/* init atoms */
+ 	utf8string = XInternAtom(dpy, "UTF8_STRING", False);
+--
+2.7.4
+
