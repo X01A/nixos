@@ -10,4 +10,6 @@ stdenv.mkDerivation rec {
     mkdir -p $out/bin
     install -m 755 tifig $out/bin
   '';
+
+  meta.platforms = [ "x86_64-linux" ];
 }
