@@ -73,5 +73,5 @@ in
 
     # Fix QT Icon outside KDE
     programs.qt5ct.enable = true;
-  }
+  };
 }
