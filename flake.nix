@@ -29,7 +29,8 @@
               let
                 meta = pkgs.lib.attrsets.attrByPath [ "meta" "platforms" ] [ system ] item.value;
               in
-              (pkgs.lib.lists.any (item: item == system) meta)) packageList;
+              (pkgs.lib.lists.any (item: item == system) meta))
+            packageList;
           buildPacakges = builtins.listToAttrs buildPacakgesList;
         in
         {
