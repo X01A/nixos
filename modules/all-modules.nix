@@ -34,7 +34,9 @@
     ./services/vpncloud.nix
     ./services/influxdb.nix
     ./devices/mlx4-mode.nix
-    ./desktops/font.nix
+    ./desktop/font.nix
+    ./desktop/dwm.nix
+    ./desktop/ime.nix
     ./system/uboot
     ./services/secrets
     ./services/wiretrustee-client.nix

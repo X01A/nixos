@@ -2,11 +2,11 @@
 
 with lib;
 let
-  cfg = config.indexyz.desktops.font;
+  cfg = config.indexyz.desktop.font;
 in
 {
   options = {
-    indexyz.desktops.font = {
+    indexyz.desktop.font = {
       enable = mkEnableOption "Enable desktop fonts";
     };
   };
@@ -27,6 +27,8 @@ in
         wqy_zenhei
         cascadia-code
         iosevka
+
+        (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
       ];
 
       fontconfig = {
