@@ -30,7 +30,7 @@
                 meta = pkgs.lib.attrsets.attrByPath [ "meta" "platforms" ] [ system ] item.value;
               in
               (pkgs.lib.lists.any (item: item == system) meta))
-            (builtins.filter (item: pkgs.lib.isDerivation item.value) packageList);
+            packageList);
           buildPacakges = builtins.listToAttrs buildPacakgesList;
         in
         {
