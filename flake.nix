@@ -36,6 +36,7 @@
         {
           legacyPackages = buildPacakges;
           overlay = final: prev: buildPacakges;
+          overlays = builtins.mapAttrs (overlayPkgs: (final: prev: overlayPkgs)) buildPacakges;
           devShell = pkgs.mkShell {
             buildInputs = with pkgs; [
               nvfetcher
