@@ -2,11 +2,10 @@
 
 with nixpkgs; let
   nvfetcherOut = callPackage ../sources.nix { };
-  cloudreve-cli = callPackage (nvfetcherOut.cloudreve-cli.src) { };
   build-electron-appimage = callPackage ./build-electron-appimage { };
 in
 {
-  inherit cloudreve-cli build-electron-appimage;
+  inherit build-electron-appimage;
 
   transmission-web-control = callPackage ./transmission-web-control { };
   vlmcsd = callPackage ./vlmcsd { };
@@ -41,10 +40,6 @@ in
 
   ksmbd-kernel = callPackage ./ksmbd/kernel.nix {
     source = nvfetcherOut.ksmbd;
-  };
-
-  fetch-cloudreve = callPackage ./fetch-cloudreve {
-    inherit cloudreve-cli;
   };
 
   # Clash

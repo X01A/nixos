@@ -17,18 +17,6 @@
       sha256 = "0n9hadm60nsmvrwmhs5835fd4dachag3shjxydfrdadgi0f8z4if";
     };
   };
-  cloudreve-cli = {
-    pname = "cloudreve-cli";
-    version = "306ddc5d939004d263641bbff37b3398843eab92";
-    src = fetchgit {
-      url = "https://github.com/Indexyz/CloudreveCLI";
-      rev = "306ddc5d939004d263641bbff37b3398843eab92";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sha256 = "07npxyn9zkk4am06wyqdblpdw126501fs6pa4ff37jv133s1yqvd";
-    };
-  };
   drone-runner-docker = {
     pname = "drone-runner-docker";
     version = "v1.8.0";
@@ -55,14 +43,14 @@
   };
   edl = {
     pname = "edl";
-    version = "9892de2eb185272eccaa40dc9a7e8fe907c67e01";
+    version = "de18ba842c75ec99719a72a257cec7e9d7820dba";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "9892de2eb185272eccaa40dc9a7e8fe907c67e01";
+      rev = "de18ba842c75ec99719a72a257cec7e9d7820dba";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "080rqi2fd4a8hxw8gkkpbprayiyv0ijmivq71zc9jpfl3gpzs4x2";
+      sha256 = "12w6ij36i6b7niq0q96549ix9qkx792wh0a1h68c410232hjw79s";
     };
   };
   fcitx5-material-color = {
@@ -91,14 +79,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "857a1786dd28bfa6789022b7ab7bd8171a77702d";
+    version = "882108b022c04e412b26e6e29d828286ac0b9539";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "857a1786dd28bfa6789022b7ab7bd8171a77702d";
+      rev = "882108b022c04e412b26e6e29d828286ac0b9539";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "175kz0ra69iapg6ra2bsb819y78amdvv4qf998b389b1r9x00p55";
+      sha256 = "0c9p5dyq3a2mlz1qxqvpgv2xkpcpw27v579ckyw3vwvnzffyx7w1";
     };
   };
   ksmbd-tools = {
@@ -135,14 +123,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "81f3725a7e1178739a021fd71d1d30cc29c78570";
+    version = "bba0c6f7adb17000f8165d42e9986ed4d7f0821c";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "81f3725a7e1178739a021fd71d1d30cc29c78570";
+      rev = "bba0c6f7adb17000f8165d42e9986ed4d7f0821c";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1r3mlpms321sf0rwhmhm2bzrh9b3l2ddh017a277rr7qrfgglk69";
+      sha256 = "1b15pm9wwikncmfpxbmx40f18zwclyjgca5kinp3kf1kzc8affvk";
     };
   };
   motrix = {

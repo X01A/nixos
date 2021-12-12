@@ -18,11 +18,6 @@ src.github = "qier222/YesPlayMusic"
 src.prefix = "v"
 fetch.url = "https://github.com/qier222/YesPlayMusic/releases/download/v$ver/YesPlayMusic-$ver.AppImage"
 
-[cloudreve-cli]
-src.git = "https://github.com/Indexyz/CloudreveCLI.git"
-fetch.github = "Indexyz/CloudreveCLI"
-git.fetchSubmodules = true
-
 [fcitx5-material-color]
 src.github = "hosxy/Fcitx5-Material-Color"
 fetch.github = "hosxy/Fcitx5-Material-Color"
