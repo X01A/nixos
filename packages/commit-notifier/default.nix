@@ -1,10 +1,11 @@
 { source, rustPlatform, pkg-config, openssl, sqlite }:
 
 rustPlatform.buildRustPackage rec {
-  inherit (source)  pname version src cargoLock;
+  inherit (source) pname version src cargoLock;
 
   buildInputs = [
-    openssl sqlite
+    openssl
+    sqlite
   ];
 
   nativeBuildInputs = [ pkg-config ];
