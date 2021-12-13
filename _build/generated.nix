@@ -17,6 +17,24 @@
       sha256 = "0n9hadm60nsmvrwmhs5835fd4dachag3shjxydfrdadgi0f8z4if";
     };
   };
+  commit-notifier = {
+    pname = "commit-notifier";
+    version = "573c1eb7eabc97aa06e0e9ad85f5148110749876";
+    src = fetchgit {
+      url = "https://github.com/linyinfeng/commit-notifier";
+      rev = "573c1eb7eabc97aa06e0e9ad85f5148110749876";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "0al8rvczn99hymhnanfij2b3b35gzg59v2q24swsfrky625g08i6";
+    };
+    cargoLock = {
+      lockFile = ./commit-notifier-573c1eb7eabc97aa06e0e9ad85f5148110749876/Cargo.lock;
+      outputHashes = {
+        
+      };
+    };
+  };
   drone-runner-docker = {
     pname = "drone-runner-docker";
     version = "v1.8.0";
@@ -79,14 +97,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "882108b022c04e412b26e6e29d828286ac0b9539";
+    version = "072b6a0c2b3f2106e42703390ed92a62f3cf232e";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "882108b022c04e412b26e6e29d828286ac0b9539";
+      rev = "072b6a0c2b3f2106e42703390ed92a62f3cf232e";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0c9p5dyq3a2mlz1qxqvpgv2xkpcpw27v579ckyw3vwvnzffyx7w1";
+      sha256 = "1bnz35c5mlg87w2fcaaj5b2xbkk66h37g5glnvz3wp44m019yhcd";
     };
   };
   ksmbd-tools = {
@@ -123,14 +141,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "bba0c6f7adb17000f8165d42e9986ed4d7f0821c";
+    version = "5928e29fea33618b4f9cda707f4fa7a7bac271c0";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "bba0c6f7adb17000f8165d42e9986ed4d7f0821c";
+      rev = "5928e29fea33618b4f9cda707f4fa7a7bac271c0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1b15pm9wwikncmfpxbmx40f18zwclyjgca5kinp3kf1kzc8affvk";
+      sha256 = "1dp72kc092g05gqrxiigg82fbciia5ac6d1pmcmb528xmwki459k";
     };
   };
   motrix = {

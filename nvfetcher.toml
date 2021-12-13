@@ -122,3 +122,9 @@ git.fetchSubmodules = true
 src.github = "xjasonlyu/tun2socks"
 fetch.github = "xjasonlyu/tun2socks"
 git.fetchSubmodules = true
+
+[commit-notifier]
+src.git = "https://github.com/linyinfeng/commit-notifier.git"
+fetch.github = "linyinfeng/commit-notifier"
+git.fetchSubmodules = true
+cargo_lock = "Cargo.lock"
