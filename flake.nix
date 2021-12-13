@@ -12,9 +12,16 @@
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    cloudreve-cli = {
+      url = "github:Indexyz/CloudreveCLI";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.flake-compat.follows = "flake-compat";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }:
+  outputs = { self, nixpkgs, flake-utils, cloudreve-cli, ... }:
     flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ]
       (system:
         let
@@ -32,10 +39,12 @@
               (pkgs.lib.lists.any (item: item == system) meta))
             packageList;
           buildPacakges = builtins.listToAttrs buildPacakgesList;
+          finalPackages = buildPacakges //
+            cloudreve-cli.legacyPackages."${system}";
         in
         {
-          legacyPackages = buildPacakges;
-          overlay = final: prev: buildPacakges;
+          legacyPackages = finalPackages;
+          overlay = final: prev: finalPackages;
           overlays = builtins.mapAttrs (overlayPkgs: (final: prev: overlayPkgs)) buildPacakges;
           devShell = pkgs.mkShell {
             buildInputs = with pkgs; [
