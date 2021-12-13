@@ -143,4 +143,8 @@ in
     [M] Monocle Layout  2
     EOF
   '';
+
+  commit-notifier = callPackage ./commit-notifier {
+    source = nvfetcherOut.commit-notifier;
+  };
 }
