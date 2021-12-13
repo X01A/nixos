@@ -40,7 +40,7 @@
             packageList;
           buildPacakges = builtins.listToAttrs buildPacakgesList;
           finalPackages = buildPacakges //
-            cloudreve-cli.legacyPackages."${system}";
+          cloudreve-cli.legacyPackages."${system}";
         in
         {
           legacyPackages = finalPackages;

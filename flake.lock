@@ -13,11 +13,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1639364874,
-        "narHash": "sha256-nUjpMm2FBlZCXXrHheuj6neWCP+vpyD2OTCfp0xSZnk=",
+        "lastModified": 1639366331,
+        "narHash": "sha256-JOGihnVR7IB73BuH+2LHnU4omh38tgNNqXX6+G8VRV4=",
         "owner": "Indexyz",
         "repo": "CloudreveCLI",
-        "rev": "d03f4b2c26dc8fd2af9b9ab1e9237a2e2438d74b",
+        "rev": "fde8c80dce1f55b3df7debc9e765df7ace5b6cd3",
         "type": "github"
       },
       "original": {
