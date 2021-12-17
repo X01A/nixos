@@ -83,26 +83,26 @@
   };
   gost = {
     pname = "gost";
-    version = "27dec2d2ac0e308ae179a4d0e463d044f9988d73";
+    version = "937b27dd95edaf207ed23772185887d7e3ac9797";
     src = fetchgit {
       url = "https://github.com/ginuerzh/gost";
-      rev = "27dec2d2ac0e308ae179a4d0e463d044f9988d73";
+      rev = "937b27dd95edaf207ed23772185887d7e3ac9797";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1kql8ikgw9xhi94bd2ilgv2wbq08i3lbasf11d2g0n15yh7agmpj";
+      sha256 = "07yajn1l7kb2nqy9cfc4xadsix5mz7zql0b8hxzb6icsbrg03xp2";
     };
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "072b6a0c2b3f2106e42703390ed92a62f3cf232e";
+    version = "65d7654a4e8921f701ea6aa51b9422161a6f1e0c";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "072b6a0c2b3f2106e42703390ed92a62f3cf232e";
+      rev = "65d7654a4e8921f701ea6aa51b9422161a6f1e0c";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1bnz35c5mlg87w2fcaaj5b2xbkk66h37g5glnvz3wp44m019yhcd";
+      sha256 = "0nk9m1ki9bf8i1g1jasxhak7ir269p28jf4bqnhdzv3pywsjqra3";
     };
   };
   ksmbd-tools = {
@@ -119,10 +119,10 @@
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.1.0";
+    version = "6.2.1";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.1.0/mattermost-6.1.0-linux-amd64.tar.gz";
-      sha256 = "0kg1qxb2gl0sfbgmrnfwg20zck9jnj54pxysd9yvk17rmg0lcjih";
+      url = "https://releases.mattermost.com/6.2.1/mattermost-6.2.1-linux-amd64.tar.gz";
+      sha256 = "0lfpplk3yrj75h2hjd6w18iapiixkrgk7vi504rz7wlaq30cqpx5";
     };
   };
   microsocks = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "5928e29fea33618b4f9cda707f4fa7a7bac271c0";
+    version = "826223d15e1671d19caa14825c57089ca6514191";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "5928e29fea33618b4f9cda707f4fa7a7bac271c0";
+      rev = "826223d15e1671d19caa14825c57089ca6514191";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1dp72kc092g05gqrxiigg82fbciia5ac6d1pmcmb528xmwki459k";
+      sha256 = "0si3i7y7gldlb7xbh2prvr9s9g3v8h0xvkw2hm2n252dx83bd98l";
     };
   };
   motrix = {
@@ -159,14 +159,14 @@
   };
   nali = {
     pname = "nali";
-    version = "v0.3.2";
+    version = "0.3.5";
     src = fetchgit {
       url = "https://github.com/zu1k/nali";
-      rev = "v0.3.2";
+      rev = "0.3.5";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0s6bqmmklx0hb92bq4lqp3b4mgs7mxqg0l5nzksknary218fh4l9";
+      sha256 = "1lhd5195w2sxyb31sqaq6hyxnlsl5mpw3qmzlyjpzm9v0vzqjswq";
     };
   };
   openwhisk-cli = {
