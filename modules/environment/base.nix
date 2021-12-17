@@ -85,7 +85,11 @@ in
 
       boot.kernelModules = [ "xfs" ];
 
-      documentation.enable = false;
+      # disable default dnssec
+      # ntp domain reslove will failure if time not match
+      # if ntp reslove failure time will never correct
+      services.resolved.dnssec = lib.mkDefault "false";
+
       boot.cleanTmpDir = true;
 
       networking.usePredictableInterfaceNames = false;
@@ -145,6 +149,10 @@ in
         smartmontools
         nali
         xfsprogs
+        pv
+        jq
+        wireguard
+        ripgrep
       ];
       programs.fish = {
         enable = true;
