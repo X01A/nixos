@@ -59,14 +59,14 @@
   };
   edl = {
     pname = "edl";
-    version = "de18ba842c75ec99719a72a257cec7e9d7820dba";
+    version = "880f88f2c9d99922ca13a4a0a98a027a0796a96e";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "de18ba842c75ec99719a72a257cec7e9d7820dba";
+      rev = "880f88f2c9d99922ca13a4a0a98a027a0796a96e";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "12w6ij36i6b7niq0q96549ix9qkx792wh0a1h68c410232hjw79s";
+      sha256 = "1ap5kagmzl8xr3jv8hqryz38h92cwn3ywqi4rsbga9igvd6x580x";
     };
   };
   fcitx5-material-color = {
@@ -159,14 +159,14 @@
   };
   nali = {
     pname = "nali";
-    version = "0.3.5";
+    version = "v0.3.2";
     src = fetchgit {
       url = "https://github.com/zu1k/nali";
-      rev = "0.3.5";
+      rev = "v0.3.2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1lhd5195w2sxyb31sqaq6hyxnlsl5mpw3qmzlyjpzm9v0vzqjswq";
+      sha256 = "0s6bqmmklx0hb92bq4lqp3b4mgs7mxqg0l5nzksknary218fh4l9";
     };
   };
   openwhisk-cli = {
