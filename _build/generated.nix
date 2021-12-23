@@ -59,14 +59,14 @@
   };
   edl = {
     pname = "edl";
-    version = "880f88f2c9d99922ca13a4a0a98a027a0796a96e";
+    version = "ca33c497f132c7b5efe866cfe75f30f1d7453bea";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "880f88f2c9d99922ca13a4a0a98a027a0796a96e";
+      rev = "ca33c497f132c7b5efe866cfe75f30f1d7453bea";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1ap5kagmzl8xr3jv8hqryz38h92cwn3ywqi4rsbga9igvd6x580x";
+      sha256 = "1icpzl1ai40c4c98kmviwkfqc0yykh2ifcwy5rcd4lqq4qwjcjr4";
     };
   };
   fcitx5-material-color = {
@@ -95,14 +95,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "65d7654a4e8921f701ea6aa51b9422161a6f1e0c";
+    version = "1e775a43d53767a9979e59cff99d79a76cb8ad41";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "65d7654a4e8921f701ea6aa51b9422161a6f1e0c";
+      rev = "1e775a43d53767a9979e59cff99d79a76cb8ad41";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0nk9m1ki9bf8i1g1jasxhak7ir269p28jf4bqnhdzv3pywsjqra3";
+      sha256 = "0i4xq33yirxlhpfgnfs1pv9ypcfginl33b50w72yvdvba0jqjl53";
     };
   };
   ksmbd-tools = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "826223d15e1671d19caa14825c57089ca6514191";
+    version = "1ea260ba107b5a31c8e21556db1c5888cbbafdac";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "826223d15e1671d19caa14825c57089ca6514191";
+      rev = "1ea260ba107b5a31c8e21556db1c5888cbbafdac";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0si3i7y7gldlb7xbh2prvr9s9g3v8h0xvkw2hm2n252dx83bd98l";
+      sha256 = "1mdfnhd069wh2afyl7alsf707qvnwq06wxhwwf6n955js93v4ljw";
     };
   };
   motrix = {
@@ -231,14 +231,14 @@
   };
   vpncloud = {
     pname = "vpncloud";
-    version = "v2.2.0";
+    version = "v2.3.0";
     src = fetchgit {
       url = "https://github.com/dswd/vpncloud";
-      rev = "v2.2.0";
+      rev = "v2.3.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0khq52ks0irfzr56yy73kydpba8na61skfx2c2wdjr2zscvh6l8r";
+      sha256 = "0jhqvhzwkd58mkkwxr6h6x3cidwyaq8q4g6dn3svs7n1d66j32pg";
     };
   };
   wgcf = {
