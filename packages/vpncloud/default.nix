@@ -1,11 +1,9 @@
 { source, rustPlatform, lib }:
 
 rustPlatform.buildRustPackage rec {
-  inherit (source) pname version src;
+  inherit (source) pname version src cargoLock;
 
   prePatch = ''
     rm .cargo/config
   '';
-
-  cargoSha256 = "eE+RBGdkfH+KMyBfFTMLP2SamwZs/0+MBm5YWiJGAoA=";
 }
