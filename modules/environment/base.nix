@@ -123,7 +123,6 @@ in
         htop
         nodejs
         yarn
-        python2
         gnumake
         gcc
         binutils
