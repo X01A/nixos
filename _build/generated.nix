@@ -30,7 +30,9 @@
     };
     cargoLock = {
       lockFile = ./commit-notifier-573c1eb7eabc97aa06e0e9ad85f5148110749876/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   drone-runner-docker = {
@@ -239,6 +241,12 @@
       deepClone = false;
       leaveDotGit = false;
       sha256 = "0jhqvhzwkd58mkkwxr6h6x3cidwyaq8q4g6dn3svs7n1d66j32pg";
+    };
+    cargoLock = {
+      lockFile = ./vpncloud-v2.3.0/Cargo.lock;
+      outputHashes = {
+        
+      };
     };
   };
   wgcf = {

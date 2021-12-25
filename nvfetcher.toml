@@ -46,6 +46,7 @@ git.fetchSubmodules = true
 src.github = "dswd/vpncloud"
 fetch.github = "dswd/vpncloud"
 git.fetchSubmodules = true
+cargo_lock = "Cargo.lock"
 
 [winbox]
 src.httpheader = "https://mikrotik.com/mt_redirect.php?code=winbox64"
