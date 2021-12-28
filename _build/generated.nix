@@ -95,14 +95,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "1e775a43d53767a9979e59cff99d79a76cb8ad41";
+    version = "1874a3f004ac9701c379d0ed20fd51ffc6bf6e72";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "1e775a43d53767a9979e59cff99d79a76cb8ad41";
+      rev = "1874a3f004ac9701c379d0ed20fd51ffc6bf6e72";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0i4xq33yirxlhpfgnfs1pv9ypcfginl33b50w72yvdvba0jqjl53";
+      sha256 = "1pvvw5p12niw2yr7a5q85g768w0p0pgh98bll4j6agkg15xhinhl";
     };
   };
   ksmbd-tools = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "1ea260ba107b5a31c8e21556db1c5888cbbafdac";
+    version = "6fb1c2869d47ce0f61f2233b5df249b5dd31ec73";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "1ea260ba107b5a31c8e21556db1c5888cbbafdac";
+      rev = "6fb1c2869d47ce0f61f2233b5df249b5dd31ec73";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1mdfnhd069wh2afyl7alsf707qvnwq06wxhwwf6n955js93v4ljw";
+      sha256 = "0zqri6x3ssxf02xh8r9ynv8xa4zfi1ljm7hsyl8d6ijf1ayxcdlv";
     };
   };
   motrix = {
@@ -247,34 +247,34 @@
   };
   wgcf = {
     pname = "wgcf";
-    version = "v2.2.10";
+    version = "v2.2.11";
     src = fetchgit {
       url = "https://github.com/ViRb3/wgcf";
-      rev = "v2.2.10";
+      rev = "v2.2.11";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "19lpzjnqdbd0mpaadrihz0frzb1rdx6ajqw508d8pcksfswidj4j";
+      sha256 = "00pgww2065an1j73vsj0i9qg0ik5x61m7rxrvvxjjk2ka157sg8g";
     };
   };
   winbox = {
     pname = "winbox";
-    version = "3.31";
+    version = "3.32";
     src = fetchurl {
-      url = "https://download.mikrotik.com/winbox/3.31/winbox64.exe";
-      sha256 = "0pnrp6g6ff1lygqjdkjvsxds74q8z08w85ll3xqshqf2crkr2kk8";
+      url = "https://download.mikrotik.com/winbox/3.32/winbox64.exe";
+      sha256 = "1gf0zdn4ahfp08fn5w0nzigwldl3bjqcj2f08rcvyn0mbwar4znn";
     };
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.3.1";
+    version = "v0.3.2";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.3.1";
+      rev = "v0.3.2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0wyi8n29q8gsza6cwwp8qqri8wfp1rlfhizw4y65r0dq3xc7g1wm";
+      sha256 = "0bk7j6vq5z4ivq8xmrm4mzq88dxlf3javqyqjlqipvz5xv69n0l2";
     };
   };
   yacd = {
