@@ -58,5 +58,8 @@
       homeModules.indexyz = { ... }: {
         imports = [ ./home/all-modules.nix ];
       };
+      darwinModules.indexyz = { ... }: {
+        imports = [ ./modules/darwin ];
+      };
     };
 }
