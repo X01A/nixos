@@ -17,7 +17,16 @@ in
     # Fish config
     programs.fish = {
       enable = true;
+      shellInit = ''
+        set -gx STARSHIP_CONFIG /etc/starship.toml
+
+        ${pkgs.starship}/bin/starship init fish | source
+      '';
     };
+
+    environment.etc."starship.toml".text = ''
+      add_newline = false
+    '';
 
     environment.shells = [ pkgs.fish ];
     users.users.indexyz.shell = "/run/current-system/sw/bin/fish";
@@ -60,6 +69,16 @@ in
       mas
       bat
       nixpkgs-fmt
+      iperf
+      iperf2
+      ffsend
+      inxi
+      tree
+      saldl
+      ncdu
+      smartmontools
+      pv
+      jq
     ];
   };
 }
