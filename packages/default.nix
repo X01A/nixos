@@ -1,8 +1,9 @@
-{ nixpkgs }:
+{ nixpkgs, os }:
 
 with nixpkgs; let
   nvfetcherOut = callPackage ../sources.nix { };
   build-electron-appimage = callPackage ./build-electron-appimage { };
+  systemPackages = if builtins.pathExists (./. + "./os-specific/${os}") then callPackage "./os-specific/${os}" { inherit nixpkgs nvfetcherOut; } else {};
 in
 {
   inherit build-electron-appimage;
@@ -33,14 +34,6 @@ in
   libvirt-tools = import ../modules/services/libvirt/tools;
   libvirt-iso-library = callPackage ../modules/services/libvirt/library.nix { };
   build-vm-qcow = callPackage ./build-vm-qcow { };
-
-  ksmbd-tools = callPackage ./ksmbd/tools.nix {
-    source = nvfetcherOut.ksmbd-tools;
-  };
-
-  ksmbd-kernel = callPackage ./ksmbd/kernel.nix {
-    source = nvfetcherOut.ksmbd;
-  };
 
   # Clash
   clash-dsl = callPackage ./clash-dsl { };
@@ -147,4 +140,6 @@ in
   commit-notifier = callPackage ./commit-notifier {
     source = nvfetcherOut.commit-notifier;
   };
-}
+
+  babel = callPackage ./babel { };
+} // systemPackages

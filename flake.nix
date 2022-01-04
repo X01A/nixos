@@ -22,14 +22,17 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, cloudreve-cli, ... }:
-    flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ]
+    flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ]
       (system:
         let
           pkgs = import nixpkgs {
             inherit system;
           };
 
-          packages = import ./packages { nixpkgs = pkgs; };
+
+          os = pkgs.lib.last (pkgs.lib.strings.splitString "-" system);
+
+          packages = import ./packages { nixpkgs = pkgs; inherit os; };
           packageList = (pkgs.lib.attrsets.mapAttrsToList (name: value: { inherit name value; }) packages);
           buildPacakgesList = builtins.filter
             (item:

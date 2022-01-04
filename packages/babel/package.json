@@ -1,0 +1,9 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7"
+  }
+}
