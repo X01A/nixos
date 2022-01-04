@@ -17,4 +17,6 @@ stdenv.mkDerivation {
   preConfigure = ''
     sed -i 's|depmod|#depmod|' Makefile
   '';
+
+  meta.platforms = [ "x86_64-linux" ];
 }
