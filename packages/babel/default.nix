@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, lib, nodePackages, nodejs, makeWrapper, yarn2nix, ... }:
+{ stdenv, fetchurl, lib, nodePackages, nodejs, makeWrapper, mkYarnPackage, ... }:
 
 let
   version = "7.16.7";
@@ -7,7 +7,7 @@ stdenv.mkDerivation {
   name = "babel-cli";
   inherit version;
 
-  src = yarn2nix.mkYarnPackage {
+  src = mkYarnPackage {
     name = "babel";
     src = ./.;
     packageJSON = ./package.json;
@@ -20,15 +20,13 @@ stdenv.mkDerivation {
   ];
 
   buildPhase = ''
-    ls -lah
-    exit 1
+    mkdir -p $out/lib/node_modules
+    cp -r libexec/babel/node_modules $out/lib/
   '';
 
   installPhase = ''
-    rm -f $out/bin/babel
+    mkdir -p $out/bin
     makeWrapper ${nodejs}/bin/node "$out/bin/babel" \
       --add-flags "$out/lib/node_modules/@babel/cli/bin/babel.js"
-    rm -f $out/lib/node_modules/@babel/cli
-    cp -r . $out/lib/node_modules/@babel/cli
   '';
 }
