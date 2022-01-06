@@ -16,7 +16,8 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [ makeWrapper ];
   buildInputs = [
-    nodePackages.npm nodejs
+    nodePackages.npm
+    nodejs
   ];
 
   buildPhase = ''

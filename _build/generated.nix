@@ -3,10 +3,10 @@
 {
   clash-premium = {
     pname = "clash-premium";
-    version = "2021.12.07";
+    version = "2022.01.03";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2021.12.07.gz";
-      sha256 = "14qrjk9r7cz324h3lf8yg41gxr7bvlz05p43nnahqndnkjz3drlf";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.01.03.gz";
+      sha256 = "05xcfxavyq57qpcn6b6yjka2nfbp5kl08dhmd6zlv9144ica7xvm";
     };
   };
   cloudreve = {
@@ -59,14 +59,14 @@
   };
   edl = {
     pname = "edl";
-    version = "ca33c497f132c7b5efe866cfe75f30f1d7453bea";
+    version = "1ac5f4ccbf8a85b4d40963fb2387e0b145868ed9";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "ca33c497f132c7b5efe866cfe75f30f1d7453bea";
+      rev = "1ac5f4ccbf8a85b4d40963fb2387e0b145868ed9";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1icpzl1ai40c4c98kmviwkfqc0yykh2ifcwy5rcd4lqq4qwjcjr4";
+      sha256 = "0ay21nyx6mspfbnnpzla09vdkiz56hnpv8f4n2x0bicpw6pswcn1";
     };
   };
   fcitx5-material-color = {
@@ -95,26 +95,26 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "1874a3f004ac9701c379d0ed20fd51ffc6bf6e72";
+    version = "9927d29f1f4cbee79fd5f1ff6d6d158298aef6de";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "1874a3f004ac9701c379d0ed20fd51ffc6bf6e72";
+      rev = "9927d29f1f4cbee79fd5f1ff6d6d158298aef6de";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1pvvw5p12niw2yr7a5q85g768w0p0pgh98bll4j6agkg15xhinhl";
+      sha256 = "13q5d67f05003f83sbl668w8bcri0lflaq03wlr6xs44xyh1ql4h";
     };
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "402195f4f608f31dc630a71b27d0e1c767df8d17";
+    version = "aeb797bd4548a2c9afd432b76d630ad9a630e4e2";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd-tools";
-      rev = "402195f4f608f31dc630a71b27d0e1c767df8d17";
+      rev = "aeb797bd4548a2c9afd432b76d630ad9a630e4e2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "03vb1wrrfhqbfjqa3wq23c4sm9r5659qli4fz760ynn5bj3rl2qm";
+      sha256 = "0f8dmdrbrwybsbr9445lljchw0xnp95y0nkvmhkl9ndz7jy7gakw";
     };
   };
   mattermost = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "6fb1c2869d47ce0f61f2233b5df249b5dd31ec73";
+    version = "ed7d2d48a21df41426018c2df61378908d1e1e99";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "6fb1c2869d47ce0f61f2233b5df249b5dd31ec73";
+      rev = "ed7d2d48a21df41426018c2df61378908d1e1e99";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0zqri6x3ssxf02xh8r9ynv8xa4zfi1ljm7hsyl8d6ijf1ayxcdlv";
+      sha256 = "12v2x3nmzxzcyfhmhgp0n2nz6s616zyq137my8ifkgsj2q9f41ph";
     };
   };
   motrix = {
@@ -287,10 +287,10 @@
   };
   yesplaymusic = {
     pname = "yesplaymusic";
-    version = "0.4.2";
+    version = "0.4.3";
     src = fetchurl {
-      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.2/YesPlayMusic-0.4.2.AppImage";
-      sha256 = "015qk82spzar89p3kbkg3al1hssyda2a9ha50cp0bhxr5jqvf5rs";
+      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.3/YesPlayMusic-0.4.3.AppImage";
+      sha256 = "1nrb2dzacpsq05ps49mi1vza4j7y18ab2vvi5vda3npa1nckznl7";
     };
   };
 }
