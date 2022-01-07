@@ -30,9 +30,7 @@
     };
     cargoLock = {
       lockFile = ./commit-notifier-573c1eb7eabc97aa06e0e9ad85f5148110749876/Cargo.lock;
-      outputHashes = {
-        
-      };
+      outputHashes = { };
     };
   };
   drone-runner-docker = {
@@ -264,9 +262,7 @@
     };
     cargoLock = {
       lockFile = ./vpncloud-v2.3.0/Cargo.lock;
-      outputHashes = {
-        
-      };
+      outputHashes = { };
     };
   };
   wgcf = {
