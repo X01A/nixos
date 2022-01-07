@@ -13,4 +13,6 @@ rustPlatform.buildRustPackage rec {
   cargoBuildFlags = [ "-p" "neard" ];
   doCheck = false;
   nativeBuildInputs = [ pkg-config perl llvm clang git ];
+
+  meta.platforms = [ "x86_64-linux" ];
 }
