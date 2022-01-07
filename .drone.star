@@ -43,6 +43,6 @@ def main(ctx):
       "os": "nixos",
       "arch": "amd64",
       "type": "exec",
-      "hostname": "horizon"
+      "hostname": "wirecat"
     })
   ]
