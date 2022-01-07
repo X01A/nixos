@@ -141,5 +141,9 @@ in
     source = nvfetcherOut.commit-notifier;
   };
 
+  nearcore = callPackage ./nearcore {
+    source = nvfetcherOut.nearcore;
+  };
+
   babel = callPackage ./babel { };
 } // systemPackages

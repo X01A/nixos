@@ -30,7 +30,9 @@
     };
     cargoLock = {
       lockFile = ./commit-notifier-573c1eb7eabc97aa06e0e9ad85f5148110749876/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   drone-runner-docker = {
@@ -59,14 +61,14 @@
   };
   edl = {
     pname = "edl";
-    version = "1ac5f4ccbf8a85b4d40963fb2387e0b145868ed9";
+    version = "d5ff2d474a185a0c0df09c74dfa24eb7cfe6e9e5";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "1ac5f4ccbf8a85b4d40963fb2387e0b145868ed9";
+      rev = "d5ff2d474a185a0c0df09c74dfa24eb7cfe6e9e5";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0ay21nyx6mspfbnnpzla09vdkiz56hnpv8f4n2x0bicpw6pswcn1";
+      sha256 = "17hngizi4z9pk3mzgb9vqvc2dyvn16r5cnj54gh1c8s7kcln7ilp";
     };
   };
   fcitx5-material-color = {
@@ -95,26 +97,26 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "9927d29f1f4cbee79fd5f1ff6d6d158298aef6de";
+    version = "59502afc1d79abfcc268b3f774da9c228ce2c31b";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "9927d29f1f4cbee79fd5f1ff6d6d158298aef6de";
+      rev = "59502afc1d79abfcc268b3f774da9c228ce2c31b";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "13q5d67f05003f83sbl668w8bcri0lflaq03wlr6xs44xyh1ql4h";
+      sha256 = "0c1ldw075f5zll2jvlslm6y27vs3qlih1kkkd422mzdsylc49f97";
     };
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "aeb797bd4548a2c9afd432b76d630ad9a630e4e2";
+    version = "2f8cfd97fd1f494f651a1a40db1be54138d558a5";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd-tools";
-      rev = "aeb797bd4548a2c9afd432b76d630ad9a630e4e2";
+      rev = "2f8cfd97fd1f494f651a1a40db1be54138d558a5";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0f8dmdrbrwybsbr9445lljchw0xnp95y0nkvmhkl9ndz7jy7gakw";
+      sha256 = "1wbagd7hv70alpq7svcir60rglx14hb5q5s997nd61s2fn1z56p8";
     };
   };
   mattermost = {
@@ -139,14 +141,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "ed7d2d48a21df41426018c2df61378908d1e1e99";
+    version = "e580f6a886f24550c76aff4eea7972a5284d40cc";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "ed7d2d48a21df41426018c2df61378908d1e1e99";
+      rev = "e580f6a886f24550c76aff4eea7972a5284d40cc";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "12v2x3nmzxzcyfhmhgp0n2nz6s616zyq137my8ifkgsj2q9f41ph";
+      sha256 = "0ajyai3xraiw5w78k83q3mbd3bwznf1i8ynbwds4ykcsyjvkwbwg";
     };
   };
   motrix = {
@@ -167,6 +169,26 @@
       deepClone = false;
       leaveDotGit = false;
       sha256 = "0s6bqmmklx0hb92bq4lqp3b4mgs7mxqg0l5nzksknary218fh4l9";
+    };
+  };
+  nearcore = {
+    pname = "nearcore";
+    version = "1.23.0";
+    src = fetchgit {
+      url = "https://github.com/near/nearcore";
+      rev = "1.23.0";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "1bwmmm4mh34x2whpkhbcrc3ld482k7i247267i2y2xpkp4zv7a3q";
+    };
+    cargoLock = {
+      lockFile = ./nearcore-1.23.0/Cargo.lock;
+      outputHashes = {
+        "sysinfo-0.14.3" = "0ny240h5hb6zyfjh8wgh68jbjbkb60k1h2vmvi0bf841fgkv51ny";
+        "actix-cors-0.6.0-beta.2" = "112s1111grqwrjax4bw3njrxrm2cn550vwimvvvjzhdl6finlnfj";
+        "paperclip-0.5.0" = "11hh44c37wkjzxp2115y0v1kc6506p9z9v077aygby2xgfqyn0d1";
+      };
     };
   };
   openwhisk-cli = {
@@ -242,7 +264,9 @@
     };
     cargoLock = {
       lockFile = ./vpncloud-v2.3.0/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   wgcf = {
