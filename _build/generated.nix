@@ -66,7 +66,7 @@
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "17hngizi4z9pk3mzgb9vqvc2dyvn16r5cnj54gh1c8s7kcln7ilp";
+      sha256 = "0ld4n0fajv8yl10xwvpadajjjgqwvcjavyi75hs92j2vs5s8r979";
     };
   };
   fcitx5-material-color = {
@@ -95,14 +95,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "59502afc1d79abfcc268b3f774da9c228ce2c31b";
+    version = "ffd0819e6221a48c007a9ecb42c581c547c24b14";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "59502afc1d79abfcc268b3f774da9c228ce2c31b";
+      rev = "ffd0819e6221a48c007a9ecb42c581c547c24b14";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0c1ldw075f5zll2jvlslm6y27vs3qlih1kkkd422mzdsylc49f97";
+      sha256 = "19vz4xq8q36vwd9fm7yrfr9m7nxvcgb8cx2d281cb5kjpljkmyzk";
     };
   };
   ksmbd-tools = {
