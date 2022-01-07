@@ -1,12 +1,16 @@
-{ source, rustPlatform, pkg-config, openssl, sqlite }:
+{ source, rustPlatform, pkg-config, openssl, zlib, perl, llvmPackages, llvm, clang, git }:
 
 rustPlatform.buildRustPackage rec {
   inherit (source) pname version src cargoLock;
 
+  LIBCLANG_PATH = "${llvmPackages.libclang.lib}/lib";
   buildInputs = [
-    openssl
-    sqlite
+    openssl.dev
+    clang
+    zlib
   ];
 
-  nativeBuildInputs = [ pkg-config ];
+  cargoBuildFlags = [ "-p" "neard" ];
+  doCheck = false;
+  nativeBuildInputs = [ pkg-config perl llvm clang git ];
 }
