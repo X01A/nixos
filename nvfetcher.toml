@@ -129,3 +129,9 @@ src.git = "https://github.com/linyinfeng/commit-notifier.git"
 fetch.github = "linyinfeng/commit-notifier"
 git.fetchSubmodules = true
 cargo_lock = "Cargo.lock"
+
+[nearcore]
+src.github = "near/nearcore"
+fetch.github = "near/nearcore"
+git.fetchSubmodules = true
+cargo_lock = "Cargo.lock"
