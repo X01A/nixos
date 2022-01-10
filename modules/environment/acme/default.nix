@@ -18,7 +18,7 @@ in
   config = mkIf cfg.enable {
     security.acme = {
       acceptTerms = true;
-      email = "acme@indexyz.me";
+      defaults.email = "acme@indexyz.me";
       preliminarySelfsigned = true;
     };
   };
