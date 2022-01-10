@@ -185,6 +185,17 @@ in
       powerManagement.cpuFreqGovernor = "ondemand";
       users.users.root.shell = pkgs.fish;
       programs.fuse.userAllowOther = true;
+
+      services.fail2ban = {
+        enable = true;
+        maxretry = 5;
+        ignoreIP = [
+          "127.0.0.0/8"
+          "10.0.0.0/8"
+          "172.16.0.0/12"
+          "192.168.0.0/16"
+        ];
+      };
     }
   ]);
 }
