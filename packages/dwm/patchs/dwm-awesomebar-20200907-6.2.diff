@@ -277,7 +277,7 @@ index 4465af1..e780189 100644
 -		restack(selmon);
 +
 +	if (inc > 0) {
-+		if (selmon->sel)
++		if (selmon->sel) {
 +			for (c = selmon->sel->next;
 +				c && (!ISVISIBLE(c) || (!hid && HIDDEN(c)));
 +				c = c->next);
