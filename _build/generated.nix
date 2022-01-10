@@ -95,10 +95,10 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "ffd0819e6221a48c007a9ecb42c581c547c24b14";
+    version = "bfd1cfff506679af3e68ab046f224c947eb39308";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "ffd0819e6221a48c007a9ecb42c581c547c24b14";
+      rev = "bfd1cfff506679af3e68ab046f224c947eb39308";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "e580f6a886f24550c76aff4eea7972a5284d40cc";
+    version = "f7a672ebe71ea1e330df4ca293b5df1ad91904e5";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "e580f6a886f24550c76aff4eea7972a5284d40cc";
+      rev = "f7a672ebe71ea1e330df4ca293b5df1ad91904e5";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0ajyai3xraiw5w78k83q3mbd3bwznf1i8ynbwds4ykcsyjvkwbwg";
+      sha256 = "0m3zg9lpixazx65l06yg8klqj6v5ydd7yhfhxj1zd1jyf49s8r61";
     };
   };
   motrix = {
@@ -171,20 +171,20 @@
   };
   nearcore = {
     pname = "nearcore";
-    version = "1.23.0";
+    version = "1.23.1";
     src = fetchgit {
       url = "https://github.com/near/nearcore";
-      rev = "1.23.0";
+      rev = "1.23.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1bwmmm4mh34x2whpkhbcrc3ld482k7i247267i2y2xpkp4zv7a3q";
+      sha256 = "0vlfd0k62l21xs91qwzx42a3wdnds554pfnrvvdijraaidsw2zhq";
     };
     cargoLock = {
-      lockFile = ./nearcore-1.23.0/Cargo.lock;
+      lockFile = ./nearcore-1.23.1/Cargo.lock;
       outputHashes = {
-        "sysinfo-0.14.3" = "0ny240h5hb6zyfjh8wgh68jbjbkb60k1h2vmvi0bf841fgkv51ny";
         "actix-cors-0.6.0-beta.2" = "112s1111grqwrjax4bw3njrxrm2cn550vwimvvvjzhdl6finlnfj";
+        "sysinfo-0.14.3" = "0ny240h5hb6zyfjh8wgh68jbjbkb60k1h2vmvi0bf841fgkv51ny";
         "paperclip-0.5.0" = "11hh44c37wkjzxp2115y0v1kc6506p9z9v077aygby2xgfqyn0d1";
       };
     };
