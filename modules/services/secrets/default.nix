@@ -76,7 +76,7 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf (cfg.enable && (attrsets.hasAttrByPath [ "deployment" ] config)) {
     deployment.keys = builtins.listToAttrs (
       lib.lists.flatten (map deplotmenyKeyToRealKey deploymentKeys) ++ [ placeHolder ]
     );

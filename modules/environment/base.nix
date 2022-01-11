@@ -103,7 +103,7 @@ in
         "net.ipv4.tcp_tw_reuse" = 1;
         "net.ipv4.tcp_no_metrics_save" = 1;
         "net.ipv4.tcp_sack" = 1;
-        "vm.overcommit_memory" = 1;
+        "vm.overcommit_memory" = lib.mkDefault 1;
         "vm.swappiness" = 1;
         "net.core.default_qdisc" = "fq";
         "net.ipv4.tcp_ecn" = 1;
