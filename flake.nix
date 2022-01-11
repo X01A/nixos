@@ -59,7 +59,7 @@
         imports = [ ./modules/all-modules.nix ];
       };
       nixosModules.secrets = { ... }: {
-        imports = [ ./modules/services/sercrets ];
+        imports = [ ./modules/services/secrets ];
       };
       homeModules.indexyz = { ... }: {
         imports = [ ./home/all-modules.nix ];
