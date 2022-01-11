@@ -129,4 +129,6 @@ in
       };
     };
   };
+
+  meta.buildDocsInSandbox = false;
 }
