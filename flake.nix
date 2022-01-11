@@ -58,11 +58,24 @@
       nixosModules.indexyz = { ... }: {
         imports = [ ./modules/all-modules.nix ];
       };
+      nixosModules.secrets = { ... }: {
+        imports = [ ./modules/services/sercrets ];
+      };
       homeModules.indexyz = { ... }: {
         imports = [ ./home/all-modules.nix ];
       };
       darwinModules.indexyz = { ... }: {
         imports = [ ./modules/darwin ];
+      };
+
+      installer.iso = import "${toString nixpkgs}/nixos/lib/eval-config.nix" {
+        system = "x86_64-linux";
+
+        modules = [
+          "${toString nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+          ./modules/all-modules.nix
+          ./modules/installer/iso.nix
+        ];
       };
     };
 }
