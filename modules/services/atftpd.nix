@@ -27,4 +27,6 @@ in
 
     networking.firewall.allowedUDPPorts = [ 69 ];
   };
+
+  meta.buildDocsInSandbox = false;
 }

@@ -119,5 +119,7 @@ in
       '';
     };
   };
+
+  meta.buildDocsInSandbox = false;
 }
 
