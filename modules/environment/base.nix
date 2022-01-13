@@ -152,7 +152,10 @@ in
         jq
         wireguard
         ripgrep
+        exa
+        fd
       ];
+
       programs.fish = {
         enable = true;
         shellInit = ''
@@ -160,6 +163,10 @@ in
 
           ${pkgs.starship}/bin/starship init fish | source
         '';
+        shellAliases = {
+          ls = "exa";
+          find = "fd";
+        };
       };
 
       environment.etc."starship.toml".text = ''
