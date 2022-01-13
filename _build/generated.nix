@@ -95,14 +95,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "bfd1cfff506679af3e68ab046f224c947eb39308";
+    version = "835610ae2c4faf298608a078cb8b24069aa50b97";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "bfd1cfff506679af3e68ab046f224c947eb39308";
+      rev = "835610ae2c4faf298608a078cb8b24069aa50b97";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "19vz4xq8q36vwd9fm7yrfr9m7nxvcgb8cx2d281cb5kjpljkmyzk";
+      sha256 = "1q1xwwfylpqd9jc90ak75xhsg300sqc235mna07wc4za0rcvnv16";
     };
   };
   ksmbd-tools = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "f7a672ebe71ea1e330df4ca293b5df1ad91904e5";
+    version = "c5fd48d2347f837d033f7d82e7979d616b369bd8";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "f7a672ebe71ea1e330df4ca293b5df1ad91904e5";
+      rev = "c5fd48d2347f837d033f7d82e7979d616b369bd8";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0m3zg9lpixazx65l06yg8klqj6v5ydd7yhfhxj1zd1jyf49s8r61";
+      sha256 = "0fyaszpgxd6v1bf92qf5skf5m14kw1sxdr7zq5gzmnlm7w24jhbh";
     };
   };
   motrix = {
@@ -287,14 +287,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.3.2";
+    version = "v0.3.3";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.3.2";
+      rev = "v0.3.3";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0bk7j6vq5z4ivq8xmrm4mzq88dxlf3javqyqjlqipvz5xv69n0l2";
+      sha256 = "0wrp8ih2gvm11pyny488s9micx6biahry5ldcaxmx0ak0gap3w6y";
     };
   };
   yacd = {
