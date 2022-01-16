@@ -28,7 +28,7 @@ in
   config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
-      permitRootLogin = "prohibit-password";
+      permitRootLogin = lib.mkForce "prohibit-password";
       passwordAuthentication = false;
       forwardX11 = true;
     };

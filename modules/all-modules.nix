@@ -38,7 +38,6 @@
     ./desktop/dwm.nix
     ./desktop/ime.nix
     ./system/uboot
-    ./services/secrets
     ./services/wiretrustee-client.nix
   ];
 }
