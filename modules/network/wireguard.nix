@@ -46,19 +46,21 @@ in
           description = "WireGuard incoming connection address";
           default = config.deployment.targetHost;
           type = types.str;
-        }
         };
     };
+  };
 
-    config = mkIf cfg.enable {
-      assertions = singleton {
-        assertion = (nodes != null);
-        message = ''
-          evalModules not provide nodes
-          Please use colmena https://github.com/zhaofengli/colmena to deploy or disable wireguard module
-        '';
-      };
-
-
+  config = mkIf cfg.enable {
+    assertions = singleton {
+      assertion = (nodes != null);
+      message = ''
+        evalModules not provide nodes
+        Please use colmena https://github.com/zhaofengli/colmena to deploy or disable wireguard module
+      '';
     };
-  }
+
+
+  };
+
+  meta.buildDocsInSandbox = false;
+}

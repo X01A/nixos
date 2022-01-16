@@ -143,4 +143,5 @@ in
       allowedTCPPorts = [ cfg.port ];
     };
   };
+  meta.buildDocsInSandbox = false;
 }
