@@ -45,6 +45,7 @@ in
         {
           description = "WireGuard incoming connection address";
           default = config.deployment.targetHost;
+          defaultText = "1.1.1.1";
           type = types.str;
         };
     };
@@ -61,6 +62,4 @@ in
 
 
   };
-
-  meta.buildDocsInSandbox = false;
 }

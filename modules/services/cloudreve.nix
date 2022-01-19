@@ -83,6 +83,7 @@ in
       package = mkOption {
         default = pkgs.cloudreve;
         type = types.package;
+        defaultText = "pkgs.cloudreve";
       };
 
       proKey = mkOption {
@@ -143,5 +144,4 @@ in
       allowedTCPPorts = [ cfg.port ];
     };
   };
-  meta.buildDocsInSandbox = false;
 }

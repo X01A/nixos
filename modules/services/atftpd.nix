@@ -15,6 +15,7 @@ in
       pkg = mkOption {
         default = pkgs.ipxe;
         type = types.package;
+        defaultText = "pkgs.ipxe";
       };
     };
   };
@@ -27,6 +28,4 @@ in
 
     networking.firewall.allowedUDPPorts = [ 69 ];
   };
-
-  meta.buildDocsInSandbox = false;
 }
