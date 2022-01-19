@@ -72,6 +72,7 @@ in
       package = mkOption {
         default = pkgs.clash;
         type = types.package;
+        defaultText = "pkgs.clash";
       };
 
       secret = mkOption {
@@ -85,6 +86,7 @@ in
         pkg = mkOption {
           type = types.package;
           default = pkgs.mmdb-ipip;
+          defaultText = "pkgs.mmdb-ipip";
         };
       };
 
@@ -129,6 +131,4 @@ in
       };
     };
   };
-
-  meta.buildDocsInSandbox = false;
 }

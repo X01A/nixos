@@ -31,11 +31,13 @@ in
       gateway = mkOption {
         default = config.networking.defaultGateway;
         type = types.str;
+        defaultText = "defaultGateway";
       };
 
       dnsServer = mkOption {
         default = config.networking.nameservers;
         type = with types; listOf str;
+        defaultText = "[1.1.1.1]";
       };
 
       tunName = mkOption {
@@ -119,7 +121,5 @@ in
       '';
     };
   };
-
-  meta.buildDocsInSandbox = false;
 }
 
