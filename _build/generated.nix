@@ -66,7 +66,7 @@
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "17hngizi4z9pk3mzgb9vqvc2dyvn16r5cnj54gh1c8s7kcln7ilp";
+      sha256 = "0ld4n0fajv8yl10xwvpadajjjgqwvcjavyi75hs92j2vs5s8r979";
     };
   };
   fcitx5-material-color = {
