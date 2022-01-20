@@ -11,21 +11,17 @@ stdenv.mkDerivation rec {
     sha256 = "1724s3y8ad14s8a0rag9jadb69j0j2vn566fzg6basx2bmfrj8gi";
   };
 
+  nativeBuildInputs = kernel.moduleBuildDependencies;
+  makeFlags = [ "KDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build" ];
   buildPhase = ''
-    make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build \
-      -j$NIX_BUILD_CORES M=$(pwd) modules
+    make -j$NIX_BUILD_CORES M=$(pwd) modules
   '';
 
   installPhase = ''
-    make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build  \
-      INSTALL_MOD_PATH=$out M=$(pwd) modules_install
+    make INSTALL_MOD_PATH=$out M=$(pwd) modules_install
   '';
 
   meta = with lib; {
-    description = "Driver for the touchbar and ambient-light-sensor on 2019 MacBook Pro's.";
-    homepage = "https://github.com/hlolli/macbook15-spi-driver";
-    license = lib.licenses.gpl2Only;
     platforms = platforms.linux;
-    maintainers = [ lib.maintainers.hlolli ];
   };
 }

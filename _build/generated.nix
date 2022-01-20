@@ -30,7 +30,9 @@
     };
     cargoLock = {
       lockFile = ./commit-notifier-573c1eb7eabc97aa06e0e9ad85f5148110749876/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   drone-runner-docker = {
@@ -66,7 +68,7 @@
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0ld4n0fajv8yl10xwvpadajjjgqwvcjavyi75hs92j2vs5s8r979";
+      sha256 = "17hngizi4z9pk3mzgb9vqvc2dyvn16r5cnj54gh1c8s7kcln7ilp";
     };
   };
   fcitx5-material-color = {
@@ -95,14 +97,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "835610ae2c4faf298608a078cb8b24069aa50b97";
+    version = "e5b5d1a8d0fef992e41af1f147ca50a0b3c95db2";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "835610ae2c4faf298608a078cb8b24069aa50b97";
+      rev = "e5b5d1a8d0fef992e41af1f147ca50a0b3c95db2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1q1xwwfylpqd9jc90ak75xhsg300sqc235mna07wc4za0rcvnv16";
+      sha256 = "0fnc8k7ci6sr1n30gjii45hlfwxvzx1drag13v3f63r90mdnbz6f";
     };
   };
   ksmbd-tools = {
@@ -119,10 +121,10 @@
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.2.1";
+    version = "6.3.0";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.2.1/mattermost-6.2.1-linux-amd64.tar.gz";
-      sha256 = "0lfpplk3yrj75h2hjd6w18iapiixkrgk7vi504rz7wlaq30cqpx5";
+      url = "https://releases.mattermost.com/6.3.0/mattermost-6.3.0-linux-amd64.tar.gz";
+      sha256 = "172b1mn8fypjfs8l2al93p4a56p93b0avlzqsmha69xvy28aga1y";
     };
   };
   microsocks = {
@@ -139,14 +141,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "c5fd48d2347f837d033f7d82e7979d616b369bd8";
+    version = "55488a9f0e20e2680a0034285ee55716a074bc17";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "c5fd48d2347f837d033f7d82e7979d616b369bd8";
+      rev = "55488a9f0e20e2680a0034285ee55716a074bc17";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0fyaszpgxd6v1bf92qf5skf5m14kw1sxdr7zq5gzmnlm7w24jhbh";
+      sha256 = "19bw203v5y86xbpv6rlljk6p0vwq5zj3m5682vncw1iphbrzzjqz";
     };
   };
   motrix = {
@@ -199,6 +201,18 @@
       deepClone = false;
       leaveDotGit = false;
       sha256 = "12v5mr5wkbvj66f2pp9k73dfgsjlpi2aq4xi769wpdkqwd31zns9";
+    };
+  };
+  simple-obfs = {
+    pname = "simple-obfs";
+    version = "v0.0.5";
+    src = fetchgit {
+      url = "https://github.com/shadowsocks/simple-obfs";
+      rev = "v0.0.5";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "0k20qc3gmm28z5k7xdwm6rz9x9v52kznc2j8zbaxky2mbc10inf4";
     };
   };
   sunshine = {
@@ -262,7 +276,9 @@
     };
     cargoLock = {
       lockFile = ./vpncloud-v2.3.0/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   wgcf = {
