@@ -135,3 +135,8 @@ src.github = "near/nearcore"
 fetch.github = "near/nearcore"
 git.fetchSubmodules = true
 cargo_lock = "Cargo.lock"
+
+[simple-obfs]
+src.github = "shadowsocks/simple-obfs"
+fetch.github = "shadowsocks/simple-obfs"
+git.fetchSubmodules = true

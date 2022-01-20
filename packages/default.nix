@@ -146,4 +146,8 @@ in
   };
 
   babel = callPackage ./babel { };
+
+  simple-obfs = callPackage ./simple-obfs {
+    source = nvfetcherOut.simple-obfs;
+  };
 } // systemPackages
