@@ -13,6 +13,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    npmlock2nix = {
+      url = "github:serokell/nix-npm-buildpackage";
+      flake = false;
+    };
+
     cloudreve-cli = {
       url = "github:Indexyz/CloudreveCLI";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +26,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, cloudreve-cli, ... }:
+  outputs = { self, nixpkgs, flake-utils, cloudreve-cli, npmlock2nix, ... }:
     flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ]
       (system:
         let
@@ -29,10 +34,14 @@
             inherit system;
           };
 
-
           os = pkgs.lib.last (pkgs.lib.strings.splitString "-" system);
 
-          packages = import ./packages { nixpkgs = pkgs; inherit os; };
+          packages = import ./packages {
+            nixpkgs = pkgs; inherit os;
+            npmlock2nix = pkgs.callPackage npmlock2nix {
+              nodejs = pkgs.nodejs-14_x;
+            };
+          };
           packageList = (pkgs.lib.attrsets.mapAttrsToList (name: value: { inherit name value; }) packages);
           buildPacakgesList = builtins.filter
             (item:
