@@ -140,3 +140,9 @@ cargo_lock = "Cargo.lock"
 src.github = "shadowsocks/simple-obfs"
 fetch.github = "shadowsocks/simple-obfs"
 git.fetchSubmodules = true
+
+
+[pufferpabel]
+src.github = "PufferPanel/PufferPanel"
+fetch.github = "PufferPanel/PufferPanel"
+git.fetchSubmodules = true
