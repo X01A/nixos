@@ -39,5 +39,6 @@
     ./desktop/ime.nix
     ./system/uboot
     ./services/wiretrustee-client.nix
+    ./services/pufferpanel.nix
   ];
 }
