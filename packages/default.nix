@@ -1,4 +1,4 @@
-{ nixpkgs, os }:
+{ nixpkgs, os, npmlock2nix }:
 
 with nixpkgs; let
   nvfetcherOut = callPackage ../sources.nix { };
@@ -152,6 +152,7 @@ in
   };
 
   pufferpanel = callPackage ./pufferpanel {
+    inherit npmlock2nix;
     source = nvfetcherOut.pufferpanel;
   };
 } // systemPackages
