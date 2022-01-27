@@ -3,10 +3,10 @@
 {
   clash-premium = {
     pname = "clash-premium";
-    version = "2022.01.03";
+    version = "2022.01.27";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.01.03.gz";
-      sha256 = "05xcfxavyq57qpcn6b6yjka2nfbp5kl08dhmd6zlv9144ica7xvm";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.01.27.gz";
+      sha256 = "0x6gavq43qhahxmy576j762qgqmfx9i7ggmqdfsjcyj00rdj864p";
     };
   };
   cloudreve = {
@@ -30,7 +30,9 @@
     };
     cargoLock = {
       lockFile = ./commit-notifier-573c1eb7eabc97aa06e0e9ad85f5148110749876/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   drone-runner-docker = {
@@ -59,14 +61,14 @@
   };
   edl = {
     pname = "edl";
-    version = "8f333eb816e6250aa9485816ea6a371c3b2bba9a";
+    version = "263826fcf093ede13703cb8094b3dfcefee1d66c";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "8f333eb816e6250aa9485816ea6a371c3b2bba9a";
+      rev = "263826fcf093ede13703cb8094b3dfcefee1d66c";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1ihsg0x426akspsl5cl9z7hqm1yfm1bybn1xh6c23a3p74pqpnws";
+      sha256 = "0z1hm5lcnn0y2a02a1mnvd6bb1l8fpi799345q5f7x3x2jla3ps6";
     };
   };
   fcitx5-material-color = {
@@ -286,7 +288,9 @@
     };
     cargoLock = {
       lockFile = ./vpncloud-v2.3.0/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   wgcf = {
