@@ -141,8 +141,7 @@ src.github = "shadowsocks/simple-obfs"
 fetch.github = "shadowsocks/simple-obfs"
 git.fetchSubmodules = true
 
-
-[pufferpabel]
+[pufferpanel]
 src.github = "PufferPanel/PufferPanel"
 fetch.github = "PufferPanel/PufferPanel"
 git.fetchSubmodules = true
