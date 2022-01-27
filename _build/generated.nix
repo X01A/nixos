@@ -201,8 +201,8 @@
       sha256 = "12v5mr5wkbvj66f2pp9k73dfgsjlpi2aq4xi769wpdkqwd31zns9";
     };
   };
-  pufferpabel = {
-    pname = "pufferpabel";
+  pufferpanel = {
+    pname = "pufferpanel";
     version = "v2.4.0";
     src = fetchgit {
       url = "https://github.com/PufferPanel/PufferPanel";
