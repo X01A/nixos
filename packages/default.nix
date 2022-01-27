@@ -150,4 +150,8 @@ in
   simple-obfs = callPackage ./simple-obfs {
     source = nvfetcherOut.simple-obfs;
   };
+
+  pufferpanel = callPackage ./pufferpanel {
+    source = nvfetcherOut.pufferpanel;
+  };
 } // systemPackages
