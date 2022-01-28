@@ -114,6 +114,11 @@ in
       (toInt managePort)
     ] else [ ]);
 
+    networking.firewall.allowedUDPPorts = (if cfg.allowLan then [
+      cfg.port
+    ] else [ ]);
+
+
     systemd.services = {
       clash = {
         description = "Clash network proxy";
