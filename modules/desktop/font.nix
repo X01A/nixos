@@ -19,7 +19,6 @@ in
       fonts = with pkgs; [
         roboto
         jetbrains-mono
-        noto-fonts
         noto-fonts-cjk
         noto-fonts-extra
         noto-fonts-emoji
