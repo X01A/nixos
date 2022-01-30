@@ -122,8 +122,6 @@ in
     source = nvfetcherOut.tun2socks;
   };
 
-  hpool-xproxy = callPackage ./hpool-xproxy { };
-
   teleport-ent = callPackage ./teleport-ent { };
 
   dwm-index = callPackage ./dwm { };
