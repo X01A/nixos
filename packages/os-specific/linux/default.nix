@@ -9,6 +9,4 @@ with nixpkgs;
   ksmbd-kernel = callPackage ./ksmbd/kernel.nix {
     source = nvfetcherOut.ksmbd;
   };
-
-  macbook15-spi-driver = callPackage ./macbook15-spi-driver { };
 }
