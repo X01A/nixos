@@ -3,7 +3,8 @@
 with nixpkgs; let
   nvfetcherOut = callPackage ../sources.nix { };
   build-electron-appimage = callPackage ./build-electron-appimage { };
-  systemPackages = if builtins.pathExists (./. + "./os-specific/${os}") then callPackage "./os-specific/${os}" { inherit nixpkgs nvfetcherOut; } else { };
+  osPkgPath = ./. + "/os-specific/${os}";
+  systemPackages = if builtins.pathExists osPkgPath then callPackage osPkgPath { inherit nixpkgs nvfetcherOut; } else { };
 in
 {
   inherit build-electron-appimage;
