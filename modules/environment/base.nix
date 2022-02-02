@@ -83,7 +83,7 @@ in
         '';
       };
 
-      boot.kernelModules = [ "xfs" ];
+      boot.kernelModules = [ "xfs" "tcp_bbr" ];
 
       # disable default dnssec
       # ntp domain reslove will failure if time not match
@@ -99,15 +99,41 @@ in
       i18n.defaultLocale = "en_US.UTF-8";
       nixpkgs.config.allowUnfree = true;
       boot.kernel.sysctl = {
+        # Disable magic SysRq key
+        "kernel.sysrq" = 0;
+        # Ignore ICMP broadcasts to avoid participating in Smurf attacks
+        "net.ipv4.icmp_echo_ignore_broadcasts" = 1;
+        # Ignore bad ICMP errors
+        "net.ipv4.icmp_ignore_bogus_error_responses" = 1;
+        # Reverse-path filter for spoof protection
+        "net.ipv4.conf.default.rp_filter" = 1;
+        "net.ipv4.conf.all.rp_filter" = 1;
+        # SYN flood protection
+        "net.ipv4.tcp_syncookies" = 1;
+        # Do not accept ICMP redirects (prevent MITM attacks)
+        "net.ipv4.conf.all.accept_redirects" = 0;
+        "net.ipv4.conf.default.accept_redirects" = 0;
+        "net.ipv4.conf.all.secure_redirects" = 0;
+        "net.ipv4.conf.default.secure_redirects" = 0;
+        "net.ipv6.conf.all.accept_redirects" = 0;
+        "net.ipv6.conf.default.accept_redirects" = 0;
+        # Protect against tcp time-wait assassination hazards
+        "net.ipv4.tcp_rfc1337" = 1;
+        # TCP Fast Open (TFO)
+        "net.ipv4.tcp_fastopen" = 3;
+        ## Bufferbloat mitigations
+        # Requires >= 4.9 & kernel module
+        "net.ipv4.tcp_congestion_control" = "bbr";
+        # Requires >= 4.19
+        "net.core.default_qdisc" = "cake";
+
         "net.ipv4.tcp_tw_recycle" = 1;
         "net.ipv4.tcp_tw_reuse" = 1;
         "net.ipv4.tcp_no_metrics_save" = 1;
         "net.ipv4.tcp_sack" = 1;
         "vm.overcommit_memory" = lib.mkDefault 1;
         "vm.swappiness" = 1;
-        "net.core.default_qdisc" = "fq";
         "net.ipv4.tcp_ecn" = 1;
-        "net.ipv4.tcp_congestion_control" = "bbr2";
         "net.ipv4.conf.default.rp_filter" = 1;
       };
       environment.systemPackages = with pkgs; [
