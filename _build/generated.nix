@@ -59,14 +59,14 @@
   };
   edl = {
     pname = "edl";
-    version = "263826fcf093ede13703cb8094b3dfcefee1d66c";
+    version = "7ae1191a4a0e355e7d8449a7e55af2827314e0da";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "263826fcf093ede13703cb8094b3dfcefee1d66c";
+      rev = "7ae1191a4a0e355e7d8449a7e55af2827314e0da";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0z1hm5lcnn0y2a02a1mnvd6bb1l8fpi799345q5f7x3x2jla3ps6";
+      sha256 = "1w3536f4fi0x3ldz93b0wl8yylspj0g67n47n6jqakbjs6n603s7";
     };
   };
   fcitx5-material-color = {
@@ -95,58 +95,58 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "2fcbbe34d830c142f1cc01b7cd867da60738e06f";
+    version = "2c0c06dab21ceab40f87fa5ab54da3235418fe18";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "2fcbbe34d830c142f1cc01b7cd867da60738e06f";
+      rev = "2c0c06dab21ceab40f87fa5ab54da3235418fe18";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1cn7wjx0bj283w34gk89k2sb48zvan1vwrpcgvpzla5wnx0bdsq7";
+      sha256 = "1l88y9gcfjml41gqh7x65s6wvhi9xljci68pgrkwjyyrr0rjmcl4";
     };
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "e60cabc72c2dc880a83828b978ab28fefee74df8";
+    version = "a47af62bc4c7e8e486b318347cee03e40b0ea40b";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd-tools";
-      rev = "e60cabc72c2dc880a83828b978ab28fefee74df8";
+      rev = "a47af62bc4c7e8e486b318347cee03e40b0ea40b";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0ndrcc11dmz1gaf1aq3f1qqzc7r7mwd8w9pbcqa25q1l03fypf2s";
+      sha256 = "19aakdri9p3yn6gavq2q1vywjxmbdgk3yl7025bbspzv6j3hfasm";
     };
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.3.1";
+    version = "6.3.3";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.3.1/mattermost-6.3.1-linux-amd64.tar.gz";
-      sha256 = "0pmgd5dfbjmz2d37wjj0kn3f8chqpckw1f6z9jbfnhhwq1k14p4l";
+      url = "https://releases.mattermost.com/6.3.3/mattermost-6.3.3-linux-amd64.tar.gz";
+      sha256 = "16h2syzgimp1fdm7manxa8rxd2nc5kzky45i2yccbqc4di8463rs";
     };
   };
   microsocks = {
     pname = "microsocks";
-    version = "v1.0.2";
+    version = "v1.0.3";
     src = fetchgit {
       url = "https://github.com/rofl0r/microsocks";
-      rev = "v1.0.2";
+      rev = "v1.0.3";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1di11wx9ihwa0g9qzsqrb3ka2xxjb10fyc7hwjhn58mxdfwlavl0";
+      sha256 = "18p96mm365whhiz5mvf3z896vy85j3ampwxblkwhgzcqlz73xvwp";
     };
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "ca0a62cb9b42e2cdd747b18a12064f54e3c31c8d";
+    version = "984b134fe47df4b187ac240091906857a3b5da2c";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "ca0a62cb9b42e2cdd747b18a12064f54e3c31c8d";
+      rev = "984b134fe47df4b187ac240091906857a3b5da2c";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0cqiry4bbrjjdpf0x44zsi11vwh3fm04zm2y6p3yc1sng8dpk6fd";
+      sha256 = "14ra6ygrzdrrksa4jld9lip9dssf8856q73h3z7hkdafzbab4s02";
     };
   };
   motrix = {
