@@ -134,7 +134,6 @@ in
         "vm.overcommit_memory" = lib.mkDefault 1;
         "vm.swappiness" = 1;
         "net.ipv4.tcp_ecn" = 1;
-        "net.ipv4.conf.default.rp_filter" = 1;
       };
       environment.systemPackages = with pkgs; [
         wget
