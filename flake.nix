@@ -2,7 +2,7 @@
   description = "Personal nixos modules and packages";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
