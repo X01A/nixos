@@ -123,7 +123,7 @@ in
         "net.ipv4.tcp_fastopen" = 3;
         ## Bufferbloat mitigations
         # Requires >= 4.9 & kernel module
-        "net.ipv4.tcp_congestion_control" = lib.mkForce "bbr";
+        "net.ipv4.tcp_congestion_control" = "bbr";
         # Requires >= 4.19
         "net.core.default_qdisc" = "cake";
 
