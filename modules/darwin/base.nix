@@ -41,7 +41,7 @@ in
     nix = {
       package = pkgs.nixUnstable;
       useDaemon = true;
-      useSandbox = true;
+      useSandbox = false;
 
       gc = {
         automatic = true;
