@@ -25,7 +25,7 @@ in
         wqy_microhei
         wqy_zenhei
         cascadia-code
-        iosevka
+        iosevka-bin
 
         (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
       ];
