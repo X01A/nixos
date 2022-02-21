@@ -59,14 +59,14 @@
   };
   edl = {
     pname = "edl";
-    version = "7ae1191a4a0e355e7d8449a7e55af2827314e0da";
+    version = "312cf3bb99047fef92a34cc61e4ec2e0c231ea5e";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "7ae1191a4a0e355e7d8449a7e55af2827314e0da";
+      rev = "312cf3bb99047fef92a34cc61e4ec2e0c231ea5e";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1w3536f4fi0x3ldz93b0wl8yylspj0g67n47n6jqakbjs6n603s7";
+      sha256 = "146rcqwsbilvs6bckrq1pxdln2a5c52ir93wjx9fbvwixlhz1wdc";
     };
   };
   fcitx5-material-color = {
@@ -95,14 +95,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "2c0c06dab21ceab40f87fa5ab54da3235418fe18";
+    version = "ce8421fefa4f81036187b8ef7c808d25a436dd42";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "2c0c06dab21ceab40f87fa5ab54da3235418fe18";
+      rev = "ce8421fefa4f81036187b8ef7c808d25a436dd42";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1l88y9gcfjml41gqh7x65s6wvhi9xljci68pgrkwjyyrr0rjmcl4";
+      sha256 = "0y4l9wamjqrr1r86sd1hdcs0g0ca1nmvsixdca2ln0d7fjyc7259";
     };
   };
   ksmbd-tools = {
@@ -119,10 +119,10 @@
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.3.3";
+    version = "6.4.0";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.3.3/mattermost-6.3.3-linux-amd64.tar.gz";
-      sha256 = "16h2syzgimp1fdm7manxa8rxd2nc5kzky45i2yccbqc4di8463rs";
+      url = "https://releases.mattermost.com/6.4.0/mattermost-6.4.0-linux-amd64.tar.gz";
+      sha256 = "0kkizqr6zzyqrx8v4ky5012kymqf0chic9i1axmqxvgb5cyzv551";
     };
   };
   microsocks = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "984b134fe47df4b187ac240091906857a3b5da2c";
+    version = "7910ae7e17585a82dc9ee681e551c2ccf8777aca";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "984b134fe47df4b187ac240091906857a3b5da2c";
+      rev = "7910ae7e17585a82dc9ee681e551c2ccf8777aca";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "14ra6ygrzdrrksa4jld9lip9dssf8856q73h3z7hkdafzbab4s02";
+      sha256 = "0b3g2b6zrp48nwhiwydq717x9wbbgcbcid154qhgamrdd21v5jpa";
     };
   };
   motrix = {
@@ -171,17 +171,17 @@
   };
   nearcore = {
     pname = "nearcore";
-    version = "1.23.1";
+    version = "1.24.0";
     src = fetchgit {
       url = "https://github.com/near/nearcore";
-      rev = "1.23.1";
+      rev = "1.24.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0vlfd0k62l21xs91qwzx42a3wdnds554pfnrvvdijraaidsw2zhq";
+      sha256 = "039z7a09swsacdfqfbclc7nc518qw5kzjzdw1yv3mfrpmbmr4qkh";
     };
     cargoLock = {
-      lockFile = ./nearcore-1.23.1/Cargo.lock;
+      lockFile = ./nearcore-1.24.0/Cargo.lock;
       outputHashes = {
         "actix-cors-0.6.0-beta.2" = "112s1111grqwrjax4bw3njrxrm2cn550vwimvvvjzhdl6finlnfj";
         "sysinfo-0.14.3" = "0ny240h5hb6zyfjh8wgh68jbjbkb60k1h2vmvi0bf841fgkv51ny";
@@ -303,22 +303,22 @@
   };
   winbox = {
     pname = "winbox";
-    version = "3.32";
+    version = "3.35";
     src = fetchurl {
-      url = "https://download.mikrotik.com/winbox/3.32/winbox64.exe";
-      sha256 = "1gf0zdn4ahfp08fn5w0nzigwldl3bjqcj2f08rcvyn0mbwar4znn";
+      url = "https://download.mikrotik.com/winbox/3.35/winbox64.exe";
+      sha256 = "0jigjs4paci6h897hl1046ks5f812jfb2ihnp78lbah0294shjnj";
     };
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.3.3";
+    version = "v0.3.4";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.3.3";
+      rev = "v0.3.4";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0wrp8ih2gvm11pyny488s9micx6biahry5ldcaxmx0ak0gap3w6y";
+      sha256 = "1sdcw830cs8rkdc3vf81az59f2j7hz32bg4p7ln0l7y9jfnzxj8l";
     };
   };
   yacd = {
