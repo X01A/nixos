@@ -1,4 +1,4 @@
-{ nixpkgs, nvfetcherOut, ... }:
+{ nixpkgs, nvfetcherOut, kernelPatches, ... }:
 
 with nixpkgs;
 {
@@ -8,5 +8,13 @@ with nixpkgs;
 
   ksmbd-kernel = callPackage ./ksmbd/kernel.nix {
     source = nvfetcherOut.ksmbd;
+  };
+
+  linux-rc = callPackage ./linux-rc {
+    source = nvfetcherOut.linux-rc;
+    kernelPatches = [
+      kernelPatches.bridge_stp_helper
+      kernelPatches.request_key_helper
+    ];
   };
 }
