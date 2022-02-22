@@ -117,6 +117,14 @@
       sha256 = "19aakdri9p3yn6gavq2q1vywjxmbdgk3yl7025bbspzv6j3hfasm";
     };
   };
+  linux-rc = {
+    pname = "linux-rc";
+    version = "5.17-rc5";
+    src = fetchurl {
+      url = "https://git.kernel.org/torvalds/t/linux-5.17-rc5.tar.gz";
+      sha256 = "0cy1m2ylvay4ai2ivy92cpxvck8ra4i99i65zsvfyjp3gbvy13gm";
+    };
+  };
   mattermost = {
     pname = "mattermost";
     version = "6.4.0";
@@ -311,14 +319,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.3.4";
+    version = "v0.3.5";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.3.4";
+      rev = "v0.3.5";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1sdcw830cs8rkdc3vf81az59f2j7hz32bg4p7ln0l7y9jfnzxj8l";
+      sha256 = "0bkbikj8gnq783xdy17wjj4ydgxab3mnzqi1dcx4bqs5pd6356n5";
     };
   };
   yacd = {
