@@ -22,13 +22,8 @@ let
       pkief.material-icon-theme
       zhuangtongfa.material-theme
       ryu1kn.partial-diff
+      ms-vsliveshare.vsliveshare
     ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "vsc-community-material-theme";
-        publisher = "Equinusocio";
-        version = "1.4.4";
-        sha256 = "sha256-Pn1IcgpwknVyKSnqs9/ZF2w6D2zASlAI6maPnvIltAA=";
-      }
       {
         name = "indent-rainbow";
         publisher = "oderwat";
@@ -56,8 +51,24 @@ in
       enable = true;
       package = pkgs.vscodium;
       userSettings = {
-        "workbench.colorTheme" = "Community Material Theme";
+        # Workbench style
+        "workbench.colorTheme" = "One Dark Pro";
         "workbench.iconTheme" = "material-icon-theme";
+
+        # Git settings
+        "git.enableSmartCommit" = true;
+        "git.confirmSync" = false;
+        "git.autofetch" = true;
+        "git.ignoreLegacyWarning" = true;
+
+        # Font settings
+        "terminal.integrated.fontFamily" = "Iosevka, Cascadia Code PL";
+        "editor.fontFamily": "Iosevka, Cascadia Code PL";
+        "editor.fontLigatures" = true;
+        "editor.fontSize" = 14;
+
+        # Enable bracketPairColorization
+        "editor.bracketPairColorization.enabled" = true;
       };
       inherit extensions;
     };
