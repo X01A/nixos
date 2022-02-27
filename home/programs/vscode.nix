@@ -63,7 +63,7 @@ in
 
         # Font settings
         "terminal.integrated.fontFamily" = "Iosevka, Cascadia Code PL";
-        "editor.fontFamily": "Iosevka, Cascadia Code PL";
+        "editor.fontFamily" = "Iosevka, Cascadia Code PL";
         "editor.fontLigatures" = true;
         "editor.fontSize" = 14;
 
