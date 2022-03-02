@@ -174,7 +174,7 @@ in
         xfsprogs
         pv
         jq
-        wireguard
+        wireguard-tools
         ripgrep
         exa
         fd
