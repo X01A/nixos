@@ -139,7 +139,6 @@ in
         wget
         file
         lsof
-        go-pup
         gh
         git
         clash
