@@ -119,18 +119,18 @@
   };
   linux-rc = {
     pname = "linux-rc";
-    version = "5.17-rc5";
+    version = "5.17-rc6";
     src = fetchurl {
-      url = "https://git.kernel.org/torvalds/t/linux-5.17-rc5.tar.gz";
-      sha256 = "0cy1m2ylvay4ai2ivy92cpxvck8ra4i99i65zsvfyjp3gbvy13gm";
+      url = "https://git.kernel.org/torvalds/t/linux-5.17-rc6.tar.gz";
+      sha256 = "098mvy587pvjs9iip0axa544i4ma0kv3nh858qrvij78k2pjcl97";
     };
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.4.0";
+    version = "6.4.1";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.4.0/mattermost-6.4.0-linux-amd64.tar.gz";
-      sha256 = "0kkizqr6zzyqrx8v4ky5012kymqf0chic9i1axmqxvgb5cyzv551";
+      url = "https://releases.mattermost.com/6.4.1/mattermost-6.4.1-linux-amd64.tar.gz";
+      sha256 = "1jjxcfzxrqvnnhq7ksnmb5zdjbfsvwplih8ww05ymfj98rg5dm99";
     };
   };
   microsocks = {
@@ -147,14 +147,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "7910ae7e17585a82dc9ee681e551c2ccf8777aca";
+    version = "81e4754820e1f9e71462caf8d05cde285c3246b0";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "7910ae7e17585a82dc9ee681e551c2ccf8777aca";
+      rev = "81e4754820e1f9e71462caf8d05cde285c3246b0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0b3g2b6zrp48nwhiwydq717x9wbbgcbcid154qhgamrdd21v5jpa";
+      sha256 = "0bzbksrnisss976kyjbhyfj8sbvcp71h3jylbh40v8pzkpn5i3af";
     };
   };
   motrix = {
