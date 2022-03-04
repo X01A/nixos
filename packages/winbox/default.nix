@@ -12,7 +12,7 @@ let
     icon = "winbox";
     desktopName = "WinBox";
     genericName = "WinBox";
-    categories = "Network;Utility;";
+    categories = [ "Network" "Utility" ];
   };
 in
 stdenv.mkDerivation rec {

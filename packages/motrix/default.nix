@@ -10,7 +10,7 @@ build-electron-appimage {
     icon = "motrix";
     desktopName = "Motrix";
     genericName = "Motrix";
-    categories = "Network;";
+    categories = [ "Network" ];
   };
 
   postInstall = ''
