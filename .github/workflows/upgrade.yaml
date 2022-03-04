@@ -48,12 +48,16 @@ jobs:
         CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
         echo "::set-output name=changelog::$CHANGELOG"
 
+    - name: Update flake
+      run: |
+        nix flake update
+
     - name: Create Pull Request
       if: ${{ steps.changelog.outputs.changelog != 'Up to date' }}
       uses: peter-evans/create-pull-request@v3
       with:
         delete-branch: true
-        title: NVFeacher upgrade
+        title: Output Update
         labels: |
           automated/nvfetcher
         body: |
