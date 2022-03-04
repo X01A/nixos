@@ -10,6 +10,6 @@ build-electron-appimage {
     icon = "yesplaymusic";
     desktopName = "YesPlayMusic";
     genericName = "YesPlayMusic";
-    categories = "Network;";
+    categories = [ "Network" ];
   };
 }
