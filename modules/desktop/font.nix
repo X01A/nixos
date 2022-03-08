@@ -51,6 +51,8 @@ in
             <alias>
               <family>monospace</family>
               <prefer>
+                <family>Iosevka</family>
+                <family>Cascadia Code PL</family>
                 <family>Noto Sans Mono CJK SC</family>
                 <family>Noto Sans Mono CJK TC</family>
                 <family>Noto Sans Mono CJK JP</family>
