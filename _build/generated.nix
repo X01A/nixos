@@ -107,30 +107,30 @@
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "a47af62bc4c7e8e486b318347cee03e40b0ea40b";
+    version = "9524c49fa2a27e0d3d1b02a862f12f48ae4d65ac";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd-tools";
-      rev = "a47af62bc4c7e8e486b318347cee03e40b0ea40b";
+      rev = "9524c49fa2a27e0d3d1b02a862f12f48ae4d65ac";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "19aakdri9p3yn6gavq2q1vywjxmbdgk3yl7025bbspzv6j3hfasm";
+      sha256 = "0xqlc221m2v4fdpgh73x5vpsijqll9y7n9s487hw6k0gs86xq28m";
     };
   };
   linux-rc = {
     pname = "linux-rc";
-    version = "5.17-rc6";
+    version = "5.17-rc7";
     src = fetchurl {
-      url = "https://git.kernel.org/torvalds/t/linux-5.17-rc6.tar.gz";
-      sha256 = "098mvy587pvjs9iip0axa544i4ma0kv3nh858qrvij78k2pjcl97";
+      url = "https://git.kernel.org/torvalds/t/linux-5.17-rc7.tar.gz";
+      sha256 = "1hdj416cqd0a9zbpn22bgb6hyinaxhgshn7k579ds1gl8d45smrm";
     };
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.4.1";
+    version = "6.4.2";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.4.1/mattermost-6.4.1-linux-amd64.tar.gz";
-      sha256 = "1jjxcfzxrqvnnhq7ksnmb5zdjbfsvwplih8ww05ymfj98rg5dm99";
+      url = "https://releases.mattermost.com/6.4.2/mattermost-6.4.2-linux-amd64.tar.gz";
+      sha256 = "18z9kg2gkdzjmpwrwzcp8wzq2im9q6zmswq3gjqlskc1v46rxk7g";
     };
   };
   microsocks = {
@@ -147,14 +147,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "81e4754820e1f9e71462caf8d05cde285c3246b0";
+    version = "50b248d798dc352539b1e3b714465cc770024880";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "81e4754820e1f9e71462caf8d05cde285c3246b0";
+      rev = "50b248d798dc352539b1e3b714465cc770024880";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0bzbksrnisss976kyjbhyfj8sbvcp71h3jylbh40v8pzkpn5i3af";
+      sha256 = "1zj3j1mrv5p0jwqfiw41ff85zbvrmsih8a7rdxpbxa1d903zm8nm";
     };
   };
   motrix = {
@@ -299,14 +299,14 @@
   };
   wgcf = {
     pname = "wgcf";
-    version = "v2.2.11";
+    version = "v2.2.12";
     src = fetchgit {
       url = "https://github.com/ViRb3/wgcf";
-      rev = "v2.2.11";
+      rev = "v2.2.12";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "00pgww2065an1j73vsj0i9qg0ik5x61m7rxrvvxjjk2ka157sg8g";
+      sha256 = "0wp8p1nmghc99c7lfsmgxjdfxzhls6kdm3i0353wqi1295fq502l";
     };
   };
   winbox = {
@@ -319,14 +319,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.3.5";
+    version = "v0.4.0";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.3.5";
+      rev = "v0.4.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0bkbikj8gnq783xdy17wjj4ydgxab3mnzqi1dcx4bqs5pd6356n5";
+      sha256 = "0qhg9687rfklallw2gfvhb6nknw0hcx106di67q5rh7d57zhx3c8";
     };
   };
   yacd = {
