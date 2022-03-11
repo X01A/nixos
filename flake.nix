@@ -53,6 +53,7 @@
           buildPacakges = builtins.listToAttrs buildPacakgesList;
           finalPackages = buildPacakges //
           cloudreve-cli.legacyPackages."${system}";
+          prefetch = pkgs.nix-prefetch.override { nix = pkgs.nixUnstable; };
         in
         {
           legacyPackages = finalPackages;
@@ -60,7 +61,7 @@
           overlays = builtins.mapAttrs (overlayPkgs: (final: prev: overlayPkgs)) buildPacakges;
           devShell = pkgs.mkShell {
             buildInputs = with pkgs; [
-              nvfetcher
+              nvfetcher prefetch
             ];
           };
         }) // {
