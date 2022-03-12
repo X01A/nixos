@@ -88,5 +88,18 @@
           ./modules/installer/iso.nix
         ];
       };
+
+      rpi.image = import "${toString nixpkgs}/nixos/lib/eval-config.nix" {
+        system = "aarch64-linux";
+        modules = [
+          "${toString nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+          ./modules/all-modules.nix
+          ({ pkgs, lib, config, ... }: {
+            indexyz.services.ssh.enable = true;
+            indexyz.environment.base.enable = true;
+
+          })
+        ];
+      };
     };
 }
