@@ -154,4 +154,40 @@ in
     inherit npmlock2nix;
     source = nvfetcherOut.pufferpanel;
   };
+
+  librefox-index = (wrapFirefox firefox-unwrapped {
+    forceWayland = true;
+    extraPolicies = {
+      PasswordManagerEnabled = false;
+      DisableFirefoxAccounts = true;
+      DisablePocket = true;
+      EnableTrackingProtection = {
+        Value = true;
+        Locked = true;
+        Cryptomining = true;
+        Fingerprinting = true;
+      };
+      Preferences = {
+        "browser.newtabpage.activity-stream.feeds.topsites" = false;
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+        "network.trr.mode" = 3;
+        "network.dns.echconfig.enabled" = true;
+        "network.dns.http3_echconfig.enabled" = true;
+        "network.dns.use_https_rr_as_altsvc" = true;
+      };
+
+      ExtensionSettings = {
+        # Adguard
+        "adguardadblocker@adguard.com.xpi" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/adguard-adblocker/latest.xpi";
+        };
+        # Switchy Omega
+        "switchyomega@feliscatus.addons.mozilla.org.xpi" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/switchyomega/latest.xpi";
+        };
+      };
+    };
+  });
 } // systemPackages
