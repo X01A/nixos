@@ -119,10 +119,10 @@
   };
   linux-rc = {
     pname = "linux-rc";
-    version = "5.17-rc7";
+    version = "5.17-rc8";
     src = fetchurl {
-      url = "https://git.kernel.org/torvalds/t/linux-5.17-rc7.tar.gz";
-      sha256 = "1hdj416cqd0a9zbpn22bgb6hyinaxhgshn7k579ds1gl8d45smrm";
+      url = "https://git.kernel.org/torvalds/t/linux-5.17-rc8.tar.gz";
+      sha256 = "1v98shm8a8snxv8khgrm55k2063rndxmpigwl5z3qqp78xbkwa9j";
     };
   };
   mattermost = {
@@ -147,14 +147,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "50b248d798dc352539b1e3b714465cc770024880";
+    version = "7b76cb220a363b52af9e09e8d78faa4dd48ad90f";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "50b248d798dc352539b1e3b714465cc770024880";
+      rev = "7b76cb220a363b52af9e09e8d78faa4dd48ad90f";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1zj3j1mrv5p0jwqfiw41ff85zbvrmsih8a7rdxpbxa1d903zm8nm";
+      sha256 = "062xvpbwy5ivja6gqmsxagcwsyqyl036v5dymmjc5yb0q8gx57r5";
     };
   };
   motrix = {
@@ -319,14 +319,14 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.4.0";
+    version = "v0.5.1";
     src = fetchgit {
       url = "https://github.com/wiretrustee/wiretrustee";
-      rev = "v0.4.0";
+      rev = "v0.5.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0qhg9687rfklallw2gfvhb6nknw0hcx106di67q5rh7d57zhx3c8";
+      sha256 = "1vqviq78vgl03dmnaamfn57958gnm1729gxb437kn4harbyiw0ha";
     };
   };
   yacd = {
