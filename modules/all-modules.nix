@@ -35,8 +35,8 @@
     ./services/influxdb.nix
     ./devices/mlx4-mode.nix
     ./desktop/font.nix
-    ./desktop/dwm.nix
     ./desktop/ime.nix
+    ./desktop/sway.nix
     ./system/uboot
     ./services/wiretrustee-client.nix
     ./services/pufferpanel.nix
