@@ -59,9 +59,7 @@ in
       enable = true;
       config = {
         modifier = modifier;
-        output = {
-
-        };
+        output = { };
         bars = [ ];
         startup = [
           {

@@ -18,5 +18,6 @@ in
       text = ''
         auth include login
       '';
+    };
   };
 }
