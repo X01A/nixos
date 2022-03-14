@@ -125,16 +125,6 @@ in
 
   teleport-ent = callPackage ./teleport-ent { };
 
-  dwm-index = callPackage ./dwm { };
-  slstatus-index = callPackage ./slstatus { };
-
-  layoutmenu = writeShellScriptBin "layoutmenu" ''
-    cat <<EOF | ${xmenu}/bin/xmenu
-    []= Tiled Layout  0
-    ><> Floating Layout  1
-    [M] Monocle Layout  2
-    EOF
-  '';
 
   commit-notifier = callPackage ./commit-notifier {
     source = nvfetcherOut.commit-notifier;

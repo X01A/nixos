@@ -7,5 +7,7 @@
     ./direnv.nix
     ./alacritty.nix
     ./vscode.nix
+    ./sway.nix
+    ./waybar.nix
   ];
 }
