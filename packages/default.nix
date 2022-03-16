@@ -146,7 +146,6 @@ in
   };
 
   librefox-index = (wrapFirefox firefox-unwrapped {
-    forceWayland = true;
     extraPolicies = {
       PasswordManagerEnabled = false;
       DisableFirefoxAccounts = true;
