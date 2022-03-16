@@ -21,6 +21,6 @@ in
     };
 
     # Run fcitx daemon in xserver session
-    systemd.user.services.fcitx5-daemon.enable = lib.mkForce false;
+    # systemd.user.services.fcitx5-daemon.enable = lib.mkForce false;
   };
 }
