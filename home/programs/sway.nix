@@ -84,13 +84,6 @@ in
       wrapperFeatures = {
         gtk = true;
       };
-      extraSessionCommands = ''
-        export MOZ_ENABLE_WAYLAND=1
-        export XDG_SESSION_TYPE=wayland
-        export XDG_CURRENT_DESKTOP=sway
-        export GDK_BACKEND=wayland
-        export QT_QPA_PLATFORM=wayland
-      '';
       extraConfig = ''
         # https://github.com/ValveSoftware/steam-for-linux/issues/1040
         for_window [class="^Steam$" title="^Friends$"] floating enable
