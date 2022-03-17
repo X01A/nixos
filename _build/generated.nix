@@ -95,14 +95,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "ce8421fefa4f81036187b8ef7c808d25a436dd42";
+    version = "ac62bc68219e63e23f4e0fcb60a8a8ff3c5ba5b4";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "ce8421fefa4f81036187b8ef7c808d25a436dd42";
+      rev = "ac62bc68219e63e23f4e0fcb60a8a8ff3c5ba5b4";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0y4l9wamjqrr1r86sd1hdcs0g0ca1nmvsixdca2ln0d7fjyc7259";
+      sha256 = "1z1wis3fmv7v1bfp3rwlw1kl6k35yc6alr8sxfrg2adl1sp94a63";
     };
   };
   ksmbd-tools = {
@@ -127,10 +127,10 @@
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.4.2";
+    version = "6.5.0";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.4.2/mattermost-6.4.2-linux-amd64.tar.gz";
-      sha256 = "18z9kg2gkdzjmpwrwzcp8wzq2im9q6zmswq3gjqlskc1v46rxk7g";
+      url = "https://releases.mattermost.com/6.5.0/mattermost-6.5.0-linux-amd64.tar.gz";
+      sha256 = "0ycjg84ncv8gi3cj15rcya6hszps062c82dd78hygrjqrij9xhrf";
     };
   };
   microsocks = {
@@ -147,14 +147,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "7b76cb220a363b52af9e09e8d78faa4dd48ad90f";
+    version = "2777fec5c4c4b08bcb7eebc1dfc430ac6c75b0a7";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "7b76cb220a363b52af9e09e8d78faa4dd48ad90f";
+      rev = "2777fec5c4c4b08bcb7eebc1dfc430ac6c75b0a7";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "062xvpbwy5ivja6gqmsxagcwsyqyl036v5dymmjc5yb0q8gx57r5";
+      sha256 = "0y580q9v0zczk17h45wh4amvn6269aqipfv162h22mp6a2d3ln8h";
     };
   };
   motrix = {
@@ -179,17 +179,17 @@
   };
   nearcore = {
     pname = "nearcore";
-    version = "1.24.0";
+    version = "1.25.0";
     src = fetchgit {
       url = "https://github.com/near/nearcore";
-      rev = "1.24.0";
+      rev = "1.25.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "039z7a09swsacdfqfbclc7nc518qw5kzjzdw1yv3mfrpmbmr4qkh";
+      sha256 = "0cqwnyww3rc0xm9plqwb4pyncrmlr8732vx26jjgy8f6jal8267f";
     };
     cargoLock = {
-      lockFile = ./nearcore-1.24.0/Cargo.lock;
+      lockFile = ./nearcore-1.25.0/Cargo.lock;
       outputHashes = {
         "actix-cors-0.6.0-beta.2" = "112s1111grqwrjax4bw3njrxrm2cn550vwimvvvjzhdl6finlnfj";
         "sysinfo-0.14.3" = "0ny240h5hb6zyfjh8wgh68jbjbkb60k1h2vmvi0bf841fgkv51ny";
