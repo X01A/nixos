@@ -8,8 +8,8 @@ let
     position = "top";
     height = 30;
 
-    modules-left = [ "sway/workspaces" "sway/mode" ];
-    modules-center = [ "sway/window" ];
+    modules-left = [ "sway/workspaces" "sway/mode" "sway/window"];
+    modules-center = [ ];
     modules-right = [ "idle_inhibitor" "pulseaudio" "network" "cpu" "memory" "temperature" "backlight" ]
       ++ [ "battery" "clock" "tray" ];
 
