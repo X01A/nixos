@@ -1,0 +1,315 @@
+<!-- src from https://sh.alynx.one/posts/Fontconfig-NotoColorEmoji-Antialias/local.conf -->
+
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <match target="scan">
+    <!-- 禁用内嵌点阵。 -->
+    <edit name="embeddedbitmap" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <!-- 禁用合成粗体。 -->
+    <edit name="embolden" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <!-- 设置显示器为 RGB 排列。 -->
+    <edit name="rgba" mode="assign">
+      <const>rgb</const>
+    </edit>
+    <!-- 开启轻度微调。 -->
+    <edit name="hinting" mode="assign">
+      <bool>true</bool>
+    </edit>
+    <edit name="autohint" mode="assign">
+      <bool>true</bool>
+    </edit>
+    <edit name="hintstyle" mode="assign">
+      <const>hintslight</const>
+    </edit>
+    <!-- 开启抗锯齿。 -->
+    <edit name="antialias" mode="assign">
+      <bool>true</bool>
+    </edit>
+  </match>
+
+  <!-- 当然另一个简单方案是换成 Twemoji，不过它不能关这个。 -->
+  <match target="scan">
+    <test name="family" qual="any">
+      <string>Twemoji</string>
+    </test>
+    <edit name="embeddedbitmap" mode="assign">
+      <bool>true</bool>
+    </edit>
+  </match>
+
+  <!-- Noto Color Emoji 不支持开启抗锯齿和微调，所以在全局开启之后还得给它关掉。 -->
+  <match target="scan">
+    <test name="family" qual="any">
+      <string>Noto Color Emoji</string>
+    </test>
+    <edit name="scalable" mode="assign">
+      <bool>true</bool>
+    </edit>
+    <edit name="embeddedbitmap" mode="assign">
+      <bool>true</bool>
+    </edit>
+    <edit name="hinting" mode="assign">
+      <bool>false</bool>
+    </edit>
+    <edit name="antialias" mode="assign">
+      <bool>false</bool>
+    </edit>
+  </match>
+
+  <!-- 下面这一系列等同于 alias。 -->
+  <!-- 默认无衬线字体。 -->
+  <match target="pattern">
+    <test name="family" qual="any">
+      <string>sans</string>
+    </test>
+    <edit name="family" mode="prepend" binding="same">
+      <string>Roboto</string>
+      <string>Noto Sans CJK SC</string>
+      <string>Noto Color Emoji</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="family" qual="any">
+      <string>sans-serif</string>
+    </test>
+    <edit name="family" mode="prepend" binding="same">
+      <string>Roboto</string>
+      <string>Noto Sans CJK SC</string>
+      <string>Noto Color Emoji</string>
+    </edit>
+  </match>
+
+  <!-- 默认有衬线字体。 -->
+  <match target="pattern">
+    <test name="family" qual="any">
+      <string>serif</string>
+    </test>
+    <edit name="family" mode="prepend" binding="same">
+      <string>Roboto Slab</string>
+      <string>Noto Serif CJK SC</string>
+      <string>Noto Color Emoji</string>
+    </edit>
+  </match>
+
+  <!-- 默认等宽字体。 -->
+  <match target="pattern">
+    <test name="family" qual="any">
+      <string>monospace</string>
+    </test>
+    <edit name="family" mode="prepend" binding="same">
+      <string>Monaco</string>
+      <family>Iosevka</family>
+      <family>Cascadia Code PL</family>
+      <string>Noto Sans Mono CJK SC</string>
+      <string>Noto Color Emoji</string>
+    </edit>
+  </match>
+
+  <!-- 默认 emoji 字体。 -->
+  <match target="pattern">
+    <test name="family" qual="any">
+      <string>emoji</string>
+    </test>
+    <edit name="family" mode="prepend" binding="same">
+      <string>Noto Color Emoji</string>
+    </edit>
+  </match>
+
+  <!-- 替换 Apple Color Emoji 字体。 -->
+  <match target="pattern">
+    <test name="family" qual="any">
+      <string>Apple Color Emoji</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Color Emoji</string>
+    </edit>
+  </match>
+
+  <!-- 替换 Noto Color Emoji 字体。 -->
+  <!-- <match target="pattern">
+    <test name="family" qual="any">
+      <string>Noto Color Emoji</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Twemoji</string>
+    </edit>
+  </match> -->
+
+  <!--
+    B 站直播首页的前端认为这个世界上只有微软字体（Arial,Microsoft YaHei,
+    "Microsoft Sans Serif",Microsoft SanSerf,微软雅黑），
+    所以我不得不开着这几个规则。如果我是他的老板，我就会开除掉这个不合格的前端。
+    这里不能换成 sans-serif，因为它们只是插入用的锚点而不是子列表，
+    除非我们把这条抬到最前面。
+  -->
+  <match target="pattern">
+    <test name="family" qual="any">
+      <string>Microsoft YaHei</string>
+    </test>
+    <edit name="family" mode="append" binding="same">
+      <string>Roboto</string>
+      <string>Noto Sans CJK SC</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="family" qual="any">
+      <string>Microsoft Sans Serif</string>
+    </test>
+    <edit name="family" mode="append" binding="same">
+      <string>Roboto</string>
+      <string>Noto Sans CJK SC</string>
+    </edit>
+  </match>
+
+  <!-- 让 Noto CJK 在不同语言下采用不同的汉字变体。 -->
+  <match target="pattern">
+    <test name="lang">
+      <string>zh-HK</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Sans CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Sans CJK HK</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>zh-HK</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Serif CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Serif CJK HK</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>zh-HK</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Sans Mono CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Sans Mono CJK HK</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>zh-TW</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Sans CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Sans CJK TW</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>zh-TW</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Serif CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Serif CJK TC</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>zh-TW</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Sans Mono CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Sans Mono CJK TC</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>ja</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Sans CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Sans CJK JP</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>ja</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Serif CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Serif CJK JP</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>ja</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Sans Mono CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Sans Mono CJK JP</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>ko</string>
+    </test>
+    <test name="family">
+      <string>Noto Sans CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Sans CJK KR</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>ko</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Serif CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Serif CJK KR</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang">
+      <string>ko</string>
+    </test>
+    <test name="family" qual="any">
+      <string>Noto Sans Mono CJK SC</string>
+    </test>
+    <edit name="family" mode="assign" binding="same">
+      <string>Noto Sans Mono CJK KR</string>
+    </edit>
+  </match>
+</fontconfig>
