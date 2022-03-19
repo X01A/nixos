@@ -104,8 +104,8 @@
     </test>
     <edit name="family" mode="prepend" binding="same">
       <string>Monaco</string>
-      <family>Iosevka</family>
-      <family>Cascadia Code PL</family>
+      <string>Iosevka</string>
+      <string>Cascadia Code PL</string>
       <string>Noto Sans Mono CJK SC</string>
       <string>Noto Color Emoji</string>
     </edit>
