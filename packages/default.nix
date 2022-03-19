@@ -167,12 +167,12 @@ in
 
       ExtensionSettings = {
         # Adguard
-        "adguardadblocker@adguard.com.xpi" = {
+        "adguardadblocker@adguard.com" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/adguard-adblocker/latest.xpi";
         };
         # Switchy Omega
-        "switchyomega@feliscatus.addons.mozilla.org.xpi" = {
+        "switchyomega@feliscatus.addons.mozilla.org" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/switchyomega/latest.xpi";
         };
