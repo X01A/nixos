@@ -98,7 +98,7 @@ in
 {
   options = {
     indexyz.programs.waybar.enable = mkOption {
-      default = true;
+      default = false;
       type = with types; bool;
     };
   };
