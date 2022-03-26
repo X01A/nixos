@@ -89,6 +89,20 @@
         ];
       };
 
+      azure.image = import "${toString nixpkgs}/nixos/lib/eval-config.nix" {
+        system = "x86_64-linux";
+        modules = [
+          ./modules/all-modules.nix
+          "${toString nixpkgs}/nixos/modules/virtualisation/azure-image.nix"
+
+          ({ pkgs, lib, config, ... }: {
+            indexyz = {
+              services.ssh.enable = true;
+              environment.base.enable = true;
+            };
+          })
+        ];
+      };
       rpi.image = import "${toString nixpkgs}/nixos/lib/eval-config.nix" {
         system = "aarch64-linux";
         modules = [

@@ -36,7 +36,7 @@ in
 {
   options = {
     indexyz.programs.sway.enable = mkOption {
-      default = true;
+      default = false;
       type = with types; bool;
     };
   };
