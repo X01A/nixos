@@ -135,6 +135,21 @@ in
         "vm.swappiness" = 1;
         "net.ipv4.tcp_ecn" = 1;
       };
+
+
+      programs.tmux = {
+        aggressiveResize = true;
+        clock24 = true;
+        enable = true;
+        newSession = true;
+        reverseSplit = true;
+
+        plugins = with pkgs.tmuxPlugins; [
+          prefix-highlight
+          nord
+        ];
+      };
+
       environment.systemPackages = with pkgs; [
         wget
         file
@@ -142,7 +157,6 @@ in
         gh
         git
         clash
-        tmux
         neofetch
         htop
         nodejs
@@ -178,6 +192,7 @@ in
         ripgrep
         exa
         fd
+        zellij
       ];
 
       programs.fish = {
