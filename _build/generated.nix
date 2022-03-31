@@ -3,10 +3,10 @@
 {
   clash-premium = {
     pname = "clash-premium";
-    version = "2022.01.27";
+    version = "2022.03.21";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.01.27.gz";
-      sha256 = "0x6gavq43qhahxmy576j762qgqmfx9i7ggmqdfsjcyj00rdj864p";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.03.21.gz";
+      sha256 = "0dnjig0rsxgpciz5bmw2v0akkx2fzmiv6gcf4j2pln8nkbaxqnjx";
     };
   };
   cloudreve = {
@@ -59,14 +59,14 @@
   };
   edl = {
     pname = "edl";
-    version = "312cf3bb99047fef92a34cc61e4ec2e0c231ea5e";
+    version = "3cf3324209d1c581750556c970597dafbd1e4550";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "312cf3bb99047fef92a34cc61e4ec2e0c231ea5e";
+      rev = "3cf3324209d1c581750556c970597dafbd1e4550";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "146rcqwsbilvs6bckrq1pxdln2a5c52ir93wjx9fbvwixlhz1wdc";
+      sha256 = "1dn7bwmipya34cf3yqbmsvvdmywnnsnclzb2mki8s8rybqp8cid0";
     };
   };
   fcitx5-material-color = {
@@ -95,34 +95,34 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "ac62bc68219e63e23f4e0fcb60a8a8ff3c5ba5b4";
+    version = "1caf2ebdb5e5ab9fd89c172253dbe24873197426";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "ac62bc68219e63e23f4e0fcb60a8a8ff3c5ba5b4";
+      rev = "1caf2ebdb5e5ab9fd89c172253dbe24873197426";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1z1wis3fmv7v1bfp3rwlw1kl6k35yc6alr8sxfrg2adl1sp94a63";
+      sha256 = "0vlpnki5rlcgmnza010j4wh9h9dgxs8hkvrmzjvwq4jbwf31h4f9";
     };
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "9524c49fa2a27e0d3d1b02a862f12f48ae4d65ac";
+    version = "9696693cbd697338fe603a06805512a12315d2b6";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd-tools";
-      rev = "9524c49fa2a27e0d3d1b02a862f12f48ae4d65ac";
+      rev = "9696693cbd697338fe603a06805512a12315d2b6";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0xqlc221m2v4fdpgh73x5vpsijqll9y7n9s487hw6k0gs86xq28m";
+      sha256 = "1wk1xwlbsxhczzwkzmn1xwyy7spxdyknxvdxnvg5fryn49nb39z4";
     };
   };
   linux-rc = {
     pname = "linux-rc";
-    version = "5.17-rc8";
+    version = "5.17";
     src = fetchurl {
-      url = "https://git.kernel.org/torvalds/t/linux-5.17-rc8.tar.gz";
-      sha256 = "1v98shm8a8snxv8khgrm55k2063rndxmpigwl5z3qqp78xbkwa9j";
+      url = "https://git.kernel.org/torvalds/t/linux-5.17.tar.gz";
+      sha256 = "16s8dsm0rxr9mhvsbs755z67a2wv7frp1zls4sd5a533n32ki0zm";
     };
   };
   mattermost = {
@@ -147,14 +147,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "2777fec5c4c4b08bcb7eebc1dfc430ac6c75b0a7";
+    version = "6086d87ef91274de5d14cb2188863b5c2e7949d9";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "2777fec5c4c4b08bcb7eebc1dfc430ac6c75b0a7";
+      rev = "6086d87ef91274de5d14cb2188863b5c2e7949d9";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0y580q9v0zczk17h45wh4amvn6269aqipfv162h22mp6a2d3ln8h";
+      sha256 = "166d2hxw5741nbjscz76rrhcmj63mx78kf0ycxdb2vh50h406kyr";
     };
   };
   motrix = {
