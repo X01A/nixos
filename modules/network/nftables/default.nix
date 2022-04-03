@@ -37,28 +37,25 @@ in
           set allow_tcp {
             type inet_service
             flags interval
-            counter
             ${buildElemet allowTcpPorts}
           }
 
           set allow_udp {
             type inet_service
             flags interval
-            counter
             ${buildElemet allowUdpPorts}
           }
 
           set blacklist {
             type ipv4_addr
             flags interval
-            counter
             ${buildElemet cfg.blacklist}
           }
 
           chain input {
             type filter hook input priority 0;
             iifname lo accept
-            ip saddr @blacklist drop
+            counter ip saddr @blacklist drop
             tcp dport @allow_tcp accept
             udp dport @allow_udp accept
             ct state { established, related } accept
