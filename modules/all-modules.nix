@@ -40,5 +40,6 @@
     ./system/uboot
     ./services/wiretrustee-client.nix
     ./services/pufferpanel.nix
+    ./network/nftables/default.nix
   ];
 }
