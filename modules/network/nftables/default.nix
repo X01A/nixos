@@ -56,7 +56,7 @@ in
             type filter hook input priority 0;
             iifname lo accept
             ct state { established, related } accept
-            ${optionalString networkCfg.allowPing "protocol icmp icmp type echo-request accept"}
+            ${optionalString networkCfg.allowPing "ip protocol icmp icmp type echo-request accept"}
             counter ip saddr @blacklist drop
             tcp dport @allow_tcp accept
             udp dport @allow_udp accept
