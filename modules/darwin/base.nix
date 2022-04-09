@@ -26,6 +26,9 @@ in
 
     environment.etc."starship.toml".text = ''
       add_newline = false
+
+      [gcloud]
+      disabled = true
     '';
 
     environment.shells = [ pkgs.fish ];
