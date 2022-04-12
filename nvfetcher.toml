@@ -145,8 +145,3 @@ git.fetchSubmodules = true
 src.github = "PufferPanel/PufferPanel"
 fetch.github = "PufferPanel/PufferPanel"
 git.fetchSubmodules = true
-
-[linux-rc]
-src.webpage = "https://www.kernel.org/"
-src.regex = "<td>mainline:</td>[\n\r ]*<td><strong>([0-9a-z\\.\\-]*)</strong>"
-fetch.url = "https://git.kernel.org/torvalds/t/linux-$ver.tar.gz"
