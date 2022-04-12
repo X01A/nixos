@@ -3,10 +3,10 @@
 {
   clash-premium = {
     pname = "clash-premium";
-    version = "2022.03.21";
+    version = "2022.04.11";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.03.21.gz";
-      sha256 = "0dnjig0rsxgpciz5bmw2v0akkx2fzmiv6gcf4j2pln8nkbaxqnjx";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.04.11.gz";
+      sha256 = "16qpd08xr7q7la7jwf1k6n2q8lkf7dfc8k5ddsqlyjz3hy3xhzs3";
     };
   };
   cloudreve = {
@@ -83,26 +83,26 @@
   };
   gost = {
     pname = "gost";
-    version = "937b27dd95edaf207ed23772185887d7e3ac9797";
+    version = "cc871182428124d119caa8fbb1fe56a4c998bb70";
     src = fetchgit {
       url = "https://github.com/ginuerzh/gost";
-      rev = "937b27dd95edaf207ed23772185887d7e3ac9797";
+      rev = "cc871182428124d119caa8fbb1fe56a4c998bb70";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "07yajn1l7kb2nqy9cfc4xadsix5mz7zql0b8hxzb6icsbrg03xp2";
+      sha256 = "1461zyl89k8cxy9jf8q552lgw87y5qnfjaaydj26bn1azi0h5p4n";
     };
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "1caf2ebdb5e5ab9fd89c172253dbe24873197426";
+    version = "fdd0dd4fbeb9646a9142f556a4b4e75c8c36d17f";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "1caf2ebdb5e5ab9fd89c172253dbe24873197426";
+      rev = "fdd0dd4fbeb9646a9142f556a4b4e75c8c36d17f";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0vlpnki5rlcgmnza010j4wh9h9dgxs8hkvrmzjvwq4jbwf31h4f9";
+      sha256 = "1jh8xs9pyk62y5ccj9590qmdafnh2w7yq0zd9bn9ikhamslvas7w";
     };
   };
   ksmbd-tools = {
@@ -119,10 +119,10 @@
   };
   linux-rc = {
     pname = "linux-rc";
-    version = "5.17";
+    version = "5.18-rc2";
     src = fetchurl {
-      url = "https://git.kernel.org/torvalds/t/linux-5.17.tar.gz";
-      sha256 = "16s8dsm0rxr9mhvsbs755z67a2wv7frp1zls4sd5a533n32ki0zm";
+      url = "https://git.kernel.org/torvalds/t/linux-5.18-rc2.tar.gz";
+      sha256 = "1wa9aizb6z8liyahj5j5wk8g8lakinlk9ybmvn0mfjflgv634zs2";
     };
   };
   mattermost = {
@@ -147,14 +147,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "6086d87ef91274de5d14cb2188863b5c2e7949d9";
+    version = "b40e714105e69263d4d5b008cda25bd2330417bb";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "6086d87ef91274de5d14cb2188863b5c2e7949d9";
+      rev = "b40e714105e69263d4d5b008cda25bd2330417bb";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "166d2hxw5741nbjscz76rrhcmj63mx78kf0ycxdb2vh50h406kyr";
+      sha256 = "0m16jhd9qlzbf6ww3d3iz12dyh28pjqblxqmp8lmdxl5xy1sa8bg";
     };
   };
   motrix = {
@@ -191,9 +191,9 @@
     cargoLock = {
       lockFile = ./nearcore-1.25.0/Cargo.lock;
       outputHashes = {
-        "actix-cors-0.6.0-beta.2" = "112s1111grqwrjax4bw3njrxrm2cn550vwimvvvjzhdl6finlnfj";
-        "sysinfo-0.14.3" = "0ny240h5hb6zyfjh8wgh68jbjbkb60k1h2vmvi0bf841fgkv51ny";
         "paperclip-0.5.0" = "11hh44c37wkjzxp2115y0v1kc6506p9z9v077aygby2xgfqyn0d1";
+        "sysinfo-0.14.3" = "0ny240h5hb6zyfjh8wgh68jbjbkb60k1h2vmvi0bf841fgkv51ny";
+        "actix-cors-0.6.0-beta.2" = "112s1111grqwrjax4bw3njrxrm2cn550vwimvvvjzhdl6finlnfj";
       };
     };
   };
@@ -259,26 +259,26 @@
   };
   tun2socks = {
     pname = "tun2socks";
-    version = "v2.3.2";
+    version = "v2.4.1";
     src = fetchgit {
       url = "https://github.com/xjasonlyu/tun2socks";
-      rev = "v2.3.2";
+      rev = "v2.4.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1p8hifl30zq80k16240c8ssaab3mi1c4j9i0rirlv6algj8zzd9s";
+      sha256 = "1hvw6kvapsypkk9b6djwhkarlpn6injmzz68fg49c35w2jmi25hl";
     };
   };
   vouch = {
     pname = "vouch";
-    version = "v0.36.0";
+    version = "v0.37.0";
     src = fetchgit {
       url = "https://github.com/vouch/vouch-proxy";
-      rev = "v0.36.0";
+      rev = "v0.37.0";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "02m10m943adv9y5kjngg6z26qshnc6dmlw3lqqmz5r0w6r3k22m6";
+      sha256 = "0rcc5b3v5d9v4y78z5fnjbn1k10xy8cpgxjhqc7j22k9wkic05mh";
     };
   };
   vpncloud = {
@@ -339,10 +339,10 @@
   };
   yesplaymusic = {
     pname = "yesplaymusic";
-    version = "0.4.3";
+    version = "0.4.4-1";
     src = fetchurl {
-      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.3/YesPlayMusic-0.4.3.AppImage";
-      sha256 = "1nrb2dzacpsq05ps49mi1vza4j7y18ab2vvi5vda3npa1nckznl7";
+      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.4-1/YesPlayMusic-0.4.4-1.AppImage";
+      sha256 = "1i6zkcvgaqijj121mcymbxbdzqha2zm05bq0w1sqqs80z7q2bpr5";
     };
   };
 }
