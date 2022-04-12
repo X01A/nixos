@@ -117,14 +117,6 @@
       sha256 = "1wk1xwlbsxhczzwkzmn1xwyy7spxdyknxvdxnvg5fryn49nb39z4";
     };
   };
-  linux-rc = {
-    pname = "linux-rc";
-    version = "5.18-rc2";
-    src = fetchurl {
-      url = "https://git.kernel.org/torvalds/t/linux-5.18-rc2.tar.gz";
-      sha256 = "1wa9aizb6z8liyahj5j5wk8g8lakinlk9ybmvn0mfjflgv634zs2";
-    };
-  };
   mattermost = {
     pname = "mattermost";
     version = "6.5.0";
