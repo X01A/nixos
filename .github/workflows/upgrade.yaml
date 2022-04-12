@@ -20,10 +20,6 @@ jobs:
           substituters = https://indexyz.cachix.org https://cache.nixos.org/
           trusted-public-keys = indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
 
-    - name: Install NVFetcher
-      run: |
-        nix-env -i nixpkgs-fmt nvfetcher -f '<nixpkgs>'
-
     - name: Cache shake database
       uses: actions/cache@v2
       with:
@@ -36,8 +32,8 @@ jobs:
 
     - name: Check Package
       run: |
-        nvfetcher build -o _build | grep -v '^#' > changelog.tmp
-        nixpkgs-fmt .
+        nix develop -c -- nvfetcher build -o _build | grep -v '^#' > changelog.tmp
+        nix develop -c -- nixpkgs-fmt .
 
     - name: Output changelog
       id: changelog
@@ -65,5 +61,3 @@ jobs:
           ```
           ${{ steps.changelog.outputs.changelog }}
           ```
-
-

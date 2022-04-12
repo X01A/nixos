@@ -63,6 +63,7 @@
             buildInputs = with pkgs; [
               nvfetcher
               prefetch
+              nixpkgs-fmt
             ];
           };
         }) // {
