@@ -193,6 +193,7 @@ in
         exa
         fd
         zellij
+        borgbackup
       ];
 
       programs.fish = {
