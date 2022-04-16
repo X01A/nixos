@@ -11,10 +11,10 @@
   };
   cloudreve = {
     pname = "cloudreve";
-    version = "3.4.2";
+    version = "3.4.3";
     src = fetchurl {
-      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.4.2/cloudreve_3.4.2_linux_amd64.tar.gz";
-      sha256 = "0n9hadm60nsmvrwmhs5835fd4dachag3shjxydfrdadgi0f8z4if";
+      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.4.3/cloudreve_3.4.3_linux_amd64.tar.gz";
+      sha256 = "0c24wixq78xdm9d345v87f2d0kxwqgbxsjngqlrvpzz8k67wj1hx";
     };
   };
   commit-notifier = {
@@ -83,26 +83,26 @@
   };
   gost = {
     pname = "gost";
-    version = "cc871182428124d119caa8fbb1fe56a4c998bb70";
+    version = "45340b28450a423dcb2757b636d5fb3a2b36790b";
     src = fetchgit {
       url = "https://github.com/ginuerzh/gost";
-      rev = "cc871182428124d119caa8fbb1fe56a4c998bb70";
+      rev = "45340b28450a423dcb2757b636d5fb3a2b36790b";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1461zyl89k8cxy9jf8q552lgw87y5qnfjaaydj26bn1azi0h5p4n";
+      sha256 = "152c0g67jqqfm3hgwjhyn9wmlapi3cmadg5nn4qw6pnlm8rghmlr";
     };
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "fdd0dd4fbeb9646a9142f556a4b4e75c8c36d17f";
+    version = "506bf29e436a0361088a39320191f3bd5d5b814d";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "fdd0dd4fbeb9646a9142f556a4b4e75c8c36d17f";
+      rev = "506bf29e436a0361088a39320191f3bd5d5b814d";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1jh8xs9pyk62y5ccj9590qmdafnh2w7yq0zd9bn9ikhamslvas7w";
+      sha256 = "1zqkknnxn9lwi8irdhvf862mjb8qcqv6p08f82ijx4687vc7bw2q";
     };
   };
   ksmbd-tools = {
@@ -119,10 +119,10 @@
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.5.0";
+    version = "6.6.0";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.5.0/mattermost-6.5.0-linux-amd64.tar.gz";
-      sha256 = "0ycjg84ncv8gi3cj15rcya6hszps062c82dd78hygrjqrij9xhrf";
+      url = "https://releases.mattermost.com/6.6.0/mattermost-6.6.0-linux-amd64.tar.gz";
+      sha256 = "04isckk6d1whsxc50h4vdr6pqd5z9xxhrc3gfjhvcbq4ssyhlwn5";
     };
   };
   microsocks = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "b40e714105e69263d4d5b008cda25bd2330417bb";
+    version = "a722a2b2ed9c45daaa715565c7d8a66169b7a227";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "b40e714105e69263d4d5b008cda25bd2330417bb";
+      rev = "a722a2b2ed9c45daaa715565c7d8a66169b7a227";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0m16jhd9qlzbf6ww3d3iz12dyh28pjqblxqmp8lmdxl5xy1sa8bg";
+      sha256 = "0di6mj6p4zn81gp6v422bm84xkxjbd9bvnmq1wzxc6hjc0d8m2gj";
     };
   };
   motrix = {
