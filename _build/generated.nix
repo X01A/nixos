@@ -3,10 +3,10 @@
 {
   clash-premium = {
     pname = "clash-premium";
-    version = "2022.04.11";
+    version = "2022.04.17";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.04.11.gz";
-      sha256 = "16qpd08xr7q7la7jwf1k6n2q8lkf7dfc8k5ddsqlyjz3hy3xhzs3";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.04.17.gz";
+      sha256 = "0yrqvwlfzkjca1wb0bb40rn4333dgn0had9hikwam63m3sifmz1b";
     };
   };
   cloudreve = {
