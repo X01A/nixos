@@ -107,7 +107,7 @@ in
     source = nvfetcherOut.vouch;
   };
 
-  gost = callPackage ./gost {
+  gost-master = callPackage ./gost {
     source = nvfetcherOut.gost;
   };
 
