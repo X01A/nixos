@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "fe6e9b69b1040ade4a9442f6b4118ec923738c37";
+    version = "3ee5937d6072b9c7e77df2489083c47bcc6bb271";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "fe6e9b69b1040ade4a9442f6b4118ec923738c37";
+      rev = "3ee5937d6072b9c7e77df2489083c47bcc6bb271";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1mcpvr4lmw8k1bjxbnqhap9b5sskzy3q4g821bryzzgblggw91rb";
+      sha256 = "1sxplc5zd99gp4rjhhi875b3pvqvjg2s67cdpwmcmw8c9x8l0ial";
     };
   };
   motrix = {
@@ -171,17 +171,17 @@
   };
   nearcore = {
     pname = "nearcore";
-    version = "1.25.0";
+    version = "1.26.0-rc.1";
     src = fetchgit {
       url = "https://github.com/near/nearcore";
-      rev = "1.25.0";
+      rev = "1.26.0-rc.1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0cqwnyww3rc0xm9plqwb4pyncrmlr8732vx26jjgy8f6jal8267f";
+      sha256 = "09pccr7f5b2l2c1ijl593wc58qramsp54x45a4wcg8z01kz09j6p";
     };
     cargoLock = {
-      lockFile = ./nearcore-1.25.0/Cargo.lock;
+      lockFile = ./nearcore-1.26.0-rc.1/Cargo.lock;
       outputHashes = {
         "paperclip-0.5.0" = "11hh44c37wkjzxp2115y0v1kc6506p9z9v077aygby2xgfqyn0d1";
         "sysinfo-0.14.3" = "0ny240h5hb6zyfjh8wgh68jbjbkb60k1h2vmvi0bf841fgkv51ny";
@@ -279,14 +279,14 @@
   };
   wgcf = {
     pname = "wgcf";
-    version = "v2.2.12";
+    version = "v2.2.13";
     src = fetchgit {
       url = "https://github.com/ViRb3/wgcf";
-      rev = "v2.2.12";
+      rev = "v2.2.13";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0wp8p1nmghc99c7lfsmgxjdfxzhls6kdm3i0353wqi1295fq502l";
+      sha256 = "14ssj5migsd3i2j290rxc2xrg51sxb5fjj61lcn79xbi9wzy22jz";
     };
   };
   winbox = {
