@@ -111,7 +111,7 @@ in
           "rpcSecret:${cfg.rpcSecretFile}"
         ] ++ (if (cfg.secretEnvFile != null) then [
           "envFile:${cfg.secretEnvFile}"
-        ] else []);
+        ] else [ ]);
       };
     };
   };
