@@ -3,7 +3,6 @@
 with lib;
 let
   cfg = config.indexyz.services.drone-web;
-  ociCfg = config.virtualisation.oci-containers;
   envLoad = "/run/drone/env";
 in
 {
