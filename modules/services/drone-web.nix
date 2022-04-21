@@ -4,7 +4,7 @@ with lib;
 let
   cfg = config.indexyz.services.drone-web;
   ociCfg = config.virtualisation.oci-containers;
-  runtimeEnvFile = "/run/drone-web-run-env";
+  envLoad = "/run/drone/env";
 in
 {
   options = {
@@ -34,13 +34,8 @@ in
       };
 
       serverHost = mkOption {
+        default = "localhost";
         type = types.str;
-      };
-
-      workDir = mkOption {
-        type = types.str;
-        default = "/var/lib/drone";
-        description = "Data store location";
       };
 
       extraSettings = mkOption {
@@ -64,35 +59,60 @@ in
           Env file that load to drone every time boot
         '';
       };
+
+      package = mkOption {
+        default = pkgs.drone-oss;
+        example = "pkgs.drone";
+        type = types.package;
+      };
     };
   };
 
   config = mkIf cfg.enable {
-    virtualisation.oci-containers.containers.drone-web = {
-      image = "drone/drone:2.6.0";
-      ports = [
-        "${toString cfg.port}:80"
-      ];
-      volumes = [
-        "${cfg.workDir}:/data"
-      ];
+    systemd.services.drone = {
+      description = "Drone is a Container-Native, Continuous Delivery Platform";
+      after = [ "network.target" ];
+      wantedBy = [ "multi-user.target" ];
+
+      script = ''
+        rm -f ${envLoad}
+        ${optionalString (cfg.secretEnvFile != null) ''
+          cat $CREDENTIALS_DIRECTORY/envFile > ${envLoad}
+          echo "" >> ${envLoad}
+        ''}
+
+        cat $CREDENTIALS_DIRECTORY/rpcSecret | ${pkgs.gawk}/bin/gawk '{print "DRONE_RPC_SECRET="$0}' >> ${envLoad}
+        exec ${cfg.package}/bin/drone-server -env-file ${envLoad}
+      '';
 
       environment = {
         DRONE_SERVER_HOST = cfg.serverHost;
         DRONE_SERVER_PROTO = cfg.serverProto;
+        DRONE_SERVER_PORT = ":${builtins.toString cfg.port}";
+        DRONE_DATADOG_ENABLED = "false";
       } // cfg.extraSettings;
 
-      environmentFiles = [ runtimeEnvFile ];
+      serviceConfig = {
+        NoNewPrivileges = true;
+        DynamicUser = true;
+        ProtectHome = true;
+        ProtectHostname = true;
+        ProtectKernelLogs = true;
+        RemoveIPC = true;
+        RestrictNamespaces = true;
+        RestrictRealtime = true;
+        RestrictSUIDSGID = true;
+        StateDirectory = "drone";
+        RuntimeDirectory = "drone";
+        RuntimeDirectoryPreserve = "yes";
+        WorkingDirectory = "/var/lib/drone";
+        StateDirectoryMode = "0700";
+        LoadCredential = [
+          "rpcSecret:${cfg.rpcSecretFile}"
+        ] ++ (if (cfg.secretEnvFile != null) then [
+          "envFile:${cfg.secretEnvFile}"
+        ] else []);
+      };
     };
-
-    systemd.services."${ociCfg.backend}-drone-web".preStart = lib.mkBefore ''
-      mkdir -p ${cfg.workDir}
-      rm -f ${runtimeEnvFile}
-      ${optionalString (cfg.secretEnvFile != null) ''
-        cat ${cfg.secretEnvFile} > ${runtimeEnvFile}
-        echo "" >> ${runtimeEnvFile}
-      ''}
-      cat ${cfg.rpcSecretFile} | ${pkgs.gawk}/bin/gawk '{print "DRONE_RPC_SECRET="$0}' >> ${runtimeEnvFile}
-    '';
   };
 }
