@@ -237,18 +237,6 @@
       sha256 = "1lgczf3hjckr5r44mvka6jnha5ja2mpj72bwjqfyf61vkhg0gd32";
     };
   };
-  tifig = {
-    pname = "tifig";
-    version = "60b920c06fdf1240936ef73668b03457ebb8e813";
-    src = fetchgit {
-      url = "https://github.com/monostream/tifig";
-      rev = "60b920c06fdf1240936ef73668b03457ebb8e813";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sha256 = "05czqkcyq7yiwdg96q9qdm43l2a5d6asdfddvj7h5af73chmp4gi";
-    };
-  };
   tun2socks = {
     pname = "tun2socks";
     version = "v2.4.1";

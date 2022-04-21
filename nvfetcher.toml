@@ -23,11 +23,6 @@ src.github = "hosxy/Fcitx5-Material-Color"
 fetch.github = "hosxy/Fcitx5-Material-Color"
 git.fetchSubmodules = true
 
-[tifig]
-src.git = "https://github.com/monostream/tifig.git"
-fetch.github = "monostream/tifig"
-git.fetchSubmodules = true
-
 [sunshine]
 src.github = "loki-47-6F-64/sunshine"
 fetch.github = "loki-47-6F-64/sunshine"
