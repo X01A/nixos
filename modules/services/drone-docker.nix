@@ -92,7 +92,7 @@ in
       '';
 
       script = ''
-        ${pkgs.drone-runner-docker}/bin/drone-runner-docker daemon ${cfg.workDir}/conf.env
+        exec ${pkgs.drone-runner-docker}/bin/drone-runner-docker daemon ${cfg.workDir}/conf.env
       '';
     };
   };
