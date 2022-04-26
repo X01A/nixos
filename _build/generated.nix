@@ -11,10 +11,10 @@
   };
   cloudreve = {
     pname = "cloudreve";
-    version = "3.4.3";
+    version = "3.5.2";
     src = fetchurl {
-      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.4.3/cloudreve_3.4.3_linux_amd64.tar.gz";
-      sha256 = "0c24wixq78xdm9d345v87f2d0kxwqgbxsjngqlrvpzz8k67wj1hx";
+      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.5.2/cloudreve_3.5.2_linux_amd64.tar.gz";
+      sha256 = "1v6z1l1835wm0z8mdnzkh6ylfmyhphgldqdmhc3857x150c63j44";
     };
   };
   commit-notifier = {
@@ -95,14 +95,14 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "506bf29e436a0361088a39320191f3bd5d5b814d";
+    version = "0f01691e5770807cbde568c446d3db6c4c72784d";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "506bf29e436a0361088a39320191f3bd5d5b814d";
+      rev = "0f01691e5770807cbde568c446d3db6c4c72784d";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1zqkknnxn9lwi8irdhvf862mjb8qcqv6p08f82ijx4687vc7bw2q";
+      sha256 = "1hb4niaz6q5zxpkf1v3zxqhsmg4iw16k4r5mdix20rkjm52dl8ir";
     };
   };
   ksmbd-tools = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "3ee5937d6072b9c7e77df2489083c47bcc6bb271";
+    version = "5b3d352b1d243bf80296ea5c6831e3b483997561";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "3ee5937d6072b9c7e77df2489083c47bcc6bb271";
+      rev = "5b3d352b1d243bf80296ea5c6831e3b483997561";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1sxplc5zd99gp4rjhhi875b3pvqvjg2s67cdpwmcmw8c9x8l0ial";
+      sha256 = "1zvs8g8z1lbqjk742kfh8kz7n9iibggcjsdlmgancvknkv2lkwic";
     };
   };
   motrix = {
