@@ -41,5 +41,6 @@
     ./services/wiretrustee-client.nix
     ./services/pufferpanel.nix
     ./network/nftables/default.nix
+    ./network/tailscale.nix
   ];
 }
