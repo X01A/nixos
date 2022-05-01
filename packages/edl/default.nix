@@ -25,6 +25,8 @@ python3.pkgs.buildPythonApplication rec {
     pyserial
     pycryptodome
     usb
+    keystone-engine
+    capstone
   ];
 
   outputs = [ "out" "udev" ];
