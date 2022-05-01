@@ -129,13 +129,13 @@ in
 
       preStart = ''
         if [[ ! -d ${cfg.dataDir} ]]; then
-            mkdir -p ${cfg.dataDir}
+          mkdir -p ${cfg.dataDir}
         fi
         rm -f ${cfg.dataDir}/cloudreve
         cp ${cfg.package}/bin/cloudreve ${cfg.dataDir}/cloudreve
         ln -sf ${cfgFile} ${cfg.dataDir}/conf.ini
         ${optionalString (cfg.proKey != null) ''
-            cat ${pkgs.writeText "key.bin" cfg.proKey} | base64 -d > ${cfg.dataDir}/key.bin
+          cat ${pkgs.writeText "key.bin" cfg.proKey} | base64 -d > ${cfg.dataDir}/key.bin
         ''}
       '';
     };
