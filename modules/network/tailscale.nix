@@ -3,6 +3,20 @@
 with lib;
 let
   cfg = config.indexyz.network.tailscale;
+  haveElement = it: (builtins.length it) > 0;
+  optionalList = cond: list: if cond then list else [];
+
+  tailscaleJoinArgsList = [ 
+    "-authkey" 
+    "$(cat ${cfg.authFile})" 
+    "--login-server"
+    cfg.loginServer        
+  ] ++ (optionalList (haveElement cfg.advertiseRoutes) [
+    "--advertise-routes"
+    (builtins.concatStringsSep "," cfg.advertiseRoutes)
+  ]) ++ cfg.extraUpArgs;
+
+  tailscaleJoinArgsString = builtins.concatStringsSep " " tailscaleJoinArgsList;
 in
 {
   options = {
@@ -20,6 +34,19 @@ in
         default = "https://controlplane.tailscale.com";
         example = "https://headscale.example.com";
         description = "Tailscale login server url";
+      };
+
+      advertiseRoutes = mkOption {
+        type = with types; listOf str;
+        default = [];
+        example = ''["10.0.0.0/24"]'';
+        description = "List of advertise routes";
+      };
+
+      extraUpArgs = mkOption {
+        type = with types; listOf str;
+        default = [];
+        description = "Extra args for tailscale up";
       };
     };
   };
@@ -48,8 +75,7 @@ in
           exit 0
         fi
 
-        ${tailscale}/bin/tailscale up -authkey $(cat ${cfg.authFile}) \
-            --login-server ${cfg.loginServer}
+        ${tailscale}/bin/tailscale up ${tailscaleJoinArgsString}
       '';
     };
   };
