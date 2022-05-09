@@ -11,10 +11,10 @@
   };
   cloudreve = {
     pname = "cloudreve";
-    version = "3.5.2";
+    version = "3.5.3";
     src = fetchurl {
-      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.5.2/cloudreve_3.5.2_linux_amd64.tar.gz";
-      sha256 = "1v6z1l1835wm0z8mdnzkh6ylfmyhphgldqdmhc3857x150c63j44";
+      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.5.3/cloudreve_3.5.3_linux_amd64.tar.gz";
+      sha256 = "0d0qas035a1d51zb63pa2c4j8lpdk3qwhv6ffg6z8zg6v7vnhsa4";
     };
   };
   commit-notifier = {
@@ -59,14 +59,14 @@
   };
   edl = {
     pname = "edl";
-    version = "3cf3324209d1c581750556c970597dafbd1e4550";
+    version = "3094ae2ed9880ca28f22bba8eaffebd35ce1d801";
     src = fetchgit {
       url = "https://github.com/bkerler/edl";
-      rev = "3cf3324209d1c581750556c970597dafbd1e4550";
+      rev = "3094ae2ed9880ca28f22bba8eaffebd35ce1d801";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1dn7bwmipya34cf3yqbmsvvdmywnnsnclzb2mki8s8rybqp8cid0";
+      sha256 = "0w2mm9jqf9bskwzi0xy4nbs5cfxlbqxs1z392m4b2hi4mv6qy3c9";
     };
   };
   fcitx5-material-color = {
@@ -83,26 +83,26 @@
   };
   gost = {
     pname = "gost";
-    version = "f94293b454444692dc6db83977f3d8da95228e3b";
+    version = "0247b941ac31344f0d7b3c547941a051188ba202";
     src = fetchgit {
       url = "https://github.com/ginuerzh/gost";
-      rev = "f94293b454444692dc6db83977f3d8da95228e3b";
+      rev = "0247b941ac31344f0d7b3c547941a051188ba202";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0y5y694n54fjgxncmzbq4bq30f5xhnn830lc64xcnyhin220ffhy";
+      sha256 = "08kr352xqns6q741mr9wdbf4gw2kqi3qf46ppl5dl23mgc85d08r";
     };
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "0f01691e5770807cbde568c446d3db6c4c72784d";
+    version = "ab578f02276f676aedc446ea55ced72621c0e403";
     src = fetchgit {
       url = "https://github.com/namjaejeon/ksmbd";
-      rev = "0f01691e5770807cbde568c446d3db6c4c72784d";
+      rev = "ab578f02276f676aedc446ea55ced72621c0e403";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1hb4niaz6q5zxpkf1v3zxqhsmg4iw16k4r5mdix20rkjm52dl8ir";
+      sha256 = "05nbbm1ilhbizfh17b81jva5lm6l8s65xyn92gl8f6w93vnfy2qh";
     };
   };
   ksmbd-tools = {
@@ -119,10 +119,10 @@
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.6.0";
+    version = "6.6.1";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.6.0/mattermost-6.6.0-linux-amd64.tar.gz";
-      sha256 = "04isckk6d1whsxc50h4vdr6pqd5z9xxhrc3gfjhvcbq4ssyhlwn5";
+      url = "https://releases.mattermost.com/6.6.1/mattermost-6.6.1-linux-amd64.tar.gz";
+      sha256 = "0ff29k9yn0ns5hka5i40wgr0yxizykvajvmjfa65l5361w1cw2xc";
     };
   };
   microsocks = {
@@ -139,14 +139,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "5b3d352b1d243bf80296ea5c6831e3b483997561";
+    version = "d6687881de3ad04bc5b9932143e493b99d366f80";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "5b3d352b1d243bf80296ea5c6831e3b483997561";
+      rev = "d6687881de3ad04bc5b9932143e493b99d366f80";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1zvs8g8z1lbqjk742kfh8kz7n9iibggcjsdlmgancvknkv2lkwic";
+      sha256 = "164g3swapqvnpf1jqs3ryakdrbrl3imirvw5b35y3ylp4y3w9fn5";
     };
   };
   motrix = {
@@ -171,17 +171,17 @@
   };
   nearcore = {
     pname = "nearcore";
-    version = "1.26.0-rc.1";
+    version = "1.26.0-rc.2";
     src = fetchgit {
       url = "https://github.com/near/nearcore";
-      rev = "1.26.0-rc.1";
+      rev = "1.26.0-rc.2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "09pccr7f5b2l2c1ijl593wc58qramsp54x45a4wcg8z01kz09j6p";
+      sha256 = "07n72wfhrjxk0l2q8ilhq0l0197isg5d0p1xjvavxzdiwrfrjbgh";
     };
     cargoLock = {
-      lockFile = ./nearcore-1.26.0-rc.1/Cargo.lock;
+      lockFile = ./nearcore-1.26.0-rc.2/Cargo.lock;
       outputHashes = {
         "paperclip-0.5.0" = "11hh44c37wkjzxp2115y0v1kc6506p9z9v077aygby2xgfqyn0d1";
         "sysinfo-0.14.3" = "0ny240h5hb6zyfjh8wgh68jbjbkb60k1h2vmvi0bf841fgkv51ny";
@@ -277,16 +277,24 @@
       outputHashes = { };
     };
   };
+  wechat-uos = {
+    pname = "wechat-uos";
+    version = "2.1.3";
+    src = fetchurl {
+      url = "https://home-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.weixin/com.tencent.weixin_2.1.3_amd64.deb";
+      sha256 = "18xhrww76x94i96ys8lxf3kprhy16hzif11v48mrr0p6craj8xsv";
+    };
+  };
   wgcf = {
     pname = "wgcf";
-    version = "v2.2.13";
+    version = "v2.2.14";
     src = fetchgit {
       url = "https://github.com/ViRb3/wgcf";
-      rev = "v2.2.13";
+      rev = "v2.2.14";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "14ssj5migsd3i2j290rxc2xrg51sxb5fjj61lcn79xbi9wzy22jz";
+      sha256 = "1k2ny4dv5nzqg7h3zb1d5f1mscqq2v28ylgd2a1gpla1h4i1ypp9";
     };
   };
   winbox = {
@@ -319,10 +327,10 @@
   };
   yesplaymusic = {
     pname = "yesplaymusic";
-    version = "0.4.4-1";
+    version = "0.4.5";
     src = fetchurl {
-      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.4-1/YesPlayMusic-0.4.4-1.AppImage";
-      sha256 = "1i6zkcvgaqijj121mcymbxbdzqha2zm05bq0w1sqqs80z7q2bpr5";
+      url = "https://github.com/qier222/YesPlayMusic/releases/download/v0.4.5/YesPlayMusic-0.4.5.AppImage";
+      sha256 = "08yq79nayxnjyq2j9rfil341r899qjil2a2ml1vcq8n4m9bgi67l";
     };
   };
 }

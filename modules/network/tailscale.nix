@@ -4,13 +4,13 @@ with lib;
 let
   cfg = config.indexyz.network.tailscale;
   haveElement = it: (builtins.length it) > 0;
-  optionalList = cond: list: if cond then list else [];
+  optionalList = cond: list: if cond then list else [ ];
 
-  tailscaleJoinArgsList = [ 
-    "-authkey" 
-    "$(cat ${cfg.authFile})" 
+  tailscaleJoinArgsList = [
+    "-authkey"
+    "$(cat ${cfg.authFile})"
     "--login-server"
-    cfg.loginServer        
+    cfg.loginServer
   ] ++ (optionalList (haveElement cfg.advertiseRoutes) [
     "--advertise-routes"
     (builtins.concatStringsSep "," cfg.advertiseRoutes)
@@ -38,14 +38,14 @@ in
 
       advertiseRoutes = mkOption {
         type = with types; listOf str;
-        default = [];
+        default = [ ];
         example = ''["10.0.0.0/24"]'';
         description = "List of advertise routes";
       };
 
       extraUpArgs = mkOption {
         type = with types; listOf str;
-        default = [];
+        default = [ ];
         description = "Extra args for tailscale up";
       };
     };
