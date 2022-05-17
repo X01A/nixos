@@ -41,7 +41,7 @@ git.fetchSubmodules = true
 src.github = "dswd/vpncloud"
 fetch.github = "dswd/vpncloud"
 git.fetchSubmodules = true
-cargo_lock = "Cargo.lock"
+cargo_locks = ["Cargo.lock"]
 
 [winbox]
 src.httpheader = "https://mikrotik.com/mt_redirect.php?code=winbox64"
@@ -123,13 +123,13 @@ git.fetchSubmodules = true
 src.git = "https://github.com/linyinfeng/commit-notifier.git"
 fetch.github = "linyinfeng/commit-notifier"
 git.fetchSubmodules = true
-cargo_lock = "Cargo.lock"
+cargo_locks = ["Cargo.lock"]
 
 [nearcore]
 src.github = "near/nearcore"
 fetch.github = "near/nearcore"
 git.fetchSubmodules = true
-cargo_lock = "Cargo.lock"
+cargo_locks = ["Cargo.lock"]
 
 [simple-obfs]
 src.github = "shadowsocks/simple-obfs"
