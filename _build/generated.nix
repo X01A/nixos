@@ -3,10 +3,10 @@
 {
   clash-premium = {
     pname = "clash-premium";
-    version = "2022.04.17";
+    version = "2022.05.17";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.04.17.gz";
-      sha256 = "sha256-K/zqoh51mKr4jDA1BYF9bYxBbAZkLbB4UEzO7yjfOHs=";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.05.17.gz";
+      sha256 = "sha256-I4A4ZKHZ1q1Vufz85/l4GYLvvbIQZtPiFSF1WRXSBh4=";
     };
   };
   cloudreve = {
@@ -27,6 +27,10 @@
       fetchSubmodules = true;
       sha256 = "sha256-JiLwijB+Zqe5JgKLncr7r4w1lpDRWWVh9TAl+9nOiCo=";
     });
+    cargoLock."Cargo.lock" = {
+      lockFile = ./commit-notifier-573c1eb7eabc97aa06e0e9ad85f5148110749876/Cargo.lock;
+      outputHashes = { };
+    };
   };
   drone-runner-docker = {
     pname = "drone-runner-docker";
@@ -85,32 +89,32 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "beaa57692bf1803ee3209215b6a4ef46436bd3ab";
+    version = "b568f6542e5aebf6fc963877a133a106c5ee6bd7";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "beaa57692bf1803ee3209215b6a4ef46436bd3ab";
+      rev = "b568f6542e5aebf6fc963877a133a106c5ee6bd7";
       fetchSubmodules = true;
-      sha256 = "sha256-s+bCpOZSMeDFRqw4gRiTIRTfhk9E8tt15fecGQVzELI=";
+      sha256 = "sha256-5XdGfpUd1sBP5mhEIp9GoWONOJ4j4RFQAbVuMlEfeA0=";
     });
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "fd58ca124dc81e88d35185d15bee7520c8f0deb9";
+    version = "42cc11aa438414eba95868ff922b388165ce9378";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd-tools";
-      rev = "fd58ca124dc81e88d35185d15bee7520c8f0deb9";
+      rev = "42cc11aa438414eba95868ff922b388165ce9378";
       fetchSubmodules = true;
-      sha256 = "sha256-uqRABo/YgKVl7iWHN6zuLpVZOoNN2GZuK95FYe9IVhM=";
+      sha256 = "sha256-gEY96+47n3Da9IkWA1ELrsX0dzw0lE71pMNrt33pcEk=";
     });
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.6.1";
+    version = "6.7.0";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.6.1/mattermost-6.6.1-linux-amd64.tar.gz";
-      sha256 = "sha256-rAvOAg9mFFqMcrJuqfb0P3YP8uOAxKImLNoC69NMwjk=";
+      url = "https://releases.mattermost.com/6.7.0/mattermost-6.7.0-linux-amd64.tar.gz";
+      sha256 = "sha256-G5fvRLlXjtK2CabfMd/lnr62bHAxnO3QnV06ovZeGaY=";
     };
   };
   microsocks = {
@@ -126,14 +130,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "8c12d54b2d28752638fdd83e9b795a159c58833c";
+    version = "0b5ff38adfe48fea124082197893f6f6ef88bd16";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "8c12d54b2d28752638fdd83e9b795a159c58833c";
+      rev = "0b5ff38adfe48fea124082197893f6f6ef88bd16";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-hcDx9o0i8BpJD6g37yrgTj426wWgYJ43K68bLXWnBys=";
+      sha256 = "sha256-g/x7QTdfIFnfLyZFz2FhnY6zZMSE0mcAeHzwZ/zRv/8=";
     };
   };
   motrix = {
@@ -165,6 +169,14 @@
       fetchSubmodules = true;
       sha256 = "sha256-MjeCGTS9UPCfk4Wyj1yx0FnsVk7o8b/Ahf9Ex+7MUgw=";
     });
+    cargoLock."Cargo.lock" = {
+      lockFile = ./nearcore-1.26.0-rc.3/Cargo.lock;
+      outputHashes = {
+        "paperclip-0.5.0" = "sha256-oQHrsXtd+PW8Ogfs9NM1oBg2wwa+hCBu/3LyMxghEIY=";
+        "sysinfo-0.14.3" = "sha256-3oay53OBILdA3HULGCYway65JDLwcQSl898sWCAgwls=";
+        "actix-cors-0.6.0-beta.2" = "sha256-0llqozO0wS/33jXyDUqxTNTcs7SDL9KVzBznF0IIWoQ=";
+      };
+    };
   };
   openwhisk-cli = {
     pname = "openwhisk-cli";
@@ -242,6 +254,10 @@
       fetchSubmodules = true;
       sha256 = "sha256-74ohjWnBHr31sM08ghFWnrfIRjfQ5M7nrKi0yT/cGEo=";
     });
+    cargoLock."Cargo.lock" = {
+      lockFile = ./vpncloud-v2.3.0/Cargo.lock;
+      outputHashes = { };
+    };
   };
   wechat-uos = {
     pname = "wechat-uos";
