@@ -3,10 +3,10 @@
 {
   clash-premium = {
     pname = "clash-premium";
-    version = "2022.05.17";
+    version = "2022.05.18";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.05.17.gz";
-      sha256 = "sha256-I4A4ZKHZ1q1Vufz85/l4GYLvvbIQZtPiFSF1WRXSBh4=";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.05.18.gz";
+      sha256 = "sha256-jSH5XgjwmUOI+McWCWWujx6cpK81aUjZ1QHLqO5Mj8I=";
     };
   };
   cloudreve = {
@@ -130,14 +130,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "0b5ff38adfe48fea124082197893f6f6ef88bd16";
+    version = "fd65bfcb3625a4a7eab879b81562f320a6079200";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "0b5ff38adfe48fea124082197893f6f6ef88bd16";
+      rev = "fd65bfcb3625a4a7eab879b81562f320a6079200";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-g/x7QTdfIFnfLyZFz2FhnY6zZMSE0mcAeHzwZ/zRv/8=";
+      sha256 = "sha256-MGpZNXTGjpX866legP4adTHJKq4tbWlenIAAKs2r+8E=";
     };
   };
   motrix = {
