@@ -1,7 +1,9 @@
 { source, rustPlatform, pkg-config, openssl, zlib, perl, llvmPackages, llvm, clang, git }:
 
 rustPlatform.buildRustPackage rec {
-  inherit (source) pname version src cargoLock;
+  inherit (source) pname version src;
+
+  cargoLock = source.cargoLock."Cargo.lock";
 
   LIBCLANG_PATH = "${llvmPackages.libclang.lib}/lib";
   buildInputs = [

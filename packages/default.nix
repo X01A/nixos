@@ -175,4 +175,8 @@ in
       };
     };
   });
+
+  realm = callPackage ./realm {
+    source = nvfetcherOut.realm;
+  };
 } // systemPackages

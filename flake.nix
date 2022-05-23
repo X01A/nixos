@@ -24,14 +24,22 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.flake-compat.follows = "flake-compat";
     };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, cloudreve-cli, npmlock2nix, ... }:
+  outputs = { self, nixpkgs, flake-utils, cloudreve-cli, npmlock2nix, rust-overlay, ... }:
     flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ]
       (system:
         let
           pkgs = import nixpkgs {
             inherit system;
+            overlays = [
+              rust-overlay.overlay
+            ];
           };
 
           os = pkgs.lib.last (pkgs.lib.strings.splitString "-" system);
