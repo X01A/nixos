@@ -335,7 +335,12 @@
         "version": "v2.4.0"
     },
     "realm": {
-        "cargoLocks": null,
+        "cargoLocks": {
+            "Cargo.lock": [
+                "./realm-v2.3.4/Cargo.lock",
+                {}
+            ]
+        },
         "extract": null,
         "name": "realm",
         "passthru": null,
