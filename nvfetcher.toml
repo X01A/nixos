@@ -149,4 +149,4 @@ fetch.url = "https://home-store-packages.uniontech.com/appstore/pool/appstore/c/
 src.github = "zhboner/realm"
 fetch.github = "zhboner/realm"
 git.fetchSubmodules = true
-cargo_lock = "Cargo.lock"
+cargo_locks = "Cargo.lock"
