@@ -89,13 +89,13 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "b568f6542e5aebf6fc963877a133a106c5ee6bd7";
+    version = "4b23a65c436cc7a8fa4b12e36532f32718cdb3c8";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "b568f6542e5aebf6fc963877a133a106c5ee6bd7";
+      rev = "4b23a65c436cc7a8fa4b12e36532f32718cdb3c8";
       fetchSubmodules = true;
-      sha256 = "sha256-5XdGfpUd1sBP5mhEIp9GoWONOJ4j4RFQAbVuMlEfeA0=";
+      sha256 = "sha256-R7DoJ/vf+/lEKg9RTDTcN5eA/FwYpLIbNvowCmdbe3g=";
     });
   };
   ksmbd-tools = {
@@ -130,14 +130,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "fd65bfcb3625a4a7eab879b81562f320a6079200";
+    version = "07173da38bb2224ea33b1ddfe78c34873a979046";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "fd65bfcb3625a4a7eab879b81562f320a6079200";
+      rev = "07173da38bb2224ea33b1ddfe78c34873a979046";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-MGpZNXTGjpX866legP4adTHJKq4tbWlenIAAKs2r+8E=";
+      sha256 = "sha256-VhAx509lqdV8yrO4CUXByqXC6zh0+rcGA+pm7y4zmnU=";
     };
   };
   motrix = {
@@ -161,16 +161,16 @@
   };
   nearcore = {
     pname = "nearcore";
-    version = "1.26.0-rc.3";
+    version = "1.26.0";
     src = fetchFromGitHub ({
       owner = "near";
       repo = "nearcore";
-      rev = "1.26.0-rc.3";
+      rev = "1.26.0";
       fetchSubmodules = true;
-      sha256 = "sha256-MjeCGTS9UPCfk4Wyj1yx0FnsVk7o8b/Ahf9Ex+7MUgw=";
+      sha256 = "sha256-N3A+hy5I1/yJ3IN9gDw3m1IZ9qK8LNhn3fuXLMn23bg=";
     });
     cargoLock."Cargo.lock" = {
-      lockFile = ./nearcore-1.26.0-rc.3/Cargo.lock;
+      lockFile = ./nearcore-1.26.0/Cargo.lock;
       outputHashes = {
         "paperclip-0.5.0" = "sha256-oQHrsXtd+PW8Ogfs9NM1oBg2wwa+hCBu/3LyMxghEIY=";
         "sysinfo-0.14.3" = "sha256-3oay53OBILdA3HULGCYway65JDLwcQSl898sWCAgwls=";
@@ -198,6 +198,17 @@
       rev = "v2.4.0";
       fetchSubmodules = true;
       sha256 = "sha256-WKQiRGj504+aBYKbplyj/wBSpvN2+9EadEgoDyqkYXU=";
+    });
+  };
+  realm = {
+    pname = "realm";
+    version = "v2.3.4";
+    src = fetchFromGitHub ({
+      owner = "zhboner";
+      repo = "realm";
+      rev = "v2.3.4";
+      fetchSubmodules = true;
+      sha256 = "sha256-8GNwLwTkVjK5y4u0ErO+67EL+jM/NHIOsUeB8m20NuY=";
     });
   };
   simple-obfs = {
