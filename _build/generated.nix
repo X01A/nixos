@@ -210,6 +210,10 @@
       fetchSubmodules = true;
       sha256 = "sha256-8GNwLwTkVjK5y4u0ErO+67EL+jM/NHIOsUeB8m20NuY=";
     });
+    cargoLock."Cargo.lock" = {
+      lockFile = ./realm-v2.3.4/Cargo.lock;
+      outputHashes = { };
+    };
   };
   simple-obfs = {
     pname = "simple-obfs";
