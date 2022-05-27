@@ -3,6 +3,11 @@
 with lib;
 {
   options = {
+    listen = mkOption {
+      default = "0.0.0.0";
+      type = types.str;
+    };
+
     port = mkOption {
       type = types.int;
     };
@@ -17,7 +22,7 @@ with lib;
 
     type = mkOption {
       default = "tcp";
-      type = types.enum [ "tcp" "udp" ];
+      type = types.enum [ "tcp" "udp" "all" ];
     };
   };
 }
