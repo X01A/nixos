@@ -70,12 +70,12 @@ in
 
     networking.firewall.allowedTCPPorts = (
       map (item: item.port)
-        (filter (it: it.type == "tcp" or it.type == "all") cfg.rules)
+        (filter (it: (it.type == "tcp") or (it.type == "all")) cfg.rules)
     );
 
     networking.firewall.allowedUDPPorts = (
       map (item: item.port)
-        (filter (it: it.type == "udp" or it.type == "all") cfg.rules)
+        (filter (it: (it.type == "udp") or (it.type == "all")) cfg.rules)
     );
   };
 }
