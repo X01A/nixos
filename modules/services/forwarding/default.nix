@@ -6,6 +6,28 @@ let
   ruleOptions = types.submodule (import ./rule-options.nix {
     inherit lib;
   });
+
+  ifThenElse = cond: t: f: if cond then t else f;
+
+  typeToAttr = type: ifThenElse (type == "all") { } (ifThenElse (type == "tcp")
+    {
+      use_udp = true;
+    }
+    {
+      no_tcp = true;
+    });
+
+  generateConfig = conf: ({
+    listen = "${conf.listen}:${toString conf.port}";
+    remote = "${conf.target}:${toString conf.targetPort}";
+  } // (typeToAttr conf.type));
+
+  configData = {
+    log = { level = cfg.logLevel; };
+    endpoints = map generateConfig cfg.rules;
+  };
+
+  configFile = pkgs.writeText "config.json" (builtins.toJSON configData);
 in
 {
   options = {
@@ -13,6 +35,11 @@ in
       enable = mkOption {
         default = false;
         type = with types; bool;
+      };
+
+      logLevel = mkOption {
+        default = "info";
+        type = types.enum [ "off" "error" "warn" "info" "debug" "trace" ];
       };
 
       rules = mkOption {
@@ -23,33 +50,32 @@ in
   };
 
   config = mkIf cfg.enable {
-    systemd.services = builtins.listToAttrs (map
-      (item:
-        let
-          socatName = if item.type == "tcp" then "TCP4" else "UDP";
-        in
-        {
-          name = "forwarding-${item.type}-${toString item.port}";
-          value = {
-            wantedBy = [ "multi-user.target" ];
-            after = [ "network.target" ];
-            description = "Port forwarding for ${toString item.port} and type ${item.type}";
-            serviceConfig = {
-              ExecStart = "${pkgs.socat}/bin/socat ${socatName}-LISTEN:${toString item.port},reuseaddr,fork ${socatName}:${item.target}:${toString item.targetPort}";
-              Restart = "always";
-            };
-          };
-        })
-      cfg.rules);
+
+    systemd.services.realm = {
+      after = [ "network.target" ];
+      wantedBy = [ "multi-user.target" ];
+
+      serviceConfig = {
+        PermissionsStartOnly = true;
+        LimitNPROC = 512;
+        LimitNOFILE = 1048576;
+        CapabilityBoundingSet = "cap_net_bind_service";
+        AmbientCapabilities = "cap_net_bind_service";
+        NoNewPrivileges = true;
+        DynamicUser = true;
+        ExecStart = "${pkgs.realm}/bin/realm -c ${configFile}";
+        Restart = "on-failure";
+      };
+    };
 
     networking.firewall.allowedTCPPorts = (
       map (item: item.port)
-        (filter (it: it.type == "tcp") cfg.rules)
+        (filter (it: it.type == "tcp" or it.type == "all") cfg.rules)
     );
 
     networking.firewall.allowedUDPPorts = (
       map (item: item.port)
-        (filter (it: it.type == "udp") cfg.rules)
+        (filter (it: it.type == "udp" or it.type == "all") cfg.rules)
     );
   };
 }
