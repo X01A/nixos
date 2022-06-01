@@ -21,7 +21,7 @@ with lib;
     };
 
     type = mkOption {
-      default = "tcp";
+      default = "all";
       type = types.enum [ "tcp" "udp" "all" ];
     };
   };

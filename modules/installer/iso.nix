@@ -5,6 +5,7 @@
   boot = {
     supportedFilesystems = [ "zfs" ];
     initrd.supportedFilesystems = [ "zfs" ];
+    kernelParams = [ "console=tty0" "console=ttyS0,115200n8" ];
   };
 
   networking = {
