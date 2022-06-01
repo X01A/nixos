@@ -88,7 +88,7 @@
         imports = [ ./modules/darwin ];
       };
 
-      installer.iso = import "${toString nixpkgs}/nixos/lib/eval-config.nix" {
+      installer.iso = (import "${toString nixpkgs}/nixos/lib/eval-config.nix" {
         system = "x86_64-linux";
 
         modules = [
@@ -96,7 +96,7 @@
           ./modules/all-modules.nix
           ./modules/installer/iso.nix
         ];
-      };
+      }).config.system.build.isoImage;
 
       azure.image = import "${toString nixpkgs}/nixos/lib/eval-config.nix" {
         system = "x86_64-linux";
