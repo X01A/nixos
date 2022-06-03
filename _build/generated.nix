@@ -89,24 +89,24 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "4b23a65c436cc7a8fa4b12e36532f32718cdb3c8";
+    version = "c9c1e07cf01f8aae2aa335879f5941647d60112a";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "4b23a65c436cc7a8fa4b12e36532f32718cdb3c8";
+      rev = "c9c1e07cf01f8aae2aa335879f5941647d60112a";
       fetchSubmodules = true;
-      sha256 = "sha256-R7DoJ/vf+/lEKg9RTDTcN5eA/FwYpLIbNvowCmdbe3g=";
+      sha256 = "sha256-ql+7/Nqg+e4aHu4bDJ5tCWX/rTlK1ifYUFsPlnz4/g8=";
     });
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "42cc11aa438414eba95868ff922b388165ce9378";
+    version = "dce5c4d8d597ad64131cc4d1e2f8d8e62186773b";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd-tools";
-      rev = "42cc11aa438414eba95868ff922b388165ce9378";
+      rev = "dce5c4d8d597ad64131cc4d1e2f8d8e62186773b";
       fetchSubmodules = true;
-      sha256 = "sha256-gEY96+47n3Da9IkWA1ELrsX0dzw0lE71pMNrt33pcEk=";
+      sha256 = "sha256-xwzLn80YETbqVSjJ5uKV6xB+Oxfa13jHKOq4crcGEQ0=";
     });
   };
   mattermost = {
@@ -130,14 +130,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "07173da38bb2224ea33b1ddfe78c34873a979046";
+    version = "f62d251a93a8db167564791995a7423f0f583acf";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "07173da38bb2224ea33b1ddfe78c34873a979046";
+      rev = "f62d251a93a8db167564791995a7423f0f583acf";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-VhAx509lqdV8yrO4CUXByqXC6zh0+rcGA+pm7y4zmnU=";
+      sha256 = "sha256-o8vnng6pmxt1weyi9o84NmiX40kMB7JewTaDvsEQ36U=";
     };
   };
   motrix = {
@@ -161,16 +161,16 @@
   };
   nearcore = {
     pname = "nearcore";
-    version = "1.26.0";
+    version = "1.26.1";
     src = fetchFromGitHub ({
       owner = "near";
       repo = "nearcore";
-      rev = "1.26.0";
+      rev = "1.26.1";
       fetchSubmodules = true;
-      sha256 = "sha256-N3A+hy5I1/yJ3IN9gDw3m1IZ9qK8LNhn3fuXLMn23bg=";
+      sha256 = "sha256-WoQtDdbFcvl6Wp5uv2tr/W/YYH8dyezF+LzSJ5oJcYY=";
     });
     cargoLock."Cargo.lock" = {
-      lockFile = ./nearcore-1.26.0/Cargo.lock;
+      lockFile = ./nearcore-1.26.1/Cargo.lock;
       outputHashes = {
         "paperclip-0.5.0" = "sha256-oQHrsXtd+PW8Ogfs9NM1oBg2wwa+hCBu/3LyMxghEIY=";
         "sysinfo-0.14.3" = "sha256-3oay53OBILdA3HULGCYway65JDLwcQSl898sWCAgwls=";
@@ -191,13 +191,13 @@
   };
   pufferpanel = {
     pname = "pufferpanel";
-    version = "v2.4.0";
+    version = "v2.5.0";
     src = fetchFromGitHub ({
       owner = "PufferPanel";
       repo = "PufferPanel";
-      rev = "v2.4.0";
+      rev = "v2.5.0";
       fetchSubmodules = true;
-      sha256 = "sha256-WKQiRGj504+aBYKbplyj/wBSpvN2+9EadEgoDyqkYXU=";
+      sha256 = "sha256-5skA4ygVwQIf1IB3+odF8QYqYJ6yx9g1v/XORKesHIo=";
     });
   };
   realm = {
@@ -235,6 +235,17 @@
       rev = "v0.11.1";
       fetchSubmodules = true;
       sha256 = "sha256-YrQHHpw7GOcdlnyJI28VShYFrTRq7kpILnkyCYf77NE=";
+    });
+  };
+  trojan-go = {
+    pname = "trojan-go";
+    version = "v0.10.6";
+    src = fetchFromGitHub ({
+      owner = "p4gefau1t";
+      repo = "trojan-go";
+      rev = "v0.10.6";
+      fetchSubmodules = true;
+      sha256 = "sha256-ZzIEKyLhHwYEWBfi6fHlCbkEImetEaRewbsHQEduB5Y=";
     });
   };
   tun2socks = {
@@ -284,32 +295,32 @@
   };
   wgcf = {
     pname = "wgcf";
-    version = "v2.2.14";
+    version = "v2.2.15";
     src = fetchFromGitHub ({
       owner = "ViRb3";
       repo = "wgcf";
-      rev = "v2.2.14";
+      rev = "v2.2.15";
       fetchSubmodules = true;
-      sha256 = "sha256-6V4fIoFB0fuCEu1Rj8QWGDNdgystrD/gefjbshvxVsw=";
+      sha256 = "sha256-tUEeczs3J//2ZrZkAsSn3C+GScRPaIgheRM2wByS8p4=";
     });
   };
   winbox = {
     pname = "winbox";
-    version = "3.35";
+    version = "3.36";
     src = fetchurl {
-      url = "https://download.mikrotik.com/winbox/3.35/winbox64.exe";
-      sha256 = "sha256-0kqoSRIAqkXRuRZGsZwUAbmipyEgUHgSgiYydYmWL0o=";
+      url = "https://download.mikrotik.com/winbox/3.36/winbox64.exe";
+      sha256 = "sha256-PRbidXHwVBoOBP+nw/GC6KoqKyYAFgOLgODCP4tObTA=";
     };
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.5.1";
+    version = "v0.6.2";
     src = fetchFromGitHub ({
       owner = "wiretrustee";
       repo = "wiretrustee";
-      rev = "v0.5.1";
+      rev = "v0.6.2";
       fetchSubmodules = true;
-      sha256 = "sha256-CgIe/coKEjvPIKu/JE6o9qGSTrGuKmVrG4C+jQ6OG+8=";
+      sha256 = "sha256-D3VWmK02acpx423wfUNIO1sCv3zJg0ZWJQTzGT0M3Go=";
     });
   };
   yacd = {
