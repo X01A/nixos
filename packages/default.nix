@@ -179,4 +179,8 @@ in
   realm = callPackage ./realm {
     source = nvfetcherOut.realm;
   };
+
+  trojan-go = callPackage ./trojan-go {
+    source = nvfetcherOut.trojan-go;
+  };
 } // systemPackages
