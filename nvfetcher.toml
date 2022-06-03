@@ -150,3 +150,8 @@ src.github = "zhboner/realm"
 fetch.github = "zhboner/realm"
 git.fetchSubmodules = true
 cargo_locks = ["Cargo.lock"]
+
+[trojan-go]
+src.github = "p4gefau1t/trojan-go"
+fetch.github = "p4gefau1t/trojan-go"
+git.fetchSubmodules = true
