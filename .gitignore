@@ -6,3 +6,4 @@
 /changelog.tmp
 
 .direnv/
+/test.nix

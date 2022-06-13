@@ -23,18 +23,32 @@ let
     zhuangtongfa.material-theme
     ryu1kn.partial-diff
     ms-vsliveshare.vsliveshare
+    matklad.rust-analyzer
+    arrterian.nix-env-selector
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       name = "indent-rainbow";
       publisher = "oderwat";
-      version = "8.2.2";
-      sha256 = "sha256-7kkJc+hhYaSKUbK4eYwOnLvae80sIg7rd0E4YyCXtPc=";
+      version = "8.3.1";
+      sha256 = "sha256-dOicya0B2sriTcDSdCyhtp0Mcx5b6TUaFKVb0YU3jUc=";
     }
     {
       name = "path-intellisense";
       publisher = "christian-kohler";
-      version = "2.8.0";
-      sha256 = "sha256-VPzy9o0DeYRkNwTGphC51vzBTNgQwqKg+t7MpGPLahM=";
+      version = "2.8.1";
+      sha256 = "sha256-lTKzMphkGgOG2XWqz3TW2G9sISBc/kG7oXqcIH8l+Mg=";
+    }
+    {
+      name = "direnv";
+      publisher = "mkhl";
+      version = "0.6.1";
+      sha256 = "sha256-5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
+    }
+    {
+      name = "vscode-todo-highlight";
+      publisher = "wayou";
+      version = "1.0.5";
+      sha256 = "sha256-CQVtMdt/fZcNIbH/KybJixnLqCsz5iF1U0k+GfL65Ok=";
     }
   ];
 in
