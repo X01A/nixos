@@ -2,8 +2,8 @@
     "editor.fontFamily": "Iosevka, Cascadia Code PL, CamingoCode, Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.fontFamily": "Iosevka",
     "workbench.colorTheme": "One Dark Pro",
-    "editor.renderIndentGuides": true,
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "editor.guides.indentation": true
 }

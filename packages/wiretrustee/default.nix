@@ -3,7 +3,7 @@
 buildGo117Module rec {
   inherit (source) pname version src;
 
-  vendorSha256 = "sha256-068gKevw86amAURcILvGgl5OflMAD+V3yUf2YQ9d+8A=";
+  vendorSha256 = "sha256-s4EFts1L5X0fqpQ3ydOfMOFNihW4VMZpSjFbouxwUTQ=";
 
   modSha256 = lib.fakeSha256;
   subPackages = [ "client" "management" "signal" ];
