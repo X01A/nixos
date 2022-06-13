@@ -56,13 +56,13 @@
   };
   edl = {
     pname = "edl";
-    version = "3094ae2ed9880ca28f22bba8eaffebd35ce1d801";
+    version = "941e86ea1a2a6f561edbfe0b3efba987e62f0e60";
     src = fetchFromGitHub ({
       owner = "bkerler";
       repo = "edl";
-      rev = "3094ae2ed9880ca28f22bba8eaffebd35ce1d801";
+      rev = "941e86ea1a2a6f561edbfe0b3efba987e62f0e60";
       fetchSubmodules = true;
-      sha256 = "sha256-iQ2Pza4kQrFIFWn8oDtetDtW9LLEdxA/n3olh2WqVXA=";
+      sha256 = "sha256-vJtPr6SbD6rufFF90aVMPkjozYRrWKrM/6Q1RMzQark=";
     });
   };
   fcitx5-material-color = {
@@ -89,24 +89,24 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "c9c1e07cf01f8aae2aa335879f5941647d60112a";
+    version = "762162a1302b44ca69392ec9a28a464439078ef1";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "c9c1e07cf01f8aae2aa335879f5941647d60112a";
+      rev = "762162a1302b44ca69392ec9a28a464439078ef1";
       fetchSubmodules = true;
-      sha256 = "sha256-ql+7/Nqg+e4aHu4bDJ5tCWX/rTlK1ifYUFsPlnz4/g8=";
+      sha256 = "sha256-qdp3H4E6A28ipJh1qNfNFB0lZVZDXNLxkzaq0fYp2rU=";
     });
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "dce5c4d8d597ad64131cc4d1e2f8d8e62186773b";
+    version = "f6012e9ec7bb1470edf116bb6790f56b002d6579";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd-tools";
-      rev = "dce5c4d8d597ad64131cc4d1e2f8d8e62186773b";
+      rev = "f6012e9ec7bb1470edf116bb6790f56b002d6579";
       fetchSubmodules = true;
-      sha256 = "sha256-xwzLn80YETbqVSjJ5uKV6xB+Oxfa13jHKOq4crcGEQ0=";
+      sha256 = "sha256-c+8FaoEGpMEdyRGERseclb+ruRyncZoHGNfAwEDaL/0=";
     });
   };
   mattermost = {
@@ -130,14 +130,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "f62d251a93a8db167564791995a7423f0f583acf";
+    version = "5ef99efce0f5fbdc5b58d053aa41cf0f42a9316c";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "f62d251a93a8db167564791995a7423f0f583acf";
+      rev = "5ef99efce0f5fbdc5b58d053aa41cf0f42a9316c";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-o8vnng6pmxt1weyi9o84NmiX40kMB7JewTaDvsEQ36U=";
+      sha256 = "sha256-32TLKIUyatFKeNkU2eos58370cvWfHD/nDkrQccZWP8=";
     };
   };
   motrix = {
@@ -314,13 +314,13 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.6.2";
+    version = "v0.6.4";
     src = fetchFromGitHub ({
       owner = "wiretrustee";
       repo = "wiretrustee";
-      rev = "v0.6.2";
+      rev = "v0.6.4";
       fetchSubmodules = true;
-      sha256 = "sha256-D3VWmK02acpx423wfUNIO1sCv3zJg0ZWJQTzGT0M3Go=";
+      sha256 = "sha256-kxS2I4gDLLw4rx0d19ktChuk3H3nD86//ZJZ1FbGhy8=";
     });
   };
   yacd = {
