@@ -172,6 +172,36 @@ in
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/switchyomega/latest.xpi";
         };
+        # SponsorBlock
+        "sponsorBlocker@ajay.app" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
+        };
+        # MetaMask
+        "webextension@metamask.io" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ether-metamask/latest.xpi";
+        };
+        # Privacy Badger
+        "jid1-MnnxcxisBPnSXQ@jetpack" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
+        };
+        # User-Agent Switcher and Manager
+        "{a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7}" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/user-agent-string-switcher/latest.xpi";
+        };
+        # HTTPS Everywhere
+        "https-everywhere@eff.org" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/https-everywhere/latest.xpi";
+        };
+        # Tabby
+        "tabby@whatsyouridea.com" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/tabby-window-tab-manager/latest.xpi";
+        };
       };
     };
   });
