@@ -1,7 +1,7 @@
-<!-- src from https://sh.alynx.one/posts/Fontconfig-NotoColorEmoji-Antialias/local.conf -->
-
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+
+<!-- src from https://sh.alynx.one/posts/Fontconfig-NotoColorEmoji-Antialias/local.conf -->
 <fontconfig>
   <match target="scan">
     <!-- 禁用内嵌点阵。 -->
