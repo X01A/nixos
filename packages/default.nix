@@ -213,4 +213,8 @@ in
   trojan-go = callPackage ./trojan-go {
     source = nvfetcherOut.trojan-go;
   };
+
+  landrop = callPackage ./landrop {
+    source = nvfetcherOut.landrop;
+  };
 } // systemPackages
