@@ -155,3 +155,7 @@ cargo_locks = ["Cargo.lock"]
 src.github = "p4gefau1t/trojan-go"
 fetch.github = "p4gefau1t/trojan-go"
 git.fetchSubmodules = true
+
+[landrop]
+src.github = "LANDrop/LANDrop"
+fetch.github = "LANDrop/LANDrop"
