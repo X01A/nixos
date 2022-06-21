@@ -24,6 +24,11 @@ in
         default = [ "162.142.125.0/24" "167.94.138.0/24" "167.94.145.0/24" "167.94.146.0/24" "167.248.133.0/24" ];
         type = with types; listOf str;
       };
+
+      extraInetRule = mkOption {
+        default = "";
+        type = with types; str;
+      };
     };
   };
 
@@ -67,6 +72,8 @@ in
             type filter hook output priority 0;
             accept
           }
+
+          ${cfg.extraInetRule}
         }
       '';
     };
