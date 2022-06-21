@@ -3,10 +3,10 @@
 {
   clash-premium = {
     pname = "clash-premium";
-    version = "2022.05.18";
+    version = "2022.06.19";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.05.18.gz";
-      sha256 = "sha256-jSH5XgjwmUOI+McWCWWujx6cpK81aUjZ1QHLqO5Mj8I=";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.06.19.gz";
+      sha256 = "sha256-ASB9ehUjiEdwnVcOfZWVSjkVdlAYg/qOVzjmyNoDVzU=";
     };
   };
   cloudreve = {
@@ -34,13 +34,13 @@
   };
   drone-runner-docker = {
     pname = "drone-runner-docker";
-    version = "v1.8.1";
+    version = "v1.8.2";
     src = fetchFromGitHub ({
       owner = "drone-runners";
       repo = "drone-runner-docker";
-      rev = "v1.8.1";
+      rev = "v1.8.2";
       fetchSubmodules = true;
-      sha256 = "sha256-3SbvnW+mCwaBCF77rAnDMqZRHX9wDCjXvFGq9w0E5Qw=";
+      sha256 = "sha256-ZpkVfzqeltZSYrKYB6dXtlVjl1uFpQdl2fa+c5ApiW4=";
     });
   };
   drone-runner-exec = {
@@ -56,13 +56,13 @@
   };
   edl = {
     pname = "edl";
-    version = "941e86ea1a2a6f561edbfe0b3efba987e62f0e60";
+    version = "cecfcb44b168e4c808bcf5b2d1cafca66ca97e0e";
     src = fetchFromGitHub ({
       owner = "bkerler";
       repo = "edl";
-      rev = "941e86ea1a2a6f561edbfe0b3efba987e62f0e60";
+      rev = "cecfcb44b168e4c808bcf5b2d1cafca66ca97e0e";
       fetchSubmodules = true;
-      sha256 = "sha256-vJtPr6SbD6rufFF90aVMPkjozYRrWKrM/6Q1RMzQark=";
+      sha256 = "sha256-8bNxIQwj7lV1jTEcutBM3dGo972S0i7+gmyvjRkKfwc=";
     });
   };
   fcitx5-material-color = {
@@ -89,32 +89,43 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "762162a1302b44ca69392ec9a28a464439078ef1";
+    version = "1a05840d763d3339bd70fc28187f51ca4f6b5804";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "762162a1302b44ca69392ec9a28a464439078ef1";
+      rev = "1a05840d763d3339bd70fc28187f51ca4f6b5804";
       fetchSubmodules = true;
-      sha256 = "sha256-qdp3H4E6A28ipJh1qNfNFB0lZVZDXNLxkzaq0fYp2rU=";
+      sha256 = "sha256-W4d+ykVKf9wx+yRcsZLP/FIshkJcYZBsUNJ0GFEBlKE=";
     });
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "f6012e9ec7bb1470edf116bb6790f56b002d6579";
+    version = "040e1933fcee474a27bf79729ce9059f86184e8d";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd-tools";
-      rev = "f6012e9ec7bb1470edf116bb6790f56b002d6579";
+      rev = "040e1933fcee474a27bf79729ce9059f86184e8d";
       fetchSubmodules = true;
-      sha256 = "sha256-c+8FaoEGpMEdyRGERseclb+ruRyncZoHGNfAwEDaL/0=";
+      sha256 = "sha256-8KZqcD52gSNSw5rx5jqMeBdnaPR1iwv8CwklMCi8apo=";
+    });
+  };
+  landrop = {
+    pname = "landrop";
+    version = "v0.4.0";
+    src = fetchFromGitHub ({
+      owner = "LANDrop";
+      repo = "LANDrop";
+      rev = "v0.4.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-IwtphjMSa0e2mO5C4zHId48SUpT99sXziZzApnSmvrU=";
     });
   };
   mattermost = {
     pname = "mattermost";
-    version = "6.7.0";
+    version = "7.0.0";
     src = fetchurl {
-      url = "https://releases.mattermost.com/6.7.0/mattermost-6.7.0-linux-amd64.tar.gz";
-      sha256 = "sha256-G5fvRLlXjtK2CabfMd/lnr62bHAxnO3QnV06ovZeGaY=";
+      url = "https://releases.mattermost.com/7.0.0/mattermost-7.0.0-linux-amd64.tar.gz";
+      sha256 = "sha256-O2bJsj2YjeaRfqPrehgwn8bNHaYwqcrcU1htCYurPlw=";
     };
   };
   microsocks = {
@@ -130,14 +141,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "5ef99efce0f5fbdc5b58d053aa41cf0f42a9316c";
+    version = "08c2278e0a8f07d32e3487212daedf0b6901f63a";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "5ef99efce0f5fbdc5b58d053aa41cf0f42a9316c";
+      rev = "08c2278e0a8f07d32e3487212daedf0b6901f63a";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-32TLKIUyatFKeNkU2eos58370cvWfHD/nDkrQccZWP8=";
+      sha256 = "sha256-UjK5DztspCh+uSmn+I2IrY5yNiCsHt+xABFUMw2takM=";
     };
   };
   motrix = {
@@ -202,16 +213,16 @@
   };
   realm = {
     pname = "realm";
-    version = "v2.3.4";
+    version = "v2.3.6";
     src = fetchFromGitHub ({
       owner = "zhboner";
       repo = "realm";
-      rev = "v2.3.4";
+      rev = "v2.3.6";
       fetchSubmodules = true;
-      sha256 = "sha256-8GNwLwTkVjK5y4u0ErO+67EL+jM/NHIOsUeB8m20NuY=";
+      sha256 = "sha256-1xcHKjaaJ3GA77dl57NwVJTl5dW2EP93+5leOGJPDs0=";
     });
     cargoLock."Cargo.lock" = {
-      lockFile = ./realm-v2.3.4/Cargo.lock;
+      lockFile = ./realm-v2.3.6/Cargo.lock;
       outputHashes = { };
     };
   };
@@ -314,13 +325,13 @@
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.6.4";
+    version = "v0.7.0";
     src = fetchFromGitHub ({
       owner = "wiretrustee";
       repo = "wiretrustee";
-      rev = "v0.6.4";
+      rev = "v0.7.0";
       fetchSubmodules = true;
-      sha256 = "sha256-kxS2I4gDLLw4rx0d19ktChuk3H3nD86//ZJZ1FbGhy8=";
+      sha256 = "sha256-DBghmychU261Zy2NF6EHgoB7jwQgazf19VQ0iqUz7GI=";
     });
   };
   yacd = {
