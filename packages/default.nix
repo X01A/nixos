@@ -217,4 +217,8 @@ in
   landrop = callPackage ./landrop {
     source = nvfetcherOut.landrop;
   };
+
+  guestfs-tools = callPackage ./guestfs-tools {
+    source = nvfetcherOut.guestfs-tools;
+  };
 } // systemPackages

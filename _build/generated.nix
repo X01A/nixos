@@ -29,7 +29,9 @@
     });
     cargoLock."Cargo.lock" = {
       lockFile = ./commit-notifier-573c1eb7eabc97aa06e0e9ad85f5148110749876/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   drone-runner-docker = {
@@ -85,6 +87,17 @@
       rev = "0247b941ac31344f0d7b3c547941a051188ba202";
       fetchSubmodules = true;
       sha256 = "sha256-GYFWEHt1CNoKvdcQh0fEU/BH3Go85RrIwUZb3EUZeSI=";
+    });
+  };
+  guestfs-tools = {
+    pname = "guestfs-tools";
+    version = "7eb1ecf467e86374d72b23994d435139e302bca5";
+    src = fetchFromGitHub ({
+      owner = "rwmjones";
+      repo = "guestfs-tools";
+      rev = "7eb1ecf467e86374d72b23994d435139e302bca5";
+      fetchSubmodules = true;
+      sha256 = "sha256-oeOJlVSklRrqJ/YY5ut79q/FgST66wiiSQzJCbj7OMY=";
     });
   };
   ksmbd = {
@@ -223,7 +236,9 @@
     });
     cargoLock."Cargo.lock" = {
       lockFile = ./realm-v2.3.6/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   simple-obfs = {
@@ -293,7 +308,9 @@
     });
     cargoLock."Cargo.lock" = {
       lockFile = ./vpncloud-v2.3.0/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   wechat-uos = {
