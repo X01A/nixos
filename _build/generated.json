@@ -146,6 +146,25 @@
         },
         "version": "0247b941ac31344f0d7b3c547941a051188ba202"
     },
+    "guestfs-tools": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "guestfs-tools",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rwmjones",
+            "repo": "guestfs-tools",
+            "rev": "7eb1ecf467e86374d72b23994d435139e302bca5",
+            "sha256": "sha256-oeOJlVSklRrqJ/YY5ut79q/FgST66wiiSQzJCbj7OMY=",
+            "type": "github"
+        },
+        "version": "7eb1ecf467e86374d72b23994d435139e302bca5"
+    },
     "ksmbd": {
         "cargoLocks": null,
         "extract": null,

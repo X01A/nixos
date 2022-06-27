@@ -159,3 +159,8 @@ git.fetchSubmodules = true
 [landrop]
 src.github = "LANDrop/LANDrop"
 fetch.github = "LANDrop/LANDrop"
+
+[guestfs-tools]
+src.git = "https://github.com/rwmjones/guestfs-tools.git"
+fetch.github = "rwmjones/guestfs-tools"
+git.fetchSubmodules = true
