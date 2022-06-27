@@ -41,11 +41,11 @@ stdenv.mkDerivation rec {
     makeWrapper
     pkg-config
     qemu
+    libguestfs
   ] ++ (with perlPackages; [ perl ])
   ++ (with ocamlPackages; [ ocaml findlib ]);
 
   buildInputs = [
-    libguestfs
     ncurses
     pcre2
     libxml2
