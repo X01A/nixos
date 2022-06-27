@@ -83,11 +83,11 @@
             "name": null,
             "owner": "drone-runners",
             "repo": "drone-runner-exec",
-            "rev": "v1.0.0-beta.9",
-            "sha256": "sha256-upP6e/I5FRF+WEp086T1NmQA8YXcMG9VHixDUhTdxKs=",
+            "rev": "v1.0.0-beta.10",
+            "sha256": "sha256-dQIN0DXH9j4Qu0Q8vwHjTG/lrtThHnR2bc1UymuUACI=",
             "type": "github"
         },
-        "version": "v1.0.0-beta.9"
+        "version": "v1.0.0-beta.10"
     },
     "edl": {
         "cargoLocks": null,
@@ -102,11 +102,11 @@
             "name": null,
             "owner": "bkerler",
             "repo": "edl",
-            "rev": "cecfcb44b168e4c808bcf5b2d1cafca66ca97e0e",
-            "sha256": "sha256-8bNxIQwj7lV1jTEcutBM3dGo972S0i7+gmyvjRkKfwc=",
+            "rev": "307a623b0a5bec309fd4567ffe3233adf97ad32d",
+            "sha256": "sha256-gSOZwRxuqKzuLim9coUVEyaM+wG26tJ6rGRassXJZ5Q=",
             "type": "github"
         },
-        "version": "cecfcb44b168e4c808bcf5b2d1cafca66ca97e0e"
+        "version": "307a623b0a5bec309fd4567ffe3233adf97ad32d"
     },
     "fcitx5-material-color": {
         "cargoLocks": null,
@@ -197,11 +197,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd-tools",
-            "rev": "040e1933fcee474a27bf79729ce9059f86184e8d",
-            "sha256": "sha256-8KZqcD52gSNSw5rx5jqMeBdnaPR1iwv8CwklMCi8apo=",
+            "rev": "a9d6db9f569776fd5e44d7ec87ee1c37172c4e3f",
+            "sha256": "sha256-gUfz5DC6NrzSd10VFe2/XRS8F3hprrX984cuSpol+U8=",
             "type": "github"
         },
-        "version": "040e1933fcee474a27bf79729ce9059f86184e8d"
+        "version": "a9d6db9f569776fd5e44d7ec87ee1c37172c4e3f"
     },
     "landrop": {
         "cargoLocks": null,
@@ -230,11 +230,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-O2bJsj2YjeaRfqPrehgwn8bNHaYwqcrcU1htCYurPlw=",
+            "sha256": "sha256-NWVDPDqdx7mdWCr/qBi8HsUsCJbT63x37UZGecHsZr4=",
             "type": "url",
-            "url": "https://releases.mattermost.com/7.0.0/mattermost-7.0.0-linux-amd64.tar.gz"
+            "url": "https://releases.mattermost.com/7.0.1/mattermost-7.0.1-linux-amd64.tar.gz"
         },
-        "version": "7.0.0"
+        "version": "7.0.1"
     },
     "microsocks": {
         "cargoLocks": null,
@@ -266,12 +266,12 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "08c2278e0a8f07d32e3487212daedf0b6901f63a",
-            "sha256": "sha256-UjK5DztspCh+uSmn+I2IrY5yNiCsHt+xABFUMw2takM=",
+            "rev": "b9b004832a81bf49b31c604e166158ca6fb7118a",
+            "sha256": "sha256-yq4JO8ylPLckWr5NBU6HePY0p6stpB3YrZhL8EOjfV8=",
             "type": "git",
             "url": "https://github.com/alecthw/mmdb_china_ip_list.git"
         },
-        "version": "08c2278e0a8f07d32e3487212daedf0b6901f63a"
+        "version": "b9b004832a81bf49b31c604e166158ca6fb7118a"
     },
     "motrix": {
         "cargoLocks": null,
@@ -309,10 +309,8 @@
     "nearcore": {
         "cargoLocks": {
             "Cargo.lock": [
-                "./nearcore-1.26.1/Cargo.lock",
+                "./nearcore-1.27.0/Cargo.lock",
                 {
-                    "actix-cors-0.6.0-beta.2": "sha256-0llqozO0wS/33jXyDUqxTNTcs7SDL9KVzBznF0IIWoQ=",
-                    "paperclip-0.5.0": "sha256-oQHrsXtd+PW8Ogfs9NM1oBg2wwa+hCBu/3LyMxghEIY=",
                     "sysinfo-0.14.3": "sha256-3oay53OBILdA3HULGCYway65JDLwcQSl898sWCAgwls="
                 }
             ]
@@ -328,11 +326,11 @@
             "name": null,
             "owner": "near",
             "repo": "nearcore",
-            "rev": "1.26.1",
-            "sha256": "sha256-WoQtDdbFcvl6Wp5uv2tr/W/YYH8dyezF+LzSJ5oJcYY=",
+            "rev": "1.27.0",
+            "sha256": "sha256-B9HqUa0mBSvsCPzxPt4NqpV99rV4lmQ9Q/z9lxob9oM=",
             "type": "github"
         },
-        "version": "1.26.1"
+        "version": "1.27.0"
     },
     "openwhisk-cli": {
         "cargoLocks": null,
@@ -375,7 +373,7 @@
     "realm": {
         "cargoLocks": {
             "Cargo.lock": [
-                "./realm-v2.3.6/Cargo.lock",
+                "./realm-v2.4.0/Cargo.lock",
                 {}
             ]
         },
@@ -390,11 +388,11 @@
             "name": null,
             "owner": "zhboner",
             "repo": "realm",
-            "rev": "v2.3.6",
-            "sha256": "sha256-1xcHKjaaJ3GA77dl57NwVJTl5dW2EP93+5leOGJPDs0=",
+            "rev": "v2.4.0",
+            "sha256": "sha256-N5BlF3hcMFL9sPMjGcfCFWygVhfgw7XJ8V/b4uBWJd4=",
             "type": "github"
         },
-        "version": "v2.3.6"
+        "version": "v2.4.0"
     },
     "simple-obfs": {
         "cargoLocks": null,
@@ -575,11 +573,11 @@
             "name": null,
             "owner": "wiretrustee",
             "repo": "wiretrustee",
-            "rev": "v0.7.0",
-            "sha256": "sha256-DBghmychU261Zy2NF6EHgoB7jwQgazf19VQ0iqUz7GI=",
+            "rev": "v0.8.0",
+            "sha256": "sha256-PZeFH2jhRNOQEOAxOVVEMDKrhbZLPgID116P5M07BAg=",
             "type": "github"
         },
-        "version": "v0.7.0"
+        "version": "v0.8.0"
     },
     "yacd": {
         "cargoLocks": null,
