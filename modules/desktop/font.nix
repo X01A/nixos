@@ -22,6 +22,10 @@ in
         noto-fonts-cjk
         noto-fonts-extra
         noto-fonts-emoji
+        noto-fonts-emoji-blob-bin
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-cjk-serif
         wqy_microhei
         wqy_zenhei
         cascadia-code
