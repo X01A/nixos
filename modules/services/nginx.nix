@@ -54,6 +54,19 @@ in
 
         default = true;
 
+        listen = [
+          {
+            addr = "0.0.0.0";
+            port = 80;
+            ssl = false;
+          }
+          {
+            addr = "0.0.0.0";
+            port = 443;
+            ssl = true;
+          }
+        ];
+
         locations."/.well-known/acme-challenge" = {
           root = "/var/lib/acme/acme-challenge";
         };
