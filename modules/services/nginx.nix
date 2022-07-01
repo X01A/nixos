@@ -59,7 +59,7 @@ in
         };
 
         locations."/" = {
-          return = "403";
+          return = "444";
         };
       };
     };
