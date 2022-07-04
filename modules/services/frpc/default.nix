@@ -41,6 +41,7 @@ let
 
   basicConfig = server: ''
     [common]
+    tls_enable = true
     server_addr = ${server.server}
     server_port = ${toString server.serverPort}
     token = ${server.token}
