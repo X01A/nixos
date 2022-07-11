@@ -89,7 +89,10 @@ in
           health
           ${cfg.extraConf}
           forward . 127.0.0.1:${toString cfg.proxyPort}
-          cache 3600
+          cache {
+            success 3600
+            denial 0
+          }
         }
       '';
     };
