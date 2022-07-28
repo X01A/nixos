@@ -69,9 +69,9 @@ src.manual = "v0.3.2"
 fetch.github = "zu1k/nali"
 git.fetchSubmodules = true
 
-[wiretrustee]
-src.github = "wiretrustee/wiretrustee"
-fetch.github = "wiretrustee/wiretrustee"
+[netbird]
+src.github = "netbirdio/netbird"
+fetch.github = "netbirdio/netbird"
 git.fetchSubmodules = true
 
 [mattermost]
