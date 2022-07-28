@@ -515,10 +515,10 @@
         },
         "version": "3.37"
     },
-    "wiretrustee": {
+    "netbird": {
         "cargoLocks": null,
         "extract": null,
-        "name": "wiretrustee",
+        "name": "netbird",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -526,8 +526,8 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "owner": "wiretrustee",
-            "repo": "wiretrustee",
+            "owner": "netbirdio",
+            "repo": "netbird",
             "rev": "v0.8.4",
             "sha256": "sha256-LbushkVF+Bs5BxEp6rczhUc7cIy2yTGdVcJgNgIS5hs=",
             "type": "github"

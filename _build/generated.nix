@@ -304,12 +304,12 @@
       sha256 = "sha256-q+aW5FgJ8msDIJJqABTTCI3MWsQ9VTorek4l9UoEdDk=";
     };
   };
-  wiretrustee = {
-    pname = "wiretrustee";
+  netbird = {
+    pname = "netbird";
     version = "v0.8.4";
     src = fetchFromGitHub ({
-      owner = "wiretrustee";
-      repo = "wiretrustee";
+      owner = "netbirdio";
+      repo = "netbird";
       rev = "v0.8.4";
       fetchSubmodules = true;
       sha256 = "sha256-LbushkVF+Bs5BxEp6rczhUc7cIy2yTGdVcJgNgIS5hs=";

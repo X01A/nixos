@@ -85,8 +85,8 @@ in
     source = nvfetcherOut.nali;
   };
 
-  wiretrustee = callPackage ./wiretrustee {
-    source = nvfetcherOut.wiretrustee;
+  netbird = callPackage ./netbird {
+    source = nvfetcherOut.netbird;
   };
 
   novnc = callPackage ./novnc { };
