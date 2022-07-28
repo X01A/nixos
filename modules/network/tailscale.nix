@@ -45,7 +45,7 @@ in
 
       acceptRoute = mkOption {
         type = types.bool;
-        default = true;
+        default = false;
         description = "Accept route when join netowrk";
       };
 
