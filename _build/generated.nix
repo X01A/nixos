@@ -181,17 +181,6 @@
       sha256 = "sha256-iRLoUBA+Kzv1/LZQ8HCvR79K1riYErxEWhB0OmvFy2g=";
     });
   };
-  openwhisk-cli = {
-    pname = "openwhisk-cli";
-    version = "1.2.0";
-    src = fetchFromGitHub ({
-      owner = "apache";
-      repo = "openwhisk-cli";
-      rev = "1.2.0";
-      fetchSubmodules = true;
-      sha256 = "sha256-SdsfRuN4tsuTObETrES8VOrn2jgz3SucMXKvyUuuZYs=";
-    });
-  };
   pufferpanel = {
     pname = "pufferpanel";
     version = "v2.5.1";
