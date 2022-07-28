@@ -210,6 +210,8 @@ in
     source = nvfetcherOut.landrop;
   };
 
+  derper = callPackage ./derper { };
+
   guestfs-tools = callPackage ./guestfs-tools {
     source = nvfetcherOut.guestfs-tools;
   };
