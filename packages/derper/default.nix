@@ -7,6 +7,7 @@ tailscale.overrideAttrs (oldAttrs: rec {
   patchPhase = ''
     # Disable ServerHello check
     substituteInPlace cmd/derper/cert.go --replace 'hi.ServerName != m.hostname' 'false'
+    substituteInPlace cmd/derper/cert.go --replace 'x509Cert.VerifyHostname(hostname)' 'nil'
   '';
 
   postInstall = ":";
