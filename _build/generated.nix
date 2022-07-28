@@ -56,13 +56,13 @@
   };
   edl = {
     pname = "edl";
-    version = "966b64dccbc674a66292bfda70d1db29af3677af";
+    version = "4f4e5600c7817e6613a40d97f438ea90291fe9f4";
     src = fetchFromGitHub ({
       owner = "bkerler";
       repo = "edl";
-      rev = "966b64dccbc674a66292bfda70d1db29af3677af";
+      rev = "4f4e5600c7817e6613a40d97f438ea90291fe9f4";
       fetchSubmodules = true;
-      sha256 = "sha256-rjbLo4uMhAjWaa7/XmsusOhNQs9PTrX0OqhW/4A4Q98=";
+      sha256 = "sha256-6fr2WCK4V0eqFd2lFx1KQjtA4ObQWDzddsekvPUA9EI=";
     });
   };
   fcitx5-material-color = {
@@ -89,35 +89,35 @@
   };
   guestfs-tools = {
     pname = "guestfs-tools";
-    version = "a7ffb717306f5468204e170093ad24d47b6dd698";
+    version = "f5baf83e464c276d3dae6f8e878b8f47fe0d43d9";
     src = fetchFromGitHub ({
       owner = "rwmjones";
       repo = "guestfs-tools";
-      rev = "a7ffb717306f5468204e170093ad24d47b6dd698";
+      rev = "f5baf83e464c276d3dae6f8e878b8f47fe0d43d9";
       fetchSubmodules = true;
-      sha256 = "sha256-p9Nfzk16MJ7jG1MytMg2qNKRt73SGXs1RKnafOkX6mw=";
+      sha256 = "sha256-LsvsnPQcBblRhGLZP7MQuufnPnvKeL2EpI23ec/gjys=";
     });
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "98bc509f92cccedd7d51d5ebadc424e2d7f5cbb4";
+    version = "81de8a6b5b9b8baa266f61c1ce9f6fed83e6c5fe";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "98bc509f92cccedd7d51d5ebadc424e2d7f5cbb4";
+      rev = "81de8a6b5b9b8baa266f61c1ce9f6fed83e6c5fe";
       fetchSubmodules = true;
-      sha256 = "sha256-uJ+pyiZWMcvpqFf/6CX9ZJ8fRcVqotFSRVUYl6RP1hQ=";
+      sha256 = "sha256-tQ3QBl3Nb0TdQdlpmHWBAwaUf5lGDBEVs7T8u92zbtE=";
     });
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "ed6244c2a20ede74809a775a2d56e72672ab98ff";
+    version = "e1af92da7da2c5c0540bca1d543e7586cfc6d597";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd-tools";
-      rev = "ed6244c2a20ede74809a775a2d56e72672ab98ff";
+      rev = "e1af92da7da2c5c0540bca1d543e7586cfc6d597";
       fetchSubmodules = true;
-      sha256 = "sha256-yw5c1E2eEfCVywtVRqeRpFRacs43Vsi+8Ld4ghwQhBw=";
+      sha256 = "sha256-vzn4OJrD62oLFVH9X24/ObYONZ5ZezCbn+MeEN2ahnE=";
     });
   };
   landrop = {
@@ -133,10 +133,10 @@
   };
   mattermost = {
     pname = "mattermost";
-    version = "7.0.1";
+    version = "7.1.2";
     src = fetchurl {
-      url = "https://releases.mattermost.com/7.0.1/mattermost-7.0.1-linux-amd64.tar.gz";
-      sha256 = "sha256-NWVDPDqdx7mdWCr/qBi8HsUsCJbT63x37UZGecHsZr4=";
+      url = "https://releases.mattermost.com/7.1.2/mattermost-7.1.2-linux-amd64.tar.gz";
+      sha256 = "sha256-QFjx4Ju5xMC9N9GwYAI1TlkJe9jrgznMy2BvYy2HHKY=";
     };
   };
   microsocks = {
@@ -152,14 +152,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "a44b99617732316328237bb0024245d7e7b58c0b";
+    version = "f8ffe175b92dd181642dbeb011d4da7fcdf32341";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "a44b99617732316328237bb0024245d7e7b58c0b";
+      rev = "f8ffe175b92dd181642dbeb011d4da7fcdf32341";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-mBMtwSi6qciOCljrUqZSY33diB6g1doYG6+nIvg3sl4=";
+      sha256 = "sha256-a1QfEsG8m5EGy+gN8hi9M4T5UqCAV00p8C7sDkalL8I=";
     };
   };
   motrix = {
@@ -183,16 +183,16 @@
   };
   nearcore = {
     pname = "nearcore";
-    version = "1.27.0";
+    version = "1.28.0";
     src = fetchFromGitHub ({
       owner = "near";
       repo = "nearcore";
-      rev = "1.27.0";
+      rev = "1.28.0";
       fetchSubmodules = true;
-      sha256 = "sha256-B9HqUa0mBSvsCPzxPt4NqpV99rV4lmQ9Q/z9lxob9oM=";
+      sha256 = "sha256-DRVlD74XTYgy3GeUd/7OIl2aie8nEJLmrmmkwPRkrA8=";
     });
     cargoLock."Cargo.lock" = {
-      lockFile = ./nearcore-1.27.0/Cargo.lock;
+      lockFile = ./nearcore-1.28.0/Cargo.lock;
       outputHashes = {
         "sysinfo-0.14.3" = "sha256-3oay53OBILdA3HULGCYway65JDLwcQSl898sWCAgwls=";
       };
@@ -222,16 +222,16 @@
   };
   realm = {
     pname = "realm";
-    version = "v2.4.0";
+    version = "v2.4.1";
     src = fetchFromGitHub ({
       owner = "zhboner";
       repo = "realm";
-      rev = "v2.4.0";
+      rev = "v2.4.1";
       fetchSubmodules = true;
-      sha256 = "sha256-N5BlF3hcMFL9sPMjGcfCFWygVhfgw7XJ8V/b4uBWJd4=";
+      sha256 = "sha256-G92SxJE8cv8ATWt9UfQoBYCdo13/V/wqMlGfO6FI8/k=";
     });
     cargoLock."Cargo.lock" = {
-      lockFile = ./realm-v2.4.0/Cargo.lock;
+      lockFile = ./realm-v2.4.1/Cargo.lock;
       outputHashes = { };
     };
   };
@@ -315,40 +315,40 @@
   };
   wgcf = {
     pname = "wgcf";
-    version = "v2.2.14";
+    version = "v2.2.15";
     src = fetchFromGitHub ({
       owner = "ViRb3";
       repo = "wgcf";
-      rev = "v2.2.14";
+      rev = "v2.2.15";
       fetchSubmodules = true;
-      sha256 = "sha256-6V4fIoFB0fuCEu1Rj8QWGDNdgystrD/gefjbshvxVsw=";
+      sha256 = "sha256-tUEeczs3J//2ZrZkAsSn3C+GScRPaIgheRM2wByS8p4=";
     });
   };
   winbox = {
     pname = "winbox";
-    version = "3.36";
+    version = "3.37";
     src = fetchurl {
-      url = "https://download.mikrotik.com/winbox/3.36/winbox64.exe";
-      sha256 = "sha256-PRbidXHwVBoOBP+nw/GC6KoqKyYAFgOLgODCP4tObTA=";
+      url = "https://download.mikrotik.com/winbox/3.37/winbox64.exe";
+      sha256 = "sha256-q+aW5FgJ8msDIJJqABTTCI3MWsQ9VTorek4l9UoEdDk=";
     };
   };
   wiretrustee = {
     pname = "wiretrustee";
-    version = "v0.8.2";
+    version = "v0.8.4";
     src = fetchFromGitHub ({
       owner = "wiretrustee";
       repo = "wiretrustee";
-      rev = "v0.8.2";
+      rev = "v0.8.4";
       fetchSubmodules = true;
-      sha256 = "sha256-z3rRVDYnT4CWsbRayPEhzLCq5ZT2vjWCZQwBTrvfoZw=";
+      sha256 = "sha256-LbushkVF+Bs5BxEp6rczhUc7cIy2yTGdVcJgNgIS5hs=";
     });
   };
   yacd = {
     pname = "yacd";
-    version = "v0.3.5";
+    version = "v0.3.6";
     src = fetchurl {
-      url = "https://github.com/haishanh/yacd/releases/download/v0.3.5/yacd.tar.xz";
-      sha256 = "sha256-j2sDOC7QqoP0ptQ9cKa6kHM2efid7kgNmsggODEQaSA=";
+      url = "https://github.com/haishanh/yacd/releases/download/v0.3.6/yacd.tar.xz";
+      sha256 = "sha256-YIx+IcHubP7mJoxaOVGkwh3EB+6mcEkFjOwpnAsR4vs=";
     };
   };
   yesplaymusic = {
