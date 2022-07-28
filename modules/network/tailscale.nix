@@ -43,6 +43,12 @@ in
         description = "List of advertise routes";
       };
 
+      acceptRoute = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Accept route when join netowrk";
+      };
+
       extraUpArgs = mkOption {
         type = with types; listOf str;
         default = [ ];
@@ -78,7 +84,7 @@ in
           exit 0
         fi
 
-        ${tailscale}/bin/tailscale up ${tailscaleJoinArgsString}
+        ${tailscale}/bin/tailscale up --accept-routes=${lib.boolToString cfg.acceptRoute} ${tailscaleJoinArgsString}
       '';
     };
   };
