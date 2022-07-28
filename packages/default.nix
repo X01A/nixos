@@ -126,10 +126,6 @@ in
     source = nvfetcherOut.commit-notifier;
   };
 
-  nearcore = callPackage ./nearcore {
-    source = nvfetcherOut.nearcore;
-  };
-
   babel = callPackage ./babel { };
 
   simple-obfs = callPackage ./simple-obfs {

@@ -306,32 +306,6 @@
         },
         "version": "v0.3.2"
     },
-    "nearcore": {
-        "cargoLocks": {
-            "Cargo.lock": [
-                "./nearcore-1.28.0/Cargo.lock",
-                {
-                    "sysinfo-0.14.3": "sha256-3oay53OBILdA3HULGCYway65JDLwcQSl898sWCAgwls="
-                }
-            ]
-        },
-        "extract": null,
-        "name": "nearcore",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "near",
-            "repo": "nearcore",
-            "rev": "1.28.0",
-            "sha256": "sha256-DRVlD74XTYgy3GeUd/7OIl2aie8nEJLmrmmkwPRkrA8=",
-            "type": "github"
-        },
-        "version": "1.28.0"
-    },
     "openwhisk-cli": {
         "cargoLocks": null,
         "extract": null,

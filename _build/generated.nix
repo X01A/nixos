@@ -181,23 +181,6 @@
       sha256 = "sha256-iRLoUBA+Kzv1/LZQ8HCvR79K1riYErxEWhB0OmvFy2g=";
     });
   };
-  nearcore = {
-    pname = "nearcore";
-    version = "1.28.0";
-    src = fetchFromGitHub ({
-      owner = "near";
-      repo = "nearcore";
-      rev = "1.28.0";
-      fetchSubmodules = true;
-      sha256 = "sha256-DRVlD74XTYgy3GeUd/7OIl2aie8nEJLmrmmkwPRkrA8=";
-    });
-    cargoLock."Cargo.lock" = {
-      lockFile = ./nearcore-1.28.0/Cargo.lock;
-      outputHashes = {
-        "sysinfo-0.14.3" = "sha256-3oay53OBILdA3HULGCYway65JDLwcQSl898sWCAgwls=";
-      };
-    };
-  };
   openwhisk-cli = {
     pname = "openwhisk-cli";
     version = "1.2.0";
