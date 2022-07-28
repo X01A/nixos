@@ -306,25 +306,6 @@
         },
         "version": "v0.3.2"
     },
-    "openwhisk-cli": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "openwhisk-cli",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "apache",
-            "repo": "openwhisk-cli",
-            "rev": "1.2.0",
-            "sha256": "sha256-SdsfRuN4tsuTObETrES8VOrn2jgz3SucMXKvyUuuZYs=",
-            "type": "github"
-        },
-        "version": "1.2.0"
-    },
     "pufferpanel": {
         "cargoLocks": null,
         "extract": null,
