@@ -56,6 +56,9 @@ in
     environment.systemPackages = with pkgs; [
       tailscale
     ];
+
+    # Don't restart tailscale if changed, arovid ssh connection disconnect
+    systemd.services.tailscale.restartIfChanged = false;
     systemd.services.tailscale-autoconnect = {
       description = "Automatic connection to Tailscale";
 
