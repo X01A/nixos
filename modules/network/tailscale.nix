@@ -14,6 +14,10 @@ let
   ] ++ (optionalList (haveElement cfg.advertiseRoutes) [
     "--advertise-routes"
     (builtins.concatStringsSep "," cfg.advertiseRoutes)
+  ]) ++ (optionalList (cfg.acceptRoute) [
+    "--accept-routes=true"
+  ]) ++ (optionalList (cfg.advertiseExitNode) [
+    "--advertise-exit-node=true"
   ]) ++ cfg.extraUpArgs;
 
   tailscaleJoinArgsString = builtins.concatStringsSep " " tailscaleJoinArgsList;
@@ -47,6 +51,11 @@ in
         type = types.bool;
         default = false;
         description = "Accept route when join netowrk";
+      };
+
+      advertiseExitNode = mkOption {
+        type = types.bool;
+        default = false;
       };
 
       extraUpArgs = mkOption {
@@ -84,7 +93,7 @@ in
           exit 0
         fi
 
-        ${tailscale}/bin/tailscale up --accept-routes=${lib.boolToString cfg.acceptRoute} ${tailscaleJoinArgsString}
+        ${tailscale}/bin/tailscale up ${tailscaleJoinArgsString}
       '';
     };
   };
