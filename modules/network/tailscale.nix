@@ -20,6 +20,8 @@ let
     "--advertise-exit-node=true"
   ]) ++ cfg.extraUpArgs;
 
+  enableForwarding = ((haveElement cfg.advertiseRoutes) || cfg.advertiseExitNode);
+
   tailscaleJoinArgsString = builtins.concatStringsSep " " tailscaleJoinArgsList;
 in
 {
@@ -66,35 +68,57 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
-    services.tailscale.enable = true;
-    environment.systemPackages = with pkgs; [
-      tailscale
-    ];
+  config = mkIf cfg.enable (mkMerge [
+    ({
+      services.tailscale.enable = true;
+      environment.systemPackages = with pkgs; [
+        tailscale
+      ];
 
-    # Don't restart tailscale if changed, arovid ssh connection disconnect
-    systemd.services.tailscaled.restartIfChanged = false;
-    systemd.services.tailscale-autoconnect = {
-      description = "Automatic connection to Tailscale";
+      # Don't restart tailscale if changed, arovid ssh connection disconnect
+      systemd.services.tailscaled.restartIfChanged = false;
+      systemd.services.tailscale-autoconnect = {
+        description = "Automatic connection to Tailscale";
 
-      # make sure tailscale is running before trying to connect to tailscale
-      after = [ "network-pre.target" "tailscale.service" ];
-      wants = [ "network-pre.target" "tailscale.service" ];
-      wantedBy = [ "multi-user.target" ];
+        # make sure tailscale is running before trying to connect to tailscale
+        after = [ "network-pre.target" "tailscale.service" ];
+        wants = [ "network-pre.target" "tailscale.service" ];
+        wantedBy = [ "multi-user.target" ];
 
-      serviceConfig.Type = "oneshot";
-      script = with pkgs; ''
-        # wait for tailscaled to settle
-        sleep 2
+        serviceConfig.Type = "oneshot";
+        script = with pkgs; ''
+          # wait for tailscaled to settle
+          sleep 2
 
-        # check if we are already authenticated to tailscale
-        status="$(${tailscale}/bin/tailscale status -json | ${jq}/bin/jq -r .BackendState)"
-        if [ $status = "Running" ]; then # if so, then do nothing
-          exit 0
-        fi
+          # check if we are already authenticated to tailscale
+          status="$(${tailscale}/bin/tailscale status -json | ${jq}/bin/jq -r .BackendState)"
+          if [ $status = "Running" ]; then # if so, then do nothing
+            exit 0
+          fi
 
-        ${tailscale}/bin/tailscale up ${tailscaleJoinArgsString}
+          ${tailscale}/bin/tailscale up ${tailscaleJoinArgsString}
+        '';
+      };
+    })
+
+    (mkIf (enableForwarding) {
+      boot.kernel.sysctl = {
+        "net.ipv4.conf.all.forwarding" = true;
+        "net.ipv4.conf.default.forwarding" = true;
+        "net.ipv4.ip_forward" = true;
+        "net.ipv6.conf.all.forwarding" = true;
+      };
+    })
+
+    (mkIf (enableForwarding && config.indexyz.network.firewall.enable) {
+      networking.nftables.ruleset = mkAfter ''
+        table ip nat {
+          chain postrouting {
+            type nat hook postrouting priority srcnat; policy accept;
+            iifname "tailscale0" masquerade
+          }
+        }
       '';
-    };
-  };
+    })
+  ]);
 }
