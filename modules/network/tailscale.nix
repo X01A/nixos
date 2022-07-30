@@ -60,6 +60,11 @@ in
         default = false;
       };
 
+      insertTable = mkOption {
+        type = types.bool;
+        default = true;
+      };
+
       extraUpArgs = mkOption {
         type = with types; listOf str;
         default = [ ];
@@ -110,7 +115,7 @@ in
       };
     })
 
-    (mkIf (enableForwarding && config.indexyz.network.firewall.enable) {
+    (mkIf (enableForwarding && cfg.insertTable) {
       networking.nftables.ruleset = mkAfter ''
         table ip nat {
           chain postrouting {
