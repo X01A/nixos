@@ -178,11 +178,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd",
-            "rev": "81de8a6b5b9b8baa266f61c1ce9f6fed83e6c5fe",
-            "sha256": "sha256-tQ3QBl3Nb0TdQdlpmHWBAwaUf5lGDBEVs7T8u92zbtE=",
+            "rev": "4fdd17d66fbcc1dbab61771a45e7d2c9ccaff940",
+            "sha256": "sha256-+wqkiRCSOFfYbeUUhO7BtgUgC4jK0Yx/wJha/qf7AUA=",
             "type": "github"
         },
-        "version": "81de8a6b5b9b8baa266f61c1ce9f6fed83e6c5fe"
+        "version": "4fdd17d66fbcc1dbab61771a45e7d2c9ccaff940"
     },
     "ksmbd-tools": {
         "cargoLocks": null,
@@ -266,12 +266,12 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f8ffe175b92dd181642dbeb011d4da7fcdf32341",
-            "sha256": "sha256-a1QfEsG8m5EGy+gN8hi9M4T5UqCAV00p8C7sDkalL8I=",
+            "rev": "a3ba6c3df00195a77aece5d5b0848629c87062aa",
+            "sha256": "sha256-8Y6x3+3sl3IuJL6dZ7wXHLeQKqvxhoN9mkPLHjX54OQ=",
             "type": "git",
             "url": "https://github.com/alecthw/mmdb_china_ip_list.git"
         },
-        "version": "f8ffe175b92dd181642dbeb011d4da7fcdf32341"
+        "version": "a3ba6c3df00195a77aece5d5b0848629c87062aa"
     },
     "motrix": {
         "cargoLocks": null,
@@ -305,6 +305,25 @@
             "type": "github"
         },
         "version": "v0.3.2"
+    },
+    "netbird": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "netbird",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "netbirdio",
+            "repo": "netbird",
+            "rev": "v0.8.4",
+            "sha256": "sha256-LbushkVF+Bs5BxEp6rczhUc7cIy2yTGdVcJgNgIS5hs=",
+            "type": "github"
+        },
+        "version": "v0.8.4"
     },
     "pufferpanel": {
         "cargoLocks": null,
@@ -514,25 +533,6 @@
             "url": "https://download.mikrotik.com/winbox/3.37/winbox64.exe"
         },
         "version": "3.37"
-    },
-    "netbird": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "netbird",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "netbirdio",
-            "repo": "netbird",
-            "rev": "v0.8.4",
-            "sha256": "sha256-LbushkVF+Bs5BxEp6rczhUc7cIy2yTGdVcJgNgIS5hs=",
-            "type": "github"
-        },
-        "version": "v0.8.4"
     },
     "yacd": {
         "cargoLocks": null,
