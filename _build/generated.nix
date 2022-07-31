@@ -100,13 +100,13 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "81de8a6b5b9b8baa266f61c1ce9f6fed83e6c5fe";
+    version = "4fdd17d66fbcc1dbab61771a45e7d2c9ccaff940";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "81de8a6b5b9b8baa266f61c1ce9f6fed83e6c5fe";
+      rev = "4fdd17d66fbcc1dbab61771a45e7d2c9ccaff940";
       fetchSubmodules = true;
-      sha256 = "sha256-tQ3QBl3Nb0TdQdlpmHWBAwaUf5lGDBEVs7T8u92zbtE=";
+      sha256 = "sha256-+wqkiRCSOFfYbeUUhO7BtgUgC4jK0Yx/wJha/qf7AUA=";
     });
   };
   ksmbd-tools = {
@@ -152,14 +152,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "f8ffe175b92dd181642dbeb011d4da7fcdf32341";
+    version = "a3ba6c3df00195a77aece5d5b0848629c87062aa";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "f8ffe175b92dd181642dbeb011d4da7fcdf32341";
+      rev = "a3ba6c3df00195a77aece5d5b0848629c87062aa";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-a1QfEsG8m5EGy+gN8hi9M4T5UqCAV00p8C7sDkalL8I=";
+      sha256 = "sha256-8Y6x3+3sl3IuJL6dZ7wXHLeQKqvxhoN9mkPLHjX54OQ=";
     };
   };
   motrix = {
@@ -179,6 +179,17 @@
       rev = "v0.3.2";
       fetchSubmodules = true;
       sha256 = "sha256-iRLoUBA+Kzv1/LZQ8HCvR79K1riYErxEWhB0OmvFy2g=";
+    });
+  };
+  netbird = {
+    pname = "netbird";
+    version = "v0.8.4";
+    src = fetchFromGitHub ({
+      owner = "netbirdio";
+      repo = "netbird";
+      rev = "v0.8.4";
+      fetchSubmodules = true;
+      sha256 = "sha256-LbushkVF+Bs5BxEp6rczhUc7cIy2yTGdVcJgNgIS5hs=";
     });
   };
   pufferpanel = {
@@ -303,17 +314,6 @@
       url = "https://download.mikrotik.com/winbox/3.37/winbox64.exe";
       sha256 = "sha256-q+aW5FgJ8msDIJJqABTTCI3MWsQ9VTorek4l9UoEdDk=";
     };
-  };
-  netbird = {
-    pname = "netbird";
-    version = "v0.8.4";
-    src = fetchFromGitHub ({
-      owner = "netbirdio";
-      repo = "netbird";
-      rev = "v0.8.4";
-      fetchSubmodules = true;
-      sha256 = "sha256-LbushkVF+Bs5BxEp6rczhUc7cIy2yTGdVcJgNgIS5hs=";
-    });
   };
   yacd = {
     pname = "yacd";
