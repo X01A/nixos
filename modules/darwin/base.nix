@@ -52,7 +52,6 @@ in
     };
 
     environment.systemPackages = with pkgs; [
-      neofetch
       gh
       starship
       tmux
