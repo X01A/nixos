@@ -159,11 +159,11 @@
             "name": null,
             "owner": "rwmjones",
             "repo": "guestfs-tools",
-            "rev": "f5baf83e464c276d3dae6f8e878b8f47fe0d43d9",
-            "sha256": "sha256-LsvsnPQcBblRhGLZP7MQuufnPnvKeL2EpI23ec/gjys=",
+            "rev": "cb73124db1019a802fac2895f360b1236c0bfaec",
+            "sha256": "sha256-xSOgv4bDj/0EJRmCG/4ypb4lA7KAdDJQTaC9A0FW0yQ=",
             "type": "github"
         },
-        "version": "f5baf83e464c276d3dae6f8e878b8f47fe0d43d9"
+        "version": "cb73124db1019a802fac2895f360b1236c0bfaec"
     },
     "ksmbd": {
         "cargoLocks": null,
@@ -178,11 +178,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd",
-            "rev": "81de8a6b5b9b8baa266f61c1ce9f6fed83e6c5fe",
-            "sha256": "sha256-tQ3QBl3Nb0TdQdlpmHWBAwaUf5lGDBEVs7T8u92zbtE=",
+            "rev": "71f0c7e5f86e835212bd84fa2a5c3972169de896",
+            "sha256": "sha256-BJSPVtGYVoqGiHgwcgjKvNIq+fME4KM1bHbwha0rcZo=",
             "type": "github"
         },
-        "version": "81de8a6b5b9b8baa266f61c1ce9f6fed83e6c5fe"
+        "version": "71f0c7e5f86e835212bd84fa2a5c3972169de896"
     },
     "ksmbd-tools": {
         "cargoLocks": null,
@@ -266,12 +266,12 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f8ffe175b92dd181642dbeb011d4da7fcdf32341",
-            "sha256": "sha256-a1QfEsG8m5EGy+gN8hi9M4T5UqCAV00p8C7sDkalL8I=",
+            "rev": "98103ce2a77776e9093700918a353256a29a6533",
+            "sha256": "sha256-/R+bqxa3kdjuwQWcEaTg1UBUfaG+gK4S+cYN70aCE9E=",
             "type": "git",
             "url": "https://github.com/alecthw/mmdb_china_ip_list.git"
         },
-        "version": "f8ffe175b92dd181642dbeb011d4da7fcdf32341"
+        "version": "98103ce2a77776e9093700918a353256a29a6533"
     },
     "motrix": {
         "cargoLocks": null,
@@ -305,6 +305,25 @@
             "type": "github"
         },
         "version": "v0.3.2"
+    },
+    "netbird": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "netbird",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "netbirdio",
+            "repo": "netbird",
+            "rev": "v0.8.5",
+            "sha256": "sha256-O/RfaDHiyzY3h4ubIFRgb6Tgge+bnZSfUb3X0wKGAnA=",
+            "type": "github"
+        },
+        "version": "v0.8.5"
     },
     "pufferpanel": {
         "cargoLocks": null,
@@ -514,25 +533,6 @@
             "url": "https://download.mikrotik.com/winbox/3.37/winbox64.exe"
         },
         "version": "3.37"
-    },
-    "netbird": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "netbird",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "netbirdio",
-            "repo": "netbird",
-            "rev": "v0.8.4",
-            "sha256": "sha256-LbushkVF+Bs5BxEp6rczhUc7cIy2yTGdVcJgNgIS5hs=",
-            "type": "github"
-        },
-        "version": "v0.8.4"
     },
     "yacd": {
         "cargoLocks": null,
