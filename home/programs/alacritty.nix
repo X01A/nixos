@@ -7,7 +7,7 @@ in
 {
   options = {
     indexyz.programs.alacritty.enable = mkOption {
-      default = true;
+      default = false;
       type = with types; bool;
     };
   };
