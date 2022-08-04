@@ -25,19 +25,9 @@ let
     ms-vsliveshare.vsliveshare
     matklad.rust-analyzer
     arrterian.nix-env-selector
+    oderwat.indent-rainbow
+    christian-kohler.path-intellisense
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-    {
-      name = "indent-rainbow";
-      publisher = "oderwat";
-      version = "8.3.1";
-      sha256 = "sha256-dOicya0B2sriTcDSdCyhtp0Mcx5b6TUaFKVb0YU3jUc=";
-    }
-    {
-      name = "path-intellisense";
-      publisher = "christian-kohler";
-      version = "2.8.1";
-      sha256 = "sha256-lTKzMphkGgOG2XWqz3TW2G9sISBc/kG7oXqcIH8l+Mg=";
-    }
     {
       name = "direnv";
       publisher = "mkhl";
