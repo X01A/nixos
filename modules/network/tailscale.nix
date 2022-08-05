@@ -21,7 +21,7 @@ let
     "--advertise-exit-node=true"
   ]) ++ cfg.extraUpArgs;
 
-  enableForwarding = ((haveElement cfg.advertiseRoutes) || cfg.advertiseExitNode);
+  enableForwarding = ((haveElement cfg.advertiseRoutes) || cfg.advertiseExitNode || cfg.derper.enable);
 
   tailscaleJoinArgsString = builtins.concatStringsSep " " tailscaleJoinArgsList;
 in
@@ -70,6 +70,26 @@ in
         type = with types; listOf str;
         default = [ ];
         description = "Extra args for tailscale up";
+      };
+
+      derper = {
+        enable = mkEnableOption "Enable tailscale derper service";
+
+        domain = mkOption {
+          type = types.str;
+          default = "127.0.0.1";
+          description = "Domain used to connect to derp";
+        };
+
+        certFile = mkOption {
+          type = types.str;
+          description = "Domain SSL cert file";
+        };
+
+        keyFile = mkOption {
+          type = types.str;
+          description = "Domain SSL key file";
+        };
       };
     };
   };
@@ -133,6 +153,28 @@ in
           }
         }
       '';
+    })
+
+    (mkIf (cfg.derper.enable) {
+      systemd.services.derper = {
+        wantedBy = [ "multi-user.target" ];
+        after = [ "network.target" ];
+
+        serviceConfig = {
+          PermissionsStartOnly = true;
+          Type = "simple";
+          Restart = "always";
+
+          LoadCredential = [
+            "${cfg.derper.domain}.crt:${cfg.derper.certFile}"
+            "${cfg.derper.domain}.key:${cfg.derper.keyFile}"
+          ];
+        };
+
+        script = ''
+          exec ${pkgs.derper}/bin/derper -verify-clients -certmode manual -hostname ${cfg.derper.domain} -certdir $CREDENTIALS_DIRECTORY
+        '';
+      };
     })
   ]);
 }
