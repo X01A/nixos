@@ -81,6 +81,18 @@ in
           description = "Domain used to connect to derp";
         };
 
+        port = mkOption {
+          type = types.int;
+          default = 443;
+          description = "Derper forwarder listen port";
+        };
+
+        stunPort = mkOption {
+          type = types.int;
+          default = 3478;
+          description = "Derper stun listen port";
+        };
+
         certFile = mkOption {
           type = types.str;
           description = "Domain SSL cert file";
@@ -156,6 +168,8 @@ in
     })
 
     (mkIf (cfg.derper.enable) {
+       networking.firewall.allowedTCPPorts = [ cfg.derper.port cfg.derper.stunPort ];
+       networking.firewall.allowedUDPPorts = [ cfg.derper.stunPort ];
       systemd.services.derper = {
         wantedBy = [ "multi-user.target" ];
         after = [ "network.target" ];
@@ -172,7 +186,8 @@ in
         };
 
         script = ''
-          exec ${pkgs.derper}/bin/derper -verify-clients -certmode manual -hostname ${cfg.derper.domain} -certdir $CREDENTIALS_DIRECTORY
+          exec ${pkgs.derper}/bin/derper -verify-clients -certmode manual -hostname ${cfg.derper.domain} -certdir $CREDENTIALS_DIRECTORY \
+            -a ":${builtins.toString cfg.derper.port}" -stun-port ${builtins.toString cfg.derper.stunPort}
         '';
       };
     })
