@@ -3,6 +3,7 @@
 with lib;
 let
   cfg = config.indexyz.network.tailscale;
+  port = config.services.tailscale.port;
   haveElement = it: (builtins.length it) > 0;
   optionalList = cond: list: if cond then list else [ ];
 
@@ -78,6 +79,14 @@ in
       services.tailscale.enable = true;
       environment.systemPackages = with pkgs; [
         tailscale
+      ];
+
+      networking.firewall.allowedTCPPorts = mkIf (port > 0) [
+        port
+      ];
+
+      networking.firewall.allowedUDPPorts = mkIf (port > 0) [
+        port
       ];
 
       # Don't restart tailscale if changed, arovid ssh connection disconnect
