@@ -27,6 +27,7 @@ let
 
   configData = {
     log = { level = cfg.logLevel; };
+    network = { use_udp = true; };
     endpoints = map generateConfig cfg.rules;
   };
 
