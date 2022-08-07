@@ -168,8 +168,8 @@ in
     })
 
     (mkIf (cfg.derper.enable) {
-       networking.firewall.allowedTCPPorts = [ cfg.derper.port cfg.derper.stunPort ];
-       networking.firewall.allowedUDPPorts = [ cfg.derper.stunPort ];
+      networking.firewall.allowedTCPPorts = [ cfg.derper.port cfg.derper.stunPort ];
+      networking.firewall.allowedUDPPorts = [ cfg.derper.stunPort ];
       systemd.services.derper = {
         wantedBy = [ "multi-user.target" ];
         after = [ "network.target" ];

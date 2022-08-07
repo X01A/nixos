@@ -9,13 +9,16 @@ let
 
   ifThenElse = cond: t: f: if cond then t else f;
 
-  typeToAttr = type: ifThenElse (type == "all") { } (ifThenElse (type == "tcp")
+  typeToAttr = type: ifThenElse (type == "all")
     {
       use_udp = true;
     }
-    {
-      no_tcp = true;
-    });
+    (ifThenElse (type == "tcp")
+      { }
+      {
+        use_udp = true;
+        no_tcp = true;
+      });
 
   generateConfig = conf: ({
     listen = "${conf.listen}:${toString conf.port}";
