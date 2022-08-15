@@ -26,6 +26,10 @@ let
   tailscaleJoinArgsString = builtins.concatStringsSep " " tailscaleJoinArgsList;
 in
 {
+  imports = [
+    ./cert.nix
+  ];
+
   options = {
     indexyz.network.tailscale = {
       enable = mkEnableOption "Enable tailscale client module";
