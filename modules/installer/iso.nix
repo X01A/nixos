@@ -14,7 +14,7 @@
     hostId = "9a18f601";
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
