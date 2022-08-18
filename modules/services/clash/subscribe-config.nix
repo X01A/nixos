@@ -3,6 +3,7 @@
 with lib;
 
 let
+  dataDir = "/var/lib/clash";
   cfg = config.indexyz.services.clash;
   utils = import ./utils.nix { inherit pkgs config; };
   inherit (utils) managePort manageAddr;
@@ -15,7 +16,8 @@ in
         value = {
           serviceConfig = {
             Type = "oneshot";
-            WorkingDirectory = cfg.dataDir;
+            WorkingDirectory = dataDir;
+            StateDirectory = "clash";
           };
           wantedBy = [ "multi-user.target" ];
           after = [ "network.target" ];
