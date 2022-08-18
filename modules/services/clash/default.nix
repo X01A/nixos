@@ -2,6 +2,7 @@
 
 with lib;
 let
+  dataDir = "/var/lib/clash";
   utils = import ./utils.nix { inherit pkgs config; };
   inherit (utils) managePort manageAddr;
 
@@ -11,17 +12,16 @@ let
   });
 
   profileCommands = ''
-    mkdir -p ${cfg.dataDir}
     ${lib.optionalString (cfg.mmdb.enable) ''
-      rm -f ${cfg.dataDir}/Country.mmdb
-      ln -s ${cfg.mmdb.pkg} ${cfg.dataDir}/Country.mmdb
+      rm -f ${dataDir}/Country.mmdb
+      ln -s ${cfg.mmdb.pkg} ${dataDir}/Country.mmdb
     ''}
 
   '' + builtins.concatStringsSep "\n" (attrsets.mapAttrsToList
     (name: val:
       let
         fileName = "${name}.yaml";
-        fileLocation = "${cfg.dataDir}/${fileName}";
+        fileLocation = "${dataDir}/${fileName}";
         fileData = pkgs.writeText fileName val;
       in
       ''
@@ -47,11 +47,6 @@ in
       subscribe = mkOption {
         default = [ ];
         type = types.listOf subscribeOptions;
-      };
-
-      dataDir = mkOption {
-        default = "/var/lib/clash";
-        type = types.str;
       };
 
       allowLan = mkOption {
@@ -130,8 +125,21 @@ in
           LimitNPROC = "infinity";
           LimitCORE = "infinity";
           TasksMax = "infinity";
-          WorkingDirectory = cfg.dataDir;
-          ExecStart = "${cfg.package}/bin/clash -d ${cfg.dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}";
+          StateDirectory = "clash";
+          StateDirectoryMode = "0700";
+          RuntimeDirectory = "clash";
+          RuntimeDirectoryPreserve = "yes";
+          NoNewPrivileges = true;
+          DynamicUser = true;
+          ProtectHome = true;
+          ProtectHostname = true;
+          ProtectKernelLogs = true;
+          RemoveIPC = true;
+          RestrictNamespaces = true;
+          RestrictRealtime = true;
+          RestrictSUIDSGID = true;
+          WorkingDirectory = dataDir;
+          ExecStart = "${cfg.package}/bin/clash -d ${dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}";
         };
       };
     };

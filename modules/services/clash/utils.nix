@@ -2,6 +2,7 @@
 
 with pkgs.lib;
 let
+  dataDir = "/var/lib/clash";
   cfg = config.indexyz.services.clash;
   managePort = last (splitString ":" cfg.controller);
   manageAddr = "http://127.0.0.1:${managePort}";
@@ -10,7 +11,7 @@ rec {
   inherit managePort manageAddr;
   updateConfigScript = name: enableUpdate:
     let
-      fullName = "${cfg.dataDir}/${name}.yaml";
+      fullName = "${dataDir}/${name}.yaml";
     in
     ''
       # Replace ports
