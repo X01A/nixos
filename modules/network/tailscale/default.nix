@@ -112,6 +112,11 @@ in
 
   config = mkIf cfg.enable (mkMerge [
     ({
+      # Default Tailscale ports should listen
+      networking.firewall.allowedUDPPorts = [ 41641 ];
+    })
+
+    ({
       services.tailscale.enable = true;
       environment.systemPackages = with pkgs; [
         tailscale
