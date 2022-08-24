@@ -216,5 +216,11 @@ in
     source = nvfetcherOut.guestfs-tools;
   };
 
-  netmaker = callPackage ./netmaker { };
+  netmaker = callPackage ./netmaker {
+    source = nvfetcherOut.netmaker;
+  };
+
+  netmaker-ui = callPackage ./netmaker/ui.nix {
+    source = nvfetcherOut.netmaker-ui;
+  };
 } // systemPackages
