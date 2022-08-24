@@ -102,11 +102,11 @@
             "name": null,
             "owner": "bkerler",
             "repo": "edl",
-            "rev": "4f4e5600c7817e6613a40d97f438ea90291fe9f4",
-            "sha256": "sha256-6fr2WCK4V0eqFd2lFx1KQjtA4ObQWDzddsekvPUA9EI=",
+            "rev": "2c2eeddf6684ec03347b5c7fda1f879ce188823e",
+            "sha256": "sha256-dcnMwi+yHs/GEk3E2Ne7dVVoUzG6Wi9XS+KcRyOU/1s=",
             "type": "github"
         },
-        "version": "4f4e5600c7817e6613a40d97f438ea90291fe9f4"
+        "version": "2c2eeddf6684ec03347b5c7fda1f879ce188823e"
     },
     "fcitx5-material-color": {
         "cargoLocks": null,
@@ -140,11 +140,11 @@
             "name": null,
             "owner": "ginuerzh",
             "repo": "gost",
-            "rev": "0247b941ac31344f0d7b3c547941a051188ba202",
-            "sha256": "sha256-GYFWEHt1CNoKvdcQh0fEU/BH3Go85RrIwUZb3EUZeSI=",
+            "rev": "81854a61e0c169b33ae060c3238c83711c432686",
+            "sha256": "sha256-FOGtCZqJ/JZ8LSoKv/7LCbOOMJakyHjA3DCuNHD873c=",
             "type": "github"
         },
-        "version": "0247b941ac31344f0d7b3c547941a051188ba202"
+        "version": "81854a61e0c169b33ae060c3238c83711c432686"
     },
     "guestfs-tools": {
         "cargoLocks": null,
@@ -159,11 +159,11 @@
             "name": null,
             "owner": "rwmjones",
             "repo": "guestfs-tools",
-            "rev": "cb73124db1019a802fac2895f360b1236c0bfaec",
-            "sha256": "sha256-xSOgv4bDj/0EJRmCG/4ypb4lA7KAdDJQTaC9A0FW0yQ=",
+            "rev": "6b81746649cf586c9783fa4f82b0fce138df00f1",
+            "sha256": "sha256-eHlSUsZnQ+Pr+olf9mtAr57qD6+rSRKQnIdwWAAMNPQ=",
             "type": "github"
         },
-        "version": "cb73124db1019a802fac2895f360b1236c0bfaec"
+        "version": "6b81746649cf586c9783fa4f82b0fce138df00f1"
     },
     "ksmbd": {
         "cargoLocks": null,
@@ -178,11 +178,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd",
-            "rev": "71f0c7e5f86e835212bd84fa2a5c3972169de896",
-            "sha256": "sha256-BJSPVtGYVoqGiHgwcgjKvNIq+fME4KM1bHbwha0rcZo=",
+            "rev": "ca468bb1f74598a016ec1cc022229272d243956e",
+            "sha256": "sha256-FCdABXzcFyI25pGxWIkefwH3H3KRcI3VWS79np+7Vb4=",
             "type": "github"
         },
-        "version": "71f0c7e5f86e835212bd84fa2a5c3972169de896"
+        "version": "ca468bb1f74598a016ec1cc022229272d243956e"
     },
     "ksmbd-tools": {
         "cargoLocks": null,
@@ -197,11 +197,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd-tools",
-            "rev": "e1af92da7da2c5c0540bca1d543e7586cfc6d597",
-            "sha256": "sha256-vzn4OJrD62oLFVH9X24/ObYONZ5ZezCbn+MeEN2ahnE=",
+            "rev": "c3ea65643fb5143808ac866c6ce0154dc59c3930",
+            "sha256": "sha256-Gi89++gwaHC6mXH38VJqJpNoPtfpZEXKBiBhNFN+fB4=",
             "type": "github"
         },
-        "version": "e1af92da7da2c5c0540bca1d543e7586cfc6d597"
+        "version": "c3ea65643fb5143808ac866c6ce0154dc59c3930"
     },
     "landrop": {
         "cargoLocks": null,
@@ -230,11 +230,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-QFjx4Ju5xMC9N9GwYAI1TlkJe9jrgznMy2BvYy2HHKY=",
+            "sha256": "sha256-FATtO6xFa/bKwywyhKEFZgrle0QPKZI8BQbrA3IlPRg=",
             "type": "url",
-            "url": "https://releases.mattermost.com/7.1.2/mattermost-7.1.2-linux-amd64.tar.gz"
+            "url": "https://releases.mattermost.com/7.2.0/mattermost-7.2.0-linux-amd64.tar.gz"
         },
-        "version": "7.1.2"
+        "version": "7.2.0"
     },
     "microsocks": {
         "cargoLocks": null,
@@ -266,12 +266,12 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "98103ce2a77776e9093700918a353256a29a6533",
-            "sha256": "sha256-/R+bqxa3kdjuwQWcEaTg1UBUfaG+gK4S+cYN70aCE9E=",
+            "rev": "6b771abfc889d78857b5d65364c2346ca2db30d1",
+            "sha256": "sha256-rFkuETKHbTaviwPf99Tx9O9FTzVZ73ZD4MxhfxPgTBE=",
             "type": "git",
             "url": "https://github.com/alecthw/mmdb_china_ip_list.git"
         },
-        "version": "98103ce2a77776e9093700918a353256a29a6533"
+        "version": "6b771abfc889d78857b5d65364c2346ca2db30d1"
     },
     "motrix": {
         "cargoLocks": null,
@@ -319,11 +319,44 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.8.5",
-            "sha256": "sha256-O/RfaDHiyzY3h4ubIFRgb6Tgge+bnZSfUb3X0wKGAnA=",
+            "rev": "v0.8.10",
+            "sha256": "sha256-Re/tcS9aZhMtMuUIVrDLjTM8stm7LE6VF5H4EEmcqq4=",
             "type": "github"
         },
-        "version": "v0.8.5"
+        "version": "v0.8.10"
+    },
+    "netmaker": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "netmaker",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "gravitl",
+            "repo": "netmaker",
+            "rev": "v0.14.6",
+            "sha256": "sha256-rLIrc8Jm89dEyH/UJzXaHU59tegfQhMGc1E0SWMSPUU=",
+            "type": "github"
+        },
+        "version": "v0.14.6"
+    },
+    "netmaker-ui": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "netmaker-ui",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-jTDScIyqMsyYVs598ZwzRZ7sZOCSWOqzz5CJcIQ+cd0=",
+            "type": "url",
+            "url": "https://github.com/gravitl/netmaker-ui/releases/download/v0.14.6/Netmaker-ui-v0.14.6.zip"
+        },
+        "version": "v0.14.6"
     },
     "pufferpanel": {
         "cargoLocks": null,
@@ -457,11 +490,11 @@
             "name": null,
             "owner": "vouch",
             "repo": "vouch-proxy",
-            "rev": "v0.37.0",
-            "sha256": "sha256-sBbA4uRpCiEPw1D2dxnyHYQZ7JLWlY+OJzu1sscqjGU=",
+            "rev": "v0.37.3",
+            "sha256": "sha256-zXt1Xo6xq1g1putx4q6z7SEXK4lNGRgRnNPXajL5Znw=",
             "type": "github"
         },
-        "version": "v0.37.0"
+        "version": "v0.37.3"
     },
     "vpncloud": {
         "cargoLocks": {
