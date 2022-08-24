@@ -56,13 +56,13 @@
   };
   edl = {
     pname = "edl";
-    version = "4f4e5600c7817e6613a40d97f438ea90291fe9f4";
+    version = "2c2eeddf6684ec03347b5c7fda1f879ce188823e";
     src = fetchFromGitHub ({
       owner = "bkerler";
       repo = "edl";
-      rev = "4f4e5600c7817e6613a40d97f438ea90291fe9f4";
+      rev = "2c2eeddf6684ec03347b5c7fda1f879ce188823e";
       fetchSubmodules = true;
-      sha256 = "sha256-6fr2WCK4V0eqFd2lFx1KQjtA4ObQWDzddsekvPUA9EI=";
+      sha256 = "sha256-dcnMwi+yHs/GEk3E2Ne7dVVoUzG6Wi9XS+KcRyOU/1s=";
     });
   };
   fcitx5-material-color = {
@@ -78,46 +78,46 @@
   };
   gost = {
     pname = "gost";
-    version = "0247b941ac31344f0d7b3c547941a051188ba202";
+    version = "81854a61e0c169b33ae060c3238c83711c432686";
     src = fetchFromGitHub ({
       owner = "ginuerzh";
       repo = "gost";
-      rev = "0247b941ac31344f0d7b3c547941a051188ba202";
+      rev = "81854a61e0c169b33ae060c3238c83711c432686";
       fetchSubmodules = true;
-      sha256 = "sha256-GYFWEHt1CNoKvdcQh0fEU/BH3Go85RrIwUZb3EUZeSI=";
+      sha256 = "sha256-FOGtCZqJ/JZ8LSoKv/7LCbOOMJakyHjA3DCuNHD873c=";
     });
   };
   guestfs-tools = {
     pname = "guestfs-tools";
-    version = "cb73124db1019a802fac2895f360b1236c0bfaec";
+    version = "6b81746649cf586c9783fa4f82b0fce138df00f1";
     src = fetchFromGitHub ({
       owner = "rwmjones";
       repo = "guestfs-tools";
-      rev = "cb73124db1019a802fac2895f360b1236c0bfaec";
+      rev = "6b81746649cf586c9783fa4f82b0fce138df00f1";
       fetchSubmodules = true;
-      sha256 = "sha256-xSOgv4bDj/0EJRmCG/4ypb4lA7KAdDJQTaC9A0FW0yQ=";
+      sha256 = "sha256-eHlSUsZnQ+Pr+olf9mtAr57qD6+rSRKQnIdwWAAMNPQ=";
     });
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "71f0c7e5f86e835212bd84fa2a5c3972169de896";
+    version = "ca468bb1f74598a016ec1cc022229272d243956e";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "71f0c7e5f86e835212bd84fa2a5c3972169de896";
+      rev = "ca468bb1f74598a016ec1cc022229272d243956e";
       fetchSubmodules = true;
-      sha256 = "sha256-BJSPVtGYVoqGiHgwcgjKvNIq+fME4KM1bHbwha0rcZo=";
+      sha256 = "sha256-FCdABXzcFyI25pGxWIkefwH3H3KRcI3VWS79np+7Vb4=";
     });
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "e1af92da7da2c5c0540bca1d543e7586cfc6d597";
+    version = "c3ea65643fb5143808ac866c6ce0154dc59c3930";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd-tools";
-      rev = "e1af92da7da2c5c0540bca1d543e7586cfc6d597";
+      rev = "c3ea65643fb5143808ac866c6ce0154dc59c3930";
       fetchSubmodules = true;
-      sha256 = "sha256-vzn4OJrD62oLFVH9X24/ObYONZ5ZezCbn+MeEN2ahnE=";
+      sha256 = "sha256-Gi89++gwaHC6mXH38VJqJpNoPtfpZEXKBiBhNFN+fB4=";
     });
   };
   landrop = {
@@ -133,10 +133,10 @@
   };
   mattermost = {
     pname = "mattermost";
-    version = "7.1.2";
+    version = "7.2.0";
     src = fetchurl {
-      url = "https://releases.mattermost.com/7.1.2/mattermost-7.1.2-linux-amd64.tar.gz";
-      sha256 = "sha256-QFjx4Ju5xMC9N9GwYAI1TlkJe9jrgznMy2BvYy2HHKY=";
+      url = "https://releases.mattermost.com/7.2.0/mattermost-7.2.0-linux-amd64.tar.gz";
+      sha256 = "sha256-FATtO6xFa/bKwywyhKEFZgrle0QPKZI8BQbrA3IlPRg=";
     };
   };
   microsocks = {
@@ -152,14 +152,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "98103ce2a77776e9093700918a353256a29a6533";
+    version = "6b771abfc889d78857b5d65364c2346ca2db30d1";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "98103ce2a77776e9093700918a353256a29a6533";
+      rev = "6b771abfc889d78857b5d65364c2346ca2db30d1";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-/R+bqxa3kdjuwQWcEaTg1UBUfaG+gK4S+cYN70aCE9E=";
+      sha256 = "sha256-rFkuETKHbTaviwPf99Tx9O9FTzVZ73ZD4MxhfxPgTBE=";
     };
   };
   motrix = {
@@ -183,14 +183,33 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.8.5";
+    version = "v0.8.10";
     src = fetchFromGitHub ({
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.8.5";
+      rev = "v0.8.10";
       fetchSubmodules = true;
-      sha256 = "sha256-O/RfaDHiyzY3h4ubIFRgb6Tgge+bnZSfUb3X0wKGAnA=";
+      sha256 = "sha256-Re/tcS9aZhMtMuUIVrDLjTM8stm7LE6VF5H4EEmcqq4=";
     });
+  };
+  netmaker = {
+    pname = "netmaker";
+    version = "v0.14.6";
+    src = fetchFromGitHub ({
+      owner = "gravitl";
+      repo = "netmaker";
+      rev = "v0.14.6";
+      fetchSubmodules = false;
+      sha256 = "sha256-rLIrc8Jm89dEyH/UJzXaHU59tegfQhMGc1E0SWMSPUU=";
+    });
+  };
+  netmaker-ui = {
+    pname = "netmaker-ui";
+    version = "v0.14.6";
+    src = fetchurl {
+      url = "https://github.com/gravitl/netmaker-ui/releases/download/v0.14.6/Netmaker-ui-v0.14.6.zip";
+      sha256 = "sha256-jTDScIyqMsyYVs598ZwzRZ7sZOCSWOqzz5CJcIQ+cd0=";
+    };
   };
   pufferpanel = {
     pname = "pufferpanel";
@@ -264,13 +283,13 @@
   };
   vouch = {
     pname = "vouch";
-    version = "v0.37.0";
+    version = "v0.37.3";
     src = fetchFromGitHub ({
       owner = "vouch";
       repo = "vouch-proxy";
-      rev = "v0.37.0";
+      rev = "v0.37.3";
       fetchSubmodules = true;
-      sha256 = "sha256-sBbA4uRpCiEPw1D2dxnyHYQZ7JLWlY+OJzu1sscqjGU=";
+      sha256 = "sha256-zXt1Xo6xq1g1putx4q6z7SEXK4lNGRgRnNPXajL5Znw=";
     });
   };
   vpncloud = {
