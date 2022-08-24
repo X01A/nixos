@@ -215,4 +215,6 @@ in
   guestfs-tools = callPackage ./guestfs-tools {
     source = nvfetcherOut.guestfs-tools;
   };
+
+  netmaker = callPackage ./netmaker { };
 } // systemPackages

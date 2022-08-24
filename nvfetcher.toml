@@ -153,3 +153,11 @@ fetch.github = "LANDrop/LANDrop"
 src.git = "https://github.com/rwmjones/guestfs-tools.git"
 fetch.github = "rwmjones/guestfs-tools"
 git.fetchSubmodules = true
+
+[netmaker]
+src.github = "gravitl/netmaker"
+fetch.github = "gravitl/netmaker"
+
+[netmaker-ui]
+src.github = "gravitl/netmaker-ui"
+fetch.url = "https://github.com/gravitl/netmaker-ui/releases/download/$ver/Netmaker-ui-$ver.zip"
