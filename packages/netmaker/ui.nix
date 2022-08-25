@@ -9,6 +9,6 @@ stdenvNoCC.mkDerivation {
   installPhase = ''
     mkdir -p $out
     ${unzip}/bin/unzip $src -d $out
-    echo "window.REACT_APP_BACKEND=\'${backend}\'" > $out/config.js
+    echo "window.REACT_APP_BACKEND='${backend}'" > $out/config.js
   '';
 }
