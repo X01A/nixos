@@ -1,5 +1,7 @@
 { source, unzip, stdenvNoCC }:
 
+{ backend }:
+
 stdenvNoCC.mkDerivation {
   inherit (source) pname version src;
 
@@ -7,5 +9,6 @@ stdenvNoCC.mkDerivation {
   installPhase = ''
     mkdir -p $out
     ${unzip}/bin/unzip $src -d $out
+    echo "window.REACT_APP_BACKEND=\'${backend}\'" > $out/config.js
   '';
 }
