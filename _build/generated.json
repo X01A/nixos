@@ -7,11 +7,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-JmGP9ziouzSQFI1kvpM+ejmQibKP8UNPDXhmNkBCWi8=",
+            "sha256": "sha256-F3Gn2b5zhgd+galkJIt5Hw2fDs9SGKPE7vxi+GRR3h0=",
             "type": "url",
-            "url": "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.07.07.gz"
+            "url": "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.08.26.gz"
         },
-        "version": "2022.07.07"
+        "version": "2022.08.26"
     },
     "cloudreve": {
         "cargoLocks": null,
@@ -197,11 +197,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd-tools",
-            "rev": "c3ea65643fb5143808ac866c6ce0154dc59c3930",
-            "sha256": "sha256-Gi89++gwaHC6mXH38VJqJpNoPtfpZEXKBiBhNFN+fB4=",
+            "rev": "1a0293ff35b57da6fefa860f4920c98d47f0b628",
+            "sha256": "sha256-2TmyBID0axwrYPLx/WuXuFJLiICwg+//jBAONMCfmgg=",
             "type": "github"
         },
-        "version": "c3ea65643fb5143808ac866c6ce0154dc59c3930"
+        "version": "1a0293ff35b57da6fefa860f4920c98d47f0b628"
     },
     "landrop": {
         "cargoLocks": null,
@@ -266,12 +266,12 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "6b771abfc889d78857b5d65364c2346ca2db30d1",
-            "sha256": "sha256-rFkuETKHbTaviwPf99Tx9O9FTzVZ73ZD4MxhfxPgTBE=",
+            "rev": "334792dabcaec4fa678c24295daf4412c6d80280",
+            "sha256": "sha256-0avsdHcjT9KyEJP8CdiehJeH8m8UwdTQHFUTB6STl/s=",
             "type": "git",
             "url": "https://github.com/alecthw/mmdb_china_ip_list.git"
         },
-        "version": "6b771abfc889d78857b5d65364c2346ca2db30d1"
+        "version": "334792dabcaec4fa678c24295daf4412c6d80280"
     },
     "motrix": {
         "cargoLocks": null,
@@ -338,11 +338,11 @@
             "name": null,
             "owner": "gravitl",
             "repo": "netmaker",
-            "rev": "v0.14.6",
-            "sha256": "sha256-rLIrc8Jm89dEyH/UJzXaHU59tegfQhMGc1E0SWMSPUU=",
+            "rev": "v0.15.0",
+            "sha256": "sha256-bQFGJb+8voLn1fnN1N+uKSAue83YLwdghb3vkElv52U=",
             "type": "github"
         },
-        "version": "v0.14.6"
+        "version": "v0.15.0"
     },
     "netmaker-ui": {
         "cargoLocks": null,
@@ -352,11 +352,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-jTDScIyqMsyYVs598ZwzRZ7sZOCSWOqzz5CJcIQ+cd0=",
+            "sha256": "sha256-5I69Tqi8M8gOBzs1Ip0UbXkSmyZusP6j94Nl1KFAlzU=",
             "type": "url",
-            "url": "https://github.com/gravitl/netmaker-ui/releases/download/v0.14.6/Netmaker-ui-v0.14.6.zip"
+            "url": "https://github.com/gravitl/netmaker-ui/releases/download/v0.15.0/netmaker-ui.zip"
         },
-        "version": "v0.14.6"
+        "version": "v0.15.0"
     },
     "pufferpanel": {
         "cargoLocks": null,
