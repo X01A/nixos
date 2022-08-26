@@ -42,5 +42,6 @@
     ./services/pufferpanel.nix
     ./network/nftables/default.nix
     ./network/tailscale
+    ./network/netclient.nix
   ];
 }
