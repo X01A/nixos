@@ -3,6 +3,12 @@
 with lib;
 let
   cfg = config.indexyz.network.netclient;
+  servicePath = with pkgs; [
+    iptables
+    iproute2
+    procps
+    wireguard-tools
+  ];
 in
 {
   options = {
@@ -29,12 +35,28 @@ in
       script = ''
         exec ${pkgs.netmaker}/bin/netclient daemon
       '';
-      path = with pkgs; [
-        iptables
-        iproute2
-        procps
-        wireguard-tools
-      ];
+      path = servicePath;
+    };
+
+    # Workaround form https://github.com/gravitl/netmaker/issues/999
+    # Remove service and timer if resloved
+    systemd.servies.netclient-pull = {
+      after = [ "network.target" "network-online.target" "netclient.service" ];
+      wants = [ "netclient.service" "netclient-pull.timer" ];
+      wantedBy = [ "multi-user.target" ];
+      path = servicePath;
+      script = ''
+        exec ${pkgs.netmaker}/bin/netclient pull -n all
+      '';
+    };
+
+    systemd.timers.netclient-pull = {
+      wantedBy = [ "timers.target" ];
+      description = "Renew tailscale server cert";
+      timerConfig = {
+        OnCalendar = "*:*:0/15";
+        Unit = "netclient-pull.service";
+      };
     };
   };
 }
