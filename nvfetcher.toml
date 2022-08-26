@@ -160,4 +160,4 @@ fetch.github = "gravitl/netmaker"
 
 [netmaker-ui]
 src.github = "gravitl/netmaker-ui"
-fetch.url = "https://github.com/gravitl/netmaker-ui/releases/download/$ver/Netmaker-ui-$ver.zip"
+fetch.url = "https://github.com/gravitl/netmaker-ui/releases/download/$ver/netmaker-ui.zip"
