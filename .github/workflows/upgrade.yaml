@@ -20,29 +20,29 @@ jobs:
           substituters = https://indexyz.cachix.org https://cache.nixos.org/
           trusted-public-keys = indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
 
-    - name: Cache shake database
-      uses: actions/cache@v2
-      with:
-        path: |
-          _build/.shake.*
-        key: nvfecher-database-${{ hashFiles('**/nvfetcher.toml') }}-${{ github.run_id }}
-        restore-keys: |
-          nvfecher-database-${{ hashFiles('**/nvfetcher.toml') }}-
+    # - name: Cache shake database
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: |
+    #       _build/.shake.*
+    #     key: nvfecher-database-${{ hashFiles('**/nvfetcher.toml') }}-${{ github.run_id }}
+    #     restore-keys: |
+    #       nvfecher-database-${{ hashFiles('**/nvfetcher.toml') }}-
 
 
     - name: Check Package
       run: |
-        nix develop -c -- nvfetcher build -o _build | grep -v '^#' > changelog.tmp
+        nix develop -c -- nvfetcher build -o _build
         nix develop -c -- nixpkgs-fmt .
 
-    - name: Output changelog
-      id: changelog
-      run: |
-        CHANGELOG=$(cat changelog.tmp)
-        CHANGELOG="${CHANGELOG//'%'/'%25'}"
-        CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
-        CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
-        echo "::set-output name=changelog::$CHANGELOG"
+    # - name: Output changelog
+    #   id: changelog
+    #   run: |
+    #     CHANGELOG=$(cat changelog.tmp)
+    #     CHANGELOG="${CHANGELOG//'%'/'%25'}"
+    #     CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
+    #     CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
+    #     echo "::set-output name=changelog::$CHANGELOG"
 
     - name: Update flake
       run: |
@@ -57,7 +57,4 @@ jobs:
         labels: |
           automated/nvfetcher
         body: |
-          # NVFetcher output
-          ```
-          ${{ steps.changelog.outputs.changelog }}
-          ```
+          Automate generated pull request
