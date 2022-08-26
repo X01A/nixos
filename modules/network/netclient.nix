@@ -40,7 +40,7 @@ in
 
     # Workaround form https://github.com/gravitl/netmaker/issues/999
     # Remove service and timer if resloved
-    systemd.servies.netclient-pull = {
+    systemd.services.netclient-pull = {
       after = [ "network.target" "network-online.target" "netclient.service" ];
       wants = [ "netclient.service" "netclient-pull.timer" ];
       wantedBy = [ "multi-user.target" ];
