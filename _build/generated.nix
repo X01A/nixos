@@ -3,10 +3,10 @@
 {
   clash-premium = {
     pname = "clash-premium";
-    version = "2022.07.07";
+    version = "2022.08.26";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.07.07.gz";
-      sha256 = "sha256-JmGP9ziouzSQFI1kvpM+ejmQibKP8UNPDXhmNkBCWi8=";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.08.26.gz";
+      sha256 = "sha256-F3Gn2b5zhgd+galkJIt5Hw2fDs9SGKPE7vxi+GRR3h0=";
     };
   };
   cloudreve = {
@@ -111,13 +111,13 @@
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "c3ea65643fb5143808ac866c6ce0154dc59c3930";
+    version = "1a0293ff35b57da6fefa860f4920c98d47f0b628";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd-tools";
-      rev = "c3ea65643fb5143808ac866c6ce0154dc59c3930";
+      rev = "1a0293ff35b57da6fefa860f4920c98d47f0b628";
       fetchSubmodules = true;
-      sha256 = "sha256-Gi89++gwaHC6mXH38VJqJpNoPtfpZEXKBiBhNFN+fB4=";
+      sha256 = "sha256-2TmyBID0axwrYPLx/WuXuFJLiICwg+//jBAONMCfmgg=";
     });
   };
   landrop = {
@@ -152,14 +152,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "6b771abfc889d78857b5d65364c2346ca2db30d1";
+    version = "334792dabcaec4fa678c24295daf4412c6d80280";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "6b771abfc889d78857b5d65364c2346ca2db30d1";
+      rev = "334792dabcaec4fa678c24295daf4412c6d80280";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-rFkuETKHbTaviwPf99Tx9O9FTzVZ73ZD4MxhfxPgTBE=";
+      sha256 = "sha256-0avsdHcjT9KyEJP8CdiehJeH8m8UwdTQHFUTB6STl/s=";
     };
   };
   motrix = {
@@ -194,21 +194,21 @@
   };
   netmaker = {
     pname = "netmaker";
-    version = "v0.14.6";
+    version = "v0.15.0";
     src = fetchFromGitHub ({
       owner = "gravitl";
       repo = "netmaker";
-      rev = "v0.14.6";
+      rev = "v0.15.0";
       fetchSubmodules = false;
-      sha256 = "sha256-rLIrc8Jm89dEyH/UJzXaHU59tegfQhMGc1E0SWMSPUU=";
+      sha256 = "sha256-bQFGJb+8voLn1fnN1N+uKSAue83YLwdghb3vkElv52U=";
     });
   };
   netmaker-ui = {
     pname = "netmaker-ui";
-    version = "v0.14.6";
+    version = "v0.15.0";
     src = fetchurl {
-      url = "https://github.com/gravitl/netmaker-ui/releases/download/v0.14.6/Netmaker-ui-v0.14.6.zip";
-      sha256 = "sha256-jTDScIyqMsyYVs598ZwzRZ7sZOCSWOqzz5CJcIQ+cd0=";
+      url = "https://github.com/gravitl/netmaker-ui/releases/download/v0.15.0/netmaker-ui.zip";
+      sha256 = "sha256-5I69Tqi8M8gOBzs1Ip0UbXkSmyZusP6j94Nl1KFAlzU=";
     };
   };
   pufferpanel = {
