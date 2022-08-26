@@ -17,10 +17,10 @@ in
     ];
 
     boot.kernel.sysctl = {
-      "net.ipv4.ip_forward" = 1;
-      "net.ipv4.conf.all.src_valid_mark" = 1;
-      "net.ipv6.conf.all.disable_ipv6" = 0;
-      "net.ipv6.conf.all.forwarding" = 1;
+      "net.ipv4.ip_forward" = mkDefault 1;
+      "net.ipv4.conf.all.src_valid_mark" = mkDefault 1;
+      "net.ipv6.conf.all.disable_ipv6" = mkDefault 0;
+      "net.ipv6.conf.all.forwarding" = mkDefault 1;
     };
 
     systemd.services.netclient = {
