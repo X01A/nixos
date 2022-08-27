@@ -26,7 +26,7 @@ let
       in
       ''
         rm -f ${fileLocation}
-        cp ${fileData} ${fileLocation}
+        cat ${fileData} > ${fileLocation}
         ${utils.updateConfigScript name false}
       '')
     cfg.profiles);
