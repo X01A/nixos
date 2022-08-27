@@ -130,7 +130,6 @@ in
           LimitCORE = "infinity";
           TasksMax = "infinity";
           StateDirectory = "clash";
-          StateDirectoryMode = "0644";
           RuntimeDirectory = "clash";
           RuntimeDirectoryPreserve = "yes";
           NoNewPrivileges = true;
