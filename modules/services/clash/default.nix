@@ -119,7 +119,11 @@ in
         description = "Clash network proxy";
         wantedBy = [ "multi-user.target" ];
         after = [ "network.target" ];
-        preStart = profileCommands;
+        script = ''
+          ${profileCommands}
+          exec ${cfg.package}/bin/clash -d ${dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}
+        '';
+
         serviceConfig = {
           LimitNOFILE = "16777216";
           LimitNPROC = "infinity";
@@ -139,7 +143,6 @@ in
           RestrictRealtime = true;
           RestrictSUIDSGID = true;
           WorkingDirectory = dataDir;
-          ExecStart = "${cfg.package}/bin/clash -d ${dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}";
         };
       };
     };
