@@ -56,13 +56,13 @@
   };
   edl = {
     pname = "edl";
-    version = "2c2eeddf6684ec03347b5c7fda1f879ce188823e";
+    version = "069b9d1e293d9c5259e8e6bed10f8caf5ffe5293";
     src = fetchFromGitHub ({
       owner = "bkerler";
       repo = "edl";
-      rev = "2c2eeddf6684ec03347b5c7fda1f879ce188823e";
+      rev = "069b9d1e293d9c5259e8e6bed10f8caf5ffe5293";
       fetchSubmodules = true;
-      sha256 = "sha256-dcnMwi+yHs/GEk3E2Ne7dVVoUzG6Wi9XS+KcRyOU/1s=";
+      sha256 = "sha256-0Ai7R2sNWwnbEEM5+6L8Bi0ssiaK/RXm23XZ2Vqz8I4=";
     });
   };
   fcitx5-material-color = {
@@ -98,26 +98,37 @@
       sha256 = "sha256-eHlSUsZnQ+Pr+olf9mtAr57qD6+rSRKQnIdwWAAMNPQ=";
     });
   };
+  hev-socks5-tproxy = {
+    pname = "hev-socks5-tproxy";
+    version = "2.3.2";
+    src = fetchFromGitHub ({
+      owner = "heiher";
+      repo = "hev-socks5-tproxy";
+      rev = "2.3.2";
+      fetchSubmodules = true;
+      sha256 = "sha256-iNhT2ms3zCtT8mlGnWqzZA713E8UVYQjWvE8Ta6261o=";
+    });
+  };
   ksmbd = {
     pname = "ksmbd";
-    version = "ca468bb1f74598a016ec1cc022229272d243956e";
+    version = "a74d03f356e12ee865c9bf98a6a09d6f7dbe2463";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "ca468bb1f74598a016ec1cc022229272d243956e";
+      rev = "a74d03f356e12ee865c9bf98a6a09d6f7dbe2463";
       fetchSubmodules = true;
-      sha256 = "sha256-FCdABXzcFyI25pGxWIkefwH3H3KRcI3VWS79np+7Vb4=";
+      sha256 = "sha256-tFnm4l8SocSe8wEWGvkFexxuhsTeEpM64pnk50f68Wg=";
     });
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "1a0293ff35b57da6fefa860f4920c98d47f0b628";
+    version = "59d247cd13e69a4b6d32cd3d64db55de75430a62";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd-tools";
-      rev = "1a0293ff35b57da6fefa860f4920c98d47f0b628";
+      rev = "59d247cd13e69a4b6d32cd3d64db55de75430a62";
       fetchSubmodules = true;
-      sha256 = "sha256-2TmyBID0axwrYPLx/WuXuFJLiICwg+//jBAONMCfmgg=";
+      sha256 = "sha256-FJJRPyXBqkl4WGP3VQ+hYH2n7WrYrfnunlmKSyQWFQU=";
     });
   };
   landrop = {
@@ -152,14 +163,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "334792dabcaec4fa678c24295daf4412c6d80280";
+    version = "8a8c53522c7d9664ab8e18ed9f4c43763223b7c8";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "334792dabcaec4fa678c24295daf4412c6d80280";
+      rev = "8a8c53522c7d9664ab8e18ed9f4c43763223b7c8";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-0avsdHcjT9KyEJP8CdiehJeH8m8UwdTQHFUTB6STl/s=";
+      sha256 = "sha256-vexQnBZlq3RGcEHQKbUdlt+7IHxde5X5Umj5a+fPqUs=";
     };
   };
   motrix = {
@@ -224,16 +235,16 @@
   };
   realm = {
     pname = "realm";
-    version = "v2.4.1";
+    version = "v2.4.2";
     src = fetchFromGitHub ({
       owner = "zhboner";
       repo = "realm";
-      rev = "v2.4.1";
+      rev = "v2.4.2";
       fetchSubmodules = true;
-      sha256 = "sha256-G92SxJE8cv8ATWt9UfQoBYCdo13/V/wqMlGfO6FI8/k=";
+      sha256 = "sha256-048FK/+UYmtk9aftaWNHb08KOvSKk2gHELgtdbxgCxc=";
     });
     cargoLock."Cargo.lock" = {
-      lockFile = ./realm-v2.4.1/Cargo.lock;
+      lockFile = ./realm-v2.4.2/Cargo.lock;
       outputHashes = { };
     };
   };
