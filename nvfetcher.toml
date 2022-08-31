@@ -163,6 +163,6 @@ src.github = "gravitl/netmaker-ui"
 fetch.url = "https://github.com/gravitl/netmaker-ui/releases/download/$ver/netmaker-ui.zip"
 
 [hev-socks5-tproxy]
-src.github = "heiher/hev-socks5-tproxy"
+src.github_tag = "heiher/hev-socks5-tproxy"
 fetch.github = "heiher/hev-socks5-tproxy"
 git.fetchSubmodules = true
