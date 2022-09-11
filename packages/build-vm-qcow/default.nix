@@ -17,6 +17,7 @@ let
       inherit lib config pkgs;
       inherit diskSize;
       format = "qcow2";
+      copyChannel = false;
     };
   };
 
