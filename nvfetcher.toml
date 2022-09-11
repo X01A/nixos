@@ -1,8 +1,3 @@
-[wgcf]
-src.github = "ViRb3/wgcf"
-fetch.github = "ViRb3/wgcf"
-git.fetchSubmodules = true
-
 [microsocks]
 src.github = "rofl0r/microsocks"
 fetch.github = "rofl0r/microsocks"
@@ -53,16 +48,6 @@ src.git = "https://github.com/alecthw/mmdb_china_ip_list.git"
 fetch.git = "https://github.com/alecthw/mmdb_china_ip_list.git"
 git.fetchSubmodules = true
 src.branch = "release"
-
-[drone-runner-exec]
-src.github = "drone-runners/drone-runner-exec"
-fetch.github = "drone-runners/drone-runner-exec"
-git.fetchSubmodules = true
-
-[drone-runner-docker]
-src.github_tag = "drone-runners/drone-runner-docker"
-fetch.github = "drone-runners/drone-runner-docker"
-git.fetchSubmodules = true
 
 [nali]
 src.manual = "v0.3.2"

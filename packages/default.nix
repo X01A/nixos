@@ -13,10 +13,6 @@ in
   vlmcsd = callPackage ./vlmcsd { };
   speedtest = callPackage ./speedtest { };
 
-  wgcf = callPackage ./wgcf {
-    source = nvfetcherOut.wgcf;
-  };
-
   yacd = callPackage ./yacd {
     source = nvfetcherOut.yacd;
   };
@@ -71,14 +67,6 @@ in
 
   mmdb-ipip = callPackage ./mmdb-ipip {
     source = nvfetcherOut.mmdb-ipip;
-  };
-
-  drone-runner-exec = callPackage ./drone-runner-exec {
-    source = nvfetcherOut.drone-runner-exec;
-  };
-
-  drone-runner-docker = callPackage ./drone-runner-docker {
-    source = nvfetcherOut.drone-runner-docker;
   };
 
   nali = callPackage ./nali {

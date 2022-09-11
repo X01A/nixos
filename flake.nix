@@ -112,7 +112,8 @@
           })
         ];
       };
-      rpi.image = import "${toString nixpkgs}/nixos/lib/eval-config.nix" {
+
+      rpi.image = (import "${toString nixpkgs}/nixos/lib/eval-config.nix" {
         system = "aarch64-linux";
         modules = [
           "${toString nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
@@ -123,6 +124,6 @@
 
           })
         ];
-      };
+      }).config.system.build.sdImage;
     };
 }
