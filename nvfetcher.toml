@@ -74,11 +74,6 @@ src.git = "https://github.com/namjaejeon/ksmbd-tools.git"
 fetch.github = "namjaejeon/ksmbd-tools"
 git.fetchSubmodules = true
 
-[vouch]
-src.github_tag = "vouch/vouch-proxy"
-fetch.github = "vouch/vouch-proxy"
-git.fetchSubmodules = true
-
 [gost]
 src.git = "https://github.com/ginuerzh/gost.git"
 fetch.github = "ginuerzh/gost"

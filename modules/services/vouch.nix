@@ -27,13 +27,13 @@ in
   };
 
   config = mkIf cfg.enable {
-    systemd.services.vouch = {
+    systemd.services.vouch-proxy = {
       description = "an SSO and OAuth / OIDC login solution for Nginx using the auth_request module";
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
 
       script = ''
-        ${pkgs.vouch}/bin/vouch-proxy -config ${resultJSON} -port ${toString cfg.port}
+        ${pkgs.vouch-proxy}/bin/vouch-proxy -config ${resultJSON} -port ${toString cfg.port}
       '';
     };
   };
