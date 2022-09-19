@@ -83,10 +83,6 @@ in
     source = nvfetcherOut.mattermost;
   };
 
-  vouch = callPackage ./vouch {
-    source = nvfetcherOut.vouch;
-  };
-
   gost-master = callPackage ./gost {
     source = nvfetcherOut.gost;
   };
