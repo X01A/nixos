@@ -47,6 +47,8 @@ in
           ssl_session_timeout 10m;
           ssl_session_cache builtin:1000 shared:SSL:10m;
           ssl_reject_handshake on;
+
+          return 444;
         '';
 
         default = true;
@@ -55,10 +57,6 @@ in
           (mkListenConfig "0.0.0.0")
           (mkListenConfig "::")
         ];
-
-        locations."/" = {
-          return = "444";
-        };
       };
     };
   };
