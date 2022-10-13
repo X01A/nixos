@@ -4,19 +4,11 @@ with lib;
 let
   cfg = config.indexyz.services.nginx;
 
-  cert = with pkgs; stdenv.mkDerivation rec {
-    name = "fakecert";
-    phases = "installPhase";
-    buildInputs = [ openssl ];
-
-    installPhase = ''
-      mkdir -p $out/certs
-      cd $out/certs
-      openssl genrsa -out server.key 4096
-      openssl req -new -x509 -days 3650 \
-          -key server.key -out server.crt \
-          -subj "/C=CN/ST=FakeCert/L=FakeCert/O=FakeCert/OU=FakeCert/CN=example.com"
-    '';
+  mkListenConfig = addr: {
+    inherit addr;
+    port = 443;
+    ssl = true;
+    extraParameters = [ "http2" "default" "fastopen=3" "reuseport" ];
   };
 in
 {
@@ -48,16 +40,21 @@ in
     };
 
     services.nginx.virtualHosts = mkIf cfg.fakeHost {
-      "default.host" = {
-        sslCertificate = "${cert}/certs/server.crt";
-        sslCertificateKey = "${cert}/certs/server.key";
+      "_" = {
         addSSL = true;
+        extraConfig = ''
+          ssl_protocols TLSv1.2 TLSv1.3;
+          ssl_session_timeout 10m;
+          ssl_session_cache builtin:1000 shared:SSL:10m;
+          ssl_reject_handshake on;
+        '';
 
         default = true;
 
-        locations."/.well-known/acme-challenge" = {
-          root = "/var/lib/acme/acme-challenge";
-        };
+        listen = [
+          (mkListenConfig "0.0.0.0")
+          (mkListenConfig "::")
+        ];
 
         locations."/" = {
           return = "444";
