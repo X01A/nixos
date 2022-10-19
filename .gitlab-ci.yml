@@ -1,0 +1,20 @@
+stages:
+- test
+- build
+
+nixpkgs-fmt:
+  stage: test
+  image: nixery.dev/shell/nixpkgs-fmt
+  script:
+  - nixpkgs-fmt --check .
+
+.build:
+  stage: build
+  image: nixpkgs/nix-unstable
+  script:
+  - bash build-cache.bash
+
+build linux:
+  extends:
+  - .build
+
