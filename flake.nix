@@ -52,7 +52,7 @@
           };
 
           isDerivation = package: pkgs.lib.attrsets.hasAttrByPath [ "drvPath" ] package;
-          packageList = (filter (it: isDerivation it.value) (pkgs.lib.attrsets.mapAttrsToList (name: value: { inherit name value; }) packages));
+          packageList = (builtins.filter (it: isDerivation it.value) (pkgs.lib.attrsets.mapAttrsToList (name: value: { inherit name value; }) packages));
           buildPacakgesList = builtins.filter
             (item:
               let
