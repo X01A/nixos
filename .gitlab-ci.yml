@@ -12,6 +12,7 @@ nixpkgs-fmt:
   stage: build
   variables:
     USER: root
+    CACHIX_AUTH_TOKEN: $CACHIX_TOKEN
   script:
   - |
     mkdir -p /etc/nix
@@ -21,7 +22,6 @@ nixpkgs-fmt:
     groupadd -r nixbld
     for n in $(seq 1 `nproc`); do useradd -c "Nix build user $n" -d /var/empty -g nixbld -G nixbld -M -N -r nixbld$n; done
   - |
-    cachix authtoken $CACHIX_TOKEN
     bash build-cache.bash
 
 build linux:
