@@ -33,5 +33,6 @@ build linux aarch64:
   extends:
   - .build
   tags:
-  - aarch64-linux
-  image: nixery.dev/arm64/shell/nix/gnugrep/cachix/git/shadow/jq
+  # FIXME: using shell executor currently, switch to docker executor
+  - aarch64-linux-shell
+
