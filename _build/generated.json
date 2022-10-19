@@ -51,44 +51,6 @@
         },
         "version": "573c1eb7eabc97aa06e0e9ad85f5148110749876"
     },
-    "drone-runner-docker": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "drone-runner-docker",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "drone-runners",
-            "repo": "drone-runner-docker",
-            "rev": "v1.8.2",
-            "sha256": "sha256-ZpkVfzqeltZSYrKYB6dXtlVjl1uFpQdl2fa+c5ApiW4=",
-            "type": "github"
-        },
-        "version": "v1.8.2"
-    },
-    "drone-runner-exec": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "drone-runner-exec",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "drone-runners",
-            "repo": "drone-runner-exec",
-            "rev": "v1.0.0-beta.10",
-            "sha256": "sha256-dQIN0DXH9j4Qu0Q8vwHjTG/lrtThHnR2bc1UymuUACI=",
-            "type": "github"
-        },
-        "version": "v1.0.0-beta.10"
-    },
     "edl": {
         "cargoLocks": null,
         "extract": null,
@@ -102,11 +64,11 @@
             "name": null,
             "owner": "bkerler",
             "repo": "edl",
-            "rev": "069b9d1e293d9c5259e8e6bed10f8caf5ffe5293",
-            "sha256": "sha256-0Ai7R2sNWwnbEEM5+6L8Bi0ssiaK/RXm23XZ2Vqz8I4=",
+            "rev": "f6b94da5faa003b48d24a5f4a8f0b8495626fd5b",
+            "sha256": "sha256-bxnRy+inWNArE2gUA/qDPy7NKvqBm43sbxdIaTc9N28=",
             "type": "github"
         },
-        "version": "069b9d1e293d9c5259e8e6bed10f8caf5ffe5293"
+        "version": "f6b94da5faa003b48d24a5f4a8f0b8495626fd5b"
     },
     "fcitx5-material-color": {
         "cargoLocks": null,
@@ -140,11 +102,11 @@
             "name": null,
             "owner": "ginuerzh",
             "repo": "gost",
-            "rev": "81854a61e0c169b33ae060c3238c83711c432686",
-            "sha256": "sha256-FOGtCZqJ/JZ8LSoKv/7LCbOOMJakyHjA3DCuNHD873c=",
+            "rev": "b0bb26fc952bb7e27a93d7be9d4694e9e0d6da84",
+            "sha256": "sha256-tmZSGKfhBxGBGjh/Br0nBDwdb4Svmn9ckLpQNKMEkFU=",
             "type": "github"
         },
-        "version": "81854a61e0c169b33ae060c3238c83711c432686"
+        "version": "b0bb26fc952bb7e27a93d7be9d4694e9e0d6da84"
     },
     "guestfs-tools": {
         "cargoLocks": null,
@@ -159,11 +121,11 @@
             "name": null,
             "owner": "rwmjones",
             "repo": "guestfs-tools",
-            "rev": "6b81746649cf586c9783fa4f82b0fce138df00f1",
-            "sha256": "sha256-eHlSUsZnQ+Pr+olf9mtAr57qD6+rSRKQnIdwWAAMNPQ=",
+            "rev": "e094eb340b367b2fc6ef4cad495bb15f4efc1da9",
+            "sha256": "sha256-L53nMNzRW0HDlCO4NyPuAN9QDSpmirwufcToL0cSBRI=",
             "type": "github"
         },
-        "version": "6b81746649cf586c9783fa4f82b0fce138df00f1"
+        "version": "e094eb340b367b2fc6ef4cad495bb15f4efc1da9"
     },
     "hev-socks5-tproxy": {
         "cargoLocks": null,
@@ -178,11 +140,11 @@
             "name": null,
             "owner": "heiher",
             "repo": "hev-socks5-tproxy",
-            "rev": "2.3.2",
-            "sha256": "sha256-iNhT2ms3zCtT8mlGnWqzZA713E8UVYQjWvE8Ta6261o=",
+            "rev": "2.3.3",
+            "sha256": "sha256-UEqv5WO+VlprJmHoLdI/h34CyP/yhzC8qofI+rAZnAI=",
             "type": "github"
         },
-        "version": "2.3.2"
+        "version": "2.3.3"
     },
     "ksmbd": {
         "cargoLocks": null,
@@ -197,11 +159,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd",
-            "rev": "a74d03f356e12ee865c9bf98a6a09d6f7dbe2463",
-            "sha256": "sha256-tFnm4l8SocSe8wEWGvkFexxuhsTeEpM64pnk50f68Wg=",
+            "rev": "817c8e7359c0d8e3fc11eac5174265caa401dd9f",
+            "sha256": "sha256-KLzi5icsbiYE61iS59ITJM78zUNAvG7VWBiiSKoKUgM=",
             "type": "github"
         },
-        "version": "a74d03f356e12ee865c9bf98a6a09d6f7dbe2463"
+        "version": "817c8e7359c0d8e3fc11eac5174265caa401dd9f"
     },
     "ksmbd-tools": {
         "cargoLocks": null,
@@ -216,11 +178,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd-tools",
-            "rev": "59d247cd13e69a4b6d32cd3d64db55de75430a62",
-            "sha256": "sha256-FJJRPyXBqkl4WGP3VQ+hYH2n7WrYrfnunlmKSyQWFQU=",
+            "rev": "626f028a80a9de3c06500beec1cc92041649d136",
+            "sha256": "sha256-vZNRL3AyQS5ZlDKiKfbdWA7Yw9guJZOAdZi6eM3YTzM=",
             "type": "github"
         },
-        "version": "59d247cd13e69a4b6d32cd3d64db55de75430a62"
+        "version": "626f028a80a9de3c06500beec1cc92041649d136"
     },
     "landrop": {
         "cargoLocks": null,
@@ -249,11 +211,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-FATtO6xFa/bKwywyhKEFZgrle0QPKZI8BQbrA3IlPRg=",
+            "sha256": "sha256-N4wvgrTmg1J06IPmpLlPHOHNNB+bH2BBQgEsv9GWCN0=",
             "type": "url",
-            "url": "https://releases.mattermost.com/7.2.0/mattermost-7.2.0-linux-amd64.tar.gz"
+            "url": "https://releases.mattermost.com/7.4.0/mattermost-7.4.0-linux-amd64.tar.gz"
         },
-        "version": "7.2.0"
+        "version": "7.4.0"
     },
     "microsocks": {
         "cargoLocks": null,
@@ -285,12 +247,12 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8a8c53522c7d9664ab8e18ed9f4c43763223b7c8",
-            "sha256": "sha256-vexQnBZlq3RGcEHQKbUdlt+7IHxde5X5Umj5a+fPqUs=",
+            "rev": "f9c082927627b0f84200b3caab8f14605f82bb60",
+            "sha256": "sha256-EJdk8JvjusX8wCjjJ5N7jshKfIJcviiRfKFP4OOo1BI=",
             "type": "git",
             "url": "https://github.com/alecthw/mmdb_china_ip_list.git"
         },
-        "version": "8a8c53522c7d9664ab8e18ed9f4c43763223b7c8"
+        "version": "f9c082927627b0f84200b3caab8f14605f82bb60"
     },
     "motrix": {
         "cargoLocks": null,
@@ -338,44 +300,11 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.8.10",
-            "sha256": "sha256-Re/tcS9aZhMtMuUIVrDLjTM8stm7LE6VF5H4EEmcqq4=",
+            "rev": "v0.10.0",
+            "sha256": "sha256-irOrYQIMy1GS/EsN4YtLP4/lHuQ+r7ZGzvNA4dkHi8s=",
             "type": "github"
         },
-        "version": "v0.8.10"
-    },
-    "netmaker": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "netmaker",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "gravitl",
-            "repo": "netmaker",
-            "rev": "v0.15.0",
-            "sha256": "sha256-bQFGJb+8voLn1fnN1N+uKSAue83YLwdghb3vkElv52U=",
-            "type": "github"
-        },
-        "version": "v0.15.0"
-    },
-    "netmaker-ui": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "netmaker-ui",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-5I69Tqi8M8gOBzs1Ip0UbXkSmyZusP6j94Nl1KFAlzU=",
-            "type": "url",
-            "url": "https://github.com/gravitl/netmaker-ui/releases/download/v0.15.0/netmaker-ui.zip"
-        },
-        "version": "v0.15.0"
+        "version": "v0.10.0"
     },
     "pufferpanel": {
         "cargoLocks": null,
@@ -399,7 +328,7 @@
     "realm": {
         "cargoLocks": {
             "Cargo.lock": [
-                "./realm-v2.4.2/Cargo.lock",
+                "./realm-v2.4.4/Cargo.lock",
                 {}
             ]
         },
@@ -414,11 +343,11 @@
             "name": null,
             "owner": "zhboner",
             "repo": "realm",
-            "rev": "v2.4.2",
-            "sha256": "sha256-048FK/+UYmtk9aftaWNHb08KOvSKk2gHELgtdbxgCxc=",
+            "rev": "v2.4.4",
+            "sha256": "sha256-pGIPfMliRkTVjGtLZBdFL0ABx3G0jZHeX6En0CqhKFM=",
             "type": "github"
         },
-        "version": "v2.4.2"
+        "version": "v2.4.4"
     },
     "simple-obfs": {
         "cargoLocks": null,
@@ -496,25 +425,6 @@
         },
         "version": "v2.4.1"
     },
-    "vouch": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "vouch",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "vouch",
-            "repo": "vouch-proxy",
-            "rev": "v0.37.3",
-            "sha256": "sha256-zXt1Xo6xq1g1putx4q6z7SEXK4lNGRgRnNPXajL5Znw=",
-            "type": "github"
-        },
-        "version": "v0.37.3"
-    },
     "vpncloud": {
         "cargoLocks": {
             "Cargo.lock": [
@@ -552,25 +462,6 @@
             "url": "https://home-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.weixin/com.tencent.weixin_2.1.3_amd64.deb"
         },
         "version": "2.1.3"
-    },
-    "wgcf": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "wgcf",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "ViRb3",
-            "repo": "wgcf",
-            "rev": "v2.2.15",
-            "sha256": "sha256-tUEeczs3J//2ZrZkAsSn3C+GScRPaIgheRM2wByS8p4=",
-            "type": "github"
-        },
-        "version": "v2.2.15"
     },
     "winbox": {
         "cargoLocks": null,
