@@ -11,6 +11,8 @@ nixpkgs-fmt:
 .build:
   stage: build
   image: nixpkgs/nix-unstable
+  variables:
+    CACHIX_TOKEN: $CACHIX_TOKEN
   script:
   - bash build-cache.bash
 

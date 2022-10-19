@@ -4,8 +4,7 @@ set -ex
 nix --version
 
 # Upload and build cache
-
-PACKAGES_LIST=$(nix-build list-package.nix)
+PACKAGES_LIST=$(nix build --print-out-paths --no-link .#packageList)
 for PACKAGE in $(cat $PACKAGES_LIST | jq -r '.[]'); do
   echo "Build package: $PACKAGE"
   nix build --no-link ".#"$PACKAGE
