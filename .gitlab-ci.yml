@@ -10,10 +10,15 @@ nixpkgs-fmt:
 
 .build:
   stage: build
-  image: nixpkgs/nix-unstable
+  image:  nixery.dev/shell/nix/gnugrep/cachix
   variables:
     CACHIX_TOKEN: $CACHIX_TOKEN
   script:
+  - |
+    echo "" >> /etc/nix/nix.conf
+    echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
+    echo "substituters = https://indexyz.cachix.org https://cache.nixos.org/" >> /etc/nix/nix.conf
+    echo "trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ=" >> /etc/nix/nix.conf
   - bash build-cache.bash
 
 build linux:
