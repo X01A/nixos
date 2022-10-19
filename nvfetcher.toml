@@ -54,11 +54,6 @@ src.manual = "v0.3.2"
 fetch.github = "zu1k/nali"
 git.fetchSubmodules = true
 
-[netbird]
-src.github = "netbirdio/netbird"
-fetch.github = "netbirdio/netbird"
-git.fetchSubmodules = true
-
 [mattermost]
 src.webpage = "https://mattermost.com/deploy/"
 src.regex = "mattermost-(.*)-linux-amd64.tar.gz"
