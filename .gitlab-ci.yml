@@ -26,5 +26,5 @@ nixpkgs-fmt:
 build linux:
   extends:
   - .build
-  image: nixery.dev/shell/nix/gnugrep/cachix/git/shadow
+  image: nixery.dev/shell/nix/gnugrep/cachix/git/shadow/jq
 
