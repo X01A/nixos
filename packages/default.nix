@@ -200,14 +200,6 @@ in
     source = nvfetcherOut.guestfs-tools;
   };
 
-  netmaker = callPackage ./netmaker {
-    source = nvfetcherOut.netmaker;
-  };
-
-  netmaker-ui = callPackage ./netmaker/ui.nix {
-    source = nvfetcherOut.netmaker-ui;
-  };
-
   hev-socks5-tproxy = callPackage ./hev-socks5-tproxy {
     source = nvfetcherOut.hev-socks5-tproxy;
   };
