@@ -31,5 +31,7 @@ build linux:
 
 build linux aarch64:
   extends:
-  - build
+  - .build
+  tags:
+  - aarch64-linux
   image: nixery.dev/arm64/shell/nix/gnugrep/cachix/git/shadow/jq
