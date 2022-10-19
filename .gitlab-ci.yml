@@ -29,3 +29,7 @@ build linux:
   - .build
   image: nixery.dev/shell/nix/gnugrep/cachix/git/shadow/jq
 
+build linux aarch64:
+  extends:
+  - build
+  image: nixery.dev/arm64/shell/nix/gnugrep/cachix/git/shadow/jq
