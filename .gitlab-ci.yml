@@ -10,9 +10,9 @@ nixpkgs-fmt:
 
 .build:
   stage: build
-  image:  nixery.dev/shell/nix/gnugrep/cachix
   variables:
     CACHIX_TOKEN: $CACHIX_TOKEN
+    USER: root
   script:
   - |
     mkdir -p /etc/nix
@@ -24,4 +24,5 @@ nixpkgs-fmt:
 build linux:
   extends:
   - .build
+  image:  nixery.dev/shell/nix/gnugrep/cachix
 
