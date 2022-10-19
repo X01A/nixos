@@ -58,13 +58,18 @@
               in
               (pkgs.lib.lists.any (item: item == system) meta))
             packageList;
+
+          jsonPackages = builtins.toJSON (map (it: it.name) buildPacakgesList);
+
           buildPacakges = builtins.listToAttrs buildPacakgesList;
           finalPackages = buildPacakges //
           cloudreve-cli.legacyPackages."${system}";
           prefetch = pkgs.nix-prefetch.override { nix = pkgs.nixUnstable; };
         in
         {
-          legacyPackages = finalPackages;
+          legacyPackages = finalPackages // {
+            packageList = pkgs.writeText "packages.json" jsonPackages;
+          };
           overlay = final: prev: finalPackages;
           overlays = builtins.mapAttrs (overlayPkgs: (final: prev: overlayPkgs)) buildPacakges;
           devShell = pkgs.mkShell {
