@@ -11,9 +11,15 @@ nixpkgs-fmt:
 .build:
   stage: build
   variables:
-    USER: root
     CACHIX_AUTH_TOKEN: $CACHIX_TOKEN
   script:
+  - |
+    bash build-cache.bash
+
+.build docker:
+  variables:
+    USER: root
+  before_script:
   - |
     mkdir -p /etc/nix
     echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
@@ -21,12 +27,11 @@ nixpkgs-fmt:
     echo "trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ=" >> /etc/nix/nix.conf
     groupadd -r nixbld
     for n in $(seq 1 `nproc`); do useradd -c "Nix build user $n" -d /var/empty -g nixbld -G nixbld -M -N -r nixbld$n; done
-  - |
-    bash build-cache.bash
 
 build linux:
   extends:
   - .build
+  - .build docker
   image: nixery.dev/shell/nix/gnugrep/cachix/git/shadow/jq
 
 build linux aarch64:
