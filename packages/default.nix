@@ -73,10 +73,6 @@ in
     source = nvfetcherOut.nali;
   };
 
-  netbird = callPackage ./netbird {
-    source = nvfetcherOut.netbird;
-  };
-
   novnc = callPackage ./novnc { };
 
   mattermost-ent = callPackage ./mattermost-ent {
