@@ -107,5 +107,11 @@ in
       systemd.enable = true;
       settings.main = mainSettings;
     };
+
+    systemd.user.services.waybar = {
+      # Temporary "fix" until https://github.com/Alexays/Waybar/issues/1205
+      # is resolved
+      Service.Environment = [ "PATH=/run/current-system/sw/bin" ];
+    };
   };
 }
