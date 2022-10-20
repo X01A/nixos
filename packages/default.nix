@@ -131,6 +131,11 @@ in
         "network.dns.echconfig.enabled" = true;
         "network.dns.http3_echconfig.enabled" = true;
         "network.dns.use_https_rr_as_altsvc" = true;
+
+        # Mode to use when receiving pan gesture input.
+        # Fix wired left / right swipe on touchpad
+        # https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/StaticPrefList.yaml#l562
+        "apz.gtk.pangesture.delta_mode" = 2;
       };
 
       ExtensionSettings = {
