@@ -102,6 +102,7 @@ in
         for_window [title="^Extracting\s" app_id="(org.kde.dolphin|org.kde.ark)"] floating enable
         for_window [title="^Information\s*—\s*Dolphin" app_id="org.kde.dolphin"] floating enable
         for_window [title="^Loading archive" app_id="org.kde.ark"] floating enable
+        for_window [app_id="pavucontrol"] floating enable
 
         seat * xcursor_theme Adwaita
         input type:touchpad {
