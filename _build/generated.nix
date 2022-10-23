@@ -100,13 +100,13 @@
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "626f028a80a9de3c06500beec1cc92041649d136";
+    version = "f696557255b75cdc1ca88e7f4a85eef90e486f64";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd-tools";
-      rev = "626f028a80a9de3c06500beec1cc92041649d136";
+      rev = "f696557255b75cdc1ca88e7f4a85eef90e486f64";
       fetchSubmodules = true;
-      sha256 = "sha256-vZNRL3AyQS5ZlDKiKfbdWA7Yw9guJZOAdZi6eM3YTzM=";
+      sha256 = "sha256-xNBKdBKWdFkQYyCGOFJ75lOk9UMi3lTmeE80xsP1yZI=";
     });
   };
   landrop = {
@@ -141,14 +141,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "f9c082927627b0f84200b3caab8f14605f82bb60";
+    version = "4129469337377cd395b07a30ce4966e432f79a9e";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "f9c082927627b0f84200b3caab8f14605f82bb60";
+      rev = "4129469337377cd395b07a30ce4966e432f79a9e";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-EJdk8JvjusX8wCjjJ5N7jshKfIJcviiRfKFP4OOo1BI=";
+      sha256 = "sha256-omJbtZ63QgtCOZk+ANrTvMNIbzpoXyaVZpC08wpmEXY=";
     };
   };
   motrix = {
@@ -168,17 +168,6 @@
       rev = "v0.3.2";
       fetchSubmodules = true;
       sha256 = "sha256-iRLoUBA+Kzv1/LZQ8HCvR79K1riYErxEWhB0OmvFy2g=";
-    });
-  };
-  netbird = {
-    pname = "netbird";
-    version = "v0.10.0";
-    src = fetchFromGitHub ({
-      owner = "netbirdio";
-      repo = "netbird";
-      rev = "v0.10.0";
-      fetchSubmodules = true;
-      sha256 = "sha256-irOrYQIMy1GS/EsN4YtLP4/lHuQ+r7ZGzvNA4dkHi8s=";
     });
   };
   pufferpanel = {
