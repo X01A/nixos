@@ -2,20 +2,16 @@
 
 {
   users.users.root.initialPassword = lib.mkDefault "toor";
-  boot = {
-    supportedFilesystems = [ "zfs" ];
-    initrd.supportedFilesystems = [ "zfs" ];
-    kernelParams = [ "console=tty0" "console=ttyS0,115200n8" ];
-  };
 
   networking = {
     wireless.enable = false;
-
-    hostId = "9a18f601";
   };
 
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-  hardware.enableAllFirmware = true;
+  networking.networkmanager.enable = true;
+
+  boot.supportedFilesystems = lib.mkForce [ "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" "ext4" "vfat" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
   indexyz.services.ssh.enable = true;
