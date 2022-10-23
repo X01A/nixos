@@ -1,7 +1,7 @@
 { source, rust-bin, makeRustPlatform, lib, pkg-config, openssl, ... }:
 
 let
-  rust = rust-bin.nightly.latest.minimal;
+  rust = rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
   rustPlatform = makeRustPlatform {
     rustc = rust;
     cargo = rust;
@@ -12,7 +12,9 @@ rustPlatform.buildRustPackage rec {
 
   cargoLock = source.cargoLock."Cargo.lock";
 
-  buildFeatures = [ "multi-thread" "brutal-shutdown" "jemalloc" ];
+  # transport feature broken
+  buildNoDefaultFeatures = true;
+  buildFeatures = [ "multi-thread" "brutal-shutdown" "jemalloc" "proxy" "balance" ];
 
   buildInputs = [
     openssl
