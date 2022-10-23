@@ -178,11 +178,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd-tools",
-            "rev": "626f028a80a9de3c06500beec1cc92041649d136",
-            "sha256": "sha256-vZNRL3AyQS5ZlDKiKfbdWA7Yw9guJZOAdZi6eM3YTzM=",
+            "rev": "f696557255b75cdc1ca88e7f4a85eef90e486f64",
+            "sha256": "sha256-xNBKdBKWdFkQYyCGOFJ75lOk9UMi3lTmeE80xsP1yZI=",
             "type": "github"
         },
-        "version": "626f028a80a9de3c06500beec1cc92041649d136"
+        "version": "f696557255b75cdc1ca88e7f4a85eef90e486f64"
     },
     "landrop": {
         "cargoLocks": null,
@@ -247,12 +247,12 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f9c082927627b0f84200b3caab8f14605f82bb60",
-            "sha256": "sha256-EJdk8JvjusX8wCjjJ5N7jshKfIJcviiRfKFP4OOo1BI=",
+            "rev": "4129469337377cd395b07a30ce4966e432f79a9e",
+            "sha256": "sha256-omJbtZ63QgtCOZk+ANrTvMNIbzpoXyaVZpC08wpmEXY=",
             "type": "git",
             "url": "https://github.com/alecthw/mmdb_china_ip_list.git"
         },
-        "version": "f9c082927627b0f84200b3caab8f14605f82bb60"
+        "version": "4129469337377cd395b07a30ce4966e432f79a9e"
     },
     "motrix": {
         "cargoLocks": null,
@@ -286,25 +286,6 @@
             "type": "github"
         },
         "version": "v0.3.2"
-    },
-    "netbird": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "netbird",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "netbirdio",
-            "repo": "netbird",
-            "rev": "v0.10.0",
-            "sha256": "sha256-irOrYQIMy1GS/EsN4YtLP4/lHuQ+r7ZGzvNA4dkHi8s=",
-            "type": "github"
-        },
-        "version": "v0.10.0"
     },
     "pufferpanel": {
         "cargoLocks": null,
