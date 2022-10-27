@@ -1,23 +1,22 @@
 { lib, config, pkgs, ... }:
 
 with lib;
-with pkgs;
 let
   cfg = config.indexyz.programs.sway;
 
   alt = "Mod1";
   modifier = "Mod4";
 
-  screenSelect = writeScript "screen-select-print" ''
-    #!${runtimeShell}
-    PATH=${makeBinPath [ grim slurp wl-clipboard coreutils ]}
+  screenSelect = pkgs.writeScript "screen-select-print" ''
+    #!${pkgs.runtimeShell}
+    PATH=${makeBinPath (with pkgs; [ grim slurp wl-clipboard coreutils ])}
 
     grim -g "$(slurp)" - | wl-copy -t image/png
   '';
 
-  screenCurrentWindow = writeScript "screenshot-current-window" ''
-    #!${runtimeShell}
-    PATH=${makeBinPath [ jq sway grim wl-clipboard coreutils ]}
+  screenCurrentWindow = pkgs.writeScript "screenshot-current-window" ''
+    #!${pkgs.runtimeShell}
+    PATH=${makeBinPath (with pkgs; [ jq sway grim wl-clipboard coreutils ])}
 
     grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy -t image/png
   '';
