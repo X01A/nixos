@@ -1,11 +1,26 @@
 { lib, config, pkgs, ... }:
 
 with lib;
+with pkgs;
 let
   cfg = config.indexyz.programs.sway;
 
   alt = "Mod1";
   modifier = "Mod4";
+
+  screenSelect = writeScript "screen-select-print" ''
+    #!${runtimeShell}
+    PATH=${makeBinPath [ grim slurp wl-clipboard coreutils ]}
+
+    grim -g "$(slurp)" - | wl-copy -t image/png
+  '';
+
+  screenCurrentWindow = writeScript "screenshot-current-window" ''
+    #!${runtimeShell}
+    PATH=${makeBinPath [ jq sway grim wl-clipboard coreutils ]}
+
+    grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy -t image/png
+  '';
 
   workspaceKeybinds = builtins.listToAttrs (lists.flatten (map
     (number: [
@@ -13,10 +28,14 @@ let
         name = "Ctrl+${toString number}";
         value = "workspace number ${toString number}";
       }
+      {
+        name = "Ctrl+Shift+${toString number}";
+        value = "move container to workspace number ${toString number}";
+      }
     ])
     (lists.range 1 9)));
 
-  keybindings = lib.mkOptionDefault
+  keybindings =
     ({
       XF86MonBrightnessDown = "exec '${pkgs.brightnessctl}/bin/brightnessctl set 5%-'";
       XF86MonBrightnessUp = "exec '${pkgs.brightnessctl}/bin/brightnessctl set +5%'";
@@ -25,12 +44,30 @@ let
       XF86AudioLowerVolume = "exec 'pactl set-sink-volume @DEFAULT_SINK@ -5%'";
       XF86AudioMute = "exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'";
       Print = "exec ${pkgs.grim}/bin/grim -t png - | wl-copy -t image/png";
-
+      "Shift+Print" = "exec ${screenSelect}";
+      "Ctrl+Shift+Print" = "exec ${screenCurrentWindow}";
       "${alt}+Shift+l" = "exec swaylock -f -c 000000";
       "Ctrl+Shift+q" = "kill";
+      "Ctrl+c" = "reload";
       "Ctrl+r" = "exec --no-startup-id rofi -show drun -drun-show-actions -p 'app:' -L 10";
       "Ctrl+Shift+r" = "exec --no-startup-id rofi -show run -p 'shell:' -L 10";
       "Ctrl+Return" = "exec alacritty";
+      "Ctrl+Shift+space" = "floating toggle";
+      "Mod4+r" = "mode resize";
+      "Mod4+s" = "layout staking";
+      "Mod4+t" = "layout tabbed";
+      "Mod4+e" = "layout toggle split";
+      "Mod4+f" = "fullscreen toggle";
+
+      # Move windows
+      "Ctrl+Shift+Down" = "move down";
+      "Ctrl+Shift+Left" = "move left";
+      "Ctrl+Shift+Right" = "move right";
+      "Ctrl+Shift+Up" = "move up";
+      "Ctrl+Up" = "focus up";
+      "Ctrl+Down" = "focus down";
+      "Ctrl+Left" = "focus left";
+      "Ctrl+Right" = "focus right";
     } // workspaceKeybinds);
 in
 {
