@@ -159,11 +159,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd",
-            "rev": "817c8e7359c0d8e3fc11eac5174265caa401dd9f",
-            "sha256": "sha256-KLzi5icsbiYE61iS59ITJM78zUNAvG7VWBiiSKoKUgM=",
+            "rev": "714e046416ab0a107ce3af92b3dee1329565b9f8",
+            "sha256": "sha256-VwD0K5X0wCUTyvUL/yp9DlZeFTDfryoBoekIFvtaub0=",
             "type": "github"
         },
-        "version": "817c8e7359c0d8e3fc11eac5174265caa401dd9f"
+        "version": "714e046416ab0a107ce3af92b3dee1329565b9f8"
     },
     "ksmbd-tools": {
         "cargoLocks": null,
@@ -178,11 +178,11 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd-tools",
-            "rev": "f696557255b75cdc1ca88e7f4a85eef90e486f64",
-            "sha256": "sha256-xNBKdBKWdFkQYyCGOFJ75lOk9UMi3lTmeE80xsP1yZI=",
+            "rev": "fca8e2d8a5f6a5c2f8fe2f26211521c534149b78",
+            "sha256": "sha256-3X7y0JNNZY1OWvqX9hsSf/DWHegmps53pOicGk0xn8c=",
             "type": "github"
         },
-        "version": "f696557255b75cdc1ca88e7f4a85eef90e486f64"
+        "version": "fca8e2d8a5f6a5c2f8fe2f26211521c534149b78"
     },
     "landrop": {
         "cargoLocks": null,
@@ -247,12 +247,12 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "4129469337377cd395b07a30ce4966e432f79a9e",
-            "sha256": "sha256-omJbtZ63QgtCOZk+ANrTvMNIbzpoXyaVZpC08wpmEXY=",
+            "rev": "1c9709270260b96ed116a84e8a9813bd93da0633",
+            "sha256": "sha256-Nbu8blZYCGUqBIxUS2P295lmhBAy6K4V6kP0NmpxvP4=",
             "type": "git",
             "url": "https://github.com/alecthw/mmdb_china_ip_list.git"
         },
-        "version": "4129469337377cd395b07a30ce4966e432f79a9e"
+        "version": "1c9709270260b96ed116a84e8a9813bd93da0633"
     },
     "motrix": {
         "cargoLocks": null,
@@ -300,11 +300,11 @@
             "name": null,
             "owner": "PufferPanel",
             "repo": "PufferPanel",
-            "rev": "v2.5.1",
-            "sha256": "sha256-GrMqZGvPOyPvUAheR4ybEJDWrQ7WukioPFnyrSNDmSA=",
+            "rev": "v2.5.2",
+            "sha256": "sha256-ALqc72A6DY8AN6ichMi15WVRMJLlZS7ABBRliO78v9w=",
             "type": "github"
         },
-        "version": "v2.5.1"
+        "version": "v2.5.2"
     },
     "realm": {
         "cargoLocks": {
