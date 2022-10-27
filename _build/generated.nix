@@ -89,24 +89,24 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "817c8e7359c0d8e3fc11eac5174265caa401dd9f";
+    version = "714e046416ab0a107ce3af92b3dee1329565b9f8";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "817c8e7359c0d8e3fc11eac5174265caa401dd9f";
+      rev = "714e046416ab0a107ce3af92b3dee1329565b9f8";
       fetchSubmodules = true;
-      sha256 = "sha256-KLzi5icsbiYE61iS59ITJM78zUNAvG7VWBiiSKoKUgM=";
+      sha256 = "sha256-VwD0K5X0wCUTyvUL/yp9DlZeFTDfryoBoekIFvtaub0=";
     });
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
-    version = "f696557255b75cdc1ca88e7f4a85eef90e486f64";
+    version = "fca8e2d8a5f6a5c2f8fe2f26211521c534149b78";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd-tools";
-      rev = "f696557255b75cdc1ca88e7f4a85eef90e486f64";
+      rev = "fca8e2d8a5f6a5c2f8fe2f26211521c534149b78";
       fetchSubmodules = true;
-      sha256 = "sha256-xNBKdBKWdFkQYyCGOFJ75lOk9UMi3lTmeE80xsP1yZI=";
+      sha256 = "sha256-3X7y0JNNZY1OWvqX9hsSf/DWHegmps53pOicGk0xn8c=";
     });
   };
   landrop = {
@@ -141,14 +141,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "4129469337377cd395b07a30ce4966e432f79a9e";
+    version = "1c9709270260b96ed116a84e8a9813bd93da0633";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "4129469337377cd395b07a30ce4966e432f79a9e";
+      rev = "1c9709270260b96ed116a84e8a9813bd93da0633";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-omJbtZ63QgtCOZk+ANrTvMNIbzpoXyaVZpC08wpmEXY=";
+      sha256 = "sha256-Nbu8blZYCGUqBIxUS2P295lmhBAy6K4V6kP0NmpxvP4=";
     };
   };
   motrix = {
@@ -172,13 +172,13 @@
   };
   pufferpanel = {
     pname = "pufferpanel";
-    version = "v2.5.1";
+    version = "v2.5.2";
     src = fetchFromGitHub ({
       owner = "PufferPanel";
       repo = "PufferPanel";
-      rev = "v2.5.1";
+      rev = "v2.5.2";
       fetchSubmodules = true;
-      sha256 = "sha256-GrMqZGvPOyPvUAheR4ybEJDWrQ7WukioPFnyrSNDmSA=";
+      sha256 = "sha256-ALqc72A6DY8AN6ichMi15WVRMJLlZS7ABBRliO78v9w=";
     });
   };
   realm = {
