@@ -21,6 +21,8 @@ in
         set -gx STARSHIP_CONFIG /etc/starship.toml
 
         ${pkgs.starship}/bin/starship init fish | source
+
+        fish_add_path $HOME/go/bin
       '';
     };
 
@@ -44,7 +46,7 @@ in
     nix = {
       package = pkgs.nixUnstable;
       useDaemon = true;
-      useSandbox = false;
+      settings.sandbox = true;
 
       extraOptions = ''
         experimental-features = nix-command flakes

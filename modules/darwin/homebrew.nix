@@ -14,9 +14,10 @@ in
   config = mkIf cfg.enable {
     homebrew = {
       enable = true;
-      autoUpdate = true;
-
-      cleanup = "zap";
+      onActivation = {
+        cleanup = "zap";
+        autoUpdate = true;
+      };
 
       taps = [
         "gromgit/fuse"

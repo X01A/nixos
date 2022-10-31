@@ -13,7 +13,7 @@ in
 
   config = mkIf cfg.enable {
     fonts = {
-      enableFontDir = true;
+      fontDir.enable = true;
       fonts = with pkgs; [
         cascadia-code
         iosevka-bin
