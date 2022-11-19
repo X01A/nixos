@@ -72,7 +72,7 @@
           legacyPackages = finalPackages // {
             packageList = pkgs.writeText "packages.json" jsonPackages;
           };
-          overlay = final: prev: finalPackages;
+          overlay = final: prev: packages;
           overlays = builtins.mapAttrs (overlayPkgs: (final: prev: overlayPkgs)) buildPacakges;
           devShell = pkgs.mkShell {
             buildInputs = with pkgs; [
