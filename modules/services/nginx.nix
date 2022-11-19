@@ -54,7 +54,7 @@ in
 
         listen = [
           (mkListenConfig "0.0.0.0")
-          (mkListenConfig "::")
+          (mkListenConfig "[::]")
         ];
       };
     };
