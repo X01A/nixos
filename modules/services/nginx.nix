@@ -41,7 +41,6 @@ in
 
     services.nginx.virtualHosts = mkIf cfg.fakeHost {
       "_" = {
-        addSSL = true;
         extraConfig = ''
           ssl_protocols TLSv1.2 TLSv1.3;
           ssl_session_timeout 10m;
