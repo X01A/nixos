@@ -12,6 +12,11 @@ in
     indexyz.services.dns = {
       enable = mkEnableOption "DNS Server";
 
+      openFirewall = mkOption {
+        default = true;
+        type = types.bool;
+      };
+
       upstreams = mkOption {
         default = [ ];
         example = ''
@@ -74,7 +79,7 @@ in
       };
     };
 
-    networking.firewall = {
+    networking.firewall = mkIf cfg.openFirewall {
       allowedTCPPorts = [ cfg.dnsPort ];
       allowedUDPPorts = [ cfg.dnsPort ];
     };

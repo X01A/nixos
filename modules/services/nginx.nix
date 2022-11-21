@@ -15,6 +15,10 @@ in
   options = {
     indexyz.services.nginx = {
       enable = mkEnableOption "Enable custom nginx conf";
+      openFirewall = mkOption {
+        default = true;
+        type = types.bool;
+      };
 
       fakeHost = mkOption {
         default = true;
@@ -24,7 +28,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [ 80 443 ];
+    networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall [ 80 443 ];
 
     services.nginx = {
       enable = true;
