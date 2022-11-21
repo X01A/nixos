@@ -8,6 +8,11 @@ in
   options = {
     indexyz.services.vlmcsd = {
       enable = mkEnableOption "Start vlmcsd kms server";
+
+      openFirewall = mkOption {
+        default = true;
+        type = types.bool;
+      };
     };
   };
 
@@ -23,6 +28,6 @@ in
       };
     };
 
-    networking.firewall.allowedTCPPorts = [ 1688 ];
+    networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall [ 1688 ];
   };
 }

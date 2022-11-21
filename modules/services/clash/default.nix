@@ -54,6 +54,11 @@ in
         type = types.bool;
       };
 
+      openFirewall = mkOption {
+        default = true;
+        type = types.bool;
+      };
+
       port = mkOption {
         default = 7890;
         type = types.int;
@@ -103,13 +108,13 @@ in
   ];
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = (if cfg.allowLan then [
+    networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall (if cfg.allowLan then [
       # Clash Ports
       cfg.port
       (toInt managePort)
     ] else [ ]);
 
-    networking.firewall.allowedUDPPorts = (if cfg.allowLan then [
+    networking.firewall.allowedUDPPorts = mkIf cfg.openFirewall (if cfg.allowLan then [
       cfg.port
     ] else [ ]);
 
