@@ -36,6 +36,7 @@ in
 
       authFile = mkOption {
         type = types.str;
+        default = "";
         example = "/run/keys/TAILSCALE_KEY";
         description = "File location store tailscale auth-key";
       };
@@ -132,7 +133,7 @@ in
 
       # Don't restart tailscale if changed, arovid ssh connection disconnect
       systemd.services.tailscaled.restartIfChanged = false;
-      systemd.services.tailscale-autoconnect = {
+      systemd.services.tailscale-autoconnect = mkIf (cfg.authFile != "") {
         description = "Automatic connection to Tailscale";
 
         # make sure tailscale is running before trying to connect to tailscale
