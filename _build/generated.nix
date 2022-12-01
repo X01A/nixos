@@ -3,10 +3,10 @@
 {
   clash-premium = {
     pname = "clash-premium";
-    version = "2022.08.26";
+    version = "2022.11.25";
     src = fetchurl {
-      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.08.26.gz";
-      sha256 = "sha256-F3Gn2b5zhgd+galkJIt5Hw2fDs9SGKPE7vxi+GRR3h0=";
+      url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2022.11.25.gz";
+      sha256 = "sha256-1s4K+rjlwWqXrCE2L8QveFL8CTgvGMYzniuZMgY1+eE=";
     };
   };
   cloudreve = {
@@ -67,13 +67,13 @@
   };
   guestfs-tools = {
     pname = "guestfs-tools";
-    version = "e49715491568bb6c6a141c82e62095ae618a8672";
+    version = "1920eb41ba930962216a45fb87f921854ee5e844";
     src = fetchFromGitHub ({
       owner = "rwmjones";
       repo = "guestfs-tools";
-      rev = "e49715491568bb6c6a141c82e62095ae618a8672";
+      rev = "1920eb41ba930962216a45fb87f921854ee5e844";
       fetchSubmodules = true;
-      sha256 = "sha256-jaoBttYAdXk2JnoZe54AVCsJ4Lkcs83arMnvrTLXEmE=";
+      sha256 = "sha256-JPToc6yRB1rOl/aFgkoMFsgmX+7P0wwEkSagb8cWiKQ=";
     });
   };
   hev-socks5-tproxy = {
@@ -89,13 +89,13 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "4fb83a76d4c28321771129c4f840ea765ac49208";
+    version = "175f308560217e262e4ef072ce1cb80ee552c7c5";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "4fb83a76d4c28321771129c4f840ea765ac49208";
+      rev = "175f308560217e262e4ef072ce1cb80ee552c7c5";
       fetchSubmodules = true;
-      sha256 = "sha256-/kqtbuf/N53vM1vj+rnamIo6YJ8J+L9SyFuAw7MMuo0=";
+      sha256 = "sha256-1MxyR+T5/w69thPN5M8baqzoUnq4GJKI+wGpy7OAC7E=";
     });
   };
   ksmbd-tools = {
@@ -141,14 +141,14 @@
   };
   mmdb-ipip = {
     pname = "mmdb-ipip";
-    version = "cebc2ea867165d948d8c412197841bfccb32fbaf";
+    version = "f8758c4cf071b174d66c5213838d153d31da5ed5";
     src = fetchgit {
       url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "cebc2ea867165d948d8c412197841bfccb32fbaf";
+      rev = "f8758c4cf071b174d66c5213838d153d31da5ed5";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-H0ZO10/oev2Bf/eXEgL5LO6esjJjHn482X1nKz8ipG4=";
+      sha256 = "sha256-aKbfhaE2+m5jqB/zY0TaJS1V8mJ2vSlwbpALwKgO/qE=";
     };
   };
   motrix = {
