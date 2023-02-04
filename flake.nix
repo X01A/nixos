@@ -132,5 +132,13 @@
           })
         ];
       }).config.system.build.sdImage;
+
+      qcow2.image = (import "${toString nixpkgs}/nixos/lib/eval-config.nix" {
+        system = "x86_64-linux";
+        modules = [
+          ./modules/all-modules.nix
+          ./modules/installer/qcow2.nix
+        ];
+      }).config.system.build.qcow;
     };
 }
