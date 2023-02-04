@@ -7,6 +7,7 @@
     wireless.enable = false;
     useNetworkd = true;
     useDHCP = true;
+    usePredictableInterfaceNames = false;
   };
 
   hardware.enableRedistributableFirmware = true;
@@ -14,7 +15,7 @@
 
   boot.supportedFilesystems = lib.mkForce [ "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs" "ext4" "vfat" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  # hardware.enableAllFirmware = true;
+  hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
   indexyz.services.ssh.enable = true;

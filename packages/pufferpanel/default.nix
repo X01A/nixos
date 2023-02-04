@@ -1,4 +1,4 @@
-{ lib, stdenvNoCC, fetchFromGitHub, buildGo117Module, source, npmlock2nix, jq }:
+{ lib, stdenvNoCC, fetchFromGitHub, buildGoModule, source, npmlock2nix, jq }:
 
 let
   webSrc = stdenvNoCC.mkDerivation {
@@ -27,7 +27,7 @@ let
 
   };
 in
-buildGo117Module rec {
+buildGoModule rec {
   inherit (source) pname version src;
 
   vendorSha256 = "sha256-Q8H4Wbese+1TG6DkLHZJySY76xWpMD/dCFQCB6Zm0Vw=";
