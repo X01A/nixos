@@ -69,9 +69,7 @@ in
     source = nvfetcherOut.mmdb-ipip;
   };
 
-  nali = callPackage ./nali {
-    source = nvfetcherOut.nali;
-  };
+  nali = callPackage ./nali { };
 
   novnc = callPackage ./novnc { };
 
@@ -178,13 +176,9 @@ in
     };
   });
 
-  realm = callPackage ./realm {
-    source = nvfetcherOut.realm;
-  };
+  realm = callPackage ./realm { };
 
-  trojan-go = callPackage ./trojan-go {
-    source = nvfetcherOut.trojan-go;
-  };
+  trojan-go = callPackage ./trojan-go { };
 
   landrop = callPackage ./landrop {
     source = nvfetcherOut.landrop;

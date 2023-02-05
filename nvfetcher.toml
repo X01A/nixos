@@ -99,17 +99,6 @@ git.fetchSubmodules = true
 src.manual = "2.1.3"
 fetch.url = "https://home-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.weixin/com.tencent.weixin_$ver_amd64.deb"
 
-[realm]
-src.github = "zhboner/realm"
-fetch.github = "zhboner/realm"
-git.fetchSubmodules = true
-cargo_locks = ["Cargo.lock"]
-
-[trojan-go]
-src.github = "p4gefau1t/trojan-go"
-fetch.github = "p4gefau1t/trojan-go"
-git.fetchSubmodules = true
-
 [landrop]
 src.github = "LANDrop/LANDrop"
 fetch.github = "LANDrop/LANDrop"
