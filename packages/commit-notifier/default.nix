@@ -17,11 +17,4 @@ rustPlatform.buildRustPackage rec {
   # TODO libssh2-sys failed to pass test
   doCheck = false;
   nativeBuildInputs = [ pkg-config ];
-
-  buildInputs = [
-    openssl
-    sqlite
-    libgit2
-    zlib
-  ];
 }
