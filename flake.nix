@@ -72,6 +72,7 @@
           legacyPackages = finalPackages // {
             packageList = pkgs.writeText "packages.json" jsonPackages;
           };
+          packages = finalPackages;
           overlay = final: prev: packages;
           overlays = builtins.mapAttrs (overlayPkgs: (final: prev: overlayPkgs)) buildPacakges;
           devShell = pkgs.mkShell {
@@ -80,6 +81,7 @@
               prefetch
               nixpkgs-fmt
               nix-update
+              bash
             ];
           };
         }) // {

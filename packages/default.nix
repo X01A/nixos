@@ -79,10 +79,6 @@ in
     source = nvfetcherOut.mattermost;
   };
 
-  gost-master = callPackage ./gost {
-    source = nvfetcherOut.gost;
-  };
-
   clash-premium = callPackage ./clash-premium {
     source = nvfetcherOut.clash-premium;
   };
@@ -110,7 +106,6 @@ in
 
   pufferpanel = callPackage ./pufferpanel {
     inherit npmlock2nix;
-    source = nvfetcherOut.pufferpanel;
   };
 
   librefox-index = (wrapFirefox firefox-unwrapped {

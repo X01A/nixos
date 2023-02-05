@@ -69,11 +69,6 @@ src.git = "https://github.com/namjaejeon/ksmbd-tools.git"
 fetch.github = "namjaejeon/ksmbd-tools"
 git.fetchSubmodules = true
 
-[gost]
-src.git = "https://github.com/ginuerzh/gost.git"
-fetch.github = "ginuerzh/gost"
-git.fetchSubmodules = true
-
 [clash-premium]
 src.webpage = "https://github.com/Dreamacro/clash/releases/tag/premium"
 src.regex = "Premium ([0-9\\.]*)"
@@ -100,11 +95,6 @@ src.github = "shadowsocks/simple-obfs"
 fetch.github = "shadowsocks/simple-obfs"
 git.fetchSubmodules = true
 
-[pufferpanel]
-src.github = "PufferPanel/PufferPanel"
-fetch.github = "PufferPanel/PufferPanel"
-git.fetchSubmodules = true
-
 [wechat-uos]
 src.manual = "2.1.3"
 fetch.url = "https://home-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.weixin/com.tencent.weixin_$ver_amd64.deb"
@@ -123,11 +113,6 @@ git.fetchSubmodules = true
 [landrop]
 src.github = "LANDrop/LANDrop"
 fetch.github = "LANDrop/LANDrop"
-
-[guestfs-tools]
-src.git = "https://github.com/rwmjones/guestfs-tools.git"
-fetch.github = "rwmjones/guestfs-tools"
-git.fetchSubmodules = true
 
 [hev-socks5-tproxy]
 src.github_tag = "heiher/hev-socks5-tproxy"
