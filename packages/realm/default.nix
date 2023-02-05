@@ -1,4 +1,4 @@
-{ source, rust-bin, makeRustPlatform, lib, pkg-config, openssl, ... }:
+{ fetchFromGitHub, rust-bin, makeRustPlatform, lib, pkg-config, openssl, ... }:
 
 let
   rust = rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
@@ -8,9 +8,17 @@ let
   };
 in
 rustPlatform.buildRustPackage rec {
-  inherit (source) pname version src;
+  pname = "realm";
+  version = "v2.4.5";
+  src = fetchFromGitHub ({
+    owner = "zhboner";
+    repo = "realm";
+    rev = "v2.4.5";
+    fetchSubmodules = true;
+    sha256 = "sha256-Xmx9Z1KC7Z6KeixdPjYVo+RScfggLu71PQswJxlk3WY=";
+  });
 
-  cargoLock = source.cargoLock."Cargo.lock";
+  cargoSha256 = "sha256-2GDo/U7+OfIwaw57w8pVYz6u+lw30qJZhrdyhOXiaUM=";
 
   # transport feature broken
   buildNoDefaultFeatures = true;
