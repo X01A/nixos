@@ -1,4 +1,4 @@
-{ source, rustPlatform, pkg-config, openssl, sqlite }:
+{ source, rustPlatform, pkg-config, openssl, sqlite, zlib }:
 
 rustPlatform.buildRustPackage rec {
   inherit (source) pname version src;
@@ -10,6 +10,7 @@ rustPlatform.buildRustPackage rec {
   buildInputs = [
     openssl
     sqlite
+    zlib
   ];
 
   nativeBuildInputs = [ pkg-config ];
