@@ -12,7 +12,9 @@ let
   });
 
   webSrc = stdenvNoCC.mkDerivation {
-    pname = "${pname}-web-src";
+    name = "${pname}-web-src";
+
+    inherit version src;
     phases = [ "buildPhase" ];
     # set missing version
     buildPhase = ''
