@@ -8,10 +8,7 @@
       flake = false;
     };
 
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-utils.url = "github:numtide/flake-utils";
 
     npmlock2nix = {
       url = "github:serokell/nix-npm-buildpackage";
