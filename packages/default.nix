@@ -186,10 +186,6 @@ in
 
   derper = callPackage ./derper { };
 
-  guestfs-tools = callPackage ./guestfs-tools {
-    source = nvfetcherOut.guestfs-tools;
-  };
-
   hev-socks5-tproxy = callPackage ./hev-socks5-tproxy {
     source = nvfetcherOut.hev-socks5-tproxy;
   };
