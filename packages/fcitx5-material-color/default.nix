@@ -1,7 +1,16 @@
-{ stdenv, lib, fetchFromGitHub, source }:
+{ stdenv, lib, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
-  inherit (source) pname version src;
+  pname = "fcitx5-material-color";
+  version = "0.2.1";
+  src = fetchFromGitHub ({
+    owner = "hosxy";
+    repo = "Fcitx5-Material-Color";
+    rev = "0.2.1";
+    fetchSubmodules = true;
+    sha256 = "sha256-i9JHIJ+cHLTBZUNzj9Ujl3LIdkCllTWpO1Ta4OT1LTc=";
+  });
+
   dontBuild = true;
   dontConfigure = true;
 
