@@ -27,12 +27,6 @@ src.github = "agalwood/Motrix"
 src.prefix = "v"
 fetch.url = "https://github.com/agalwood/Motrix/releases/download/v$ver/Motrix-$ver.AppImage"
 
-[mmdb-ipip]
-src.git = "https://github.com/alecthw/mmdb_china_ip_list.git"
-fetch.git = "https://github.com/alecthw/mmdb_china_ip_list.git"
-git.fetchSubmodules = true
-src.branch = "release"
-
 [mattermost]
 src.webpage = "https://mattermost.com/deploy/"
 src.regex = "mattermost-(.*)-linux-amd64.tar.gz"
@@ -52,17 +46,6 @@ git.fetchSubmodules = true
 src.webpage = "https://github.com/Dreamacro/clash/releases/tag/premium"
 src.regex = "Premium ([0-9\\.]*)"
 fetch.url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-$ver.gz"
-
-[edl]
-src.git = "https://github.com/bkerler/edl.git"
-fetch.github = "bkerler/edl"
-git.fetchSubmodules = true
-
-[commit-notifier]
-src.git = "https://github.com/linyinfeng/commit-notifier.git"
-fetch.github = "linyinfeng/commit-notifier"
-git.fetchSubmodules = true
-cargo_locks = ["Cargo.lock"]
 
 [wechat-uos]
 src.manual = "2.1.3"

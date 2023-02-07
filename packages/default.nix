@@ -60,9 +60,7 @@ in
     source = nvfetcherOut.motrix;
   };
 
-  mmdb-ipip = callPackage ./mmdb-ipip {
-    source = nvfetcherOut.mmdb-ipip;
-  };
+  mmdb-ipip = callPackage ./mmdb-ipip { };
 
   nali = callPackage ./nali { };
 
@@ -76,18 +74,12 @@ in
     source = nvfetcherOut.clash-premium;
   };
 
-  edl = callPackage ./edl {
-    source = nvfetcherOut.edl;
-  };
+  edl = callPackage ./edl { };
 
   tun2socks = callPackage ./tun2socks { };
 
   teleport-ent = callPackage ./teleport-ent { };
-
-
-  commit-notifier = callPackage ./commit-notifier {
-    source = nvfetcherOut.commit-notifier;
-  };
+  commit-notifier = callPackage ./commit-notifier { };
 
   babel = callPackage ./babel { };
   simple-obfs = callPackage ./simple-obfs { };

@@ -1,4 +1,4 @@
-{ source, python3 }:
+{ fetchFromGitHub, python3 }:
 
 let
   usb = python3.pkgs.buildPythonPackage rec {
@@ -14,7 +14,15 @@ let
   };
 in
 python3.pkgs.buildPythonApplication rec {
-  inherit (source) pname version src;
+  pname = "edl";
+  version = "unstable-2022-10-07";
+  src = fetchFromGitHub ({
+    owner = "bkerler";
+    repo = "edl";
+    rev = "f6b94da5faa003b48d24a5f4a8f0b8495626fd5b";
+    fetchSubmodules = true;
+    sha256 = "sha256-bxnRy+inWNArE2gUA/qDPy7NKvqBm43sbxdIaTc9N28=";
+  });
 
   propagatedBuildInputs = with python3.pkgs; [
     lxml
