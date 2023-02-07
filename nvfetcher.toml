@@ -1,8 +1,3 @@
-[microsocks]
-src.github = "rofl0r/microsocks"
-fetch.github = "rofl0r/microsocks"
-git.fetchSubmodules = true
-
 [yacd]
 src.github = "haishanh/yacd"
 fetch.url = "https://github.com/haishanh/yacd/releases/download/$ver/yacd.tar.xz"
@@ -13,11 +8,6 @@ src.github = "qier222/YesPlayMusic"
 src.prefix = "v"
 fetch.url = "https://github.com/qier222/YesPlayMusic/releases/download/v$ver/YesPlayMusic-$ver.AppImage"
 
-[fcitx5-material-color]
-src.github = "hosxy/Fcitx5-Material-Color"
-fetch.github = "hosxy/Fcitx5-Material-Color"
-git.fetchSubmodules = true
-
 [sunshine]
 src.github = "loki-47-6F-64/sunshine"
 fetch.github = "loki-47-6F-64/sunshine"
@@ -26,12 +16,6 @@ git.fetchSubmodules = true
 [cloudreve]
 src.github = "cloudreve/Cloudreve"
 fetch.url = "https://github.com/cloudreve/Cloudreve/releases/download/$ver/cloudreve_$ver_linux_amd64.tar.gz"
-
-[vpncloud]
-src.github = "dswd/vpncloud"
-fetch.github = "dswd/vpncloud"
-git.fetchSubmodules = true
-cargo_locks = ["Cargo.lock"]
 
 [winbox]
 src.httpheader = "https://mikrotik.com/mt_redirect.php?code=winbox64"
@@ -48,11 +32,6 @@ src.git = "https://github.com/alecthw/mmdb_china_ip_list.git"
 fetch.git = "https://github.com/alecthw/mmdb_china_ip_list.git"
 git.fetchSubmodules = true
 src.branch = "release"
-
-[nali]
-src.manual = "v0.3.2"
-fetch.github = "zu1k/nali"
-git.fetchSubmodules = true
 
 [mattermost]
 src.webpage = "https://mattermost.com/deploy/"
@@ -79,31 +58,12 @@ src.git = "https://github.com/bkerler/edl.git"
 fetch.github = "bkerler/edl"
 git.fetchSubmodules = true
 
-[tun2socks]
-src.github = "xjasonlyu/tun2socks"
-fetch.github = "xjasonlyu/tun2socks"
-git.fetchSubmodules = true
-
 [commit-notifier]
 src.git = "https://github.com/linyinfeng/commit-notifier.git"
 fetch.github = "linyinfeng/commit-notifier"
 git.fetchSubmodules = true
 cargo_locks = ["Cargo.lock"]
 
-[simple-obfs]
-src.github = "shadowsocks/simple-obfs"
-fetch.github = "shadowsocks/simple-obfs"
-git.fetchSubmodules = true
-
 [wechat-uos]
 src.manual = "2.1.3"
 fetch.url = "https://home-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.weixin/com.tencent.weixin_$ver_amd64.deb"
-
-[landrop]
-src.github = "LANDrop/LANDrop"
-fetch.github = "LANDrop/LANDrop"
-
-[hev-socks5-tproxy]
-src.github_tag = "heiher/hev-socks5-tproxy"
-fetch.github = "heiher/hev-socks5-tproxy"
-git.fetchSubmodules = true
