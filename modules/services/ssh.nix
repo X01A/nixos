@@ -26,9 +26,12 @@ in
   config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
-      permitRootLogin = lib.mkForce "prohibit-password";
-      passwordAuthentication = false;
-      forwardX11 = true;
+
+      settings = {
+        X11Forwarding = true;
+        PermitRootLogin = "prohibit-password";
+        PasswordAuthentication = false;
+      };
     };
 
     networking.firewall.allowedTCPPorts = [ 22 ];
