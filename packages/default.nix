@@ -20,9 +20,8 @@ in
   hpool-chia-miner = callPackage ./hpool-chia-miner { };
 
   # Proxy things
-  microsocks = callPackage ./microsocks {
-    source = nvfetcherOut.microsocks;
-  };
+  microsocks = callPackage ./microsocks { };
+
   leaf = callPackage ./leaf { };
 
   # Libvirt module
@@ -35,9 +34,7 @@ in
   # Clash
   clash-dsl = callPackage ./clash-dsl { };
 
-  fcitx5-material-color = callPackage ./fcitx5-material-color {
-    source = nvfetcherOut.fcitx5-material-color;
-  };
+  fcitx5-material-color = callPackage ./fcitx5-material-color { };
 
   yesplaymusic = callPackage ./yesplaymusic {
     inherit build-electron-appimage;
@@ -52,9 +49,7 @@ in
     source = nvfetcherOut.cloudreve;
   };
 
-  vpncloud = callPackage ./vpncloud {
-    source = nvfetcherOut.vpncloud;
-  };
+  vpncloud = callPackage ./vpncloud { };
 
   winbox = callPackage ./winbox {
     source = nvfetcherOut.winbox;
@@ -85,9 +80,7 @@ in
     source = nvfetcherOut.edl;
   };
 
-  tun2socks = callPackage ./tun2socks {
-    source = nvfetcherOut.tun2socks;
-  };
+  tun2socks = callPackage ./tun2socks { };
 
   teleport-ent = callPackage ./teleport-ent { };
 
@@ -97,10 +90,7 @@ in
   };
 
   babel = callPackage ./babel { };
-
-  simple-obfs = callPackage ./simple-obfs {
-    source = nvfetcherOut.simple-obfs;
-  };
+  simple-obfs = callPackage ./simple-obfs { };
 
   # pufferpanel = callPackage ./pufferpanel {
   #   inherit npmlock2nix;
@@ -180,13 +170,9 @@ in
 
   trojan-go = callPackage ./trojan-go { };
 
-  landrop = callPackage ./landrop {
-    source = nvfetcherOut.landrop;
-  };
+  landrop = callPackage ./landrop { };
 
   derper = callPackage ./derper { };
 
-  hev-socks5-tproxy = callPackage ./hev-socks5-tproxy {
-    source = nvfetcherOut.hev-socks5-tproxy;
-  };
+  hev-socks5-tproxy = callPackage ./hev-socks5-tproxy { };
 } // systemPackages

@@ -1,10 +1,18 @@
-{ stdenv, fetchgit, lib, libsForQt5, libsodium, source, ... }:
+{ stdenv, fetchFromGitHub, lib, libsForQt5, libsodium }:
 
 let
-  landrop = source.src;
+  pname = "landrop";
+  version = "0.4.0";
+  landrop = fetchFromGitHub ({
+    owner = "LANDrop";
+    repo = "LANDrop";
+    rev = "v${version}";
+    fetchSubmodules = false;
+    sha256 = "sha256-IwtphjMSa0e3mO5C4zHId48SUpT99sXziZzApnSmvrU=";
+  });
 in
 stdenv.mkDerivation rec {
-  inherit (source) pname version;
+  inherit pname version;
   src = "${landrop}/LANDrop";
 
   buildInputs = with libsForQt5; [ qtbase libsodium ];

@@ -1,14 +1,13 @@
-{ source, fetchgit, lib, gcc8Stdenv, autoconf, automake, libtool, libev, autoreconfHook, ... }:
+{ fetchgit, lib, gcc8Stdenv, autoconf, automake, libtool, libev, autoreconfHook }:
 
 with lib;
 gcc8Stdenv.mkDerivation rec {
-  # inherit (source) pname version src;
   pname = "simple-obfs";
-  version = "test-android";
+  version = "unstable-2019-08-17";
   src = fetchgit {
     url = "https://github.com/shadowsocks/simple-obfs.git";
-    rev = "0c6ea880a49d712aa85ef5fa3acaf9ddceb6c421";
-    sha256 = "sha256-ZqfNrDlkF9464qeYCB8m+8J0twylMDt0E6XQZP51kT4=";
+    rev = "486bebd9208539058e57e23a12f23103016e09b4";
+    sha256 = "sha256-eyVRec9V2qM/9XL+SZCuTXkD3qbbGMjTL/kDsAzwl9c=";
     fetchSubmodules = true;
     deepClone = false;
     leaveDotGit = false;
