@@ -2,11 +2,11 @@
 
 buildGoModule rec {
   pname = "nali";
-  version = "v0.7.1";
+  version = "0.7.1";
   src = fetchFromGitHub ({
     owner = "zu1k";
     repo = "nali";
-    rev = "v0.7.1";
+    rev = "v${version}";
     fetchSubmodules = true;
     sha256 = "sha256-ZJnQiTcfvxHFgRNytQANs/lF4hy0S0cXOy8IuGECYi0=";
   });

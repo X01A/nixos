@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# nix-update --flake pufferpanel -vr "v(.*)"
-nix-update --flake nali -vr "(v.*)"
-nix-update --flake realm -vr "(v.*)"
-
-nix-update --flake trojan-go -vr "(v.*)"
+nix-update --commit --flake nali
+nix-update --commit --flake realm
+nix-update --commit --flake trojan-go
