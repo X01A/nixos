@@ -9,11 +9,11 @@ let
 in
 rustPlatform.buildRustPackage rec {
   pname = "realm";
-  version = "v2.4.5";
+  version = "2.4.5";
   src = fetchFromGitHub ({
     owner = "zhboner";
     repo = "realm";
-    rev = "v2.4.5";
+    rev = "v${version}";
     fetchSubmodules = true;
     sha256 = "sha256-Xmx9Z1KC7Z6KeixdPjYVo+RScfggLu71PQswJxlk3WY=";
   });

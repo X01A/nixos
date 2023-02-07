@@ -2,11 +2,11 @@
 
 buildGoModule rec {
   pname = "trojan-go";
-  version = "v0.10.6";
+  version = "0.10.6";
   src = fetchFromGitHub ({
     owner = "p4gefau1t";
     repo = "trojan-go";
-    rev = "v0.10.6";
+    rev = "v${version}";
     fetchSubmodules = true;
     sha256 = "sha256-ZzIEKyLhHwYEWBfi6fHlCbkEImetEaRewbsHQEduB5Y=";
   });
