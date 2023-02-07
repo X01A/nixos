@@ -11,4 +11,7 @@ nix-update --commit --flake hev-socks5-tproxy
 nix-update --commit --flake landrop --url https://github.com/LANDrop/LANDrop
 
 nix-update --commit --version branch --flake simple-obfs
+nix-update --commit --version branch --flake edl
+nix-update --commit --version branch --flake commit-notifier
+nix-update --commit --version branch=release --flake mmdb-ipip
 
