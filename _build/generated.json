@@ -29,91 +29,6 @@
         },
         "version": "3.6.2"
     },
-    "commit-notifier": {
-        "cargoLocks": {
-            "Cargo.lock": [
-                "./commit-notifier-0d6edaf4ac1148ce11a5a661b04eb7f3ca863ad6/Cargo.lock",
-                {}
-            ]
-        },
-        "date": "2023-01-21",
-        "extract": null,
-        "name": "commit-notifier",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "linyinfeng",
-            "repo": "commit-notifier",
-            "rev": "0d6edaf4ac1148ce11a5a661b04eb7f3ca863ad6",
-            "sha256": "sha256-no/2WvjeCS14f7Pz+gEpC4D3lozvxtem1BgDRtZPoqk=",
-            "type": "github"
-        },
-        "version": "0d6edaf4ac1148ce11a5a661b04eb7f3ca863ad6"
-    },
-    "edl": {
-        "cargoLocks": null,
-        "date": "2022-10-07",
-        "extract": null,
-        "name": "edl",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "bkerler",
-            "repo": "edl",
-            "rev": "f6b94da5faa003b48d24a5f4a8f0b8495626fd5b",
-            "sha256": "sha256-bxnRy+inWNArE2gUA/qDPy7NKvqBm43sbxdIaTc9N28=",
-            "type": "github"
-        },
-        "version": "f6b94da5faa003b48d24a5f4a8f0b8495626fd5b"
-    },
-    "fcitx5-material-color": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "fcitx5-material-color",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "hosxy",
-            "repo": "Fcitx5-Material-Color",
-            "rev": "0.2.1",
-            "sha256": "sha256-i9JHIJ+cHLTBZUNzj9Ujl3LIdkCllTWpO1Ta4OT1LTc=",
-            "type": "github"
-        },
-        "version": "0.2.1"
-    },
-    "hev-socks5-tproxy": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "hev-socks5-tproxy",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "heiher",
-            "repo": "hev-socks5-tproxy",
-            "rev": "2.3.4",
-            "sha256": "sha256-He0HXVxuPNGcujSTCf+5CmnRcirBHMUwc+Hh0A99+Fs=",
-            "type": "github"
-        },
-        "version": "2.3.4"
-    },
     "ksmbd": {
         "cargoLocks": null,
         "date": "2023-02-07",
@@ -154,26 +69,6 @@
         },
         "version": "85a066e37d48b5f673c9e8dd562cb806000590d6"
     },
-    "landrop": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "landrop",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "LANDrop",
-            "repo": "LANDrop",
-            "rev": "v0.4.0",
-            "sha256": "sha256-IwtphjMSa0e2mO5C4zHId48SUpT99sXziZzApnSmvrU=",
-            "type": "github"
-        },
-        "version": "v0.4.0"
-    },
     "mattermost": {
         "cargoLocks": null,
         "date": null,
@@ -189,45 +84,6 @@
         },
         "version": "7.7.1"
     },
-    "microsocks": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "microsocks",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "rofl0r",
-            "repo": "microsocks",
-            "rev": "v1.0.3",
-            "sha256": "sha256-l+8+zqeY/Qf5pKvzW9WQBfltEvrD7Vp+hJAXM2o16aI=",
-            "type": "github"
-        },
-        "version": "v1.0.3"
-    },
-    "mmdb-ipip": {
-        "cargoLocks": null,
-        "date": "2023-02-06",
-        "extract": null,
-        "name": "mmdb-ipip",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "8ba20c88fe6d2cdbc0fee34d0b4970051fcfd66e",
-            "sha256": "sha256-AfqzuLT9RDfZFjS/a+PUB9MWQhKmtDuBaP61iCwdaF0=",
-            "type": "git",
-            "url": "https://github.com/alecthw/mmdb_china_ip_list.git"
-        },
-        "version": "8ba20c88fe6d2cdbc0fee34d0b4970051fcfd66e"
-    },
     "motrix": {
         "cargoLocks": null,
         "date": null,
@@ -242,46 +98,6 @@
             "url": "https://github.com/agalwood/Motrix/releases/download/v1.6.11/Motrix-1.6.11.AppImage"
         },
         "version": "1.6.11"
-    },
-    "nali": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "nali",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "zu1k",
-            "repo": "nali",
-            "rev": "v0.3.2",
-            "sha256": "sha256-iRLoUBA+Kzv1/LZQ8HCvR79K1riYErxEWhB0OmvFy2g=",
-            "type": "github"
-        },
-        "version": "v0.3.2"
-    },
-    "simple-obfs": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "simple-obfs",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "shadowsocks",
-            "repo": "simple-obfs",
-            "rev": "v0.0.5",
-            "sha256": "sha256-xNkIAltV+NnV+kgKZv8UZaeefjaVt35m+UjU+gbDQEw=",
-            "type": "github"
-        },
-        "version": "v0.0.5"
     },
     "sunshine": {
         "cargoLocks": null,
@@ -302,51 +118,6 @@
             "type": "github"
         },
         "version": "v0.11.1"
-    },
-    "tun2socks": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "tun2socks",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "xjasonlyu",
-            "repo": "tun2socks",
-            "rev": "v2.4.1",
-            "sha256": "sha256-FBYRqxS8DJbIc8j8X6WNxl6a1YRcNrPSnNfrq/Y0fMM=",
-            "type": "github"
-        },
-        "version": "v2.4.1"
-    },
-    "vpncloud": {
-        "cargoLocks": {
-            "Cargo.lock": [
-                "./vpncloud-v2.3.0/Cargo.lock",
-                {}
-            ]
-        },
-        "date": null,
-        "extract": null,
-        "name": "vpncloud",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "dswd",
-            "repo": "vpncloud",
-            "rev": "v2.3.0",
-            "sha256": "sha256-74ohjWnBHr31sM08ghFWnrfIRjfQ5M7nrKi0yT/cGEo=",
-            "type": "github"
-        },
-        "version": "v2.3.0"
     },
     "wechat-uos": {
         "cargoLocks": null,

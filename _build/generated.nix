@@ -17,56 +17,6 @@
       sha256 = "sha256-0S4i7DkqRQ3ExpcpN+2TP1cyJEB7d5k7UIPMcLodxgU=";
     };
   };
-  commit-notifier = {
-    pname = "commit-notifier";
-    version = "0d6edaf4ac1148ce11a5a661b04eb7f3ca863ad6";
-    src = fetchFromGitHub ({
-      owner = "linyinfeng";
-      repo = "commit-notifier";
-      rev = "0d6edaf4ac1148ce11a5a661b04eb7f3ca863ad6";
-      fetchSubmodules = true;
-      sha256 = "sha256-no/2WvjeCS14f7Pz+gEpC4D3lozvxtem1BgDRtZPoqk=";
-    });
-    cargoLock."Cargo.lock" = {
-      lockFile = ./commit-notifier-0d6edaf4ac1148ce11a5a661b04eb7f3ca863ad6/Cargo.lock;
-      outputHashes = { };
-    };
-    date = "2023-01-21";
-  };
-  edl = {
-    pname = "edl";
-    version = "f6b94da5faa003b48d24a5f4a8f0b8495626fd5b";
-    src = fetchFromGitHub ({
-      owner = "bkerler";
-      repo = "edl";
-      rev = "f6b94da5faa003b48d24a5f4a8f0b8495626fd5b";
-      fetchSubmodules = true;
-      sha256 = "sha256-bxnRy+inWNArE2gUA/qDPy7NKvqBm43sbxdIaTc9N28=";
-    });
-    date = "2022-10-07";
-  };
-  fcitx5-material-color = {
-    pname = "fcitx5-material-color";
-    version = "0.2.1";
-    src = fetchFromGitHub ({
-      owner = "hosxy";
-      repo = "Fcitx5-Material-Color";
-      rev = "0.2.1";
-      fetchSubmodules = true;
-      sha256 = "sha256-i9JHIJ+cHLTBZUNzj9Ujl3LIdkCllTWpO1Ta4OT1LTc=";
-    });
-  };
-  hev-socks5-tproxy = {
-    pname = "hev-socks5-tproxy";
-    version = "2.3.4";
-    src = fetchFromGitHub ({
-      owner = "heiher";
-      repo = "hev-socks5-tproxy";
-      rev = "2.3.4";
-      fetchSubmodules = true;
-      sha256 = "sha256-He0HXVxuPNGcujSTCf+5CmnRcirBHMUwc+Hh0A99+Fs=";
-    });
-  };
   ksmbd = {
     pname = "ksmbd";
     version = "fdd21601162b85313e2fc47490f00e899cb8a9de";
@@ -91,17 +41,6 @@
     });
     date = "2023-01-31";
   };
-  landrop = {
-    pname = "landrop";
-    version = "v0.4.0";
-    src = fetchFromGitHub ({
-      owner = "LANDrop";
-      repo = "LANDrop";
-      rev = "v0.4.0";
-      fetchSubmodules = false;
-      sha256 = "sha256-IwtphjMSa0e2mO5C4zHId48SUpT99sXziZzApnSmvrU=";
-    });
-  };
   mattermost = {
     pname = "mattermost";
     version = "7.7.1";
@@ -110,30 +49,6 @@
       sha256 = "sha256-4FrvKQdGKfwJM7Oc43kg1Iq4o/OT2/kl89bTKBO4EdQ=";
     };
   };
-  microsocks = {
-    pname = "microsocks";
-    version = "v1.0.3";
-    src = fetchFromGitHub ({
-      owner = "rofl0r";
-      repo = "microsocks";
-      rev = "v1.0.3";
-      fetchSubmodules = true;
-      sha256 = "sha256-l+8+zqeY/Qf5pKvzW9WQBfltEvrD7Vp+hJAXM2o16aI=";
-    });
-  };
-  mmdb-ipip = {
-    pname = "mmdb-ipip";
-    version = "8ba20c88fe6d2cdbc0fee34d0b4970051fcfd66e";
-    src = fetchgit {
-      url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-      rev = "8ba20c88fe6d2cdbc0fee34d0b4970051fcfd66e";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sha256 = "sha256-AfqzuLT9RDfZFjS/a+PUB9MWQhKmtDuBaP61iCwdaF0=";
-    };
-    date = "2023-02-06";
-  };
   motrix = {
     pname = "motrix";
     version = "1.6.11";
@@ -141,28 +56,6 @@
       url = "https://github.com/agalwood/Motrix/releases/download/v1.6.11/Motrix-1.6.11.AppImage";
       sha256 = "sha256-tE2Q7NM+cQOg+vyqyfRwg05EOMQWhhggTA6S+VT+SkM=";
     };
-  };
-  nali = {
-    pname = "nali";
-    version = "v0.3.2";
-    src = fetchFromGitHub ({
-      owner = "zu1k";
-      repo = "nali";
-      rev = "v0.3.2";
-      fetchSubmodules = true;
-      sha256 = "sha256-iRLoUBA+Kzv1/LZQ8HCvR79K1riYErxEWhB0OmvFy2g=";
-    });
-  };
-  simple-obfs = {
-    pname = "simple-obfs";
-    version = "v0.0.5";
-    src = fetchFromGitHub ({
-      owner = "shadowsocks";
-      repo = "simple-obfs";
-      rev = "v0.0.5";
-      fetchSubmodules = true;
-      sha256 = "sha256-xNkIAltV+NnV+kgKZv8UZaeefjaVt35m+UjU+gbDQEw=";
-    });
   };
   sunshine = {
     pname = "sunshine";
@@ -174,32 +67,6 @@
       fetchSubmodules = true;
       sha256 = "sha256-YrQHHpw7GOcdlnyJI28VShYFrTRq7kpILnkyCYf77NE=";
     });
-  };
-  tun2socks = {
-    pname = "tun2socks";
-    version = "v2.4.1";
-    src = fetchFromGitHub ({
-      owner = "xjasonlyu";
-      repo = "tun2socks";
-      rev = "v2.4.1";
-      fetchSubmodules = true;
-      sha256 = "sha256-FBYRqxS8DJbIc8j8X6WNxl6a1YRcNrPSnNfrq/Y0fMM=";
-    });
-  };
-  vpncloud = {
-    pname = "vpncloud";
-    version = "v2.3.0";
-    src = fetchFromGitHub ({
-      owner = "dswd";
-      repo = "vpncloud";
-      rev = "v2.3.0";
-      fetchSubmodules = true;
-      sha256 = "sha256-74ohjWnBHr31sM08ghFWnrfIRjfQ5M7nrKi0yT/cGEo=";
-    });
-    cargoLock."Cargo.lock" = {
-      lockFile = ./vpncloud-v2.3.0/Cargo.lock;
-      outputHashes = { };
-    };
   };
   wechat-uos = {
     pname = "wechat-uos";
