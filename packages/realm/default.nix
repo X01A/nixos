@@ -18,7 +18,7 @@ rustPlatform.buildRustPackage rec {
     sha256 = "sha256-Xmx9Z1KC7Z6KeixdPjYVo+RScfggLu71PQswJxlk3WY=";
   });
 
-  cargoSha256 = "sha256-2GDo/U7+OfIwaw57w8pVYz6u+lw30qJZhrdyhOXiaUM=";
+  cargoSha256 = "sha256-mmgWAdwu0htmTbPPYQiEmnRQ0psDjdivaL6TQpqHvk0=";
 
   # transport feature broken
   buildNoDefaultFeatures = true;
