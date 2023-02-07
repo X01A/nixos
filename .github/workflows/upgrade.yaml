@@ -22,8 +22,8 @@ jobs:
 
     - name: Check Package
       run: |
-        nix develop -c -- nvfetcher build -o _build
         nix develop -c -- bash update.bash
+        nix develop -c -- nvfetcher build -o _build
         nix develop -c -- nixpkgs-fmt .
 
     - name: Update flake
