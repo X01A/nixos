@@ -102,9 +102,9 @@ in
     source = nvfetcherOut.simple-obfs;
   };
 
-  pufferpanel = callPackage ./pufferpanel {
-    inherit npmlock2nix;
-  };
+  # pufferpanel = callPackage ./pufferpanel {
+  #   inherit npmlock2nix;
+  # };
 
   librefox-index = (wrapFirefox firefox-unwrapped {
     extraPolicies = {

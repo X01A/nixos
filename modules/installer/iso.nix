@@ -5,9 +5,8 @@
 
   networking = {
     wireless.enable = false;
-    useNetworkd = true;
-    useDHCP = true;
     usePredictableInterfaceNames = false;
+    networkmanager.enable = true;
   };
 
   hardware.enableRedistributableFirmware = true;
