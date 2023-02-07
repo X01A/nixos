@@ -8,7 +8,7 @@ let
     repo = "LANDrop";
     rev = "v${version}";
     fetchSubmodules = false;
-    sha256 = "sha256-IwtphjMSa0e3mO5C4zHId48SUpT99sXziZzApnSmvrU=";
+    sha256 = "sha256-IwtphjMSa0e2mO5C4zHId48SUpT99sXziZzApnSmvrU=";
   });
 in
 stdenv.mkDerivation rec {
