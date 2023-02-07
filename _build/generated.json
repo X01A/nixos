@@ -1,6 +1,7 @@
 {
     "clash-premium": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "clash-premium",
         "passthru": null,
@@ -15,6 +16,7 @@
     },
     "cloudreve": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "cloudreve",
         "passthru": null,
@@ -34,6 +36,7 @@
                 {}
             ]
         },
+        "date": "2023-01-21",
         "extract": null,
         "name": "commit-notifier",
         "passthru": null,
@@ -53,6 +56,7 @@
     },
     "edl": {
         "cargoLocks": null,
+        "date": "2022-10-07",
         "extract": null,
         "name": "edl",
         "passthru": null,
@@ -72,6 +76,7 @@
     },
     "fcitx5-material-color": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "fcitx5-material-color",
         "passthru": null,
@@ -89,46 +94,9 @@
         },
         "version": "0.2.1"
     },
-    "gost": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "gost",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "ginuerzh",
-            "repo": "gost",
-            "rev": "0f7376bd10c913c7e6b1e7e02dd5fd7769975d78",
-            "sha256": "sha256-8sEsWI9sWN8L7uXrFcn1AhqctwV9Jyd6OvBOxwwcaWw=",
-            "type": "github"
-        },
-        "version": "0f7376bd10c913c7e6b1e7e02dd5fd7769975d78"
-    },
-    "guestfs-tools": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "guestfs-tools",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "rwmjones",
-            "repo": "guestfs-tools",
-            "rev": "0dfe1a76b4d7948276e76897b5578411ba49ff71",
-            "sha256": "sha256-aA6/QAz9Ayx8Ar+O3MLGOSfj0Kb5Iek8nI9scO5ehvI=",
-            "type": "github"
-        },
-        "version": "0dfe1a76b4d7948276e76897b5578411ba49ff71"
-    },
     "hev-socks5-tproxy": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "hev-socks5-tproxy",
         "passthru": null,
@@ -148,6 +116,7 @@
     },
     "ksmbd": {
         "cargoLocks": null,
+        "date": "2023-02-07",
         "extract": null,
         "name": "ksmbd",
         "passthru": null,
@@ -159,14 +128,15 @@
             "name": null,
             "owner": "namjaejeon",
             "repo": "ksmbd",
-            "rev": "76bb597f04b0a8f025615c353140883c63d7589d",
-            "sha256": "sha256-i/i+oIFec7nVd2N3rXHJowLnBfpC78Qb8K2jUgIOiGk=",
+            "rev": "fdd21601162b85313e2fc47490f00e899cb8a9de",
+            "sha256": "sha256-enkHzurMnbxlHS415WKfXG5Az3yxFqH++vX8GZSFA/A=",
             "type": "github"
         },
-        "version": "76bb597f04b0a8f025615c353140883c63d7589d"
+        "version": "fdd21601162b85313e2fc47490f00e899cb8a9de"
     },
     "ksmbd-tools": {
         "cargoLocks": null,
+        "date": "2023-01-31",
         "extract": null,
         "name": "ksmbd-tools",
         "passthru": null,
@@ -186,6 +156,7 @@
     },
     "landrop": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "landrop",
         "passthru": null,
@@ -205,6 +176,7 @@
     },
     "mattermost": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "mattermost",
         "passthru": null,
@@ -219,6 +191,7 @@
     },
     "microsocks": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "microsocks",
         "passthru": null,
@@ -238,6 +211,7 @@
     },
     "mmdb-ipip": {
         "cargoLocks": null,
+        "date": "2023-02-06",
         "extract": null,
         "name": "mmdb-ipip",
         "passthru": null,
@@ -247,15 +221,16 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "9cb09cbd7508ae9f582867f623fbbf7a9a4f5770",
-            "sha256": "sha256-80u36YMMmJSSmNz7xPwPC1E98W+xfUo45etbvlN9kJI=",
+            "rev": "8ba20c88fe6d2cdbc0fee34d0b4970051fcfd66e",
+            "sha256": "sha256-AfqzuLT9RDfZFjS/a+PUB9MWQhKmtDuBaP61iCwdaF0=",
             "type": "git",
             "url": "https://github.com/alecthw/mmdb_china_ip_list.git"
         },
-        "version": "9cb09cbd7508ae9f582867f623fbbf7a9a4f5770"
+        "version": "8ba20c88fe6d2cdbc0fee34d0b4970051fcfd66e"
     },
     "motrix": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "motrix",
         "passthru": null,
@@ -270,6 +245,7 @@
     },
     "nali": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "nali",
         "passthru": null,
@@ -287,51 +263,9 @@
         },
         "version": "v0.3.2"
     },
-    "pufferpanel": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "pufferpanel",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "PufferPanel",
-            "repo": "PufferPanel",
-            "rev": "v2.6.1",
-            "sha256": "sha256-P8A8+EmqEqVQWSb2QYNd+p1GN5ToxOi1tfh2GZY6j6Y=",
-            "type": "github"
-        },
-        "version": "v2.6.1"
-    },
-    "realm": {
-        "cargoLocks": {
-            "Cargo.lock": [
-                "./realm-v2.4.5/Cargo.lock",
-                {}
-            ]
-        },
-        "extract": null,
-        "name": "realm",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "zhboner",
-            "repo": "realm",
-            "rev": "v2.4.5",
-            "sha256": "sha256-Xmx9Z1KC7Z6KeixdPjYVo+RScfggLu71PQswJxlk3WY=",
-            "type": "github"
-        },
-        "version": "v2.4.5"
-    },
     "simple-obfs": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "simple-obfs",
         "passthru": null,
@@ -351,6 +285,7 @@
     },
     "sunshine": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "sunshine",
         "passthru": null,
@@ -368,27 +303,9 @@
         },
         "version": "v0.11.1"
     },
-    "trojan-go": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "trojan-go",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "p4gefau1t",
-            "repo": "trojan-go",
-            "rev": "v0.10.6",
-            "sha256": "sha256-ZzIEKyLhHwYEWBfi6fHlCbkEImetEaRewbsHQEduB5Y=",
-            "type": "github"
-        },
-        "version": "v0.10.6"
-    },
     "tun2socks": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "tun2socks",
         "passthru": null,
@@ -413,6 +330,7 @@
                 {}
             ]
         },
+        "date": null,
         "extract": null,
         "name": "vpncloud",
         "passthru": null,
@@ -432,6 +350,7 @@
     },
     "wechat-uos": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "wechat-uos",
         "passthru": null,
@@ -446,6 +365,7 @@
     },
     "winbox": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "winbox",
         "passthru": null,
@@ -460,6 +380,7 @@
     },
     "yacd": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "yacd",
         "passthru": null,
@@ -474,6 +395,7 @@
     },
     "yesplaymusic": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "yesplaymusic",
         "passthru": null,
