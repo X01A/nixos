@@ -26,6 +26,8 @@ jobs:
         git config --global user.name github-actions[bot]
 
         nix develop -c -- bash update.bash
+        git push
+
         nix develop -c -- nvfetcher build -o _build
         nix develop -c -- nixpkgs-fmt .
         git add -a
