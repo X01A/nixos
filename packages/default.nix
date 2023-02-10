@@ -159,12 +159,10 @@ in
   });
 
   realm = callPackage ./realm { };
-
   trojan-go = callPackage ./trojan-go { };
-
   landrop = callPackage ./landrop { };
-
   derper = callPackage ./derper { };
-
   hev-socks5-tproxy = callPackage ./hev-socks5-tproxy { };
+
+  miui-auto-task = callPackage ./miui-auto-task/pkg.nix { };
 } // systemPackages
