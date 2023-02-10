@@ -19,7 +19,11 @@ jobs:
 
     - name: Build packages
       run: |
-        nix run github:zhaofengli/attic -- login indexyz https://attic.indexyz.me "${{ secrets.ATTIC_TOKEN }}"
+        wget https://github.com/zhaofengli/attic/raw/main/.github/install-attic-ci.sh
+        chmod +x install-attic-ci.sh
+        ./install-attic-ci.sh
+
+        attic login indexyz https://attic.indexyz.me "${{ secrets.ATTIC_TOKEN }}"
         nix --version
 
         # Upload and build cache
@@ -31,10 +35,10 @@ jobs:
             echo "Build Package Successfully"s
             PACKAGE_LOCATION=$(nix eval --raw ".#"$PACKAGE)
             echo "Package location: $PACKAGE_LOCATION"
-            nix run github:zhaofengli/attic -- push indexyz $PACKAGE_LOCATION
+            attic push indexyz $PACKAGE_LOCATION
             PACKAGE_DRV_LOCATION=$(nix eval --raw ".#"$PACKAGE".drvPath")
             echo "Package drv location: $PACKAGE_DRV_LOCATION"
-            nix run github:zhaofengli/attic -- push indexyz $PACKAGE_DRV_LOCATION
+            attic push indexyz $PACKAGE_DRV_LOCATION
           else
             echo "::warning::Error occurred during building package "$PACKAGE
           fi
