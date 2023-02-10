@@ -12,9 +12,11 @@ Setup binary cache to speed up build
 {
   nix = {
     binaryCaches = [
+      "https://attic.indexyz.me/indexyz"
       "https://indexyz.cachix.org"
     ];
     binaryCachePublicKeys = [
+      "indexyz:XxexOMK+bHXR2slT4A9wnJg00EZFXCUYqlUhlEEGQEc="
       "indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ="
     ];
   };

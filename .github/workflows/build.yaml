@@ -1,0 +1,41 @@
+name: Build cache
+on:
+  push:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: cachix/install-nix-action@master
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+        install_url: https://github.com/numtide/nix-unstable-installer/releases/download/nix-2.8.0pre20220408_a52e369/install
+        extra_nix_config: |
+          experimental-features = nix-command flakes
+          substituters = https://staging.attic.rs/attic-ci https://attic.indexyz.me/indexyz https://indexyz.cachix.org https://cache.nixos.org/
+          trusted-public-keys = attic-ci:U5Sey4mUxwBXM3iFapmP0/ogODXywKLRNgRPQpEXxbo= attic.indexyz.me-indexyz:XxexOMK+bHXR2slT4A9wnJg00EZFXCUYqlUhlEEGQEc= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+
+    - name: Build packages
+      run: |
+        nix run github:zhaofengli/attic -- login indexyz https://attic.indexyz.me "${{ secrets.ATTIC_TOKEN }}"
+        nix --version
+
+        # Upload and build cache
+        PACKAGES_LIST=$(nix build --print-out-paths --no-link .#packageList)
+        for PACKAGE in $(cat $PACKAGES_LIST | jq -r '.[]'); do
+          echo "Build package: $PACKAGE"
+          nix build --no-link ".#"$PACKAGE
+          if [ $? -eq 0 ]; then
+            echo "Build Package Successfully"s
+            PACKAGE_LOCATION=$(nix eval --raw ".#"$PACKAGE)
+            echo "Package location: $PACKAGE_LOCATION"
+            nix run github:zhaofengli/attic -- push indexyz $PACKAGE_LOCATION
+            PACKAGE_DRV_LOCATION=$(nix eval --raw ".#"$PACKAGE".drvPath")
+            echo "Package drv location: $PACKAGE_DRV_LOCATION"
+            nix run github:zhaofengli/attic -- push indexyz $PACKAGE_DRV_LOCATION
+          else
+            echo "::warning::Error occurred during building package "$PACKAGE
+          fi
+        done
