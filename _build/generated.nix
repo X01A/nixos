@@ -19,15 +19,15 @@
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "cf9b276f9108cee36b6b93867b98e1332415fce8";
+    version = "838bd3e8694c39de28f7013f560d487a7446527a";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "cf9b276f9108cee36b6b93867b98e1332415fce8";
+      rev = "838bd3e8694c39de28f7013f560d487a7446527a";
       fetchSubmodules = true;
-      sha256 = "sha256-rzgA4zQN4dgHIqFkEL8gY3aZL7VIJvzEYNIAIbOBC/4=";
+      sha256 = "sha256-OdHAUFCbB81US9s7hh7lI89Z83kGU2SNcHB+UNb0xmY=";
     });
-    date = "2023-02-10";
+    date = "2023-02-11";
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
