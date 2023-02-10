@@ -15,12 +15,13 @@ with nixpkgs; let
     attrsets.hasAttrByPath [ "pkg.nix" ] itDir && itDir."pkg.nix" == "regular";
 
   hasNvFetcher = name: attrsets.hasAttrByPath [ name ] nvfetcherOut;
-  buildPackage = dir: name: if (hasNvFetcher name) then
-    (callPackage "${dir}/${name}/pkg.nix" {
-      source = nvfetcherOut."${name}";
-    })
-  else
-    (callPackage "${dir}/${name}/pkg.nix" { });
+  buildPackage = dir: name:
+    if (hasNvFetcher name) then
+      (callPackage "${dir}/${name}/pkg.nix" {
+        source = nvfetcherOut."${name}";
+      })
+    else
+      (callPackage "${dir}/${name}/pkg.nix" { });
 
   scanPackages = dir:
     builtins.listToAttrs (
