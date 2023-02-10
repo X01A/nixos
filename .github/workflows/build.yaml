@@ -3,7 +3,7 @@ on:
   push:
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
 
     steps:
