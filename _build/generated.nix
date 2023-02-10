@@ -11,23 +11,23 @@
   };
   cloudreve = {
     pname = "cloudreve";
-    version = "3.6.2";
+    version = "3.7.0";
     src = fetchurl {
-      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.6.2/cloudreve_3.6.2_linux_amd64.tar.gz";
-      sha256 = "sha256-0S4i7DkqRQ3ExpcpN+2TP1cyJEB7d5k7UIPMcLodxgU=";
+      url = "https://github.com/cloudreve/Cloudreve/releases/download/3.7.0/cloudreve_3.7.0_linux_amd64.tar.gz";
+      sha256 = "sha256-B9Y6RbbFUbRE4wsJsCkzHbz9ooUXpQDpgBZdzdsqNoE=";
     };
   };
   ksmbd = {
     pname = "ksmbd";
-    version = "fdd21601162b85313e2fc47490f00e899cb8a9de";
+    version = "cf9b276f9108cee36b6b93867b98e1332415fce8";
     src = fetchFromGitHub ({
       owner = "namjaejeon";
       repo = "ksmbd";
-      rev = "fdd21601162b85313e2fc47490f00e899cb8a9de";
+      rev = "cf9b276f9108cee36b6b93867b98e1332415fce8";
       fetchSubmodules = true;
-      sha256 = "sha256-enkHzurMnbxlHS415WKfXG5Az3yxFqH++vX8GZSFA/A=";
+      sha256 = "sha256-rzgA4zQN4dgHIqFkEL8gY3aZL7VIJvzEYNIAIbOBC/4=";
     });
-    date = "2023-02-07";
+    date = "2023-02-10";
   };
   ksmbd-tools = {
     pname = "ksmbd-tools";
