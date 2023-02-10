@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "novnc";
-  version = "1.2.0";
+  version = "1.4.0";
 
   src = fetchFromGitHub {
     owner = "novnc";

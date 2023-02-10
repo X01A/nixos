@@ -1,40 +1,35 @@
 { nixpkgs, os, npmlock2nix }:
 
+with nixpkgs.lib;
 with nixpkgs; let
   nvfetcherOut = callPackage ../sources.nix { };
   build-electron-appimage = callPackage ./build-electron-appimage { };
   osPkgPath = ./. + "/os-specific/${os}";
   systemPackages = if builtins.pathExists osPkgPath then callPackage osPkgPath { inherit nixpkgs nvfetcherOut; } else { };
+
+  dirOnly = it: if it.value == "directory" then true else false;
+  hasPkgFile = dir: it: let
+    itDir = builtins.readDir ("${dir}/${it.name}");
+  in attrsets.hasAttrByPath [ "pkg.nix" ] itDir && itDir."pkg.nix" == "regular";
+
+  scanPackages = dir:
+    builtins.listToAttrs (
+      map (it: { name = it.name; value = callPackage "${dir}/${it.name}/pkg.nix" {}; })
+        (filter (hasPkgFile dir)
+          (filter dirOnly
+            (attrsets.mapAttrsToList (name: value: { inherit name value; }) (builtins.readDir dir)))));
 in
 {
   inherit build-electron-appimage;
-
-  transmission-web-control = callPackage ./transmission-web-control { };
-  vlmcsd = callPackage ./vlmcsd { };
-  speedtest = callPackage ./speedtest { };
 
   yacd = callPackage ./yacd {
     source = nvfetcherOut.yacd;
   };
 
-  hpool-chia-miner = callPackage ./hpool-chia-miner { };
-
-  # Proxy things
-  microsocks = callPackage ./microsocks { };
-
-  leaf = callPackage ./leaf { };
-
-  # Libvirt module
-
   # tools need to read global config
   libvirt-tools = import ../modules/services/libvirt/tools;
   libvirt-iso-library = callPackage ../modules/services/libvirt/library.nix { };
   build-vm-qcow = callPackage ./build-vm-qcow { };
-
-  # Clash
-  clash-dsl = callPackage ./clash-dsl { };
-
-  fcitx5-material-color = callPackage ./fcitx5-material-color { };
 
   yesplaymusic = callPackage ./yesplaymusic {
     inherit build-electron-appimage;
@@ -49,8 +44,6 @@ in
     source = nvfetcherOut.cloudreve;
   };
 
-  vpncloud = callPackage ./vpncloud { };
-
   winbox = callPackage ./winbox {
     source = nvfetcherOut.winbox;
   };
@@ -60,12 +53,6 @@ in
     source = nvfetcherOut.motrix;
   };
 
-  mmdb-ipip = callPackage ./mmdb-ipip { };
-
-  nali = callPackage ./nali { };
-
-  novnc = callPackage ./novnc { };
-
   mattermost-ent = callPackage ./mattermost-ent {
     source = nvfetcherOut.mattermost;
   };
@@ -73,17 +60,6 @@ in
   clash-premium = callPackage ./clash-premium {
     source = nvfetcherOut.clash-premium;
   };
-
-  edl = callPackage ./edl { };
-
-  tun2socks = callPackage ./tun2socks { };
-
-  teleport-ent = callPackage ./teleport-ent { };
-  commit-notifier = callPackage ./commit-notifier { };
-
-  babel = callPackage ./babel { };
-  simple-obfs = callPackage ./simple-obfs { };
-
   # pufferpanel = callPackage ./pufferpanel {
   #   inherit npmlock2nix;
   # };
@@ -157,12 +133,5 @@ in
       };
     };
   });
-
-  realm = callPackage ./realm { };
-  trojan-go = callPackage ./trojan-go { };
-  landrop = callPackage ./landrop { };
-  derper = callPackage ./derper { };
-  hev-socks5-tproxy = callPackage ./hev-socks5-tproxy { };
-
-  miui-auto-task = callPackage ./miui-auto-task/pkg.nix { };
-} // systemPackages
+  # miui-auto-task = callPackage ./miui-auto-task/pkg.nix { };
+} // systemPackages // (scanPackages ./.)
