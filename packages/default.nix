@@ -8,13 +8,29 @@ with nixpkgs; let
   systemPackages = if builtins.pathExists osPkgPath then callPackage osPkgPath { inherit nixpkgs nvfetcherOut; } else { };
 
   dirOnly = it: if it.value == "directory" then true else false;
-  hasPkgFile = dir: it: let
-    itDir = builtins.readDir ("${dir}/${it.name}");
-  in attrsets.hasAttrByPath [ "pkg.nix" ] itDir && itDir."pkg.nix" == "regular";
+  hasPkgFile = dir: it:
+    let
+      itDir = builtins.readDir ("${dir}/${it.name}");
+    in
+    attrsets.hasAttrByPath [ "pkg.nix" ] itDir && itDir."pkg.nix" == "regular";
 
   scanPackages = dir:
     builtins.listToAttrs (
-      map (it: { name = it.name; value = callPackage "${dir}/${it.name}/pkg.nix" {}; })
+      map
+        (it: {
+          name = it.name;
+          value =
+            let
+              hasNvFetcher = attrsets.hasAttrByPath [ it.name ] nvfetcherOut;
+
+              itPkg =
+                if hasNvFetcher then
+                  (callPackage "${dir}/${it.name}/pkg.nix" {
+                    source = nvfetcherOut."${it.name}";
+                  }) else (callPackage "${dir}/${it.name}/pkg.nix" { });
+            in
+            itPkg;
+        })
         (filter (hasPkgFile dir)
           (filter dirOnly
             (attrsets.mapAttrsToList (name: value: { inherit name value; }) (builtins.readDir dir)))));
@@ -36,30 +52,11 @@ in
     source = nvfetcherOut.yesplaymusic;
   };
 
-  sunshine = callPackage ./sunshine {
-    source = nvfetcherOut.sunshine;
-  };
-
-  cloudreve = callPackage ./cloudreve {
-    source = nvfetcherOut.cloudreve;
-  };
-
-  winbox = callPackage ./winbox {
-    source = nvfetcherOut.winbox;
-  };
-
   motrix = callPackage ./motrix {
     inherit build-electron-appimage;
     source = nvfetcherOut.motrix;
   };
 
-  mattermost-ent = callPackage ./mattermost-ent {
-    source = nvfetcherOut.mattermost;
-  };
-
-  clash-premium = callPackage ./clash-premium {
-    source = nvfetcherOut.clash-premium;
-  };
   # pufferpanel = callPackage ./pufferpanel {
   #   inherit npmlock2nix;
   # };

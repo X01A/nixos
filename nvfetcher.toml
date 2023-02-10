@@ -27,7 +27,7 @@ src.github = "agalwood/Motrix"
 src.prefix = "v"
 fetch.url = "https://github.com/agalwood/Motrix/releases/download/v$ver/Motrix-$ver.AppImage"
 
-[mattermost]
+[mattermost-ent]
 src.webpage = "https://mattermost.com/deploy/"
 src.regex = "mattermost-(.*)-linux-amd64.tar.gz"
 fetch.url = "https://releases.mattermost.com/$ver/mattermost-$ver-linux-amd64.tar.gz"

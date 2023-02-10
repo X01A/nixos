@@ -41,8 +41,8 @@
     });
     date = "2023-01-31";
   };
-  mattermost = {
-    pname = "mattermost";
+  mattermost-ent = {
+    pname = "mattermost-ent";
     version = "7.7.1";
     src = fetchurl {
       url = "https://releases.mattermost.com/7.7.1/mattermost-7.7.1-linux-amd64.tar.gz";

@@ -69,11 +69,11 @@
         },
         "version": "85a066e37d48b5f673c9e8dd562cb806000590d6"
     },
-    "mattermost": {
+    "mattermost-ent": {
         "cargoLocks": null,
         "date": null,
         "extract": null,
-        "name": "mattermost",
+        "name": "mattermost-ent",
         "passthru": null,
         "pinned": false,
         "src": {
