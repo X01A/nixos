@@ -31,6 +31,4 @@ jobs:
         nix develop -c -- nvfetcher build -o _build
         nix develop -c -- nixpkgs-fmt .
         git add .
-        git commit -m "pkg: nvfetcher update"
-
-        git push
+        git commit -m "pkg: nvfetcher update" && git push || echo "No changes"
