@@ -28,7 +28,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, cloudreve-cli, npmlock2nix, rust-overlay, ... }:
+  outputs = { self, nixpkgs, flake-utils, cloudreve-cli, npmlock2nix, rust-overlay, ... }@flakeInputs:
     flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ]
       (system:
         let
@@ -42,7 +42,7 @@
           os = pkgs.lib.last (pkgs.lib.strings.splitString "-" system);
 
           packages = import ./packages {
-            nixpkgs = pkgs; inherit os;
+            nixpkgs = pkgs; inherit os flakeInputs;
             npmlock2nix = pkgs.callPackage npmlock2nix {
               nodejs = pkgs.nodejs-14_x;
             };

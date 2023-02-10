@@ -1,4 +1,4 @@
-{ nixpkgs, os, npmlock2nix }:
+{ nixpkgs, os, npmlock2nix, flakeInputs }:
 
 with nixpkgs.lib;
 with nixpkgs; let
@@ -134,4 +134,4 @@ in
     };
   });
   # miui-auto-task = callPackage ./miui-auto-task/pkg.nix { };
-} // systemPackages // (scanPackages ./.)
+} // systemPackages // (scanPackages "${flakeInputs.self.outPath}/packages")
