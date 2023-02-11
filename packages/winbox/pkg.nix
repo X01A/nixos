@@ -1,4 +1,4 @@
-{ wineWowPackages, stdenv, fetchurl, makeDesktopItem, source, makeWrapper }:
+{ wineWowPackages, stdenv, fetchurl, makeDesktopItem, makeWrapper }:
 
 let
   icon = fetchurl {
@@ -16,7 +16,12 @@ let
   };
 in
 stdenv.mkDerivation rec {
-  inherit (source) pname version src;
+  pname = "winbox";
+  version = "3.37";
+  src = fetchurl {
+    url = "https://download.mikrotik.com/winbox/${version}/winbox64.exe";
+    sha256 = "sha256-q+aW5FgJ8msDIJJqABTTCI3MWsQ9VTorek4l9UoEdDk=";
+  };
 
   unpackPhase = ":";
   nativeBuildInputs = [ makeWrapper ];

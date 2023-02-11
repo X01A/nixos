@@ -1,7 +1,12 @@
-{ source, stdenv }:
+{ fetchurl, stdenv }:
 
 stdenv.mkDerivation rec {
-  inherit (source) src pname version;
+  pname = "clash-premium";
+  version = "2023.01.29";
+  src = fetchurl {
+    url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-${version}.gz";
+    sha256 = "sha256-LCN9HNBZZ1oAIeLxm/NnMdnD5Hrw1STgisXOUdSYPaY=";
+  };
 
   unpackPhase = ":";
 

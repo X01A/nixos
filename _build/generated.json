@@ -1,19 +1,4 @@
 {
-    "clash-premium": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "clash-premium",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-LCN9HNBZZ1oAIeLxm/NnMdnD5Hrw1STgisXOUdSYPaY=",
-            "type": "url",
-            "url": "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-2023.01.29.gz"
-        },
-        "version": "2023.01.29"
-    },
     "cloudreve": {
         "cargoLocks": null,
         "date": null,
@@ -28,61 +13,6 @@
             "url": "https://github.com/cloudreve/Cloudreve/releases/download/3.7.0/cloudreve_3.7.0_linux_amd64.tar.gz"
         },
         "version": "3.7.0"
-    },
-    "ksmbd": {
-        "cargoLocks": null,
-        "date": "2023-02-11",
-        "extract": null,
-        "name": "ksmbd",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "namjaejeon",
-            "repo": "ksmbd",
-            "rev": "838bd3e8694c39de28f7013f560d487a7446527a",
-            "sha256": "sha256-OdHAUFCbB81US9s7hh7lI89Z83kGU2SNcHB+UNb0xmY=",
-            "type": "github"
-        },
-        "version": "838bd3e8694c39de28f7013f560d487a7446527a"
-    },
-    "ksmbd-tools": {
-        "cargoLocks": null,
-        "date": "2023-01-31",
-        "extract": null,
-        "name": "ksmbd-tools",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "namjaejeon",
-            "repo": "ksmbd-tools",
-            "rev": "85a066e37d48b5f673c9e8dd562cb806000590d6",
-            "sha256": "sha256-uYJhjxarAqJC/aY8UUy7sjhA89LVoCG6B7/APkE0ouk=",
-            "type": "github"
-        },
-        "version": "85a066e37d48b5f673c9e8dd562cb806000590d6"
-    },
-    "mattermost-ent": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "mattermost-ent",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-4FrvKQdGKfwJM7Oc43kg1Iq4o/OT2/kl89bTKBO4EdQ=",
-            "type": "url",
-            "url": "https://releases.mattermost.com/7.7.1/mattermost-7.7.1-linux-amd64.tar.gz"
-        },
-        "version": "7.7.1"
     },
     "motrix": {
         "cargoLocks": null,
@@ -118,36 +48,6 @@
             "type": "github"
         },
         "version": "v0.11.1"
-    },
-    "wechat-uos": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "wechat-uos",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-W3ckVWbmgpwrIjsEFz80wcN853CdIu1NiiR1czjPsKM=",
-            "type": "url",
-            "url": "https://home-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.weixin/com.tencent.weixin_2.1.3_amd64.deb"
-        },
-        "version": "2.1.3"
-    },
-    "winbox": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "winbox",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-q+aW5FgJ8msDIJJqABTTCI3MWsQ9VTorek4l9UoEdDk=",
-            "type": "url",
-            "url": "https://download.mikrotik.com/winbox/3.37/winbox64.exe"
-        },
-        "version": "3.37"
     },
     "yacd": {
         "cargoLocks": null,

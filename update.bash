@@ -16,4 +16,9 @@ nix-update --commit --version branch --flake edl
 nix-update --commit --version branch --flake commit-notifier
 nix-update --commit --version branch=release --flake mmdb-ipip
 nix-update --commit --version branch=master --flake miui-auto-task
+nix-update --commit --version branch --flake ksmbd-kernel
+nix-update --commit --version branch --flake ksmbd-tools
 
+nix-update --commit --version $(curl "https://mikrotik.com/mt_redirect.php?code=winbox64" -sI | grep Location | grep -oP '([\d]{1,}\.[\d]{1,})') --flake winbox
+nix-update --commit --version $(curl -s https://github.com/Dreamacro/clash/releases/tag/premium | grep -oP "Premium \K([0-9\\.]*)" | head -n 1) --flake clash-premium
+nix-update --commit --version $(curl -s https://mattermost.com/deploy/ | grep -oP "mattermost-\K(.*)(?=-linux-amd64.tar.gz)") --flake mattermost-ent

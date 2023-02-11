@@ -1,8 +1,8 @@
 # NixOS
 
-[![Cache Build Status](https://img.shields.io/drone/build/X01A/nixos?label=Cache%20Build&server=https%3A%2F%2Fflame.indexyz.me)](https://flame.indexyz.me/X01A/nixos)
+[![Build cache](https://github.com/X01A/nixos/actions/workflows/build.yaml/badge.svg)](https://github.com/X01A/nixos/actions/workflows/build.yaml)
 
-Personal nixos module and packaging
+Personal nixos module and pkgs
 
 ## Setup
 

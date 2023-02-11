@@ -17,36 +17,7 @@ git.fetchSubmodules = true
 src.github = "cloudreve/Cloudreve"
 fetch.url = "https://github.com/cloudreve/Cloudreve/releases/download/$ver/cloudreve_$ver_linux_amd64.tar.gz"
 
-[winbox]
-src.httpheader = "https://mikrotik.com/mt_redirect.php?code=winbox64"
-src.regex = "\\/winbox\\/(.*)\\/"
-fetch.url = "https://download.mikrotik.com/winbox/$ver/winbox64.exe"
-
 [motrix]
 src.github = "agalwood/Motrix"
 src.prefix = "v"
 fetch.url = "https://github.com/agalwood/Motrix/releases/download/v$ver/Motrix-$ver.AppImage"
-
-[mattermost-ent]
-src.webpage = "https://mattermost.com/deploy/"
-src.regex = "mattermost-(.*)-linux-amd64.tar.gz"
-fetch.url = "https://releases.mattermost.com/$ver/mattermost-$ver-linux-amd64.tar.gz"
-
-[ksmbd]
-src.git = "https://github.com/namjaejeon/ksmbd.git"
-fetch.github = "namjaejeon/ksmbd"
-git.fetchSubmodules = true
-
-[ksmbd-tools]
-src.git = "https://github.com/namjaejeon/ksmbd-tools.git"
-fetch.github = "namjaejeon/ksmbd-tools"
-git.fetchSubmodules = true
-
-[clash-premium]
-src.webpage = "https://github.com/Dreamacro/clash/releases/tag/premium"
-src.regex = "Premium ([0-9\\.]*)"
-fetch.url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-$ver.gz"
-
-[wechat-uos]
-src.manual = "2.1.3"
-fetch.url = "https://home-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.weixin/com.tencent.weixin_$ver_amd64.deb"
