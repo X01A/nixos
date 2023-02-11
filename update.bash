@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+function fetch-github-release {
+  curl -s https://api.github.com/repos/"$1"/releases/latest | jq -r ".tag_name"
+}
+
 nix-update --commit --flake nali
 nix-update --commit --flake realm
 nix-update --commit --flake trojan-go
@@ -9,7 +13,11 @@ nix-update --commit --flake vpncloud
 nix-update --commit --flake tun2socks
 nix-update --commit --flake hev-socks5-tproxy
 nix-update --commit --flake novnc
+nix-update --commit --flake sunshine
 nix-update --commit --flake landrop --url https://github.com/LANDrop/LANDrop
+
+nix-update --commit --version $(fetch-github-release haishanh/yacd) --flake yacd
+nix-update --commit --version $(fetch-github-release cloudreve/Cloudreve) --flake cloudreve
 
 nix-update --commit --version branch --flake simple-obfs
 nix-update --commit --version branch --flake edl

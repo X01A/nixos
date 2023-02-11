@@ -1,4 +1,4 @@
-{ source, stdenv, pkg-config, cmake, ffmpeg, boost169, openssl, libX11, libopus, xorg, libpulseaudio, libevdev, rsync }:
+{ stdenv, pkg-config, cmake, ffmpeg, boost169, openssl, libX11, libopus, xorg, libpulseaudio, libevdev, rsync }:
 
 let
   boostStatic = boost169.override {
@@ -7,7 +7,15 @@ let
   };
 in
 stdenv.mkDerivation rec {
-  inherit (source) pname version src;
+  pname = "sunshine";
+  version = "0.11.1";
+  src = fetchFromGitHub ({
+    owner = "loki-47-6F-64";
+    repo = "sunshine";
+    rev = "v${version}";
+    fetchSubmodules = true;
+    sha256 = "sha256-YrQHHpw7GOcdlnyJI28VShYFrTRq7kpILnkyCYf77NE=";
+  });
 
   # Fix Boost static libs and libevdev
   postPatch = ''
