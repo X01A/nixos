@@ -79,6 +79,7 @@
               nixpkgs-fmt
               nix-update
               bash
+              shellcheck
             ];
           };
         }) // {

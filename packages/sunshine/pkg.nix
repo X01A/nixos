@@ -1,4 +1,4 @@
-{ stdenv, pkg-config, cmake, ffmpeg, boost169, openssl, libX11, libopus, xorg, libpulseaudio, libevdev, rsync }:
+{ stdenv, pkg-config, cmake, ffmpeg, boost169, openssl, libX11, libopus, xorg, libpulseaudio, libevdev, rsync, fetchFromGitHub }:
 
 let
   boostStatic = boost169.override {
