@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function fetch-github-release {
-  curl -s https://api.github.com/repos/"$1"/releases/latest | jq -r ".tag_name"
+  curl --fail -s https://api.github.com/repos/"$1"/releases/latest | jq -r ".tag_name"
 }
 
 nix-update --commit --flake nali
@@ -27,6 +27,6 @@ nix-update --commit --version branch=master --flake miui-auto-task
 nix-update --commit --version branch --flake ksmbd-kernel
 nix-update --commit --version branch --flake ksmbd-tools
 
-nix-update --commit --version "$(curl -sI 'https://mikrotik.com/mt_redirect.php?code=winbox64' | grep Location | grep -oP '([\d]{1,}\.[\d]{1,})')" --flake winbox
-nix-update --commit --version "$(curl -s 'https://github.com/Dreamacro/clash/releases/tag/premium' | grep -oP "Premium \K([0-9\\.]*)" | head -n 1)" --flake clash-premium
-nix-update --commit --version "$(curl -s 'https://mattermost.com/deploy/' | grep -oP "mattermost-\K(.*)(?=-linux-amd64.tar.gz)" | head -n 1)" --flake mattermost-ent
+nix-update --commit --version "$(curl --fail -sI 'https://mikrotik.com/mt_redirect.php?code=winbox64' | grep Location | grep -oP '([\d]{1,}\.[\d]{1,})')" --flake winbox
+nix-update --commit --version "$(curl --fail -s 'https://github.com/Dreamacro/clash/releases/tag/premium' | grep -oP "Premium \K([0-9\\.]*)" | head -n 1)" --flake clash-premium
+nix-update --commit --version "$(curl --fail -s 'https://mattermost.com/deploy/' | grep -oP "mattermost-\K(.*)(?=-linux-amd64.tar.gz)" | head -n 1)" --flake mattermost-ent
