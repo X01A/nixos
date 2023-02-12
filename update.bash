@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
+
 function fetch-github-release {
   curl --fail -s https://api.github.com/repos/"$1"/releases/latest | jq -r ".tag_name"
 }
