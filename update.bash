@@ -3,7 +3,12 @@
 set -ex
 
 function fetch-github-release {
-  curl --fail -s https://api.github.com/repos/"$1"/releases/latest | jq -r ".tag_name"
+  VERSION=$(curl --fail -s https://api.github.com/repos/"$1"/releases/latest | jq -r ".tag_name")
+  if [ "$VERSION" = "" ]; then
+    exit 1
+  fi
+
+  echo $VERSION
 }
 
 nix-update --commit --flake nali
