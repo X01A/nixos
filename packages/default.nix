@@ -37,10 +37,6 @@ in
 {
   inherit build-electron-appimage;
 
-  yacd = callPackage ./yacd {
-    source = nvfetcherOut.yacd;
-  };
-
   # tools need to read global config
   libvirt-tools = import ../modules/services/libvirt/tools;
   libvirt-iso-library = callPackage ../modules/services/libvirt/library.nix { };

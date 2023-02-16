@@ -1,4 +1,4 @@
-{ source, stdenv, fetchurl }:
+{ stdenv, fetchurl }:
 
 stdenv.mkDerivation rec {
   pname = "yacd";
