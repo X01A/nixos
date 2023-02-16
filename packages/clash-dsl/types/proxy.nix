@@ -30,10 +30,7 @@ let
 
   buildProxyProvider = provider: {
     "${provider.name}" = {
-      url = provider.url;
-      type = provider.type;
-      interval = provider.interval;
-      path = provider.path;
+      inherit (provider) url type interval path;
     };
   };
 
@@ -44,7 +41,7 @@ let
       };
 
       type = mkOption {
-        type = types.enum [ "select" ];
+        type = types.enum [ "select" "relay" "url-test" "fallback" "load-balance" ];
         default = "select";
       };
 
@@ -57,14 +54,21 @@ let
         type = with types; listOf str;
         default = [ ];
       };
+
+      url = mkOption {
+        type = with types; nullOr str;
+        default = null;
+      };
+
+      interval = mkOption {
+        type = with types; nullOr int;
+        default = null;
+      };
     };
   });
 
   buildProxyGroup = group: {
-    name = group.name;
-    type = group.type;
-    proxies = group.proxies;
-    use = group.use;
+    inherit (group) name type proxies use url interval;
   };
 in
 {
