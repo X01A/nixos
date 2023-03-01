@@ -1,10 +1,11 @@
-{ stdenv, fetchFromGitHub, makeWrapper, python3 }:
+{ stdenv, fetchFromGitHub, makeWrapper, python3, onepush }:
 
 let
   python3WithPackages = python3.withPackages (python-packages: with python-packages; [
     requests
     python-dotenv
     pyyaml
+    onepush
   ]);
 in
 stdenv.mkDerivation rec {

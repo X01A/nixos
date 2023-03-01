@@ -1,11 +1,11 @@
-{ nixpkgs, os, npmlock2nix, flakeInputs }:
+{ pkgs, normalPkgs, os, npmlock2nix, flakeInputs }:
 
-with nixpkgs.lib;
-with nixpkgs; let
-  nvfetcherOut = callPackage ../sources.nix { };
-  build-electron-appimage = callPackage ./build-electron-appimage { };
+with normalPkgs.lib;
+let
+  nvfetcherOut = normalPkgs.callPackage ../sources.nix { };
+  build-electron-appimage = normalPkgs.callPackage ./build-electron-appimage { };
   osPkgPath = ./. + "/os-specific/${os}";
-  systemPackages = if builtins.pathExists osPkgPath then callPackage osPkgPath { inherit nixpkgs nvfetcherOut; } else { };
+  systemPackages = if builtins.pathExists osPkgPath then normalPkgs.callPackage osPkgPath { inherit pkgs normalPkgs nvfetcherOut; } else { };
 
   dirOnly = it: if it.value == "directory" then true else false;
   hasPkgFile = dir: it:
@@ -15,13 +15,16 @@ with nixpkgs; let
     attrsets.hasAttrByPath [ "pkg.nix" ] itDir && itDir."pkg.nix" == "regular";
 
   hasNvFetcher = name: attrsets.hasAttrByPath [ name ] nvfetcherOut;
+
+  packages = scanPackages "${flakeInputs.self.outPath}/packages";
+
   buildPackage = dir: name:
     if (hasNvFetcher name) then
-      (callPackage "${dir}/${name}/pkg.nix" {
+      (pkgs.callPackage "${dir}/${name}/pkg.nix" {
         source = nvfetcherOut."${name}";
       })
     else
-      (callPackage "${dir}/${name}/pkg.nix" { });
+      (pkgs.callPackage "${dir}/${name}/pkg.nix" { });
 
   scanPackages = dir:
     builtins.listToAttrs (
@@ -33,28 +36,23 @@ with nixpkgs; let
         (filter (hasPkgFile dir)
           (filter dirOnly
             (attrsets.mapAttrsToList (name: value: { inherit name value; }) (builtins.readDir dir)))));
+
 in
-{
+rec {
   inherit build-electron-appimage;
 
   # tools need to read global config
   libvirt-tools = import ../modules/services/libvirt/tools;
-  libvirt-iso-library = callPackage ../modules/services/libvirt/library.nix { };
-  build-vm-qcow = callPackage ./build-vm-qcow { };
+  libvirt-iso-library = pkgs.callPackage ../modules/services/libvirt/library.nix { };
+  build-vm-qcow = pkgs.callPackage ./build-vm-qcow { };
 
-  yesplaymusic = callPackage ./yesplaymusic {
+  yesplaymusic = pkgs.callPackage ./yesplaymusic {
     inherit build-electron-appimage;
     source = nvfetcherOut.yesplaymusic;
   };
 
-  motrix = callPackage ./motrix {
+  motrix = pkgs.callPackage ./motrix {
     inherit build-electron-appimage;
     source = nvfetcherOut.motrix;
   };
-
-  # pufferpanel = callPackage ./pufferpanel {
-  #   inherit npmlock2nix;
-  # };
-
-  # miui-auto-task = callPackage ./miui-auto-task/pkg.nix { };
-} // systemPackages // (scanPackages "${flakeInputs.self.outPath}/packages")
+} // systemPackages // packages

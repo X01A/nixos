@@ -1,6 +1,6 @@
-{ nixpkgs, nvfetcherOut, kernelPatches, ... }:
+{ pkgs, normalPkgs, nvfetcherOut, kernelPatches, ... }:
 
-with nixpkgs;
+with normalPkgs;
 {
   ksmbd-tools = callPackage ./ksmbd/tools.nix { };
 

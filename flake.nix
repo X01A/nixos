@@ -32,30 +32,36 @@
     flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ]
       (system:
         let
+
+          normalPkgs = import nixpkgs {
+            inherit system;
+          };
+
           pkgs = import nixpkgs {
             inherit system;
             overlays = [
               rust-overlay.overlays.default
+              self.overlay."${system}"
             ];
           };
 
-          os = pkgs.lib.last (pkgs.lib.strings.splitString "-" system);
+          os = normalPkgs.lib.last (normalPkgs.lib.strings.splitString "-" system);
 
           packages = import ./packages {
-            nixpkgs = pkgs; inherit os flakeInputs;
+            inherit os flakeInputs pkgs normalPkgs;
             npmlock2nix = pkgs.callPackage npmlock2nix {
               nodejs = pkgs.nodejs-14_x;
             };
           };
 
-          isDerivation = package: pkgs.lib.attrsets.hasAttrByPath [ "drvPath" ] package;
-          packageList = (builtins.filter (it: isDerivation it.value) (pkgs.lib.attrsets.mapAttrsToList (name: value: { inherit name value; }) packages));
+          isDerivation = package: normalPkgs.lib.attrsets.hasAttrByPath [ "drvPath" ] package;
+          packageList = (builtins.filter (it: isDerivation it.value) (normalPkgs.lib.attrsets.mapAttrsToList (name: value: { inherit name value; }) packages));
           buildPacakgesList = builtins.filter
             (item:
               let
-                meta = pkgs.lib.attrsets.attrByPath [ "meta" "platforms" ] [ system ] item.value;
+                meta = normalPkgs.lib.attrsets.attrByPath [ "meta" "platforms" ] [ system ] item.value;
               in
-              (pkgs.lib.lists.any (item: item == system) meta))
+              (normalPkgs.lib.lists.any (item: item == system) meta))
             packageList;
 
           jsonPackages = builtins.toJSON (map (it: it.name) buildPacakgesList);
@@ -63,7 +69,7 @@
           buildPacakges = builtins.listToAttrs buildPacakgesList;
           finalPackages = buildPacakges //
           cloudreve-cli.legacyPackages."${system}";
-          prefetch = pkgs.nix-prefetch.override { nix = pkgs.nixUnstable; };
+          prefetch = normalPkgs.nix-prefetch.override { nix = normalPkgs.nixUnstable; };
         in
         {
           legacyPackages = finalPackages // {
