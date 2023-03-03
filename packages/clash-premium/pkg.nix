@@ -2,10 +2,10 @@
 
 stdenv.mkDerivation rec {
   pname = "clash-premium";
-  version = "2023.02.16";
+  version = "2023.03.03";
   src = fetchurl {
     url = "https://github.com/Dreamacro/clash/releases/download/premium/clash-linux-amd64-${version}.gz";
-    sha256 = "sha256-dqGV4zRMlV9sTUqRawigLWu6toMRdeBn+McaUPZjAZ4=";
+    sha256 = "sha256-utvuXEv3hqUSnzHjBVNMCTxGSk8ck5w0dpyR6k9j/w0=";
   };
 
   unpackPhase = ":";
