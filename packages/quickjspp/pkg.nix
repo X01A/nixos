@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, cmake, pkg-config }:
+{ stdenv, fetchFromGitHub, cmake }:
 
 stdenv.mkDerivation rec {
   pname = "quickjspp";
@@ -12,5 +12,5 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-7iXL3cBoGbl+/vltjCboz2bWGTo/3hwxPO3IlDwLvJo=";
   });
 
-  nativeBuildInputs = [ cmake pkg-config ];
+  nativeBuildInputs = [ cmake ];
 }
