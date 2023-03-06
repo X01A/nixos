@@ -26,6 +26,7 @@ nix-update --commit --flake landrop --url https://github.com/LANDrop/LANDrop
 
 nix-update --commit --flake yacd
 nix-update --commit --flake cloudreve
+nix-update --commit --flake cockpit-machines
 
 nix-update --commit --version branch --flake simple-obfs
 nix-update --commit --version branch --flake edl
