@@ -1,5 +1,8 @@
-image:
-  file: .gitpod.dockerfile
+tasks:
+  - init: |
+      direnv allow
+      mkdir -p /home/gitpod/.config/nix &&
+      echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf
 
 vscode:
   extensions:
