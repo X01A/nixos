@@ -29,6 +29,7 @@ nix-update --commit --flake cloudreve
 nix-update --commit --flake cockpit-machines
 nix-update --commit --flake libvirt-dbus
 nix-update --commit --flake mainsail
+nix-update --commit --flake memos
 
 nix-update --commit --version branch --flake simple-obfs
 nix-update --commit --version branch --flake edl
