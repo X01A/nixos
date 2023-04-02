@@ -14,6 +14,11 @@ in
         default = pkgs.jdk;
       };
 
+      port = mkOption {
+        type = types.int;
+        default = 8080;
+      };
+
       secure = mkOption {
         type = types.bool;
         default = false;
@@ -59,7 +64,8 @@ in
 
       script = ''
         exec ${cfg.java}/bin/java -jar ${pkgs.reader} --reader.app.secure=${toString cfg.secure} \
-          --reader.app.secureKey=${cfg.secureKey} --reader.app.inviteCode=${cfg.inviteCode}
+          --reader.app.secureKey=${cfg.secureKey} --reader.app.inviteCode=${cfg.inviteCode} \
+          --reader.server.port=${toString cfg.port}
       '';
     };
   };
