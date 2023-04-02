@@ -63,9 +63,10 @@ in
       };
 
       script = ''
-        cp ${pkgs.reader} /run/reader.jar
+        rm -f reader.jar
+        cp ${pkgs.reader} reader.jar
 
-        exec ${cfg.java}/bin/java -jar /run/reader.jar --reader.app.secure=${trivial.boolToString cfg.secure} \
+        exec ${cfg.java}/bin/java -jar reader.jar --reader.app.secure=${trivial.boolToString cfg.secure} \
           --reader.app.secureKey=${cfg.secureKey} --reader.app.inviteCode=${cfg.inviteCode} \
           --reader.server.port=${toString cfg.port}
       '';
