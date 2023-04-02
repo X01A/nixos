@@ -32,6 +32,7 @@
     ./services/argo.nix
     ./services/drone-exec.nix
     ./services/vpncloud.nix
+    ./services/reader.nix
     ./services/influxdb.nix
     ./devices/mlx4-mode.nix
     ./desktop/font.nix
