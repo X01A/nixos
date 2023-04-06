@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation {
   pname = "ksmbd-tools";
-  version = "unstable-2023-01-31";
+  version = "unstable-2023-04-06";
   src = fetchFromGitHub ({
     owner = "namjaejeon";
     repo = "ksmbd-tools";
-    rev = "85a066e37d48b5f673c9e8dd562cb806000590d6";
+    rev = "044699ac5f688111747dbf021570a1602834a4cf";
     fetchSubmodules = true;
-    sha256 = "sha256-uYJhjxarAqJC/aY8UUy7sjhA89LVoCG6B7/APkE0ouk=";
+    sha256 = "sha256-R4yTqofrxTc3PTxxSwkjFeUREJ+wFy+uqnOoZlryDDI=";
   });
 
   nativeBuildInputs = [ autoreconfHook glib pkg-config libnl ];
