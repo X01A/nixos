@@ -1,13 +1,13 @@
 { fetchFromGitHub, buildGoModule, stdenvNoCC, yarn2nix-moretea, jq, nodejs, nodePackages }:
 
 let
-  version = "0.12.0";
+  version = "0.12.1";
   src = fetchFromGitHub ({
     owner = "usememos";
     repo = "memos";
     rev = "v${version}";
     fetchSubmodules = true;
-    sha256 = "sha256-dYC8PzV2okkwn4L7oj4A1JZACZKfQGWDBX3Bs5sw2UU=";
+    sha256 = "sha256-Tdm3PP/xD0EcKWEiTYODqjY1HQyvc/WHsbcRGkAoRT8=";
   });
 
   # patch package.json add version field
