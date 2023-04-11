@@ -11,6 +11,10 @@ buildGoModule rec {
     sha256 = "sha256-xlrhDCvRWvDz6TsHj04x0ojTfL+gkhHLLy9VnJkETqI=";
   });
 
+
+  tags = [
+    "with_gvisor"
+  ];
   ldflags = [
     "-s"
     "-w"
