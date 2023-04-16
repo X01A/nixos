@@ -1,13 +1,13 @@
 { fetchFromGitHub, buildGoModule, stdenvNoCC, yarn2nix-moretea, jq, nodejs, nodePackages }:
 
 let
-  version = "0.12.1";
+  version = "0.12.2";
   src = fetchFromGitHub ({
     owner = "usememos";
     repo = "memos";
     rev = "v${version}";
     fetchSubmodules = true;
-    sha256 = "sha256-Tdm3PP/xD0EcKWEiTYODqjY1HQyvc/WHsbcRGkAoRT8=";
+    sha256 = "sha256-vAY++SHUMBw+jyuu6KFNt62kE5FM8ysGheQwBSOYos8=";
   });
 
   # patch package.json add version field
@@ -60,7 +60,7 @@ buildGoModule rec {
 
   # check will unable to access network in sandbox
   doCheck = false;
-  vendorSha256 = "sha256-P4OnICBiTAs/uaQgoYNKK50yj/PYntyH/bLihdPv88s=";
+  vendorSha256 = "";
   postPatch = ''
     rm -rf server/dist
     cp -r ${frontent} server/dist
