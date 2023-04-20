@@ -156,7 +156,6 @@ in
         lsof
         gh
         git
-        clash
         neofetch
         htop
         nodejs
