@@ -3,15 +3,15 @@
 let
   mkExtension = lib.makeOverridable
     ({ name
-    , configureFlags ? [ "--enable-${extName}" ]
-    , internalDeps ? [ ]
-    , postPhpize ? ""
-    , buildInputs ? [ ]
-    , zendExtension ? false
-    , doCheck ? true
-    , extName ? name
-    , ...
-    }@args: stdenv.mkDerivation ((builtins.removeAttrs args [ "name" ]) // {
+     , configureFlags ? [ "--enable-${extName}" ]
+     , internalDeps ? [ ]
+     , postPhpize ? ""
+     , buildInputs ? [ ]
+     , zendExtension ? false
+     , doCheck ? true
+     , extName ? name
+     , ...
+     }@args: stdenv.mkDerivation ((builtins.removeAttrs args [ "name" ]) // {
       pname = "php-${name}";
       extensionName = extName;
 
