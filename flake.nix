@@ -48,7 +48,7 @@
           os = normalPkgs.lib.last (normalPkgs.lib.strings.splitString "-" system);
 
           packages = import ./packages {
-            inherit os flakeInputs pkgs normalPkgs;
+            inherit os flakeInputs pkgs normalPkgs nixpkgs;
             npmlock2nix = pkgs.callPackage npmlock2nix {
               nodejs = pkgs.nodejs-14_x;
             };

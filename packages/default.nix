@@ -1,4 +1,4 @@
-{ pkgs, normalPkgs, os, npmlock2nix, flakeInputs }:
+{ nixpkgs, pkgs, normalPkgs, os, npmlock2nix, flakeInputs }:
 
 with normalPkgs.lib;
 let
@@ -49,6 +49,10 @@ rec {
   yesplaymusic = pkgs.callPackage ./yesplaymusic {
     inherit build-electron-appimage;
     source = nvfetcherOut.yesplaymusic;
+  };
+
+  php74 = pkgs.callPackage ./php74 {
+    inherit nixpkgs;
   };
 
   motrix = pkgs.callPackage ./motrix {

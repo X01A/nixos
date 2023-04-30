@@ -1,0 +1,27 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+      "ghcr.io/devcontainers/features/nix:1": {
+        "extraNixConfig": "experimental-features = nix-command flakes,substituters = https://attic.indexyz.me/indexyz https://indexyz.cachix.org https://colmena.cachix.org https://cache.nixos.org/,trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= indexyz:XxexOMK+bHXR2slT4A9wnJg00EZFXCUYqlUhlEEGQEc= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= colmena.cachix.org-1:7BzpDnjjH8ki2CT3f6GdOk7QAzPOl+1t3LvTLXqYcSg=,trusted-users = vscode,sandbox = true,system-features = nixos-test benchmark big-parallel kvm"
+      },
+      "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+      "ghcr.io/christophermacgown/devcontainer-features/direnv:1": {},
+      "ghcr.io/meaningful-ooo/devcontainer-features/fish:1": {},
+      "ghcr.io/devcontainers-contrib/features/starship:1": {}
+    },
+    "onCreateCommand": "direnv allow",
+    "updateContentCommand": "direnv reload",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+              "EditorConfig.EditorConfig",
+              "bbenoist.Nix"
+          ],
+        "settings": {
+          "workbench.colorTheme": "Default Dark+ Experimental",
+          "editor.fontFamily": "Iosevka",
+          "terminal.integrated.fontFamily": "Iosevka"
+        }
+      }
+    }
+  }
