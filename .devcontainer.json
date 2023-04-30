@@ -14,9 +14,9 @@
     "customizations": {
       "vscode": {
         "extensions": [
-              "EditorConfig.EditorConfig",
-              "bbenoist.Nix"
-          ],
+          "EditorConfig.EditorConfig",
+          "bbenoist.Nix"
+        ],
         "settings": {
           "workbench.colorTheme": "Default Dark+ Experimental",
           "editor.fontFamily": "Iosevka",
