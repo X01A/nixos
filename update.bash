@@ -11,7 +11,6 @@ function fetch-github-release {
   echo $VERSION
 }
 
-nix-update --commit --flake nali
 nix-update --commit --flake realm
 nix-update --commit --flake trojan-go
 nix-update --commit --flake fcitx5-material-color
