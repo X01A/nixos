@@ -3,10 +3,10 @@
 {
   motrix = {
     pname = "motrix";
-    version = "1.6.11";
+    version = "1.8.19";
     src = fetchurl {
-      url = "https://github.com/agalwood/Motrix/releases/download/v1.6.11/Motrix-1.6.11.AppImage";
-      sha256 = "sha256-tE2Q7NM+cQOg+vyqyfRwg05EOMQWhhggTA6S+VT+SkM=";
+      url = "https://github.com/agalwood/Motrix/releases/download/v1.8.19/Motrix-1.8.19.AppImage";
+      sha256 = "sha256-oSO+VH3bZcjnXjECqZgOmsvlOONbfgOq50qVLvHdKfo=";
     };
   };
   yesplaymusic = {
