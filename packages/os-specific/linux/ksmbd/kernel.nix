@@ -9,9 +9,9 @@ stdenv.mkDerivation {
   src = fetchFromGitHub ({
     owner = "namjaejeon";
     repo = "ksmbd";
-    rev = "05dcdb15342ea3090dda1d6fbba2c386e70ab4f3";
+    rev = "477712816c4bcb611deb4e1b90e20c5e33c4b18d";
     fetchSubmodules = true;
-    sha256 = "sha256-etNuTI2yIKlggAQY85puncR/9gMD1Qa5XM3MCtyLowE=";
+    sha256 = "sha256-NAqviIduxb5aDQiP74kp1N4qotYs+Ogif0qcP3Bo5qo=";
   });
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
