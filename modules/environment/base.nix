@@ -90,7 +90,7 @@ in
       # if ntp reslove failure time will never correct
       services.resolved.dnssec = lib.mkDefault "false";
 
-      boot.cleanTmpDir = true;
+      boot.tmp.cleanOnBoot = true;
 
       networking.usePredictableInterfaceNames = false;
 
