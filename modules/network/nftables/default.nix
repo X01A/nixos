@@ -34,9 +34,9 @@ in
 
   config = mkIf cfg.enable {
     networking.firewall.enable = false;
-
     networking.nftables = {
       enable = true;
+      checkRuleset = false;
       ruleset = ''
         table inet filter {
           set allow_tcp {
