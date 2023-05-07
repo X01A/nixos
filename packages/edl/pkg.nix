@@ -15,13 +15,13 @@ let
 in
 python3.pkgs.buildPythonApplication rec {
   pname = "edl";
-  version = "unstable-2023-04-20";
+  version = "unstable-2023-05-07";
   src = fetchFromGitHub ({
     owner = "bkerler";
     repo = "edl";
-    rev = "dfb27b081a57b7de183af0099b71fc1dedec9bdb";
+    rev = "44e91cc789e359a2ad1aa9345b37ae7b3cede165";
     fetchSubmodules = true;
-    sha256 = "sha256-HwljySnRdHOQSps9/CVNFRdj7EXGUWm7Jh2H62ojrqE=";
+    sha256 = "sha256-1tU8gkSksUpujFYctqkJccq5CagTCIxyZcT0tqUD6co=";
   });
 
   propagatedBuildInputs = with python3.pkgs; [
