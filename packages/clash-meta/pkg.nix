@@ -6,9 +6,9 @@ buildGo120Module rec {
   src = fetchFromGitHub ({
     owner = "MetaCubeX";
     repo = "Clash.Meta";
-    rev = "234f7dbd3b13c96918977da7c0018098d569cde5";
+    rev = "76caab19bf1401f2eb9caa45922e155e9f3bbbed";
     fetchSubmodules = true;
-    sha256 = "sha256-HrybdeGkQj/ywaSCeHg9R1AyhVXHeYZrJUweoLF7xac=";
+    sha256 = "sha256-zIZ8goD+syNlKQoLaeeOL5qZhEzeDAm4GfYYkeSSKSE=";
   });
 
 
