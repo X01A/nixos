@@ -5,11 +5,11 @@ assert lib.versionAtLeast kernel.version "5.4";
 
 stdenv.mkDerivation {
   pname = "ksmbd";
-  version = "unstable-2023-05-11";
+  version = "unstable-2023-05-12";
   src = fetchFromGitHub ({
     owner = "namjaejeon";
     repo = "ksmbd";
-    rev = "3b7de9287cc40f32630193a94af52fe186ff23c5";
+    rev = "8d055c787b4baf98bc6ad3243a0b2f41c5957f52";
     fetchSubmodules = true;
     sha256 = "sha256-uX96/W/ef+r9EUcEXauJKxZmDn5a+ANZXJKrmz5J8+c=";
   });
