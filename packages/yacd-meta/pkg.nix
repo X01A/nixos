@@ -7,9 +7,9 @@ stdenvNoCC.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "MetaCubeX";
     repo = "Yacd-meta";
-    rev = "b1772541e7225c8738b6ac173d51edf6c20ae1b7";
+    rev = "0f8a84fe5e991db9052532a13eb3229e6b3f4761";
     fetchSubmodules = true;
-    sha256 = "sha256-6HRiAJKnut9SWIwtfA5YIgh09szwo7EsWA2Sdb7yIHg=";
+    sha256 = "sha256-3aSK9HUkSu7NIo8E9LrCXbCjWtuPG02fx245hB90ynE=";
   };
 
   installPhase = ''
