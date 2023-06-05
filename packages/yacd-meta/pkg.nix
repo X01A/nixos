@@ -2,14 +2,14 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "yacd-meta";
-  version = "unstable-2023-06-01";
+  version = "unstable-2023-06-05";
 
   src = fetchFromGitHub {
     owner = "MetaCubeX";
     repo = "Yacd-meta";
-    rev = "4368d165d949c0591e0077c74e237704e7060d10";
+    rev = "2870342eb1d6676fe14a3c2b5f75e0105df97d75";
     fetchSubmodules = true;
-    sha256 = "sha256-bNqYadxHg5iS8UT7m6eHz2gW5aY5ml9jn7yL/V4jK/8=";
+    sha256 = "sha256-YDPSEz28n+4R3fAWKzxeiUNSDNRlZoIBs+zyiARo4q0=";
   };
 
   installPhase = ''
