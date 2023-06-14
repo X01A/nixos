@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   ];
 
   makeFlags = [ "DESTDIR=$(out)" "PREFIX=" ];
-  
+
   postPatch = ''
     substituteInPlace Makefile \
       --replace /usr/share $out/share
