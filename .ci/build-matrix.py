@@ -17,4 +17,4 @@ if not os.getenv('GITHUB_OUTPUT'):
     sys.exit(1)
 
 with open(os.getenv('GITHUB_OUTPUT'), 'w') as file:
-    file.write(f"matrix={json.dumps(list(map(lambda x: ({ 'package': x }), data)))}\n")
+    file.write(f"matrix={json.dumps(list(map(lambda x: ({ 'package': x }), pkgs)))}\n")
