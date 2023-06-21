@@ -53,6 +53,8 @@ jobs:
         attic login indexyz https://attic.indexyz.me "${{ secrets.ATTIC_TOKEN }}"
         nix --version
 
+        PACKAGE="${{ matrix.package }}"
+
         nix build --no-link ".#"$PACKAGE
         echo "Build Package Successfully"s
         PACKAGE_LOCATION=$(nix eval --raw ".#"$PACKAGE)
