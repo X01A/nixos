@@ -21,7 +21,7 @@ jobs:
       id: set-matrix
 
   build:
-    name: Build ${{ matrix.package }}
+    name: Build ${{ matrix.pacakges.name }}
     runs-on: ubuntu-latest
 
     if: needs.generate-matrix.outputs.matrix != ''
@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       max-parallel: 6
-      matrix: ${{fromJSON(needs.generate-matrix.outputs.matrix)}}
+      matrix: ${{ fromJSON(needs.generate-matrix.outputs.matrix) }}
 
     steps:
     - uses: actions/checkout@v2
@@ -53,7 +53,7 @@ jobs:
         attic login indexyz https://attic.indexyz.me "${{ secrets.ATTIC_TOKEN }}"
         nix --version
 
-        PACKAGE="${{ matrix.package }}"
+        PACKAGE="${{ matrix.pacakges.name }}"
 
         nix build --no-link ".#"$PACKAGE
         echo "Build Package Successfully"s
