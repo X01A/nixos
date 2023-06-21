@@ -18,5 +18,5 @@ if not os.getenv('GITHUB_OUTPUT'):
 
 with open(os.getenv('GITHUB_OUTPUT'), 'w') as file:
     value = json.dumps(list(map(lambda x: ({ 'package': x }), pkgs)))
-    print(f"matir -> {value}")
+    print(f"matirx -> {value}")
     file.write(f"matrix={value}\n")
