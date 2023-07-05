@@ -1,9 +1,8 @@
-{
-  stdenvNoCC,
-  fetchFromGitHub,
-  defaultResolver ? "https://1.1.1.1/dns-query",
-  chinaDns ? "114.114.114.114",
-  ...
+{ stdenvNoCC
+, fetchFromGitHub
+, defaultResolver ? "https://1.1.1.1/dns-query"
+, chinaDns ? "114.114.114.114"
+, ...
 }:
 
 stdenvNoCC.mkDerivation {
