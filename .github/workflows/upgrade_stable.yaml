@@ -1,0 +1,34 @@
+name: Upgrade sofrware stable
+on:
+  push:
+  schedule:
+    # Every hour
+    - cron:  '0 * * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: cachix/install-nix-action@master
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+        install_url: https://github.com/nix-community/nix-unstable-installer/releases/download/nix-2.14.0pre20230127_ccaadc9/install
+        extra_nix_config: |
+          experimental-features = nix-command flakes
+          substituters = https://attic.indexyz.me/indexyz https://indexyz.cachix.org https://cache.nixos.org/
+          trusted-public-keys = indexyz:XxexOMK+bHXR2slT4A9wnJg00EZFXCUYqlUhlEEGQEc= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+
+    - name: Check Package
+      run: |
+        git config --global user.email github-actions[bot]@users.noreply.github.com
+        git config --global user.name github-actions[bot]
+
+        nix develop -c -- bash update.bash
+        git push
+
+        nix develop -c -- nvfetcher build -o _build
+        nix develop -c -- nixpkgs-fmt .
+        git add .
+        git commit -m "pkg: nvfetcher update" && git push || echo "No changes"
