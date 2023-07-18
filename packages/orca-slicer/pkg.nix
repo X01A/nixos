@@ -5,7 +5,7 @@ stdenv.mkDerivation rec {
 
   src = appimageTools.extractType2 {
     name = "${pname}-${version}-src";
-    src = runCommand "${pname}-${version}-unzip" {} ''
+    src = runCommand "${pname}-${version}-unzip" { } ''
       ${unzip}/bin/unzip ${source.src}
       mv OrcaSlicer_ubu64.AppImage $out
     '';
