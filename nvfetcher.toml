@@ -7,3 +7,8 @@ fetch.url = "https://github.com/qier222/YesPlayMusic/releases/download/v$ver/Yes
 src.github = "agalwood/Motrix"
 src.prefix = "v"
 fetch.url = "https://github.com/agalwood/Motrix/releases/download/v$ver/Motrix-$ver.AppImage"
+
+[orca-slicer]
+src.github = "SoftFever/OrcaSlicer"
+src.prefix = "v"
+fetch.url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v$ver/OrcaSlicer_V$ver_Linux.zip"

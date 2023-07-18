@@ -9,6 +9,14 @@
       sha256 = "sha256-oSO+VH3bZcjnXjECqZgOmsvlOONbfgOq50qVLvHdKfo=";
     };
   };
+  orca-slicer = {
+    pname = "orca-slicer";
+    version = "1.6.3";
+    src = fetchurl {
+      url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v1.6.3/OrcaSlicer_V1.6.3_Linux.zip";
+      sha256 = "sha256-J5lwGmRj2qU2E2xgbL40sIN/IinSIqt9PcViP9yiRjc=";
+    };
+  };
   yesplaymusic = {
     pname = "yesplaymusic";
     version = "0.4.7";
