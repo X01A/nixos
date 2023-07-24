@@ -51,10 +51,6 @@ rec {
     source = nvfetcherOut.yesplaymusic;
   };
 
-  php74 = pkgs.callPackage ./php74 {
-    inherit nixpkgs;
-  };
-
   motrix = pkgs.callPackage ./motrix {
     inherit build-electron-appimage;
     source = nvfetcherOut.motrix;
