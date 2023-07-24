@@ -165,6 +165,7 @@ in
         binutils
         nload
         pciutils
+        usbutils
         iotop
         btrfs-progs
         iperf
@@ -193,6 +194,7 @@ in
         fd
         zellij
         borgbackup
+        dogdns
       ];
 
       programs.fish = {
