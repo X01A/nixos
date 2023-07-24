@@ -19,9 +19,9 @@ python3.pkgs.buildPythonApplication rec {
   src = fetchFromGitHub ({
     owner = "bkerler";
     repo = "edl";
-    rev = "0087fe552666cf24835062a2244623cc355d4073";
+    rev = "eeab2de30bfcec483e6839cd0e6cea844b3cddc8";
     fetchSubmodules = true;
-    sha256 = "sha256-FgoHcN2OEP4Kan9o7tE/nJjVRz/RHLgARnKW6WswxT0=";
+    sha256 = "sha256-i/N0K0KmR+gJkv0Fw6siy3oXlFX6y+9coDDfeFrEcck=";
   });
 
   propagatedBuildInputs = with python3.pkgs; [
