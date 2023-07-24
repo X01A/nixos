@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 nix-update --commit --version branch --flake simple-obfs
-nix-update --commit --version branch --flake edl
 nix-update --commit --version branch --flake commit-notifier
 nix-update --commit --version branch=release --flake mmdb-ipip
 nix-update --commit --version branch --flake ksmbd-kernel
