@@ -3,6 +3,16 @@
 with lib;
 let
   cfg = config.indexyz.programs.vscode;
+
+  mkOpenVSXExt = { publisher, name, version, sha256 }: {
+    inherit name publisher version;
+    vsix = builtins.fetchurl {
+      inherit sha256;
+      url = "https://open-vsx.org/api/${publisher}/${name}/${version}/file/${publisher}.${name}-${version}.vsix";
+      name = "${publisher}-${name}.zip";
+    };
+  };
+
   extensions = (with pkgs.vscode-extensions; [
     bbenoist.nix
     ms-python.python
@@ -27,13 +37,15 @@ let
     arrterian.nix-env-selector
     oderwat.indent-rainbow
     christian-kohler.path-intellisense
+    vscode-extensions.mkhl.direnv
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-    {
-      name = "direnv";
-      publisher = "mkhl";
-      version = "0.6.1";
-      sha256 = "sha256-5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
-    }
+    (mkOpenVSXExt {
+      publisher = "jeanp413";
+      name = "open-remote-ssh";
+      version = "0.0.39";
+      sha256 = "1bps29zbs0xy7b2p3q5xmva1lh6ma3gz6wzvr96d9ihcpgcrnni5";
+    })
+
     {
       name = "vscode-todo-highlight";
       publisher = "wayou";
@@ -44,13 +56,25 @@ let
 in
 {
   options = {
-    indexyz.programs.vscode.enable = mkOption {
-      default = false;
-      type = with types; bool;
+    indexyz.programs.vscode = {
+      enable = mkOption {
+        default = false;
+        type = with types; bool;
+      };
     };
   };
 
   config = mkIf cfg.enable {
+    home.file.".vscode-oss/argv.json" = {
+      text = builtins.toJSON {
+        enable-crash-reporter = false;
+        crash-reporter-id = "cde0befe-53e9-4442-9e17-8097c8d0e060";
+        enable-proposed-api = [
+          "jeanp413.open-remote-ssh"
+        ];
+      };
+    };
+
     programs.vscode = {
       enable = true;
       package = pkgs.vscodium;
