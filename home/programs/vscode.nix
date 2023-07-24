@@ -66,6 +66,7 @@ in
 
   config = mkIf cfg.enable {
     home.file.".vscode-oss/argv.json" = {
+      force = true;
       text = builtins.toJSON {
         enable-crash-reporter = false;
         crash-reporter-id = "cde0befe-53e9-4442-9e17-8097c8d0e060";
