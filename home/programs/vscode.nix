@@ -37,7 +37,7 @@ let
     arrterian.nix-env-selector
     oderwat.indent-rainbow
     christian-kohler.path-intellisense
-    vscode-extensions.mkhl.direnv
+    mkhl.direnv
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     (mkOpenVSXExt {
       publisher = "jeanp413";
