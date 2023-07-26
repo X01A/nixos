@@ -17,10 +17,10 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "winbox";
-  version = "3.38";
+  version = "3.39";
   src = fetchurl {
     url = "https://download.mikrotik.com/winbox/${version}/winbox64.exe";
-    sha256 = "sha256-RV+j8FQigpwPprR2xuMYpDRMDwugSZD+O2ZmyPZDz54=";
+    sha256 = "sha256-R1/1mWrWVY8pZusmEp4WfUgQUQWw5NXkS4xNV/aoRic=";
   };
 
   unpackPhase = ":";
