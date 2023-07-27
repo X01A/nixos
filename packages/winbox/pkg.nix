@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
   version = "3.39";
   src = fetchurl {
     url = "https://download.mikrotik.com/winbox/${version}/winbox64.exe";
-    sha256 = "sha256-R1/1mWrWVY8pZusmEp4WfUgQUQWw5NXkS4xNV/aoRic=";
+    sha256 = "sha256-tP+YqjgYOUi+t4stUHe60RbRZrUg+Gm8+1k2gR/RHa0=";
   };
 
   unpackPhase = ":";
