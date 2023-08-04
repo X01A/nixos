@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-ALqloYdACGM0PbcYExlYVG3bqCJR2r2EmB1UtVfn2Nc=",
+            "sha256": "sha256-+6ShFyhr4fFAMB543k749MUbJlkB7NSudoByC/gleow=",
             "type": "url",
-            "url": "https://github.com/SoftFever/OrcaSlicer/releases/download/v1.6.4-beta/OrcaSlicer_V1.6.4-beta_Linux.zip"
+            "url": "https://github.com/SoftFever/OrcaSlicer/releases/download/v1.6.4-beta2/OrcaSlicer_V1.6.4-beta2_Linux.zip"
         },
-        "version": "1.6.4-beta"
+        "version": "1.6.4-beta2"
     },
     "yesplaymusic": {
         "cargoLocks": null,
