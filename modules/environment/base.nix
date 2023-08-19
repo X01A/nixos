@@ -195,24 +195,18 @@ in
         zellij
         borgbackup
         dogdns
+        fzf
+        bat
+        btop
       ];
 
       programs.fish = {
         enable = true;
-        shellInit = ''
-          set -gx STARSHIP_CONFIG /etc/starship.toml
-
-          ${pkgs.starship}/bin/starship init fish | source
-        '';
         shellAliases = {
           ls = "exa";
           find = "fd";
         };
       };
-
-      environment.etc."starship.toml".text = ''
-        add_newline = false
-      '';
 
       users = {
         mutableUsers = false;

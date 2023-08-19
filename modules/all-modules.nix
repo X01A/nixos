@@ -5,6 +5,7 @@
     ./environment/base.nix
     ./environment/qemu.nix
     ./environment/efi.nix
+    ./environment/shell.nix
     ./environment/acme
     ./services/ssh.nix
     ./services/clash
