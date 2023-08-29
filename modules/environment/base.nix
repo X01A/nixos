@@ -156,7 +156,7 @@ in
         lsof
         gh
         git
-        neofetch
+        fastfetch
         htop
         nodejs
         yarn
@@ -205,6 +205,7 @@ in
         shellAliases = {
           ls = "exa";
           find = "fd";
+          neofetch = "fastfetch";
         };
       };
 
