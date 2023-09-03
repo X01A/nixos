@@ -1,6 +1,5 @@
 name: Upgrade sofrware stable
 on:
-  push:
   schedule:
     # Every hour
     - cron:  '0 * * * *'
