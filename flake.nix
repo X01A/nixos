@@ -15,20 +15,13 @@
       flake = false;
     };
 
-    cloudreve-cli = {
-      url = "github:Indexyz/CloudreveCLI";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.flake-compat.follows = "flake-compat";
-    };
-
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, cloudreve-cli, npmlock2nix, rust-overlay, ... }@flakeInputs:
+  outputs = { self, nixpkgs, flake-utils, npmlock2nix, rust-overlay, ... }@flakeInputs:
     flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ]
       (system:
         let
@@ -67,15 +60,13 @@
           jsonPackages = builtins.toJSON (map (it: it.name) buildPacakgesList);
 
           buildPacakges = builtins.listToAttrs buildPacakgesList;
-          finalPackages = buildPacakges //
-          cloudreve-cli.legacyPackages."${system}";
           prefetch = normalPkgs.nix-prefetch.override { nix = normalPkgs.nixUnstable; };
         in
         {
-          legacyPackages = finalPackages // {
+          legacyPackages = buildPacakges // {
             packageList = pkgs.writeText "packages.json" jsonPackages;
           };
-          packages = finalPackages;
+          packages = buildPacakges;
           overlay = final: prev: packages;
           overlays = builtins.mapAttrs (overlayPkgs: (final: prev: overlayPkgs)) buildPacakges;
           devShell = pkgs.mkShell {

@@ -1,31 +1,5 @@
 {
   "nodes": {
-    "cloudreve-cli": {
-      "inputs": {
-        "flake-compat": [
-          "flake-compat"
-        ],
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1654269350,
-        "narHash": "sha256-uh2AwcnUK1Gu4uJdxbsJppdn9ieT/Lul1gwZaKKDMO4=",
-        "owner": "Indexyz",
-        "repo": "CloudreveCLI",
-        "rev": "2e2aaaf355f108e4c97cb9c308fbb3e0bc267cf1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Indexyz",
-        "repo": "CloudreveCLI",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -47,11 +21,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1689068808,
-        "narHash": "sha256-6ixXo3wt24N/melDWjq70UuHQLxGV8jZvooRanIHXw0=",
+        "lastModified": 1694529238,
+        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "919d646de7be200f3bf08cb76ae1f09402b6f9b4",
+        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
         "type": "github"
       },
       "original": {
@@ -80,11 +54,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1691417674,
-        "narHash": "sha256-J8kOxI34i6g6tHBQ4+dW7T+n8gU7Al7EJ5HYg6/Kszo=",
+        "lastModified": 1695101847,
+        "narHash": "sha256-ShKHhOhKJ69BnYGnSDVwLjMN7SS5kjv6102ITJ5kEaY=",
         "owner": "5aaee9",
         "repo": "nixpkgs",
-        "rev": "a76f019d9ccbc912cc5bfbee39fdb6a572fc475a",
+        "rev": "3dd248db21547e8f1daa8cf4807e20d40b1f4358",
         "type": "github"
       },
       "original": {
@@ -111,7 +85,6 @@
     },
     "root": {
       "inputs": {
-        "cloudreve-cli": "cloudreve-cli",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
@@ -127,11 +100,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1691374719,
-        "narHash": "sha256-HCodqnx1Mi2vN4f3hjRPc7+lSQy18vRn8xWW68GeQOg=",
+        "lastModified": 1695089518,
+        "narHash": "sha256-mOBsJpwnW/Z/1Mz6/WLMq+wCBw1aDHF8xkDThKL+kfc=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "b520a3889b24aaf909e287d19d406862ced9ffc9",
+        "rev": "a66b7aa98a2a54b9bf81d8ef4e78db2eaad80d5c",
         "type": "github"
       },
       "original": {
