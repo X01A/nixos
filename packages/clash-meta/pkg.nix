@@ -1,6 +1,6 @@
-{ fetchFromGitHub, buildGo120Module, lib }:
+{ fetchFromGitHub, buildGo121Module, lib }:
 
-buildGo120Module rec {
+buildGo121Module rec {
   pname = "clash-meta";
   version = "unstable-2023-09-18";
   src = fetchFromGitHub ({
