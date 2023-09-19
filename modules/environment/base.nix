@@ -190,7 +190,7 @@ in
         jq
         wireguard-tools
         ripgrep
-        exa
+        eza
         fd
         zellij
         borgbackup
@@ -203,7 +203,7 @@ in
       programs.fish = {
         enable = true;
         shellAliases = {
-          ls = "exa";
+          ls = "eza";
           find = "fd";
           neofetch = "fastfetch";
         };
