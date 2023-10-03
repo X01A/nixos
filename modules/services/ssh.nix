@@ -29,7 +29,7 @@ in
 
       settings = {
         X11Forwarding = true;
-        PermitRootLogin = "prohibit-password";
+        PermitRootLogin = lib.mkDefault "prohibit-password";
         PasswordAuthentication = false;
       };
     };
