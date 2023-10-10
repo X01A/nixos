@@ -26,7 +26,8 @@ in
       add_newline = false
 
       format = """
-      [](#9A348E)\
+      [░▒▓](#a3aed2)\
+      [  ](bg:#a3aed2 fg:#090c0c)\
       $os\
       $username\
       [](bg:#DA627D fg:#9A348E)\
