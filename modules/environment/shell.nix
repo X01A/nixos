@@ -21,21 +21,20 @@ in
       '';
     };
 
-
-    environment.etc."starship.toml".text = ''
+    environment.etc."starship.toml".text = lib.mkForce ''
       add_newline = false
 
       format = """
-      [░▒▓](#a3aed2)\
-      [  ](bg:#a3aed2 fg:#090c0c)\
-      $os\
+      [░▒▓](#5f87d7)\
+      [  ](bg:#5f87d7 fg:#090C0C)\
+      [](bg:#9a348e fg:#5f87d7)\
       $username\
-      [](bg:#DA627D fg:#9A348E)\
+      [](bg:#5f5faf fg:#9A348E)\
       $directory\
-      [](fg:#DA627D bg:#FCA17D)\
+      [](fg:#5f5faf bg:#d7af00)\
       $git_branch\
       $git_status\
-      [](fg:#FCA17D bg:#86BBD8)\
+      [](fg:#d7af00 bg:#86BBD8)\
       $c\
       $elixir\
       $elm\
@@ -50,9 +49,9 @@ in
       $scala\
       [](fg:#86BBD8 bg:#06969A)\
       $docker_context\
-      [](fg:#06969A bg:#33658A)\
+      [](fg:#06969A bg:#d0d0d0)\
       $time\
-      [ ](fg:#33658A)\
+      [ ](fg:#d0d0d0)\
       """
 
       # Disable the blank line at the start of the prompt
@@ -64,7 +63,7 @@ in
       show_always = true
       style_user = "bg:#9A348E"
       style_root = "bg:#9A348E"
-      format = '[$user ]($style)'
+      format = '[ $user ]($style)'
       disabled = false
 
       # An alternative to the username module which displays a symbol that
@@ -74,7 +73,7 @@ in
       disabled = true # Disabled by default
 
       [directory]
-      style = "bg:#DA627D"
+      style = "bg:#5f5faf"
       format = "[ $path ]($style)"
       truncation_length = 3
       truncation_symbol = "…/"
@@ -114,11 +113,11 @@ in
 
       [git_branch]
       symbol = ""
-      style = "bg:#FCA17D"
+      style = "bg:#d7af00"
       format = '[ $symbol $branch ]($style)'
 
       [git_status]
-      style = "bg:#FCA17D"
+      style = "bg:#d7af00"
       format = '[$all_status$ahead_behind ]($style)'
 
       [golang]
@@ -168,8 +167,8 @@ in
       [time]
       disabled = false
       time_format = "%R" # Hour:Minute Format
-      style = "bg:#33658A"
-      format = '[ ♥ $time ]($style)'
+      style = "bg:#d0d0d0"
+      format = '[ $time ]($style)'
     '';
   };
 }
