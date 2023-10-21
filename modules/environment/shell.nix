@@ -26,7 +26,7 @@ in
 
       format = """
       [░▒▓](#5f87d7)\
-      [  ](white bg:#5f87d7 fg:#090C0C)\
+      [  ](fg:#FFFFFF bg:#5f87d7)\
       [](bg:#9a348e fg:#5f87d7)\
       $username\
       [](bg:#5f5faf fg:#9A348E)\
@@ -61,19 +61,19 @@ in
       # and use the os module below
       [username]
       show_always = true
-      style_user = "white bg:#9A348E"
-      style_root = "white bg:#9A348E"
+      style_user = "fg:#FFFFFF bg:#9A348E"
+      style_root = "fg:#FFFFFF bg:#9A348E"
       format = '[ $user ]($style)'
       disabled = false
 
       # An alternative to the username module which displays a symbol that
       # represents the current operating system
       [os]
-      style = "white bg:#9A348E"
+      style = "fg:#FFFFFF bg:#9A348E"
       disabled = true # Disabled by default
 
       [directory]
-      style = "white bg:#5f5faf"
+      style = "fg:#FFFFFF bg:#5f5faf"
       format = "[ $path ]($style)"
       truncation_length = 3
       truncation_symbol = "…/"
