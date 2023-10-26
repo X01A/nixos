@@ -177,7 +177,6 @@ in
         killall
         nixpkgs-fmt
         inxi
-        saldl
         dig
         unzip
         buildah

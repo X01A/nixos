@@ -73,7 +73,6 @@ in
       ffsend
       inxi
       tree
-      saldl
       ncdu
       smartmontools
       pv
