@@ -3,7 +3,7 @@
 {
   flake.nixosModules = {
     default = { ... }: {
-      imports = [ ../modules ];
+      imports = [ ../modules/all-modules.nix ];
     };
   };
 }
