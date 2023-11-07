@@ -24,26 +24,6 @@
       npmlock2nix = pkgs.callPackage inputs.npmlock2nix { };
     };
 
-    # buildPacakges = let
-    #   # isDerivation = package: normalPkgs.lib.attrsets.hasAttrByPath [ "drvPath" ] package;
-      # packageList = (normalPkgs.lib.attrsets.mapAttrsToList (name: value: {
-      #   inherit name;
-      # }) self'.packages);
-
-      # packageList = (builtins.filter (it: isDerivation it.value) (normalPkgs.lib.attrsets.mapAttrsToList (name: value: {
-      #   inherit name value;
-      # }) self'.packages));
-
-      # buildPacakgesList = builtins.filter
-      #   (item:
-      #     let
-      #       meta = pkgs.lib.attrsets.attrByPath [ "meta" "platforms" ] [ system ] item.value;
-      #     in
-      #     (pkgs.lib.lists.any (item: item == system) meta))
-      #   packageList;
-
-    #   jsonPackages = builtins.toJSON packageList;
-    #   # result = builtins.listToAttrs buildPacakgesList;
-    # in jsonPackages;
+    overlayAttrs = self'.packages;
   };
 }
