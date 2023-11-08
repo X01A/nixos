@@ -9,7 +9,7 @@ stdenv.mkDerivation {
   src = fetchFromGitHub ({
     owner = "namjaejeon";
     repo = "ksmbd";
-    rev = "7b7b340fb33b7ef619b2e7baf405a4e809eec3d4";
+    rev = "10bdd83dec3be6eebce1c579791f1418c047dfcc";
     fetchSubmodules = true;
     sha256 = "sha256-KWGNAoElkXZ73PdRhQex5GQe1u/DIg8SwT/in7oSkjw=";
   });
