@@ -37,6 +37,8 @@ let
           (filter dirOnly
             (attrsets.mapAttrsToList (name: value: { inherit name value; }) (builtins.readDir dir)))));
 
+  isDerivation = package: normalPkgs.lib.attrsets.hasAttrByPath [ "drvPath" ] package;
+
   resultPackages = rec {
     inherit build-electron-appimage;
 
@@ -56,10 +58,18 @@ let
     };
   } // systemPackages // packages;
 
-  buildPacakges = (builtins.filter (it: normalPkgs.lib.isDerivation it.value) (pkgs.lib.attrsets.mapAttrsToList (name: value: {
+  buildPacakges = (builtins.filter (it: isDerivation it.value) (pkgs.lib.attrsets.mapAttrsToList (name: value: {
     inherit name value;
   }) resultPackages));
 
-  packageList = pkgs.writeText "packages.json" (builtins.toJSON (map (it: it.name) buildPacakges));
+  buildPacakgesList = builtins.filter
+    (item:
+      let
+        meta = pkgs.lib.attrsets.attrByPath [ "meta" "platforms" ] [ system ] item.value;
+      in
+      (pkgs.lib.lists.any (item: item == system) meta))
+    buildPacakges;
+
+  packageList = pkgs.writeText "packages.json" (builtins.toJSON (map (it: it.name) buildPacakgesList));
 in
-(builtins.listToAttrs buildPacakges) // { inherit packageList; }
+resultPackages // { inherit packageList; }
