@@ -18,7 +18,7 @@ python3Packages.buildPythonPackage rec {
     telethon
     cryptg
     python-magic
-          pkgs.cacert
+    pkgs.cacert
   ];
 
   doCheck = false;
