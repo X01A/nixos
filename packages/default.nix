@@ -72,4 +72,4 @@ let
 
   packageList = pkgs.writeText "packages.json" (builtins.toJSON (map (it: it.name) buildPacakgesList));
 in
-resultPackages // { inherit packageList; }
+(builtins.listToAttrs buildPacakgesList) // { inherit packageList; }
