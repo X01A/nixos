@@ -60,14 +60,6 @@ let
     inherit name value;
   }) resultPackages));
 
-  buildPacakgesList = builtins.filter
-    (item:
-      let
-        meta = pkgs.lib.attrsets.attrByPath [ "meta" "platforms" ] [ system ] item.value;
-      in
-      (pkgs.lib.lists.any (item: item == system) meta))
-    buildPacakges;
-
-  packageList = pkgs.writeText "packages.json" (builtins.toJSON (map (it: it.name) buildPacakgesList));
+  packageList = pkgs.writeText "packages.json" (builtins.toJSON (map (it: it.name) buildPacakges));
 in
-(builtins.listToAttrs buildPacakgesList) // { inherit packageList; }
+(builtins.listToAttrs buildPacakges) // { inherit packageList; }
