@@ -37,8 +37,6 @@ let
           (filter dirOnly
             (attrsets.mapAttrsToList (name: value: { inherit name value; }) (builtins.readDir dir)))));
 
-  isDerivation = package: normalPkgs.lib.attrsets.hasAttrByPath [ "drvPath" ] package;
-
   resultPackages = rec {
     inherit build-electron-appimage;
 
@@ -58,7 +56,7 @@ let
     };
   } // systemPackages // packages;
 
-  buildPacakges = (builtins.filter (it: isDerivation it.value) (pkgs.lib.attrsets.mapAttrsToList (name: value: {
+  buildPacakges = (builtins.filter (it: normalPkgs.lib.isDerivation it.value) (pkgs.lib.attrsets.mapAttrsToList (name: value: {
     inherit name value;
   }) resultPackages));
 
