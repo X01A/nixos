@@ -14,6 +14,7 @@ python3Packages.buildPythonPackage {
   propagatedBuildInputs = with python3Packages; [
     requests
     pytest
+    pycryptodome
   ];
 
   doCheck = false; # Test fails
