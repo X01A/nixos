@@ -38,6 +38,8 @@ let
     oderwat.indent-rainbow
     christian-kohler.path-intellisense
     mkhl.direnv
+    jnoortheen.nix-ide
+    octref.vetur
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     (mkOpenVSXExt {
       publisher = "jeanp413";
@@ -91,8 +93,8 @@ in
         "git.ignoreLegacyWarning" = true;
 
         # Font settings
-        "terminal.integrated.fontFamily" = "Iosevka, Cascadia Code PL";
-        "editor.fontFamily" = "Iosevka, Cascadia Code PL";
+        "terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font, Iosevka, Cascadia Code PL";
+        "editor.fontFamily" = "CaskaydiaCove Nerd Font, Iosevka, Cascadia Code PL";
         "editor.fontLigatures" = true;
         "editor.fontSize" = 14;
 
