@@ -32,5 +32,4 @@ nix-update --commit --flake mumble-discord-bridge
 nix-update --commit --flake aliyundrive-webdav
 
 nix-update --commit --version "$(curl --fail -sI 'https://mikrotik.com/mt_redirect.php?code=winbox64' | grep -i Location | grep -oP '([\d]{1,}\.[\d]{1,})')" --flake winbox
-nix-update --commit --version "$(curl --fail -s 'https://github.com/Dreamacro/clash/releases/tag/premium' | grep -oP "Premium \K([0-9\\.]*)" | head -n 1)" --flake clash-premium
 nix-update --commit --version "$(curl --fail -s 'https://mattermost.com/download/' | grep -oP "Latest Release:</strong> \K([0-9\\.]*)(?=</p>)")" --flake mattermost-ent
