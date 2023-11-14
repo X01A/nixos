@@ -18,8 +18,8 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "0-8-4";
     repo = "miui-auto-tasks";
-    rev = "b340811639ef67c572aefc4f96e0d21a9f6ab622";
-    sha256 = "sha256-1f1PiCMuTUG9JSNnMxVW0ekX2O8vkl590mkCQScfRMk=";
+    rev = "c5ee4496bd762f7987c3683441e776bc4192afef";
+    sha256 = "sha256-uzaZN7YoMiUZVKnDinM1uQf4v1wpc+9POYO/J8t6wAo=";
     fetchSubmodules = true;
   };
 
