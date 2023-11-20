@@ -2,16 +2,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "commit-notifier";
-  version = "unstable-2023-11-18";
+  version = "unstable-2023-11-20";
   src = fetchFromGitHub ({
     owner = "linyinfeng";
     repo = "commit-notifier";
-    rev = "8269d891f243a6ef3de2dd3dfe44c4e478e9d7c3";
+    rev = "833d6e76224990553b27b216dbeb84c9e6486279";
     fetchSubmodules = true;
-    sha256 = "sha256-YUvHHi/6Sll5+F4z3eIyR8DEQC4MSMv6H08TbV8fKZU=";
+    sha256 = "sha256-Enu+qujR6lnXXYYETYF3JXkPWcOjLvBd9ECIxvDAX44=";
   });
 
-  cargoSha256 = "sha256-CUz/gvxs5MeWxOLx0oNN8c1dFl9SUonNrSoTbdqrQFw=";
+  cargoSha256 = "sha256-hxeqA8QQdNiLFF08zT/iQBdkIT+WDG8qidMTnSsoUyc=";
 
   RUSTC_BOOTSTRAP = 1;
 
