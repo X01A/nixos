@@ -2,10 +2,10 @@
 
 stdenv.mkDerivation rec {
   pname = "alist";
-  version = "3.29.0";
+  version = "3.29.1";
   src = fetchurl {
     url = "https://github.com/alist-org/alist/releases/download/v${version}/alist-linux-musl-amd64.tar.gz";
-    sha256 = "sha256-GIE3ej0R1v2RB39HvrOtk+mOZiLIU5UToqp3ij8nsU8=";
+    sha256 = "sha256-edhOOL0V3O+6FNBK1vxOQOiZYSAdqeZf/68zgPWxvEw=";
   };
 
   phases = "installPhase";
