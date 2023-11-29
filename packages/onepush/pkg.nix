@@ -2,13 +2,13 @@
 
 python3Packages.buildPythonPackage {
   pname = "onepush";
-  version = "unstable-2023-11-12";
+  version = "unstable-2023-11-28";
 
   src = fetchFromGitHub {
     owner = "y1ndan";
     repo = "onepush";
-    rev = "f60b4d9912c07c3e8c3c30674c502ce51d3638e5";
-    sha256 = "sha256-D/GxlMJSOtn93zMfGwv/Qr/qVUfDFs3bdfXvTGgPEbU=";
+    rev = "8b09e62330ad74ba3221bfc2b080d1732a1dcc55";
+    sha256 = "sha256-xBhHe2q5oxXUuo7G50TBUC1o07dZSjQ8M8YkPRJELkk=";
   };
 
   propagatedBuildInputs = with python3Packages; [
