@@ -126,7 +126,7 @@ in
         after = [ "network.target" ];
         script = ''
           ${profileCommands}
-          exec ${cfg.package}/bin/clash -d ${dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}
+          exec ${lib.getExe cfg.package} -d ${dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}
         '';
 
         serviceConfig = {

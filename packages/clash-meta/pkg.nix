@@ -30,6 +30,7 @@ buildGo121Module rec {
     description = "A rule-based tunnel in Go";
     changelog = "https://github.com/MetaCubeX/Clash.Meta/releases/tag/v${version}";
     license = licenses.gpl3;
+    mainProgram = "mihomo";
   };
 }
 
