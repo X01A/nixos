@@ -23,7 +23,7 @@ buildGo121Module rec {
 
   doCheck = false;
   excludedPackages = [ "./test" ];
-  vendorSha256 = "sha256-nMqsWnh3me6grFb6Fmqngqx3fmD9PhuR/2DHkwSHoaY=";
+  vendorHash = "sha256-nMqsWnh3me6grFb6Fmqngqx3fmD9PhuR/2DHkwSHoaY=";
 
   meta = with lib; {
     homepage = "https://github.com/MetaCubeX/Clash.Meta";

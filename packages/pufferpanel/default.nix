@@ -33,9 +33,9 @@ let
 
   };
 in
-buildGoModule rec {
+buildGoModule {
   inherit pname version src;
-  vendorSha256 = "sha256-w3PExVOUQQLyjBvRUVqFfNc131ys4UpH6q/eFVCVye8=";
+  vendorHash = "sha256-w3PExVOUQQLyjBvRUVqFfNc131ys4UpH6q/eFVCVye8=";
 
   # modSha256 = lib.fakeSha256;
   subPackages = [ "cmd" ];

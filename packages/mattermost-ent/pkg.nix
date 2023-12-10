@@ -10,9 +10,7 @@ stdenv.mkDerivation rec {
 
   inherit buildPhase;
 
-  nativeBuildInputs = [
-    autoPatchelfHook
-    stdenv.cc.cc.lib
+  nativeBuildInputs = [git push
   ];
 
   installPhase = ''

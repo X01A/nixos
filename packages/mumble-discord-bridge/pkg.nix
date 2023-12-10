@@ -13,7 +13,7 @@ buildGo120Module rec {
     sha256 = "sha256-Rr1g3gdmbmMcXN9KFpktKhB2sedplrFcT2GMfUY9b7g=";
   });
 
-  vendorSha256 = "sha256-U3RLLXGirZsh5nTlt8tgLsCmNIa3x1SacTFgHhG4OoI=";
+  vendorHash = "sha256-U3RLLXGirZsh5nTlt8tgLsCmNIa3x1SacTFgHhG4OoI=";
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [ libopus ];
 
