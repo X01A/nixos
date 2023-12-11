@@ -28,6 +28,7 @@ nix-update --commit --flake cockpit-machines
 nix-update --commit --flake libvirt-dbus
 nix-update --commit --flake mainsail
 nix-update --commit --flake reader
+nix-update --commit --flake ping-exporter
 nix-update --commit --flake mumble-discord-bridge
 nix-update --commit --flake aliyundrive-webdav
 
