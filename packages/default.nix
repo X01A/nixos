@@ -58,9 +58,11 @@ let
     };
   } // systemPackages // packages;
 
-  buildPacakges = (builtins.filter (it: isDerivation it.value) (pkgs.lib.attrsets.mapAttrsToList (name: value: {
-    inherit name value;
-  }) resultPackages));
+  buildPacakges = (builtins.filter (it: isDerivation it.value) (pkgs.lib.attrsets.mapAttrsToList
+    (name: value: {
+      inherit name value;
+    })
+    resultPackages));
 
   buildPacakgesList = builtins.filter
     (item:

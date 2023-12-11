@@ -20,7 +20,7 @@
       ../modules/all-modules.nix
       ../modules/installer/iso.nix
 
-      ({...}: {
+      ({ ... }: {
         # Install disko
         environment.systemPackages = [
           inputs.disko.packages."x86_64-linux".disko

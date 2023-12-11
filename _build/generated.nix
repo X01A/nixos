@@ -11,10 +11,10 @@
   };
   orca-slicer = {
     pname = "orca-slicer";
-    version = "1.6.4-beta2";
+    version = "1.8.1";
     src = fetchurl {
-      url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v1.6.4-beta2/OrcaSlicer_V1.6.4-beta2_Linux.zip";
-      sha256 = "sha256-+6ShFyhr4fFAMB543k749MUbJlkB7NSudoByC/gleow=";
+      url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v1.8.1/OrcaSlicer_Linux_V1.8.1.AppImage";
+      sha256 = "sha256-BV8i7Cf2XmBsBxAL5euhH3Ej/xw22gJWUxRgL8AXs4Y=";
     };
   };
   yesplaymusic = {
