@@ -15,7 +15,7 @@ rustPlatform.buildRustPackage rec {
     repo = "realm";
     rev = "v${version}";
     fetchSubmodules = true;
-    sha256 = "sha256-zSi70N8jDI2H4UWdKhs2OM19ikxp/e8TXvzP1viHWZg=";
+    sha256 = "sha256-x3w4SMqglr64zVPN8r+IIR7jjPVKUHE6R9Obd3rPUTA=";
   });
 
   cargoSha256 = "sha256-YTh4YjAywzTrxfGjRL+Wqd5e3r5fF33xl5jFtgpxHo4=";
