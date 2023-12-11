@@ -11,4 +11,4 @@ fetch.url = "https://github.com/agalwood/Motrix/releases/download/v$ver/Motrix-$
 [orca-slicer]
 src.github = "SoftFever/OrcaSlicer"
 src.prefix = "v"
-fetch.url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v$ver/OrcaSlicer_V$ver_Linux.zip"
+fetch.url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v$ver/OrcaSlicer_Linux_V$ver.AppImage"
