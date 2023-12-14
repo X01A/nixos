@@ -64,11 +64,21 @@ let
         type = with types; nullOr int;
         default = null;
       };
+
+      interface-name = mkOption {
+        type = with types; nullOr str;
+        default = null;
+      };
+
+      routing-mark = mkOption {
+        type = with types; nullOr str;
+        default = null;
+      };
     };
   });
 
   buildProxyGroup = group: {
-    inherit (group) name type proxies use url interval;
+    inherit (group) name type proxies use url interval interface-name routing-mark;
   };
 in
 {
