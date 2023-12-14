@@ -128,6 +128,7 @@ in
           ${profileCommands}
           exec ${lib.getExe cfg.package} -d ${dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}
         '';
+        startLimitIntervalSec = 0;
 
         serviceConfig = {
           LimitNOFILE = "16777216";
@@ -136,7 +137,6 @@ in
           TasksMax = "infinity";
 
           Restart = "always";
-          StartLimitIntervalSec = 0;
 
           StateDirectory = "clash";
           RuntimeDirectory = "clash";
