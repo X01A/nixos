@@ -134,6 +134,10 @@ in
           LimitNPROC = "infinity";
           LimitCORE = "infinity";
           TasksMax = "infinity";
+
+          Restart = "always";
+          StartLimitIntervalSec = 0;
+
           StateDirectory = "clash";
           RuntimeDirectory = "clash";
           RuntimeDirectoryPreserve = "yes";

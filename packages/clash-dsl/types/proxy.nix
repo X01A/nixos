@@ -66,8 +66,8 @@ let
       };
 
       interface-name = mkOption {
-        type = with types; nullOr str;
-        default = null;
+        type = types.str;
+        default = "";
       };
 
       routing-mark = mkOption {
