@@ -85,9 +85,15 @@ in
 
         pkg = mkOption {
           type = types.package;
-          default = pkgs.mmdb-ipip;
-          defaultText = "pkgs.mmdb-ipip";
+          default = pkgs.yacd-meta;
+          defaultText = "pkgs.yacd-meta";
         };
+      };
+
+      ui = mkOption {
+        type = types.package;
+        default = pkgs.yacd;
+        defaultText = "pkgs.yacd";
       };
 
       dns = mkOption {
@@ -126,7 +132,9 @@ in
         after = [ "network.target" ];
         script = ''
           ${profileCommands}
-          exec ${lib.getExe cfg.package} -d ${dataDir} -ext-ctl ${cfg.controller} -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}
+          exec ${lib.getExe cfg.package} -d ${dataDir} \
+            -ext-ctl ${cfg.controller} -ext-ui ${cfg.ui} \
+            -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}
         '';
         startLimitIntervalSec = 0;
 
