@@ -71,8 +71,8 @@ let
       };
 
       routing-mark = mkOption {
-        type = with types; nullOr int;
-        default = null;
+        type = types.int;
+        default = 0;
       };
     };
   });
