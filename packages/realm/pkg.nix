@@ -9,16 +9,16 @@ let
 in
 rustPlatform.buildRustPackage rec {
   pname = "realm";
-  version = "2.5.0";
+  version = "2.5.1";
   src = fetchFromGitHub ({
     owner = "zhboner";
     repo = "realm";
     rev = "v${version}";
     fetchSubmodules = true;
-    sha256 = "sha256-x3w4SMqglr64zVPN8r+IIR7jjPVKUHE6R9Obd3rPUTA=";
+    sha256 = "sha256-N+XN7tMVKMIZU4roCOCj87ZVgNOjeMoTfN15bvqAYNo=";
   });
 
-  cargoSha256 = "sha256-QQGeGuGPZh5zAfPZx+EKJmxg8M2vfDuluX+ph7X8kx4=";
+  cargoSha256 = "sha256-MUBaqt7PjF+IIMSeuAjcj18+qIUwVii/FYO+NDOY0U0=";
 
   # transport feature broken
   buildNoDefaultFeatures = true;
