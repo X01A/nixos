@@ -1,4 +1,4 @@
-{ pkgs, normalPkgs, nvfetcherOut, kernelPatches, ... }:
+{ pkgs, normalPkgs, kernelPatches, ... }:
 
 with normalPkgs;
 {
