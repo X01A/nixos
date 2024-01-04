@@ -3,11 +3,6 @@ src.github = "qier222/YesPlayMusic"
 src.prefix = "v"
 fetch.url = "https://github.com/qier222/YesPlayMusic/releases/download/v$ver/YesPlayMusic-$ver.AppImage"
 
-[motrix]
-src.github = "agalwood/Motrix"
-src.prefix = "v"
-fetch.url = "https://github.com/agalwood/Motrix/releases/download/v$ver/Motrix-$ver.AppImage"
-
 [orca-slicer]
 src.github = "SoftFever/OrcaSlicer"
 src.prefix = "v"

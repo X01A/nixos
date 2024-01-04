@@ -52,10 +52,6 @@ let
       source = nvfetcherOut.yesplaymusic;
     };
 
-    motrix = pkgs.callPackage ./motrix {
-      inherit build-electron-appimage;
-      source = nvfetcherOut.motrix;
-    };
   } // systemPackages // packages;
 
   buildPacakges = (builtins.filter (it: isDerivation it.value) (pkgs.lib.attrsets.mapAttrsToList
