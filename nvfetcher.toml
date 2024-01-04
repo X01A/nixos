@@ -1,9 +1,0 @@
-[yesplaymusic]
-src.github = "qier222/YesPlayMusic"
-src.prefix = "v"
-fetch.url = "https://github.com/qier222/YesPlayMusic/releases/download/v$ver/YesPlayMusic-$ver.AppImage"
-
-[orca-slicer]
-src.github = "SoftFever/OrcaSlicer"
-src.prefix = "v"
-fetch.url = "https://github.com/SoftFever/OrcaSlicer/releases/download/v$ver/OrcaSlicer_Linux_V$ver.AppImage"

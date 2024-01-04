@@ -2,10 +2,9 @@
 
 with normalPkgs.lib;
 let
-  nvfetcherOut = normalPkgs.callPackage ../sources.nix { };
   build-electron-appimage = normalPkgs.callPackage ./build-electron-appimage { };
   osPkgPath = ./. + "/os-specific/${os}";
-  systemPackages = if builtins.pathExists osPkgPath then normalPkgs.callPackage osPkgPath { inherit pkgs normalPkgs nvfetcherOut; } else { };
+  systemPackages = if builtins.pathExists osPkgPath then normalPkgs.callPackage osPkgPath { inherit pkgs normalPkgs; } else { };
 
   dirOnly = it: if it.value == "directory" then true else false;
   hasPkgFile = dir: it:
@@ -14,16 +13,9 @@ let
     in
     attrsets.hasAttrByPath [ "pkg.nix" ] itDir && itDir."pkg.nix" == "regular";
 
-  hasNvFetcher = name: attrsets.hasAttrByPath [ name ] nvfetcherOut;
-
   packages = scanPackages "${flakeInputs.self.outPath}/packages";
 
   buildPackage = dir: name:
-    if (hasNvFetcher name) then
-      (pkgs.callPackage "${dir}/${name}/pkg.nix" {
-        source = nvfetcherOut."${name}";
-      })
-    else
       (pkgs.callPackage "${dir}/${name}/pkg.nix" { });
 
   scanPackages = dir:
@@ -46,11 +38,6 @@ let
     libvirt-tools = import ../modules/services/libvirt/tools;
     libvirt-iso-library = pkgs.callPackage ../modules/services/libvirt/library.nix { };
     build-vm-qcow = pkgs.callPackage ./build-vm-qcow { };
-
-    yesplaymusic = pkgs.callPackage ./yesplaymusic {
-      inherit build-electron-appimage;
-      source = nvfetcherOut.yesplaymusic;
-    };
 
   } // systemPackages // packages;
 
