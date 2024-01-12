@@ -14,6 +14,7 @@ buildGo121Module rec {
 
   tags = [
     "with_gvisor"
+    "with_low_memory"
   ];
   ldflags = [
     "-s"
