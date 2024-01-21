@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "hev-socks5-tproxy";
-  version = "2.5.2";
+  version = "2.5.3";
   src = fetchFromGitHub ({
     owner = "heiher";
     repo = "hev-socks5-tproxy";
-    rev = "2.5.2";
+    rev = "2.5.3";
     fetchSubmodules = true;
-    sha256 = "sha256-AtJXSPFSI0JmX7XXpnqJgdrXJfXJa+F3PyMOn02NDiA=";
+    sha256 = "sha256-iQVz8XkuJJI8vZNatQWuLXKzUtxUg45xDz5iA9wDrwg=";
   });
 
   makeFlags = [
