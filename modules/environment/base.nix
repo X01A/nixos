@@ -179,7 +179,6 @@ in
         inxi
         dig
         unzip
-        buildah
         openssl
         ncdu
         smartmontools
