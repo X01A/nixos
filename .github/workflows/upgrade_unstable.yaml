@@ -10,6 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: docker/setup-qemu-action@v3
     - uses: cachix/install-nix-action@master
       with:
         nix_path: nixpkgs=channel:nixos-unstable
@@ -18,6 +19,7 @@ jobs:
           experimental-features = nix-command flakes
           substituters = https://attic.indexyz.me/indexyz https://indexyz.cachix.org https://cache.nixos.org/
           trusted-public-keys = indexyz:XxexOMK+bHXR2slT4A9wnJg00EZFXCUYqlUhlEEGQEc= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+          extra-platforms = aarch64-linux
 
     - name: Check Package
       run: |
