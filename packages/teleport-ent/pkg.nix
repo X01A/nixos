@@ -10,7 +10,7 @@ let
     };
     aarch64-linux = {
       url = "https://cdn.teleport.dev/teleport-ent-v${version}-linux-arm64-bin.tar.gz";
-      sha256 = "sha256-LlI6ooWAVr3kedHAvh7o4RjG3n6Xa70+uYW6JCR5RBw=";
+      sha256 = "sha256-C4jfht74/GZVLgubDRtOcnawsJYywN2h7lJW6PGMPCY=";
     };
   }."${stdenv.system}" or (throw "Unsupported system");
 in
