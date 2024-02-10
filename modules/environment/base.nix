@@ -150,6 +150,14 @@ in
         ];
       };
 
+      programs.htop = {
+        enable = true;
+        settings = {
+          hide_userland_threads = 1;
+          show_program_path = 0;
+        };
+      };
+
       environment.systemPackages = with pkgs; [
         wget
         file
@@ -157,7 +165,6 @@ in
         gh
         git
         fastfetch
-        htop
         nodejs
         yarn
         gnumake
@@ -204,6 +211,7 @@ in
           ls = "eza";
           find = "fd";
           neofetch = "fastfetch";
+          dh = "df -x squashfs -x overlay -x tmpfs -h";
         };
       };
 
