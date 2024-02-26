@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "microsocks";
-  version = "1.0.3";
+  version = "1.0.4";
   src = fetchFromGitHub ({
     owner = "rofl0r";
     repo = "microsocks";
     rev = "v${version}";
     fetchSubmodules = true;
-    sha256 = "sha256-l+8+zqeY/Qf5pKvzW9WQBfltEvrD7Vp+hJAXM2o16aI=";
+    sha256 = "sha256-cB2XMWjoZ1zLAmAfl/nqjdOyBDKZ+xtlEmqsZxjnFn0=";
   });
 
   installPhase = ''
