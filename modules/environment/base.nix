@@ -79,7 +79,7 @@ in
         # Enable nix flake support
         package = pkgs.nixUnstable;
         extraOptions = ''
-          experimental-features = nix-command flakes
+          experimental-features = nix-command flakes configurable-impure-env
         '';
       };
 
