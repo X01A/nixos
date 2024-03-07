@@ -2,13 +2,13 @@
 
 buildGo121Module rec {
   pname = "clash-meta";
-  version = "unstable-2024-03-05";
+  version = "unstable-2024-03-06";
   src = fetchFromGitHub ({
     owner = "MetaCubeX";
     repo = "Clash.Meta";
-    rev = "974332c0ccd64fde54e7714c093b2d40b6b982ef";
+    rev = "04886761a28e2d0a06d9e6f51d3c31bfb4855d28";
     fetchSubmodules = true;
-    sha256 = "sha256-eeMvd50FEt3tvhMMUX4Lx0IHLzHVKjggYjR+iyKS028=";
+    sha256 = "sha256-jwqvZIWAMA9TfIugppNujO6lXm2MeoGHayEi5bXPoTw=";
   });
 
 
