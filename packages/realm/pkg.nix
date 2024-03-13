@@ -1,7 +1,7 @@
 { fetchFromGitHub, rust-bin, makeRustPlatform, lib, pkg-config, openssl, ... }:
 
 let
-  rust = rust-bin.nightly."2023-06-27".default;
+  rust = rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
   rustPlatform = makeRustPlatform {
     rustc = rust;
     cargo = rust;
