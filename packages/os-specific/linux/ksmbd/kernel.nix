@@ -5,13 +5,13 @@ assert lib.versionAtLeast kernel.version "5.4";
 
 stdenv.mkDerivation {
   pname = "ksmbd";
-  version = "unstable-2024-03-17";
+  version = "unstable-2024-03-18";
   src = fetchFromGitHub ({
     owner = "namjaejeon";
     repo = "ksmbd";
-    rev = "4dfa07e8015e892d4a7b6963d998b8f374cb63f9";
+    rev = "9b1ccc7b1ece5aad6bf18c0bcb10748dbfd85cd5";
     fetchSubmodules = true;
-    sha256 = "sha256-uKPb8DPgEcTpFCV8FG4mdvinFyl7a9RgpxeGmyKIoaQ=";
+    sha256 = "sha256-2QI5c2K9bSwBGDYBxEGGgVMU9ao5LedR7zqTsVxkeGs=";
   });
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
