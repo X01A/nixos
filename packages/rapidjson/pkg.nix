@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "rapidjson";
-  version = "unstable-2024-03-08";
+  version = "1.1.0-unstable-2024-03-08";
 
   src = fetchFromGitHub ({
     owner = "tencent";
