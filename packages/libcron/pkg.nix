@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "libcron";
-  version = "unstable-2023-11-14";
+  version = "1.3.1-unstable-2023-11-14";
 
   src = fetchFromGitHub ({
     owner = "PerMalmberg";
