@@ -2,7 +2,7 @@
 
 python3Packages.buildPythonPackage rec {
   pname = "stickerpicker";
-  version = "unstable-2022-11-15";
+  version = "0-unstable-2022-11-15";
 
   src = fetchFromGitHub {
     owner = "maunium";
