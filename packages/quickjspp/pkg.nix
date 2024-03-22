@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "quickjspp";
-  version = "unstable-2023-12-21";
+  version = "20191027-unstable-2023-12-21";
 
   src = fetchFromGitHub ({
     owner = "ftk";
