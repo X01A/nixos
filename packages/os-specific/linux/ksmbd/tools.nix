@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation {
   pname = "ksmbd-tools";
-  version = "unstable-2024-01-13";
+  version = "0-unstable-2024-01-13";
   src = fetchFromGitHub ({
     owner = "namjaejeon";
     repo = "ksmbd-tools";
