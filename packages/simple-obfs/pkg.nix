@@ -3,7 +3,7 @@
 with lib;
 gcc8Stdenv.mkDerivation rec {
   pname = "simple-obfs";
-  version = "unstable-2019-08-17";
+  version = "0.0.5-unstable-2019-08-17";
   src = fetchgit {
     url = "https://github.com/shadowsocks/simple-obfs.git";
     rev = "486bebd9208539058e57e23a12f23103016e09b4";
