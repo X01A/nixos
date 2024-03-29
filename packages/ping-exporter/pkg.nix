@@ -2,13 +2,13 @@
 
 buildGoModule rec {
   pname = "ping-exporter";
-  version = "1.1.2";
+  version = "1.1.3";
 
   src = fetchFromGitHub {
     owner = "czerwonk";
     repo = "ping_exporter";
     rev = version;
-    hash = "sha256-BGHBpS7iJogMKXNk9ogSL7DB11LyNtSxdEPD356702Q=";
+    hash = "sha256-Jdo+6/e9gES8q4wTGRuy5HSj7VimOMZ9q3guKDcKJxg=";
   };
 
   vendorHash = "sha256-1oNbg6lu9xLJKeYOzK23HOTLJc3KWri7z4/2AZ7Hzms=";
