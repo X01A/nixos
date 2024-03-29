@@ -33,6 +33,11 @@ in
         default = false;
         type = types.bool;
       };
+
+      direnv = mkOption {
+        default = true;
+        type = types.bool;
+      };
     };
   };
 
@@ -44,6 +49,12 @@ in
       ];
 
       services.timesyncd.enable = true;
+    })
+    (lib.mkIf (cfg.direnv) {
+      programs.direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+      };
     })
     (lib.mkIf (cfg.ns) {
       networking.nameservers = [ "1.1.1.1" ];
