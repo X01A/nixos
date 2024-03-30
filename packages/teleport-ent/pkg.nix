@@ -1,12 +1,12 @@
 { fetchurl, stdenv, autoPatchelfHook, buildPhase ? "", ... }:
 
 let
-  version = "15.1.10";
+  version = "15.2.0";
 
   fetchSrc = {
     x86_64-linux = {
       url = "https://cdn.teleport.dev/teleport-ent-v${version}-linux-amd64-bin.tar.gz";
-      sha256 = "sha256-1p7n8D0NFLXK+mYWWbBMVi51AQK7xI//jRB41Q8xPrQ=";
+      sha256 = "sha256-0FJH4NnbrJl9hyE3YWTebaySQbINPRelHwfMVsF1Vlc=";
     };
     aarch64-linux = {
       url = "https://cdn.teleport.dev/teleport-ent-v${version}-linux-arm64-bin.tar.gz";
