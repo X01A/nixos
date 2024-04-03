@@ -97,7 +97,7 @@ in
       };
 
       dns = mkOption {
-        default = "1.1.1.1";
+        default = "";
         type = types.str;
       };
 
