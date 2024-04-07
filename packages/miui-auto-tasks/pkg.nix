@@ -14,12 +14,12 @@ let
 in
 stdenv.mkDerivation {
   pname = "miui-auto-tasks";
-  version = "1.7.4-hotfix4-unstable-2023-12-30";
+  version = "1.7.5-unstable-2024-04-06";
   src = fetchFromGitHub {
     owner = "0-8-4";
     repo = "miui-auto-tasks";
-    rev = "597bd50a58234552093a590d8e0a0195ff91d4c7";
-    sha256 = "sha256-XFP/JLG+S6etHl69R2fE3Dp8mDsub9roQHjfS/J/9gs=";
+    rev = "08ddd7c66ff55d532eb7fda552c28b8f5fd76011";
+    sha256 = "sha256-oYjyk603qNaxuk/AmxJY5Maub/NDWtr2EbvG3QUnkNU=";
     fetchSubmodules = true;
   };
 
