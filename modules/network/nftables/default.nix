@@ -29,6 +29,11 @@ in
         default = "";
         type = with types; str;
       };
+
+      extraInputRule = mkOption {
+        default = "";
+        type = with types; str;
+      };
     };
   };
 
@@ -65,6 +70,7 @@ in
             counter ip saddr @blacklist drop
             tcp dport @allow_tcp accept
             udp dport @allow_udp accept
+            ${cfg.extraInputRule}
             counter drop
           }
 
