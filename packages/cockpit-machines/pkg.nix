@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   pname = "cockpit-machines";
-  version = "311";
+  version = "312";
 
   src = fetchzip {
     url = "https://github.com/cockpit-project/cockpit-machines/releases/download/${version}/cockpit-machines-${version}.tar.xz";
-    sha256 = "sha256-WcWCFr02uZ3zuKsLPAiyQP/vsjwv5BdUt03UEv/DARc=";
+    sha256 = "sha256-WiRE/O0jkdkUscmYQW9RNNAeDdgmEojyJkiiB/LaZR4=";
   };
 
   nativeBuildInputs = [
