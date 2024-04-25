@@ -21,6 +21,7 @@ nix-update --commit --flake hev-socks5-tproxy
 nix-update --commit --flake novnc
 nix-update --commit --flake alist
 nix-update --commit --flake landrop --url https://github.com/LANDrop/LANDrop
+nix-update --commit --flake candy
 
 nix-update --commit --flake yacd
 nix-update --commit --flake cloudreve
