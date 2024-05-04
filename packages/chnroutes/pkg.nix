@@ -2,13 +2,13 @@
 
 stdenvNoCC.mkDerivation rec {
   name = "chnroutes2";
-  version = "0-unstable-2024-05-03";
+  version = "0-unstable-2024-05-04";
 
   src = fetchFromGitHub ({
     owner = "misakaio";
     repo = name;
-    rev = "7d9cb490b6f5797a01aa01193f8718f8e38a8d8f";
-    sha256 = "sha256-T8owtbbxzM5aZJ9bCzA+JeNo2/GUx/L58orfpVnWiQE=";
+    rev = "32461198e8926347ed3986e8d413e504268da52f";
+    sha256 = "sha256-vHozO0hsUytjpajXrdbAoL1+I+kskkExOSj7fiVfsig=";
   });
 
   phases = [ "installPhase" ];
