@@ -46,9 +46,7 @@ jobs:
     - name: Build packages
       run: |
         set -ex
-        wget https://github.com/zhaofengli/attic/raw/main/.github/install-attic-ci.sh
-        chmod +x install-attic-ci.sh
-        ./install-attic-ci.sh
+        nix-env -i attic-client
 
         attic login indexyz https://attic.indexyz.me "${{ secrets.ATTIC_TOKEN }}"
         nix --version
