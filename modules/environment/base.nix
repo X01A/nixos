@@ -88,7 +88,7 @@ in
           options = "--delete-older-than 7d";
         };
         # Enable nix flake support
-        package = pkgs.nixUnstable;
+        package = pkgs.nixVersions.latest;
         extraOptions = ''
           experimental-features = nix-command flakes configurable-impure-env
         '';
