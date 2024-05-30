@@ -13,8 +13,8 @@ jobs:
       uses: DeterminateSystems/nix-installer-action@main
       with:
         extra-conf: |
-          substituters = https://staging.attic.rs/attic-ci https://attic.indexyz.me/indexyz https://indexyz.cachix.org https://cache.nixos.org/
-          trusted-public-keys = attic-ci:U5Sey4mUxwBXM3iFapmP0/ogODXywKLRNgRPQpEXxbo= indexyz:XxexOMK+bHXR2slT4A9wnJg00EZFXCUYqlUhlEEGQEc= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+          substituters = https://attic.indexyz.me/indexyz https://indexyz.cachix.org https://cache.nixos.org/
+          trusted-public-keys = indexyz:XxexOMK+bHXR2slT4A9wnJg00EZFXCUYqlUhlEEGQEc= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
 
     - run: python .ci/build-matrix.py
       id: set-matrix
@@ -37,8 +37,8 @@ jobs:
       uses: DeterminateSystems/nix-installer-action@main
       with:
         extra-conf: |
-          substituters = https://staging.attic.rs/attic-ci https://attic.indexyz.me/indexyz https://indexyz.cachix.org https://cache.nixos.org/
-          trusted-public-keys = attic-ci:U5Sey4mUxwBXM3iFapmP0/ogODXywKLRNgRPQpEXxbo= indexyz:XxexOMK+bHXR2slT4A9wnJg00EZFXCUYqlUhlEEGQEc= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+          substituters = https://attic.indexyz.me/indexyz https://indexyz.cachix.org https://cache.nixos.org/
+          trusted-public-keys = indexyz:XxexOMK+bHXR2slT4A9wnJg00EZFXCUYqlUhlEEGQEc= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
 
     - name: Build packages
       run: |
