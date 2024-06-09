@@ -33,7 +33,7 @@ let
     zhuangtongfa.material-theme
     ryu1kn.partial-diff
     ms-vsliveshare.vsliveshare
-    matklad.rust-analyzer
+    rust-lang.rust-analyzer
     arrterian.nix-env-selector
     oderwat.indent-rainbow
     christian-kohler.path-intellisense
