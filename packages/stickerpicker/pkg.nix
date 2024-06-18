@@ -2,13 +2,13 @@
 
 python3Packages.buildPythonPackage rec {
   pname = "stickerpicker";
-  version = "0-unstable-2024-06-05";
+  version = "0-unstable-2024-06-17";
 
   src = fetchFromGitHub {
     owner = "maunium";
     repo = pname;
-    rev = "dbc3a9fbb8017cf91404d50be9986b89a1a56275";
-    sha256 = "sha256-CumbxEruX75QiGYZ8wzM+3z2tK5jabLhmzm4CIKrd4U=";
+    rev = "6332613e13dd6378b58f8cf557419c127bb2ab1d";
+    sha256 = "sha256-tpNDmi8E2BiJWc2oZdjbpfkKwJy+e28KGCmDvRXa3KM=";
   };
 
   propagatedBuildInputs = with python3Packages; [
