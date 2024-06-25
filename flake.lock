@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1717378144,
-        "narHash": "sha256-gwx3rVXnt2jNxl8L2DybYv41fA8QhWVGebe932pa2nw=",
+        "lastModified": 1719236180,
+        "narHash": "sha256-VZAfBk2Lo8hQy/NQ4XVSpTICT0ownXBUi1QvGfdlxaM=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "39cd5a1fcd6d7a476eac2894b09122ead99f6efc",
+        "rev": "dd4d1663ccf7fbdb32361b9afe9e71206584cd4c",
         "type": "github"
       },
       "original": {
@@ -74,31 +74,13 @@
         "type": "github"
       }
     },
-    "flake-utils_2": {
-      "inputs": {
-        "systems": "systems_2"
-      },
-      "locked": {
-        "lastModified": 1705309234,
-        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1717384422,
-        "narHash": "sha256-sQ1FBYvO4SoZwoRvUIDY94hQyg+uqakG0UMClRbqyG4=",
+        "lastModified": 1719293882,
+        "narHash": "sha256-QEvT4Rf+UjA+eCCNnYmlY0FuKmVU7MG71RDO8BJKODc=",
         "owner": "5aaee9",
         "repo": "nixpkgs",
-        "rev": "cb0317c4552b5639d7e2d85d2adbf4b9de0ff0d7",
+        "rev": "5a4d916a63f6314c1b40fa8c1045d4bf21d19227",
         "type": "github"
       },
       "original": {
@@ -136,17 +118,16 @@
     },
     "rust-overlay": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1717381101,
-        "narHash": "sha256-TcM4+oHTSLw8neTxk/Q0beODr8YiL+oI2j0ENYnNfk4=",
+        "lastModified": 1719281921,
+        "narHash": "sha256-LIBMfhM9pMOlEvBI757GOK5l0R58SRi6YpwfYMbf4yc=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "07098b424d114cd2dddec40be8d5586da339fddc",
+        "rev": "b6032d3a404d8a52ecfc8571ff0c26dfbe221d07",
         "type": "github"
       },
       "original": {
@@ -156,21 +137,6 @@
       }
     },
     "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
