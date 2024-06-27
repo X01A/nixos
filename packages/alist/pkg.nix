@@ -1,39 +1,45 @@
-{ stdenv, glibc, fetchurl }:
-
+{ stdenv, glibc, fetchFromGitHub, buildGoModule, fetchurl, lib }:
 
 let
-  info = import ./version.nix;
-  inherit (info) version hash;
-
-  fetchSrc = {
-    x86_64-linux = {
-      url = "https://github.com/alist-org/alist/releases/download/v${version}/alist-linux-musl-amd64.tar.gz";
-      sha256 = hash.x86_64-linux;
-    };
-    aarch64-linux = {
-      url = "https://github.com/alist-org/alist/releases/download/v${version}/alist-linux-musl-arm64.tar.gz";
-      sha256 = hash.aarch64-linux;
-    };
-  }."${stdenv.system}" or (throw "Unsupported system");
+  version = "3.35.0";
+  alist-web = fetchurl {
+    url = "https://github.com/alist-org/alist-web/releases/download/${version}/dist.tar.gz";
+    sha256 = "sha256-lAYIwrn2TPWFrU0kFUXl8eWeX25U746iycOimZgxP8c=";
+  };
 in
-stdenv.mkDerivation rec {
+buildGoModule rec {
   pname = "alist";
-  inherit version;
+  version = "3.35.0";
 
-  src = fetchurl {
-    inherit (fetchSrc) url sha256;
-    name = "${pname}-${version}.tgz";
+  src = fetchFromGitHub {
+    owner = "alist-org";
+    repo = "alist";
+    rev = "v${version}";
+    sha256 = "sha256-N9WgaPzc8cuDN7N0Ny3t6ARGla0lCluzF2Mut3Pg880=";
   };
 
-  phases = "installPhase";
+  vendorHash = "sha256-lZIM1Cy3JmcrnxC+HN9Ni7P70yVR1LtHVKe3nOhA4fg=";
 
-  installPhase = ''
-    tar zxvf $src
-    mkdir -p "$out"/bin/
-    install -m 755 alist -t "$out"/bin/
+  ldflags = [
+    "-s"
+    "-w"
+    "-X github.com/alist-org/alist/v3/internal/conf.Version=v${version}"
+    "-X github.com/alist-org/alist/v3/internal/conf.WebVersion=v${version}"
+  ];
+
+  postPatch = ''
+    tar zxvf ${alist-web}
+    rm -rf public/dist
+    mv dist public/
   '';
 
-  passthru.updateScript = ./update.sh;
+  tags = [
+    "jsoniter"
+  ];
+
+  modSha256 = lib.fakeSha256;
+  subPackages = [ "." ];
+
   meta = {
     mainProgram = "alist";
   };

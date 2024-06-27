@@ -35,7 +35,7 @@ nix-update --commit --flake aliyundrive-webdav
 nix-update --commit --version "$(curl --fail -sI 'https://mikrotik.com/mt_redirect.php?code=winbox64' | grep -i Location | grep -oP '([\d]{1,}\.[\d]{1,})')" --flake winbox
 nix-update --commit --version "$(curl --fail -s 'https://mattermost.com/download/' | grep -oP "Latest Release:</strong> \K([0-9\\.]*)(?=</p>)")" --flake mattermost-ent
 
-for package in "alist" "teleport-ent"; do
+for package in "teleport-ent"; do
   current_verision=$(nix eval --raw .#packages.x86_64-linux."$package".version)
   pushd packages/$package/
   bash update.sh
@@ -49,4 +49,4 @@ for package in "alist" "teleport-ent"; do
 done
 
 # nix-update -commit --flake teleport-ent
-# nix-update --commit --flake alist
+nix-update --commit --flake alist
