@@ -1,16 +1,17 @@
 { fetchurl, stdenv, autoPatchelfHook, buildPhase ? "", ... }:
 
 let
-  version = "16.0.1";
+  info = import ./version.nix;
+  inherit (info) version hash;
 
   fetchSrc = {
     x86_64-linux = {
       url = "https://cdn.teleport.dev/teleport-ent-v${version}-linux-amd64-bin.tar.gz";
-      sha256 = "sha256-n5SjYDj83N4GDQ624nLwAXpZfmhPco9+REqnrFAdtEc=";
+      sha256 = hash.x86_64-linux;
     };
     aarch64-linux = {
       url = "https://cdn.teleport.dev/teleport-ent-v${version}-linux-arm64-bin.tar.gz";
-      sha256 = "sha256-nvLtmlILj+4znNimI+3DCKmtCJFUF+WwBz7kowGi0/M=";
+      sha256 = hash.aarch64-linux;
     };
   }."${stdenv.system}" or (throw "Unsupported system");
 in
@@ -32,6 +33,7 @@ stdenv.mkDerivation {
     cp {tctl,teleport,tsh} $out/bin
   '';
 
+  passthru.updateScript = ./update.sh;
   meta = {
     homepage = "https://github.com/gravitational/teleport";
     description = "Protect access to all of your infrastructure.";

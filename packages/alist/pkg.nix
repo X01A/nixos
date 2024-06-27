@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
     install -m 755 alist -t "$out"/bin/
   '';
 
-  passthru.updateScript = ./updater.sh;
+  passthru.updateScript = ./update.sh;
   meta = {
     mainProgram = "alist";
   };

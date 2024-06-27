@@ -19,7 +19,6 @@ nix-update --commit --flake vpncloud
 nix-update --commit --flake tun2socks
 nix-update --commit --flake hev-socks5-tproxy
 nix-update --commit --flake novnc
-nix-update --commit --flake alist
 nix-update --commit --flake landrop --url https://github.com/LANDrop/LANDrop
 nix-update --commit --flake candy
 
@@ -36,6 +35,18 @@ nix-update --commit --flake aliyundrive-webdav
 nix-update --commit --version "$(curl --fail -sI 'https://mikrotik.com/mt_redirect.php?code=winbox64' | grep -i Location | grep -oP '([\d]{1,}\.[\d]{1,})')" --flake winbox
 nix-update --commit --version "$(curl --fail -s 'https://mattermost.com/download/' | grep -oP "Latest Release:</strong> \K([0-9\\.]*)(?=</p>)")" --flake mattermost-ent
 
-TELEPORT_VERSION="$(curl --fail -s https://goteleport.com/download/ | grep -oP 'bash -s \K([\d]{1,}\.[\d]{1,}.[\d]{1,})')"
-nix-update --commit --version "$TELEPORT_VERSION" --flake teleport-ent
-nix-update --system aarch64-linux --commit --version "$TELEPORT_VERSION" --flake teleport-ent
+for package in "alist" "teleport-ent"; do
+  current_verision=$(nix eval --raw .#packages.x86_64-linux."$package".version)
+  pushd packages/$package/
+  bash update.sh
+  popd
+  git add .
+  new_verision=$(nix eval --raw .#packages.x86_64-linux."$package".version)
+
+  if [ "$current_version" != "$new_version" ];
+    git commit -m "$package: $current_verision -> $new_verision"
+  fi
+done
+
+# nix-update -commit --flake teleport-ent
+# nix-update --commit --flake alist
