@@ -43,7 +43,7 @@ for package in "alist" "teleport-ent"; do
   git add .
   new_verision=$(nix eval --raw .#packages.x86_64-linux."$package".version)
 
-  if [ "$current_version" != "$new_version" ];
+  if [ "$current_version" != "$new_version" ]; then
     git commit -m "$package: $current_verision -> $new_verision"
   fi
 done
