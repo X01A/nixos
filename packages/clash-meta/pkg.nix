@@ -2,13 +2,13 @@
 
 buildGo121Module rec {
   pname = "clash-meta";
-  version = "Prerelease-Alpha-unstable-2024-06-23";
+  version = "Prerelease-Alpha-unstable-2024-06-27";
   src = fetchFromGitHub ({
     owner = "MetaCubeX";
     repo = "Clash.Meta";
-    rev = "9f4cd646c23a8fd511c21446ed2c4d391a21b341";
+    rev = "f45ccc07616cfd3ee6dbc1270f7c298cceeb8d04";
     fetchSubmodules = true;
-    sha256 = "sha256-tudsvJ+PWw3X/CsdVjU1T+TE+ck7+LI3A101MWMkbZc=";
+    sha256 = "sha256-hqiiCiVJ+PoNxd1zsmlYozzhVUm/NLDW86RTGMHwVRI=";
   });
 
 
@@ -24,7 +24,7 @@ buildGo121Module rec {
 
   doCheck = false;
   excludedPackages = [ "./test" ];
-  vendorHash = "sha256-2ABU83eN6sYyoQExWbexC6F17gGm10SZbmyHyM92TK8=";
+  vendorHash = "sha256-lBHL4vD+0JDOlc6SWFsj0cerE/ypImoh8UFbL736SmA=";
 
   meta = with lib; {
     homepage = "https://github.com/MetaCubeX/Clash.Meta";
