@@ -2,7 +2,7 @@
 
 buildGo121Module rec {
   pname = "clash-meta";
-  version = "Prerelease-Alpha-unstable-2024-06-28";
+  version = "1.18.6-unstable-2024-06-28";
   src = fetchFromGitHub ({
     owner = "MetaCubeX";
     repo = "Clash.Meta";
