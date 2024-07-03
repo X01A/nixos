@@ -31,36 +31,37 @@ wrapFirefox firefox-unwrapped {
         installation_mode = "force_installed";
         install_url = "https://addons.mozilla.org/firefox/downloads/latest/adguard-adblocker/latest.xpi";
       };
+
       # Switchy Omega
       "switchyomega@feliscatus.addons.mozilla.org" = {
         installation_mode = "force_installed";
         install_url = "https://addons.mozilla.org/firefox/downloads/latest/switchyomega/latest.xpi";
       };
+
       # SponsorBlock
       "sponsorBlocker@ajay.app" = {
         installation_mode = "force_installed";
         install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
       };
-      # MetaMask
-      "webextension@metamask.io" = {
-        installation_mode = "force_installed";
-        install_url = "https://addons.mozilla.org/firefox/downloads/latest/ether-metamask/latest.xpi";
-      };
+
       # Privacy Badger
       "jid1-MnnxcxisBPnSXQ@jetpack" = {
         installation_mode = "force_installed";
         install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
       };
+
       # User-Agent Switcher and Manager
       "{a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7}" = {
         installation_mode = "force_installed";
         install_url = "https://addons.mozilla.org/firefox/downloads/latest/user-agent-string-switcher/latest.xpi";
       };
+
       # HTTPS Everywhere
       "https-everywhere@eff.org" = {
         installation_mode = "force_installed";
         install_url = "https://addons.mozilla.org/firefox/downloads/latest/https-everywhere/latest.xpi";
       };
+
       # Tabby
       "tabby@whatsyouridea.com" = {
         installation_mode = "force_installed";
@@ -71,6 +72,18 @@ wrapFirefox firefox-unwrapped {
       "{d634138d-c276-4fc8-924b-40a0ea21d284}" = {
         installation_mode = "force_installed";
         install_url = "https://addons.mozilla.org/firefox/downloads/latest/1password-x-password-manager/latest.xpi";
+      };
+
+      # Immersive Translate
+      "{5efceaa7-f3a2-4e59-a54b-85319448e305}" = {
+        installation_mode = "force_installed";
+        install_url = "https://addons.mozilla.org/firefox/downloads/latest/immersive-translate/latest.xpi";
+      };
+
+      # SafePal
+      "{3fd93479-b7c6-4fce-b31b-5dcfbe843f61}" = {
+        installation_mode = "force_installed";
+        install_url = "https://addons.mozilla.org/firefox/downloads/latest/safepal-extension-wallet/latest.xpi";
       };
     };
   };
