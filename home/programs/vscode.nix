@@ -80,7 +80,12 @@ in
 
     programs.vscode = {
       enable = true;
-      package = pkgs.vscodium;
+      package = (pkgs.vscodium.override {
+        commandLineArgs = builtins.concatStringsSep " " [
+          "--enable-wayland-ime"
+          "--ozone-platform-hint=auto"
+        ];
+      });
       userSettings = {
         # Workbench style
         "workbench.colorTheme" = "One Dark Pro";
