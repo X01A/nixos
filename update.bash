@@ -36,15 +36,15 @@ nix-update --commit --version "$(curl --fail -sI 'https://mikrotik.com/mt_redire
 nix-update --commit --version "$(curl --fail -s 'https://mattermost.com/download/' | grep -oP "Latest Release:</strong> \K([0-9\\.]*)(?=</p>)")" --flake mattermost-ent
 
 for package in "teleport-ent"; do
-  current_verision=$(nix eval --raw .#packages.x86_64-linux."$package".version)
+  current_version=$(nix eval --raw .#packages.x86_64-linux."$package".version)
   pushd packages/$package/
   bash update.sh
   popd
   git add .
-  new_verision=$(nix eval --raw .#packages.x86_64-linux."$package".version)
+  new_version=$(nix eval --raw .#packages.x86_64-linux."$package".version)
 
   if [ "$current_version" != "$new_version" ]; then
-    git commit -m "$package: $current_verision -> $new_verision"
+    git commit -m "$package: $current_version -> $new_version"
   fi
 done
 
