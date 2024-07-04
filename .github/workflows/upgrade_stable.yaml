@@ -3,7 +3,7 @@ on:
   schedule:
     # Every hour
     - cron:  '0 * * * *'
-
+  push:
 jobs:
   update:
     runs-on: ubuntu-latest
