@@ -39,7 +39,7 @@ let
     christian-kohler.path-intellisense
     mkhl.direnv
     jnoortheen.nix-ide
-    octref.vetur
+    vue.volar
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     (mkOpenVSXExt {
       publisher = "jeanp413";
