@@ -40,6 +40,8 @@ let
     mkhl.direnv
     jnoortheen.nix-ide
     vue.volar
+    github.copilot
+    github.copilot-chat
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     (mkOpenVSXExt {
       publisher = "jeanp413";
