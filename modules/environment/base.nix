@@ -153,8 +153,10 @@ in
         clock24 = true;
         enable = true;
         newSession = true;
-        reverseSplit = true;
-
+        reverseSplit = false;
+        extraConfig = ''
+          set -g mouse on
+        '';
         plugins = with pkgs.tmuxPlugins; [
           prefix-highlight
           nord
