@@ -2,14 +2,14 @@
 
 stdenv.mkDerivation rec {
   pname = "libcron";
-  version = "1.3.1-unstable-2023-11-14";
+  version = "1.3.1-unstable-2024-07-31";
 
   src = fetchFromGitHub ({
     owner = "PerMalmberg";
     repo = "libcron";
-    rev = "41f238ceb09d4179e7346d78584a0c978e5d0059";
+    rev = "7c7d290792697eb7db27bae372961fecec86e39c";
     fetchSubmodules = true;
-    sha256 = "sha256-y26mV+JtZkrDWtDLURV87mDNNYMqL9hJ3CuwIXoJw4I=";
+    sha256 = "sha256-D30JbyonMhW7w+u4ozzMY5Ys8l6Rkcqv2iRP8jf6FW4=";
   });
 
   cmakeFlags = [
