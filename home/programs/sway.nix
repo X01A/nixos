@@ -85,7 +85,6 @@ in
       rofi-wayland
       brightnessctl
       pavucontrol
-      gnome3.adwaita-icon-theme
       grim
       wl-clipboard
       maim
