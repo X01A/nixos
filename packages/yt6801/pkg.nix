@@ -12,8 +12,8 @@ stdenv.mkDerivation rec {
 
   version = "1.0.29";
   src = fetchzip {
-    url = "https://www.motor-comm.com/Public/Uploads/uploadfile/files/20240812/yt6801-linux-driver-${version}.zip";
     stripRoot = false;
+    url = "https://www.motor-comm.com/Public/Uploads/uploadfile/files/20240812/yt6801-linux-driver-${version}.zip";
     sha256 = "sha256-oz6CeOUN6QWKXxe3WUZljhGDTFArsknjzBuQ4IchGeU=";
   };
 
@@ -31,10 +31,10 @@ stdenv.mkDerivation rec {
     "KERNELRELEASE=${kernel.modDirVersion}"
     "KSRC_BASE="
     "KSRC=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
-    "KDST=net/ethernet/motorcomm"
+    "KDST=kernel/drivers/net/ethernet/motorcomm"
     "INSTALL_MOD_PATH=$(out)"
-    "ko_dir=$(out)/lib/modules/${kernel.modDirVersion}/net/ethernet/motorcomm/"
-    "ko_full=$(out)/lib/modules/${kernel.modDirVersion}/net/ethernet/motorcomm/yt6801.ko.xz"
+    "ko_dir=$(out)/lib/modules/${kernel.modDirVersion}/kernel/drivers/net/ethernet/motorcomm/"
+    "ko_full=$(out)/lib/modules/${kernel.modDirVersion}/kernel/drivers/net/ethernet/motorcomm/yt6801.ko.xz"
   ];
 
   meta = with lib; {
