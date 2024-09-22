@@ -4,7 +4,7 @@ let
   version = "3.36.0";
   alist-web = fetchurl {
     url = "https://github.com/alist-org/alist-web/releases/download/${version}/dist.tar.gz";
-    sha256 = "sha256-lAYIwrn2TPWFrU0kFUXl8eWeX25U746iycOimZgxP8c=";
+    sha256 = "sha256-uZfT7PkvRHzB2sqbGum53D8oRFWJ2z3AVBdOzBWmAKk=";
   };
 in
 buildGoModule rec {
