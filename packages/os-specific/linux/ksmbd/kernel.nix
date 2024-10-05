@@ -5,7 +5,7 @@ assert lib.versionAtLeast kernel.version "5.4";
 
 stdenv.mkDerivation {
   pname = "ksmbd";
-  version = "0-unstable-2024-07-27";
+  version = "3.2.1-unstable-2024-07-27";
   src = fetchFromGitHub ({
     owner = "namjaejeon";
     repo = "ksmbd";
