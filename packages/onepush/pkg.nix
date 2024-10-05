@@ -2,7 +2,7 @@
 
 python3Packages.buildPythonPackage {
   pname = "onepush";
-  version = "0-unstable-2023-11-28";
+  version = "1.1.0-unstable-2023-11-28";
 
   src = fetchFromGitHub {
     owner = "y1ndan";
