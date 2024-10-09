@@ -11,7 +11,7 @@ rustPlatform.buildRustPackage rec {
     sha256 = "sha256-BYMdQe162wE2FMCzy+zxXyV25/W9zTEYJMGeW3wb6J0=";
   });
 
-  cargoSha256 = "sha256-EdDlAhmEvQxFH/2rDoZY5diVGi20G2fnwxIpJe1v+A0=";
+  cargoHash = "sha256-EdDlAhmEvQxFH/2rDoZY5diVGi20G2fnwxIpJe1v+A0=";
 
   RUSTC_BOOTSTRAP = 1;
 
