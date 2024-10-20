@@ -11,9 +11,9 @@ stdenvNoCC.mkDerivation {
   src = fetchFromGitHub ({
     owner = "felixonmars";
     repo = "dnsmasq-china-list";
-    rev = "90cb3fa8960189bb9385f008bef51d5d7d8fb647";
+    rev = "ff106b0678489388c3ddba813556b74f5e9d45a4";
     fetchSubmodules = true;
-    sha256 = "sha256-uSZhixo5tP1N7zV+M9QlvlQxcq/YkmEIS3GxoEk0SoY=";
+    sha256 = "sha256-Q9dJlmMb1pzgnLpB1lekaMOm3eP2wFV691ssHEsdIHE=";
   });
 
   phases = "installPhase";
