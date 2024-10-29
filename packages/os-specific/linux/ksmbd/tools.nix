@@ -6,9 +6,9 @@ stdenv.mkDerivation {
   src = fetchFromGitHub ({
     owner = "namjaejeon";
     repo = "ksmbd-tools";
-    rev = "0946beb021766fae0d825ef6a7c1250a5958306f";
+    rev = "5e1a47c3226df42848715ede5bd00648337d9680";
     fetchSubmodules = true;
-    sha256 = "sha256-iha9Pgrl+C8shtfWnyNS4vKRQN8gStyB9qMjb4gqOLM=";
+    sha256 = "sha256-+uhoIk/J99eoTheI8mb3LkhowB7qkVQ+fOwH9IO9SlI=";
   });
 
   nativeBuildInputs = [ autoreconfHook glib pkg-config libnl ];
