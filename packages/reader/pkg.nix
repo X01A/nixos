@@ -2,11 +2,11 @@
 
 stdenvNoCC.mkDerivation rec {
   name = "reader-pro";
-  version = "3.2.10";
+  version = "3.2.11";
 
   src = fetchurl {
     url = "https://github.com/hectorqin/reader/releases/download/v${version}/reader-pro-${version}.jar";
-    sha256 = "sha256-AiM+uRW63LGKEF0PaVXkvr5p2Atd2LjQy5UPOfJ0VFw=";
+    sha256 = "sha256-MawPiynFzVy0l2Eui0DEbEDnJSGyKhWgkHMGKfVKyLY=";
   };
 
   phases = [ "buildPhase" ];
