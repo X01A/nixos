@@ -5,11 +5,11 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "mainsail";
-  version = "2.12.0";
+  version = "2.13.0";
 
   src = fetchzip {
     url = "https://github.com/mainsail-crew/mainsail/releases/download/v${version}/mainsail.zip";
-    sha256 = "sha256-scdh89mDJjuu1tDXTLSjSCL/lUf/Fq9+cCU59gg6d+8=";
+    sha256 = "sha256-IPhLnfjnNjPIEQpTRtTvjGCRofSnJOG1QV6IdXLD8SU=";
     stripRoot = false;
   };
 
