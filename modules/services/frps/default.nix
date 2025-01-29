@@ -1,11 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, utils, ... }:
 
 with lib;
 let
   cfg = config.indexyz.services.frps;
-  format = pkgs.formats.toml { };
-
-  cfgFile = format.generate "config.toml" cfg.settings;
+  format = pkgs.formats.json { };
 in
 {
   options = {
@@ -27,10 +25,18 @@ in
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
       serviceConfig = {
-        ExecStart = "${pkgs.frp}/bin/frps -c ${cfgFile}";
         Restart = "always";
         RestartSec = 30;
+        StateDirectory = "frps";
+        RuntimeDirectory = "frps";
+        RuntimeDirectoryPreserve = "frps";
+        WorkingDirectory = "/var/lib/frps";
       };
+
+      script = ''
+        ${utils.genJqSecretsReplacementSnippet cfg.settings "/var/lib/frps/config.json"}
+        exec ${pkgs.frp}/bin/frps -c /var/lib/frps/config.json
+      '';
     };
   };
 }

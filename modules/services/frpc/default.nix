@@ -1,11 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, utils, ... }:
 
 with lib;
 let
   cfg = config.indexyz.services.frpc;
-  format = pkgs.formats.toml { };
-
-  cfgFile = format.generate "config.toml" cfg.settings;
+  format = pkgs.formats.json { };
 in
 {
   options = {
@@ -29,10 +27,18 @@ in
 
       startLimitIntervalSec = 0;
       serviceConfig = {
-        ExecStart = "${pkgs.frp}/bin/frpc -c ${cfgFile}";
         Restart = "always";
         RestartSec = "10s";
+        StateDirectory = "frpc";
+        RuntimeDirectory = "frpc";
+        RuntimeDirectoryPreserve = "frpc";
+        WorkingDirectory = "/var/lib/frpc";
       };
+
+      script = ''
+        ${utils.genJqSecretsReplacementSnippet cfg.settings "/var/lib/frpc/config.json"}
+        exec ${pkgs.frp}/bin/frpc -c /var/lib/frpc/config.json
+      '';
     };
   };
 }
