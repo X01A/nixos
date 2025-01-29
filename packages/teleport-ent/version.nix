@@ -1,7 +1,7 @@
 {
-  version = "17.2.2";
+  version = "17.2.3";
   hash = {
-    x86_64-linux = "sha256-5TXhPRD/7x/G+fWpCb9M6ZnmnNp3m6TR95UXMF3kH3I=";
-    aarch64-linux = "sha256-2vjuehxk7DRiXC9r2FEGJeEOyzxjfU4zIHxUUGDcqvk=";
+    x86_64-linux = "sha256-w7+YPuq8A/gZzyvLBlN+w9Kq+ilXg4L67bO++kfiBPQ=";
+    aarch64-linux = "sha256-mUdbVGGcR1jGxod+kr1md2yPM1cBogHoAwXZqA5JAKo=";
   };
 }
