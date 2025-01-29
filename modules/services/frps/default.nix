@@ -15,7 +15,7 @@ in
         type = with types; bool;
       };
 
-      config = mkOption {
+      settings = mkOption {
         type = format.type;
         default = { };
       };
