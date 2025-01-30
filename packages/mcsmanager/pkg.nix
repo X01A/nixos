@@ -1,9 +1,9 @@
 { stdenvNoCC, nodejs_20, fetchzip, makeWrapper, buildNpmPackage, ... }:
 let
-  version = "10.4.0";
+  version = "10.4.3";
   src = fetchzip {
     url = "https://github.com/MCSManager/MCSManager/releases/download/v${version}/mcsmanager_linux_release.tar.gz";
-    sha256 = "sha256-9V34DKf+CkbAAzYEVSbtmodcT1ON+lT6y1OWiMJSse0=";
+    sha256 = "sha256-vXiHbXNhM2DegRq592fHbQK3jFddMKlCi1zl6JbZddw=";
   };
 
   pname = "mcsmanager";
@@ -22,8 +22,8 @@ let
     '';
   };
 
-  daemonNodeModules = makeNodeModules "daemon" "sha256-v2r09BbkYqhlp7m4KAzQXYIayjl+yAmTsAjLl1cG8Fg=";
-  webNodeModuels = makeNodeModules "web" "sha256-ePSup2SJlHvGXHYHMoGRDHJO5ZdnCaec0awRasj5rLo=";
+  daemonNodeModules = makeNodeModules "daemon" "sha256-MCbnOe1/ykojAj9hX82FAogWALqHzyzuwbienARvVKQ=";
+  webNodeModuels = makeNodeModules "web" "sha256-O2NjRlK8n6oEN7YB9MaJHKKvwsjzOA7dAsp3LmdV4ds=";
 in
 stdenvNoCC.mkDerivation rec {
   inherit pname version src;
@@ -37,6 +37,11 @@ stdenvNoCC.mkDerivation rec {
 
     substituteInPlace web/app.js \
       --replace-fail 'process.cwd(), "public"' "\"$out/mcsmanager/web\", \"public\""
+
+    substituteInPlace daemon/app.js \
+      --replace-fail 'fs_extra_1.default.chmodSync(const_2.' "// fs_extra_1.default.chmodSync(const_2."
+
+    chmod -R 755 daemon/lib/
   '';
 
   installPhase = ''
