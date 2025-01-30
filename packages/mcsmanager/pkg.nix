@@ -35,8 +35,14 @@ stdenvNoCC.mkDerivation rec {
     substituteInPlace daemon/app.js \
       --replace-fail 'process.cwd(), "lib"' "\"$out/mcsmanager/daemon\", \"lib\""
 
+    substituteInPlace daemon/app.js \
+      --replace-fail 'const PACKAGE_JSON = "package.json";' "const PACKAGE_JSON = \"$out/mcsmanager/daemon/package.json\";"
+
     substituteInPlace web/app.js \
       --replace-fail 'process.cwd(), "public"' "\"$out/mcsmanager/web\", \"public\""
+
+    substituteInPlace web/app.js \
+      --replace-fail 'const PACKAGE_JSON = "package.json";' "const PACKAGE_JSON = \"$out/mcsmanager/web/package.json\";"
 
     substituteInPlace daemon/app.js \
       --replace-fail 'fs_extra_1.default.chmodSync(const_2.' "// fs_extra_1.default.chmodSync(const_2."
