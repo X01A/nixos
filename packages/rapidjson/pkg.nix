@@ -2,14 +2,14 @@
 
 stdenv.mkDerivation rec {
   pname = "rapidjson";
-  version = "1.1.0-unstable-2024-12-18";
+  version = "1.1.0-unstable-2025-02-05";
 
   src = fetchFromGitHub ({
     owner = "tencent";
     repo = "rapidjson";
-    rev = "d621dc9e9c77f81e5c8a35b8dcc16dcd63351321";
+    rev = "24b5e7a8b27f42fa16b96fc70aade9106cf7102f";
     fetchSubmodules = true;
-    sha256 = "sha256-ZU/d1ZZ4WDS8iDpg57IspF45mpFQeiAVaMs0ANxX+Ls=";
+    sha256 = "sha256-fCiPqNrC1dB7f3InIMHMbHhapB9cSyMCaH9qoO3FPAk=";
   });
 
   nativeBuildInputs = [ cmake ];
