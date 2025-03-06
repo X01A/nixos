@@ -1,6 +1,6 @@
-{ lib, stdenv, fetchFromGitHub, buildGo121Module }:
+{ lib, stdenv, fetchFromGitHub, buildGoModule }:
 
-buildGo121Module rec {
+buildGoModule rec {
   pname = "kcptun";
   version = "20230811";
 
