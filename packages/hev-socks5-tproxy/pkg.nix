@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "hev-socks5-tproxy";
-  version = "2.6.0";
+  version = "2.7.0";
   src = fetchFromGitHub ({
     owner = "heiher";
     repo = "hev-socks5-tproxy";
