@@ -1,7 +1,7 @@
 { stdenv, glibc, fetchFromGitHub, buildGoModule, fetchurl, lib }:
 
 let
-  version = "3.36.0";
+  version = "3.42.0";
   alist-web = fetchurl {
     url = "https://github.com/alist-org/alist-web/releases/download/${version}/dist.tar.gz";
     sha256 = "sha256-uZfT7PkvRHzB2sqbGum53D8oRFWJ2z3AVBdOzBWmAKk=";
@@ -9,7 +9,7 @@ let
 in
 buildGoModule rec {
   pname = "alist";
-  version = "3.42.0";
+  inherit version;
 
   src = fetchFromGitHub {
     owner = "alist-org";

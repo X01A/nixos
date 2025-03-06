@@ -1,7 +1,7 @@
-{ fetchgit, lib, gcc8Stdenv, autoconf, automake, libtool, libev, autoreconfHook }:
+{ fetchgit, lib, stdenv, autoconf, automake, libtool, libev, autoreconfHook }:
 
 with lib;
-gcc8Stdenv.mkDerivation rec {
+stdenv.mkDerivation rec {
   pname = "simple-obfs";
   version = "0.0.5-unstable-2019-08-17";
   src = fetchgit {
