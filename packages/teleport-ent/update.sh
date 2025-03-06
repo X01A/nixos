@@ -2,7 +2,10 @@
 #!nix-shell -i bash -p coreutils curl jq common-updater-scripts
 set -euo pipefail
 
-version=$(curl --fail -s https://goteleport.com/download/ | grep -oP 'bash -s \K([\d]{1,}\.[\d]{1,}.[\d]{1,})')
+tag_name=$(curl https://api.github.com/repos/gravitational/teleport/releases/latest | jq -r ".tag_name")
+prefix="v"
+
+version=${tag_name#"$prefix"}
 
 amd64_pkg_hash=$(nix-prefetch-url "https://cdn.teleport.dev/teleport-ent-v$version-linux-amd64-bin.tar.gz")
 amd64_pkg_hash=$(nix hash to-sri "sha256:$amd64_pkg_hash")
