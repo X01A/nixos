@@ -48,4 +48,4 @@ for package in "teleport-ent"; do
 done
 
 # nix-update -commit --flake teleport-ent
-# nix-update --commit --flake alist
+nix-update --commit --flake alist
