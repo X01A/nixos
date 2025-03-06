@@ -9,16 +9,16 @@ let
 in
 buildGoModule rec {
   pname = "alist";
-  version = "3.36.0";
+  version = "3.42.0";
 
   src = fetchFromGitHub {
     owner = "alist-org";
     repo = "alist";
     rev = "v${version}";
-    sha256 = "sha256-l0/DS7ZSuto8QHvSf1ae7wy/a7yqp05koWpb+ExvJJk=";
+    sha256 = "sha256-r9hL4bxeCiJKHiWMyN4MxqDeN3NhlY8pnpxBCaWDz9c=";
   };
 
-  vendorHash = "sha256-uBZ32aoCjAk14DmTtPSbtfyf7RffFOzvpcF+Ptrkq1A=";
+  vendorHash = "sha256-HhJYp9yIHwhV5kjqeGLWbb+lGp7Sh2bq8DNWRwSx2Bg=";
 
   ldflags = [
     "-s"
