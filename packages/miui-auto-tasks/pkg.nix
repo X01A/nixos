@@ -14,7 +14,7 @@ let
 in
 stdenv.mkDerivation {
   pname = "miui-auto-tasks";
-  version = "1.8.2-hotfix3-unstable-2025-02-11";
+  version = "1.8.2-hotfix4-unstable-2025-02-11";
   src = fetchFromGitHub {
     owner = "0-8-4";
     repo = "miui-auto-tasks";
