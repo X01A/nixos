@@ -1,7 +1,7 @@
 { stdenv, glibc, fetchFromGitHub, buildGoModule, fetchurl, lib }:
 
 let
-  version = "3.43.0";
+  version = "3.44.0";
   alist-web = fetchurl {
     url = "https://github.com/alist-org/alist-web/releases/download/${version}/dist.tar.gz";
     sha256 = "sha256-aF3RO02jniUwhdgv0RB08FGxy8QCOEeUIXY7PS5JsvA=";
@@ -15,10 +15,10 @@ buildGoModule rec {
     owner = "alist-org";
     repo = "alist";
     rev = "v${version}";
-    sha256 = "sha256-H48LKi9AFyqxLzeu4DTavYsMlkQt4EUBbYZnzjMOleo=";
+    sha256 = "sha256-MgNoqR9RYRZhQSCplZwqQECE+6/33vijjx0AnC0U2QA=";
   };
 
-  vendorHash = "sha256-ItH8vRCvIlcCnGWt0ApYkgH6v5UJ6ldJSm0Ii3ak6KI=";
+  vendorHash = "sha256-Nwm+xZu8FPD590GTzruyWjF8l4+jpa4GqQDrNB4bWuc=";
 
   ldflags = [
     "-s"
