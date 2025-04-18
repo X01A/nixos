@@ -8,7 +8,7 @@ let
     inherit addr;
     port = 443;
     ssl = true;
-    extraParameters = [ "http2" "default" "fastopen=3" "reuseport" ];
+    extraParameters = [ "default" "fastopen=3" "reuseport" ];
   };
 in
 {
