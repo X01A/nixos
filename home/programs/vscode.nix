@@ -88,27 +88,30 @@ in
           "--ozone-platform-hint=auto"
         ];
       });
-      userSettings = {
-        # Workbench style
-        "workbench.colorTheme" = "One Dark Pro";
-        "workbench.iconTheme" = "material-icon-theme";
 
-        # Git settings
-        "git.enableSmartCommit" = true;
-        "git.confirmSync" = false;
-        "git.autofetch" = true;
-        "git.ignoreLegacyWarning" = true;
+      profiles.default = {
+        inherit extensions;      
+        userSettings = {
+          # Workbench style
+          "workbench.colorTheme" = "One Dark Pro";
+          "workbench.iconTheme" = "material-icon-theme";
 
-        # Font settings
-        "terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font, Iosevka, Cascadia Code PL";
-        "editor.fontFamily" = "CaskaydiaCove Nerd Font, Iosevka, Cascadia Code PL";
-        "editor.fontLigatures" = true;
-        "editor.fontSize" = 14;
+          # Git settings
+          "git.enableSmartCommit" = true;
+          "git.confirmSync" = false;
+          "git.autofetch" = true;
+          "git.ignoreLegacyWarning" = true;
 
-        # Enable bracketPairColorization
-        "editor.bracketPairColorization.enabled" = true;
+          # Font settings
+          "terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font, Iosevka, Cascadia Code PL";
+          "editor.fontFamily" = "CaskaydiaCove Nerd Font, Iosevka, Cascadia Code PL";
+          "editor.fontLigatures" = true;
+          "editor.fontSize" = 14;
+
+          # Enable bracketPairColorization
+          "editor.bracketPairColorization.enabled" = true;
+        };
       };
-      inherit extensions;
     };
   };
 }
