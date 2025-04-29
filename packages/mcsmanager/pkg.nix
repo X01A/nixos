@@ -49,11 +49,13 @@ stdenvNoCC.mkDerivation rec {
 
     chmod -R 755 daemon/lib/
   '';
-
+  dontCheckForBrokenSymlinks = true;
   installPhase = ''
     runHook preInstall
     mkdir -p $out/mcsmanager
 
+    rm -rf daemon/node_modules
+    rm -rf web/node_modules
     cp -r ./* $out/mcsmanager
     cp -r ${daemonNodeModules} $out/mcsmanager/daemon/node_modules
     cp -r ${webNodeModuels} $out/mcsmanager/web/node_modules
