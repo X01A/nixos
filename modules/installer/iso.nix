@@ -24,4 +24,6 @@
     enable = true;
     man.enable = true;
   };
+
+  services.openssh.settings.PermitRootLogin = lib.mkForce "yes";
 }
