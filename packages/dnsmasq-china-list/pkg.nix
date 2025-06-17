@@ -7,13 +7,13 @@
 
 stdenvNoCC.mkDerivation {
   pname = "dnsmasq-china-list";
-  version = "0-unstable-2025-06-13";
+  version = "0-unstable-2025-06-16";
   src = fetchFromGitHub ({
     owner = "felixonmars";
     repo = "dnsmasq-china-list";
-    rev = "e47dbc23d0e2d147bc862c762a61e930c8ec9932";
+    rev = "b05ea2d30287bb46c07f2349dd77ad390bc9028f";
     fetchSubmodules = true;
-    sha256 = "sha256-dx2Wt9spqiSj4bkz7/A3MdZNkUq+PumdaH80slFYdPw=";
+    sha256 = "sha256-9WDYJxo9m+9C0iuTus2wSs7V2JPQogElqoxLsWSnKSo=";
   });
 
   phases = "installPhase";
