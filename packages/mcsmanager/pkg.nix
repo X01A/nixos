@@ -1,15 +1,15 @@
-{ stdenvNoCC, nodejs_20, fetchzip, makeWrapper, buildNpmPackage, ... }:
+{ lib, stdenvNoCC, nodejs_20, fetchzip, makeWrapper, buildNpmPackage, ... }:
 let
-  version = "10.4.3";
+  version = "10.6.1";
   src = fetchzip {
     url = "https://github.com/MCSManager/MCSManager/releases/download/v${version}/mcsmanager_linux_release.tar.gz";
-    sha256 = "sha256-vXiHbXNhM2DegRq592fHbQK3jFddMKlCi1zl6JbZddw=";
+    sha256 = "sha256-qc3U/AdUjtrDmOJnSIy65EW8jRW3fWUGn/eclTk6ZXI=";
   };
 
   pname = "mcsmanager";
 
   makeNodeModules = name: hash: buildNpmPackage {
-    name = "mcsmanager-daemon-node-modules-${version}";
+    name = "mcsmanager-${name}-node-modules-${version}";
     inherit pname version;
 
     src = "${src}/${name}";
@@ -22,8 +22,8 @@ let
     '';
   };
 
-  daemonNodeModules = makeNodeModules "daemon" "sha256-MCbnOe1/ykojAj9hX82FAogWALqHzyzuwbienARvVKQ=";
-  webNodeModuels = makeNodeModules "web" "sha256-O2NjRlK8n6oEN7YB9MaJHKKvwsjzOA7dAsp3LmdV4ds=";
+  daemonNodeModules = makeNodeModules "daemon" "sha256-61JgXNgkNOa+tmYh0wfnVTDNy9HMcZ5e7D+9Wo13AIo=";
+  webNodeModuels = makeNodeModules "web" "sha256-6sjibB3P1d5KMb6pEQ+h622sUEMqynisYnXn05+E2lM=";
 in
 stdenvNoCC.mkDerivation rec {
   inherit pname version src;
@@ -62,7 +62,6 @@ stdenvNoCC.mkDerivation rec {
 
     makeWrapper ${nodejs_20}/bin/node "$out/bin/mcsmanager-daemon" \
       --add-flags "$out/mcsmanager/daemon/app.js"
-
 
     makeWrapper ${nodejs_20}/bin/node "$out/bin/mcsmanager-web" \
       --add-flags "$out/mcsmanager/web/app.js"
