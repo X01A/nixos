@@ -2,14 +2,14 @@
 
 stdenv.mkDerivation rec {
   pname = "quickjspp";
-  version = "20191027-unstable-2023-12-21";
+  version = "20191027-unstable-2025-07-04";
 
   src = fetchFromGitHub ({
     owner = "ftk";
     repo = "quickjspp";
-    rev = "0c00c48895919fc02da3f191a2da06addeb07f09";
+    rev = "01cdd3047ced48265b127790848a0ca88204f2c7";
     fetchSubmodules = true;
-    sha256 = "sha256-YdDSs5KkjnX2tjI4wDsEqDSPYahKSocnxtnBgiv6xcA=";
+    sha256 = "sha256-mjnkbx/6DT0MXdeqA/2/CaMQy/iAUjIaGJT1Oi+JEqg=";
   });
 
   nativeBuildInputs = [ cmake ];
