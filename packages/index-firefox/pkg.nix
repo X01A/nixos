@@ -14,10 +14,10 @@ wrapFirefox firefox-unwrapped {
     Preferences = {
       "browser.newtabpage.activity-stream.feeds.topsites" = false;
       "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-      "network.trr.mode" = 3;
-      "network.dns.echconfig.enabled" = true;
-      "network.dns.http3_echconfig.enabled" = true;
-      "network.dns.use_https_rr_as_altsvc" = true;
+      # "network.trr.mode" = 3;
+      # "network.dns.echconfig.enabled" = true;
+      # "network.dns.http3_echconfig.enabled" = true;
+      # "network.dns.use_https_rr_as_altsvc" = true;
 
       # Mode to use when receiving pan gesture input.
       # Fix wired left / right swipe on touchpad
