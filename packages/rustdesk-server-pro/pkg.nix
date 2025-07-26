@@ -21,5 +21,6 @@ stdenv.mkDerivation rec {
     cp hbbr $out/bin
     cp hbbs $out/bin
     cp rustdesk-utils $out/bin
+    cp -r static $out/static
   '';
 }
