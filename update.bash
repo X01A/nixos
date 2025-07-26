@@ -31,7 +31,6 @@ nix-update --commit --flake reader
 nix-update --commit --flake ping-exporter
 nix-update --commit --flake mumble-discord-bridge
 nix-update --commit --flake aliyundrive-webdav
-nix-update --commit --flake alist
 
 nix-update --commit --version "$(curl --fail -s 'https://mattermost.com/download/' | grep -oP "Latest Release:</strong> \K([0-9\\.]*)(?=</p>)")" --flake mattermost-ent
 
