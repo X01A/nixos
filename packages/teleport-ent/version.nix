@@ -1,7 +1,7 @@
 {
-  version = "18.1.2";
+  version = "18.1.3";
   hash = {
-    x86_64-linux = "sha256-fB8fxzLB/ujY2G+MAby/u/op321IC43owLhJEWbC72U=";
-    aarch64-linux = "sha256-dvP6r7Sy9giyNyKVrmjJbUP371o/aK9j3ndy4f6uzy4=";
+    x86_64-linux = "sha256-ttsHaOv61vjckRyp0WCNNEcJwwAEFmis7SP5v8Bt8Mo=";
+    aarch64-linux = "sha256-E8Bgru/F6IX4zkSF+lvboZz3nwA7uViqVHJbdHs6I5k=";
   };
 }
