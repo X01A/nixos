@@ -33,7 +33,7 @@ nix-update --commit --flake ping-exporter
 nix-update --commit --flake mumble-discord-bridge
 nix-update --commit --flake aliyundrive-webdav
 
-nix-update --commit --version "$(curl --fail -s 'https://mattermost.com/download/' | grep -oP "Latest Release:</strong> \K([0-9\\.]*)(?=</p>)")" --flake mattermost-ent
+nix-update --commit --version "$(curl 'https://deb.packages.mattermost.com/dists/noble/main/binary-amd64/Packages' | grep -E '^Package: mattermost$' -A10 | grep -E '^Version: (.*)$'  | awk -F ':' '{print $2}' | awk -F '-' '{print $1}'| awk '{$1=$1;print}' | sort -V | tail -n 1)" --flake mattermost-ent
 
 for package in "teleport-ent"; do
   current_version=$(nix eval --raw .#packages.x86_64-linux."$package".version)
