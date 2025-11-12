@@ -12,5 +12,3 @@ nix-update --commit --version branch --flake libcron
 nix-update --commit --version branch --flake dnsmasq-china-list
 nix-update --commit --version branch --flake chnroutes
 nix-update --commit --version branch --flake stickerpicker
-nix-update --commit --version branch=master --flake miui-auto-tasks
-nix-update --commit --version branch --flake onepush
