@@ -45,7 +45,7 @@ jobs:
         set -ex
         nix profile install nixpkgs#attic-client
 
-        attic login indexyz https://attic.indexyz.me "${{ secrets.ATTIC_TOKEN }}"
+        # attic login indexyz https://attic.indexyz.me "${{ secrets.ATTIC_TOKEN }}"
         nix --version
 
         PACKAGE="${{ matrix.pacakges.name }}"
@@ -54,7 +54,7 @@ jobs:
         echo "Build Package Successfully"s
         PACKAGE_LOCATION=$(nix eval --raw ".#"$PACKAGE)
         echo "Package location: $PACKAGE_LOCATION"
-        attic push indexyz $PACKAGE_LOCATION
+        # attic push indexyz $PACKAGE_LOCATION
         PACKAGE_DRV_LOCATION=$(nix eval --raw ".#"$PACKAGE".drvPath")
         echo "Package drv location: $PACKAGE_DRV_LOCATION"
-        attic push indexyz $PACKAGE_DRV_LOCATION
+        # attic push indexyz $PACKAGE_DRV_LOCATION
