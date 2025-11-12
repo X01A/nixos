@@ -11,6 +11,7 @@ function fetch-github-release {
   echo $VERSION
 }
 
+nix-update --commit --flake rustdesk-server-pro
 nix-update --commit --flake realm
 nix-update --commit --flake trojan-go
 nix-update --commit --flake fcitx5-material-color
