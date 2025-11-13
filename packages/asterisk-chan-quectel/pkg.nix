@@ -2,14 +2,14 @@
 
 stdenv.mkDerivation rec {
   pname = "asterisk-chan-quectel";
-  version = "unstable-2022-09-08";
+  version = "3.5-unstable-2025-03-24";
 
   src = fetchFromGitHub {
     owner = "IchthysMaranatha";
     repo = pname;
-    rev = "b3534eaedce52819ee3f61db6d191ed35177b955";
+    rev = "3d45c7f072131296a7e3c1a4faf5bb18751dbd87";
     fetchSubmodules = false;
-    sha256 = "sha256-vLKqGOsc2HsLGy7JtkW0ttc6Om4mzMhG5AXjkc9ES7s=";
+    sha256 = "sha256-5Jq3CXkIvmNQN5FrWOeiCXhNcO4z58I2ryJ4BsGIxuA=";
   };
 
   preInstall = ''
