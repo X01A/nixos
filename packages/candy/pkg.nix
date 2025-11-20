@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "candy";
-  version = "6.1.3";
+  version = "6.1.4";
 
   nativeBuildInputs = [ cmake pkg-config ];
   buildInputs = [ spdlog libconfig poco uriparser openssl ];
@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
     owner = "lanthora";
     repo = "candy";
     rev = "v${version}";
-    sha256 = "sha256-+U3vd303OymSw+1NCXrYizhhCf4O5Zi6pIbBGfGWaA0=";
+    sha256 = "sha256-lNLOEzQcv2vSvNibYQEa+u/6GRPtafs59CWhn8SGrcQ=";
   };
 
 
