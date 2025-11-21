@@ -2,10 +2,10 @@
 
 stdenv.mkDerivation rec {
   pname = "mattermost-ent";
-  version = "11.1.0";
+  version = "11.1.1";
   src = fetchurl {
     url = "https://releases.mattermost.com/${version}/mattermost-${version}-linux-amd64.tar.gz";
-    sha256 = "sha256-iLEtTwq8Zt6it8K7m/+tmsdGXsbRY/EIuMdszUXxYvY=";
+    sha256 = "sha256-27+XwsBZrNrfaEtY2evXRvRgIZGjTNEL38p0gkrRlGA=";
   };
 
   inherit buildPhase;
