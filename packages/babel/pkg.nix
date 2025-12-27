@@ -4,7 +4,7 @@ let
   version = "7.16.7";
 in
 stdenv.mkDerivation {
-  name = "babel-cli";
+  pname = "babel-cli";
   inherit version;
 
   src = mkYarnPackage {

@@ -1,7 +1,7 @@
 { stdenvNoCC, fetchurl, lib }:
 
 stdenvNoCC.mkDerivation rec {
-  name = "reader-pro";
+  pname = "reader-pro";
   version = "3.2.14";
 
   src = fetchurl {

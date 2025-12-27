@@ -1,7 +1,7 @@
 { fetchzip, stdenv, dpkg, pcsclite, autoPatchelfHook, glib, pango, gtk3 }:
 
 stdenv.mkDerivation {
-  name = "safenet-driver";
+  pname = "safenet-driver";
   version = "10.8";
 
   src = fetchzip {

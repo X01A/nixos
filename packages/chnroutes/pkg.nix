@@ -1,7 +1,7 @@
 { lib, stdenvNoCC, fetchFromGitHub, ... }:
 
 stdenvNoCC.mkDerivation rec {
-  name = "chnroutes2";
+  pname = "chnroutes2";
   version = "0-unstable-2025-12-26";
 
   src = fetchFromGitHub ({
