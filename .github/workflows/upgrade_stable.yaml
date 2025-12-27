@@ -14,7 +14,6 @@ jobs:
     - uses: cachix/install-nix-action@master
       with:
         nix_path: nixpkgs=channel:nixos-unstable
-        install_url: https://github.com/nix-community/nix-unstable-installer/releases/download/nix-2.14.0pre20230127_ccaadc9/install
         extra_nix_config: |
           experimental-features = nix-command flakes
           substituters = https://attic.indexyz.me/indexyz https://indexyz.cachix.org https://cache.nixos.org/
