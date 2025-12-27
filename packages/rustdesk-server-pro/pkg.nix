@@ -1,8 +1,9 @@
 { fetchurl, stdenv, autoPatchelfHook }:
 
 stdenv.mkDerivation rec {
-  name = "rustdesk-server-pro";
+  pname = "rustdesk-server-pro";
   version = "1.7.2";
+
 
   src = fetchurl {
     url = "https://github.com/rustdesk/rustdesk-server-pro/releases/download/${version}/rustdesk-server-linux-amd64.tar.gz";
