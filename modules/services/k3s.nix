@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 with lib;
 let
@@ -36,10 +41,21 @@ in
     ];
 
     # https://github.com/NixOS/nixpkgs/issues/98766
-    systemd.services.k3s.after = [ "network-online.service" "firewall.service" ];
+    systemd.services.k3s.after = [
+      "network-online.service"
+      "firewall.service"
+    ];
     systemd.services.k3s.serviceConfig.KillMode = lib.mkForce "control-group";
 
-    boot.kernelModules = [ "br_netfilter" "ip_conntrack" "ip_vs" "ip_vs_rr" "ip_vs_wrr" "ip_vs_sh" "overlay" ];
+    boot.kernelModules = [
+      "br_netfilter"
+      "ip_conntrack"
+      "ip_vs"
+      "ip_vs_rr"
+      "ip_vs_wrr"
+      "ip_vs_sh"
+      "overlay"
+    ];
     networking.firewall.extraCommands = ''
       iptables -A INPUT -i cni+ -j ACCEPT
       iptables -I INPUT 1 -i cni0 -s 10.42.0.0/16 -j ACCEPT

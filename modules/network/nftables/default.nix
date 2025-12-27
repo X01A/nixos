@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 with lib;
 
@@ -9,10 +14,15 @@ let
   mapToPortRange = it: "${builtins.toString it.from}-${builtins.toString it.to}";
   haveElement = it: (builtins.length it) > 0;
 
-  buildElemet = it: optionalString (haveElement it) "elements = { ${builtins.concatStringsSep ", " it} }";
+  buildElemet =
+    it: optionalString (haveElement it) "elements = { ${builtins.concatStringsSep ", " it} }";
 
-  allowTcpPorts = (map builtins.toString networkCfg.allowedTCPPorts) ++ (map mapToPortRange networkCfg.allowedTCPPortRanges);
-  allowUdpPorts = (map builtins.toString networkCfg.allowedUDPPorts) ++ (map mapToPortRange networkCfg.allowedUDPPortRanges);
+  allowTcpPorts =
+    (map builtins.toString networkCfg.allowedTCPPorts)
+    ++ (map mapToPortRange networkCfg.allowedTCPPortRanges);
+  allowUdpPorts =
+    (map builtins.toString networkCfg.allowedUDPPorts)
+    ++ (map mapToPortRange networkCfg.allowedUDPPortRanges);
 in
 {
   options = {
@@ -21,7 +31,13 @@ in
 
       blacklist = mkOption {
         # https://support.censys.io/hc/en-us/articles/360043177092-Opt-Out-of-Scanning
-        default = [ "162.142.125.0/24" "167.94.138.0/24" "167.94.145.0/24" "167.94.146.0/24" "167.248.133.0/24" ];
+        default = [
+          "162.142.125.0/24"
+          "167.94.138.0/24"
+          "167.94.145.0/24"
+          "167.94.146.0/24"
+          "167.248.133.0/24"
+        ];
         type = with types; listOf str;
       };
 

@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 let
@@ -8,7 +13,11 @@ let
     inherit addr;
     port = 443;
     ssl = true;
-    extraParameters = [ "default" "fastopen=3" "reuseport" ];
+    extraParameters = [
+      "default"
+      "fastopen=3"
+      "reuseport"
+    ];
   };
 in
 {
@@ -28,7 +37,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall [ 80 443 ];
+    networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall [
+      80
+      443
+    ];
 
     services.nginx = {
       enable = true;

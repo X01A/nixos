@@ -1,4 +1,12 @@
-{ lib, stdenv, fetchFromGitHub, autoreconfHook, glib, pkg-config, libnl }:
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  autoreconfHook,
+  glib,
+  pkg-config,
+  libnl,
+}:
 
 stdenv.mkDerivation {
   pname = "ksmbd-tools";
@@ -11,5 +19,10 @@ stdenv.mkDerivation {
     sha256 = "sha256-2p4wH8PfDgpKVXE8w0o1iobPEH079NFgUjNv/62qqzk=";
   });
 
-  nativeBuildInputs = [ autoreconfHook glib pkg-config libnl ];
+  nativeBuildInputs = [
+    autoreconfHook
+    glib
+    pkg-config
+    libnl
+  ];
 }

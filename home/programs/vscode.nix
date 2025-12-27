@@ -1,62 +1,76 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 with lib;
 let
   cfg = config.indexyz.programs.vscode;
 
-  mkOpenVSXExt = { publisher, name, version, sha256 }: {
-    inherit name publisher version;
-    vsix = builtins.fetchurl {
-      inherit sha256;
-      url = "https://open-vsx.org/api/${publisher}/${name}/${version}/file/${publisher}.${name}-${version}.vsix";
-      name = "${publisher}-${name}.zip";
-    };
-  };
-
-  extensions = (with pkgs.vscode-extensions; [
-    bbenoist.nix
-    ms-python.python
-    ms-azuretools.vscode-docker
-    ms-vscode-remote.remote-ssh
-    # Editorconfig
-    editorconfig.editorconfig
-    # Formatter
-    hookyqr.beautify
-    # Git Plugins
-    donjayamanne.githistory
-    eamodio.gitlens
-    # Golang
-    golang.go
-
-    spywhere.guides
-    pkief.material-icon-theme
-    zhuangtongfa.material-theme
-    ryu1kn.partial-diff
-    ms-vsliveshare.vsliveshare
-    rust-lang.rust-analyzer
-    arrterian.nix-env-selector
-    oderwat.indent-rainbow
-    christian-kohler.path-intellisense
-    mkhl.direnv
-    jnoortheen.nix-ide
-    vue.volar
-    github.copilot
-    github.copilot-chat
-  ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-    (mkOpenVSXExt {
-      publisher = "jeanp413";
-      name = "open-remote-ssh";
-      version = "0.0.39";
-      sha256 = "1bps29zbs0xy7b2p3q5xmva1lh6ma3gz6wzvr96d9ihcpgcrnni5";
-    })
-
+  mkOpenVSXExt =
     {
-      name = "vscode-todo-highlight";
-      publisher = "wayou";
-      version = "1.0.5";
-      sha256 = "sha256-CQVtMdt/fZcNIbH/KybJixnLqCsz5iF1U0k+GfL65Ok=";
-    }
-  ];
+      publisher,
+      name,
+      version,
+      sha256,
+    }:
+    {
+      inherit name publisher version;
+      vsix = builtins.fetchurl {
+        inherit sha256;
+        url = "https://open-vsx.org/api/${publisher}/${name}/${version}/file/${publisher}.${name}-${version}.vsix";
+        name = "${publisher}-${name}.zip";
+      };
+    };
+
+  extensions =
+    (with pkgs.vscode-extensions; [
+      bbenoist.nix
+      ms-python.python
+      ms-azuretools.vscode-docker
+      ms-vscode-remote.remote-ssh
+      # Editorconfig
+      editorconfig.editorconfig
+      # Formatter
+      hookyqr.beautify
+      # Git Plugins
+      donjayamanne.githistory
+      eamodio.gitlens
+      # Golang
+      golang.go
+
+      spywhere.guides
+      pkief.material-icon-theme
+      zhuangtongfa.material-theme
+      ryu1kn.partial-diff
+      ms-vsliveshare.vsliveshare
+      rust-lang.rust-analyzer
+      arrterian.nix-env-selector
+      oderwat.indent-rainbow
+      christian-kohler.path-intellisense
+      mkhl.direnv
+      jnoortheen.nix-ide
+      vue.volar
+      github.copilot
+      github.copilot-chat
+    ])
+    ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      (mkOpenVSXExt {
+        publisher = "jeanp413";
+        name = "open-remote-ssh";
+        version = "0.0.39";
+        sha256 = "1bps29zbs0xy7b2p3q5xmva1lh6ma3gz6wzvr96d9ihcpgcrnni5";
+      })
+
+      {
+        name = "vscode-todo-highlight";
+        publisher = "wayou";
+        version = "1.0.5";
+        sha256 = "sha256-CQVtMdt/fZcNIbH/KybJixnLqCsz5iF1U0k+GfL65Ok=";
+      }
+    ];
 in
 {
   options = {
@@ -82,15 +96,17 @@ in
 
     programs.vscode = {
       enable = true;
-      package = (pkgs.vscodium.override {
-        commandLineArgs = builtins.concatStringsSep " " [
-          "--enable-wayland-ime"
-          "--ozone-platform-hint=auto"
-        ];
-      });
+      package = (
+        pkgs.vscodium.override {
+          commandLineArgs = builtins.concatStringsSep " " [
+            "--enable-wayland-ime"
+            "--ozone-platform-hint=auto"
+          ];
+        }
+      );
 
       profiles.default = {
-        inherit extensions;      
+        inherit extensions;
         userSettings = {
           # Workbench style
           "workbench.colorTheme" = "One Dark Pro";

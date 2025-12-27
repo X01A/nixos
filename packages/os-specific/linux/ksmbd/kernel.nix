@@ -1,4 +1,9 @@
-{ lib, stdenv, fetchFromGitHub, linuxPackages }:
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  linuxPackages,
+}:
 
 with linuxPackages;
 assert lib.versionAtLeast kernel.version "5.4";

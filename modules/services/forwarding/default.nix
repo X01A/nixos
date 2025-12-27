@@ -1,33 +1,53 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 let
   cfg = config.indexyz.services.forwarding;
-  ruleOptions = types.submodule (import ./rule-options.nix {
-    inherit lib;
-  });
-
-  ifThenElse = cond: t: f: if cond then t else f;
-
-  typeToAttr = type: ifThenElse (type == "all")
-    {
-      use_udp = true;
+  ruleOptions = types.submodule (
+    import ./rule-options.nix {
+      inherit lib;
     }
-    (ifThenElse (type == "tcp")
-      { }
+  );
+
+  ifThenElse =
+    cond: t: f:
+    if cond then t else f;
+
+  typeToAttr =
+    type:
+    ifThenElse (type == "all")
       {
         use_udp = true;
-        no_tcp = true;
-      });
+      }
+      (
+        ifThenElse (type == "tcp") { } {
+          use_udp = true;
+          no_tcp = true;
+        }
+      );
 
-  generateConfig = conf: ({
-    listen = "${conf.listen}:${toString conf.port}";
-    remote = "${conf.target}:${toString conf.targetPort}";
-  } // (typeToAttr conf.type));
+  generateConfig =
+    conf:
+    (
+      {
+        listen = "${conf.listen}:${toString conf.port}";
+        remote = "${conf.target}:${toString conf.targetPort}";
+      }
+      // (typeToAttr conf.type)
+    );
 
   configData = {
-    log = { level = cfg.logLevel; };
-    network = { use_udp = true; };
+    log = {
+      level = cfg.logLevel;
+    };
+    network = {
+      use_udp = true;
+    };
     endpoints = map generateConfig cfg.rules;
   };
 
@@ -43,7 +63,14 @@ in
 
       logLevel = mkOption {
         default = "info";
-        type = types.enum [ "off" "error" "warn" "info" "debug" "trace" ];
+        type = types.enum [
+          "off"
+          "error"
+          "warn"
+          "info"
+          "debug"
+          "trace"
+        ];
       };
 
       rules = mkOption {
@@ -73,13 +100,11 @@ in
     };
 
     networking.firewall.allowedTCPPorts = (
-      map (item: item.port)
-        (filter (it: ((it.type == "tcp") || (it.type == "all"))) cfg.rules)
+      map (item: item.port) (filter (it: ((it.type == "tcp") || (it.type == "all"))) cfg.rules)
     );
 
     networking.firewall.allowedUDPPorts = (
-      map (item: item.port)
-        (filter (it: ((it.type == "udp") || (it.type == "all"))) cfg.rules)
+      map (item: item.port) (filter (it: ((it.type == "udp") || (it.type == "all"))) cfg.rules)
     );
   };
 }

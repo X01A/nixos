@@ -1,4 +1,9 @@
-{ stdenv, fetchFromGitHub, jre8, unzip }:
+{
+  stdenv,
+  fetchFromGitHub,
+  jre8,
+  unzip,
+}:
 
 stdenv.mkDerivation rec {
   pname = "novnc";

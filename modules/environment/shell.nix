@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 let
@@ -11,7 +16,6 @@ in
       fishPlugins.pisces
       fishPlugins.fzf-fish
     ];
-
 
     programs.fish = {
       shellInit = ''

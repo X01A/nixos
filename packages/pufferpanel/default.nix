@@ -1,4 +1,11 @@
-{ lib, stdenvNoCC, fetchFromGitHub, buildGoModule, npmlock2nix, jq }:
+{
+  lib,
+  stdenvNoCC,
+  fetchFromGitHub,
+  buildGoModule,
+  npmlock2nix,
+  jq,
+}:
 
 let
   pname = "pufferpanel";

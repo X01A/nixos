@@ -1,15 +1,23 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 let
   cfg = config.indexyz.services.drone-exec;
 
-  configEnvFile = pkgs.writeText "drone.env" (''
-    DRONE_RPC_PROTO=${cfg.serverProto}
-    DRONE_RPC_HOST=${cfg.serverHost}
-  '' + (builtins.concatStringsSep "\n" (attrsets.mapAttrsToList
-    (name: val: "${name}=${val}")
-    cfg.extraSettings)));
+  configEnvFile = pkgs.writeText "drone.env" (
+    ''
+      DRONE_RPC_PROTO=${cfg.serverProto}
+      DRONE_RPC_HOST=${cfg.serverHost}
+    ''
+    + (builtins.concatStringsSep "\n" (
+      attrsets.mapAttrsToList (name: val: "${name}=${val}") cfg.extraSettings
+    ))
+  );
 in
 {
   options = {
@@ -29,7 +37,10 @@ in
 
       serverProto = mkOption {
         default = "https";
-        type = types.enum [ "http" "https" ];
+        type = types.enum [
+          "http"
+          "https"
+        ];
       };
 
       serverHost = mkOption {
@@ -76,7 +87,13 @@ in
       description = "Drone pipeline runner that executes builds directly on the host machine";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
-      path = with pkgs; [ git bash ] ++ cfg.workerPkgs;
+      path =
+        with pkgs;
+        [
+          git
+          bash
+        ]
+        ++ cfg.workerPkgs;
 
       preStart = ''
         mkdir -p ${cfg.workDir}

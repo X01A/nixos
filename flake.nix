@@ -31,20 +31,21 @@
     };
   };
 
-  outputs = inputs @ { flake-parts, ... }: flake-parts.lib.mkFlake { inherit inputs; } {
-    systems = [
-      "aarch64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
-      "x86_64-linux"
-    ];
+  outputs =
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "aarch64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+        "x86_64-linux"
+      ];
 
-
-    imports = [
-      ./lib
-      ./flake/modules.nix
-      ./flake/packages.nix
-      ./flake/dev.nix
-    ];
-  };
+      imports = [
+        ./lib
+        ./flake/modules.nix
+        ./flake/packages.nix
+        ./flake/dev.nix
+      ];
+    };
 }

@@ -1,4 +1,10 @@
-{ stdenv, fetchurl, autoPatchelfHook, buildPhase ? "", ... }:
+{
+  stdenv,
+  fetchurl,
+  autoPatchelfHook,
+  buildPhase ? "",
+  ...
+}:
 
 stdenv.mkDerivation rec {
   pname = "mattermost-ent";

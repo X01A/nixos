@@ -95,17 +95,17 @@ let
       ''}
 
        ${optionalString (opt.tftpServer != null) ''
-        else if option client-arch != 00:00 {
-          next-server ${opt.tftpServer};
-          filename "ipxe.efi";
-        }
+         else if option client-arch != 00:00 {
+           next-server ${opt.tftpServer};
+           filename "ipxe.efi";
+         }
 
-        else {
-          next-server ${opt.tftpServer};
-          filename "undionly.kpxe";
-        }
+         else {
+           next-server ${opt.tftpServer};
+           filename "undionly.kpxe";
+         }
 
-      ''}
+       ''}
 
       ${builtins.concatStringsSep "\n" (map buildHost opt.hosts)}
     }

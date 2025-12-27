@@ -14,45 +14,52 @@ in
   construct =
     {
       # Name
-      name ? "main"
-    , # Path
+      name ? "main",
+      # Path
       #
       # If null, determined from cfg.storagePath
-      path ? null
-    , # Capacity
+      path ? null,
+      # Capacity
       #
       # Has no effect (for now) if there's an
       # existing image
-      capacity ? null
-    , # Target device
+      capacity ? null,
+      # Target device
       #
       # Example: vda
-      dev ? null
-    , # Target bus
+      dev ? null,
+      # Target bus
       #
       # Example: virtio
-      bus ? "virtio"
-    , fromDisk ? null
+      bus ? "virtio",
+      fromDisk ? null,
     }:
     let
       compDev =
-        if dev != null then dev
-        else if bus == "virtio" then "vda"
-        else throw "You must specify a target device (e.g., vda, sda) according to the target bus";
-      compPath =
-        if path != null then path
-        else "${cfg.storagePath}/%machineName%/${name}.qcow2";
+        if dev != null then
+          dev
+        else if bus == "virtio" then
+          "vda"
+        else
+          throw "You must specify a target device (e.g., vda, sda) according to the target bus";
+      compPath = if path != null then path else "${cfg.storagePath}/%machineName%/${name}.qcow2";
     in
     {
       type = "qcow2";
       config = {
-        inherit name capacity bus fromDisk;
+        inherit
+          name
+          capacity
+          bus
+          fromDisk
+          ;
         dev = compDev;
         path = compPath;
       };
     };
 
-  render = device: machineName: machine:
+  render =
+    device: machineName: machine:
     let
       deviceName = device.config.name;
       #diskPath = "/var/lib/hypervisor/${machineName}/${deviceName}.qcow2";
@@ -70,24 +77,26 @@ in
       '';
 
       # FIXME: Better way than toString
-      provisionScript = toString (pkgs.writeScript "vm-${machineName}-qcow2-${deviceName}" ''
-        #!${pkgs.runtimeShell} -e
-        dir=$(${pkgs.coreutils}/bin/dirname ${diskPath})
-        mkdir -p $dir
+      provisionScript = toString (
+        pkgs.writeScript "vm-${machineName}-qcow2-${deviceName}" ''
+          #!${pkgs.runtimeShell} -e
+          dir=$(${pkgs.coreutils}/bin/dirname ${diskPath})
+          mkdir -p $dir
 
-        if [ -f "${diskPath}" ]; then
-          echo "Using existing qcow2 image at ${diskPath}"
-        else
-          ${lib.optionalString (fromDisk != null) ''
-            echo "Copy disk image from ${fromDisk}"
-            cp ${fromDisk} ${diskPath}
-          ''}
+          if [ -f "${diskPath}" ]; then
+            echo "Using existing qcow2 image at ${diskPath}"
+          else
+            ${lib.optionalString (fromDisk != null) ''
+              echo "Copy disk image from ${fromDisk}"
+              cp ${fromDisk} ${diskPath}
+            ''}
 
-          ${lib.optionalString (fromDisk == null) ''
-            echo "Creating ${capacity} qcow2 image at ${diskPath}"
-            ${pkgs.qemu}/bin/qemu-img create -f qcow2 ${diskPath} ${capacity}
-          ''}
-        fi
-      '');
+            ${lib.optionalString (fromDisk == null) ''
+              echo "Creating ${capacity} qcow2 image at ${diskPath}"
+              ${pkgs.qemu}/bin/qemu-img create -f qcow2 ${diskPath} ${capacity}
+            ''}
+          fi
+        ''
+      );
     };
 }

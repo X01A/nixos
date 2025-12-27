@@ -5,8 +5,9 @@ with lib;
 let
   clashTypes = import ./types { inherit lib formats; };
 
-  evalProfile = data: (
-    (evalModules {
+  evalProfile =
+    data:
+    ((evalModules {
       modules = [
         {
           options = {
@@ -21,28 +22,31 @@ let
         }
       ];
     }).config.profile
-  );
+    );
 
-  evalRule = ruleType: data: builtins.toString (
-    (evalModules {
-      modules = [
-        {
-          options = {
-            rule = mkOption {
-              type = ruleType;
-              description = "Rule data";
+  evalRule =
+    ruleType: data:
+    builtins.toString (
+      (evalModules {
+        modules = [
+          {
+            options = {
+              rule = mkOption {
+                type = ruleType;
+                description = "Rule data";
+              };
             };
-          };
-        }
-        {
-          rule = data;
-        }
-      ];
-    }).config.rule
-  );
+          }
+          {
+            rule = data;
+          }
+        ];
+      }).config.rule
+    );
 
-  evalProxy = proxyType: data: (
-    (evalModules {
+  evalProxy =
+    proxyType: data:
+    ((evalModules {
       modules = [
         {
           options = {
@@ -57,7 +61,7 @@ let
         }
       ];
     }).config.proxy
-  );
+    );
 in
 {
   inherit evalProfile;
@@ -66,8 +70,10 @@ in
 
   # Domain Based
   domain = domain: policy: evalRule clashTypes.rules.DOMAIN ({ inherit domain policy; });
-  domainSuffix = domainSuffix: policy: evalRule clashTypes.rules.DOMAIN-SUFFIX ({ inherit domainSuffix policy; });
-  domainKeyword = domainKeyword: policy: evalRule clashTypes.rules.DOMAIN-KEYWORD ({ inherit domainKeyword policy; });
+  domainSuffix =
+    domainSuffix: policy: evalRule clashTypes.rules.DOMAIN-SUFFIX ({ inherit domainSuffix policy; });
+  domainKeyword =
+    domainKeyword: policy: evalRule clashTypes.rules.DOMAIN-KEYWORD ({ inherit domainKeyword policy; });
 
   # IP Based
   geoip = country: policy: evalRule clashTypes.rules.GEOIP ({ inherit country policy; });

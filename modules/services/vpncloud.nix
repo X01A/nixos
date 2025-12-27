@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 with lib;
 let
@@ -35,7 +40,12 @@ in
 
       mode = mkOption {
         default = "normal";
-        type = types.enum [ "normal" "router" "switch" "hub" ];
+        type = types.enum [
+          "normal"
+          "router"
+          "switch"
+          "hub"
+        ];
         description = "The mode of the VPN";
       };
 
@@ -47,7 +57,10 @@ in
 
       deviceType = mkOption {
         default = "tun";
-        type = types.enum [ "tun" "tap" ];
+        type = types.enum [
+          "tun"
+          "tap"
+        ];
         description = "Set the type of network";
       };
 

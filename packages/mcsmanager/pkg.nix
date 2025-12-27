@@ -1,4 +1,12 @@
-{ lib, stdenvNoCC, nodejs_20, fetchzip, makeWrapper, buildNpmPackage, ... }:
+{
+  lib,
+  stdenvNoCC,
+  nodejs_20,
+  fetchzip,
+  makeWrapper,
+  buildNpmPackage,
+  ...
+}:
 let
   version = "10.6.1";
   src = fetchzip {
@@ -8,19 +16,21 @@ let
 
   pname = "mcsmanager";
 
-  makeNodeModules = name: hash: buildNpmPackage {
-    name = "mcsmanager-${name}-node-modules-${version}";
-    inherit pname version;
+  makeNodeModules =
+    name: hash:
+    buildNpmPackage {
+      name = "mcsmanager-${name}-node-modules-${version}";
+      inherit pname version;
 
-    src = "${src}/${name}";
+      src = "${src}/${name}";
 
-    npmDepsHash = hash;
+      npmDepsHash = hash;
 
-    dontBuild = true;
-    installPhase = ''
-      cp -r node_modules $out/
-    '';
-  };
+      dontBuild = true;
+      installPhase = ''
+        cp -r node_modules $out/
+      '';
+    };
 
   daemonNodeModules = makeNodeModules "daemon" "sha256-61JgXNgkNOa+tmYh0wfnVTDNy9HMcZ5e7D+9Wo13AIo=";
   webNodeModuels = makeNodeModules "web" "sha256-6sjibB3P1d5KMb6pEQ+h622sUEMqynisYnXn05+E2lM=";

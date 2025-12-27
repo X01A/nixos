@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 with lib;
 
@@ -19,7 +24,6 @@ in
     security.acme = {
       acceptTerms = true;
       defaults.email = "acme@indexyz.me";
-      preliminarySelfsigned = true;
     };
   };
 }

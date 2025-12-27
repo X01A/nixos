@@ -1,9 +1,15 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
 let
-  recursiveMergeAttrs = listOfAttrsets: fold (attrset: acc: recursiveUpdate attrset acc) { } listOfAttrsets;
+  recursiveMergeAttrs =
+    listOfAttrsets: fold (attrset: acc: recursiveUpdate attrset acc) { } listOfAttrsets;
   cfg = config.indexyz.services.pufferpanel;
 
   defaultConfig = {
@@ -14,7 +20,9 @@ let
         url = "file:${cfg.dataDir}/database.db?cache=shared";
       };
 
-      web = { files = "${pkgs.pufferpanel}/assets/www"; };
+      web = {
+        files = "${pkgs.pufferpanel}/assets/www";
+      };
       daemon = {
         data = {
           cache = "${cfg.dataDir}/cache";
@@ -24,7 +32,12 @@ let
     };
   };
 
-  configFile = pkgs.writeText "config.json" (builtins.toJSON (recursiveMergeAttrs [ defaultConfig cfg.extraConfig ]));
+  configFile = pkgs.writeText "config.json" (
+    builtins.toJSON (recursiveMergeAttrs [
+      defaultConfig
+      cfg.extraConfig
+    ])
+  );
 in
 {
   options = {
@@ -101,7 +114,10 @@ in
     };
 
     networking.firewall = mkIf cfg.openFirewall {
-      allowedTCPPorts = [ 8080 5657 ];
+      allowedTCPPorts = [
+        8080
+        5657
+      ];
     };
   };
 }

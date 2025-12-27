@@ -2,9 +2,11 @@
 
 with lib;
 let
-  ruleOptions = types.submodule (import ./rule-options.nix {
-    inherit lib;
-  });
+  ruleOptions = types.submodule (
+    import ./rule-options.nix {
+      inherit lib;
+    }
+  );
 in
 {
   options = {

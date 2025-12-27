@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 let
@@ -19,20 +24,19 @@ let
     ${pkgs.ksmbd-tools}/bin/ksmbd.adduser -i $out -a ${user} -p ${pass}
   '';
 
-  smbToString = x:
-    if builtins.typeOf x == "bool"
-    then boolToString x
-    else toString x;
+  smbToString = x: if builtins.typeOf x == "bool" then boolToString x else toString x;
 
-  shareConfig = name:
-    let share = getAttr name cfg.shares; in
-    "[${name}]\n " + (smbToString (
-      map
-        (key: "${key} = ${smbToString (getAttr key share)}\n")
-        (attrNames share)
-    ));
+  shareConfig =
+    name:
+    let
+      share = getAttr name cfg.shares;
+    in
+    "[${name}]\n "
+    + (smbToString (map (key: "${key} = ${smbToString (getAttr key share)}\n") (attrNames share)));
 
-  usersFile = pkgs.runCommand "ksmbd-users" { } (builtins.concatStringsSep "\n" (map (it: userCommand it.user it.pass) cfg.users));
+  usersFile = pkgs.runCommand "ksmbd-users" { } (
+    builtins.concatStringsSep "\n" (map (it: userCommand it.user it.pass) cfg.users)
+  );
   configFile = pkgs.writeText "ksmbd.conf" ''
     [global]
     security = ${cfg.securityType}

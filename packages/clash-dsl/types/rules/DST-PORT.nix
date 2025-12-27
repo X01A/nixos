@@ -26,4 +26,3 @@ types.submodule ({
     __toString = data: "DST-PORT,${toString data.port},${data.policy}";
   };
 })
-

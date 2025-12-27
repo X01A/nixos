@@ -30,7 +30,12 @@ let
 
   buildProxyProvider = provider: {
     "${provider.name}" = {
-      inherit (provider) url type interval path;
+      inherit (provider)
+        url
+        type
+        interval
+        path
+        ;
     };
   };
 
@@ -41,7 +46,13 @@ let
       };
 
       type = mkOption {
-        type = types.enum [ "select" "relay" "url-test" "fallback" "load-balance" ];
+        type = types.enum [
+          "select"
+          "relay"
+          "url-test"
+          "fallback"
+          "load-balance"
+        ];
         default = "select";
       };
 
@@ -78,9 +89,23 @@ let
   });
 
   buildProxyGroup = group: {
-    inherit (group) name type proxies use url interval interface-name routing-mark;
+    inherit (group)
+      name
+      type
+      proxies
+      use
+      url
+      interval
+      interface-name
+      routing-mark
+      ;
   };
 in
 {
-  inherit proxyProvider buildProxyProvider proxyGroup buildProxyGroup;
+  inherit
+    proxyProvider
+    buildProxyProvider
+    proxyGroup
+    buildProxyGroup
+    ;
 }

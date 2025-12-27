@@ -26,7 +26,12 @@ with lib;
 
     type = mkOption {
       default = "tcp";
-      type = types.enum [ "tcp" "udp" "http" "https" ];
+      type = types.enum [
+        "tcp"
+        "udp"
+        "http"
+        "https"
+      ];
     };
 
     acme = mkOption {

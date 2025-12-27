@@ -1,4 +1,12 @@
-{ rustPlatform, pkg-config, openssl, sqlite, zlib, libgit2, fetchFromGitHub }:
+{
+  rustPlatform,
+  pkg-config,
+  openssl,
+  sqlite,
+  zlib,
+  libgit2,
+  fetchFromGitHub,
+}:
 
 rustPlatform.buildRustPackage rec {
   pname = "commit-notifier";

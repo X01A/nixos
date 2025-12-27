@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 let
@@ -38,22 +43,28 @@ in
 
     services.prometheus = {
       enable = true;
-      scrapeConfigs = [{
-        job_name = "node";
-        scrape_interval = "10s";
-        static_configs = [{
-          targets = [
-            "localhost:9100"
+      scrapeConfigs = [
+        {
+          job_name = "node";
+          scrape_interval = "10s";
+          static_configs = [
+            {
+              targets = [
+                "localhost:9100"
+              ];
+              labels = {
+                alias = cfg.nodeName;
+              };
+            }
           ];
-          labels = {
-            alias = cfg.nodeName;
-          };
-        }];
-      }];
+        }
+      ];
 
-      remoteWrite = [{
-        url = cfg.remoteWrite;
-      }];
+      remoteWrite = [
+        {
+          url = cfg.remoteWrite;
+        }
+      ];
     };
   };
 }

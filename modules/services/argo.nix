@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -56,8 +61,8 @@ in
   };
 
   config = mkIf cfg.enable {
-    systemd.services = builtins.listToAttrs (map
-      (item: {
+    systemd.services = builtins.listToAttrs (
+      map (item: {
         name = "argo-tunnel-${item.name}";
         value = {
           wantedBy = [ "multi-user.target" ];
@@ -74,7 +79,7 @@ in
               --url ${item.targetHost}
           '';
         };
-      })
-      cfg.hosts);
+      }) cfg.hosts
+    );
   };
 }

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -9,7 +14,10 @@ let
     src = ./bootloader.sh;
     isExecutable = true;
     inherit (pkgs) bash;
-    path = with pkgs; [ coreutils ubootTools ];
+    path = with pkgs; [
+      coreutils
+      ubootTools
+    ];
   };
 in
 {

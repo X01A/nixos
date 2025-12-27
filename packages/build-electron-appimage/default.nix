@@ -1,9 +1,16 @@
-{ electron, makeWrapper, appimageTools, stdenv, lib }:
+{
+  electron,
+  makeWrapper,
+  appimageTools,
+  stdenv,
+  lib,
+}:
 
-{ icon
-, source
-, desktopIcon
-, postInstall ? null
+{
+  icon,
+  source,
+  desktopIcon,
+  postInstall ? null,
 }:
 let
   appImage = appimageTools.extractType2 {
@@ -16,7 +23,6 @@ stdenv.mkDerivation rec {
 
   src = appImage;
   nativeBuildInputs = [ makeWrapper ];
-
 
   installPhase = ''
     # Asar

@@ -1,4 +1,13 @@
-{ fetchzip, stdenv, dpkg, pcsclite, autoPatchelfHook, glib, pango, gtk3 }:
+{
+  fetchzip,
+  stdenv,
+  dpkg,
+  pcsclite,
+  autoPatchelfHook,
+  glib,
+  pango,
+  gtk3,
+}:
 
 stdenv.mkDerivation {
   pname = "safenet-driver";
@@ -9,7 +18,10 @@ stdenv.mkDerivation {
     sha256 = "sha256-Z8vjrgtrg+yRHwuls4TUlmff9rjW96/QyQGtZN+hoVQ=";
   };
 
-  buildInputs = [ dpkg pcsclite ];
+  buildInputs = [
+    dpkg
+    pcsclite
+  ];
 
   nativeBuildInputs = [
     autoPatchelfHook

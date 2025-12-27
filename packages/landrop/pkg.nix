@@ -1,4 +1,10 @@
-{ stdenv, fetchFromGitHub, lib, libsForQt5, libsodium }:
+{
+  stdenv,
+  fetchFromGitHub,
+  lib,
+  libsForQt5,
+  libsodium,
+}:
 
 let
   pname = "landrop";
@@ -15,7 +21,10 @@ stdenv.mkDerivation rec {
   inherit pname version;
   src = "${landrop}/LANDrop";
 
-  buildInputs = with libsForQt5; [ qtbase libsodium ];
+  buildInputs = with libsForQt5; [
+    qtbase
+    libsodium
+  ];
   nativeBuildInputs = with libsForQt5; [
     wrapQtAppsHook
     qmake

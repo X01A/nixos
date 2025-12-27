@@ -20,4 +20,3 @@ types.submodule ({
     __toString = data: "MATCH,${data.policy}";
   };
 })
-

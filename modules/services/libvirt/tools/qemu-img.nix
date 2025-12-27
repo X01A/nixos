@@ -13,8 +13,10 @@ let
   };
 in
 {
-  renderSize = size:
+  renderSize =
+    size:
     if hasAttr size.unit supportedUnits then
       "${toString size.value}${supportedUnits.${size.unit}}"
-    else throw "Unit ${size.unit} is not supported by qemu-img. You may use: ${toString (attrNames supportedUnits)}";
+    else
+      throw "Unit ${size.unit} is not supported by qemu-img. You may use: ${toString (attrNames supportedUnits)}";
 }

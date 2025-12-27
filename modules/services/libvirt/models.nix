@@ -6,14 +6,18 @@
 { lib, ... }:
 let
   types = lib.types;
-  nullOrStr = description: default: lib.mkOption {
-    inherit description default;
-    type = types.nullOr types.str;
-  };
-  str = description: lib.mkOption {
-    inherit description;
-    type = types.str;
-  };
+  nullOrStr =
+    description: default:
+    lib.mkOption {
+      inherit description default;
+      type = types.nullOr types.str;
+    };
+  str =
+    description:
+    lib.mkOption {
+      inherit description;
+      type = types.str;
+    };
 in
 rec {
   sizeType = types.submodule {
@@ -90,7 +94,10 @@ rec {
       firmware = lib.mkOption {
         description = "System firmware";
         default = "bios";
-        type = types.enum [ "bios" "efi" ];
+        type = types.enum [
+          "bios"
+          "efi"
+        ];
       };
       # TODO: Support more sophisticated topologies
       smp = lib.mkOption {
@@ -104,13 +111,18 @@ rec {
       };
       bootOrder = lib.mkOption {
         description = "Boot order";
-        type = types.listOf (types.enum [
-          "fd"
+        type = types.listOf (
+          types.enum [
+            "fd"
+            "hd"
+            "cdrom"
+            "network"
+          ]
+        );
+        default = [
           "hd"
           "cdrom"
-          "network"
-        ]);
-        default = [ "hd" "cdrom" ];
+        ];
       };
       balloon = lib.mkOption {
         description = ''

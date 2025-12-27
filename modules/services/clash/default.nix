@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 let
@@ -7,9 +12,11 @@ let
   inherit (utils) managePort manageAddr;
 
   cfg = config.indexyz.services.clash;
-  subscribeOptions = types.submodule (import ./subscribe.nix {
-    inherit lib;
-  });
+  subscribeOptions = types.submodule (
+    import ./subscribe.nix {
+      inherit lib;
+    }
+  );
 
   profileCommands = ''
     ${lib.optionalString (cfg.mmdb.enable) ''
@@ -17,8 +24,10 @@ let
       ln -s ${cfg.mmdb.pkg} ${dataDir}/Country.mmdb
     ''}
 
-  '' + builtins.concatStringsSep "\n" (attrsets.mapAttrsToList
-    (name: val:
+  ''
+  + builtins.concatStringsSep "\n" (
+    attrsets.mapAttrsToList (
+      name: val:
       let
         fileName = "${name}.yaml";
         fileLocation = "${dataDir}/${fileName}";
@@ -28,8 +37,9 @@ let
         rm -f ${fileLocation}
         cat ${fileData} > ${fileLocation}
         ${utils.updateConfigScript name false}
-      '')
-    cfg.profiles);
+      ''
+    ) cfg.profiles
+  );
 in
 {
   options = {
@@ -108,22 +118,30 @@ in
     };
   };
 
-
   imports = [
     ./subscribe-config.nix
   ];
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall (if cfg.allowLan then [
-      # Clash Ports
-      cfg.port
-      (toInt managePort)
-    ] else [ ]);
+    networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall (
+      if cfg.allowLan then
+        [
+          # Clash Ports
+          cfg.port
+          (toInt managePort)
+        ]
+      else
+        [ ]
+    );
 
-    networking.firewall.allowedUDPPorts = mkIf cfg.openFirewall (if cfg.allowLan then [
-      cfg.port
-    ] else [ ]);
-
+    networking.firewall.allowedUDPPorts = mkIf cfg.openFirewall (
+      if cfg.allowLan then
+        [
+          cfg.port
+        ]
+      else
+        [ ]
+    );
 
     systemd.services = {
       clash = {

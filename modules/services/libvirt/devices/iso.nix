@@ -8,22 +8,24 @@ with builtins;
   construct =
     {
       # Path to ISO
-      iso
-    , # Target device
+      iso,
+      # Target device
       #
       # Example: vdc
-      dev ? null
-    , # Target bus
+      dev ? null,
+      # Target bus
       #
       # Example: virtio
-      bus ? "scsi"
-    ,
+      bus ? "scsi",
     }:
     let
       compDev =
-        if dev != null then dev
-        else if bus == "scsi" then "sdc"
-        else throw "You must specify a target device (e.g., sda, hda) according to the target bus";
+        if dev != null then
+          dev
+        else if bus == "scsi" then
+          "sdc"
+        else
+          throw "You must specify a target device (e.g., sda, hda) according to the target bus";
 
       compIso = toString iso;
     in

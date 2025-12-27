@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 with lib;
 let
@@ -9,33 +14,56 @@ let
 
   screenSelect = pkgs.writeScript "screen-select-print" ''
     #!${pkgs.runtimeShell}
-    PATH=${makeBinPath (with pkgs; [ grim slurp wl-clipboard coreutils ])}
+    PATH=${
+      makeBinPath (
+        with pkgs;
+        [
+          grim
+          slurp
+          wl-clipboard
+          coreutils
+        ]
+      )
+    }
 
     grim -g "$(slurp)" - | wl-copy -t image/png
   '';
 
   screenCurrentWindow = pkgs.writeScript "screenshot-current-window" ''
     #!${pkgs.runtimeShell}
-    PATH=${makeBinPath (with pkgs; [ jq sway grim wl-clipboard coreutils ])}
+    PATH=${
+      makeBinPath (
+        with pkgs;
+        [
+          jq
+          sway
+          grim
+          wl-clipboard
+          coreutils
+        ]
+      )
+    }
 
     grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy -t image/png
   '';
 
-  workspaceKeybinds = builtins.listToAttrs (lists.flatten (map
-    (number: [
-      {
-        name = "Ctrl+${toString number}";
-        value = "workspace number ${toString number}";
-      }
-      {
-        name = "Ctrl+Shift+${toString number}";
-        value = "move container to workspace number ${toString number}";
-      }
-    ])
-    (lists.range 1 9)));
+  workspaceKeybinds = builtins.listToAttrs (
+    lists.flatten (
+      map (number: [
+        {
+          name = "Ctrl+${toString number}";
+          value = "workspace number ${toString number}";
+        }
+        {
+          name = "Ctrl+Shift+${toString number}";
+          value = "move container to workspace number ${toString number}";
+        }
+      ]) (lists.range 1 9)
+    )
+  );
 
-  keybindings =
-    ({
+  keybindings = (
+    {
       XF86MonBrightnessDown = "exec '${pkgs.brightnessctl}/bin/brightnessctl set 5%-'";
       XF86MonBrightnessUp = "exec '${pkgs.brightnessctl}/bin/brightnessctl set +5%'";
 
@@ -67,7 +95,9 @@ let
       "Ctrl+Down" = "focus down";
       "Ctrl+Left" = "focus left";
       "Ctrl+Right" = "focus right";
-    } // workspaceKeybinds);
+    }
+    // workspaceKeybinds
+  );
 in
 {
   options = {

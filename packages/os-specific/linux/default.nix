@@ -1,4 +1,9 @@
-{ pkgs, normalPkgs, kernelPatches, ... }:
+{
+  pkgs,
+  normalPkgs,
+  kernelPatches,
+  ...
+}:
 
 with normalPkgs;
 {

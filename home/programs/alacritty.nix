@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 with lib;
 let
@@ -17,7 +22,10 @@ in
       enable = true;
       settings = {
         window = {
-          padding = { x = 10; y = 10; };
+          padding = {
+            x = 10;
+            y = 10;
+          };
           dimensions = {
             columns = 80;
             lines = 20;

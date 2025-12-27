@@ -26,4 +26,3 @@ types.submodule ({
     __toString = data: "DOMAIN-SUFFIX,${data.domainSuffix},${data.policy}";
   };
 })
-

@@ -1,4 +1,10 @@
-{ fetchFromGitHub, buildGoModule, lib, pkg-config, libopus }:
+{
+  fetchFromGitHub,
+  buildGoModule,
+  lib,
+  pkg-config,
+  libopus,
+}:
 
 buildGoModule rec {
   pname = "mumble-discord-bridge";

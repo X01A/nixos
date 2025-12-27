@@ -1,28 +1,30 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 let
   vmCfg = config.zhaofeng.services.hypervisor;
   cfg = config.indexyz.services.novnc;
 
-  portList = (builtins.filter (config: config.port != null)
-    (lib.attrsets.mapAttrsToList
-      (name: machine: (
-        let
-          basicio = (builtins.filter
-            (
-              (device: device.type == "basic-io")
-            )
-            machine.devices);
-        in
-        {
-          name = name;
-          port =
-            if ((builtins.length basicio) > 0) then
-              (builtins.head basicio).config.port
-            else null;
-        }
-      ))
-      vmCfg.machines));
+  portList = (
+    builtins.filter (config: config.port != null) (
+      lib.attrsets.mapAttrsToList (
+        name: machine:
+        (
+          let
+            basicio = (builtins.filter ((device: device.type == "basic-io")) machine.devices);
+          in
+          {
+            name = name;
+            port = if ((builtins.length basicio) > 0) then (builtins.head basicio).config.port else null;
+          }
+        )
+      ) vmCfg.machines
+    )
+  );
 in
 {
   options = {
@@ -55,8 +57,9 @@ in
   };
 
   config = mkIf cfg.enable {
-    systemd.services = builtins.listToAttrs (map
-      (item:
+    systemd.services = builtins.listToAttrs (
+      map (
+        item:
         let
           vncBase = "/run/hypervisor/vnc";
           vncSocket = "${vncBase}/${item.name}";
@@ -73,11 +76,12 @@ in
               Restart = "always";
             };
           };
-        })
-      portList);
+        }
+      ) portList
+    );
 
-    services.nginx.virtualHosts = builtins.listToAttrs (map
-      (item: {
+    services.nginx.virtualHosts = builtins.listToAttrs (
+      map (item: {
         name = "${item.name}.${cfg.basicDomain}";
         value = {
           forceSSL = cfg.tls;
@@ -100,8 +104,8 @@ in
             };
           };
         };
-      })
-      portList);
+      }) portList
+    );
     # environment.etc."io-port-list.json".text = (builtins.toJSON portList);
   };
 }

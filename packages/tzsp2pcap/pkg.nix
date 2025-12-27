@@ -1,4 +1,8 @@
-{ fetchFromGitHub, stdenv, libpcap }:
+{
+  fetchFromGitHub,
+  stdenv,
+  libpcap,
+}:
 
 stdenv.mkDerivation rec {
   pname = "tzsp2pcap";

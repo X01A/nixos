@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 let
@@ -29,7 +34,10 @@ in
 
       serverProto = mkOption {
         default = "https";
-        type = types.enum [ "http" "https" ];
+        type = types.enum [
+          "http"
+          "https"
+        ];
       };
 
       serverHost = mkOption {
@@ -89,7 +97,8 @@ in
         DRONE_SERVER_PROTO = cfg.serverProto;
         DRONE_SERVER_PORT = ":${builtins.toString cfg.port}";
         DRONE_DATADOG_ENABLED = "false";
-      } // cfg.extraSettings;
+      }
+      // cfg.extraSettings;
 
       serviceConfig = {
         NoNewPrivileges = true;
@@ -108,9 +117,15 @@ in
         StateDirectoryMode = "0700";
         LoadCredential = [
           "rpcSecret:${cfg.rpcSecretFile}"
-        ] ++ (if (cfg.secretEnvFile != null) then [
-          "envFile:${cfg.secretEnvFile}"
-        ] else [ ]);
+        ]
+        ++ (
+          if (cfg.secretEnvFile != null) then
+            [
+              "envFile:${cfg.secretEnvFile}"
+            ]
+          else
+            [ ]
+        );
       };
     };
   };

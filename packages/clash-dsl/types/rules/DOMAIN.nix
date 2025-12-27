@@ -26,4 +26,3 @@ types.submodule ({
     __toString = data: "DOMAIN,${data.domain},${data.policy}";
   };
 })
-

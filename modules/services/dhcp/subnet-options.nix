@@ -2,9 +2,11 @@
 
 with lib;
 let
-  hostOptions = types.submodule (import ./host-options.nix {
-    inherit lib;
-  });
+  hostOptions = types.submodule (
+    import ./host-options.nix {
+      inherit lib;
+    }
+  );
 in
 {
   options = {

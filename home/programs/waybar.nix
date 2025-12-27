@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 with lib;
 let
@@ -8,10 +13,26 @@ let
     position = "top";
     height = 30;
 
-    modules-left = [ "sway/workspaces" "sway/mode" "sway/window" ];
+    modules-left = [
+      "sway/workspaces"
+      "sway/mode"
+      "sway/window"
+    ];
     modules-center = [ ];
-    modules-right = [ "idle_inhibitor" "pulseaudio" "network" "cpu" "memory" "temperature" "backlight" ]
-      ++ [ "battery" "clock" "tray" ];
+    modules-right = [
+      "idle_inhibitor"
+      "pulseaudio"
+      "network"
+      "cpu"
+      "memory"
+      "temperature"
+      "backlight"
+    ]
+    ++ [
+      "battery"
+      "clock"
+      "tray"
+    ];
 
     "sway/mode" = {
       format = "<span style=\"italic\">{}</span>";
@@ -44,11 +65,18 @@ let
       critical-threshold = 80;
       format-critical = "!{temperatureC}°C {icon}";
       format = "{temperatureC}°C {icon}";
-      format-icons = [ "" "" "" ];
+      format-icons = [
+        ""
+        ""
+        ""
+      ];
     };
     backlight = {
       format = "{percent}% {icon}";
-      format-icons = [ "" "" ];
+      format-icons = [
+        ""
+        ""
+      ];
     };
     battery = {
       states = {
@@ -62,7 +90,13 @@ let
       format-alt = "{time} {icon}";
       # "format-good" = "" # An empty format will hide the module
       # "format-full" = "";
-      format-icons = [ "" "" "" "" "" ];
+      format-icons = [
+        ""
+        ""
+        ""
+        ""
+        ""
+      ];
     };
     network = {
       # "interface" = "wlp2*" # (Optional) To force the use of this interface
@@ -87,7 +121,11 @@ let
         phone = "";
         portable = "";
         car = "";
-        default = [ "" "" "" ];
+        default = [
+          ""
+          ""
+          ""
+        ];
       };
       on-click = "pavucontrol";
     };

@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 let
   cfg = config.zhaofeng.services.hypervisor;
@@ -6,18 +11,22 @@ let
   tools = import ./tools { inherit pkgs config; };
 
   rawXml = pkgs.writeText "raw-machines.xml" (builtins.toXML tools.renderedMachines);
-  renderedXml = pkgs.runCommand "vm-render-domains"
-    {
-      xslt = (pkgs.substituteAll {
-        src = ./nix-to-libvirt.xsl;
-        edk2 = pkgs.OVMFFull.fd;
-        storage = cfg.storagePath;
-      });
-    } ''
-    mkdir -p $out
-    cd $out
-    ${pkgs.saxonb}/bin/saxonb ${rawXml} $xslt
-  '';
+  renderedXml =
+    pkgs.runCommand "vm-render-domains"
+      {
+        xslt = (
+          pkgs.substituteAll {
+            src = ./nix-to-libvirt.xsl;
+            edk2 = pkgs.OVMFFull.fd;
+            storage = cfg.storagePath;
+          }
+        );
+      }
+      ''
+        mkdir -p $out
+        cd $out
+        ${pkgs.saxonb}/bin/saxonb ${rawXml} $xslt
+      '';
 in
 {
   options = {
@@ -89,74 +98,80 @@ in
     # For each VM, we set up two services:
     # vm-<name>-lifetime.service
     # vm-<name>-reload-domain.service
-    systemd.services = builtins.listToAttrs (lib.lists.flatten (lib.attrsets.mapAttrsToList
-      (name: val:
-        let
-          provisionScripts = builtins.concatStringsSep "\n" (map (rd: rd.provisionScript) val.renderedDevices);
-        in
-        [
-          {
-            name = "vm-${name}-lifetime";
-            value = {
-              restartIfChanged = false;
-              wantedBy = [ "multi-user.target" ];
-              wants = [ "vm-${name}-reload-domain.service" ];
-              serviceConfig = {
-                Type = "oneshot";
-                RemainAfterExit = "yes";
-                ExecStop = pkgs.writeScript "vm-undefine-${name}" ''
-                  #!${pkgs.runtimeShell} -e
-                  ${pkgs.libvirt}/bin/virsh destroy ${name}
-                  ${pkgs.libvirt}/bin/virsh undefine --keep-nvram ${val.uuid}
-                '';
+    systemd.services = builtins.listToAttrs (
+      lib.lists.flatten (
+        lib.attrsets.mapAttrsToList (
+          name: val:
+          let
+            provisionScripts = builtins.concatStringsSep "\n" (
+              map (rd: rd.provisionScript) val.renderedDevices
+            );
+          in
+          [
+            {
+              name = "vm-${name}-lifetime";
+              value = {
+                restartIfChanged = false;
+                wantedBy = [ "multi-user.target" ];
+                wants = [ "vm-${name}-reload-domain.service" ];
+                serviceConfig = {
+                  Type = "oneshot";
+                  RemainAfterExit = "yes";
+                  ExecStop = pkgs.writeScript "vm-undefine-${name}" ''
+                    #!${pkgs.runtimeShell} -e
+                    ${pkgs.libvirt}/bin/virsh destroy ${name}
+                    ${pkgs.libvirt}/bin/virsh undefine --keep-nvram ${val.uuid}
+                  '';
+                };
               };
-            };
-          }
-          {
-            name = "vm-${name}-reload-domain";
-            value = {
-              restartIfChanged = true;
-              wantedBy = [ "multi-user.target" ];
-              partOf = [ "vm-${name}-lifetime.service" ];
-              serviceConfig = {
-                Type = "oneshot";
-                RemainAfterExit = "no";
-                ExecStart = pkgs.writeScript "vm-define-${name}" ''
-                  #!${pkgs.runtimeShell} -e
+            }
+            {
+              name = "vm-${name}-reload-domain";
+              value = {
+                restartIfChanged = true;
+                wantedBy = [ "multi-user.target" ];
+                partOf = [ "vm-${name}-lifetime.service" ];
+                serviceConfig = {
+                  Type = "oneshot";
+                  RemainAfterExit = "no";
+                  ExecStart = pkgs.writeScript "vm-define-${name}" ''
+                    #!${pkgs.runtimeShell} -e
 
-                  cur=/run/hypervisor/current-configs
-                  dom=/etc/hypervisor/domain_${name}.xml
-                  checksum=$cur/domain_${name}.checksum
-                  check=${pkgs.coreutils}/bin/sha1sum
+                    cur=/run/hypervisor/current-configs
+                    dom=/etc/hypervisor/domain_${name}.xml
+                    checksum=$cur/domain_${name}.checksum
+                    check=${pkgs.coreutils}/bin/sha1sum
 
-                  ${pkgs.coreutils}/bin/mkdir -p $cur
-                  if [ ! -f $checksum ] || ! $check -c $checksum; then
-                    echo "Domain changed. Reloading..."
+                    ${pkgs.coreutils}/bin/mkdir -p $cur
+                    if [ ! -f $checksum ] || ! $check -c $checksum; then
+                      echo "Domain changed. Reloading..."
 
-                    # Run provision scripts
-                    ${provisionScripts}
+                      # Run provision scripts
+                      ${provisionScripts}
 
-                    # Reload domain definition
-                    ${pkgs.libvirt}/bin/virsh define $dom
-                    $check $dom > $checksum
+                      # Reload domain definition
+                      ${pkgs.libvirt}/bin/virsh define $dom
+                      $check $dom > $checksum
 
-                    # Maybe auto-start the domain?
-                    if [ ! -z "${toString val.autoStart}" ]; then
-                      ${pkgs.libvirt}/bin/virsh destroy ${name} || true
-                      ${pkgs.libvirt}/bin/virsh start ${name} || true
+                      # Maybe auto-start the domain?
+                      if [ ! -z "${toString val.autoStart}" ]; then
+                        ${pkgs.libvirt}/bin/virsh destroy ${name} || true
+                        ${pkgs.libvirt}/bin/virsh start ${name} || true
+                      fi
+                    else
+                      echo "Domain unchanged."
                     fi
-                  else
-                    echo "Domain unchanged."
-                  fi
-                '';
+                  '';
+                };
               };
-            };
-            restartTriggers = [
-              rawXml
-            ];
-          }
-        ])
-      tools.renderedMachines));
+              restartTriggers = [
+                rawXml
+              ];
+            }
+          ]
+        ) tools.renderedMachines
+      )
+    );
 
     #environment.etc."provisioner-test.txt".text = builtins.toJSON (lib.attrsets.mapAttrsToList (machineName: machine:
     #  (builtins.map (v: provisioners.getConfig v machineName machine) machine.volumes)

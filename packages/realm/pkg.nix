@@ -1,4 +1,12 @@
-{ fetchFromGitHub, rust-bin, makeRustPlatform, lib, pkg-config, openssl, ... }:
+{
+  fetchFromGitHub,
+  rust-bin,
+  makeRustPlatform,
+  lib,
+  pkg-config,
+  openssl,
+  ...
+}:
 
 let
   rust = rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
@@ -22,7 +30,13 @@ rustPlatform.buildRustPackage rec {
 
   # transport feature broken
   buildNoDefaultFeatures = true;
-  buildFeatures = [ "multi-thread" "brutal-shutdown" "jemalloc" "proxy" "balance" ];
+  buildFeatures = [
+    "multi-thread"
+    "brutal-shutdown"
+    "jemalloc"
+    "proxy"
+    "balance"
+  ];
 
   buildInputs = [
     openssl

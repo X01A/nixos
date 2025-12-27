@@ -26,4 +26,3 @@ types.submodule ({
     __toString = data: "SRC-IP-CIDR,${data.cidr},${data.policy}";
   };
 })
-

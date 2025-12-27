@@ -1,4 +1,8 @@
-{ stdenv, glibc, fetchurl }:
+{
+  stdenv,
+  glibc,
+  fetchurl,
+}:
 
 stdenv.mkDerivation rec {
   pname = "cloudreve";

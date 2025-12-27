@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -46,7 +51,9 @@ in
       script = ''
         ${pkgs.teleport}/bin/teleport start --roles=node \
             --token=${cfg.token} ${optionalString cfg.insecure "--insecure"} \
-            --auth-server=${cfg.authServer} ${optionalString (cfg.caPin != null) "--ca-pin=${cfg.caPin}"} ${cfg.extraOptions}
+            --auth-server=${cfg.authServer} ${
+              optionalString (cfg.caPin != null) "--ca-pin=${cfg.caPin}"
+            } ${cfg.extraOptions}
       '';
     };
     networking.firewall.allowedTCPPorts = [ 3022 ];

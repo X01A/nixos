@@ -1,4 +1,13 @@
-{ fetchgit, lib, stdenv, autoconf, automake, libtool, libev, autoreconfHook }:
+{
+  fetchgit,
+  lib,
+  stdenv,
+  autoconf,
+  automake,
+  libtool,
+  libev,
+  autoreconfHook,
+}:
 
 with lib;
 stdenv.mkDerivation rec {
@@ -15,8 +24,15 @@ stdenv.mkDerivation rec {
 
   configureFlags = [ "--disable-documentation" ];
 
-  nativeBuildInputs = [ autoconf automake autoreconfHook ];
-  buildInputs = [ libtool libev ];
+  nativeBuildInputs = [
+    autoconf
+    automake
+    autoreconfHook
+  ];
+  buildInputs = [
+    libtool
+    libev
+  ];
 
   # MacOS support is broken
   meta.platforms = platforms.linux;

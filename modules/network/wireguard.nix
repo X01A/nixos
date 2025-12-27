@@ -1,16 +1,28 @@
-{ pkgs, config, lib, nodes ? null, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  nodes ? null,
+  ...
+}:
 
 with lib;
 let
   cfg = config.indexyz.network.wireguard;
-  getPublicKey = privateKey: (pkgs.readFile (
-    pkgs.runCommandLocal "wireguard-public-key"
-      {
-        path = with pkgs; [ wireguard coreutils ];
-      } ''
-      echo ${privateKey} | wg pubkey | head -c 1 > $out
-    ''
-  ));
+  getPublicKey =
+    privateKey:
+    (pkgs.readFile (
+      pkgs.runCommandLocal "wireguard-public-key"
+        {
+          path = with pkgs; [
+            wireguard
+            coreutils
+          ];
+        }
+        ''
+          echo ${privateKey} | wg pubkey | head -c 1 > $out
+        ''
+    ));
 
   publicKey = getPublicKey cfg.privateKey;
 in
@@ -41,13 +53,12 @@ in
         type = types.str;
       };
 
-      targetAddress = mkOption
-        {
-          description = "WireGuard incoming connection address";
-          default = config.deployment.targetHost;
-          defaultText = "1.1.1.1";
-          type = types.str;
-        };
+      targetAddress = mkOption {
+        description = "WireGuard incoming connection address";
+        default = config.deployment.targetHost;
+        defaultText = "1.1.1.1";
+        type = types.str;
+      };
     };
   };
 
@@ -59,7 +70,6 @@ in
         Please use colmena https://github.com/zhaofengli/colmena to deploy or disable wireguard module
       '';
     };
-
 
   };
 }

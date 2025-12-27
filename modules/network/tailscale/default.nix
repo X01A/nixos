@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 let
@@ -12,16 +17,22 @@ let
     "$(cat ${cfg.authFile})"
     "--login-server"
     cfg.loginServer
-  ] ++ (optionalList (haveElement cfg.advertiseRoutes) [
+  ]
+  ++ (optionalList (haveElement cfg.advertiseRoutes) [
     "--advertise-routes"
     (builtins.concatStringsSep "," cfg.advertiseRoutes)
-  ]) ++ (optionalList (cfg.acceptRoute) [
+  ])
+  ++ (optionalList (cfg.acceptRoute) [
     "--accept-routes=true"
-  ]) ++ (optionalList (cfg.advertiseExitNode) [
+  ])
+  ++ (optionalList (cfg.advertiseExitNode) [
     "--advertise-exit-node=true"
-  ]) ++ cfg.extraUpArgs;
+  ])
+  ++ cfg.extraUpArgs;
 
-  enableForwarding = ((haveElement cfg.advertiseRoutes) || cfg.advertiseExitNode || cfg.derper.enable);
+  enableForwarding = (
+    (haveElement cfg.advertiseRoutes) || cfg.advertiseExitNode || cfg.derper.enable
+  );
 
   tailscaleJoinArgsString = builtins.concatStringsSep " " tailscaleJoinArgsList;
 in
@@ -137,8 +148,14 @@ in
         description = "Automatic connection to Tailscale";
 
         # make sure tailscale is running before trying to connect to tailscale
-        after = [ "network-pre.target" "tailscale.service" ];
-        wants = [ "network-pre.target" "tailscale.service" ];
+        after = [
+          "network-pre.target"
+          "tailscale.service"
+        ];
+        wants = [
+          "network-pre.target"
+          "tailscale.service"
+        ];
         wantedBy = [ "multi-user.target" ];
 
         serviceConfig.Type = "oneshot";
@@ -178,7 +195,10 @@ in
     })
 
     (mkIf (cfg.derper.enable) {
-      networking.firewall.allowedTCPPorts = [ cfg.derper.port cfg.derper.stunPort ];
+      networking.firewall.allowedTCPPorts = [
+        cfg.derper.port
+        cfg.derper.stunPort
+      ];
       networking.firewall.allowedUDPPorts = [ cfg.derper.stunPort ];
       systemd.services.derper = {
         wantedBy = [ "multi-user.target" ];

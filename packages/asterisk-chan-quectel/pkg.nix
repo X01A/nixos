@@ -1,4 +1,14 @@
-{ stdenv, fetchFromGitHub, asterisk_23, autoconf, automake, sqlite, iconv, alsa-lib, ... }:
+{
+  stdenv,
+  fetchFromGitHub,
+  asterisk_23,
+  autoconf,
+  automake,
+  sqlite,
+  iconv,
+  alsa-lib,
+  ...
+}:
 
 stdenv.mkDerivation rec {
   pname = "asterisk-chan-quectel";
@@ -22,12 +32,20 @@ stdenv.mkDerivation rec {
     ./bootstrap
   '';
 
-  nativeBuildInputs = [ autoconf automake ];
+  nativeBuildInputs = [
+    autoconf
+    automake
+  ];
   configureFlags = [
     "--with-astversion=23"
     "--with-asterisk=${asterisk_23}/include"
     "--with-iconv=${iconv.dev}/include"
   ];
 
-  buildInputs = [ asterisk_23 sqlite iconv alsa-lib ];
+  buildInputs = [
+    asterisk_23
+    sqlite
+    iconv
+    alsa-lib
+  ];
 }

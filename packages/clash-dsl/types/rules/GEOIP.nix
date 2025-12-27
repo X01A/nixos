@@ -26,4 +26,3 @@ types.submodule ({
     __toString = data: "GEOIP,${data.country},${data.policy}";
   };
 })
-

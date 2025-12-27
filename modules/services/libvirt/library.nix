@@ -1,4 +1,12 @@
-{ lib, requireFile, fetchurl, runCommand, cdrkit, pkgs, ... }:
+{
+  lib,
+  requireFile,
+  fetchurl,
+  runCommand,
+  cdrkit,
+  pkgs,
+  ...
+}:
 
 let
   KEKCA = fetchurl {
@@ -11,20 +19,25 @@ let
   };
 in
 {
-  cloud-config = { meta_data, user_data }: runCommand "cloud-config.iso"
-    {
-      inherit meta_data user_data;
-    } ''
-    echo "$user_data" > user-data
-    echo "$meta_data" > meta-data
-    ${cdrkit}/bin/genisoimage  -output $out -volid cidata -joliet -rock user-data meta-data
-  '';
+  cloud-config =
+    { meta_data, user_data }:
+    runCommand "cloud-config.iso"
+      {
+        inherit meta_data user_data;
+      }
+      ''
+        echo "$user_data" > user-data
+        echo "$meta_data" > meta-data
+        ${cdrkit}/bin/genisoimage  -output $out -volid cidata -joliet -rock user-data meta-data
+      '';
 
   isos = rec {
-    archlinux = date: sha256: fetchurl {
-      inherit sha256;
-      url = "https://mirrors.edge.kernel.org/archlinux/iso/${date}/archlinux-${date}-x86_64.iso";
-    };
+    archlinux =
+      date: sha256:
+      fetchurl {
+        inherit sha256;
+        url = "https://mirrors.edge.kernel.org/archlinux/iso/${date}/archlinux-${date}-x86_64.iso";
+      };
 
     debian-11 = fetchurl {
       url = "https://cdimage.debian.org/debian-cd/11.1.0/amd64/iso-cd/debian-11.1.0-amd64-netinst.iso";
@@ -39,15 +52,18 @@ in
     };
 
     windows = rec {
-      secure_boot_key = toString (runCommand "secure-boot-key.iso"
-        {
-          inherit KEKCA PRODCA;
-        } ''
-        ${pkgs.dosfstools}/bin/mkfs.msdos -C $out 2880
-        cp $KEKCA MicCorKEKCA2011_2011-06-24.crt
-        cp $PRODCA MicWinProPCA2011_2011-10-19.crt
-        ${pkgs.mtools}/bin/mcopy -psvm -i $out ./* ::
-      '');
+      secure_boot_key = toString (
+        runCommand "secure-boot-key.iso"
+          {
+            inherit KEKCA PRODCA;
+          }
+          ''
+            ${pkgs.dosfstools}/bin/mkfs.msdos -C $out 2880
+            cp $KEKCA MicCorKEKCA2011_2011-06-24.crt
+            cp $PRODCA MicWinProPCA2011_2011-10-19.crt
+            ${pkgs.mtools}/bin/mcopy -psvm -i $out ./* ::
+          ''
+      );
 
       virtio_driver = toString (fetchurl {
         url = "https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.185-2/virtio-win-0.1.185.iso";
@@ -68,7 +84,8 @@ in
     };
 
     # Yo dawg, I put NixOS in NixOS, so you can NixOS while you NixOS
-    nixos = extraConfig:
+    nixos =
+      extraConfig:
       let
         eval = (import (pkgs.path + "/nixos/lib/eval-config.nix")) {
           system = "x86_64-linux";
@@ -77,7 +94,8 @@ in
 
             (pkgs.path + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
             (pkgs.path + "/nixos/modules/installer/cd-dvd/channel.nix")
-          ] ++ (import (pkgs.path + "/nixos/modules/module-list.nix"));
+          ]
+          ++ (import (pkgs.path + "/nixos/modules/module-list.nix"));
           specialArgs = {
             modulesPath = pkgs.path + "/nixos/modules";
           };

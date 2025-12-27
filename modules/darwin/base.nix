@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 let
@@ -37,7 +42,11 @@ in
     users.users.indexyz.shell = "/run/current-system/sw/bin/fish";
 
     # Networking config
-    networking.knownNetworkServices = [ "Wi-Fi" "Bluetooth PAN" "Thunderbolt Bridge" ];
+    networking.knownNetworkServices = [
+      "Wi-Fi"
+      "Bluetooth PAN"
+      "Thunderbolt Bridge"
+    ];
 
     # Nix config
     programs.nix-index.enable = true;

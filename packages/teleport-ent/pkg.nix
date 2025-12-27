@@ -1,19 +1,27 @@
-{ fetchurl, stdenv, autoPatchelfHook, buildPhase ? "", ... }:
+{
+  fetchurl,
+  stdenv,
+  autoPatchelfHook,
+  buildPhase ? "",
+  ...
+}:
 
 let
   info = import ./version.nix;
   inherit (info) version hash;
 
-  fetchSrc = {
-    x86_64-linux = {
-      url = "https://cdn.teleport.dev/teleport-ent-v${version}-linux-amd64-bin.tar.gz";
-      sha256 = hash.x86_64-linux;
-    };
-    aarch64-linux = {
-      url = "https://cdn.teleport.dev/teleport-ent-v${version}-linux-arm64-bin.tar.gz";
-      sha256 = hash.aarch64-linux;
-    };
-  }."${stdenv.system}" or (throw "Unsupported system");
+  fetchSrc =
+    {
+      x86_64-linux = {
+        url = "https://cdn.teleport.dev/teleport-ent-v${version}-linux-amd64-bin.tar.gz";
+        sha256 = hash.x86_64-linux;
+      };
+      aarch64-linux = {
+        url = "https://cdn.teleport.dev/teleport-ent-v${version}-linux-arm64-bin.tar.gz";
+        sha256 = hash.aarch64-linux;
+      };
+    }
+    ."${stdenv.system}" or (throw "Unsupported system");
 in
 stdenv.mkDerivation {
   pname = "teleport-ent";
@@ -39,6 +47,9 @@ stdenv.mkDerivation {
     description = "Protect access to all of your infrastructure.";
     changelog = "https://github.com/gravitational/teleport/releases/tag/v${version}";
     mainProgram = "teleport";
-    platforms = [ "x86_64-linux" "aarch64-linux" ];
+    platforms = [
+      "x86_64-linux"
+      "aarch64-linux"
+    ];
   };
 }

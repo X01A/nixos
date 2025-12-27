@@ -5,7 +5,8 @@ with lib;
 let
   inherit (builtins) toJSON;
   proxy = import ./proxy.nix { inherit lib; };
-  recursiveMergeAttrs = listOfAttrsets: fold (attrset: acc: recursiveUpdate attrset acc) { } listOfAttrsets;
+  recursiveMergeAttrs =
+    listOfAttrsets: fold (attrset: acc: recursiveUpdate attrset acc) { } listOfAttrsets;
 
   profile = types.submodule {
     options = {
@@ -20,12 +21,22 @@ let
       };
 
       logLevel = mkOption {
-        type = types.enum [ "silent" "info" "error" "warning" "debug" ];
+        type = types.enum [
+          "silent"
+          "info"
+          "error"
+          "warning"
+          "debug"
+        ];
         default = "info";
       };
 
       mode = mkOption {
-        type = types.enum [ "rule" "global" "direct" ];
+        type = types.enum [
+          "rule"
+          "global"
+          "direct"
+        ];
         default = "rule";
       };
 
@@ -71,20 +82,25 @@ let
     };
 
     config = {
-      __toString = data: toJSON ({
-        mixin-port = data.port;
-        log-level = data.logLevel;
-        mode = data.mode;
-        ipv6 = data.ipv6;
-        allow-lan = data.allowLan;
-        bind-address = data.bindAddress;
-        proxy-providers = recursiveMergeAttrs (map proxy.buildProxyProvider data.proxyProviders);
-        proxy-groups = map proxy.buildProxyGroup data.proxyGroups;
+      __toString =
+        data:
+        toJSON (
+          {
+            mixin-port = data.port;
+            log-level = data.logLevel;
+            mode = data.mode;
+            ipv6 = data.ipv6;
+            allow-lan = data.allowLan;
+            bind-address = data.bindAddress;
+            proxy-providers = recursiveMergeAttrs (map proxy.buildProxyProvider data.proxyProviders);
+            proxy-groups = map proxy.buildProxyGroup data.proxyGroups;
 
-        proxies = data.proxies;
+            proxies = data.proxies;
 
-        rules = data.rules;
-      } // data.extraConfig);
+            rules = data.rules;
+          }
+          // data.extraConfig
+        );
     };
   };
 in

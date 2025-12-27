@@ -5,7 +5,15 @@
     inputs.flake-parts.flakeModules.easyOverlay
   ];
 
-  perSystem = { inputs', config, pkgs, self', system, ... }:
+  perSystem =
+    {
+      inputs',
+      config,
+      pkgs,
+      self',
+      system,
+      ...
+    }:
     let
       os = pkgs.lib.last (pkgs.lib.strings.splitString "-" system);
       normalPkgs = import inputs.nixpkgs { inherit system; };
@@ -18,7 +26,12 @@
     in
     rec {
       packages = import ../packages {
-        inherit os pkgs normalPkgs system;
+        inherit
+          os
+          pkgs
+          normalPkgs
+          system
+          ;
         flakeInputs = inputs;
 
         npmlock2nix = pkgs.callPackage inputs.npmlock2nix { };

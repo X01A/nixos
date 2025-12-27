@@ -17,7 +17,11 @@ let
   devices = lib.attrsets.mapAttrs (n: v: import v { inherit pkgs config; }) supportedDevices;
 in
 {
-  render = device: machineName: machine:
-    if hasAttr device.type devices then devices.${device.type}.render device machineName machine
-    else throw "Unsupported device ${device.type}. Supported types: ${toString (attrNames supportedDevices)}";
-} // (lib.attrsets.mapAttrs (n: v: v.construct) devices)
+  render =
+    device: machineName: machine:
+    if hasAttr device.type devices then
+      devices.${device.type}.render device machineName machine
+    else
+      throw "Unsupported device ${device.type}. Supported types: ${toString (attrNames supportedDevices)}";
+}
+// (lib.attrsets.mapAttrs (n: v: v.construct) devices)

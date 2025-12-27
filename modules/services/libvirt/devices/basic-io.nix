@@ -7,11 +7,16 @@ let
 in
 {
   construct =
-    { port ? null, password ? null }: {
+    {
+      port ? null,
+      password ? null,
+    }:
+    {
       type = "basic-io";
       config = { inherit port password; };
     };
-  render = device: machineName: machine:
+  render =
+    device: machineName: machine:
     let
       vncBase = "/run/hypervisor/vnc";
       vncSocket = "${vncBase}/${machineName}";
@@ -37,8 +42,10 @@ in
 
       '';
 
-      provisionScript = toString (pkgs.writeScript "vm-basic-io" ''
-        ${pkgs.coreutils}/bin/mkdir -p ${vncBase}
-      '');
+      provisionScript = toString (
+        pkgs.writeScript "vm-basic-io" ''
+          ${pkgs.coreutils}/bin/mkdir -p ${vncBase}
+        ''
+      );
     };
 }

@@ -26,4 +26,3 @@ types.submodule ({
     __toString = data: "PROCESS-NAME,${data.process},${data.policy}";
   };
 })
-

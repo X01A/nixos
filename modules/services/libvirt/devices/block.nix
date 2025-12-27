@@ -14,21 +14,24 @@ in
   construct =
     {
       # Block device
-      block ? null
-    , # Target device
+      block ? null,
+      # Target device
       #
       # Example: vda
-      dev ? null
-    , # Target bus
+      dev ? null,
+      # Target bus
       #
       # Example: virtio
-      bus ? "virtio"
+      bus ? "virtio",
     }:
     let
       compDev =
-        if dev != null then dev
-        else if bus == "virtio" then "vda"
-        else throw "You must specify a target device (e.g., vda, sda) according to the target bus";
+        if dev != null then
+          dev
+        else if bus == "virtio" then
+          "vda"
+        else
+          throw "You must specify a target device (e.g., vda, sda) according to the target bus";
     in
     {
       type = "block";
@@ -38,16 +41,15 @@ in
       };
     };
 
-  render = device: machineName: machine:
-    {
-      deviceStanza = ''
-        <disk type='block' device='disk'>
-          <driver name='qemu' type='raw'/>
-          <source dev='${device.config.block}'/>
-          <target dev="${device.config.dev}" bus="${device.config.bus}"/>
-        </disk>
-      '';
+  render = device: machineName: machine: {
+    deviceStanza = ''
+      <disk type='block' device='disk'>
+        <driver name='qemu' type='raw'/>
+        <source dev='${device.config.block}'/>
+        <target dev="${device.config.dev}" bus="${device.config.bus}"/>
+      </disk>
+    '';
 
-      provisionScript = "";
-    };
+    provisionScript = "";
+  };
 }

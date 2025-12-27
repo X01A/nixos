@@ -1,13 +1,14 @@
 { config, lib, ... }:
 
-
 with lib;
 
 let
   cfg = config.indexyz.services.dhcp;
-  subnetOptions = types.submodule (import ./subnet-options.nix {
-    inherit lib;
-  });
+  subnetOptions = types.submodule (
+    import ./subnet-options.nix {
+      inherit lib;
+    }
+  );
 
   utils = import ./utils.nix {
     inherit lib;

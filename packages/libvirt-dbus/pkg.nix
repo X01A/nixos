@@ -1,13 +1,14 @@
-{ lib
-, stdenv
-, fetchFromGitLab
-, meson
-, pkg-config
-, glib
-, libvirt
-, libvirt-glib
-, docutils
-, ninja
+{
+  lib,
+  stdenv,
+  fetchFromGitLab,
+  meson,
+  pkg-config,
+  glib,
+  libvirt,
+  libvirt-glib,
+  docutils,
+  ninja,
 }:
 
 stdenv.mkDerivation rec {

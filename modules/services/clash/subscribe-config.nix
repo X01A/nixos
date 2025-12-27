@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 
@@ -10,8 +15,8 @@ let
 in
 {
   config = mkIf cfg.enable {
-    systemd.services = builtins.listToAttrs (map
-      (item: {
+    systemd.services = builtins.listToAttrs (
+      map (item: {
         name = "clash-subscribe-${item.name}";
         value = {
           serviceConfig = {
@@ -28,11 +33,11 @@ in
             ${utils.updateConfigScript item.name true}
           '';
         };
-      })
-      cfg.subscribe);
+      }) cfg.subscribe
+    );
 
-    systemd.timers = builtins.listToAttrs (map
-      (item: {
+    systemd.timers = builtins.listToAttrs (
+      map (item: {
         name = "clash-subscribe-${item.name}";
         value = {
           wantedBy = [ "multi-user.target" ];
@@ -40,7 +45,7 @@ in
           partOf = [ "clash-subscribe-${item.name}.service" ];
           timerConfig.OnCalendar = item.calendar;
         };
-      })
-      cfg.subscribe);
+      }) cfg.subscribe
+    );
   };
 }

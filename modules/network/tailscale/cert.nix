@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 with lib;
 let
@@ -35,7 +40,11 @@ in
   config = mkIf (moduleEnable) (mkMerge [
     {
       systemd.services.tailscale-cert = {
-        after = [ "network.target" "network-online.target" "tailscaled.service" ];
+        after = [
+          "network.target"
+          "network-online.target"
+          "tailscaled.service"
+        ];
         wants = [ "tailscaled.service" ];
         wantedBy = [ "multi-user.target" ];
 
