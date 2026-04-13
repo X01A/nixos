@@ -29,6 +29,8 @@ in
       neovim = {
         enable = true;
         viAlias = true;
+        withRuby = true;
+        withPython3 = true;
 
         plugins = with pkgs.vimPlugins; [
           # Nerd Tree

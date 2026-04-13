@@ -218,7 +218,7 @@ in
           fd
           zellij
           borgbackup
-          dogdns
+          doggo
           fzf
           bat
           btop

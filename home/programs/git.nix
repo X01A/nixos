@@ -22,7 +22,7 @@ in
       enable = true;
       userEmail = "7685264+5aaee9@users.noreply.github.com";
       userName = "Indexyz";
-
+      signing.format = "openpgp";
       extraConfig = {
         credential = {
           "https://github.com" = {
