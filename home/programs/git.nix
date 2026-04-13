@@ -20,10 +20,12 @@ in
   config = mkIf cfg.enable {
     programs.git = {
       enable = true;
-      userEmail = "7685264+5aaee9@users.noreply.github.com";
-      userName = "Indexyz";
+      user = { 
+        email = "7685264+5aaee9@users.noreply.github.com";
+        name = "Indexyz";
+      };
       signing.format = "openpgp";
-      extraConfig = {
+      settings = {
         credential = {
           "https://github.com" = {
             helper = "${pkgs.gh}/bin/gh auth git-credential";

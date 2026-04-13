@@ -106,7 +106,7 @@ in
         # disable default dnssec
         # ntp domain reslove will failure if time not match
         # if ntp reslove failure time will never correct
-        services.resolved.dnssec = lib.mkDefault "false";
+        services.resolved.settings.Resolve.DNSSEC = lib.mkDefault "false";
 
         boot.tmp.cleanOnBoot = true;
 

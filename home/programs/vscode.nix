@@ -18,7 +18,7 @@ let
     }:
     {
       inherit name publisher version;
-      vsix = builtins.fetchurl {
+      vsix = pkgs.fetchzip {
         inherit sha256;
         url = "https://open-vsx.org/api/${publisher}/${name}/${version}/file/${publisher}.${name}-${version}.vsix";
         name = "${publisher}-${name}.zip";
