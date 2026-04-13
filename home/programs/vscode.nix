@@ -9,22 +9,6 @@ with lib;
 let
   cfg = config.indexyz.programs.vscode;
 
-  mkOpenVSXExt =
-    {
-      publisher,
-      name,
-      version,
-      sha256,
-    }:
-    {
-      inherit name publisher version;
-      vsix = pkgs.fetchzip {
-        inherit sha256;
-        url = "https://open-vsx.org/api/${publisher}/${name}/${version}/file/${publisher}.${name}-${version}.vsix";
-        name = "${publisher}-${name}.zip";
-      };
-    };
-
   extensions =
     (with pkgs.vscode-extensions; [
       bbenoist.nix
@@ -55,22 +39,7 @@ let
       vue.volar
       github.copilot
       github.copilot-chat
-    ])
-    ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      (mkOpenVSXExt {
-        publisher = "jeanp413";
-        name = "open-remote-ssh";
-        version = "0.0.49";
-        sha256 = "1bps29zbs0xy7b2p3q5xmva1lh6ma3gz6wzvr96d9ihcpgcrnni5";
-      })
-
-      {
-        name = "vscode-todo-highlight";
-        publisher = "wayou";
-        version = "1.0.5";
-        sha256 = "sha256-CQVtMdt/fZcNIbH/KybJixnLqCsz5iF1U0k+GfL65Ok=";
-      }
-    ];
+    ]);
 in
 {
   options = {
