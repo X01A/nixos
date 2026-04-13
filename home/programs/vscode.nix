@@ -60,7 +60,7 @@ let
       (mkOpenVSXExt {
         publisher = "jeanp413";
         name = "open-remote-ssh";
-        version = "0.0.39";
+        version = "0.0.49";
         sha256 = "1bps29zbs0xy7b2p3q5xmva1lh6ma3gz6wzvr96d9ihcpgcrnni5";
       })
 
