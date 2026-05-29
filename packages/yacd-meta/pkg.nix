@@ -2,7 +2,7 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "yacd-meta";
-  version = "0-unstable-2026-04-18";
+  version = "0.3.8-unstable-2026-04-18";
 
   src = fetchFromGitHub {
     owner = "MetaCubeX";
