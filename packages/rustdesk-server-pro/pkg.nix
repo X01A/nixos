@@ -6,11 +6,11 @@
 
 stdenv.mkDerivation rec {
   pname = "rustdesk-server-pro";
-  version = "1.7.2";
+  version = "1.8.2";
 
   src = fetchurl {
     url = "https://github.com/rustdesk/rustdesk-server-pro/releases/download/${version}/rustdesk-server-linux-amd64.tar.gz";
-    sha256 = "sha256-Etes5RMhZLwPo7c0746t4i9PGqnGhn/nR+MNKF9e3L4=";
+    sha256 = "sha256-XdlBC1MFg8IxLmAzlVsfDAzwIGH/qd6cu03+ZEz3Zhs=";
   };
 
   nativeBuildInputs = [
