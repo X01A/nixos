@@ -1,17 +1,17 @@
 {
   lib,
   stdenvNoCC,
-  nodejs_20,
+  nodejs,
   fetchzip,
   makeWrapper,
   buildNpmPackage,
   ...
 }:
 let
-  version = "10.6.1";
+  version = "10.16.1";
   src = fetchzip {
     url = "https://github.com/MCSManager/MCSManager/releases/download/v${version}/mcsmanager_linux_release.tar.gz";
-    sha256 = "sha256-qc3U/AdUjtrDmOJnSIy65EW8jRW3fWUGn/eclTk6ZXI=";
+    sha256 = "sha256-34M93sBIQUWpY2CFYf8Psxi+f8Ek7cQGgymQ8OBXGas=";
   };
 
   pname = "mcsmanager";
@@ -32,8 +32,8 @@ let
       '';
     };
 
-  daemonNodeModules = makeNodeModules "daemon" "sha256-61JgXNgkNOa+tmYh0wfnVTDNy9HMcZ5e7D+9Wo13AIo=";
-  webNodeModuels = makeNodeModules "web" "sha256-6sjibB3P1d5KMb6pEQ+h622sUEMqynisYnXn05+E2lM=";
+  daemonNodeModules = makeNodeModules "daemon" "sha256-yw1goucRvQEUzxjOeQCdZCM9Kae2YKV7XbNi0RD32FQ=";
+  webNodeModuels = makeNodeModules "web" "sha256-wXpednCFF5gLackYf+30z2UIh3VQiZP+74QQzLOWw3g=";
 in
 stdenvNoCC.mkDerivation rec {
   inherit pname version src;
@@ -55,7 +55,7 @@ stdenvNoCC.mkDerivation rec {
       --replace-fail 'const PACKAGE_JSON = "package.json";' "const PACKAGE_JSON = \"$out/mcsmanager/web/package.json\";"
 
     substituteInPlace daemon/app.js \
-      --replace-fail 'fs_extra_1.default.chmodSync(const_2.' "// fs_extra_1.default.chmodSync(const_2."
+      --replace-fail 'fs_extra_1.default.chmodSync(const_1.' "// fs_extra_1.default.chmodSync(const_1."
 
     chmod -R 755 daemon/lib/
   '';
@@ -70,10 +70,10 @@ stdenvNoCC.mkDerivation rec {
     cp -r ${daemonNodeModules} $out/mcsmanager/daemon/node_modules
     cp -r ${webNodeModuels} $out/mcsmanager/web/node_modules
 
-    makeWrapper ${nodejs_20}/bin/node "$out/bin/mcsmanager-daemon" \
+    makeWrapper ${nodejs}/bin/node "$out/bin/mcsmanager-daemon" \
       --add-flags "$out/mcsmanager/daemon/app.js"
 
-    makeWrapper ${nodejs_20}/bin/node "$out/bin/mcsmanager-web" \
+    makeWrapper ${nodejs}/bin/node "$out/bin/mcsmanager-web" \
       --add-flags "$out/mcsmanager/web/app.js"
     runHook postInstall
   '';
