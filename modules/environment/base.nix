@@ -222,6 +222,7 @@ in
           fzf
           bat
           btop
+          ghostty.terminfo
         ];
 
         programs.fish = {
