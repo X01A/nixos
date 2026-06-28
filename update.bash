@@ -13,21 +13,13 @@ function fetch-github-release {
 
 nix-update --commit --flake rustdesk-server-pro
 nix-update --commit --flake realm
-nix-update --commit --flake trojan-go
-nix-update --commit --flake fcitx5-material-color
-nix-update --commit --flake microsocks
 nix-update --commit --flake vpncloud
-nix-update --commit --flake tun2socks
 nix-update --commit --flake hev-socks5-tproxy
-nix-update --commit --flake novnc
 nix-update --commit --flake landrop --url https://github.com/LANDrop/LANDrop
 nix-update --commit --flake candy
 
 nix-update --commit --flake yacd
 nix-update --commit --flake cloudreve
-nix-update --commit --flake cockpit-machines
-nix-update --commit --flake libvirt-dbus
-nix-update --commit --flake mainsail
 nix-update --commit --flake reader
 nix-update --commit --flake ping-exporter
 nix-update --commit --flake mumble-discord-bridge
