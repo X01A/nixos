@@ -5,12 +5,11 @@
   clang,
   clang-tools,
   zlib,
-  glibc,
+  zstd,
   llvm,
   fetchFromGitHub,
   pkg-config,
   python3,
-  libelf,
   libbpf,
   libbfd,
   bpftools,
@@ -28,23 +27,34 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "nettrace";
-  version = "1.2.11";
+  version = "1.2.11-unstable-2026-03-05";
 
   src = fetchFromGitHub {
     owner = "OpenCloudOS";
     repo = pname;
-    rev = "v${version}";
-    sha256 = "sha256-mcshgNOsRpNXcoYfT0I+mbZlLu/sW38vRBSrK4lDXms=";
+    rev = "d455f001315322db4d606a8bdf8c659ba36b269c";
+    sha256 = "sha256-Yr1wN1VVcMDyKdVDGoIWLGuGaRaOPVPBkUHhRzj9zZM=";
   };
 
   postPatch = ''
-    substituteInPlace common.mk \
-      --replace-fail '-I$(ROOT)/shared/bpf/' '-I$(ROOT)/shared/bpf/ -I${lib.getDev libbpf}/include/'
+    substituteInPlace src/Makefile \
+      --replace-fail 'BPF_CFLAGS	:= -O2 -g -Wall -D__TARGET_ARCH_$(SRCARCH) -target bpf	\' \
+                     'BPF_CFLAGS	:= $(shell pkg-config --cflags libbpf) -O2 -g -Wall -D__TARGET_ARCH_$(SRCARCH) -target bpf	\' \
+      --replace-fail 'HOST_CFLAGS	:= -lbpf -lelf -lz $(LIBELF_ZSTD_FLAGS) -pthread -O2 -Wall \' \
+                     'HOST_CFLAGS	:= $(shell pkg-config --cflags libbpf) $(shell pkg-config --libs libbpf) -pthread -O2 -Wall \'
   '';
 
   makeFlags = [
     "KERNEL=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
   ];
+
+  installPhase = ''
+    runHook preInstall
+
+    install -Dm755 src/nettrace $out/bin/nettrace
+
+    runHook postInstall
+  '';
 
   hardeningDisable = [
     "zerocallusedregs"
@@ -56,15 +66,19 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    libelf
     libbpf
     libbfd
     bpftools
     llvm
     clang-tools
     clang.cc
-    zlib.static
-    glibc.static
+    zlib
+    zstd
     elfutils
   ];
+
+  meta = with lib; {
+    mainProgram = "nettrace";
+    platforms = platforms.linux;
+  };
 }

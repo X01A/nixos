@@ -23,9 +23,7 @@
           inputs.rust-overlay.overlays.default
         ];
       };
-    in
-    rec {
-      packages = import ../packages {
+      packageSet = import ../packages {
         inherit
           os
           pkgs
@@ -37,6 +35,13 @@
         npmlock2nix = pkgs.callPackage inputs.npmlock2nix { };
       };
 
-      overlayAttrs = packages;
+      flakePackages = pkgs.lib.filterAttrs (
+        name: value: name == "packageList" || pkgs.lib.isDerivation value
+      ) packageSet;
+    in
+    rec {
+      packages = flakePackages;
+
+      overlayAttrs = packageSet;
     };
 }
