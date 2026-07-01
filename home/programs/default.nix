@@ -1,13 +1,11 @@
-{ ... }:
+{ lib, ... }:
 
+let
+  moduleLib = import ../../lib/modules.nix {
+    inherit lib;
+    self.attrs = import ../../lib/attrs.nix { inherit lib; self = { }; };
+  };
+in
 {
-  imports = [
-    ./git.nix
-    ./nvim.nix
-    ./direnv.nix
-    ./alacritty.nix
-    ./vscode.nix
-    ./sway.nix
-    ./waybar.nix
-  ];
+  imports = moduleLib.moduleEntrypoints ./.;
 }
