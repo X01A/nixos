@@ -28,7 +28,10 @@ in
         };
         credential = {
           "https://github.com" = {
-            helper = "${pkgs.gh}/bin/gh auth git-credential";
+            helper = [
+              "store"
+              "${pkgs.gh}/bin/gh auth git-credential"
+            ];
           };
         };
       };

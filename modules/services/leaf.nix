@@ -88,7 +88,7 @@ in
       serviceConfig = {
         PermissionsStartOnly = true;
         Type = "simple";
-        ExecStart = ''${pkgs.leaf}/bin/leaf -c ${tunCfg}'';
+        ExecStart = "${pkgs.leaf}/bin/leaf -c ${tunCfg}";
         CapabilityBoundingSet = "CAP_NET_ADMIN";
         LimitNOFILE = "16777216";
         LimitNPROC = "infinity";

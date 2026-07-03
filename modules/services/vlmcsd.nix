@@ -30,7 +30,7 @@ in
       serviceConfig = {
         PermissionsStartOnly = true;
         Type = "simple";
-        ExecStart = ''${pkgs.vlmcsd}/bin/vlmcsd -D -d -t 3 -e -v'';
+        ExecStart = "${pkgs.vlmcsd}/bin/vlmcsd -D -d -t 3 -e -v";
       };
     };
 

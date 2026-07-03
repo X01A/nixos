@@ -152,7 +152,7 @@ in
           ${profileCommands}
           exec ${lib.getExe cfg.package} -d ${dataDir} \
             -ext-ctl ${cfg.controller} -ext-ui ${cfg.ui} \
-            -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) ''--secret ${cfg.secret}''}
+            -f ${cfg.config}.yaml ${optionalString (cfg.secret != null) "--secret ${cfg.secret}"}
         '';
         startLimitIntervalSec = 0;
 

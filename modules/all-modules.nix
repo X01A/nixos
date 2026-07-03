@@ -3,7 +3,10 @@
 let
   moduleLib = import ../lib/modules.nix {
     inherit lib;
-    self.attrs = import ../lib/attrs.nix { inherit lib; self = { }; };
+    self.attrs = import ../lib/attrs.nix {
+      inherit lib;
+      self = { };
+    };
   };
 
   excludedEntrypoints = [

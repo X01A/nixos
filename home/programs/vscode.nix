@@ -9,8 +9,9 @@ with lib;
 let
   cfg = config.indexyz.programs.vscode;
 
-  extensions =
-    (with pkgs.vscode-extensions; [
+  extensions = (
+    with pkgs.vscode-extensions;
+    [
       bbenoist.nix
       ms-python.python
       ms-azuretools.vscode-docker
@@ -39,7 +40,8 @@ let
       vue.volar
       github.copilot
       github.copilot-chat
-    ]);
+    ]
+  );
 in
 {
   options = {
