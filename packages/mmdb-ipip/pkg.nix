@@ -2,14 +2,14 @@
 
 stdenv.mkDerivation rec {
   pname = "mmdb-ipip";
-  version = "202606290331-unstable-2026-07-02";
+  version = "202607060410-unstable-2026-07-05";
   src = fetchgit {
     url = "https://github.com/alecthw/mmdb_china_ip_list.git";
-    rev = "6667b6258cd9b7296b6b767abaa3994238fc9842";
+    rev = "73ff57ef6ecb24ddf89443131fa0eb49ab069118";
     fetchSubmodules = true;
     deepClone = false;
     leaveDotGit = false;
-    sha256 = "sha256-duCUMyFBxsDLrzXvPIblBhdRVZD+aQjQRanx1jTw7+A=";
+    sha256 = "sha256-SAcPJ9PfHt4INg1QFEkwws2+5IIQufy9xRKc2LeJ6g0=";
   };
   installPhase = ''
     install -m 755 Country.mmdb $out
