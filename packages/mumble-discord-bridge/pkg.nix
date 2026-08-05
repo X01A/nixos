@@ -1,11 +1,16 @@
-{
-  fetchFromGitHub,
-  buildGoModule,
-  lib,
-  pkg-config,
-  libopus,
+{ fetchFromGitHub
+, buildGoModule
+, callPackage
+, lib
+, pkg-config
+, libopus
+,
 }:
 
+let
+  mlspp = callPackage ./mlspp.nix { };
+  libdave = callPackage ./libdave.nix { inherit mlspp; };
+in
 buildGoModule rec {
   pname = "mumble-discord-bridge";
 
@@ -21,7 +26,10 @@ buildGoModule rec {
 
   vendorHash = "sha256-vUr0Im1UrJHPhGcAk6z1KYVj+dEhADbP4ZJtVgNaQk8=";
   nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ libopus ];
+  buildInputs = [
+    libdave
+    libopus
+  ];
 
   # Testing is taking more then 10 minute
   doCheck = false;
