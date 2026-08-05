@@ -6,10 +6,10 @@
 
 stdenv.mkDerivation rec {
   pname = "cloudreve";
-  version = "4.10.1";
+  version = "4.18.0";
   src = fetchurl {
     url = "https://github.com/cloudreve/Cloudreve/releases/download/${version}/cloudreve_${version}_linux_amd64.tar.gz";
-    sha256 = "sha256-tNZg+ocgr65vyBkRDQhyX0DmLQuO0JwbXUzTeL4hSAc=";
+    sha256 = "sha256-FZsV/Dwr0dyvtHCcjVBdPawGzV8uiR8uzc7fSfKH4mY=";
   };
 
   phases = "installPhase";
