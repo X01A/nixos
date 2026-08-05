@@ -9,17 +9,17 @@
 buildGoModule rec {
   pname = "mumble-discord-bridge";
 
-  version = "0.5.3";
+  version = "0.9.0";
 
   src = fetchFromGitHub ({
     owner = "Stieneee";
     repo = pname;
     rev = "v${version}";
     fetchSubmodules = true;
-    sha256 = "sha256-Rr1g3gdmbmMcXN9KFpktKhB2sedplrFcT2GMfUY9b7g=";
+    sha256 = "sha256-9EFTmRJx7vsjvSX9nbXtpDkgif3IlaGRKxQRxyuJ3hs=";
   });
 
-  vendorHash = "sha256-U3RLLXGirZsh5nTlt8tgLsCmNIa3x1SacTFgHhG4OoI=";
+  vendorHash = "sha256-vUr0Im1UrJHPhGcAk6z1KYVj+dEhADbP4ZJtVgNaQk8=";
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [ libopus ];
 
