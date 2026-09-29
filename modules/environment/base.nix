@@ -112,7 +112,7 @@ in
 
         networking.usePredictableInterfaceNames = false;
 
-        time.timeZone = "Asia/Shanghai";
+        time.timeZone = "Asia/Singapore";
 
         i18n.defaultLocale = "en_US.UTF-8";
         nixpkgs.config.allowUnfree = true;
