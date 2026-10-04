@@ -15,6 +15,7 @@
           nix-update
           bash
           shellcheck
+          just
         ];
       };
 
