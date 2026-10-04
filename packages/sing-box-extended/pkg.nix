@@ -9,7 +9,7 @@
 
 buildGoModule (finalAttrs: {
   pname = "sing-box-extended";
-  version = "1.13.18-extended-2.6.5";
+  version = "1.14.1-extended-2.7.2";
 
   __structuredAttrs = true;
 
@@ -17,10 +17,10 @@ buildGoModule (finalAttrs: {
     owner = "shtorm-7";
     repo = "sing-box-extended";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-h2MXld776trOB7ZUARjvnc6EfzlErumvMOCk/hvd0AA=";
+    hash = "sha256-bDE90wcoTLBm3lDICO+z7Kl+hhIXBYZN5lsrLXQbL10=";
   };
 
-  vendorHash = "sha256-8Nkrk2RbbHnS4JwLm3Py7VONsQ3IZVL0qzzBDp86xvY=";
+  vendorHash = "sha256-fR6ZlkSBiM0EiGwd6mWQ07p+gMnYuhugai4x4SsUNiU=";
 
   # The main preBuild needs vendored modules, so it must not run while
   # buildGoModule is producing the vendor fixed-output derivation.
