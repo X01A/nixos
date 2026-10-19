@@ -14,9 +14,9 @@ stdenv.mkDerivation {
   src = fetchFromGitHub ({
     owner = "namjaejeon";
     repo = "ksmbd-tools";
-    rev = "ca52b8d7be7544aff4e9cc4b8c27c192ec39b881";
+    rev = "4f8fc5c0bbd8e21753de724f5fe2bdd3bd198097";
     fetchSubmodules = true;
-    sha256 = "sha256-lLUGEm2PQ8Q8Pp5m79W4hx2cEOei54y9dzKCiBuv3bs=";
+    sha256 = "sha256-HOZmJyjKQ0AATqFZCyDh+2SFxph5loik31APM2STDYA=";
   });
 
   nativeBuildInputs = [
