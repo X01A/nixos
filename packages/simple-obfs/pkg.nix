@@ -24,6 +24,11 @@ stdenv.mkDerivation rec {
 
   configureFlags = [ "--disable-documentation" ];
 
+  # gcc 16 promotes "discards 'const' qualifier" to an error, and this
+  # unmaintained 2019 snapshot assigns a const char* to a non-const one
+  # in jconf.c.
+  env.NIX_CFLAGS_COMPILE = "-Wno-error=discarded-qualifiers";
+
   nativeBuildInputs = [
     autoconf
     automake
