@@ -1,12 +1,14 @@
 { python3Packages, fetchFromGitHub }:
 
 python3Packages.buildPythonPackage rec {
-  pname = "stickerpicker";
+  # setup.py installs the distribution as "maunium-stickerpicker", and
+  # pythonMetadataCheckPhase requires pname to match that dist name.
+  pname = "maunium-stickerpicker";
   version = "0-unstable-2026-05-31";
 
   src = fetchFromGitHub {
     owner = "maunium";
-    repo = pname;
+    repo = "stickerpicker";
     rev = "c4ac072dd33ae5c89144d0222103786c8d8c1ba4";
     sha256 = "sha256-BElO5tD2KrcGdV5wjdEAtkRlkF8A5XYPUGqojRXPTyg=";
   };
