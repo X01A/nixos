@@ -25,6 +25,12 @@ stdenv.mkDerivation {
     "KVERSION=${kernel.modDirVersion}"
     "KDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
     "MDIR=${placeholder "out"}/lib/modules/${kernel.modDirVersion}"
+    # Kernel 6.18.57 annotates kernel_bind()'s address argument as
+    # "struct sockaddr_unsized *" (upstream ksmbd only guards this on >= 6.19),
+    # so this snapshot's "(struct sockaddr *)" casts trip
+    # -Wincompatible-pointer-types. The two types are interchangeable here and
+    # the generated code is unchanged, so keep it a warning.
+    "KCFLAGS=-Wno-error=incompatible-pointer-types"
   ];
 
   preConfigure = ''
