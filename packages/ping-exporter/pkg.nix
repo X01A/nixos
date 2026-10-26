@@ -1,10 +1,14 @@
 {
   lib,
-  buildGoModule,
+  buildGo127Module,
   fetchFromGitHub,
 }:
 
-buildGoModule rec {
+# ping_exporter 1.3.1 raised its go.mod directive to `go 1.26.10`, newer than
+# nixpkgs' default Go, and buildGoModule sets GOTOOLCHAIN=local so it cannot
+# fetch a newer one itself. Build with a toolchain that satisfies the directive
+# again; drop this back to buildGoModule once nixpkgs' Go catches up.
+buildGo127Module rec {
   pname = "ping-exporter";
   version = "1.3.0";
 
