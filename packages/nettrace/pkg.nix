@@ -32,16 +32,20 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "OpenCloudOS";
     repo = pname;
-    rev = "d455f001315322db4d606a8bdf8c659ba36b269c";
-    sha256 = "sha256-Yr1wN1VVcMDyKdVDGoIWLGuGaRaOPVPBkUHhRzj9zZM=";
+    rev = "fcfa07232026025388fa58d8b77d68f867fcd152";
+    sha256 = "sha256-LMG+R2+1rU1hDktOjcVY8jplVPo1v/ZoX7sTFkDxluw=";
   };
 
+  # The 2026-03-05 snapshot moved the compiler flags out of src/Makefile
+  # (which used ":=") into common.mk, so retarget the libbpf fixups there:
+  # nixpkgs ships libbpf as a package, so resolve its headers and libraries
+  # through pkg-config instead of the distro-default -lbpf/-lelf/-lz.
   postPatch = ''
-    substituteInPlace src/Makefile \
-      --replace-fail 'BPF_CFLAGS	:= -O2 -g -Wall -D__TARGET_ARCH_$(SRCARCH) -target bpf	\' \
-                     'BPF_CFLAGS	:= $(shell pkg-config --cflags libbpf) -O2 -g -Wall -D__TARGET_ARCH_$(SRCARCH) -target bpf	\' \
-      --replace-fail 'HOST_CFLAGS	:= -lbpf -lelf -lz $(LIBELF_ZSTD_FLAGS) -pthread -O2 -Wall \' \
-                     'HOST_CFLAGS	:= $(shell pkg-config --cflags libbpf) $(shell pkg-config --libs libbpf) -pthread -O2 -Wall \'
+    substituteInPlace common.mk \
+      --replace-fail '= $(CFLAGS) -Wno-unused-function' \
+                     '= $(shell pkg-config --cflags libbpf) $(CFLAGS) -Wno-unused-function' \
+      --replace-fail '-lbpf -lelf -lz $(LIBELF_ZSTD_FLAGS)' \
+                     '$(shell pkg-config --cflags libbpf) $(shell pkg-config --libs libbpf)'
   '';
 
   makeFlags = [
