@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   pname = "leaf";
-  version = "0.3.1";
+  version = "0.14.2";
 
   src = fetchurl {
     url = "https://github.com/eycorsican/leaf/releases/download/v${version}/leaf-x86_64-unknown-linux-musl.gz";
-    sha256 = "UOW7fleDz40idmDKk4J/7B1fj9l2FXsREW3QGtTgLes=";
+    sha256 = "sha256-jul8+xuQ0or5Xzj4g0iAsCg35ATcq2PSFor8mWwrl3I=";
   };
 
   phases = [ "installPhase" ];
