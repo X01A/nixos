@@ -35,6 +35,11 @@ in
         X11Forwarding = true;
         PermitRootLogin = lib.mkDefault "prohibit-password";
         PasswordAuthentication = false;
+
+        # 暴力破解惩罚：认证失败 30s、无效用户/超时 1m，累计上限 1h
+        PerSourcePenalties = "authfail:30s invaliduser:1m grace-exceeded:1m min:15s max:1h";
+        # 回环豁免，避免本机自连/端口转发被误封
+        PerSourcePenaltyExemptList = "127.0.0.0/8,::1/128";
       };
     };
 
