@@ -1,0 +1,92 @@
+name: Upgrade packages (agent)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every day at 03:00 UTC
+    - cron: '0 3 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: upgrade-packages-agent
+  cancel-in-progress: false
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    env:
+      AGENT_BASE_URL: ${{ secrets.AGENT_BASE_URL }}
+      AGENT_API_TOKEN: ${{ secrets.AGENT_API_TOKEN }}
+      AGENT_MODEL: ${{ secrets.AGENT_MODEL }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: true
+
+    - uses: docker/setup-qemu-action@v3
+
+    - name: Install Nix
+      uses: DeterminateSystems/nix-installer-action@main
+      with:
+        extra-conf: |
+          experimental-features = nix-command flakes
+          substituters = https://attic.indexyz.me/indexyz https://indexyz.cachix.org https://cache.nixos.org/
+          trusted-public-keys = indexyz:XxexOMK+bHXR2slT4A9wnJg00EZFXCUYqlUhlEEGQEc= indexyz.cachix.org-1:biBEnuZ4vTSsVMr8anZls+Lukq8w4zTHAK8/p+fdaJQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+          extra-platforms = aarch64-linux
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22
+
+    - name: Install pi
+      run: npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+
+    - name: Configure pi provider
+      run: |
+        mkdir -p "$HOME/.pi/agent"
+        cat > "$HOME/.pi/agent/models.json" <<EOF
+        {
+          "\$schema": "https://pi.dev/schemas/models.schema.json",
+          "providers": {
+            "agent": {
+              "baseUrl": "${AGENT_BASE_URL}",
+              "api": "openai-completions",
+              "apiKey": "\$AGENT_API_TOKEN",
+              "models": [
+                { "id": "${AGENT_MODEL}" }
+              ]
+            }
+          }
+        }
+        EOF
+        cat "$HOME/.pi/agent/models.json"
+        pi --list-models agent
+
+    - name: Configure git
+      run: |
+        git config --global user.email github-actions[bot]@users.noreply.github.com
+        git config --global user.name github-actions[bot]
+
+    - name: Run agent
+      run: |
+        set -x
+        pi --print \
+          --provider agent \
+          --model "$AGENT_MODEL" \
+          --approve \
+          --no-session \
+          "$(cat prompts/upgrade-repo-wide-packages.md)"
+
+    - name: Commit and push
+      run: |
+        set -ex
+        git add -A
+        if ! git diff --cached --quiet; then
+          git commit -m "chore(packages): leftover changes from agent run"
+        fi
+        git push origin "HEAD:${{ github.ref_name }}"
