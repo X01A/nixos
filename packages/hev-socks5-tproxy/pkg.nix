@@ -6,9 +6,9 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub ({
     owner = "heiher";
     repo = "hev-socks5-tproxy";
-    rev = "2.6.0";
+    rev = "${version}";
     fetchSubmodules = true;
-    sha256 = "sha256-vunuMpQInB390rUJ4C1pLvLTtEJozU9Mtk9cUr0gJ3k=";
+    sha256 = "sha256-YRtoCYE5vpIjmw516Ddng5s0zY7ptzlY6sdnWy4zU6Y=";
   });
 
   makeFlags = [
