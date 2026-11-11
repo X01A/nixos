@@ -43,28 +43,31 @@ jobs:
       with:
         node-version: 22
 
-    - name: Install pi
-      run: npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+    - name: Install pi and custom provider extension
+      run: |
+        npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+        pi install npm:@indexyz/pi-custom-provider
 
-    - name: Configure pi provider
+    - name: Configure custom provider
       run: |
         mkdir -p "$HOME/.pi/agent"
-        cat > "$HOME/.pi/agent/models.json" <<EOF
+        cat > "$HOME/.pi/agent/custom-provider.json" <<EOF
         {
-          "\$schema": "https://pi.dev/schemas/models.schema.json",
           "providers": {
             "agent": {
-              "baseUrl": "${AGENT_BASE_URL}",
-              "api": "openai-completions",
+              "baseURL": "${AGENT_BASE_URL}",
+              "api": "anthropic-messages",
+              "sessionAffinityHeader": "x-session-id",
               "apiKey": "\$AGENT_API_TOKEN",
-              "models": [
+              "cache": { "ttlSeconds": 3600 },
+              "fallbackModels": [
                 { "id": "${AGENT_MODEL}" }
               ]
             }
           }
         }
         EOF
-        cat "$HOME/.pi/agent/models.json"
+        cat "$HOME/.pi/agent/custom-provider.json"
         pi --list-models agent
 
     - name: Configure git
