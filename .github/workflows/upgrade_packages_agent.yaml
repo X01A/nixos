@@ -77,13 +77,14 @@ jobs:
 
     - name: Run agent
       run: |
-        set -x
-        pi --print \
+        set -o pipefail
+        pi --mode json \
           --provider agent \
           --model "$AGENT_MODEL" \
           --approve \
           --no-session \
-          "$(cat prompts/upgrade-repo-wide-packages.md)"
+          "$(cat prompts/upgrade-repo-wide-packages.md)" \
+          | node .ci/pi-progress.mjs
 
     - name: Commit and push
       run: |
