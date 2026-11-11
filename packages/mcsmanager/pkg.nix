@@ -8,10 +8,10 @@
   ...
 }:
 let
-  version = "10.22.0";
+  version = "10.22.1";
   src = fetchzip {
     url = "https://github.com/MCSManager/MCSManager/releases/download/v${version}/mcsmanager_linux_release.tar.gz";
-    sha256 = "sha256-U9zdA2Je11PS+nDPxUjyOGwCbOU7tvcGuRqVRFFkUXo=";
+    sha256 = "sha256-Gr3Aw3ODWfRqidD6b1z8hukqog7jg7hQfY63h/9+UFs=";
   };
 
   pname = "mcsmanager";
@@ -33,7 +33,7 @@ let
     };
 
   daemonNodeModules = makeNodeModules "daemon" "sha256-4QmHMK905Q0a2rFe8jBBKuKsjOsrDdZMaIUTLCr4Yp4=";
-  webNodeModuels = makeNodeModules "web" "sha256-SwiU+2DWlQNIqz0HBmvWP7mW8zEbKr1RFz203DZxVRY=";
+  webNodeModuels = makeNodeModules "web" "sha256-p5EAFtSYqgW23Tl5dGlJtwIKuWlQaopYDa1qBT5P1jY=";
 in
 stdenvNoCC.mkDerivation rec {
   inherit pname version src;
