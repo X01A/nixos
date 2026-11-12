@@ -13,6 +13,8 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBuNngR3JgkjC7I7g8/v4YQNH8Pu13bZcCl9q7Ho8hYJ"
     # Yubi Key
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIJ2VGrmjVBgF8cim47K/iDAG5nqKonLEseUzCEc0jhbYAAAABHNzaDo= indexyz-yubikey-fido"
+    # herdr mobile
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP+ziAl91JBqlmQsizrQDIqqFk2p6LRcTySeDhYkYMYU herdr-mobile"
   ];
 in
 {
