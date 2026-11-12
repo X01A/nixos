@@ -12,8 +12,8 @@ stdenvNoCC.mkDerivation rec {
   src = fetchFromGitHub ({
     owner = "misakaio";
     repo = pname;
-    rev = "7a71c3234a0ed509b008c41bd1dc59d91e298b4e";
-    sha256 = "sha256-XtX4g9xxmnp/jkQVx6sRyFvByTakoMovj3BkL49lnKw=";
+    rev = "3a13d7a6fea071f58fef55cdb6bd2432f41f90ac";
+    sha256 = "sha256-CtjzhLpBkS/SdvUXMvW4rlc1MAcz6KAwrVC7FJ6Fyrg=";
   });
 
   phases = [ "installPhase" ];
