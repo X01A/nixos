@@ -100,7 +100,6 @@ report() {
 }
 
 update_pkg rustdesk-server-pro
-update_pkg realm
 update_pkg vpncloud
 update_pkg hev-socks5-tproxy
 update_pkg landrop --url https://github.com/LANDrop/LANDrop

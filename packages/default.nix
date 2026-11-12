@@ -1,7 +1,6 @@
 {
   pkgs,
   normalPkgs,
-  os,
   npmlock2nix,
   flakeInputs,
   system,
@@ -10,12 +9,6 @@
 with normalPkgs.lib;
 let
   build-electron-appimage = normalPkgs.callPackage ./build-electron-appimage { };
-  osPkgPath = ./. + "/os-specific/${os}";
-  systemPackages =
-    if builtins.pathExists osPkgPath then
-      normalPkgs.callPackage osPkgPath { inherit pkgs normalPkgs; }
-    else
-      { };
 
   dirOnly = it: if it.value == "directory" then true else false;
   hasPkgFile =
@@ -57,7 +50,6 @@ let
     build-vm-qcow = pkgs.callPackage ./build-vm-qcow { };
 
   }
-  // systemPackages
   // packages;
 
   buildPacakges = (

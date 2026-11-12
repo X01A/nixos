@@ -15,7 +15,6 @@
       ...
     }:
     let
-      os = pkgs.lib.last (pkgs.lib.strings.splitString "-" system);
       normalPkgs = import inputs.nixpkgs { inherit system; };
       pkgs = import inputs.nixpkgs {
         inherit system;
@@ -25,7 +24,6 @@
       };
       packageSet = import ../packages {
         inherit
-          os
           pkgs
           normalPkgs
           system
