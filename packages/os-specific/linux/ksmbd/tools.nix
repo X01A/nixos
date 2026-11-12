@@ -10,13 +10,13 @@
 
 stdenv.mkDerivation {
   pname = "ksmbd-tools";
-  version = "0-unstable-2026-11-08";
+  version = "0-unstable-2026-11-12";
   src = fetchFromGitHub ({
     owner = "namjaejeon";
     repo = "ksmbd-tools";
-    rev = "8c5f91d2d804fff936842c9801da88886a2a4366";
+    rev = "bd24905147318ba3ee7e7c58180a928e51c6ff6e";
     fetchSubmodules = true;
-    sha256 = "sha256-6We41Xt81Bof8ZXV92V/s5La0DJ8C79idI3uXk5cMZM=";
+    sha256 = "sha256-wghbmKlT7qG3V9bVnmkOMCIaJENV1kw+fmHw5skUUXE=";
   });
 
   nativeBuildInputs = [
