@@ -9,13 +9,13 @@
 
 stdenv.mkDerivation {
   pname = "mlspp";
-  version = "0.1.0-unstable-2025-04-26";
+  version = "0.1.0-unstable-2026-09-21";
 
   src = fetchFromGitHub {
     owner = "cisco";
     repo = "mlspp";
-    rev = "1cc50a124a3bc4e143a787ec934280dc70c1034d";
-    hash = "sha256-IjS2yYnfScwJR3BqDJp37ANgNkCg9ECxON41tYEocvA=";
+    rev = "fc724c3100ce3b5d8565dbd6d93648a440991a8c";
+    hash = "sha256-N6s35lrRpR8Zu/cJXqL8lePYqdbJLeyz82ZAbOVGB1M=";
   };
 
   nativeBuildInputs = [ cmake ];
