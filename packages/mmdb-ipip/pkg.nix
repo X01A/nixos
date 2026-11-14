@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "mmdb-ipip";
-  version = "202611130757-unstable-2026-11-12";
+  version = "202611090638-unstable-2026-11-12";
   src = fetchgit {
     url = "https://github.com/alecthw/mmdb_china_ip_list.git";
     rev = "db704c3a573d8ddd5d74ff46687a7dd116050304";
