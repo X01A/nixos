@@ -11,13 +11,13 @@
 
 stdenv.mkDerivation rec {
   pname = "libdave";
-  version = "1.1.1";
+  version = "1.2.2";
 
   src = fetchFromGitHub {
     owner = "discord";
     repo = pname;
     rev = "v${version}/cpp";
-    hash = "sha256-ALDmtAjSkjnLDcmtpvcwiN7dPvpOgOTNFolr/H3SqsE=";
+    hash = "sha256-kU+f17tUDlNq/IVwEKhsMj1PYOW5oyuApjjwQm4FymY=";
   };
 
   sourceRoot = "source/cpp";
