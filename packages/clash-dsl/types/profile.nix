@@ -6,7 +6,7 @@ let
   inherit (builtins) toJSON;
   proxy = import ./proxy.nix { inherit lib; };
   recursiveMergeAttrs =
-    listOfAttrsets: fold (attrset: acc: recursiveUpdate attrset acc) { } listOfAttrsets;
+    listOfAttrsets: foldr (attrset: acc: recursiveUpdate attrset acc) { } listOfAttrsets;
 
   profile = types.submodule {
     options = {
