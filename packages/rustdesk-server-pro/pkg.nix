@@ -4,14 +4,27 @@
   autoPatchelfHook,
 }:
 
-stdenv.mkDerivation rec {
-  pname = "rustdesk-server-pro";
-  version = "1.8.7";
+let
+  version = "1.8.8";
 
-  src = fetchurl {
-    url = "https://github.com/rustdesk/rustdesk-server-pro/releases/download/${version}/rustdesk-server-linux-amd64.tar.gz";
-    sha256 = "sha256-4ZR3lqNGy6OeURDmIbqEkKdZdVpGoD92so97EBEWTjc=";
+  srcs = {
+    x86_64-linux = {
+      url = "https://github.com/rustdesk/rustdesk-server-pro/releases/download/${version}/rustdesk-server-linux-amd64.tar.gz";
+      hash = "sha256-RCzqkDQgLxu+sqxe/lbbwAIqBgAzgjgQsa10Wv6eslI=";
+    };
+    aarch64-linux = {
+      url = "https://github.com/rustdesk/rustdesk-server-pro/releases/download/${version}/rustdesk-server-linux-arm64v8.tar.gz";
+      hash = "sha256-SIch1e+yeHKdBzQPX/Q1QZ9nSJt9DBkKXPB3aVR9hzA=";
+    };
   };
+in
+stdenv.mkDerivation {
+  pname = "rustdesk-server-pro";
+  inherit version;
+
+  src = fetchurl (
+    srcs.${stdenv.system} or (throw "Unsupported system: ${stdenv.system}")
+  );
 
   nativeBuildInputs = [
     autoPatchelfHook
