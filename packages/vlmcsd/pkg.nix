@@ -6,11 +6,11 @@
 
 stdenv.mkDerivation rec {
   pname = "vlmcsd";
-  version = "1113";
+  version = "1113-unstable-2023-07-28";
 
   src = fetchurl {
-    url = "https://github.com/Wind4/vlmcsd/archive/svn1113.tar.gz";
-    sha256 = "62f55c48f5de1249c2348ab6b96dabbe7e38899230954b0c8774efb01d9c42cc";
+    url = "https://github.com/Wind4/vlmcsd/archive/70e03572b254688b8c3557f898e7ebd765d29ae1.tar.gz";
+    sha256 = "sha256-NjtGJgiWBR8giF0+xICqVszuyB7A9et3lsDoCqJ6fv8=";
   };
 
   buildPhase = ''
