@@ -13,7 +13,7 @@
 
 stdenv.mkDerivation rec {
   pname = "candy";
-  version = "6.1.11";
+  version = "6.1.12";
 
   nativeBuildInputs = [
     cmake
@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
     owner = "lanthora";
     repo = "candy";
     rev = "v${version}";
-    sha256 = "sha256-oOoVcznUcclxeQSDVqZEQHJAfVaBjZp/YD33NbzRA9M=";
+    sha256 = "sha256-v5gZbdmurmgva2dX4rK+1iiwna9/07ZWJlnxZBRHtHc=";
   };
 
   meta = with lib; {
