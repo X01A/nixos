@@ -22,13 +22,13 @@
 
 let
   pname = "antigravity-manager";
-  version = "5.0.4-beta.20";
+  version = "5.0.5-beta.1";
 
   src = fetchFromGitHub {
     owner = "lbjlaq";
     repo = "Antigravity-Manager";
     tag = "v${version}";
-    hash = "sha256-QHmurqcoFhX1pgbCjMs29niIGDegz5OIzaeXGbVkNMg=";
+    hash = "sha256-1Li6e/rfjc4D/IILdD8z6Gb9z4Y8Px67mIn9P+iGuGA=";
   };
 
   # React/Vite frontend. The same asset tree is embedded into the Tauri binary
@@ -38,7 +38,7 @@ let
     pname = "${pname}-frontend";
     inherit version src;
 
-    npmDepsHash = "sha256-DbhVeZsHkR6juuhREvd6PzC9Cq7GS2CBpFk/bEE0y+A=";
+    npmDepsHash = "sha256-wOMAwB1DRAATsAU+FuknHfgGO+f/jPuheg438uCW5F0=";
     # upstream pins this in .npmrc as well
     npmFlags = [ "--legacy-peer-deps" ];
 
