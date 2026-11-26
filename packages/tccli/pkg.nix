@@ -10,11 +10,11 @@ let
 in
 python3Packages.buildPythonApplication rec {
   pname = "tccli";
-  version = "3.1.207.1";
+  version = "3.1.209.1";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-mGFwLwdsFkMRTJ5SpmbWbbLMg8EN/iWLli9V+e3iGWc=";
+    hash = "sha256-ewz77qL7V714MhjiQTdgZj0M/+ftlRWU5Kg7yHlHIfA=";
   };
 
   propagatedBuildInputs = with python3Packages; [
